@@ -20,7 +20,7 @@ SECTIONS {
         obj/soft_reset_check.o(.text);
         obj/blob_0x0007EC-0x000954.o(.text);
         obj/check_keys.o(.text);
-        obj/init_palettes.o(.text);
+        obj/init_video_memory.o(.text);
         obj/init_irq.o(.text);
         obj/blob_0x000A0C-0x000C14.o(.text);
         obj/set_vblank_handler.o(.text);

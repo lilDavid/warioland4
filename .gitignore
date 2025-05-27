@@ -42,6 +42,9 @@
 *.su
 *.idb
 *.pdb
+
+# Build files
+build/**
 *.dump
 
 # Kernel Module Compile Results

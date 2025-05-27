@@ -6,18 +6,18 @@ HOSTCC=cc
 
 TOOLCHAIN ?= arm-none-eabi-
 AS = $(TOOLCHAIN)as
-CPP = $(TOOLCHAIN)cpp
 LD = $(TOOLCHAIN)ld
 OBJCOPY = $(TOOLCHAIN)objcopy
 OBJDUMP = $(TOOLCHAIN)objdump
 
+CPP = cpp
 DIFF = diff -u
 MD5SUM = md5sum
 
 TOOLS = tools
 GBAFIX = $(TOOLS)/gbafix/gbafix
 
-AGBCC = $(TOOLS)/agbcc/agbcc
+CC = $(TOOLS)/agbcc/agbcc
 
 
 # Files
@@ -28,11 +28,15 @@ MD5FILE = $(FILENAME).md5
 
 BUILD = build/$(VERSION)
 ASM = asm
+SRC = src
+BUILT_ASM = $(BUILD)/asm
 OBJ = $(BUILD)/obj
 
 SRCS_C = $(shell find $(SRC) -type f -name '*.c')
 SRCS_ASM = $(shell find $(ASM) -type f -name '*.s')
+BUILT_ASMS = $(SRCS_C:$(SRC)/%.c=$(BUILT_ASM)/%.s)
 OBJS = $(SRCS_ASM:$(ASM)/%.s=$(OBJ)/%.o) $(SRCS_C:$(SRC)/%.c=$(OBJ)/%.o)
+.PRECIOUS: $(BUILT_ASMS)
 
 TARGET = $(BUILD)/$(FILENAME).gba
 ELF = $(TARGET:.gba=.elf)
@@ -56,9 +60,9 @@ GAME_REVISION = 00
 
 
 # Flags
-ASFLAGS += -mcpu=arm7tdmi -I$(ASM)/include
-CFLAGS = -O2 -mthumb-interwork
-CPPFLAGS += -nostdinc -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
+ASFLAGS += -mcpu=arm7tdmi -I$(ASM)
+CFLAGS = -O2 -mthumb-interwork -fhex-asm
+CPPFLAGS += -nostdinc -I$(SRC)/include -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
 
 
 .PHONY: all check dump diff clean help
@@ -74,7 +78,7 @@ diff: $(DUMPS)
 	$(DIFF) $^
 
 clean:
-	rm -rf $(BUILD) baserom_*.gba.dump $(GBAFIX)
+	rm -rf build baserom_*.gba.dump $(GBAFIX)
 
 help:
 	@echo 'Targets:'
@@ -105,12 +109,16 @@ $(OBJ)/%.o: $(ASM)/%.s
 	@mkdir -p $(shell dirname $@)
 	$(AS) $(ASFLAGS) $< -o $@
 
-$(OBJ)/%.c: $(SRC)/%.c $(AGBCC)
+$(OBJ)/%.o: $(BUILT_ASM)/%.s
 	@mkdir -p $(shell dirname $@)
-	$(CPP) $(CPPFLAGS) $< | $(CC) -o $@ $(CFLAGS)
+	$(AS) $(ASFLAGS) $< -o $@
+
+$(BUILT_ASM)/%.s: $(SRC)/%.c $(CC)
+	@mkdir -p $(shell dirname $@)
+	$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
 
 $(TOOLS)/%: $(TOOLS)/%.c
 	$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@
 
-$(AGBCC):
+$(CC):
 	cd $(shell dirname $@) && MAKEFLAGS="" ./build.sh
