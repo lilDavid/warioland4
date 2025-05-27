@@ -2,7 +2,7 @@
 .include "macros.s.inc"
 
 arm_func_start _start
-_start:
+_start:  @ 0x80000C0
     mov r0, #PSR_IRQ_MODE
     msr CPSR_fc, r0
     ldr sp, sp_irq_ptr
@@ -24,7 +24,7 @@ sp_irq_ptr: .4byte sp_irq
 
 
 arm_func_start irq_handler
-irq_handler:
+irq_handler:  @ 0x80000FC
     mov r3, #REG_BASE
     add r3, r3, #REG_IE_OFFSET  @ r3 = REG_IE
     ldr r2, [r3]
@@ -93,5 +93,5 @@ irq_handler:
     bx r0
 
 intr_vector_ptr: .4byte intr_vector
-main_loop_ptr: .4byte 0x80001CC + THUMB_BIT
+main_loop_ptr: .4byte agb_main
 interrupt_table_ptr: .4byte 0x80953B8

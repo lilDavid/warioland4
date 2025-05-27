@@ -15,6 +15,17 @@ SECTIONS {
     .text : ALIGN(2) {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
-        obj/blob_0x0001CC-0x78F97C.o(.text);
+        obj/agb_main.o(.text);
+        obj/hardware_init.o(.text);
+        obj/soft_reset_check.o(.text);
+        obj/blob_0x0007EC-0x000954.o(.text);
+        obj/check_keys.o(.text);
+        obj/init_palettes.o(.text);
+        obj/init_irq.o(.text);
+        obj/blob_0x000A0C-0x000C14.o(.text);
+        obj/set_vblank_handler.o(.text);
+        obj/blob_0x000C2C-0x001D98.o(.text);
+        obj/sound_init.o(.text);
+        obj/blob_0x001D98-0x78F97C.o(.text);
     } >ROM =0xFF
 }
