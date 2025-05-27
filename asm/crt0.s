@@ -5,10 +5,10 @@ arm_func_start _start
 _start:
     mov r0, #PSR_IRQ_MODE
     msr CPSR_fc, r0
-    ldr sp, sp_irq
+    ldr sp, sp_irq_ptr
     mov r0, #PSR_SYS_MODE
     msr CPSR_fc, r0
-    ldr sp, sp_sys
+    ldr sp, sp_sys_ptr
 
     ldr r1, intr_vector_ptr
     add r0, pc, #irq_handler - . - 8  @ Because of the execution pipeline, the PC is 2 instructions ahead of this line
@@ -19,8 +19,8 @@ _start:
     bx r1
     b _start
 
-sp_sys: .4byte 0x3007E60
-sp_irq: .4byte 0x3007FA0
+sp_sys_ptr: .4byte sp_sys
+sp_irq_ptr: .4byte sp_irq
 
 
 arm_func_start irq_handler
@@ -92,6 +92,6 @@ irq_handler:
     ldr r0, [r1]
     bx r0
 
-intr_vector_ptr: .4byte 0x3007FFC
+intr_vector_ptr: .4byte intr_vector
 main_loop_ptr: .4byte 0x80001CC + THUMB_BIT
 interrupt_table_ptr: .4byte 0x80953B8
