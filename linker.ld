@@ -30,6 +30,8 @@ SECTIONS {
         obj/set_vblank_handler.o(.text);
         obj/blob_0x000C2C-0x001D98.o(.text);
         obj/sound_init.o(.text);
-        obj/blob_0x001D98-0x78F97C.o(.text);
+        obj/blob_0x001D98-0x003220.o(.text);
+        obj/syscalls.o(.text);
+        obj/blob_0x003228-0x78F97C.o(.text);
     } >ROM =0xFF
 }
