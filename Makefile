@@ -2,6 +2,8 @@ VERSION ?= us
 
 
 # Build tools
+HOSTCC=cc
+
 TOOLCHAIN ?= arm-none-eabi-
 AS = $(TOOLCHAIN)as
 LD = $(TOOLCHAIN)ld
@@ -10,6 +12,9 @@ OBJDUMP = $(TOOLCHAIN)objdump
 
 DIFF = diff -u
 MD5SUM = md5sum
+
+TOOLS = tools
+GBAFIX = $(TOOLS)/gbafix/gbafix
 
 
 # Files
@@ -52,7 +57,7 @@ ASFLAGS += -mcpu=arm7tdmi -I$(ASM)/include
 CPPFLAGS += -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
 
 
-.PHONY: all check dump clean help
+.PHONY: all check dump diff clean help
 
 all: check
 
@@ -65,12 +70,14 @@ diff: $(DUMPS)
 	$(DIFF) $^
 
 clean:
-	rm -rf build baserom_*.gba.dump
+	rm -rf $(BUILD) baserom_*.gba.dump $(GBAFIX)
 
 help:
 	@echo 'Targets:'
 	@echo '  all: build and checksum the ROM'
 	@echo '  check: same as `all`'
+	@echo '  dump: dump the ROMs'
+	@echo '  diff: dump and compare the ROMs'
 	@echo '  clean: remove build files'
 	@echo '  help: show this message'
 	@echo ''
@@ -83,9 +90,9 @@ help:
 %.dump: %
 	$(OBJDUMP) -D -bbinary -marm7tdmi $< > $@
 
-$(TARGET): $(ELF)
+$(TARGET): $(ELF) $(GBAFIX)
 	$(OBJCOPY) -O binary --gap-fill 0xff --pad-to 0x08800000 $< $@
-# TODO: gbafix
+	$(GBAFIX) $@ -t$(GAME_TITLE) -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION)
 
 $(ELF): $(OBJS) linker.ld
 	$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) -o $@
@@ -93,3 +100,6 @@ $(ELF): $(OBJS) linker.ld
 $(OBJ)/%.o: $(ASM)/%.s
 	@mkdir -p $(shell dirname $@)
 	$(AS) $(ASFLAGS) $< -o $@
+
+$(TOOLS)/%: $(TOOLS)/%.c
+	$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@
