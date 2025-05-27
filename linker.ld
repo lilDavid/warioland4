@@ -7,6 +7,10 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
+        . = 0x1844; keys_held = .;
+        . = 0x1846; keys_held_copy = .;
+        . = 0x1848; keys_pressed = .;
+
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
         . = 0x7ffc; intr_vector = .;
@@ -19,7 +23,7 @@ SECTIONS {
         obj/hardware_init.o(.text);
         obj/soft_reset_check.o(.text);
         obj/blob_0x0007EC-0x000954.o(.text);
-        obj/check_keys.o(.text);
+        obj/key_poll.o(.text);
         obj/init_video_memory.o(.text);
         obj/init_irq.o(.text);
         obj/blob_0x000A0C-0x000C14.o(.text);
