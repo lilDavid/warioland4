@@ -2,29 +2,43 @@ VERSION ?= us
 
 
 # Build tools
+TOOLCHAIN ?= arm-none-eabi-
+AS = $(TOOLCHAIN)as
+LD = $(TOOLCHAIN)ld
+OBJCOPY = $(TOOLCHAIN)objcopy
+OBJDUMP = $(TOOLCHAIN)objdump
+
+DIFF = diff -u
 MD5SUM = md5sum
 
 
 # Files
 GAME_NAME = warioland4
 FILENAME = $(GAME_NAME)_$(VERSION)
+BASEROM = baserom_$(VERSION).gba
+MD5FILE = $(FILENAME).md5
 
 BUILD = build/$(VERSION)
+ASM = asm
+OBJ = $(BUILD)/obj
 
-BASEROM = baserom_$(VERSION).gba
+SRCS_ASM = $(shell find $(ASM) -type f -name '*.s')
+OBJS = $(SRCS_ASM:$(ASM)/%.s=$(OBJ)/%.o)
+OBJS_REL = $(OBJS:$(OBJ)/%=%)
+
 TARGET = $(BUILD)/$(FILENAME).gba
-MD5FILE = $(FILENAME).md5
+ELF = $(TARGET:.gba=.elf)
+MAP = $(TARGET:.gba=.map)
+DUMPS = $(BASEROM).dump $(TARGET).dump
 
 
 # ROM header
 ifeq ($(VERSION), us)
 	GAME_TITLE = WARIOLANDE
 	GAME_CODE = AWAE
-	CPPFLAGS += -DVERSION_US
 else ifeq ($(VERSION), jp)
 	GAME_TITLE = WARIOLAND
 	GAME_CODE = AWAJ
-	CPPFLAGS += -DVERSION_JP
 else
 $(error Unupported version $(VERSION))
 endif
@@ -33,16 +47,25 @@ MAKER_CODE = 01
 GAME_REVISION = 00
 
 
-.PHONY: all check clean help
+# Flags
+ASFLAGS += -mcpu=arm7tdmi -I$(ASM)/include
+CPPFLAGS += -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
 
+
+.PHONY: all check dump clean help
 
 all: check
 
 check: $(TARGET)
 	$(MD5SUM) -c $(MD5FILE)
 
+dump: $(DUMPS)
+
+diff: $(DUMPS)
+	$(DIFF) $^
+
 clean:
-	rm -rf build
+	rm -rf build baserom_*.gba.dump
 
 help:
 	@echo 'Targets:'
@@ -57,6 +80,16 @@ help:
 	@echo '    jp'
 
 
-$(TARGET): $(BASEROM)
-	@mkdir -p $(BUILD)
-	cp $< $@
+%.dump: %
+	$(OBJDUMP) -D -bbinary -marm7tdmi $< > $@
+
+$(TARGET): $(ELF)
+	$(OBJCOPY) -O binary --gap-fill 0xff --pad-to 0x08800000 $< $@
+# TODO: gbafix
+
+$(ELF): $(OBJS) linker.ld
+	$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) -o $@
+
+$(OBJ)/%.o: $(ASM)/%.s
+	@mkdir -p $(shell dirname $@)
+	$(AS) $(ASFLAGS) $< -o $@

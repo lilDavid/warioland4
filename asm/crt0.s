@@ -1,0 +1,97 @@
+.include "constants.s.inc"
+.include "macros.s.inc"
+
+arm_func_start _start
+_start:
+    mov r0, #PSR_IRQ_MODE
+    msr CPSR_fc, r0
+    ldr sp, sp_irq
+    mov r0, #PSR_SYS_MODE
+    msr CPSR_fc, r0
+    ldr sp, sp_sys
+
+    ldr r1, intr_vector_ptr
+    add r0, pc, #irq_handler - . - 8  @ Because of the execution pipeline, the PC is 2 instructions ahead of this line
+    str r0, [r1]
+
+    ldr r1, main_loop_ptr
+    mov lr, pc
+    bx r1
+    b _start
+
+sp_sys: .4byte 0x3007E60
+sp_irq: .4byte 0x3007FA0
+
+
+arm_func_start irq_handler
+irq_handler:
+    mov r3, #REG_BASE
+    add r3, r3, #REG_IE_OFFSET  @ r3 = REG_IE
+    ldr r2, [r3]
+    and r1, r2, r2, lsr #16  @ AND with REG_IF
+
+    ands r0, r1, #IRQ_GAMEPAK
+.freeze:
+    bne .freeze
+
+    mov r2, #0
+    ands r0, r1, #IRQ_VBLANK
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_HBLANK
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_VCOUNT
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_TIMER0
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_TIMER1
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_TIMER2
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_TIMER3
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_COM
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_DMA0
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_DMA1
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_DMA2
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_DMA3
+    bne .found_interrupt
+
+    add r2, r2, #4
+    ands r0, r1, #IRQ_KEYPAD
+
+.found_interrupt:
+    strh r0, [r3, #2]  @ REG_IF
+    ldr r1, interrupt_table_ptr
+    add r1, r1, r2
+    ldr r0, [r1]
+    bx r0
+
+intr_vector_ptr: .4byte 0x3007FFC
+main_loop_ptr: .4byte 0x80001CC + THUMB_BIT
+interrupt_table_ptr: .4byte 0x80953B8
