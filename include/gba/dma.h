@@ -2,16 +2,13 @@
 #define GBA_DMA_H
 
 #include "gba/memory.h"
+#include "types.h"
 
 
 #define REG_DMA0 (REG_BASE + 0xB0)
 #define REG_DMA1 (REG_BASE + 0xBC)
 #define REG_DMA2 (REG_BASE + 0xC8)
 #define REG_DMA3 (REG_BASE + 0xD4)
-
-#define DMA_SAD (0)
-#define DMA_DAD (1)
-#define DMA_CNT (2)
 
 #define REG_DMA0SAD REG_DMA0
 #define REG_DMA0DAD (REG_DMA0 + 4)
@@ -52,5 +49,19 @@
 #define DMA_IRQ (1 << 30)
 
 #define DMA_ENABLE (1 << 31)
+
+
+typedef struct {
+    vu32 sad;
+    vu32 dad;
+    vu32 cnt;
+} DMA;
+
+#define DMA_TRANSFER(channel, src, dest, ctrl) do { \
+    ((DMA*) REG_DMA##channel)->sad = (u32) (src); \
+    ((DMA*) REG_DMA##channel)->dad = (u32) (dest); \
+    ((DMA*) REG_DMA##channel)->cnt = (ctrl); \
+    ((DMA*) REG_DMA##channel)->cnt; \
+} while (0)
 
 #endif /* GBA_DMA_H */

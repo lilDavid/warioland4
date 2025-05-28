@@ -16,6 +16,8 @@ typedef volatile unsigned short vu16;
 typedef volatile signed short vs16;
 typedef volatile unsigned long vu32;
 typedef volatile signed long vs32;
+typedef volatile unsigned long long vu64;
+typedef volatile signed long long vs64;
 
 #define S8_MIN (-128)
 #define S8_MAX (127)
