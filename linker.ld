@@ -26,12 +26,15 @@ SECTIONS {
         obj/key_poll.o(.text);
         obj/init_video_memory.o(.text);
         obj/init_irq.o(.text);
-        obj/blob_0x000A0C-0x000C14.o(.text);
-        obj/set_vblank_handler.o(.text);
-        obj/blob_0x000C2C-0x001D98.o(.text);
-        obj/sound_init.o(.text);
-        obj/blob_0x001D98-0x003220.o(.text);
+        obj/blob_0x000A0C-0x000BE8.o(.text);
+        obj/interrupt_callbacks.o(.text);
+        obj/blob_0x000CE0-0x001060.o(.text);
+        obj/sound.o(.text);
         obj/syscalls.o(.text);
-        obj/blob_0x003228-0x78F97C.o(.text);
+        obj/blob_0x003228-0x095138.o(.text);
     } >ROM =0xFF
+
+    .rodata : ALIGN(2) {
+        obj/blob_0x095138-0x78F97C.o(.rodata);
+    } > ROM =0xFF
 }

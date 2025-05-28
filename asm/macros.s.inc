@@ -12,6 +12,12 @@
     .type \name, %function
 .endm
 
+.macro thumb_func_start_non_aligned name
+    .global \name
+    .thumb
+    .type \name, %function
+.endm
+
 .macro baserom_blob start end
     # TODO: conditional baserom
     .incbin "baserom_us.gba", \start, (\end - \start)
