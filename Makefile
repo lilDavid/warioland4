@@ -61,7 +61,7 @@ GAME_REVISION = 00
 
 # Flags
 ASFLAGS += -mcpu=arm7tdmi -I$(ASM)
-CFLAGS = -O2 -mthumb-interwork -fhex-asm
+CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix
 CPPFLAGS += -nostdinc -I$(SRC)/include -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
 
 
@@ -116,6 +116,7 @@ $(OBJ)/%.o: $(BUILT_ASM)/%.s
 $(BUILT_ASM)/%.s: $(SRC)/%.c $(CC)
 	@mkdir -p $(shell dirname $@)
 	$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
+	@echo '    .align 2, 0' >> $@
 
 $(TOOLS)/%: $(TOOLS)/%.c
 	$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@

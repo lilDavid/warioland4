@@ -7,9 +7,13 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
+        . = 0x0c42; unk_0c42 = .;
         . = 0x1844; keys_held = .;
         . = 0x1846; keys_held_copy = .;
         . = 0x1848; keys_pressed = .;
+        . = 0x19fc; vblank_callback = .;
+        . = 0x1A00; hblank_callback = .;
+        . = 0x1A04; vcount_callback = .;
 
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
@@ -28,13 +32,17 @@ SECTIONS {
         obj/init_irq.o(.text);
         obj/blob_0x000A0C-0x000BE8.o(.text);
         obj/interrupt_callbacks.o(.text);
+        obj/func_000CA8.o(.text);
         obj/blob_0x000CE0-0x001060.o(.text);
         obj/sound.o(.text);
         obj/syscalls.o(.text);
-        obj/blob_0x003228-0x095138.o(.text);
+        obj/blob_0x003228-0x094DFC.o(.text);
+        obj/libgcc.o(.text);
     } >ROM =0xFF
 
     .rodata : ALIGN(2) {
-        obj/blob_0x095138-0x78F97C.o(.rodata);
+        obj/blob_0x095138-0x0953B8.o(.rodata);
+        obj/crt0.o(.rodata);
+        obj/blob_0x0953EC-0x78F97C.o(.rodata);
     } > ROM =0xFF
 }

@@ -29,4 +29,7 @@ typedef volatile signed long vs32;
 #define S32_MAX (2147483647)
 #define U32_MAX ((u32)4294967295)
 
+
+#define NULL ((void*) 0)
+
 #endif /* TYPES_H */
