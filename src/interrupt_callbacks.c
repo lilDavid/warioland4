@@ -1,4 +1,5 @@
 #include "gba/interrupt.h"
+#include "io.h"
 #include "sys.h"
 #include "types.h"
 
@@ -8,7 +9,7 @@ void handle_vblank_intr(void) {
         vblank_callback();
     }
 
-    *(u16*) REG_IF |= IRQ_VBLANK;
+    write16(REG_IF, read16(REG_IF) | IRQ_VBLANK);
     unk_0c42 = 1;
 }
 
@@ -24,7 +25,7 @@ void handle_hblank_intr(void) {
         hblank_callback();
     }
 
-    *(u16*) REG_IF |= IRQ_HBLANK;
+    write16(REG_IF, read16(REG_IF) | IRQ_HBLANK);
 }
 
 void set_hblank_callback(InterruptCallbackFunc cb) {
@@ -39,7 +40,7 @@ void handle_vcount_intr(void) {
         vcount_callback();
     }
 
-    *(u16*) REG_IF |= IRQ_VCOUNT;
+    write16(REG_IF, read16(REG_IF) | IRQ_VCOUNT);
 }
 
 void set_vcount_callback(InterruptCallbackFunc cb) {
