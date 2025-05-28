@@ -29,6 +29,7 @@ MD5FILE = $(FILENAME).md5
 BUILD = build/$(VERSION)
 ASM = asm
 SRC = src
+INCLUDE = include
 BUILT_ASM = $(BUILD)/asm
 OBJ = $(BUILD)/obj
 
@@ -62,7 +63,7 @@ GAME_REVISION = 00
 # Flags
 ASFLAGS += -mcpu=arm7tdmi -I$(ASM)
 CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix
-CPPFLAGS += -nostdinc -I$(SRC)/include -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
+CPPFLAGS += -nostdinc -I$(INCLUDE) -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
 
 
 .PHONY: all check dump diff clean help
