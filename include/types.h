@@ -34,4 +34,7 @@ typedef volatile signed long long vs64;
 
 #define NULL ((void*) 0)
 
+
+typedef void (*ProcedureFunc)(void);
+
 #endif /* TYPES_H */

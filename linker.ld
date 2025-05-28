@@ -7,7 +7,11 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
+        . = 0x001e; disable_soft_reset = .;
+        . = 0x0c3a; main_game_mode = .;
+        . = 0x0c3c; secondary_game_mode = .;
         . = 0x0c42; unk_0c42 = .;
+        . = 0x0c44; isr_buffer = .;
         . = 0x1844; keys_held = .;
         . = 0x1846; keys_held_copy = .;
         . = 0x1848; keys_pressed = .;
@@ -28,15 +32,16 @@ SECTIONS {
         obj/soft_reset_check.o(.text);
         obj/blob_0x0007EC-0x000954.o(.text);
         obj/key_poll.o(.text);
-        obj/init_video_memory.o(.text);
-        obj/init_irq.o(.text);
+        obj/init_helpers.o(.text);
         obj/blob_0x000A0C-0x000BE8.o(.text);
         obj/interrupt_callbacks.o(.text);
         obj/func_000CA8.o(.text);
         obj/blob_0x000CE0-0x001060.o(.text);
         obj/sound.o(.text);
         obj/syscalls.o(.text);
-        obj/blob_0x003228-0x094DFC.o(.text);
+        obj/blob_0x003228-0x072CA0.o(.text);
+        obj/sram.o(.text);
+        obj/blob_0x0743BC-0x094DFC.o(.text);
         obj/libgcc.o(.text);
     } >ROM =0xFF
 

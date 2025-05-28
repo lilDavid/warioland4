@@ -13,7 +13,7 @@ void handle_vblank_intr(void) {
     unk_0c42 = 1;
 }
 
-void set_vblank_callback(InterruptCallbackFunc cb) {
+void set_vblank_callback(ProcedureFunc cb) {
     vblank_callback = cb;
     if (cb == NULL) {
         vblank_callback = null_callback;
@@ -28,7 +28,7 @@ void handle_hblank_intr(void) {
     write16(REG_IF, read16(REG_IF) | IRQ_HBLANK);
 }
 
-void set_hblank_callback(InterruptCallbackFunc cb) {
+void set_hblank_callback(ProcedureFunc cb) {
     hblank_callback = cb;
     if (cb == NULL) {
         hblank_callback = null_callback;
@@ -43,7 +43,7 @@ void handle_vcount_intr(void) {
     write16(REG_IF, read16(REG_IF) | IRQ_VCOUNT);
 }
 
-void set_vcount_callback(InterruptCallbackFunc cb) {
+void set_vcount_callback(ProcedureFunc cb) {
     vcount_callback = cb;
     if (cb == NULL) {
         vcount_callback = null_callback;
