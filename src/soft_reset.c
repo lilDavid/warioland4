@@ -17,7 +17,7 @@
 static void empty_func(void);
 
 #ifdef NON_MATCHING
-void hardware_init(void) {
+void init_memory(void) {
     vu32 zero;
 
     write16(REG_DISPCNT, DCNT_WINOBJ | DCNT_MODE0);
@@ -71,7 +71,7 @@ void hardware_init(void) {
 };
 #else
 __attribute__((naked))
-void hardware_init(void) {
+void init_memory(void) {
     asm(" \n \
     push {r4, r5, r6, r7, lr} \n\
     sub sp, #4 \n\
@@ -197,4 +197,14 @@ ptr_disable_soft_reset: .4byte disable_soft_reset \n\
 #endif
 
 static void empty_func() {
+}
+
+void check_soft_reset(void) {
+    if (main_game_mode == GM_SOFT_RESET || disable_soft_reset) {
+        return;
+    }
+
+    if (CHECK_KEYS_ALL(keys_held, KEY_A | KEY_B | KEY_START | KEY_SELECT)) {
+        main_game_mode = GM_SOFT_RESET;
+    }
 }

@@ -28,8 +28,7 @@ SECTIONS {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
         obj/agb_main.o(.text);
-        obj/hardware_init.o(.text);
-        obj/soft_reset_check.o(.text);
+        obj/soft_reset.o(.text);
         obj/blob_0x0007EC-0x000954.o(.text);
         obj/key_poll.o(.text);
         obj/init_helpers.o(.text);
