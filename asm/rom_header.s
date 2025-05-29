@@ -1,4 +1,4 @@
-#include "macros.s.inc"
+.include "macros.s.inc"
 
 arm_func_start entry_point
 entry_point:

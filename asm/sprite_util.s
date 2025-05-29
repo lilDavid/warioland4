@@ -1,4 +1,4 @@
-#include "macros.s.inc"
+.include "macros.s.inc"
 
 
 baserom_blob 0x0238A4, 0x0238E8

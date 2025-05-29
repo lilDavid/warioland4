@@ -1,5 +1,5 @@
-#include "constants.s.inc"
-#include "macros.s.inc"
+.include "constants.s.inc"
+.include "macros.s.inc"
 
 arm_func_start _start
 _start:  @ 0x80000C0

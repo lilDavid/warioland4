@@ -49,9 +49,13 @@ DUMPS = $(BASEROM).dump $(TARGET).dump
 ifeq ($(VERSION), us)
 	GAME_TITLE = WARIOLANDE
 	GAME_CODE = AWAE
+	CPPFLAGS += -DVERSION_US
+	ASFLAGS += --defsym VERSION_US=1
 else ifeq ($(VERSION), jp)
 	GAME_TITLE = WARIOLAND
 	GAME_CODE = AWAJ
+	CPPFLAGS += -DVERSION_JP
+	ASFLAGS += --defsym VERSION_JP=1
 else
 $(error Unupported version $(VERSION))
 endif
@@ -61,11 +65,9 @@ GAME_REVISION = 00
 
 
 # Flags
-ASFLAGS += -mcpu=arm7tdmi
+ASFLAGS += -I$(ASM) -mcpu=arm7tdmi
 CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall -Werror
-CPPFLAGS_COMMON += -nostdinc
-CPPFLAGS_ASM += $(CPPFLAGS_COMMON) -I$(ASM) -DBASEROM=\"$(BASEROM)\"
-CPPFLAGS_C +=  $(CPPFLAGS_COMMON) -I$(INCLUDE) -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
+CPPFLAGS += -I$(INCLUDE) -nostdinc
 
 
 .PHONY: all check dump diff clean help
@@ -110,7 +112,7 @@ $(ELF): $(OBJS) linker.ld
 
 $(OBJ)/%.o: $(ASM)/%.s
 	@mkdir -p $(shell dirname $@)
-	$(CPP) $(CPPFLAGS_ASM) $< | $(AS) $(ASFLAGS) -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 
 $(OBJ)/%.o: $(BUILT_ASM)/%.s
 	@mkdir -p $(shell dirname $@)
@@ -118,7 +120,7 @@ $(OBJ)/%.o: $(BUILT_ASM)/%.s
 
 $(BUILT_ASM)/%.s: $(SRC)/%.c $(CC)
 	@mkdir -p $(shell dirname $@)
-	$(CPP) $(CPPFLAGS_C) $< | $(CC) $(CFLAGS) -o $@
+	$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
 	@echo '    .align 2, 0' >> $@
 
 $(TOOLS)/%: $(TOOLS)/%.c

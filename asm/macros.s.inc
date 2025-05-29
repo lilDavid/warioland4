@@ -19,5 +19,9 @@
 .endm
 
 .macro baserom_blob start end
-    .incbin BASEROM, \start, (\end - \start)
+.ifdef VERSION_JP
+    .incbin "baserom_jp.gba", \start, (\end - \start)
+.else
+    .incbin "baserom_us.gba", \start, (\end - \start)
+.endif
 .endm
