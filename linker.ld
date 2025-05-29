@@ -8,6 +8,11 @@ SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
         . = 0x001e; disable_soft_reset = .;
+        . = 0x00a0; unk_30000A0 = .;
+        . = 0x0a24; current_sprite = .;
+        . = 0x0a50; unk_3000A50 = .;
+        . = 0x0a51; unk_3000A51 = .;
+        . = 0x0bec; unk_3000BEC = .;
         . = 0x0c3a; main_game_mode = .;
         . = 0x0c3c; secondary_game_mode = .;
         . = 0x0c42; unk_0c42 = .;
@@ -15,6 +20,7 @@ SECTIONS {
         . = 0x1844; keys_held = .;
         . = 0x1846; keys_held_copy = .;
         . = 0x1848; keys_pressed = .;
+        . = 0x1898; wario_data = .;
         . = 0x19fc; vblank_callback = .;
         . = 0x1A00; hblank_callback = .;
         . = 0x1A04; vcount_callback = .;
@@ -38,9 +44,17 @@ SECTIONS {
         obj/blob_0x000CE0-0x001060.o(.text);
         obj/sound.o(.text);
         obj/syscalls.o(.text);
-        obj/blob_0x003228-0x072CA0.o(.text);
+        obj/blob_0x003228-0x0238A4.o(.text);
+        obj/sprite_util.o(.text);
+        obj/blob_0x025C80-0x026FAC.o(.text);
+        obj/sprite_ai/blob_0x026FAC-03E560.o(.text);
+        obj/sprite_ai/rock.o(.text);
+        obj/sprite_ai/blob_0x03EC78-06ACA0.o(.text);
+        obj/blob_0x06ACA0-0x072CA0.o(.text);
         obj/sram.o(.text);
-        obj/blob_0x0743BC-0x094DFC.o(.text);
+        obj/blob_0x0743BC-0x0766E8.o(.text);
+        obj/secondary_sprite.o(.text);
+        obj/blob_0x076784-0x094DFC.o(.text);
         obj/libgcc.o(.text);
     } >ROM =0xFF
 

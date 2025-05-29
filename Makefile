@@ -62,9 +62,9 @@ GAME_REVISION = 00
 
 # Flags
 ASFLAGS += -mcpu=arm7tdmi
-CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix
+CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall
 CPPFLAGS_COMMON += -nostdinc
-CPPFLAGS_ASM += $(CPPFLAGS_COMMON) -DBASEROM=\"$(BASEROM)\"
+CPPFLAGS_ASM += $(CPPFLAGS_COMMON) -I$(ASM) -DBASEROM=\"$(BASEROM)\"
 CPPFLAGS_C +=  $(CPPFLAGS_COMMON) -I$(INCLUDE) -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)
 
 
@@ -99,7 +99,7 @@ help:
 
 
 %.dump: %
-	$(OBJDUMP) -D -bbinary -marm7tdmi $< > $@
+	$(OBJDUMP) -D -bbinary -marm7tdmi -Mforce-thumb $< > $@
 
 $(TARGET): $(ELF) $(GBAFIX)
 	$(OBJCOPY) -O binary --gap-fill 0xff --pad-to 0x08800000 $< $@

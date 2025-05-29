@@ -191,6 +191,7 @@ ptr_disable_soft_reset: .4byte disable_soft_reset \n\
 }
 #endif
 
+__attribute__((unused))
 static void empty_func() {
 }
 

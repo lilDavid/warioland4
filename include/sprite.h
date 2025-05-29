@@ -1,0 +1,319 @@
+#ifndef SPRITE_H
+#define SPRITE_H
+
+#include "gba.h"
+
+
+enum {
+    PSPRITE_BOX_JEWEL_PIECE_NE,
+    PSPRITE_BOX_JEWEL_PIECE_SE,
+    PSPRITE_BOX_JEWEL_PIECE_SW,
+    PSPRITE_BOX_JEWEL_PIECE_NW,
+    PSPRITE_BOX_CD,
+    PSPRITE_BOX_HEALTH_REFILL,
+    PSPRITE_DIAMOND,
+    PSPRITE_SWITCH,
+    PSPRITE_KEYZER,
+    PSPRITE_09,
+    PSPRITE_UNUSED_0A,
+    PSPRITE_UNUSED_0B,
+    PSPRITE_UNUSED_0C,
+    PSPRITE_UNUSED_0D,
+    PSPRITE_UNUSED_0E,
+    PSPRITE_UNUSED_0F,
+    PSPRITE_UNUSED_CAT,
+    PSPRITE_SPEAR_MASK_YELLOW,
+    PSPRITE_SPEAR_MASK_BLUE,
+    PSPRITE_SPEAR_MASK_RED,
+    PSPRITE_ROTATING_PLATFORM,
+    PSPRITE_ROCK,
+    PSPRITE_SKELETON_BIRD,
+    PSPRITE_KAENTSUBO,
+    PSPRITE_BOSS_CUCKOO_CONDOR,
+    PSPRITE_TOTSUMEN,
+    PSPRITE_PIG_HEAD_STATUE,
+    PSPRITE_MOGURAMEN,
+    PSPRITE_SPIKY,
+    PSPRITE_SPIKY_Z,  // Harimen Zetto, Harimen being Spiky
+    PSPRITE_BUBBLE,
+    PSPRITE_TOGEROBO,
+    PSPRITE_FALLING_SNOW,
+    PSPRITE_TOGEMASUKU,
+    PSPRITE_BALL_LIGHTNING,
+    PSPRITE_ELECTRIC_LIFT_STATIONARY,
+    PSPRITE_ELECTRIC_LIFT_VERTICAL,
+    PSPRITE_ELECTRIC_LIFT_HORIZONTAL,
+    PSPRITE_MAGIC_CARPET,
+    PSPRITE_BOW_BALLOON,
+    PSPRITE_CHANCE_WHEEL,
+    PSPRITE_VORTEX,
+    PSPRITE_MARUMEN_PURPLE,
+    PSPRITE_MARUMEN_RED,
+    PSPRITE_BOSS_SPOILED_ROTTEN,
+    PSPRITE_DOMINOES_2D,
+    PSPRITE_DOMINOES_2E,
+    PSPRITE_DOMINOES_2F,
+    PSPRITE_DOMINOES_30,
+    PSPRITE_DOMINOES_31,
+    PSPRITE_DOMINOES_32,
+    PSPRITE_DOMINOES_33,
+    PSPRITE_DOMINOES_34,
+    PSPRITE_DOMINOES_35,
+    PSPRITE_DOMINOES_36,
+    PSPRITE_DOMINOES_37,
+    PSPRITE_DOMINOES_38,
+    PSPRITE_DOMINOES_39,
+    PSPRITE_DOMINO_GOAL,
+    PSPRITE_DICE_BLOCK,
+    PSPRITE_MAYUBIRD,
+    PSPRITE_MINICULA,
+    PSPRITE_TOGETOGE,
+    PSPRITE_GHOST,
+    PSPRITE_BEEZLEY,
+    PSPRITE_MONEY_FLOWER,
+    PSPRITE_CATERPILLAR,
+    PSPRITE_TOY_BLOCK_TRIANGLE,
+    PSPRITE_TOY_BLOCK_TRIANGLE_LOCK,
+    PSPRITE_TOY_BLOCK_SQUARE,
+    PSPRITE_TOY_BLOCK_ROUND,
+    PSPRITE_TOY_BLOCK_DOOR,
+    PSPRITE_MENHANMA,
+    PSPRITE_MENONO,
+    PSPRITE_GOGGLEY_BLADE,
+    PSPRITE_GOGGLEY_BLADE_2,
+    PSPRITE_TOBAWANI,
+    PSPRITE_SHIERAGUTCHI,
+    PSPRITE_RINGOSUKI,
+    PSPRITE_PISTON,
+    PSPRITE_PISTON_2,
+    PSPRITE_BOSS_CATBAT,
+    PSPRITE_VORTEX_2,
+    PSPRITE_SWINGING_PLATFORM,
+    PSPRITE_SWINGING_PLATFORM_2,
+    PSPRITE_ROTATING_PLATFORM_2,
+    PSPRITE_ROTATING_PLATFORM_3,
+    PSPRITE_PINBALL,
+    PSPRITE_PINBALL_LOCK_UP,
+    PSPRITE_PINBALL_LOCK_DOWN,
+    PSPRITE_PINBALL_LOCK_LEFT,
+    PSPRITE_PINBALL_LOCK_RIGHT,
+    PSPRITE_PINBALL_COUNTER,
+    PSPRITE_GOAL_BLOCK,
+    PSPRITE_SPIKE_CANNON,
+    PSPRITE_MONEY_SUNFLOWER,
+    PSPRITE_YETI,
+    PSPRITE_BOWLER,
+    PSPRITE_MAGMA,
+    PSPRITE_BOSS_DOOR_ENTRY_PASSAGE,
+    PSPRITE_BOSS_DOOR_EMERALD_PASSAGE,
+    PSPRITE_BOSS_DOOR_RUBY_PASSAGE,
+    PSPRITE_BOSS_DOOR_TOPAZ_PASSAGE,
+    PSPRITE_BOSS_DOOR_SAPPHIRE_PASSAGE,
+    PSPRITE_BOSS_DOOR_GOLDEN_PYRAMID,
+    PSPRITE_BOSS_AERODENT,
+    PSPRITE_HOGGUS,
+    PSPRITE_DENDEN,
+    PSPRITE_BUTATABI,
+    PSPRITE_DEBURINA,
+    PSPRITE_FOLDING_DOOR,
+    PSPRITE_PENCIL_PURPLE,
+    PSPRITE_PENCIL_BLUE,
+    PSPRITE_PENCIl_RED,
+    PSPRITE_ROBOBIRD,
+    PSPRITE_UTSUBOANKO,
+    PSPRITE_TOGENOBI,
+    PSPRITE_ICICLE,
+    PSPRITE_BOSS_CRACTUS,
+    PSPRITE_DICE,
+    PSPRITE_TOY_CAR,
+    PSPRITE_ONOMI,
+    PSPRITE_BOSS_CORRIDOR_CAT,
+    PSPRITE_PETBOTTOM,
+    PSPRITE_GLASS_BIRD,
+    PSPRITE_BOSS_GOLDEN_DIVA,
+    PSPRITE_CHANDELIER,
+    PSPRITE_CRUMBLING_BLOCK,
+    PSPRITE_PROFESSOR_SHITAIN,
+    PSPRITE_COIN_1,
+    PSPRITE_COIN_2,
+    PSPRITE_COIN_3,
+    PSPRITE_COIN_4,
+    PSPRITE_COIN_5,
+    PSPRITE_JEWEL_PIECE_NE,
+    PSPRITE_JEWEL_PIECE_SE,
+    PSPRITE_JEWEL_PIECE_SW,
+    PSPRITE_JEWEL_PIECE_NW,
+    PSPRITE_CD,
+    PSPRITE_HEALTH_REFILL,
+    PSPRITE_GLOW_JEWEL_PIECE_NE,
+    PSPRITE_GLOW_JEWEL_PIECE_SE,
+    PSPRITE_GLOW_JEWEL_PIECE_SW,
+    PSPRITE_GLOW_JEWEL_PIECE_NW,
+    PSPRITE_GLOW_CD,
+    PSPRITE_GLOW_HEALTH_REFIL,
+    // ...
+    PSPRITE_MAX = 252
+} PrimarySpriteID;
+
+
+enum {
+    SSPRITE_7 = 7,
+} SecondarySpriteID;
+
+
+enum {
+    POSE_INIT,
+    POSE_INIT_1,
+    POSE_INIT_2,
+    POSE_INIT_3,
+    POSE_INIT_4,
+    POSE_INIT_5,
+    POSE_INIT_6,
+    POSE_INIT_7,
+    POSE_INIT_8,
+    POSE_INIT_9,
+    POSE_INIT_10,
+    POSE_INIT_11,
+    POSE_INIT_12,
+    POSE_INIT_13,
+    POSE_INIT_14,
+
+    POSE_0F,
+    POSE_10,
+    POSE_11,
+    POSE_12,
+    POSE_13,
+    POSE_14,
+    POSE_15,
+    POSE_16,
+    POSE_17,
+    POSE_18,
+    POSE_19,
+    POSE_1A,
+    POSE_1B,
+    POSE_1C,
+    POSE_1D,
+    POSE_1E,
+    POSE_1F,
+    POSE_20,
+    POSE_21,
+    POSE_22,
+    POSE_23,
+    POSE_24,
+    POSE_25,
+    POSE_26,
+    POSE_27,
+    POSE_28,
+    POSE_29,
+    POSE_2A,
+    POSE_2B,
+    POSE_2C,
+    POSE_2D,
+    POSE_2E,
+    POSE_2F,
+    POSE_30,
+    POSE_31,
+    POSE_32,
+    POSE_33,
+    POSE_34,
+    POSE_35,
+    POSE_36,
+    POSE_37,
+    POSE_38,
+    POSE_39,
+    POSE_3A,
+    POSE_3B,
+    POSE_3C,
+    POSE_3D,
+    POSE_3E,
+    POSE_3F,
+    POSE_40,
+    POSE_41,
+    POSE_42,
+    POSE_43,
+    POSE_44,
+    POSE_45,
+    POSE_46,
+    POSE_47,
+    POSE_48,
+    POSE_49,
+    POSE_4A,
+    POSE_4B,
+    POSE_4C,
+    POSE_4D,
+    POSE_4E,
+    POSE_4F,
+    POSE_50,
+    POSE_51,
+    POSE_52,
+    POSE_53,
+    POSE_54,
+    POSE_55,
+    POSE_56,
+    POSE_57,
+    POSE_58,
+    POSE_59,
+    POSE_5A,
+    POSE_5B,
+    POSE_5C,
+    POSE_5D,
+    POSE_5E,
+    POSE_5F,
+    POSE_60,
+    POSE_61,
+    POSE_62,
+    POSE_63,
+    POSE_64,
+    POSE_65,
+    POSE_66,
+    POSE_67,
+    POSE_68,
+    POSE_69,
+    POSE_6A,
+    POSE_6B,
+    POSE_6C,
+    POSE_6D,
+} SpritePose;
+
+
+typedef struct {
+    /* 0x00 */ u16 status;
+    /* 0x04 */ const void* oam_data;
+    /* 0x08 */ u16 y_position;
+    /* 0x0A */ u16 x_position;
+    /* 0x0C */ u16 affine_pa;
+    /* 0x0E */ u16 affine_pb;
+    /* 0x10 */ u16 affine_pc;
+    /* 0x12 */ u16 affine_pd;
+    /* 0x14 */ u16 animation_timer;
+    /* 0x16 */ u8 animation_frame;
+    /* 0x17 */ u8 psprite_id;
+    /* 0x18 */ u8 room_slot;
+    /* 0x19 */ u8 unk_19;
+    /* 0x1A */ u8 draw_priority;
+    /* 0x1B */ u8 palette;
+    /* 0x1C */ u8 pose;
+    /* 0x1D */ u8 unk_1D;
+    /* 0x1E */ u8 wario_interaction;
+    /* 0x1F */ u8 wario_interaction_timeout;
+    /* 0x20 */ u8 draw_distance_down;
+    /* 0x21 */ u8 draw_distance_up;
+    /* 0x22 */ u8 draw_distance_horizontal;
+    /* 0x23 */ u8 hitbox_extent_up;
+    /* 0x24 */ u8 hitbox_extent_down;
+    /* 0x25 */ u8 hitbox_extent_left;
+    /* 0x26 */ u8 hitbox_extent_right;
+    /* 0x27 */ u8 work0;
+    /* 0x28 */ u8 work1;
+    /* 0x29 */ u8 work2;
+    /* 0x2A */ u8 work3;
+} PrimarySpriteData;  /* size: 0x2C */
+
+
+extern PrimarySpriteData current_sprite;
+
+
+void sprite_spawn_as_child(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
+void sprite_spawn_secondary(u16 y_position, u16 x_position, u8 id);
+
+#endif  // SPRITE_H
