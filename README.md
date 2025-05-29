@@ -12,6 +12,12 @@ This repository can build the following versions:
 
 ## Building
 
+The C compiler (agbcc) is provided as a submodule in this repository. Make sure you set them up before building:
+
+```sh
+git submodule update --init
+```
+
 To build the US version: place the ROM in the repository root as `baserom_us.gba`, then run `make`.
 
 To build the JP version: name the ROM `baserom_jp.gba` and run `make VERSION=jp`.
