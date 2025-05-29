@@ -4,9 +4,9 @@
 #include "gba.h"
 
 
-enum {
+enum SoundID {
     SOUND_3D = 0x3D,
-} SoundID;
+};
 
 
 void sound_init(void);
