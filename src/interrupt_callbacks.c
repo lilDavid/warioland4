@@ -1,4 +1,4 @@
-#include "gba/interrupt.h"
+#include "gba.h"
 #include "io.h"
 #include "sys.h"
 #include "types.h"

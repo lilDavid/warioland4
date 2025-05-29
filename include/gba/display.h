@@ -1,7 +1,7 @@
 #ifndef GBA_DISPLAY_H
 #define GBA_DISPLAY_H
 
-#include "memory.h"
+#include "gba/memory.h"
 
 
 #define REG_DISPCNT (REG_BASE + 0x000)

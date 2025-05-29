@@ -1,8 +1,7 @@
 #ifndef CONTROL_H
 #define CONTROL_H
 
-#include "gba/input.h"
-#include "types.h"
+#include "gba.h"
 
 
 #define CHECK_KEYS_ANY(input, combination) ((input) & (combination))

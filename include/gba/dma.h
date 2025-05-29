@@ -2,7 +2,7 @@
 #define GBA_DMA_H
 
 #include "gba/memory.h"
-#include "types.h"
+#include "gba/types.h"
 
 
 #define REG_DMA0 (REG_BASE + 0xB0)

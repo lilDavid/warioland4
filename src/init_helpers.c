@@ -1,6 +1,5 @@
-#include "gba/dma.h"
+#include "gba.h"
 #include "interrupt_service_routine.h"
-#include "types.h"
 
 
 void init_video_memory(void) {

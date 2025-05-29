@@ -1,7 +1,7 @@
 #ifndef IO_H
 #define IO_H
 
-#include "types.h"
+#include "gba.h"
 
 
 #define write64(addr, val) (*(vu64*)(addr)) = (val)

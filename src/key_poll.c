@@ -1,7 +1,6 @@
-#include "gba/input.h"
+#include "gba.h"
 #include "control.h"
 #include "io.h"
-#include "types.h"
 
 
 void key_poll(void) {
