@@ -9,6 +9,7 @@
 #include "sys.h"
 
 
+__attribute__((unused))  // Remove when init_memory matches
 static void empty_func(void);
 
 #ifdef NON_MATCHING
@@ -191,7 +192,6 @@ ptr_disable_soft_reset: .4byte disable_soft_reset \n\
 }
 #endif
 
-__attribute__((unused))
 static void empty_func() {
 }
 

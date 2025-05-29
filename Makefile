@@ -62,7 +62,7 @@ GAME_REVISION = 00
 
 # Flags
 ASFLAGS += -mcpu=arm7tdmi
-CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall
+CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall -Werror
 CPPFLAGS_COMMON += -nostdinc
 CPPFLAGS_ASM += $(CPPFLAGS_COMMON) -I$(ASM) -DBASEROM=\"$(BASEROM)\"
 CPPFLAGS_C +=  $(CPPFLAGS_COMMON) -I$(INCLUDE) -DVERSION_$(shell echo $(VERSION) | tr a-z A-Z)

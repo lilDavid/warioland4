@@ -8,7 +8,7 @@
 #include "wario.h"
 
 
-const u8 rock_oam_data[];
+extern const u8 rock_oam_data[];
 
 
 static void Rock_Init(void) {
