@@ -1,5 +1,5 @@
-.include "macros.s.inc"
-.include "syscalls.s.inc"
+#include "macros.s.inc"
+#include "syscalls.s.inc"
 
 
 thumb_func_start CPUSet

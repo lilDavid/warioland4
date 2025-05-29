@@ -1,4 +1,4 @@
-.include "macros.s.inc"
+#include "macros.s.inc"
 
 
 thumb_func_start func_000CA8

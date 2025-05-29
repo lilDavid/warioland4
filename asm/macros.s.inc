@@ -19,6 +19,5 @@
 .endm
 
 .macro baserom_blob start end
-    # TODO: conditional baserom
-    .incbin "baserom_us.gba", \start, (\end - \start)
+    .incbin BASEROM, \start, (\end - \start)
 .endm
