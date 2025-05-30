@@ -19,10 +19,10 @@ typedef struct {
     /* 0x0C */ u16 unk_0C;
     /* 0x0E */ u16 unk_0E;
     /* 0x10 */ u16 unk_10;
-    /* 0x12 */ u16 x_position;
-    /* 0x14 */ u16 y_position;
-    /* 0x16 */ s16 x_velocity;
-    /* 0x18 */ s16 y_velocity;
+    /* 0x12 */ u16 xPosition;
+    /* 0x14 */ u16 yPosition;
+    /* 0x16 */ s16 xVelocity;
+    /* 0x18 */ s16 yVelocity;
     /* 0x1A */ u8 unk_1A;
     /* 0x1C */ s16 unk_1C;
     /* 0x1E */ u8 unk_1E;
