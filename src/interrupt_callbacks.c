@@ -1,54 +1,54 @@
 #include "gba.h"
 #include "io.h"
-#include "sys.h"
+#include "interrupt_callbacks.h"
 #include "types.h"
 
 
-void handle_vblank_intr(void) {
-    if (vblank_callback != NULL) {
-        vblank_callback();
+void InterruptCallback_CallVBlank(void) {
+    if (gVBlankCallback != NULL) {
+        gVBlankCallback();
     }
 
     write16(REG_IF, read16(REG_IF) | IRQ_VBLANK);
-    unk_0c42 = 1;
+    gUnk_3000c42 = 1;
 }
 
-void set_vblank_callback(ProcedureFunc cb) {
-    vblank_callback = cb;
+void InterruptCallback_SetVBlank(ProcedureFunc cb) {
+    gVBlankCallback = cb;
     if (cb == NULL) {
-        vblank_callback = null_callback;
+        gVBlankCallback = InterruptCallback_Empty;
     }
 }
 
-void handle_hblank_intr(void) {
-    if (hblank_callback != NULL) {
-        hblank_callback();
+void InterruptCallback_CallHBlank(void) {
+    if (gHBlankCallback != NULL) {
+        gHBlankCallback();
     }
 
     write16(REG_IF, read16(REG_IF) | IRQ_HBLANK);
 }
 
-void set_hblank_callback(ProcedureFunc cb) {
-    hblank_callback = cb;
+void InterruptCallback_SetHBlank(ProcedureFunc cb) {
+    gHBlankCallback = cb;
     if (cb == NULL) {
-        hblank_callback = null_callback;
+        gHBlankCallback = InterruptCallback_Empty;
     }
 }
 
-void handle_vcount_intr(void) {
-    if (vcount_callback != NULL) {
-        vcount_callback();
+void InterruptCallback_CallVCount(void) {
+    if (gVCountCallback != NULL) {
+        gVCountCallback();
     }
 
     write16(REG_IF, read16(REG_IF) | IRQ_VCOUNT);
 }
 
-void set_vcount_callback(ProcedureFunc cb) {
-    vcount_callback = cb;
+void InterruptCallback_SetVCount(ProcedureFunc cb) {
+    gVCountCallback = cb;
     if (cb == NULL) {
-        vcount_callback = null_callback;
+        gVCountCallback = InterruptCallback_Empty;
     }
 }
 
-void null_callback(void) {
+void InterruptCallback_Empty(void) {
 }

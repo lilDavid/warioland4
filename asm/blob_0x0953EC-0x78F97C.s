@@ -7,7 +7,7 @@
 
 baserom_blob 0x0953EC, 0x3C4B18
 
-.global rock_oam_data
-rock_oam_data:
+.global Rock_OAM
+Rock_OAM:
 
 baserom_blob 0x3C4B18, 0x78F97C

@@ -9,8 +9,8 @@ enum SoundID {
 };
 
 
-void sound_init(void);
-void func_0022C8(u32);
-void sound_play(u16);
+void Sound_Init(void);
+void func_80022C8(u32);
+void Sound_Play(u16);
 
 #endif  // SOUND_H

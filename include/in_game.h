@@ -4,6 +4,6 @@
 #include <gba.h>
 
 
-extern s32 unk_3000BEC;
+extern s32 gUnk_3000BEC;
 
 #endif  // IN_GAME_H

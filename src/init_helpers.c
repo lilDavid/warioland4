@@ -1,8 +1,8 @@
 #include "gba.h"
-#include "interrupt_service_routine.h"
+#include "interrupts.h"
 
 
-void init_video_memory(void) {
+void InitializeVideoMemory(void) {
     vu16 zero;  // Seriously?
     u32 oam_clear;
 
@@ -28,11 +28,11 @@ void init_video_memory(void) {
     );
 }
 
-void init_irq(void) {
+void InitializeInterruptHandler(void) {
     DMA_TRANSFER(3,
         irq_handler,
-        isr_buffer,
-        DMA_ENABLE | DMA_16 | DMA_NOW | DMA_SRC_INC | DMA_DST_INC | DMA_N(sizeof(isr_buffer) / sizeof(u16))
+        gInterruptHandlerBuffer,
+        DMA_ENABLE | DMA_16 | DMA_NOW | DMA_SRC_INC | DMA_DST_INC | DMA_N(sizeof(gInterruptHandlerBuffer) / sizeof(u16))
     );
-    intr_vector = (ProcedureFunc) &isr_buffer;
+    intr_vector = (ProcedureFunc) &gInterruptHandlerBuffer;
 }

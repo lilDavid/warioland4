@@ -93,23 +93,23 @@ irq_handler:  @ 0x80000FC
     bx r0
 
 intr_vector_ptr: .4byte intr_vector
-main_loop_ptr: .4byte agb_main
+main_loop_ptr: .4byte AgbMain
 interrupt_table_ptr: .4byte interrupt_table
 
 
 .section .rodata
 
 interrupt_table:
-    .4byte handle_vblank_intr  @ IRQ_VBLANK
-    .4byte handle_hblank_intr  @ IRQ_HBLANK
-    .4byte handle_vcount_intr  @ IRQ_VCOUNT
-    .4byte null_callback       @ IRQ_TIMER0
-    .4byte null_callback       @ IRQ_TIMER1
-    .4byte null_callback       @ IRQ_TIMER2
-    .4byte null_callback       @ IRQ_TIMER3
-    .4byte null_callback       @ IRQ_COM
-    .4byte null_callback       @ IRQ_DMA0
-    .4byte null_callback       @ IRQ_DMA1
-    .4byte null_callback       @ IRQ_DMA2
-    .4byte null_callback       @ IRQ_DMA3
-    .4byte null_callback       @ IRQ_KEYPAD
+    .4byte InterruptCallback_CallVBlank  @ IRQ_VBLANK
+    .4byte InterruptCallback_CallHBlank  @ IRQ_HBLANK
+    .4byte InterruptCallback_CallVCount  @ IRQ_VCOUNT
+    .4byte InterruptCallback_Empty       @ IRQ_TIMER0
+    .4byte InterruptCallback_Empty       @ IRQ_TIMER1
+    .4byte InterruptCallback_Empty       @ IRQ_TIMER2
+    .4byte InterruptCallback_Empty       @ IRQ_TIMER3
+    .4byte InterruptCallback_Empty       @ IRQ_COM
+    .4byte InterruptCallback_Empty       @ IRQ_DMA0
+    .4byte InterruptCallback_Empty       @ IRQ_DMA1
+    .4byte InterruptCallback_Empty       @ IRQ_DMA2
+    .4byte InterruptCallback_Empty       @ IRQ_DMA3
+    .4byte InterruptCallback_Empty       @ IRQ_KEYPAD

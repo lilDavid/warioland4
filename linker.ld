@@ -7,23 +7,23 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
-        . = 0x001e; disable_soft_reset = .;
-        . = 0x00a0; unk_30000A0 = .;
-        . = 0x0a24; current_sprite = .;
-        . = 0x0a50; unk_3000A50 = .;
-        . = 0x0a51; unk_3000A51 = .;
-        . = 0x0bec; unk_3000BEC = .;
-        . = 0x0c3a; main_game_mode = .;
-        . = 0x0c3c; secondary_game_mode = .;
-        . = 0x0c42; unk_0c42 = .;
-        . = 0x0c44; isr_buffer = .;
-        . = 0x1844; keys_held = .;
-        . = 0x1846; keys_held_copy = .;
-        . = 0x1848; keys_pressed = .;
-        . = 0x1898; wario_data = .;
-        . = 0x19fc; vblank_callback = .;
-        . = 0x1A00; hblank_callback = .;
-        . = 0x1A04; vcount_callback = .;
+        . = 0x001e; gDisableSoftReset = .;
+        . = 0x00a0; gUnk_30000A0 = .;
+        . = 0x0a24; gCurrentSprite = .;
+        . = 0x0a50; gUnk_3000A50 = .;
+        . = 0x0a51; gUnk_3000A51 = .;
+        . = 0x0bec; gUnk_3000BEC = .;
+        . = 0x0c3a; gMainGameMode = .;
+        . = 0x0c3c; gSubGameMode = .;
+        . = 0x0c42; gUnk_3000c42 = .;
+        . = 0x0c44; gInterruptHandlerBuffer = .;
+        . = 0x1844; gButtonsHeld = .;
+        . = 0x1846; gButtonsHeldCopy = .;
+        . = 0x1848; gButtonsPressed = .;
+        . = 0x1898; gWarioData = .;
+        . = 0x19fc; gVBlankCallback = .;
+        . = 0x1A00; gHBlankCallback = .;
+        . = 0x1A04; gVCountCallback = .;
 
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
@@ -33,10 +33,10 @@ SECTIONS {
     .text : ALIGN(2) {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
-        obj/agb_main.o(.text);
+        obj/agbmain.o(.text);
         obj/soft_reset.o(.text);
         obj/blob_0x0007EC-0x000954.o(.text);
-        obj/key_poll.o(.text);
+        obj/poll_input.o(.text);
         obj/init_helpers.o(.text);
         obj/blob_0x000A0C-0x000BE8.o(.text);
         obj/interrupt_callbacks.o(.text);

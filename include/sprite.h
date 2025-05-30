@@ -195,10 +195,10 @@ typedef struct {
 } PrimarySpriteData;  /* size: 0x2C */
 
 
-extern PrimarySpriteData current_sprite;
+extern PrimarySpriteData gCurrentSprite;
 
 
-void sprite_spawn_as_child(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
-void sprite_spawn_secondary(u16 y_position, u16 x_position, u8 id);
+void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
+void Sprite_SpawnSecondary(u16 y_position, u16 x_position, u8 id);
 
 #endif  // SPRITE_H

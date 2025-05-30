@@ -2,18 +2,18 @@
 #include "control.h"
 #include "game_state.h"
 #include "init_helpers.h"
-#include "interrupt_service_routine.h"
+#include "interrupts.h"
 #include "io.h"
 #include "sound.h"
 #include "sram.h"
-#include "sys.h"
+#include "interrupt_callbacks.h"
 
 
-__attribute__((unused))  // Remove when init_memory matches
-static void empty_func(void);
+__attribute__((unused))  // Remove when InitializeGame matches
+static void EmptyFunction(void);
 
 #ifdef NON_MATCHING
-void init_memory(void) {
+void InitializeGame(void) {
     vu32 zero;
 
     write16(REG_DISPCNT, DCNT_WINOBJ | DCNT_MODE0);
@@ -33,14 +33,14 @@ void init_memory(void) {
         DMA_ENABLE | DMA_NOW | DMA_32 | DMA_SRC_FIXED | DMA_DST_INC | DMA_N(0x7E00 / sizeof(u32))
     );
 
-    init_video_memory();
-    init_irq();
-    set_vblank_callback(empty_func);
+    InitializeVideoMemory();
+    InitializeInterruptHandler();
+    InterruptCallback_SetVBlank(EmptyFunction);
 
-    func_072D24();
-    func_073BE0();
-    sound_init();
-    func_0022C8(0x900000);
+    func_8072D24();
+    func_8073BE0();
+    Sound_Init();
+    func_80022C8(0x900000);
 
     write16(REG_IME, 1);
     write16(REG_IE, IRQ_GAMEPAK | IRQ_VBLANK);
@@ -53,21 +53,21 @@ void init_memory(void) {
         WS_CART_OFF | WS_PREFETCH_ENABLE | WS_CART_AGB
     );
 
-    keys_held = keys_held_copy = keys_pressed = 0;
-    secondary_game_mode = 0;
-    key_poll();
-    if (keys_pressed == KEY_L | KEY_R) {
-        main_game_mode = GM_SAVE_RESET;
+    gButtonsHeld = gButtonsHeldCopy = gButtonsPressed = 0;
+    gSubGameMode = 0;
+    PollInput();
+    if (gButtonsPressed == KEY_L | KEY_R) {
+        gMainGameMode = GM_SAVE_RESET;
     } else {
-        main_game_mode = GM_TITLE;
+        gMainGameMode = GM_TITLE;
     }
-    keys_held = keys_held_copy = keys_pressed = 0;
+    gButtonsHeld = gButtonsHeldCopy = gButtonsPressed = 0;
 
-    disable_soft_reset = 0;
+    gDisableSoftReset = 0;
 };
 #else
 __attribute__((naked))
-void init_memory(void) {
+void InitializeGame(void) {
     asm(" \n \
     push {r4, r5, r6, r7, lr} \n\
     sub sp, #4 \n\
@@ -104,16 +104,16 @@ void init_memory(void) {
     str r1, [r0, #8] \n\
     ldr r0, [r0, #8] \n\
  \n\
-    bl init_video_memory \n\
-    bl init_irq \n\
-    ldr r0, ptr_empty_func \n\
-    bl set_vblank_callback \n\
-    bl func_072D24 \n\
-    bl func_073BE0 \n\
-    bl sound_init \n\
+    bl InitializeVideoMemory \n\
+    bl InitializeInterruptHandler \n\
+    ldr r0, ptr_EmptyFunction \n\
+    bl InterruptCallback_SetVBlank \n\
+    bl func_8072D24 \n\
+    bl func_8073BE0 \n\
+    bl Sound_Init \n\
     mov r0, #0x90 \n\
     lsl r0, r0, #16 \n\
-    bl func_0022C8 \n\
+    bl func_80022C8 \n\
  \n\
     mov r0, #1 \n\
     strh r0, [r4] \n\
@@ -128,20 +128,20 @@ void init_memory(void) {
     add r0, r2, #0 \n\
     strh r0, [r1] \n\
  \n\
-    ldr r0, ptr_keys_held_a \n\
+    ldr r0, ptr_gButtonsHeld_a \n\
     strh r7, [r0] \n\
-    ldr r0, ptr_keys_held_copy_a \n\
+    ldr r0, ptr_gButtonsHeldCopy_a \n\
     strh r7, [r0] \n\
-    ldr r4, ptr_keys_pressed_a \n\
+    ldr r4, ptr_gButtonsPressed_a \n\
     strh r7, [r4] \n\
-    ldr r0, ptr_secondary_game_mode \n\
+    ldr r0, ptr_gSubGameMode \n\
     strh r7, [r0] \n\
-    bl key_poll \n\
+    bl PollInput \n\
     ldrh r0, [r4] \n\
     lsr r5, r5, #16 \n\
     cmp r0, r5 \n\
     bne title \n\
-    ldr r1, ptr_main_game_mode_a \n\
+    ldr r1, ptr_gMainGameMode_a \n\
     mov r0, #10 \n\
     strh r0, [r1] \n\
     b continue \n\
@@ -152,29 +152,29 @@ ptr_reg_ime: .4byte 0x4000208 \n\
 ptr_reg_dma3sad: .4byte 0x40000D4 \n\
 ewram_dmacnt: .4byte 0x85010000 \n\
 iwram_dmacnt: .4byte 0x85001F80 \n\
-ptr_empty_func: .4byte empty_func \n\
+ptr_EmptyFunction: .4byte EmptyFunction \n\
 ptr_reg_ie: .4byte 0x4000200 \n\
 reg_ie_val: .4byte 0x2001 \n\
 reg_waitcnt_val: .4byte 0x45B4 \n\
-ptr_keys_held_a: .4byte keys_held \n\
-ptr_keys_held_copy_a: .4byte keys_held_copy \n\
-ptr_keys_pressed_a: .4byte keys_pressed \n\
-ptr_secondary_game_mode: .4byte secondary_game_mode \n\
-ptr_main_game_mode_a: .4byte main_game_mode \n\
+ptr_gButtonsHeld_a: .4byte gButtonsHeld \n\
+ptr_gButtonsHeldCopy_a: .4byte gButtonsHeldCopy \n\
+ptr_gButtonsPressed_a: .4byte gButtonsPressed \n\
+ptr_gSubGameMode: .4byte gSubGameMode \n\
+ptr_gMainGameMode_a: .4byte gMainGameMode \n\
  \n\
 title: \n\
-    ldr r0, ptr_main_game_mode_b \n\
+    ldr r0, ptr_gMainGameMode_b \n\
     strh r7, [r0] \n\
  \n\
 continue: \n\
-    ldr r0, ptr_keys_held_b \n\
+    ldr r0, ptr_gButtonsHeld_b \n\
     mov r1, #0 \n\
     strh r1, [r0] \n\
-    ldr r0, ptr_keys_held_copy_b \n\
+    ldr r0, ptr_gButtonsHeldCopy_b \n\
     strh r1, [r0] \n\
-    ldr r0, ptr_keys_pressed_b \n\
+    ldr r0, ptr_gButtonsPressed_b \n\
     strh r1, [r0] \n\
-    ldr r0, ptr_disable_soft_reset \n\
+    ldr r0, ptr_gDisableSoftReset \n\
     strb r1, [r0] \n\
  \n\
     add sp, #4 \n\
@@ -183,24 +183,24 @@ continue: \n\
     bx r0 \n\
  \n\
 .align 2, 0 \n\
-ptr_main_game_mode_b: .4byte main_game_mode \n\
-ptr_keys_held_b: .4byte keys_held \n\
-ptr_keys_held_copy_b: .4byte keys_held_copy \n\
-ptr_keys_pressed_b: .4byte keys_pressed \n\
-ptr_disable_soft_reset: .4byte disable_soft_reset \n\
+ptr_gMainGameMode_b: .4byte gMainGameMode \n\
+ptr_gButtonsHeld_b: .4byte gButtonsHeld \n\
+ptr_gButtonsHeldCopy_b: .4byte gButtonsHeldCopy \n\
+ptr_gButtonsPressed_b: .4byte gButtonsPressed \n\
+ptr_gDisableSoftReset: .4byte gDisableSoftReset \n\
     ");
 }
 #endif
 
-static void empty_func() {
+static void EmptyFunction() {
 }
 
-void check_soft_reset(void) {
-    if (main_game_mode == GM_SOFT_RESET || disable_soft_reset) {
+void CheckSoftReset(void) {
+    if (gMainGameMode == GM_SOFT_RESET || gDisableSoftReset) {
         return;
     }
 
-    if (CHECK_KEYS_ALL(keys_held, KEY_A | KEY_B | KEY_START | KEY_SELECT)) {
-        main_game_mode = GM_SOFT_RESET;
+    if (CHECK_KEYS_ALL(gButtonsHeld, KEY_A | KEY_B | KEY_START | KEY_SELECT)) {
+        gMainGameMode = GM_SOFT_RESET;
     }
 }

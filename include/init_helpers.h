@@ -2,7 +2,7 @@
 #define INIT_HELPERS_H
 
 
-void init_video_memory(void);
-void init_irq(void);
+void InitializeVideoMemory(void);
+void InitializeInterruptHandler(void);
 
 #endif  // INIT_HELPERS_H

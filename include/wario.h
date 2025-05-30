@@ -41,6 +41,6 @@ typedef struct {
 } WarioData; /* size: 0x3C */
 
 
-extern WarioData wario_data;
+extern WarioData gWarioData;
 
 #endif  // WARIO_H

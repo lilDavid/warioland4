@@ -8,86 +8,86 @@
 #include "wario.h"
 
 
-extern const u8 rock_oam_data[];
+extern const u8 Rock_OAM[];
 
 
 static void Rock_Init(void) {
-    current_sprite.draw_distance_down = PIXELS_FROM_BLOCKS(1);
-    current_sprite.draw_distance_up = 0;
-    current_sprite.draw_distance_horizontal = PIXELS_FROM_BLOCKS(1);
+    gCurrentSprite.draw_distance_down = PIXELS_FROM_BLOCKS(1);
+    gCurrentSprite.draw_distance_up = 0;
+    gCurrentSprite.draw_distance_horizontal = PIXELS_FROM_BLOCKS(1);
 
-    current_sprite.hitbox_extent_up = SUBPIXELS_FROM_PIXELS(13);
-    current_sprite.hitbox_extent_down = 0;
-    current_sprite.hitbox_extent_left = SUBPIXELS_FROM_PIXELS(7);
-    current_sprite.hitbox_extent_right = SUBPIXELS_FROM_PIXELS(6);
+    gCurrentSprite.hitbox_extent_up = SUBPIXELS_FROM_PIXELS(13);
+    gCurrentSprite.hitbox_extent_down = 0;
+    gCurrentSprite.hitbox_extent_left = SUBPIXELS_FROM_PIXELS(7);
+    gCurrentSprite.hitbox_extent_right = SUBPIXELS_FROM_PIXELS(6);
 }
 
 static void Rock_Pose0F(void) {
-    current_sprite.animation_timer = current_sprite.animation_frame = 0;
-    current_sprite.oam_data = &rock_oam_data;
-    current_sprite.pose = POSE_10;
-    current_sprite.wario_interaction = 5;
-    current_sprite.status &= ~0x0300;
+    gCurrentSprite.animation_timer = gCurrentSprite.animation_frame = 0;
+    gCurrentSprite.oam_data = &Rock_OAM;
+    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.wario_interaction = 5;
+    gCurrentSprite.status &= ~0x0300;
 }
 
 static void Rock_Pose10(void) {
-    func_0238E8();
-    func_023B88();
-    if (!unk_3000A50) {
-        if (current_sprite.status & 0x40) {
-            func_023BFC(current_sprite.y_position, current_sprite.x_position - current_sprite.hitbox_extent_left);
+    func_80238E8();
+    func_8023B88();
+    if (!gUnk_3000A50) {
+        if (gCurrentSprite.status & 0x40) {
+            func_8023BFC(gCurrentSprite.y_position, gCurrentSprite.x_position - gCurrentSprite.hitbox_extent_left);
         } else {
-            func_023BFC(current_sprite.y_position, current_sprite.x_position + current_sprite.hitbox_extent_right);
+            func_8023BFC(gCurrentSprite.y_position, gCurrentSprite.x_position + gCurrentSprite.hitbox_extent_right);
         }
-        if (!unk_3000A51) {
-            current_sprite.pose = POSE_1B;
+        if (!gUnk_3000A51) {
+            gCurrentSprite.pose = POSE_1B;
         }
     }
 }
 
 static void Rock_Pose1B(void) {
-    current_sprite.pose = POSE_1E;
-    current_sprite.work3 = 0;
+    gCurrentSprite.pose = POSE_1E;
+    gCurrentSprite.work3 = 0;
 }
 
 static void Rock_Pose2B(void) {
-    current_sprite.pose = POSE_2C;
-    current_sprite.work1 = 0;
+    gCurrentSprite.pose = POSE_2C;
+    gCurrentSprite.work1 = 0;
 }
 
 static void Rock_Pose2D(void) {
-    current_sprite.pose = POSE_2E;
-    current_sprite.work1 = 0;
+    gCurrentSprite.pose = POSE_2E;
+    gCurrentSprite.work1 = 0;
 }
 
 static void Rock_Pose47(void) {
-    current_sprite.pose = POSE_48;
-    current_sprite.work2 = 8;
-    current_sprite.work3 = 0;
+    gCurrentSprite.pose = POSE_48;
+    gCurrentSprite.work2 = 8;
+    gCurrentSprite.work3 = 0;
 }
 
 static void Rock_Pose49(void) {
-    current_sprite.pose = POSE_4A;
-    current_sprite.work2 = 8;
-    current_sprite.work3 = 0;
+    gCurrentSprite.pose = POSE_4A;
+    gCurrentSprite.work2 = 8;
+    gCurrentSprite.work3 = 0;
 }
 
 static void Rock_Pose1F(void) {
-    current_sprite.pose = POSE_34;
-    current_sprite.work0 = 4;
-    current_sprite.work2 = 8;
-    current_sprite.work3 = 0;
+    gCurrentSprite.pose = POSE_34;
+    gCurrentSprite.work0 = 4;
+    gCurrentSprite.work2 = 8;
+    gCurrentSprite.work3 = 0;
 }
 
 static void Rock_Pose21(void) {
-    current_sprite.pose = POSE_36;
-    current_sprite.work0 = 4;
-    current_sprite.work2 = 8;
-    current_sprite.work3 = 0;
+    gCurrentSprite.pose = POSE_36;
+    gCurrentSprite.work0 = 4;
+    gCurrentSprite.work2 = 8;
+    gCurrentSprite.work3 = 0;
 }
 
 static void Rock_Pose31(void) {
-    if (current_sprite.x_position > wario_data.x_position) {
+    if (gCurrentSprite.x_position > gWarioData.x_position) {
         Rock_Pose1F();
     } else {
         Rock_Pose21();
@@ -95,36 +95,36 @@ static void Rock_Pose31(void) {
 }
 
 static void Rock_Pose51(void) {
-    current_sprite.pose = POSE_52;
+    gCurrentSprite.pose = POSE_52;
 }
 
 static void Rock_Pose53(void) {
-    current_sprite.pose = POSE_54;
+    gCurrentSprite.pose = POSE_54;
 }
 
 static void Rock_Pose57(void) {
-    current_sprite.pose = POSE_58;
-    current_sprite.wario_interaction_timeout = 1;
-    if (current_sprite.status | 0x200) {
-        current_sprite.status &= ~0x0200;
+    gCurrentSprite.pose = POSE_58;
+    gCurrentSprite.wario_interaction_timeout = 1;
+    if (gCurrentSprite.status | 0x200) {
+        gCurrentSprite.status &= ~0x0200;
     }
 }
 
 static void Rock_Pose55(void) {
-    current_sprite.pose = POSE_56;
-    current_sprite.wario_interaction_timeout = 1;
-    if (current_sprite.status | 0x200) {
-        current_sprite.status &= ~0x0200;
+    gCurrentSprite.pose = POSE_56;
+    gCurrentSprite.wario_interaction_timeout = 1;
+    if (gCurrentSprite.status | 0x200) {
+        gCurrentSprite.status &= ~0x0200;
     }
 }
 
 
 
 void SpriteAI_Rock(void) {
-    if (current_sprite.status & 0x800 && (unk_3000BEC & 3)) {
+    if (gCurrentSprite.status & 0x800 && (gUnk_3000BEC & 3)) {
         return;
     }
-    switch (current_sprite.pose) {
+    switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Rock_Init();
 
@@ -140,20 +140,20 @@ void SpriteAI_Rock(void) {
         case POSE_1D:
             Rock_Pose1B();
         case POSE_1E:
-            current_sprite.status &= ~0x0800;
-            func_023EE0();
+            gCurrentSprite.status &= ~0x0800;
+            func_8023EE0();
             break;
 
         case POSE_2B:
             Rock_Pose2B();
         case POSE_2C:
-            func_024478();
+            func_8024478();
             break;
 
         case POSE_2D:
             Rock_Pose2D();
         case POSE_2E:
-            func_02449C();
+            func_802449C();
             break;
 
         case POSE_31:
@@ -168,7 +168,7 @@ void SpriteAI_Rock(void) {
             Rock_Pose1F();
         case POSE_34:
         case POSE_40:
-            func_024988();
+            func_8024988();
             break;
 
         case POSE_21:
@@ -179,70 +179,70 @@ void SpriteAI_Rock(void) {
             Rock_Pose21();
         case POSE_36:
         case POSE_3A:
-            func_02476C();
+            func_802476C();
             break;
 
         case POSE_37:
-            func_024688();
+            func_8024688();
         case POSE_38:
-            func_0246B8();
+            func_80246B8();
             break;
 
         case POSE_39:
-            func_02473C();
-            func_02476C();  // jumps to case POSE_36
+            func_802473C();
+            func_802476C();  // jumps to case POSE_36
             break;
 
         case POSE_3B:
-            func_0247F0();
+            func_80247F0();
 
         case POSE_3C:
-            func_024820();
+            func_8024820();
             break;
 
         case POSE_3D:
-            func_0248A4();
+            func_80248A4();
         case POSE_3E:
-            func_0248D4();
+            func_80248D4();
             break;
 
         case POSE_3F:
-            func_024958();
-            func_024988();  // jumps to case POSE_34
+            func_8024958();
+            func_8024988();  // jumps to case POSE_34
             break;
 
         case POSE_41:
-            func_024A0C();
+            func_8024A0C();
         case POSE_42:
-            func_024A3C();
+            func_8024A3C();
             break;
 
         case POSE_43:
-            func_024AC0();
-            current_sprite.status &= ~0x0800;  // jumps to case POSE_44
-            func_024AD4();
+            func_8024AC0();
+            gCurrentSprite.status &= ~0x0800;  // jumps to case POSE_44
+            func_8024AD4();
             break;
 
         case POSE_45:
-            func_024BEC();
-            current_sprite.status &= ~0x0800;  // jumps to case POSE_46
-            func_024C00();
+            func_8024BEC();
+            gCurrentSprite.status &= ~0x0800;  // jumps to case POSE_46
+            func_8024C00();
             break;
 
         case POSE_47:
             Rock_Pose47();
         case POSE_44:
         case POSE_48:
-            current_sprite.status &= ~0x0800;
-            func_024AD4();
+            gCurrentSprite.status &= ~0x0800;
+            func_8024AD4();
             break;
 
         case POSE_49:
             Rock_Pose49();
         case POSE_46:
         case POSE_4A:
-            current_sprite.status &= ~0x0800;
-            func_024C00();
+            gCurrentSprite.status &= ~0x0800;
+            func_8024C00();
             break;
 
         case POSE_51:
@@ -250,7 +250,7 @@ void SpriteAI_Rock(void) {
             break;
 
         case POSE_52:
-            func_024D18();
+            func_8024D18();
             break;
 
         case POSE_53:
@@ -258,7 +258,7 @@ void SpriteAI_Rock(void) {
             break;
 
         case POSE_54:
-            func_024E58();
+            func_8024E58();
             break;
 
         case POSE_57:
@@ -266,8 +266,8 @@ void SpriteAI_Rock(void) {
             break;
 
         case POSE_58:
-            current_sprite.status &= ~0x0800;
-            func_024F98();
+            gCurrentSprite.status &= ~0x0800;
+            func_8024F98();
             break;
 
         case POSE_55:
@@ -275,111 +275,111 @@ void SpriteAI_Rock(void) {
             break;
 
         case POSE_56:
-            current_sprite.status &= ~0x0800;
-            func_025240();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025240();
             break;
 
         case POSE_59:
-            current_sprite.pose = POSE_5A;
+            gCurrentSprite.pose = POSE_5A;
         case POSE_5A:
-            current_sprite.status &= ~0x0800;
-            func_025634();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025634();
             break;
 
         case POSE_5D:
-            current_sprite.pose = POSE_5E;
-            current_sprite.unk_1D = (current_sprite.unk_1D & 0xF) | 0x10;
+            gCurrentSprite.pose = POSE_5E;
+            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x10;
         case POSE_5E:
-            current_sprite.status &= ~0x0800;
-            func_0256D4();
+            gCurrentSprite.status &= ~0x0800;
+            func_80256D4();
             break;
 
         case POSE_61:
-            current_sprite.pose = POSE_62;
+            gCurrentSprite.pose = POSE_62;
         case POSE_62:
-            current_sprite.status &= ~0x0800;
-            func_025774();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025774();
             break;
 
         case POSE_65:
-            current_sprite.pose = POSE_66;
-            current_sprite.unk_1D = (current_sprite.unk_1D & 0xF) | 0x20;
+            gCurrentSprite.pose = POSE_66;
+            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x20;
         case POSE_66:
-            current_sprite.status &= ~0x0800;
-            func_025814();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025814();
             break;
 
         case POSE_5B:
-            current_sprite.pose = POSE_5C;
+            gCurrentSprite.pose = POSE_5C;
         case POSE_5C:
-            current_sprite.status &= ~0x0800;
-            func_025A00();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025A00();
             break;
 
         case POSE_5F:
-            current_sprite.pose = POSE_60;
-            current_sprite.unk_1D = (current_sprite.unk_1D & 0xF) | 0x40;
+            gCurrentSprite.pose = POSE_60;
+            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x40;
         case POSE_60:
-            current_sprite.status &= ~0x0800;
-            func_025AA0();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025AA0();
             break;
 
         case POSE_63:
-            current_sprite.pose = POSE_64;
+            gCurrentSprite.pose = POSE_64;
         case POSE_64:
-            current_sprite.status &= ~0x0800;
-            func_025B40();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025B40();
             break;
 
         case POSE_67:
-            current_sprite.pose = POSE_68;
-            current_sprite.unk_1D = (current_sprite.unk_1D & 0xF) | 0x80;
+            gCurrentSprite.pose = POSE_68;
+            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x80;
         case POSE_68:
-            current_sprite.status &= ~0x0800;
-            func_025BE0();
+            gCurrentSprite.status &= ~0x0800;
+            func_8025BE0();
             break;
 
         case POSE_6B:
-            if (current_sprite.unk_1D & 0x10) {
-                current_sprite.unk_1D &= 0xF;
-                current_sprite.work2 = 8;
-                func_024BEC();
-            } else if (current_sprite.unk_1D & 0x20) {
-                current_sprite.unk_1D &= 0xF;
-                current_sprite.work2 = 4;
-                func_024AC0();
-            } else if (current_sprite.unk_1D & 0x40) {
-                current_sprite.unk_1D &= 0xF;
-                current_sprite.work2 = 8;
-                func_024AC0();
-            } else if (current_sprite.unk_1D & 0x80) {
-                current_sprite.unk_1D &= 0xF;
-                current_sprite.work2 = 4;
-                func_024BEC();
+            if (gCurrentSprite.unk_1D & 0x10) {
+                gCurrentSprite.unk_1D &= 0xF;
+                gCurrentSprite.work2 = 8;
+                func_8024BEC();
+            } else if (gCurrentSprite.unk_1D & 0x20) {
+                gCurrentSprite.unk_1D &= 0xF;
+                gCurrentSprite.work2 = 4;
+                func_8024AC0();
+            } else if (gCurrentSprite.unk_1D & 0x40) {
+                gCurrentSprite.unk_1D &= 0xF;
+                gCurrentSprite.work2 = 8;
+                func_8024AC0();
+            } else if (gCurrentSprite.unk_1D & 0x80) {
+                gCurrentSprite.unk_1D &= 0xF;
+                gCurrentSprite.work2 = 4;
+                func_8024BEC();
             } else {
-                func_024554();
+                func_8024554();
                 break;
             }
             break;
 
         default:
-            func_024554();
+            func_8024554();
             break;
     }
 
-    if ((current_sprite.unk_1D & 0xF) == 1) {
-        if (current_sprite.status & 0x800) {
-            current_sprite.unk_1D += 1;
-            sprite_spawn_secondary(current_sprite.y_position, current_sprite.x_position, SSPRITE_7);
-            sound_play(SOUND_3D);
+    if ((gCurrentSprite.unk_1D & 0xF) == 1) {
+        if (gCurrentSprite.status & 0x800) {
+            gCurrentSprite.unk_1D += 1;
+            Sprite_SpawnSecondary(gCurrentSprite.y_position, gCurrentSprite.x_position, SSPRITE_7);
+            Sound_Play(SOUND_3D);
         }
-    } else if ((current_sprite.unk_1D & 0xF) == 2) {
-        func_023BFC(current_sprite.y_position, current_sprite.x_position);
-        if (unk_30000A0.unk_02 == 1) {
-            current_sprite.status |= 0x0800;
+    } else if ((gCurrentSprite.unk_1D & 0xF) == 2) {
+        func_8023BFC(gCurrentSprite.y_position, gCurrentSprite.x_position);
+        if (gUnk_30000A0.unk_02 == 1) {
+            gCurrentSprite.status |= 0x0800;
         }
-        if (!(current_sprite.status & 0x0800)) {
-            current_sprite.unk_1D -= 1;
+        if (!(gCurrentSprite.status & 0x0800)) {
+            gCurrentSprite.unk_1D -= 1;
         }
     }
 }
