@@ -5,6 +5,7 @@
 #include "sprite.h"
 #include "sprite_ai.h"
 #include "sprite_util.h"
+#include "score.h"
 #include "types.h"
 #include "wario.h"
 
@@ -354,8 +355,8 @@ static void Coin_Collect(void) {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     switch (gCurrentSprite.globalID) {
         case PSPRITE_COIN_50POINTS:
-            Sprite_GiveScore(CONVERT_SCORE(50));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 90, gCurrentSprite.xPosition, SSPRITE_SCORE_50);
+            Score_GivePoints(CONVERT_SCORE(50));
+            Score_SpawnSprite(gCurrentSprite.yPosition - 90, gCurrentSprite.xPosition, SSPRITE_SCORE_50);
             if (gWarioData.reaction == REACT_WATER) {
                 Sound_Play(SE_GET_COIN_50POINTS_UNDERWATER);
             } else {
@@ -364,8 +365,8 @@ static void Coin_Collect(void) {
             break;
 
         case PSPRITE_COIN_100POINTS:
-            Sprite_GiveScore(CONVERT_SCORE(100));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 120, gCurrentSprite.xPosition, SSPRITE_SCORE_100);
+            Score_GivePoints(CONVERT_SCORE(100));
+            Score_SpawnSprite(gCurrentSprite.yPosition - 120, gCurrentSprite.xPosition, SSPRITE_SCORE_100);
             if (gWarioData.reaction == REACT_WATER) {
                 Sound_Play(SE_GET_COIN_100POINTS_UNDERWATER);
             } else {
@@ -374,8 +375,8 @@ static void Coin_Collect(void) {
             break;
 
         case PSPRITE_COIN_500POINTS:
-            Sprite_GiveScore(CONVERT_SCORE(500));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 150, gCurrentSprite.xPosition, SSPRITE_SCORE_500);
+            Score_GivePoints(CONVERT_SCORE(500));
+            Score_SpawnSprite(gCurrentSprite.yPosition - 150, gCurrentSprite.xPosition, SSPRITE_SCORE_500);
             if (gWarioData.reaction == REACT_WATER) {
                 Sound_Play(SE_GET_COIN_500POINTS_UNDERWATER);
             } else {
@@ -384,8 +385,8 @@ static void Coin_Collect(void) {
             break;
 
         case PSPRITE_COIN_1000POINTS:
-            Sprite_GiveScore(CONVERT_SCORE(1000));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 180, gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000);
+            Score_GivePoints(CONVERT_SCORE(1000));
+            Score_SpawnSprite(gCurrentSprite.yPosition - 180, gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000);
             if (gWarioData.reaction == REACT_WATER) {
                 Sound_Play(SE_GET_DIAMOND_UNDERWATER);
             } else {
@@ -405,8 +406,8 @@ static void Coin_Collect(void) {
             break;
 
         default:
-            Sprite_GiveScore(CONVERT_SCORE(10));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 60, gCurrentSprite.xPosition, SSPRITE_SCORE_10);
+            Score_GivePoints(CONVERT_SCORE(10));
+            Score_SpawnSprite(gCurrentSprite.yPosition - 60, gCurrentSprite.xPosition, SSPRITE_SCORE_10);
             if (gWarioData.reaction == REACT_WATER) {
                 Sound_Play(SE_GET_COIN_10POINTS_UNDERWATER);
             } else {
@@ -485,8 +486,8 @@ static void Diamond_Float(void) {
 static void Diamond_Collect(void) {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
-    Sprite_GiveScore(CONVERT_SCORE(1000));
-    Sprite_SpawnSecondary(
+    Score_GivePoints(CONVERT_SCORE(1000));
+    Score_SpawnSprite(
         gCurrentSprite.yPosition - SUBPIXELS_FROM_PIXELS(25),
         gCurrentSprite.xPosition - BLOCK_SIZE,
         SSPRITE_SCORE_1000

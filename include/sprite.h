@@ -193,19 +193,6 @@ enum PrimarySpriteID {
     PSPRITE_MAX = 252
 };
 
-enum SecondarySpriteID {
-    SSPRITE_SCORE_10,
-    SSPRITE_SCORE_50,
-    SSPRITE_SCORE_100,
-    SSPRITE_SCORE_500,
-    SSPRITE_SCORE_1000,
-    SSPRITE_5,
-    SSPRITE_6,
-    SSPRITE_7,
-    // ...
-    SSPRITE_MAX = 90
-};
-
 enum SpriteStatusBits {
     SPRITE_STATUS_NONE = 0,
     SPRITE_STATUS_EXISTS = (1 << 0),
@@ -275,10 +262,6 @@ extern PrimarySpriteData gCurrentSprite;
 
 
 void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
-
-// TODO: Module for secondary/score sprites
-void Sprite_GiveScore(s32);
-void Sprite_SpawnSecondary(u32 y_position, u32 x_position, u8 id);
 
 // TODO: This does NOT belong here
 void Sprite_PlayWarioVoice(u32);

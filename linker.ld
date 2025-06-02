@@ -58,7 +58,7 @@ SECTIONS {
         obj/blob_0x06ACA0-0x072CA0.o(.text);
         obj/sram.o(.text);
         obj/blob_0x0743BC-0x076658.o(.text);
-        obj/sprite.o(.text);
+        obj/score.o(.text);
         obj/blob_0x076784-0x088620.o(.text);
         obj/wario_voice.o(.text);
         obj/blob_0x088678-0x094DFC.o(.text);

@@ -31,11 +31,6 @@ typedef void (*ProcedureFunc)(void);
 #define BLOCKS_FROM_SUBPIXELS(subpixels) ((subpixels) / BLOCK_SIZE)
 #define BLOCKS_FROM_PIXELS(pixels) ((pixels) / BLOCK_SIZE_PIXELS)
 
-// Number of points per internal unit of score
-#define SCORE_RATIO 10
-// Convert an amount of points for storage
-#define CONVERT_SCORE(points) ((points) / SCORE_RATIO)
-
 // Target FPS
 #define FRAME_RATE 60
 // Convert a floating-point value of seconds into frames
