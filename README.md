@@ -22,4 +22,10 @@ To build the US version: place the ROM in the repository root as `baserom_us.gba
 
 To build the JP version: name the ROM `baserom_jp.gba` and run `make VERSION=jp`.
 
+If there were no problems, a message such as this will be printed to the screen:
+
+```
+build/us/warioland4_us.gba: OK
+```
+
 For more details, run `make help`.
