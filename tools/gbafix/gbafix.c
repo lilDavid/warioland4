@@ -275,7 +275,7 @@ int main(int argc, char *argv[])
 	fwrite(&header, sizeof(header), 1, infile);
 	fclose(infile);
 
-	printf("ROM fixed!\n");
+	// printf("ROM fixed!\n");
 
 	return 0;
 }

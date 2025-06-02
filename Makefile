@@ -70,20 +70,41 @@ CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall
 CPPFLAGS += -I$(INCLUDE) -nostdinc
 
 
+# Quiet/verbose output
+ifeq ($(V), 1)
+	Q =
+	MSG = @:
+else
+	Q = @
+	MSG = @echo " "
+endif
+
+
 .PHONY: all check dump diff clean help
 
 all: check
 
 check: $(TARGET)
-	$(MD5SUM) -c $(MD5FILE)
+	$(MSG) MD5SUM $(MD5FILE)
+	$Q$(MD5SUM) -c $(MD5FILE)
 
 dump: $(DUMPS)
 
 diff: $(DUMPS)
-	$(DIFF) $^
+	$(MSG) DIFF $^
+	$Q$(DIFF) $^
 
 clean:
-	rm -rf build baserom_*.gba.dump $(GBAFIX)
+	$(MSG) RM build
+	$Qrm -rf build
+	$(MSG) RM DUMPS
+	$Qrm -f baserom_*.gba.dump
+	$(MSG) RM $(GBAFIX)
+	$Qrm -rf $(GBAFIX)
+ifeq ($(AGBCC),1)
+	$(MSG) CLEAN $(CC)
+	$Qcd tools/agbcc && git clean -xdf .
+endif
 
 help:
 	@echo 'Targets:'
@@ -92,6 +113,7 @@ help:
 	@echo '  dump: dump the ROMs'
 	@echo '  diff: dump and compare the ROMs'
 	@echo '  clean: remove build files'
+	@echo '    AGBCC=1: remove build files for agbcc'
 	@echo '  help: show this message'
 	@echo ''
 	@echo 'Flags:'
@@ -101,30 +123,40 @@ help:
 
 
 %.dump: %
-	$(OBJDUMP) -D -bbinary -marm7tdmi -Mforce-thumb $< > $@
+	$(MSG) OBJDUMP $<
+	$Q$(OBJDUMP) -D -bbinary -marm7tdmi -Mforce-thumb $< > $@
 
 $(TARGET): $(ELF) $(GBAFIX)
-	$(OBJCOPY) -O binary --gap-fill 0xff --pad-to 0x08800000 $< $@
-	$(GBAFIX) $@ -t$(GAME_TITLE) -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION)
+	$(MSG) OBJCOPY $<
+	$Q$(OBJCOPY) -O binary --gap-fill 0xff --pad-to 0x08800000 $< $@
+	$(MSG) GBAFIX $@
+	$Q$(GBAFIX) $@ -t$(GAME_TITLE) -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION)
 
 $(ELF): $(OBJS) linker.ld
-	$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) -o $@
+	$(MSG) LD linker.ld
+	$Q$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) -o $@
 
 $(OBJ)/%.o: $(ASM)/%.s
-	@mkdir -p $(shell dirname $@)
-	$(AS) $(ASFLAGS) $< -o $@
+	$(MSG) AS $<
+	$Qmkdir -p $(shell dirname $@)
+	$Q$(AS) $(ASFLAGS) $< -o $@
 
 $(OBJ)/%.o: $(BUILT_ASM)/%.s
-	@mkdir -p $(shell dirname $@)
-	$(AS) $(ASFLAGS) $< -o $@
+	$(MSG) AS $<
+	$Qmkdir -p $(shell dirname $@)
+	$Q$(AS) $(ASFLAGS) $< -o $@
 
 $(BUILT_ASM)/%.s: $(SRC)/%.c $(CC)
-	@mkdir -p $(shell dirname $@)
-	$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
+	$(MSG) CC $<
+	$Qmkdir -p $(shell dirname $@)
+	$Q$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
 	@echo '    .align 2, 0' >> $@
 
 $(TOOLS)/%: $(TOOLS)/%.c
-	$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@
+	$(MSG) HOSTCC $<
+	$Q$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@
 
+# Compilation doesn't work if -j is set so force default flags
 $(CC):
-	cd $(shell dirname $@) && MAKEFLAGS="" ./build.sh
+	$(MSG) MAKE $@
+	$Qcd $(shell dirname $@) && MAKEFLAGS="" ./build.sh
