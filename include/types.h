@@ -19,6 +19,8 @@ typedef void (*ProcedureFunc)(void);
 #define HALF_BLOCK_SIZE (BLOCK_SIZE / 2)
 // One quarter the size of a block, in subpixels
 #define QUARTER_BLOCK_SIZE (BLOCK_SIZE / 4)
+// One-eighth the size of a block, in subpixels
+#define EIGHTH_BLOCK_SIZE (BLOCK_SIZE / 8)
 
 #define SUBPIXELS_FROM_PIXELS(pixels) ((pixels) * PIXEL_SIZE)
 #define SUBPIXELS_FROM_BLOCKS(blocks) ((blocks) * BLOCK_SIZE)
@@ -38,5 +40,9 @@ typedef void (*ProcedureFunc)(void);
 #define FRAME_RATE 60
 // Convert a floating-point value of seconds into frames
 #define CONVERT_SECONDS(seconds) ((u32) ((seconds) * FRAME_RATE))
+
+#define DELTA_TIME 1
+#define TIMER_COUNT_DOWN(timer) (timer) -= DELTA_TIME
+#define TIMER_COUNT_UP(timer) (timer) -= DELTA_TIME
 
 #endif /* TYPES_H */

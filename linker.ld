@@ -8,7 +8,9 @@ SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
         . = 0x001e; gDisableSoftReset = .;
+        . = 0x0024; gCurrentRoom = .;
         . = 0x00a0; gUnk_30000A0 = .;
+        . = 0x0564; gPersistentSpriteData = .;
         . = 0x0a24; gCurrentSprite = .;
         . = 0x0a50; gUnk_3000A50 = .;
         . = 0x0a51; gUnk_3000A51 = .;
@@ -21,6 +23,8 @@ SECTIONS {
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
         . = 0x1898; gWarioData = .;
+        . = 0x1910; gWarioHearts = .;
+        . = 0x1914; gHeartGauge = .;
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1A00; gHBlankCallback = .;
         . = 0x1A04; gVCountCallback = .;
@@ -46,15 +50,18 @@ SECTIONS {
         obj/syscalls.o(.text);
         obj/blob_0x003228-0x0238A4.o(.text);
         obj/sprite_util.o(.text);
-        obj/blob_0x025C80-0x026FAC.o(.text);
-        obj/sprite_ai/blob_0x026FAC-03E560.o(.text);
+        obj/sprite_ai/blob_0x026FAC-02BADC.o(.text);
+        obj/sprite_ai/coins.o(.text);
+        obj/sprite_ai/blob_0x02C894-03E560.o(.text);
         obj/sprite_ai/rock.o(.text);
         obj/sprite_ai/blob_0x03EC78-06ACA0.o(.text);
         obj/blob_0x06ACA0-0x072CA0.o(.text);
         obj/sram.o(.text);
-        obj/blob_0x0743BC-0x0766E8.o(.text);
-        obj/secondary_sprite.o(.text);
-        obj/blob_0x076784-0x094DFC.o(.text);
+        obj/blob_0x0743BC-0x076658.o(.text);
+        obj/sprite.o(.text);
+        obj/blob_0x076784-0x088620.o(.text);
+        obj/wario_voice.o(.text);
+        obj/blob_0x088678-0x094DFC.o(.text);
         obj/libgcc.o(.text);
     } >ROM =0xFF
 

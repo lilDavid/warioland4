@@ -205,3 +205,14 @@ func_8025B40:
 thumb_func_start func_8025BE0
 func_8025BE0:
     baserom_blob 0x025BE0, 0x025C80
+
+
+    baserom_blob 0x025C80, 0x026308
+
+
+thumb_func_start SpriteUtil_TurnTowardWario
+SpriteUtil_TurnTowardWario:
+    baserom_blob 0x026308, 0x026334
+
+
+    baserom_blob 0x026334, 0x026FAC

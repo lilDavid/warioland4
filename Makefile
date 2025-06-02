@@ -66,7 +66,7 @@ GAME_REVISION = 00
 
 # Flags
 ASFLAGS += -I$(ASM) -mcpu=arm7tdmi
-CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall -Werror
+CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall
 CPPFLAGS += -I$(INCLUDE) -nostdinc
 
 

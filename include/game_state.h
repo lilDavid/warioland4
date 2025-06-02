@@ -22,9 +22,11 @@ enum GameMode {
 };
 
 
-s16 gMainGameMode;
-s16 gSubGameMode;
+extern u8 gCurrentRoom;
 
-u8 gDisableSoftReset;
+extern s16 gMainGameMode;
+extern s16 gSubGameMode;
+
+extern u8 gDisableSoftReset;
 
 #endif  // GAME_STATE_H

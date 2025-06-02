@@ -15,13 +15,13 @@ enum PrimarySpriteID {
     PSPRITE_SWITCH,
     PSPRITE_KEYZER,
     PSPRITE_09,
-    PSPRITE_UNUSED_0A,
-    PSPRITE_UNUSED_0B,
-    PSPRITE_UNUSED_0C,
-    PSPRITE_UNUSED_0D,
-    PSPRITE_UNUSED_0E,
-    PSPRITE_UNUSED_0F,
-    PSPRITE_UNUSED_CAT,
+    PSPRITE_0A,
+    PSPRITE_0B,
+    PSPRITE_0C,
+    PSPRITE_LITTLE_HEART,
+    PSPRITE_0E,
+    PSPRITE_0F,
+    PSPRITE_SHOPKEEPER,
     PSPRITE_SPEAR_MASK_YELLOW,
     PSPRITE_SPEAR_MASK_BLUE,
     PSPRITE_SPEAR_MASK_RED,
@@ -134,11 +134,11 @@ enum PrimarySpriteID {
     PSPRITE_CHANDELIER,
     PSPRITE_CRUMBLING_BLOCK,
     PSPRITE_PROFESSOR_SHITAIN,
-    PSPRITE_COIN_1,
-    PSPRITE_COIN_2,
-    PSPRITE_COIN_3,
-    PSPRITE_COIN_4,
-    PSPRITE_COIN_5,
+    PSPRITE_COIN_10POINTS,
+    PSPRITE_COIN_50POINTS,
+    PSPRITE_COIN_100POINTS,
+    PSPRITE_COIN_500POINTS,
+    PSPRITE_COIN_1000POINTS,
     PSPRITE_JEWEL_PIECE_NE,
     PSPRITE_JEWEL_PIECE_SE,
     PSPRITE_JEWEL_PIECE_SW,
@@ -150,14 +150,86 @@ enum PrimarySpriteID {
     PSPRITE_GLOW_JEWEL_PIECE_SW,
     PSPRITE_GLOW_JEWEL_PIECE_NW,
     PSPRITE_GLOW_CD,
-    PSPRITE_GLOW_HEALTH_REFIL,
+    PSPRITE_GLOW_HEALTH_REFILL,
+    PSPRITE_92,
+    PSPRITE_93,
+    PSPRITE_94,
+    PSPRITE_95,
+    PSPRITE_96,
+    PSPRITE_97,
+    PSPRITE_98,
+    PSPRITE_99,
+    PSPRITE_9A,
+    PSPRITE_9B,
+    PSPRITE_9C,
+    PSPRITE_9D,
+    PSPRITE_9E,
+    PSPRITE_9F,
+    PSPRITE_A0,
+    PSPRITE_A1,
+    PSPRITE_A2,
+    PSPRITE_A3,
+    PSPRITE_A4,
+    PSPRITE_A5,
+    PSPRITE_A6,
+    PSPRITE_A7,
+    PSPRITE_A8,
+    PSPRITE_A9,
+    PSPRITE_AA,
+    PSPRITE_AB,
+    PSPRITE_AC,
+    PSPRITE_AD,
+    PSPRITE_AE,
+    PSPRITE_AF,
+    PSPRITE_B0,
+    PSPRITE_B1,
+    PSPRITE_B2,
+    PSPRITE_B3,
+    PSPRITE_B4,
+    PSPRITE_B5,
+    PSPRITE_B6,
+    PSPRITE_CHANCE_WHEEL_DIAMOND,
     // ...
     PSPRITE_MAX = 252
 };
 
+enum SecondarySpriteID {
+    SSPRITE_SCORE_10,
+    SSPRITE_SCORE_50,
+    SSPRITE_SCORE_100,
+    SSPRITE_SCORE_500,
+    SSPRITE_SCORE_1000,
+    SSPRITE_5,
+    SSPRITE_6,
+    SSPRITE_7,
+    // ...
+    SSPRITE_MAX = 90
+};
 
-enum  SecondarySpriteID{
-    SSPRITE_7 = 7,
+enum SpriteStatusBits {
+    SPRITE_STATUS_NONE = 0,
+    SPRITE_STATUS_EXISTS = (1 << 0),
+    SPRITE_STATUS_1 = (1 << 1),
+    SPRITE_STATUS_2 = (1 << 2),
+    SPRITE_STATUS_3 = (1 << 3),
+    SPRITE_STATUS_4 = (1 << 4),
+    SPRITE_STATUS_5 = (1 << 5),
+    SPRITE_STATUS_FACING_RIGHT = (1 << 6),
+    SPRITE_STATUS_7 = (1 << 7),
+    SPRITE_STATUS_8 = (1 << 8),
+    SPRITE_STATUS_9 = (1 << 9),
+    SPRITE_STATUS_10 = (1 << 10),
+    SPRITE_STATUS_11 = (1 << 11),
+    SPRITE_STATUS_12 = (1 << 12),
+    SPRITE_STATUS_13 = (1 << 13),
+    SPRITE_STATUS_14 = (1 << 14),
+    SPRITE_STATUS_15 = (1 << 15),
+};
+
+enum PersistentSpriteStatus {
+    PERSISTENT_STATUS_UNLOADED,
+    PERSISTENT_STATUS_LOADED,
+    PERSISTENT_STATUS_DESPAWNED,
 };
 
 
@@ -195,10 +267,20 @@ typedef struct {
 } PrimarySpriteData;  /* size: 0x2C */
 
 
+// Upper nybble = animation ID on next load
+// Lower nybble = status
+extern u8 gPersistentSpriteData[16][64];
+
 extern PrimarySpriteData gCurrentSprite;
 
 
 void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
-void Sprite_SpawnSecondary(u16 y_position, u16 x_position, u8 id);
+
+// TODO: Module for secondary/score sprites
+void Sprite_GiveScore(s32);
+void Sprite_SpawnSecondary(u32 y_position, u32 x_position, u8 id);
+
+// TODO: This does NOT belong here
+void Sprite_PlayWarioVoice(u32);
 
 #endif  // SPRITE_H

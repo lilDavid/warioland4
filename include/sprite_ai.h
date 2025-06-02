@@ -117,6 +117,9 @@ enum SpritePose {
 };
 
 
+void SpriteAI_Diamond(void);
 void SpriteAI_Rock(void);
+void SpriteAI_Coin(void);
+void SpriteAI_ChanceWheelDiamond(void);
 
 #endif

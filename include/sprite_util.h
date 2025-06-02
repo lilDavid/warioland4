@@ -8,8 +8,12 @@ extern u8 gUnk_3000A50;
 extern u8 gUnk_3000A51;
 
 
+extern s16 sUnk_8352ADC[];
+extern s16 sUnk_8352AFC[];
+
+
 void func_80238E8(void);
-u16 func_8023A60(u16 y, u16 x);
+u32 func_8023A60(u16 y, u16 x);
 void func_8023B88(void);
 void func_8023BFC(u16 y, u16 x);
 void func_8023EE0(void);
@@ -45,5 +49,7 @@ void func_8025AA0(void);
 void func_8024AC0(void);
 void func_8025B40(void);
 void func_8025BE0(void);
+
+void SpriteUtil_TurnTowardWario(void);
 
 #endif  // SPRITE_UTIL_H

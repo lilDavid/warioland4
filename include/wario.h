@@ -4,12 +4,54 @@
 #include "gba.h"
 
 
+#define MAX_HEARTS (8)
+#define HEART_GAUGE_MAX (8)
+
+
+enum WarioReaction {
+    REACT_NORMAL,
+    REACT_WATER,
+    REACT_FIRE,
+    REACT_FAT,
+    REACT_FROZEN,
+    REACT_ZOMBIE,
+    REACT_SNOWMAN,
+    REACT_BOUNCY,
+    REACT_PUFFY,
+    REACT_BAT,
+    REACT_FLAT,
+    REACT_MASK,
+    REACT_MAX
+};
+
+enum WarioVoice {
+    WV_0,
+    WV_TREASURE,
+    WV_2,
+    WV_3,
+    WV_SORRY,
+    WV_5,
+    WV_6,
+    WV_7,
+    WV_8,
+    WV_HURT,
+    WV_10,
+    WV_11,
+    WV_12,
+    WV_13,
+    WV_14,
+    WV_15,
+    WV_16,
+    WV_MAX
+};
+
+
 typedef struct {
     /* 0x00 */ u8 reaction;
     /* 0x01 */ u8 unk_01;
     /* 0x02 */ u8 unk_02;
     /* 0x03 */ u8 unk_03;
-    /* 0x04 */ u8 unk_04;
+    /* 0x04 */ u8 damageTimer;
     /* 0x05 */ u8 unk_05;
     /* 0x06 */ u8 unk_06;
     /* 0x07 */ u8 unk_07;
@@ -41,6 +83,17 @@ typedef struct {
 } WarioData; /* size: 0x3C */
 
 
+typedef struct {
+    u8 current;
+    u8 filling;
+    u8 unk_2;
+    u8 unk_3;
+} WarioLife;
+
+
 extern WarioData gWarioData;
+
+extern WarioLife gWarioHearts;
+extern WarioLife gHeartGauge;
 
 #endif  // WARIO_H
