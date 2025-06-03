@@ -94,6 +94,7 @@ def make_data(source, iterator, i, inst, setlabel=True):
     label = f'.L_{inst.label}' if setlabel else inst.label
     if len(inst.raw.replace(' ', '')) > 4:
         value = inst.raw.replace(' ', '')
+        value = value[4:] + value[:4]
     else:
         value = f'{source[i+1].raw}{inst.raw}'.replace(' ', '')
         next(iterator)

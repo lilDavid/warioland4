@@ -185,7 +185,7 @@ AgbMain:
 	b	.L_362
 	.align	2, 0
 .L_344:
-	.4byte	gUnk_3000003
+	.4byte	gCurrentStageNumber
 .L_348:
 	.4byte	gSubGameMode
 .L_34c:
@@ -251,7 +251,7 @@ AgbMain:
 .L_3b8:
 	.4byte	gMainGameMode
 .L_3bc:
-	.4byte	gUnk_3000004
+	.4byte	gCurrentStageID
 .L_3c0:
 	bl	func_801B8BC
 	cmp	r0, #0

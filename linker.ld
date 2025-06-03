@@ -7,8 +7,9 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
-        . = 0x0003; gUnk_3000003 = .;
-        . = 0x0004; gUnk_3000004 = .;
+        . = 0x0002; gCurrentPassage = .;
+        . = 0x0003; gCurrentStageNumber = .;
+        . = 0x0004; gCurrentStageID = .;
         . = 0x0006; gUnk_3000006 = .;
         . = 0x0010; gUnk_3000010 = .;
         . = 0x0012; gUnk_3000012 = .;
@@ -20,13 +21,19 @@ SECTIONS {
         . = 0x0022; gUnk_3000022 = .;
         . = 0x0024; gCurrentRoom = .;
         . = 0x0025; gUnk_3000025 = .;
+        . = 0x0028; gUnk_3000028 = .;
+        . = 0x0047; gUnk_3000047 = .;
         . = 0x0048; gUnk_3000048 = .;
         . = 0x00a0; gUnk_30000A0 = .;
+        . = 0x00c8; gUnk_30000C8 = .;
+        . = 0x0104; gUnk_3000104 = .;
         . = 0x0564; gPersistentSpriteData = .;
         . = 0x0a24; gCurrentSprite = .;
         . = 0x0a50; gUnk_3000A50 = .;
         . = 0x0a51; gUnk_3000A51 = .;
         . = 0x0bec; gUnk_3000BEC = .;
+        . = 0x0C01; gUnk_3000C01 = .;
+        . = 0x0C03; gUnk_3000C03 = .;
         . = 0x0c35; gUnk_3000C35 = .;
         . = 0x0c37; gUnk_3000C37 = .;
         . = 0x0c3a; gMainGameMode = .;
@@ -40,9 +47,14 @@ SECTIONS {
         . = 0x1844; gButtonsHeld = .;
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
+        . = 0x187A; gUnk_300187A = .;
+        . = 0x187C; gUnk_300187C = .;
         . = 0x1898; gWarioData = .;
         . = 0x1910; gWarioHearts = .;
         . = 0x1914; gHeartGauge = .;
+        . = 0x1948; gUnk_3001948 = .;
+        . = 0x19f4; gUnk_30019F4 = .;
+        . = 0x19f6; gUnk_30019F6 = .;
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1A00; gHBlankCallback = .;
         . = 0x1A04; gVCountCallback = .;
@@ -67,7 +79,7 @@ SECTIONS {
         obj/blob_sound.o(.text);
         obj/syscalls.o(.text);
         obj/blob_0x003228-0x0238A4.o(.text);
-        obj/blob_sprite_util.o(.text);
+        obj/disasm_sprite_util.o(.text);
         obj/sprite_ai/blob_0x026FAC-02BADC.o(.text);
         obj/sprite_ai/coins.o(.text);
         obj/sprite_ai/blob_0x02C894-03E560.o(.text);
