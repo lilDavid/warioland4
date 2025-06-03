@@ -1764,7 +1764,7 @@ func_8024524:
 	sub	r0, #32
 	ldrh	r1, [r2, #10]
 	mov	r2, #5
-	bl	Score_SpawnSprite
+	bl	Sprite_SpawnSecondary
 .L_2454c:
 	pop	{r0}
 	bx	r0
@@ -1782,7 +1782,7 @@ func_8024554:
 	sub	r0, #32
 	ldrh	r1, [r1, #10]
 	mov	r2, #5
-	bl	Score_SpawnSprite
+	bl	Sprite_SpawnSecondary
 	pop	{r0}
 	bx	r0
 .L_2456c:
@@ -7498,7 +7498,7 @@ func_8026DD0:
 	lsl	r1, r1, #1
 	mov	r0, #200	@ 0xc8
 	mov	r2, #78	@ 0x4e
-	bl	Score_SpawnSprite
+	bl	Sprite_SpawnSecondary
 	ldrh	r0, [r4, #20]
 	ldr	r1, .L_26e5c
 	ldrh	r1, [r1, #0]
@@ -7509,7 +7509,7 @@ func_8026DD0:
 	add	r2, #64	@ 0x40
 	sub	r1, r1, r2
 	mov	r2, #79	@ 0x4f
-	bl	Score_SpawnSprite
+	bl	Sprite_SpawnSecondary
 	mov	r0, #222	@ 0xde
 	lsl	r0, r0, #1
 	bl	Sound_Play

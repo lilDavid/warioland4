@@ -25,6 +25,6 @@ enum ScoreSpriteID {
 
 
 void Score_GivePoints(s32);
-void Score_SpawnSprite(u32 y, u32 x, u8 id);
+void Sprite_SpawnSecondary(u32 y, u32 x, u8 id);
 
 #endif  // SCORE_H

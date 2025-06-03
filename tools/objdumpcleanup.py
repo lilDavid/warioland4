@@ -16,7 +16,7 @@ def file_or_stdin(file):
 
 map_regex = re.compile(r'\s*(0x[0-9a-f]+)\s+(\w+)\s*(?:=\s*\.)?\s*')
 disassembly_regex = re.compile(r'\s*([0-9a-f]+):\s+([0-9a-f ]+)\s+(\S+)(?:\s+([^@]+)\s+)?(?:@ (.*))?\s*')
-ldr_regex = re.compile(r'(r\d), \[(\w+), #(\w+)\]')
+ldr_regex = re.compile(r'(r\d), \[(\w+), #?(\w+)\]')
 
 Instruction = namedtuple('Instruction', ['label', 'raw', 'mnemonic', 'operands', 'comment'])
 
