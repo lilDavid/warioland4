@@ -64,23 +64,23 @@ SECTIONS {
         obj/interrupt_callbacks.o(.text);
         obj/disasm_0x000CA8.o(.text);
         obj/blob_0x000CE0-0x001060.o(.text);
-        obj/sound.o(.text);
+        obj/blob_sound.o(.text);
         obj/syscalls.o(.text);
         obj/blob_0x003228-0x0238A4.o(.text);
-        obj/sprite_util.o(.text);
+        obj/blob_sprite_util.o(.text);
         obj/sprite_ai/blob_0x026FAC-02BADC.o(.text);
         obj/sprite_ai/coins.o(.text);
         obj/sprite_ai/blob_0x02C894-03E560.o(.text);
         obj/sprite_ai/rock.o(.text);
         obj/sprite_ai/blob_0x03EC78-06ACA0.o(.text);
         obj/blob_0x06ACA0-0x072CA0.o(.text);
-        obj/sram.o(.text);
+        obj/blob_sram.o(.text);
         obj/blob_0x0743BC-0x076658.o(.text);
-        obj/score.o(.text);
+        obj/blob_score.o(.text);
         obj/blob_0x076784-0x088620.o(.text);
-        obj/wario_voice.o(.text);
+        obj/blob_wario_voice.o(.text);
         obj/blob_0x088678-0x094DFC.o(.text);
-        obj/libgcc.o(.text);
+        obj/blob_libgcc.o(.text);
     } >ROM =0xFF
 
     .rodata : ALIGN(2) {
