@@ -5707,7 +5707,7 @@ func_80261D0:
 .L_261f8:
 	.4byte	gCurrentSprite
 .L_261fc:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26200:
 	add	r2, #44	@ 0x2c
 	add	r3, #1
@@ -6427,7 +6427,7 @@ func_80265C8:
 	b	.L_2675c
 	.align	2, 0
 .L_266c0:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_266c4:
 	.4byte	0x00000607
 .L_266c8:
@@ -6635,7 +6635,7 @@ func_80267C0:
 .L_26830:
 	.4byte	0x00000101
 .L_26834:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026838
@@ -6757,7 +6757,7 @@ func_80268DC:
 .L_2690c:
 	.4byte	gCurrentSprite
 .L_26910:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26914:
 	add	r2, #44	@ 0x2c
 	cmp	r2, r5
@@ -6797,7 +6797,7 @@ func_8026928:
 .L_26950:
 	.4byte	gCurrentSprite
 .L_26954:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26958:
 	add	r2, #44	@ 0x2c
 	add	r3, #1
@@ -6842,7 +6842,7 @@ func_8026968:
 .L_2699c:
 	.4byte	gCurrentSprite
 .L_269a0:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_269a4:
 	add	r2, #1
 	cmp	r2, #23
@@ -6885,7 +6885,7 @@ func_80269B4:
 	bx	r1
 	.align	2, 0
 .L_269e8:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_80269EC
@@ -7007,7 +7007,7 @@ func_8026ABC:
 	ldrh	r1, [r4, #0]
 	b	.L_26af0
 .L_26ad4:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26ad8:
 	.4byte	gCurrentSprite
 .L_26adc:
@@ -7050,7 +7050,7 @@ func_8026B04:
 	b	.L_26b34
 	.align	2, 0
 .L_26b1c:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26b20:
 	add	r2, #1
 	cmp	r2, #23
@@ -7100,7 +7100,7 @@ func_8026B44:
 	lsr	r3, r0, #24
 	b	.L_26b7e
 .L_26b70:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26b74:
 	add	r0, r2, #1
 	lsl	r0, r0, #24
@@ -7156,7 +7156,7 @@ func_8026B8C:
 .L_26bc8:
 	.4byte	gCurrentSprite
 .L_26bcc:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026BD0
@@ -7197,7 +7197,7 @@ func_8026BD0:
 .L_26c0c:
 	.4byte	gCurrentSprite
 .L_26c10:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_806C14
@@ -7234,7 +7234,7 @@ func_8026C14:
 	bx	r1
 	.align	2, 0
 .L_26c4c:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026C50
@@ -7275,7 +7275,7 @@ func_8026C50:
 .L_26c8c:
 	.4byte	gCurrentSprite
 .L_26c90:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026C94
@@ -7304,7 +7304,7 @@ func_8026C94:
 .L_26cbc:
 	.4byte	gCurrentSprite
 .L_26cc0:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26cc4:
 	add	r2, #44	@ 0x2c
 	add	r3, #1
@@ -7341,7 +7341,7 @@ func_8026CD4:
 	b	.L_26d08
 	.align	2, 0
 .L_26cfc:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26d00:
 	add	r2, #44	@ 0x2c
 	add	r3, #1
@@ -7391,7 +7391,7 @@ func_8026D10:
 .L_26d4c:
 	.4byte	0x0000fff7
 .L_26d50:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026D54
@@ -7427,7 +7427,7 @@ func_8026D54:
 .L_26d88:
 	.4byte	gCurrentSprite
 .L_26d8c:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026D90
@@ -7465,7 +7465,7 @@ func_8026D90:
 .L_26dc8:
 	.4byte	gCurrentSprite
 .L_26dcc:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 
 
 thumb_func_start func_8026DD0
@@ -7526,7 +7526,7 @@ func_8026DD0:
 .L_26e44:
 	.4byte	gWarioData
 .L_26e48:
-	.4byte	gUnk_30019F6
+	.4byte	gWarioPauseTimer
 .L_26e4c:
 	.4byte	gUnk_3000047
 .L_26e50:
@@ -7591,7 +7591,7 @@ func_8026E78:
 	mov	r1, #122	@ 0x7a
 	b	.L_26f46
 .L_26ec8:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26ecc:
 	.4byte	gCurrentSprite
 .L_26ed0:
@@ -7607,7 +7607,7 @@ func_8026E78:
 	mov	r1, #122	@ 0x7a
 	b	.L_26f46
 .L_26ee8:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26eec:
 	.4byte	gCurrentSprite
 .L_26ef0:
@@ -7623,7 +7623,7 @@ func_8026E78:
 	mov	r1, #122	@ 0x7a
 	b	.L_26f46
 .L_26f08:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26f0c:
 	.4byte	gCurrentSprite
 .L_26f10:
@@ -7639,7 +7639,7 @@ func_8026E78:
 	mov	r1, #122	@ 0x7a
 	b	.L_26f46
 .L_26f28:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26f2c:
 	.4byte	gCurrentSprite
 .L_26f30:
@@ -7660,7 +7660,7 @@ func_8026E78:
 	pop	{r0}
 	bx	r0
 .L_26f4c:
-	.4byte	gUnk_3000104
+	.4byte	gSpriteData
 .L_26f50:
 	.4byte	gCurrentSprite
 

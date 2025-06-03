@@ -26,7 +26,7 @@ SECTIONS {
         . = 0x0048; gUnk_3000048 = .;
         . = 0x00a0; gUnk_30000A0 = .;
         . = 0x00c8; gUnk_30000C8 = .;
-        . = 0x0104; gUnk_3000104 = .;
+        . = 0x0104; gSpriteData = .;
         . = 0x0564; gPersistentSpriteData = .;
         . = 0x0a24; gCurrentSprite = .;
         . = 0x0a50; gUnk_3000A50 = .;
@@ -54,7 +54,7 @@ SECTIONS {
         . = 0x1914; gHeartGauge = .;
         . = 0x1948; gUnk_3001948 = .;
         . = 0x19f4; gUnk_30019F4 = .;
-        . = 0x19f6; gUnk_30019F6 = .;
+        . = 0x19f6; gWarioPauseTimer = .;
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1A00; gHBlankCallback = .;
         . = 0x1A04; gVCountCallback = .;
