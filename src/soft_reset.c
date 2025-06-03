@@ -9,8 +9,7 @@
 #include "interrupt_callbacks.h"
 
 
-__attribute__((unused))  // Remove when InitializeGame matches
-static void EmptyFunction(void);
+void EmptyFunction(void);
 
 #ifdef NON_MATCHING
 void InitializeGame(void) {
@@ -192,7 +191,7 @@ ptr_gDisableSoftReset: .4byte gDisableSoftReset \n\
 }
 #endif
 
-static void EmptyFunction() {
+void EmptyFunction() {
 }
 
 void CheckSoftReset(void) {

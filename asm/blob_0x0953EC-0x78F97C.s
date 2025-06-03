@@ -3,7 +3,12 @@
 .section .rodata
 
 
-baserom_blob 0x0953EC, 0x352ADC
+baserom_blob 0x0953EC, 0x097FC8
+
+.global sUnk_8097FC8
+sUnk_8097FC8:
+
+baserom_blob 0x097FC8, 0x352ADC
 
 .global sUnk_8352ADC
 sUnk_8352ADC:

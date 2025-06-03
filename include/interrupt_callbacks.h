@@ -7,7 +7,7 @@
 extern ProcedureFunc gVBlankCallback;
 extern ProcedureFunc gHBlankCallback;
 extern ProcedureFunc gVCountCallback;
-extern u16 gUnk_3000c42;
+extern u16 gUnk_3000C42;
 
 
 void InterruptCallback_CallVBlank(void);

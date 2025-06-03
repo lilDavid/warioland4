@@ -24,6 +24,10 @@ Sound_Init:
     baserom_blob 0x001D20, 0x001D98
 
 
+thumb_func_start func_8001D98
+func_8001D98:
+
+
     baserom_blob 0x001D98, 0x001DA4
 
 
@@ -32,7 +36,21 @@ Sound_Play:
     baserom_blob 0x001DA4, 0x001DD0
 
 
-    baserom_blob 0x001DD0, 0x0022C8
+    baserom_blob 0x001DD0, 0x001ED8
+
+
+thumb_func_start func_8001ED8
+func_8001ED8:
+
+
+    baserom_blob 0x001ED8, 0x001F3C
+
+
+thumb_func_start func_8001F3C
+func_8001F3C:
+
+
+    baserom_blob 0x001F3C, 0x0022C8
 
 
 thumb_func_start func_80022C8
@@ -40,4 +58,18 @@ func_80022C8:
     baserom_blob 0x0022C8, 0x002360
 
 
-    baserom_blob 0x002360, 0x003220
+    baserom_blob 0x002360, 0x0023B4
+
+
+thumb_func_start func_80023B4
+func_80023B4:
+
+
+    baserom_blob 0x0023B4, 0x002430
+
+
+thumb_func_start func_8002430
+func_8002430:
+
+
+    baserom_blob 0x002430, 0x003220

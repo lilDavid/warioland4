@@ -10,7 +10,7 @@ void InterruptCallback_CallVBlank(void) {
     }
 
     write16(REG_IF, read16(REG_IF) | IRQ_VBLANK);
-    gUnk_3000c42 = 1;
+    gUnk_3000C42 = 1;
 }
 
 void InterruptCallback_SetVBlank(ProcedureFunc cb) {

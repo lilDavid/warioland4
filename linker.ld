@@ -7,17 +7,35 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
+        . = 0x0003; gUnk_3000003 = .;
+        . = 0x0004; gUnk_3000004 = .;
+        . = 0x0006; gUnk_3000006 = .;
+        . = 0x0010; gUnk_3000010 = .;
+        . = 0x0012; gUnk_3000012 = .;
+        . = 0x0013; gUnk_3000013 = .;
+        . = 0x0014; gUnk_3000014 = .;
+        . = 0x0018; gUnk_3000018 = .;
         . = 0x001e; gDisableSoftReset = .;
+        . = 0x0020; gUnk_3000020 = .;
+        . = 0x0022; gUnk_3000022 = .;
         . = 0x0024; gCurrentRoom = .;
+        . = 0x0025; gUnk_3000025 = .;
+        . = 0x0048; gUnk_3000048 = .;
         . = 0x00a0; gUnk_30000A0 = .;
         . = 0x0564; gPersistentSpriteData = .;
         . = 0x0a24; gCurrentSprite = .;
         . = 0x0a50; gUnk_3000A50 = .;
         . = 0x0a51; gUnk_3000A51 = .;
         . = 0x0bec; gUnk_3000BEC = .;
+        . = 0x0c35; gUnk_3000C35 = .;
+        . = 0x0c37; gUnk_3000C37 = .;
         . = 0x0c3a; gMainGameMode = .;
         . = 0x0c3c; gSubGameMode = .;
-        . = 0x0c42; gUnk_3000c42 = .;
+        . = 0x0c3e; gUnk_3000C3E = .;
+        . = 0x0c3f; gUnk_3000C3F = .;
+        . = 0x0c40; gUnk_3000C40 = .;
+        . = 0x0c41; gUnk_3000C41 = .;
+        . = 0x0c42; gUnk_3000C42 = .;
         . = 0x0c44; gInterruptHandlerBuffer = .;
         . = 0x1844; gButtonsHeld = .;
         . = 0x1846; gButtonsHeldCopy = .;
@@ -37,14 +55,14 @@ SECTIONS {
     .text : ALIGN(2) {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
-        obj/agbmain.o(.text);
+        obj/disasm_agbmain.o(.text);
         obj/soft_reset.o(.text);
-        obj/blob_0x0007EC-0x000954.o(.text);
+        obj/disasm_0x0007EC.o(.text);
         obj/poll_input.o(.text);
         obj/init_helpers.o(.text);
         obj/blob_0x000A0C-0x000BE8.o(.text);
         obj/interrupt_callbacks.o(.text);
-        obj/func_000CA8.o(.text);
+        obj/disasm_0x000CA8.o(.text);
         obj/blob_0x000CE0-0x001060.o(.text);
         obj/sound.o(.text);
         obj/syscalls.o(.text);
