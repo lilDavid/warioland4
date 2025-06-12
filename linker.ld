@@ -136,7 +136,8 @@ SECTIONS {
         obj/disasm_sram.o(.text);
         obj/blob_sound.o(.text);
         obj/syscalls.o(.text);
-        obj/blob_0x003228-0x0238A4.o(.text);
+        obj/disasm_0x003228.o(.text);
+        obj/blob_0x0033BC-0x0238A4.o(.text);
         obj/disasm_sprite_util.o(.text);
         obj/sprite_ai/blob_0x026FAC-02BADC.o(.text);
         obj/sprite_ai/coins.o(.text);

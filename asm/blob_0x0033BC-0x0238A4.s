@@ -1,17 +1,7 @@
 .include "macros.s.inc"
 
 
-baserom_blob 0x003228, 0x00324C
-
-thumb_func_start func_800324C
-func_800324C:
-
-baserom_blob 0x00324C, 0x003384
-
-thumb_func_start func_8003384
-func_8003384:
-
-baserom_blob 0x003384, 0x003474
+baserom_blob 0x0033BC, 0x003474
 
 thumb_func_start func_8003474
 func_8003474:
