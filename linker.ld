@@ -103,6 +103,8 @@ SECTIONS {
         . = 0x184A; gUnk_300184A = .;
         . = 0x187A; gUnk_300187A = .;
         . = 0x187C; gUnk_300187C = .;
+        . = 0x188B; gUnk_300188B = .;
+        . = 0x188C; gUnk_300188C = .;
         . = 0x1898; gWarioData = .;
         . = 0x1910; gWarioHearts = .;
         . = 0x1914; gHeartGauge = .;
@@ -127,7 +129,7 @@ SECTIONS {
         obj/disasm_0x0007EC.o(.text);
         obj/poll_input.o(.text);
         obj/init_helpers.o(.text);
-        obj/blob_0x000A0C-0x000BE8.o(.text);
+        obj/disasm_0x000A0C.o(.text);
         obj/interrupt_callbacks.o(.text);
         obj/disasm_0x000CA8.o(.text);
         obj/blob_0x000CE0-0x001060.o(.text);
