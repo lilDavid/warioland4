@@ -16,6 +16,7 @@ SECTIONS {
         . = 0x0013; gUnk_3000013 = .;
         . = 0x0014; gUnk_3000014 = .;
         . = 0x0018; gUnk_3000018 = .;
+        . = 0x0019; gUnk_3000019 = .;
         . = 0x001e; gDisableSoftReset = .;
         . = 0x0020; gUnk_3000020 = .;
         . = 0x0022; gUnk_3000022 = .;
@@ -132,7 +133,7 @@ SECTIONS {
         obj/disasm_0x000A0C.o(.text);
         obj/interrupt_callbacks.o(.text);
         obj/disasm_0x000CA8.o(.text);
-        obj/blob_0x000CE0-0x001060.o(.text);
+        obj/disasm_sram.o(.text);
         obj/blob_sound.o(.text);
         obj/syscalls.o(.text);
         obj/blob_0x003228-0x0238A4.o(.text);
@@ -143,18 +144,19 @@ SECTIONS {
         obj/sprite_ai/rock.o(.text);
         obj/sprite_ai/blob_0x03EC78-06ACA0.o(.text);
         obj/blob_0x06ACA0-0x072CA0.o(.text);
-        obj/blob_sram.o(.text);
+        obj/blob_save_file.o(.text);
         obj/blob_0x0743BC-0x0751FC.o(.text);
         obj/disasm_0x00751FC.o(.text);
         obj/blob_0x076A54-0x088620.o(.text);
         obj/blob_wario_voice.o(.text);
         obj/blob_0x088678-0x094DFC.o(.text);
         obj/blob_libgcc.o(.text);
-    } >ROM =0xFF
+    } > ROM =0xFF
 
     .rodata : ALIGN(2) {
         obj/blob_0x095138-0x0953B8.o(.rodata);
         obj/crt0.o(.rodata);
-        obj/blob_0x0953EC-0x78F97C.o(.rodata);
+        obj/disasm_sram.o(.rodata);
+        obj/blob_0x09540C-0x78F97C.o(.rodata);
     } > ROM =0xFF
 }

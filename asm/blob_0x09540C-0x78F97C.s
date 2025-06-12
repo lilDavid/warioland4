@@ -3,7 +3,7 @@
 .section .rodata
 
 
-baserom_blob 0x0953EC, 0x097FC8
+baserom_blob 0x09540C, 0x097FC8
 
 .global sUnk_8097FC8
 sUnk_8097FC8:
@@ -125,6 +125,9 @@ sUnk_83B37FC:
 
 baserom_blob 0x3B37FC, 0x3B5D40
 
+
+@ Sprites
+
 .global sCoin500PointsOamData
 sCoin500PointsOamData:
 
@@ -163,7 +166,25 @@ baserom_blob 0x3B63FC, 0x3C4B18
 .global sRockOamData
 sRockOamData:
 
-baserom_blob 0x3C4B18, 0x403AE8
+
+@ Save file?
+
+baserom_blob 0x3C4B18, 0x4009BC
+
+.global sUnk_84009BC
+sUnk_84009BC:
+
+baserom_blob 0x4009BC, 0x4009C4
+
+.global sUnk_84009C4
+sUnk_84009C4:
+    .4byte 0x2038300, 0x2038700
+
+.global sUnk_84009CC
+sUnk_84009CC:
+
+baserom_blob 0x4009CC, 0x403AE8
+
 
 .global sUnk_8403AE8
 sUnk_8403AE8:
