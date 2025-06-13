@@ -20,16 +20,23 @@ SECTIONS {
         . = 0x001e; gDisableSoftReset = .;
         . = 0x0020; gUnk_3000020 = .;
         . = 0x0022; gUnk_3000022 = .;
+        . = 0x0023; gUnk_3000023 = .;
         . = 0x0024; gCurrentRoom = .;
         . = 0x0025; gUnk_3000025 = .;
         . = 0x0028; gUnk_3000028 = .;
+        . = 0x002c; gUnk_300002C = .;
         . = 0x0033; gUnk_3000033 = .;
         . = 0x0034; gUnk_3000034 = .;
+        . = 0x0035; gUnk_3000035 = .;
         . = 0x0046; gUnk_3000046 = .;
         . = 0x0047; gUnk_3000047 = .;
         . = 0x0048; gUnk_3000048 = .;
         . = 0x00a0; gUnk_30000A0 = .;
+        . = 0x00c0; gUnk_30000C0 = .;
         . = 0x00c8; gUnk_30000C8 = .;
+        . = 0x00d0; gUnk_30000D0 = .;
+        . = 0x00f4; gUnk_30000F4 = .;
+        . = 0x00fc; gUnk_30000FC = .;
         . = 0x0104; gSpriteData = .;
         . = 0x0564; gPersistentSpriteData = .;
         . = 0x0a24; gCurrentSprite = .;
@@ -102,6 +109,7 @@ SECTIONS {
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
         . = 0x184A; gUnk_300184A = .;
+        . = 0x1870; gUnk_3001870 = .;
         . = 0x187A; gUnk_300187A = .;
         . = 0x187C; gUnk_300187C = .;
         . = 0x188B; gUnk_300188B = .;
@@ -144,10 +152,12 @@ SECTIONS {
         obj/sprite_ai/blob_0x02C894-03E560.o(.text);
         obj/sprite_ai/rock.o(.text);
         obj/sprite_ai/blob_0x03EC78-06ACA0.o(.text);
-        obj/blob_0x06ACA0-0x072CA0.o(.text);
+        obj/blob_0x06ACA0-0x0701F4.o(.text);
+        obj/disasm_color_fading.o(.text);
+        obj/blob_0x071598-0x072CA0.o(.text);
         obj/blob_save_file.o(.text);
         obj/blob_0x0743BC-0x0751FC.o(.text);
-        obj/disasm_0x00751FC.o(.text);
+        obj/disasm_0x0751FC.o(.text);
         obj/blob_0x076A54-0x088620.o(.text);
         obj/blob_wario_voice.o(.text);
         obj/blob_0x088678-0x094DFC.o(.text);
@@ -158,6 +168,8 @@ SECTIONS {
         obj/blob_0x095138-0x0953B8.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x78F97C.o(.rodata);
+        obj/blob_0x09540C-0x3F9DF8.o(.rodata);
+        obj/disasm_color_fading.o(.rodata);
+        obj/blob_0x3F9EB8-0x78F97C.o(.rodata);
     } > ROM =0xFF
 }
