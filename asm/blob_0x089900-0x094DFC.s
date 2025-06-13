@@ -4,7 +4,12 @@
 thumb_func_start func_8089900
 func_8089900:
 
-baserom_blob 0x089900, 0x08FB84
+baserom_blob 0x089900, 0x089B80
+
+thumb_func_start func_8089B80
+func_8089B80:
+
+baserom_blob 0x089B80, 0x08FB84
 
 thumb_func_start func_808FB84
 func_808FB84:

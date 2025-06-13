@@ -171,6 +171,7 @@ SECTIONS {
         . = 0x47b0; gUnk_30047B0 = .;
         . = 0x47b4; gUnk_30047B4 = .;
         . = 0x4a30; gUnk_3004A30 = .;
+        . = 0x6130; gUnk_3006130 = .;
 
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
@@ -206,7 +207,7 @@ SECTIONS {
         obj/blob_0x0743BC-0x0751FC.o(.text);
         obj/disasm_0x0751FC.o(.text);
         obj/blob_0x076A54-0x088620.o(.text);
-        obj/blob_wario_voice.o(.text);
+        obj/voice_set.o(.text);
         obj/disasm_pause_screen.o(.text);
         obj/blob_0x089900-0x094DFC.o(.text);
         obj/blob_libgcc.o(.text);
@@ -220,6 +221,8 @@ SECTIONS {
         obj/disasm_color_fading.o(.rodata);
         obj/blob_0x3F9EB8-0x40093C.o(.rodata);
         obj/disasm_save_file.o(.rodata);
-        obj/blob_0x400A68-0x78F97C.o(.rodata);
+        obj/blob_0x400A68-0x6D3394.o(.rodata);
+        obj/voice_set.o(.rodata);
+        obj/blob_0x6D36A4-0x78F97C.o(.rodata);
     } > ROM =0xFF
 }

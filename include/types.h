@@ -7,6 +7,7 @@
 
 typedef void (*ProcedureFunc)(void);
 
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
 
 // Amount of subpixels in one visible pixel
 #define PIXEL_SIZE 4

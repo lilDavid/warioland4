@@ -263,7 +263,4 @@ extern PrimarySpriteData gCurrentSprite;
 
 void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
 
-// TODO: This does NOT belong here
-void Sprite_PlayWarioVoice(u32);
-
 #endif  // SPRITE_H

@@ -24,27 +24,6 @@ enum WarioReaction {
     REACT_MAX
 };
 
-enum WarioVoice {
-    WV_0,
-    WV_TREASURE,
-    WV_2,
-    WV_3,
-    WV_SORRY,
-    WV_5,
-    WV_6,
-    WV_7,
-    WV_8,
-    WV_HURT,
-    WV_10,
-    WV_11,
-    WV_12,
-    WV_13,
-    WV_14,
-    WV_15,
-    WV_16,
-    WV_MAX
-};
-
 
 typedef struct {
     /* 0x00 */ u8 reaction;

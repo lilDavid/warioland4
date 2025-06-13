@@ -7,6 +7,7 @@
 #include "sprite_util.h"
 #include "score.h"
 #include "types.h"
+#include "voice_set.h"
 #include "wario.h"
 
 
@@ -497,7 +498,7 @@ static void Diamond_Collect(void) {
     } else {
         Sound_Play(SE_GET_DIAMOND);
     }
-    Sprite_PlayWarioVoice(WV_TREASURE);
+    VoiceSet_Play(VS_WARIO_TREASURE);
 }
 
 static void ChanceWheelDiamond_Init(void) {
