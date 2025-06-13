@@ -3,25 +3,7 @@
 .section .rodata
 
 
-baserom_blob 0x3F9EB8, 0x4009BC
-
-
-@ Save file?
-
-.global sUnk_84009BC
-sUnk_84009BC:
-
-baserom_blob 0x4009BC, 0x4009C4
-
-.global sUnk_84009C4
-sUnk_84009C4:
-    .4byte 0x2038300, 0x2038700
-
-.global sUnk_84009CC
-sUnk_84009CC:
-
-baserom_blob 0x4009CC, 0x403AE8
-
+baserom_blob 0x400A68, 0x403AE8
 
 .global sUnk_8403AE8
 sUnk_8403AE8:
@@ -221,7 +203,12 @@ baserom_blob 0x414AE4, 0x414B04
 .global sUnk_8414B04
 sUnk_8414B04:
 
-baserom_blob 0x414B04, 0x63A31C
+baserom_blob 0x414B04, 0x6391C4
+
+.global sUnk_86391C4
+sUnk_86391C4:
+
+baserom_blob 0x6391C4, 0x63A31C
 
 .global sUnk_863A31C
 sUnk_863A31C:
