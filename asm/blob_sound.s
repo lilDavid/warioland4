@@ -16,7 +16,16 @@ func_8001064:
 
 thumb_func_start func_8001070
 func_8001070:
-    baserom_blob 0x001070, 0x001D20
+
+
+    baserom_blob 0x001070, 0x0016C4
+
+
+thumb_func_start func_80016C4
+func_80016C4:
+
+
+    baserom_blob 0x0016C4, 0x001D20
 
 
 thumb_func_start Sound_Init
@@ -43,7 +52,14 @@ thumb_func_start func_8001ED8
 func_8001ED8:
 
 
-    baserom_blob 0x001ED8, 0x001F3C
+    baserom_blob 0x001ED8, 0x001F04
+
+
+thumb_func_start func_8001F04
+func_8001F04:
+
+
+    baserom_blob 0x001F04, 0x001F3C
 
 
 thumb_func_start func_8001F3C
@@ -72,4 +88,11 @@ thumb_func_start func_8002430
 func_8002430:
 
 
-    baserom_blob 0x002430, 0x003220
+    baserom_blob 0x002430, 0x0025C8
+
+
+thumb_func_start func_80025C8
+func_80025C8:
+
+
+    baserom_blob 0x0025C8, 0x003220

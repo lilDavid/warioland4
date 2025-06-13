@@ -7,6 +7,7 @@ MEMORY {
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} >EWRAM
     iwram (NOLOAD) : ALIGN(4) {
+        . = 0x0000; gUnk_3000000 = .;
         . = 0x0002; gCurrentPassage = .;
         . = 0x0003; gCurrentStageNumber = .;
         . = 0x0004; gCurrentStageID = .;
@@ -15,6 +16,7 @@ SECTIONS {
         . = 0x0012; gUnk_3000012 = .;
         . = 0x0013; gUnk_3000013 = .;
         . = 0x0014; gUnk_3000014 = .;
+        . = 0x0016; gUnk_3000016 = .;
         . = 0x0018; gUnk_3000018 = .;
         . = 0x0019; gUnk_3000019 = .;
         . = 0x001e; gDisableSoftReset = .;
@@ -55,10 +57,12 @@ SECTIONS {
         . = 0x0a62; gUnk_3000A62 = .;
         . = 0x0a64; gUnk_3000A64 = .;
         . = 0x0a68; gCurrentCollection = .;
+        . = 0x0b10; gUnk_3000B10 = .;
         . = 0x0b80; gSecondarySpriteData = .;
         . = 0x0be0; gCurrentSecondarySprite = .;
         . = 0x0bec; gUnk_3000BEC = .;
         . = 0x0bf0; gUnk_3000BF0 = .;
+        . = 0x0bf4; gUnk_3000BF4 = .;
         . = 0x0bf8; gUnk_3000BF8 = .;
         . = 0x0bfc; gUnk_3000BFC = .;
         . = 0x0c01; gUnk_3000C01 = .;
@@ -124,6 +128,19 @@ SECTIONS {
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1A00; gHBlankCallback = .;
         . = 0x1A04; gVCountCallback = .;
+        . = 0x3c39; gUnk_3003C39 = .;
+        . = 0x3c3a; gUnk_3003C3A = .;
+        . = 0x3c4a; gUnk_3003C4A = .;
+        . = 0x3c50; gUnk_3003C50 = .;
+        . = 0x3c52; gUnk_3003C52 = .;
+        . = 0x4788; gUnk_3004788 = .;
+        . = 0x4790; gUnk_3004790 = .;
+        . = 0x4798; gUnk_3004798 = .;
+        . = 0x47a8; gUnk_30047A8 = .;
+        . = 0x47ac; gUnk_30047AC = .;
+        . = 0x47b0; gUnk_30047B0 = .;
+        . = 0x47b4; gUnk_30047B4 = .;
+        . = 0x4a30; gUnk_3004A30 = .;
 
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
@@ -160,7 +177,8 @@ SECTIONS {
         obj/disasm_0x0751FC.o(.text);
         obj/blob_0x076A54-0x088620.o(.text);
         obj/blob_wario_voice.o(.text);
-        obj/blob_0x088678-0x094DFC.o(.text);
+        obj/disasm_pause_screen.o(.text);
+        obj/blob_0x089900-0x094DFC.o(.text);
         obj/blob_libgcc.o(.text);
     } > ROM =0xFF
 
