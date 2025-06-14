@@ -214,7 +214,7 @@ SECTIONS {
     } > ROM =0xFF
 
     .rodata : ALIGN(2) {
-        obj/blob_0x095138-0x0953B8.o(.rodata);
+        obj/disasm_0x000A0C.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
         obj/blob_0x09540C-0x3F9DF8.o(.rodata);
