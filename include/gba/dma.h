@@ -51,17 +51,39 @@
 #define DMA_ENABLE (1 << 31)
 
 
-typedef struct {
-    vu32 sad;
-    vu32 dad;
-    vu32 cnt;
-} DMA;
+#define DMA_TRANSFER(channel, src, dst, cnt)                                   \
+    {                                                                          \
+        vu32 *dma_ = (vu32 *)REG_DMA##channel;                                 \
+        dma_[0]    = (vu32)src;                                                \
+        dma_[1]    = (vu32)dst;                                                \
+        dma_[2]    = (vu32)cnt;                                                \
+        dma_[2];                                                               \
+    }
 
-#define DMA_TRANSFER(channel, src, dest, ctrl) do { \
-    ((DMA*) REG_DMA##channel)->sad = (u32) (src); \
-    ((DMA*) REG_DMA##channel)->dad = (u32) (dest); \
-    ((DMA*) REG_DMA##channel)->cnt = (ctrl); \
-    ((DMA*) REG_DMA##channel)->cnt; \
-} while (0)
+#define dma_fill(channel, val, dst, size, bit)                                 \
+    {                                                                          \
+        vu##bit dma_tmp_ = (vu##bit)val;                                       \
+        DMA_TRANSFER(                                                          \
+            channel,                                                           \
+            &dma_tmp_,                                                         \
+            dst,                                                               \
+            DMA_ENABLE | DMA_NOW | DMA_##bit | DMA_SRC_FIXED | DMA_DST_INC | DMA_N((size) / (bit / 8)) \
+        );                                                                     \
+    }
+
+#define dma_fill16(channel, value, dest, size)                                 \
+    dma_fill(channel, value, dest, size, 16)
+#define dma_fill32(channel, value, dest, size)                                 \
+    dma_fill(channel, value, dest, size, 32)
+
+#define dma_clear(channel, dest, size, bit)                                    \
+    {                                                                          \
+        vu##bit *dma_dest_ = (vu##bit *)(dest);                                \
+        u32 dma_size_      = size;                                             \
+        dma_fill##bit(channel, 0, dma_dest_, dma_size_);                       \
+    }
+
+#define dma_clear16(channel, dest, size) dma_clear(channel, dest, size, 16)
+#define dma_clear32(channel, dest, size) dma_clear(channel, dest, size, 32)
 
 #endif /* GBA_DMA_H */
