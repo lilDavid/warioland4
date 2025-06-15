@@ -3,6 +3,10 @@
 .section .rodata
 
 
+@ Likely gfx or palettes
+.global sUnk_8400A68
+sUnk_8400A68:
+
 baserom_blob 0x400A68, 0x403AE8
 
 .global sUnk_8403AE8

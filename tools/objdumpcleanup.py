@@ -67,6 +67,18 @@ for i, inst in enumerate(instructions):
     if inst.mnemonic[-1] == 's':
         instructions[i] = inst._replace(mnemonic=inst.mnemonic[:-1])
 
+# Remove 4-byte instructions other than bl
+_instructions, instructions = instructions, []
+iterator = iter(enumerate(_instructions))
+for i, inst in iterator:
+    if len(inst.raw.replace(' ', '')) > 4 and inst.mnemonic != 'bl':
+        addr = int(inst.label, base=16)
+        lower, upper = inst.raw.split()
+        instructions.append(Instruction(f"{addr:x}", lower, ".2byte", f"0x{lower}", ""))
+        instructions.append(Instruction(f"{addr + 2:x}", upper, ".2byte", f"0x{upper}", ""))
+    else:
+        instructions.append(inst)
+
 # Find targets of PC-relative loads and jumps
 branch_targets = set()
 pool_addresses = set()
