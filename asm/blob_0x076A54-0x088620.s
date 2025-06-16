@@ -16,7 +16,17 @@ baserom_blob 0x07A824, 0x07AA4C
 thumb_func_start func_807AA4C
 func_807AA4C:
 
-baserom_blob 0x07AA4C, 0x0811A0
+baserom_blob 0x07AA4C, 0x07AB8C
+
+thumb_func_start func_807AB8C
+func_807AB8C:
+
+baserom_blob 0x07AB8C, 0x07ACCC
+
+thumb_func_start func_807ACCC
+func_807ACCC:
+
+baserom_blob 0x07ACCC, 0x0811A0
 
 thumb_func_start func_80811A0
 func_80811A0:

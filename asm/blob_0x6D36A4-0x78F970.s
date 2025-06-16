@@ -161,15 +161,158 @@ baserom_blob 0x6DF1F8, 0x6E29F8
 .global sUnk_86E29F8
 sUnk_86E29F8:
 
-baserom_blob 0x6E29F8, 0x739458
+baserom_blob 0x6E29F8, 0x72FEE4
 
 
-@ File select data
+@ Shop data
+
+.global sUnk_872FEE4
+sUnk_872FEE4:
+
+baserom_blob 0x72FEE4, 0x72FEF8
+
+.global sUnk_872FEF8
+sUnk_872FEF8:
+
+baserom_blob 0x72FEF8, 0x72FF0C
+
+.global sUnk_872FF0C
+sUnk_872FF0C:
+
+baserom_blob 0x72FF0C, 0x72FF18
+
+.global sUnk_872FF18
+sUnk_872FF18:
+
+baserom_blob 0x72FF18, 0x72FF24
+
+.global sUnk_872FF24
+sUnk_872FF24:
+
+baserom_blob 0x72FF24, 0x72FF38
+
+.global sUnk_872FF38
+sUnk_872FF38:
+
+baserom_blob 0x72FF38, 0x72FF4C
+
+.global sUnk_872FF4C
+sUnk_872FF4C:
+
+baserom_blob 0x72FF4C, 0x72FF58
+
+.global sUnk_872FF58
+sUnk_872FF58:
+
+baserom_blob 0x72FF58, 0x72FF64
+
+.global sUnk_872FF64
+sUnk_872FF64:
+
+baserom_blob 0x72FF64, 0x72FF9C
+
+.global sUnk_872FF9C
+sUnk_872FF9C:
+
+baserom_blob 0x72FF9C, 0x730014
+
+.global sUnk_8730014
+sUnk_8730014:
+
+baserom_blob 0x730014, 0x7300B4
+
+.global sUnk_87300B4
+sUnk_87300B4:
+
+baserom_blob 0x7300B4, 0x730114
+
+.global sUnk_8730114
+sUnk_8730114:
+
+baserom_blob 0x730114, 0x730150
+
+.global sUnk_8730150
+sUnk_8730150:
+
+baserom_blob 0x730150, 0x730470
+
+.global sUnk_8730470
+sUnk_8730470:
+
+baserom_blob 0x730470, 0x7304F8
+
+.global sUnk_87304F8
+sUnk_87304F8:
+
+baserom_blob 0x7304F8, 0x730510
+
+.global sUnk_8730510
+sUnk_8730510:
+
+baserom_blob 0x730510, 0x730528
+
+.global sUnk_8730528
+sUnk_8730528:
+
+baserom_blob 0x730528, 0x730858
+
+.global sUnk_8730858
+sUnk_8730858:
+
+baserom_blob 0x730858, 0x731058
+
+.global sUnk_8731058
+sUnk_8731058:
+
+baserom_blob 0x731058, 0x731858
+
+.global sUnk_8731858
+sUnk_8731858:
+
+baserom_blob 0x731858, 0x732858
+
+.global sUnk_8732858
+sUnk_8732858:
+
+baserom_blob 0x732858, 0x732A58
+
+.global sUnk_8732A58
+sUnk_8732A58:
+
+baserom_blob 0x732A58, 0x733278
+
+.global sUnk_8733278
+sUnk_8733278:
+
+baserom_blob 0x733278, 0x735258
+
+.global sUnk_8735258
+sUnk_8735258:
+
+baserom_blob 0x735258, 0x735458
+
+.global sUnk_8735458
+sUnk_8735458:
+
+baserom_blob 0x735458, 0x738A18
+
+.global sUnk_8738A18
+sUnk_8738A18:
+
+baserom_blob 0x738A18, 0x739458
 
 .global sUnk_8739458
 sUnk_8739458:
 
-baserom_blob 0x739458, 0x73D458
+baserom_blob 0x739458, 0x73D438
+
+.global sUnk_873D438
+sUnk_873D438:
+
+baserom_blob 0x73D438, 0x73D458
+
+
+@ File select data
 
 .global sUnk_873D458
 sUnk_873D458:

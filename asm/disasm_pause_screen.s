@@ -293,7 +293,7 @@ func_8088840:
 	mov	r1, #240	@ 0xf0
 	lsl	r1, r1, #7
 	mov	r2, #26
-	bl	func_80904DC
+	bl	Shop_DrawText
 	b	.L_888ee
 .L_888c0:
 	.4byte	sUnk_863A3AC
@@ -317,7 +317,7 @@ func_8088840:
 	mov	r1, #240	@ 0xf0
 	lsl	r1, r1, #7
 	mov	r2, #26
-	bl	func_80904DC
+	bl	Shop_DrawText
 .L_888ee:
 	pop	{r0}
 	bx	r0
