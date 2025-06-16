@@ -67,6 +67,8 @@ SECTIONS {
         . = 0x0a24; gCurrentSprite = .;
         . = 0x0a50; gUnk_3000A50 = .;
         . = 0x0a51; gUnk_3000A51 = .;
+        . = 0x0a52; gUnk_3000A52 = .;
+        . = 0x0a53; gUnk_3000A53 = .;
         . = 0x0a58; gUnk_3000A58 = .;
         . = 0x0a59; gUnk_3000A59 = .;
         . = 0x0a5a; gUnk_3000A5A = .;
@@ -225,7 +227,8 @@ SECTIONS {
         obj/disasm_0x003228.o(.text);
         obj/blob_0x0033BC-0x01B8BC.o(.text);
         obj/disasm_in_game.o(.text);
-        obj/blob_0x01D684-0x0238A4.o(.text);
+        obj/blob_0x01D684-0x01E4B0.o(.text);
+        obj/disasm_sprite_wario_interaction.o(.text);
         obj/disasm_sprite_util.o(.text);
         obj/sprite_ai/blob_0x026FAC-02BADC.o(.text);
         obj/sprite_ai/coins.o(.text);

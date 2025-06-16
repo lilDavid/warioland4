@@ -45,7 +45,14 @@ Sound_Play:
     baserom_blob 0x001DA4, 0x001DD0
 
 
-    baserom_blob 0x001DD0, 0x001ED8
+    baserom_blob 0x001DD0, 0x001E70
+
+
+thumb_func_start func_8001E70
+func_8001E70:
+
+
+    baserom_blob 0x001E70, 0x001ED8
 
 
 thumb_func_start func_8001ED8

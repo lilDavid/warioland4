@@ -41,4 +41,9 @@ baserom_blob 0x010404, 0x010438
 thumb_func_start func_8010438
 func_8010438:
 
-baserom_blob 0x010438, 0x01B8BC
+baserom_blob 0x010438, 0x015BA8
+
+thumb_func_start func_8015BA8
+func_8015BA8:
+
+baserom_blob 0x015BA8, 0x01B8BC

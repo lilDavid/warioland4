@@ -306,7 +306,12 @@ baserom_blob 0x3B63D4, 0x3B63FC
 .global sDiamondFloatYVelocity
 sDiamondFloatYVelocity:
 
-baserom_blob 0x3B63FC, 0x3C4B18
+baserom_blob 0x3B63FC, 0x3B9E50
+
+.global sUnk_83B9E50
+sUnk_83B9E50:
+
+baserom_blob 0x3B9E50, 0x3C4B18
 
 .global sRockOamData
 sRockOamData:
