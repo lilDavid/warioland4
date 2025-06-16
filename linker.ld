@@ -144,6 +144,7 @@ SECTIONS {
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
         . = 0x184A; gUnk_300184A = .;
+        . = 0x1850; gUnk_3001850 = .;
         . = 0x1858; gUnk_3001858 = .;
         . = 0x185C; gUnk_300185C = .;
         . = 0x1860; gUnk_3001860 = .;
@@ -152,6 +153,8 @@ SECTIONS {
         . = 0x186C; gUnk_300186C = .;
         . = 0x186E; gUnk_300186E = .;
         . = 0x1870; gUnk_3001870 = .;
+        . = 0x1872; gUnk_3001872 = .;
+        . = 0x1874; gUnk_3001874 = .;
         . = 0x1876; gUnk_3001876 = .;
         . = 0x1878; gUnk_3001878 = .;
         . = 0x187a; gUnk_300187A = .;
@@ -206,7 +209,23 @@ SECTIONS {
         . = 0x47b0; gUnk_30047B0 = .;
         . = 0x47b4; gUnk_30047B4 = .;
         . = 0x4a30; gUnk_3004A30 = .;
+        . = 0x4abc; gUnk_3004ABC = .;
+        . = 0x4ac4; gUnk_3004AC4 = .;
+        . = 0x4acc; gUnk_3004ACC = .;
+        . = 0x4ad4; gUnk_3004AD4 = .;
+        . = 0x4adc; gUnk_3004ADC = .;
+        . = 0x4ae4; gUnk_3004AE4 = .;
+        . = 0x4aec; gUnk_3004AEC = .;
+        . = 0x4af4; gUnk_3004AF4 = .;
+        . = 0x4afc; gUnk_3004AFC = .;
+        . = 0x4b04; gUnk_3004B04 = .;
+        . = 0x4b0c; gUnk_3004B0C = .;
+        . = 0x4b1c; gUnk_3004B1C = .;
+        . = 0x4b24; gUnk_3004B24 = .;
+        . = 0x4b25; gUnk_3004B25 = .;
+        . = 0x60f0; gUnk_30060F0 = .;
         . = 0x6130; gUnk_3006130 = .;
+        . = 0x6230; gUnk_3006230 = .;
 
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
@@ -247,7 +266,8 @@ SECTIONS {
         obj/blob_0x076A54-0x088620.o(.text);
         obj/voice_set.o(.text);
         obj/disasm_pause_screen.o(.text);
-        obj/blob_0x089900-0x094DFC.o(.text);
+        obj/blob_0x089900-0x092FD8.o(.text);
+        obj/disasm_credits.o(.text);
         obj/blob_libgcc.o(.text);
     } > ROM =0xFF
 

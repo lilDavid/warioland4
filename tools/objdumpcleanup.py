@@ -48,7 +48,10 @@ def get_symbol(addr, ctx=None):
         return f'func_{real_address:X}'
     if ctx == 'data':
         if real_address < TEXT_SEGMENT_END:
-            return f'.L_{real_address & ~0x8000000:x}'
+            if real_address & 1:
+                return f'func_{real_address & ~1:X}'
+            else:
+                return f'.L_{real_address & ~0x8000000:x}'
         else:
             return f'sUnk_{addr[-7:].upper()}'
     return addr

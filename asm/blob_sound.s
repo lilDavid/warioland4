@@ -35,8 +35,6 @@ Sound_Init:
 
 thumb_func_start func_8001D98
 func_8001D98:
-
-
     baserom_blob 0x001D98, 0x001DA4
 
 
@@ -45,14 +43,19 @@ Sound_Play:
     baserom_blob 0x001DA4, 0x001DD0
 
 
+thumb_func_start func_8001DD0
+func_8001DD0:
     baserom_blob 0x001DD0, 0x001E70
 
 
 thumb_func_start func_8001E70
 func_8001E70:
+    baserom_blob 0x001E70, 0x001EA4
 
 
-    baserom_blob 0x001E70, 0x001ED8
+thumb_func_start func_8001EA4
+func_8001EA4:
+    baserom_blob 0x001EA4, 0x001ED8
 
 
 thumb_func_start func_8001ED8
