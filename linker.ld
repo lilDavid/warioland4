@@ -343,9 +343,9 @@ SECTIONS {
         obj/disasm_0x0007EC.o(.text);
         obj/poll_input.o(.text);
         obj/init_helpers.o(.text);
-        obj/disasm_0x000A0C.o(.text);
+        obj/disasm_oam.o(.text);
+        obj/disasm_0x000A84.o(.text);
         obj/interrupt_callbacks.o(.text);
-        obj/disasm_0x000CA8.o(.text);
         obj/disasm_sram.o(.text);
         obj/blob_sound.o(.text);
         obj/syscalls.o(.text);
@@ -381,7 +381,7 @@ SECTIONS {
     } > ROM =0xFF
 
     .rodata : ALIGN(2) {
-        obj/disasm_0x000A0C.o(.rodata);
+        obj/disasm_oam.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
         obj/blob_0x09540C-0x3F9DF8.o(.rodata);
