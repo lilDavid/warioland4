@@ -19,9 +19,4 @@ baserom_blob 0x08FB84, 0x0904DC
 thumb_func_start func_80904DC
 func_80904DC:
 
-baserom_blob 0x0904DC, 0x0917A8
-
-thumb_func_start func_80917A8
-func_80917A8:
-
-baserom_blob 0x0917A8, 0x0927E4
+baserom_blob 0x0904DC, 0x0909B0

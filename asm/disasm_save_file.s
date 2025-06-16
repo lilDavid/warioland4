@@ -67,7 +67,7 @@ func_8072CA0:
 .L_72d10:
 	.4byte	0x02038008
 .L_72d14:
-	.4byte	gUnk_3000015
+	.4byte	gClearedHardDifficulty
 .L_72d18:
 .ifdef VERSION_JP
 	.4byte	sUnk_84009A8
@@ -230,7 +230,7 @@ func_8072D24:
 .L_72e50:
 	.4byte	0x0203800a
 .L_72e54:
-	.4byte	gUnk_3000015
+	.4byte	gClearedHardDifficulty
 .L_72e58:
 	bl	func_8000CE0
 	ldr	r1, .L_72e80
@@ -261,7 +261,7 @@ func_8072D24:
 	bx	r0
 .align 2, 0
 .L_72e80:
-	.4byte	gUnk_3000015
+	.4byte	gClearedHardDifficulty
 .L_72e84:
 	.4byte	gUnk_3000016
 .L_72e88:

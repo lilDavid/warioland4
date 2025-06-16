@@ -161,7 +161,130 @@ baserom_blob 0x6DF1F8, 0x6E29F8
 .global sUnk_86E29F8
 sUnk_86E29F8:
 
-baserom_blob 0x6E29F8, 0x745350
+baserom_blob 0x6E29F8, 0x739458
+
+
+@ File select data
+
+.global sUnk_8739458
+sUnk_8739458:
+
+baserom_blob 0x739458, 0x73D458
+
+.global sUnk_873D458
+sUnk_873D458:
+
+baserom_blob 0x73D458, 0x73D764
+
+.global sUnk_873D764
+sUnk_873D764:
+
+baserom_blob 0x73D764, 0x7409C0
+
+.global sUnk_87409C0
+sUnk_87409C0:
+
+baserom_blob 0x7409C0, 0x74140C
+
+.global sUnk_874140C
+sUnk_874140C:
+
+baserom_blob 0x74140C, 0x741D00
+
+.global sUnk_8741D00
+sUnk_8741D00:
+
+baserom_blob 0x741D00, 0x74253C
+
+.global sUnk_874253C
+sUnk_874253C:
+
+baserom_blob 0x74253C, 0x74273C
+
+.global sUnk_874273C
+sUnk_874273C:
+
+baserom_blob 0x74273C, 0x742976
+
+.global sUnk_8742976
+sUnk_8742976:
+
+baserom_blob 0x742976, 0x74297C
+
+.global sUnk_874297C
+sUnk_874297C:
+
+baserom_blob 0x74297C, 0x742982
+
+.global sUnk_8742982
+sUnk_8742982:
+
+baserom_blob 0x742982, 0x742986
+
+.global sUnk_8742986
+sUnk_8742986:
+
+baserom_blob 0x742986, 0x74298C
+
+.global sUnk_874298C
+sUnk_874298C:
+
+baserom_blob 0x74298C, 0x742992
+
+.global sUnk_8742992
+sUnk_8742992:
+
+baserom_blob 0x742992, 0x74299E
+
+.global sUnk_874299E
+sUnk_874299E:
+
+baserom_blob 0x74299E, 0x7429B8
+
+.global sUnk_87429B8
+sUnk_87429B8:
+
+baserom_blob 0x7429B8, 0x7429D2
+
+.global sUnk_87429D2
+sUnk_87429D2:
+
+baserom_blob 0x7429D2, 0x7429D6
+
+.global sUnk_87429D6
+sUnk_87429D6:
+
+baserom_blob 0x7429D6, 0x7429DC
+
+.global sUnk_87429DC
+sUnk_87429DC:
+
+baserom_blob 0x7429DC, 0x7429E0
+
+.global sUnk_87429E0
+sUnk_87429E0:
+
+baserom_blob 0x7429E0, 0x7429EC
+
+.global sUnk_87429EC
+sUnk_87429EC:
+
+baserom_blob 0x7429EC, 0x742B2C
+
+.global sUnk_8742B2C
+sUnk_8742B2C:
+
+baserom_blob 0x742B2C, 0x742E00
+
+.global sUnk_8742E00
+sUnk_8742E00:
+
+baserom_blob 0x742E00, 0x7430FC
+
+.global sUnk_87430FC
+sUnk_87430FC:
+
+baserom_blob 0x7430FC, 0x745350
 
 
 @ Save file clear data
@@ -476,10 +599,26 @@ sUnk_878F5CC:
 
 baserom_blob 0x78F5CC, 0x78F714
 
+@ Secondary sprite AI
 .global sUnk_878F714
 sUnk_878F714:
 
-baserom_blob 0x78F714, 0x78F93C
+baserom_blob 0x78F714, 0x78F87C
+
+.global sUnk_878F87C
+sUnk_878F87C:
+
+baserom_blob 0x78F87C, 0x78F884
+
+.global sUnk_878F884
+sUnk_878F884:
+
+baserom_blob 0x78F884, 0x78F88C
+
+.global sUnk_878F88C
+sUnk_878F88C:
+
+baserom_blob 0x78F88C, 0x78F93C
 
 .global sUnk_878F93C
 sUnk_878F93C:

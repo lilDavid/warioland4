@@ -8,7 +8,12 @@ baserom_blob 0x09540C, 0x097FC8
 .global sUnk_8097FC8
 sUnk_8097FC8:
 
-baserom_blob 0x097FC8, 0x2DD0A8
+baserom_blob 0x097FC8, 0x098028
+
+.global sUnk_8098028
+sUnk_8098028:
+
+baserom_blob 0x098028, 0x2DD0A8
 
 .global sUnk_82DD0A8
 sUnk_82DD0A8:
