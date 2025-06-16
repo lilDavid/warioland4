@@ -161,7 +161,29 @@ baserom_blob 0x6DF1F8, 0x6E29F8
 .global sUnk_86E29F8
 sUnk_86E29F8:
 
-baserom_blob 0x6E29F8, 0x78F5CC
+baserom_blob 0x6E29F8, 0x78E800
+
+
+@ Sprite AI and sprite sets
+
+.global sUnk_878E800
+sUnk_878E800:
+	baserom_blob 0x78E800, 0x78EBF0
+
+.global sUnk_878EBF0
+sUnk_878EBF0:
+	baserom_blob 0x78EBF0, 0x78EDB4
+
+.global sUnk_878EDB4
+sUnk_878EDB4:
+	baserom_blob 0x78EDB4, 0x78EF78
+
+.global sUnk_878EF78
+sUnk_878EF78:
+	baserom_blob 0x78EF78, 0x78F0E4
+
+
+baserom_blob 0x78F0E4, 0x78F5CC
 
 .global sUnk_878F5CC
 sUnk_878F5CC:
