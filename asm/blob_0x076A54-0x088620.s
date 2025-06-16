@@ -6,7 +6,22 @@ baserom_blob 0x076A54, 0x0799A8
 thumb_func_start func_80799A8
 func_80799A8:
 
-baserom_blob 0x0799A8, 0x07A824
+baserom_blob 0x0799A8, 0x07A380
+
+thumb_func_start func_807A380
+func_807A380:
+
+baserom_blob 0x07A380, 0x07A3D4
+
+thumb_func_start func_807A3D4
+func_807A3D4:
+
+baserom_blob 0x07A3D4, 0x07A428
+
+thumb_func_start func_807A428
+func_807A428:
+
+baserom_blob 0x07A428, 0x07A824
 
 thumb_func_start func_807A824
 func_807A824:

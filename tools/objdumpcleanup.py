@@ -88,7 +88,7 @@ pool_addresses = set()
 for i, inst in enumerate(instructions):
     if inst.mnemonic == 'ldr':
         rd, rs, off = ldr_regex.match(inst.operands).groups()
-        if rs == 'pc':
+        if rs == 'pc' and inst.label not in pool_addresses:
             addr = inst.comment[3:-1]
             pool_addresses.add(addr)
             instructions[i] = inst._replace(operands=f'{rd}, .L_{addr}', comment='')

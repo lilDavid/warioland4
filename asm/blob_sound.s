@@ -105,11 +105,28 @@ thumb_func_start func_80025C8
 func_80025C8:
 
 
-    baserom_blob 0x0025C8, 0x002D58
+    baserom_blob 0x0025C8, 0x002D30
+
+
+thumb_func_start func_8002D30
+func_8002D30:
+    baserom_blob 0x002D30, 0x002D58
 
 
 thumb_func_start func_8002D58
 func_8002D58:
+    baserom_blob 0x002D58, 0x002DC0
 
 
-    baserom_blob 0x002D58, 0x003220
+thumb_func_start func_8002DC0
+func_8002DC0:
+
+
+    baserom_blob 0x002DC0, 0x002EBC
+
+
+thumb_func_start func_8002EBC
+func_8002EBC:
+
+
+    baserom_blob 0x002EBC, 0x003220
