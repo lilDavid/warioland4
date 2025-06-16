@@ -165,6 +165,7 @@ SECTIONS {
         . = 0x1884; gUnk_3001884 = .;
         . = 0x188b; gUnk_300188B = .;
         . = 0x188c; gUnk_300188C = .;
+        . = 0x188e; gUnk_300188E = .;
         . = 0x1890; gUnk_3001890 = .;
         . = 0x1892; gUnk_3001892 = .;
         . = 0x1894; gUnk_3001894 = .;
@@ -209,6 +210,9 @@ SECTIONS {
         . = 0x47b0; gUnk_30047B0 = .;
         . = 0x47b4; gUnk_30047B4 = .;
         . = 0x4a30; gUnk_3004A30 = .;
+        . = 0x4a70; gUnk_3004A70 = .;
+        . = 0x4ab8; gUnk_3004AB8 = .;
+        . = 0x4ab9; gUnk_3004AB9 = .;
         . = 0x4abc; gUnk_3004ABC = .;
         . = 0x4ac4; gUnk_3004AC4 = .;
         . = 0x4acc; gUnk_3004ACC = .;
@@ -266,7 +270,8 @@ SECTIONS {
         obj/blob_0x076A54-0x088620.o(.text);
         obj/voice_set.o(.text);
         obj/disasm_pause_screen.o(.text);
-        obj/blob_0x089900-0x092FD8.o(.text);
+        obj/blob_0x089900-0x0927E4.o(.text);
+        obj/disasm_save_data_clear.o(.text);
         obj/disasm_credits.o(.text);
         obj/blob_libgcc.o(.text);
     } > ROM =0xFF
@@ -281,6 +286,6 @@ SECTIONS {
         obj/disasm_save_file.o(.rodata);
         obj/blob_0x400A68-0x6D3394.o(.rodata);
         obj/voice_set.o(.rodata);
-        obj/blob_0x6D36A4-0x78F97C.o(.rodata);
+        obj/blob_0x6D36A4-0x78F970.o(.rodata);
     } > ROM =0xFF
 }

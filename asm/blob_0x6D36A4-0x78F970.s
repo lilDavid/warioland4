@@ -161,7 +161,65 @@ baserom_blob 0x6DF1F8, 0x6E29F8
 .global sUnk_86E29F8
 sUnk_86E29F8:
 
-baserom_blob 0x6E29F8, 0x7470E0
+baserom_blob 0x6E29F8, 0x745350
+
+
+@ Save file clear data
+
+.global sUnk_8745350
+sUnk_8745350:
+
+baserom_blob 0x745350, 0x745B58
+
+.global sUnk_8745B58
+sUnk_8745B58:
+
+baserom_blob 0x745B58, 0x746480
+
+.global sUnk_8746480
+sUnk_8746480:
+
+baserom_blob 0x746480, 0x746680
+
+.global sUnk_8746680
+sUnk_8746680:
+
+baserom_blob 0x746680, 0x746880
+
+.global sUnk_8746880
+sUnk_8746880:
+
+baserom_blob 0x746880, 0x746926
+
+.global sUnk_8746926
+sUnk_8746926:
+
+baserom_blob 0x746926, 0x746D70
+
+.global sUnk_8746D70
+sUnk_8746D70:
+
+baserom_blob 0x746D70, 0x746D72
+
+.global sUnk_8746D72
+sUnk_8746D72:
+
+baserom_blob 0x746D72, 0x746D74
+
+.global sUnk_8746D74
+sUnk_8746D74:
+
+baserom_blob 0x746D74, 0x746D76
+
+.global sUnk_8746D76
+sUnk_8746D76:
+
+baserom_blob 0x746D76, 0x746D78
+
+.global sUnk_8746D78
+sUnk_8746D78:
+
+baserom_blob 0x746D78, 0x7470E0
 
 
 @ Ending cutscene data
@@ -421,4 +479,8 @@ baserom_blob 0x78F5CC, 0x78F714
 .global sUnk_878F714
 sUnk_878F714:
 
-baserom_blob 0x78F714, 0x78F97C
+baserom_blob 0x78F714, 0x78F93C
+
+.global sUnk_878F93C
+sUnk_878F93C:
+	baserom_blob 0x78F93C, 0x78F970

@@ -25,8 +25,3 @@ thumb_func_start func_80917A8
 func_80917A8:
 
 baserom_blob 0x0917A8, 0x0927E4
-
-thumb_func_start func_80927E4
-func_80927E4:
-
-baserom_blob 0x0927E4, 0x092FD8
