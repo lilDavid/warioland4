@@ -283,10 +283,60 @@ baserom_blob 0x3B35F8, 0x3B37FC
 .global sUnk_83B37FC
 sUnk_83B37FC:
 
-baserom_blob 0x3B37FC, 0x3B5D40
+baserom_blob 0x3B37FC, 0x3B47C4
 
 
 @ Sprites
+
+.global sUnk_83B47C4
+sUnk_83B47C4:
+
+baserom_blob 0x3B47C4, 0x3B47EC
+
+.global sUnk_83B47EC
+sUnk_83B47EC:
+
+baserom_blob 0x3B47EC, 0x3B4814
+
+.global sUnk_83B4814
+sUnk_83B4814:
+
+baserom_blob 0x3B4814, 0x3B483C
+
+.global sUnk_83B483C
+sUnk_83B483C:
+
+baserom_blob 0x3B483C, 0x3B4864
+
+.global sUnk_83B4864
+sUnk_83B4864:
+
+baserom_blob 0x3B4864, 0x3B488C
+
+.global sUnk_83B488C
+sUnk_83B488C:
+
+baserom_blob 0x3B488C, 0x3B48B4
+
+.global sUnk_83B48B4
+sUnk_83B48B4:
+
+baserom_blob 0x3B48B4, 0x3B48DC
+
+.global sUnk_83B48DC
+sUnk_83B48DC:
+
+baserom_blob 0x3B48DC, 0x3B4904
+
+.global sUnk_83B4904
+sUnk_83B4904:
+
+baserom_blob 0x3B4904, 0x3B49BC
+
+.global sUnk_83B49BC
+sUnk_83B49BC:
+
+baserom_blob 0x3B49BC, 0x3B5D40
 
 .global sCoin500PointsOamData
 sCoin500PointsOamData:
@@ -311,7 +361,12 @@ baserom_blob 0x3B5E78, 0x3B62AC
 .global sDiamondOamData
 sDiamondOamData:
 
-baserom_blob 0x3B62AC, 0x3B63D4
+baserom_blob 0x3B62AC, 0x3B63B4
+
+.global sUnk_83B63B4
+sUnk_83B63B4:
+
+baserom_blob 0x3B63B4, 0x3B63D4
 
 .global sLittleHeartOamData
 sLittleHeartOamData:
@@ -331,4 +386,94 @@ baserom_blob 0x3B9E50, 0x3C4B18
 .global sRockOamData
 sRockOamData:
 
-baserom_blob 0x3C4B18, 0x3F9DF8
+baserom_blob 0x3C4B18, 0x3D84D4
+
+.global sUnk_83D84D4
+sUnk_83D84D4:
+
+baserom_blob 0x3D84D4, 0x3D853C
+
+.global sUnk_83D853C
+sUnk_83D853C:
+
+baserom_blob 0x3D853C, 0x3D86C4
+
+.global sUnk_83D86C4
+sUnk_83D86C4:
+
+baserom_blob 0x3D86C4, 0x3D8B40
+
+.global sUnk_83D8B40
+sUnk_83D8B40:
+
+baserom_blob 0x3D8B40, 0x3D8E3C
+
+.global sUnk_83D8E3C
+sUnk_83D8E3C:
+
+baserom_blob 0x3D8E3C, 0x3D9792
+
+.global sUnk_83D9792
+sUnk_83D9792:
+
+baserom_blob 0x3D9792, 0x3D979A
+
+.global sUnk_83D979A
+sUnk_83D979A:
+
+baserom_blob 0x3D979A, 0x3D97A2
+
+.global sUnk_83D97A2
+sUnk_83D97A2:
+
+baserom_blob 0x3D97A2, 0x3D97AA
+
+.global sUnk_83D97AA
+sUnk_83D97AA:
+
+baserom_blob 0x3D97AA, 0x3D97B2
+
+.global sUnk_83D97B2
+sUnk_83D97B2:
+
+baserom_blob 0x3D97B2, 0x3D97BA
+
+.global sUnk_83D97BA
+sUnk_83D97BA:
+
+baserom_blob 0x3D97BA, 0x3D97C2
+
+.global sUnk_83D97C2
+sUnk_83D97C2:
+
+baserom_blob 0x3D97C2, 0x3D97CA
+
+.global sUnk_83D97CA
+sUnk_83D97CA:
+
+baserom_blob 0x3D97CA, 0x3D97D2
+
+.global sUnk_83D97D2
+sUnk_83D97D2:
+
+baserom_blob 0x3D97D2, 0x3D97DA
+
+.global sUnk_83D97DA
+sUnk_83D97DA:
+
+baserom_blob 0x3D97DA, 0x3D9994
+
+.global sUnk_83D9994
+sUnk_83D9994:
+
+baserom_blob 0x3D9994, 0x3D9BC0
+
+.global sUnk_83D9BC0
+sUnk_83D9BC0:
+
+baserom_blob 0x3D9BC0, 0x3D9DB4
+
+.global sUnk_83D9DB4
+sUnk_83D9DB4:
+
+baserom_blob 0x3D9DB4, 0x3F9DF8

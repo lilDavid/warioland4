@@ -365,8 +365,9 @@ SECTIONS {
         obj/blob_0x071598-0x072CA0.o(.text);
         obj/disasm_save_file.o(.text);
         obj/blob_0x0743BC-0x0751FC.o(.text);
-        obj/disasm_0x0751FC.o(.text);
-        obj/blob_0x076A54-0x088620.o(.text);
+        obj/disasm_score.o(.text);
+        obj/disasm_secondary_sprite_ai.o(.text);
+        obj/blob_0x0799A8-0x088620.o(.text);
         obj/voice_set.o(.text);
         obj/disasm_pause_screen.o(.text);
         obj/disasm_minigame.o(.text);
