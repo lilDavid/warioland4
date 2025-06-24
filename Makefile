@@ -17,7 +17,8 @@ MD5SUM = md5sum
 TOOLS = tools
 GBAFIX = $(TOOLS)/gbafix/gbafix
 
-CC = $(TOOLS)/agbcc/agbcc
+AGBCC_DIR = $(TOOLS)/agbcc
+CC = $(AGBCC_DIR)/agbcc
 
 
 # Files
@@ -32,6 +33,7 @@ SRC = src
 INCLUDE = include
 BUILT_ASM = $(BUILD)/asm
 OBJ = $(BUILD)/obj
+LIBS =
 
 SRCS_C = $(shell find $(SRC) -type f -name '*.c')
 SRCS_ASM = $(shell find $(ASM) -type f -name '*.s')
@@ -103,7 +105,7 @@ clean:
 	$Qrm -rf $(GBAFIX)
 ifeq ($(AGBCC),1)
 	$(MSG) CLEAN $(CC)
-	$Qcd tools/agbcc && git clean -xdf .
+	$Qcd $(AGBCC_DIR) && git clean -xdf .
 endif
 
 help:
@@ -134,7 +136,7 @@ $(TARGET): $(ELF) $(GBAFIX)
 
 $(ELF): $(OBJS) linker.ld
 	$(MSG) LD linker.ld
-	$Q$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) -o $@
+	$Q$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) $(AGBCC_DIR)/libgcc.a $(AGBCC_DIR)/libc.a -o $@
 
 $(OBJ)/%.o: $(ASM)/%.s
 	$(MSG) AS $<

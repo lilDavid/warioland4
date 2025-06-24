@@ -378,7 +378,8 @@ SECTIONS {
         obj/disasm_file_select.o(.text);
         obj/disasm_save_data_clear.o(.text);
         obj/disasm_credits.o(.text);
-        obj/blob_libgcc.o(.text);
+        */libgcc.a:*(.text);
+        */libc.a:*(.text);
     } > ROM =0xFF
 
     .rodata : ALIGN(2) {
