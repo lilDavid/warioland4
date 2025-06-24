@@ -752,7 +752,12 @@ baserom_blob 0x416A88, 0x416AA4
 .global sUnk_8416AA4
 sUnk_8416AA4:
 
-baserom_blob 0x416AA4, 0x6391C4
+baserom_blob 0x416AA4, 0x639068
+
+.global sUnk_8639068
+sUnk_8639068:
+
+baserom_blob 0x639068, 0x6391C4
 
 .global sUnk_86391C4
 sUnk_86391C4:

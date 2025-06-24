@@ -388,7 +388,7 @@ SECTIONS {
         obj/disasm_color_fading.o(.text);
         obj/disasm_hblank.o(.text);
         obj/blob_0x0720E8-0x072964.o(.text);
-        obj/blob_demo.o(.text);
+        obj/disasm_demo.o(.text);
         obj/disasm_quit.o(.text);
         obj/disasm_save_file.o(.text);
         obj/blob_0x0743BC-0x0751FC.o(.text);
@@ -416,11 +416,14 @@ SECTIONS {
         obj/blob_0x09540C-0x3F9DF8.o(.rodata);
         obj/disasm_color_fading.o(.rodata);
         obj/disasm_hblank.o(.rodata);
-        obj/blob_0x3FA838-0x40093C.o(.rodata);
+        obj/blob_0x3FA838-0x3FDA2C.o(.rodata);
+        obj/disasm_demo.o(.rodata);
         obj/disasm_quit.o(.rodata);
         obj/disasm_save_file.o(.rodata);
         obj/blob_0x400A68-0x6D3394.o(.rodata);
         obj/voice_set.o(.rodata);
-        obj/blob_0x6D36A4-0x78F970.o(.rodata);
+        obj/blob_0x6D36A4-0x78F5DC.o(.rodata);
+        obj/data/demo_data_pointers.o(.rodata);
+        obj/blob_0x78F674-0x78F970.o(.rodata);
     } > ROM =0xFF
 }
