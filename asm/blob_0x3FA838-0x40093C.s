@@ -3,4 +3,4 @@
 .section .rodata
 
 
-baserom_blob 0x3F9EB8, 0x40093C
+baserom_blob 0x3FA838, 0x40093C
