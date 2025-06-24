@@ -387,7 +387,9 @@ SECTIONS {
         obj/blob_0x06ACA0-0x0701F4.o(.text);
         obj/disasm_color_fading.o(.text);
         obj/disasm_hblank.o(.text);
-        obj/blob_stage_end.o(.text);
+        obj/blob_0x0720E8-0x072964.o(.text);
+        obj/blob_demo.o(.text);
+        obj/disasm_quit.o(.text);
         obj/disasm_save_file.o(.text);
         obj/blob_0x0743BC-0x0751FC.o(.text);
         obj/disasm_score.o(.text);
@@ -415,6 +417,7 @@ SECTIONS {
         obj/disasm_color_fading.o(.rodata);
         obj/disasm_hblank.o(.rodata);
         obj/blob_0x3FA838-0x40093C.o(.rodata);
+        obj/disasm_quit.o(.rodata);
         obj/disasm_save_file.o(.rodata);
         obj/blob_0x400A68-0x6D3394.o(.rodata);
         obj/voice_set.o(.rodata);
