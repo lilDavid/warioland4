@@ -1307,4 +1307,4 @@ baserom_blob 0x78F0E4, 0x78F5CC
 .global sUnk_878F5CC
 sUnk_878F5CC:
 
-baserom_blob 0x78F5CC, 0x78F5F4
+baserom_blob 0x78F5CC, 0x78F5DC

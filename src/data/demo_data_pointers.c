@@ -1,4 +1,4 @@
-#include "gba.h"
+#include "types.h"
 
 
 const u16* const sUnk_878F5F4[] = {
