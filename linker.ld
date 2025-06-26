@@ -178,6 +178,7 @@ SECTIONS {
         . = 0x1898; gWarioData = .;
         . = 0x1910; gWarioHearts = .;
         . = 0x1914; gHeartGauge = .;
+        . = 0x1918; gUnk_3001918 = .;
         . = 0x1930; gUnk_3001930 = .;
         . = 0x1938; gUnk_3001938 = .;
         . = 0x1940; gUnk_3001940 = .;
@@ -202,6 +203,7 @@ SECTIONS {
         . = 0x31ba; gUnk_30031BA = .;
         . = 0x31bc; gUnk_30031BC = .;
         . = 0x31be; gUnk_30031BE = .;
+        . = 0x31f4; gUnk_30031F4 = .;
         . = 0x3200; gUnk_3003200 = .;
         . = 0x321c; gUnk_300321C = .;
         . = 0x3224; gUnk_3003224 = .;
@@ -209,6 +211,7 @@ SECTIONS {
         . = 0x342c; gUnk_300342C = .;
         . = 0x342e; gUnk_300342E = .;
         . = 0x35f6; gUnk_30035F6 = .;
+        . = 0x3bcc; gUnk_3003BCC = .;
         . = 0x3bd0; gUnk_3003BD0 = .;
         . = 0x3bdc; gUnk_3003BDC = .;
         . = 0x3be8; gUnk_3003BE8 = .;
@@ -384,7 +387,8 @@ SECTIONS {
         obj/sprite_ai/blob_0x02C894-03E560.o(.text);
         obj/sprite_ai/rock.o(.text);
         obj/sprite_ai/blob_0x03EC78-06ACA0.o(.text);
-        obj/blob_0x06ACA0-0x0701F4.o(.text);
+        obj/blob_0x06ACA0-0x06EC50.o(.text);
+        obj/disasm_0x06EC50.o(.text);
         obj/disasm_color_fading.o(.text);
         obj/disasm_hblank.o(.text);
         obj/disasm_stage_end.o(.text);
@@ -413,7 +417,8 @@ SECTIONS {
         obj/disasm_oam.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x3F9DF8.o(.rodata);
+        obj/blob_0x09540C-0x3F9D64.o(.rodata);
+        obj/disasm_0x06EC50.o(.rodata);
         obj/disasm_color_fading.o(.rodata);
         obj/disasm_hblank.o(.rodata);
         obj/disasm_stage_end.o(.rodata);
@@ -423,7 +428,9 @@ SECTIONS {
         obj/disasm_save_file.o(.rodata);
         obj/blob_0x400A68-0x6D3394.o(.rodata);
         obj/voice_set.o(.rodata);
-        obj/blob_0x6D36A4-0x78F5DC.o(.rodata);
+        obj/blob_0x6D36A4-0x78F5A4.o(.rodata);
+        obj/data/tile_fn_pointers.o(.rodata);
+        obj/data/color_fading_pointers.o(.rodata);
         obj/data/stage_end_pointers.o(.rodata);
         obj/data/demo_data_pointers.o(.rodata);
         obj/blob_0x78F674-0x78F970.o(.rodata);
