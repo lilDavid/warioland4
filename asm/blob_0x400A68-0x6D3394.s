@@ -4,10 +4,14 @@
 
 
 @ Likely gfx or palettes
-.global sUnk_8400A68
-sUnk_8400A68:
+.global sCommonSpritesPal
+sCommonSpritesPal:
 
-baserom_blob 0x400A68, 0x403AE8
+baserom_blob 0x400A68, 0x400AE8
+
+.global sCommonSpritesGfx
+sCommonSpritesGfx:
+    baserom_blob 0x400AE8, 0x403AE8
 
 .global sUnk_8403AE8
 sUnk_8403AE8:
@@ -182,7 +186,43 @@ baserom_blob 0x405088, 0x405188
 .global sUnk_8405188
 sUnk_8405188:
 
-baserom_blob 0x405188, 0x40F188
+baserom_blob 0x405188, 0x406588
+
+.global sBossStageSpritesGfx
+sBossStageSpritesGfx:
+    baserom_blob 0x406588, 0x407188
+
+.global sAppleBombGfx
+sAppleBombGfx:
+    baserom_blob 0x407188, 0x408188
+
+.global sBlastCannonGfx
+sBlastCannonGfx:
+    baserom_blob 0x408188, 0x409188
+
+.global sVizormanGfx
+sVizormanGfx:
+    baserom_blob 0x409188, 0x40A188
+
+.global sBugleGfx
+sBugleGfx:
+    baserom_blob 0x40A188, 0x40B188
+
+.global sBlackDogGfx
+sBlackDogGfx:
+    baserom_blob 0x40B188, 0x40C188
+
+.global sLargeLipsGfx
+sLargeLipsGfx:
+    baserom_blob 0x40C188, 0x40D188
+
+.global sBigFistGfx
+sBigFistGfx:
+    baserom_blob 0x40D188, 0x40E188
+
+.global sBlackDragonGfx
+sBlackDragonGfx:
+    baserom_blob 0x40E188, 0x40F188
 
 .global sUnk_840F188
 sUnk_840F188:
@@ -669,35 +709,44 @@ sUnk_8414A5C:
 
 baserom_blob 0x414A5C, 0x414A64
 
-.global sUnk_8414A64
-sUnk_8414A64:
+.global sStageEntryPassagePal
+sStageEntryPassagePal:
 
 baserom_blob 0x414A64, 0x414A84
 
-.global sUnk_8414A84
-sUnk_8414A84:
+.global sStageEmeraldPassagePal
+sStageEmeraldPassagePal:
 
 baserom_blob 0x414A84, 0x414AA4
 
-.global sUnk_8414AA4
-sUnk_8414AA4:
+.global sStageRubyPassagePal
+sStageRubyPassagePal:
 
 baserom_blob 0x414AA4, 0x414AC4
 
-.global sUnk_8414AC4
-sUnk_8414AC4:
+.global sStageTopazPassagePal
+sStageTopazPassagePal:
 
 baserom_blob 0x414AC4, 0x414AE4
 
-.global sUnk_8414AE4
-sUnk_8414AE4:
+.global sStageSapphirePassagePal
+sStageSapphirePassagePal:
 
 baserom_blob 0x414AE4, 0x414B04
 
-.global sUnk_8414B04
-sUnk_8414B04:
+.global sStageGoldenPyramidPal
+sStageGoldenPyramidPal:
 
-baserom_blob 0x414B04, 0x4165F4
+baserom_blob 0x414B04, 0x416564
+
+.global sBigBoardSpaceSpriteTable
+sBigBoardSpaceSpriteTable:
+
+baserom_blob 0x416564, 0x4165A4
+
+.global sBigBoardSpaces
+sBigBoardSpaces:
+    baserom_blob 0x4165A4, 0x4165F4
 
 .global sUnk_84165F4
 sUnk_84165F4:

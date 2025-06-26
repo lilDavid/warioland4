@@ -1424,7 +1424,7 @@ func_801C1C0:
 .L_1c3a8:
 	.4byte	0x05000240
 .L_1c3ac:
-	.4byte	sUnk_8400A68
+	.4byte	sCommonSpritesPal
 .L_1c3b0:
 	.4byte	0x05000280
 .L_1c3b4:

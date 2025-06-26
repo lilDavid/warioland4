@@ -3,11 +3,8 @@
 .section .rodata
 
 
-baserom_blob 0x78F674, 0x78F714
-
-@ Secondary sprite AI
-.global sUnk_878F714
-sUnk_878F714:
+.global sSecondarySpriteAITable
+sSecondarySpriteAITable:
 
 baserom_blob 0x78F714, 0x78F87C
 

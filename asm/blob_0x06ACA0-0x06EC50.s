@@ -19,7 +19,12 @@ baserom_blob 0x06B410, 0x06BDF8
 thumb_func_start func_806BDF8
 func_806BDF8:
 
-baserom_blob 0x06BDF8, 0x06BF88
+baserom_blob 0x06BDF8, 0x06BF04
+
+thumb_func_start func_806BF04
+func_806BF04:
+
+baserom_blob 0x06BF04, 0x06BF88
 
 thumb_func_start func_806BF88
 func_806BF88:

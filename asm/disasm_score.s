@@ -117,7 +117,7 @@ ProcessSecondarySprites:
 .L_752d8:
 	.4byte	gSecondarySpriteData
 .L_752dc:
-	.4byte	sUnk_878F714
+	.4byte	sSecondarySpriteAITable
 .L_752e0:
 	.4byte	gCurrentSecondarySprite
 .L_752e4:
@@ -1997,7 +1997,7 @@ func_8075F44:
 .L_7613c:
 	.4byte	0x040000d4
 .L_76140:
-	.4byte	sUnk_8414A64
+	.4byte	sStageEntryPassagePal
 .L_76144:
 	ldr	r1, .L_7614c
 	ldr	r0, .L_76150
@@ -2006,7 +2006,7 @@ func_8075F44:
 .L_7614c:
 	.4byte	0x040000d4
 .L_76150:
-	.4byte	sUnk_8414A84
+	.4byte	sStageEmeraldPassagePal
 .L_76154:
 	ldr	r1, .L_7615c
 	ldr	r0, .L_76160
@@ -2015,7 +2015,7 @@ func_8075F44:
 .L_7615c:
 	.4byte	0x040000d4
 .L_76160:
-	.4byte	sUnk_8414AA4
+	.4byte	sStageRubyPassagePal
 .L_76164:
 	ldr	r1, .L_7616c
 	ldr	r0, .L_76170
@@ -2024,7 +2024,7 @@ func_8075F44:
 .L_7616c:
 	.4byte	0x040000d4
 .L_76170:
-	.4byte	sUnk_8414AC4
+	.4byte	sStageTopazPassagePal
 .L_76174:
 	ldr	r1, .L_7617c
 	ldr	r0, .L_76180
@@ -2033,7 +2033,7 @@ func_8075F44:
 .L_7617c:
 	.4byte	0x040000d4
 .L_76180:
-	.4byte	sUnk_8414AE4
+	.4byte	sStageSapphirePassagePal
 .L_76184:
 	ldr	r1, .L_761ac
 	ldr	r0, .L_761b0
@@ -2061,7 +2061,7 @@ func_8075F44:
 .L_761ac:
 	.4byte	0x040000d4
 .L_761b0:
-	.4byte	sUnk_8414B04
+	.4byte	sStageGoldenPyramidPal
 .L_761b4:
 	.4byte	0x05000280
 .L_761b8:

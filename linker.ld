@@ -395,7 +395,7 @@ SECTIONS {
         obj/disasm_demo.o(.text);
         obj/disasm_quit.o(.text);
         obj/disasm_save_file.o(.text);
-        obj/blob_0x0743BC-0x0751FC.o(.text);
+        obj/disasm_hud.o(.text);
         obj/disasm_score.o(.text);
         obj/disasm_secondary_sprite_ai.o(.text);
         obj/blob_0x0799A8-0x088620.o(.text);
@@ -433,6 +433,7 @@ SECTIONS {
         obj/data/color_fading_pointers.o(.rodata);
         obj/data/stage_end_pointers.o(.rodata);
         obj/data/demo_data_pointers.o(.rodata);
-        obj/blob_0x78F674-0x78F970.o(.rodata);
+        obj/data/hud_pointers.o(.rodata);
+        obj/blob_0x78F714-0x78F970.o(.rodata);
     } > ROM =0xFF
 }
