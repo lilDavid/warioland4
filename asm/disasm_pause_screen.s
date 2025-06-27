@@ -840,13 +840,13 @@ func_8088900:
 .L_88cb0:
 	.4byte	gUnk_30047B0
 .L_88cb4:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_88cb8:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_88cbc:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_88cc0:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_88cc4:
 	.4byte	gUnk_30047A8
 .L_88cc8:
@@ -2377,7 +2377,7 @@ func_80890C0:
 .L_89810:
 	.4byte	0xfffffe00
 .L_89814:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 .L_89818:
 	.4byte	gCurrentCollection
 .L_8981c:
@@ -2395,7 +2395,7 @@ func_80890C0:
 .L_89834:
 	.4byte	sUnk_86D36D4
 .L_89838:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_8983c:
 	.4byte	sUnk_86D3FD0
 .L_89840:

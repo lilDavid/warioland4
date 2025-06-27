@@ -19,7 +19,10 @@ enum ScoreSpriteID {
     SSPRITE_5,
     SSPRITE_6,
     SSPRITE_7,
-    // ...
+
+    SSPRITE_JEWEL_PIECE_ICONS = 0x41,
+    SSPRITE_CD_ICON,
+
     SSPRITE_MAX = 90
 };
 

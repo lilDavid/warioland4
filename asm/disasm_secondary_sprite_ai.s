@@ -3644,7 +3644,7 @@ func_80782A4:
 	bl	func_80814F0
 	b	.L_789ec
 .L_78468:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 .L_7846c:
 	.4byte	gCurrentPassage
 .L_78470:
@@ -4864,13 +4864,13 @@ func_8078D60:
 	pop	{r0}
 	bx	r0
 .L_78d88:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_78d8c:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_78d90:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_78d94:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 
 
 thumb_func_start func_8078D98
@@ -4998,7 +4998,7 @@ func_8078E30:
 	b	.L_79064
 	.align	2, 0
 .L_78e9c:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_78ea0:
 	ldr	r3, .L_78eb4
 	ldrb	r0, [r3, #0]
@@ -5011,7 +5011,7 @@ func_8078E30:
 	mov	r0, #2
 	b	.L_78f08
 .L_78eb4:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_78eb8:
 	ldr	r3, .L_78ecc
 	ldrb	r0, [r3, #0]
@@ -5024,7 +5024,7 @@ func_8078E30:
 	mov	r0, #3
 	b	.L_78f08
 .L_78ecc:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_78ed0:
 	ldr	r3, .L_78ee4
 	ldrb	r0, [r3, #0]
@@ -5037,7 +5037,7 @@ func_8078E30:
 	mov	r0, #4
 	b	.L_78f08
 .L_78ee4:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_78ee8:
 	ldr	r0, .L_78f10
 	ldrb	r0, [r0, #0]
@@ -5300,7 +5300,7 @@ func_807907C:
 	b	.L_790d8
 	.align	2, 0
 .L_790c8:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_790cc:
 	cmp	r2, #2
 	bne	.L_79154

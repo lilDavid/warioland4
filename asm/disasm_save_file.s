@@ -866,11 +866,11 @@ func_8072FB0:
 .L_73370:
 	.4byte	gUnk_3000C0D
 .L_73374:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_73378:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_7337c:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_73380:
 	.4byte	gSecondarySpriteData
 .L_73384:
@@ -880,11 +880,11 @@ func_8072FB0:
 .L_7338c:
 	.4byte	gUnk_3000C06
 .L_73390:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_73394:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_73398:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 .L_7339c:
 	.4byte	gUnk_3000C0E
 .L_733a0:
@@ -1489,11 +1489,11 @@ func_807345C:
 .L_73800:
 	.4byte	gUnk_3000C0D
 .L_73804:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_73808:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_7380c:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_73810:
 	.4byte	gSecondarySpriteData
 .L_73814:
@@ -1503,11 +1503,11 @@ func_807345C:
 .L_7381c:
 	.4byte	gUnk_3000C06
 .L_73820:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_73824:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_73828:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 .L_7382c:
 	.4byte	gUnk_3000C0E
 .L_73830:

@@ -961,29 +961,29 @@ func_809329C:
 .L_936f4:
 	.4byte	gUnk_3004B0C
 .L_936f8:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_936fc:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_93700:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_93704:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_93708:
-	.4byte	gUnk_3000C2C
+	.4byte	gHasGoldenDivaChest5
 .L_9370c:
-	.4byte	gUnk_3000C2D
+	.4byte	gHasGoldenDivaChest6
 .L_93710:
-	.4byte	gUnk_3000C2E
+	.4byte	gHasGoldenDivaChest7
 .L_93714:
-	.4byte	gUnk_3000C2F
+	.4byte	gHasGoldenDivaChest8
 .L_93718:
-	.4byte	gUnk_3000C30
+	.4byte	gHasGoldenDivaChest9
 .L_9371c:
-	.4byte	gUnk_3000C31
+	.4byte	gHasGoldenDivaChest10
 .L_93720:
-	.4byte	gUnk_3000C32
+	.4byte	gHasGoldenDivaChest11
 .L_93724:
-	.4byte	gUnk_3000C33
+	.4byte	gHasGoldenDivaChest12
 .L_93728:
 	.4byte	gUnk_3000017
 .L_9372c:

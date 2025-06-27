@@ -8464,7 +8464,7 @@ func_8022524:
 	mov	r0, #11
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	mov	r0, #1
 	bl	VoiceSet_Play
 	mov	r0, #15
@@ -8493,7 +8493,7 @@ func_8022524:
 	mov	r0, #11
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	mov	r0, #1
 	bl	VoiceSet_Play
 	mov	r0, #60	@ 0x3c

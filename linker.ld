@@ -100,12 +100,12 @@ SECTIONS {
         . = 0x0c04; gUnk_3000C04 = .;
         . = 0x0c05; gUnk_3000C05 = .;
         . = 0x0c06; gUnk_3000C06 = .;
-        . = 0x0c07; gUnk_3000C07 = .;
-        . = 0x0c08; gUnk_3000C08 = .;
-        . = 0x0c09; gUnk_3000C09 = .;
-        . = 0x0c0a; gUnk_3000C0A = .;
-        . = 0x0c0b; gUnk_3000C0B = .;
-        . = 0x0c0c; gUnk_3000C0C = .;
+        . = 0x0c07; gCollectedNEJewelPiece = .;
+        . = 0x0c08; gCollectedSEJewelPiece = .;
+        . = 0x0c09; gCollectedSWJewelPiece = .;
+        . = 0x0c0a; gCollectedNWJewelPiece = .;
+        . = 0x0c0b; gCollectedCD = .;
+        . = 0x0c0c; gCollectedKeyzer = .;
         . = 0x0c0d; gUnk_3000C0D = .;
         . = 0x0c0e; gUnk_3000C0E = .;
         . = 0x0c10; gUnk_3000C10 = .;
@@ -120,15 +120,15 @@ SECTIONS {
         . = 0x0c28; gUnk_3000C28 = .;
         . = 0x0c2a; gUnk_3000C2A = .;
         . = 0x0c2b; gUnk_3000C2B = .;
-        . = 0x0c2c; gUnk_3000C2C = .;
-        . = 0x0c2d; gUnk_3000C2D = .;
-        . = 0x0c2e; gUnk_3000C2E = .;
-        . = 0x0c2f; gUnk_3000C2F = .;
-        . = 0x0c30; gUnk_3000C30 = .;
-        . = 0x0c31; gUnk_3000C31 = .;
-        . = 0x0c32; gUnk_3000C32 = .;
-        . = 0x0c33; gUnk_3000C33 = .;
-        . = 0x0c34; gUnk_3000C34 = .;
+        . = 0x0c2c; gHasGoldenDivaChest5 = .;
+        . = 0x0c2d; gHasGoldenDivaChest6 = .;
+        . = 0x0c2e; gHasGoldenDivaChest7 = .;
+        . = 0x0c2f; gHasGoldenDivaChest8 = .;
+        . = 0x0c30; gHasGoldenDivaChest9 = .;
+        . = 0x0c31; gHasGoldenDivaChest10 = .;
+        . = 0x0c32; gHasGoldenDivaChest11 = .;
+        . = 0x0c33; gHasGoldenDivaChest12 = .;
+        . = 0x0c34; gGoldenTreasureCount = .;
         . = 0x0c35; gUnk_3000C35 = .;
         . = 0x0c37; gUnk_3000C37 = .;
         . = 0x0c38; gUnk_3000C38 = .;
@@ -382,7 +382,9 @@ SECTIONS {
         obj/disasm_sprite.o(.text);
         obj/disasm_sprite_wario_interaction.o(.text);
         obj/disasm_sprite_util.o(.text);
-        obj/sprite_ai/blob_0x026FAC-02BADC.o(.text);
+        obj/sprite_ai/blob_0x026FAC-0291B8.o(.text);
+        obj/sprite_ai/treasure.o(.text);
+        obj/sprite_ai/blob_0x02A878-02BADC.o(.text);
         obj/sprite_ai/coins.o(.text);
         obj/sprite_ai/blob_0x02C894-03E560.o(.text);
         obj/sprite_ai/rock.o(.text);
@@ -417,7 +419,9 @@ SECTIONS {
         obj/disasm_oam.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x3B5C5C.o(.rodata);
+        obj/blob_0x09540C-0x3B4AA0.o(.rodata);
+        obj/sprite_ai/treasure.o(.rodata);
+        obj/blob_0x3B5014-0x3B5C5C.o(.rodata);
         obj/sprite_ai/coins.o(.rodata);
         obj/blob_0x3B644E-0x3C4AE8.o(.rodata);
         obj/sprite_ai/rock.o(.rodata);
@@ -440,4 +444,10 @@ SECTIONS {
         obj/data/hud_pointers.o(.rodata);
         obj/blob_0x78F714-0x78F970.o(.rodata);
     } > ROM =0xFF
+
+    /* Discard everything not specifically mentioned above. */
+    /DISCARD/ :
+    {
+        *(*);
+    }
 }

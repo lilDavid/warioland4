@@ -38,8 +38,8 @@ typedef struct {
     /* 0x09 */ u8 unk_09;
     /* 0x0A */ u8 unk_0A;
     /* 0x0C */ u16 unk_0C;
-    /* 0x0E */ u16 unk_0E;
-    /* 0x10 */ u16 unk_10;
+    /* 0x0E */ u16 horizontalDirection;
+    /* 0x10 */ u16 verticalDirection;
     /* 0x12 */ u16 xPosition;
     /* 0x14 */ u16 yPosition;
     /* 0x16 */ s16 xVelocity;

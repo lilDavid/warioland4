@@ -49,7 +49,8 @@ void func_8025AA0(void);
 void func_8024AC0(void);
 void func_8025B40(void);
 void func_8025BE0(void);
-
+void func_8026838(void);
+u32 SpriteUtil_DespawnChildWithParent(u32 parentId);
 void SpriteUtil_TurnTowardWario(void);
 
 #endif  // SPRITE_UTIL_H

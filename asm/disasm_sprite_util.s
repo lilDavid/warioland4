@@ -6727,8 +6727,8 @@ func_8026838:
 	.4byte	0x0000efff
 
 
-thumb_func_start func_80268DC
-func_80268DC:
+thumb_func_start SpriteUtil_DespawnChildWithParent
+SpriteUtil_DespawnChildWithParent:
 	push	{r4, r5, r6, lr}
 	lsl	r0, r0, #24
 	lsr	r4, r0, #24

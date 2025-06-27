@@ -823,7 +823,7 @@ static void Coin_Init(void) {
             break;
     }
     gCurrentSprite.statusBits |= SPRITE_STATUS_10;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_2;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
 
     gCurrentSprite.disableWarioInteraction = 15;
     gCurrentSprite.warioInteractionFlags = 6;
@@ -832,7 +832,7 @@ static void Coin_Init(void) {
     gCurrentSprite.animationTimer = 0;
 
     if (gWarioData.damageTimer) {
-        if (gWarioData.unk_0E & 0x10) {
+        if (gWarioData.horizontalDirection & 0x10) {
             gCurrentSprite.pose = POSE_3F;
             gCurrentSprite.statusBits |= SPRITE_STATUS_FACING_RIGHT;
         } else {
@@ -1038,7 +1038,7 @@ static void ChanceWheelDiamond_Init(void) {
         gCurrentSprite.pose = POSE_41;
     }
     gCurrentSprite.statusBits |= SPRITE_STATUS_10;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_2;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.disableWarioInteraction = 15;
     gCurrentSprite.warioInteractionFlags = 6;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -1051,7 +1051,7 @@ void SpriteAI_Coin(void) {
     despawnTimer = gCurrentSprite.unk_1D;
     if (despawnTimer) {
         if ((despawnTimer & 1) == 0) {
-            gCurrentSprite.statusBits = gCurrentSprite.statusBits ^ SPRITE_STATUS_2;
+            gCurrentSprite.statusBits = gCurrentSprite.statusBits ^ SPRITE_STATUS_HIDDEN;
         }
         TIMER_COUNT_DOWN(gCurrentSprite.unk_1D);
         if (gCurrentSprite.unk_1D == 0) {

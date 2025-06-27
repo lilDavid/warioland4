@@ -915,7 +915,7 @@ func_806F2D8:
 	mov	r0, #130	@ 0x82
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	b	.L_6f320
 .L_6f30c:
 	mov	r3, #32
@@ -926,7 +926,7 @@ func_806F2D8:
 	mov	r0, #129	@ 0x81
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 .L_6f320:
 	add	sp, #4
 	pop	{r0}

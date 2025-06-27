@@ -66,7 +66,7 @@ enum SoundID {
 
     SOUND_C8 = 0xC8,
 
-    SE_BOX_OPEN = 0xDC,
+    SE_BOX_OPENING = 0xDC,
 
     SE_THUNDER = 0x115,
 
@@ -85,7 +85,7 @@ enum SoundID {
     SE_GET_HEART,
     SOUND_141,
     SOUND_142,
-    SE_GET_HEALTH_REFILL,
+    SE_GET_HEART_REFILL,
     SE_GET_LITTLE_HEART,
 
     SE_GET_COIN_10POINTS_UNDERWATER = 0x14B,

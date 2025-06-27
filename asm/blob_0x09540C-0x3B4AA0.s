@@ -336,4 +336,4 @@ baserom_blob 0x3B4904, 0x3B49BC
 .global sUnk_83B49BC
 sUnk_83B49BC:
 
-baserom_blob 0x3B49BC, 0x3B5C5C
+baserom_blob 0x3B49BC, 0x3B4AA0

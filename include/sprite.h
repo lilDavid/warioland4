@@ -10,7 +10,7 @@ enum PrimarySpriteID {
     PSPRITE_BOX_JEWEL_PIECE_SW,
     PSPRITE_BOX_JEWEL_PIECE_NW,
     PSPRITE_BOX_CD,
-    PSPRITE_BOX_HEALTH_REFILL,
+    PSPRITE_BOX_HEART_REFILL,
     PSPRITE_DIAMOND,
     PSPRITE_SWITCH,
     PSPRITE_KEYZER,
@@ -144,13 +144,13 @@ enum PrimarySpriteID {
     PSPRITE_JEWEL_PIECE_SW,
     PSPRITE_JEWEL_PIECE_NW,
     PSPRITE_CD,
-    PSPRITE_HEALTH_REFILL,
+    PSPRITE_HEART_REFILL,
     PSPRITE_GLOW_JEWEL_PIECE_NE,
     PSPRITE_GLOW_JEWEL_PIECE_SE,
     PSPRITE_GLOW_JEWEL_PIECE_SW,
     PSPRITE_GLOW_JEWEL_PIECE_NW,
     PSPRITE_GLOW_CD,
-    PSPRITE_GLOW_HEALTH_REFILL,
+    PSPRITE_GLOW_HEART_REFILL,
     PSPRITE_92,
     PSPRITE_93,
     PSPRITE_94,
@@ -197,7 +197,7 @@ enum SpriteStatusBits {
     SPRITE_STATUS_NONE = 0,
     SPRITE_STATUS_EXISTS = (1 << 0),
     SPRITE_STATUS_1 = (1 << 1),
-    SPRITE_STATUS_2 = (1 << 2),
+    SPRITE_STATUS_HIDDEN = (1 << 2),
     SPRITE_STATUS_3 = (1 << 3),
     SPRITE_STATUS_4 = (1 << 4),
     SPRITE_STATUS_5 = (1 << 5),
@@ -254,13 +254,14 @@ typedef struct {
 } PrimarySpriteData;  /* size: 0x2C */
 
 
-// Upper nybble = animation ID on next load
+// Upper nybble = pose on next load
 // Lower nybble = status
 extern u8 gPersistentSpriteData[16][64];
+#define MAKE_PERSISTENT_DATA(pose, status) (((pose) << 4) | (status))
 
 extern PrimarySpriteData gCurrentSprite;
 
 
-void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u16 y_position, u16 x_position);
+void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u32 y_position, u32 x_position);
 
 #endif  // SPRITE_H

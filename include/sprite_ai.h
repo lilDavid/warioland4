@@ -117,9 +117,27 @@ enum SpritePose {
 };
 
 
+void SpriteAI_BoxJewelPieceNE(void);
+void SpriteAI_BoxJewelPieceSE(void);
+void SpriteAI_BoxJewelPieceSW(void);
+void SpriteAI_BoxJewelPieceNW(void);
+void SpriteAI_BoxCD(void);
+void SpriteAI_BoxHeartRefill(void);
 void SpriteAI_Diamond(void);
 void SpriteAI_Rock(void);
 void SpriteAI_Coin(void);
+void SpriteAI_JewelPieceNE(void);
+void SpriteAI_JewelPieceSE(void);
+void SpriteAI_JewelPieceSW(void);
+void SpriteAI_JewelPieceNW(void);
+void SpriteAI_CD(void);
+void SpriteAI_HeartRefill(void);
+void SpriteAI_TreasureGlowJewelPieceNE(void);
+void SpriteAI_TreasureGlowJewelPieceSE(void);
+void SpriteAI_TreasureGlowJewelPieceSW(void);
+void SpriteAI_TreasureGlowJewelPieceNW(void);
+void SpriteAI_TreasureGlowCD(void);
+void SpriteAI_TreasureGlowHeartRefill(void);
 void SpriteAI_ChanceWheelDiamond(void);
 
 #endif

@@ -1226,15 +1226,15 @@ func_8075B50:
 	b	.L_75f34
 	.align	2, 0
 .L_75b94:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_75b98:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75b9c:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75ba0:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_75ba4:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_75ba8:
 	ldr	r3, .L_75bcc
 	add	r1, r3, #0
@@ -1257,9 +1257,9 @@ func_8075B50:
 .L_75bcc:
 	.4byte	gCurrentCollection
 .L_75bd0:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_75bd4:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75bd8:
 	ldr	r1, .L_75c00
 	strb	r2, [r1, #0]
@@ -1283,11 +1283,11 @@ func_8075B50:
 	b	.L_75c10
 	.align	2, 0
 .L_75c00:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_75c04:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75c08:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75c0c:
 	ldr	r1, .L_75c34
 	strb	r2, [r1, #0]
@@ -1311,11 +1311,11 @@ func_8075B50:
 	b	.L_75c44
 	.align	2, 0
 .L_75c34:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75c38:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75c3c:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75c40:
 	ldr	r1, .L_75c64
 	strb	r2, [r1, #0]
@@ -1337,11 +1337,11 @@ func_8075B50:
 	b	.L_75c74
 	.align	2, 0
 .L_75c64:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75c68:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_75c6c:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75c70:
 	ldr	r1, .L_75c98
 	strb	r2, [r1, #0]
@@ -1365,11 +1365,11 @@ func_8075B50:
 	b	.L_75ca8
 	.align	2, 0
 .L_75c98:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_75c9c:
-	.4byte	gUnk_3000C2C
+	.4byte	gHasGoldenDivaChest5
 .L_75ca0:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75ca4:
 	ldr	r1, .L_75ccc
 	strb	r2, [r1, #0]
@@ -1393,11 +1393,11 @@ func_8075B50:
 	b	.L_75cdc
 	.align	2, 0
 .L_75ccc:
-	.4byte	gUnk_3000C2C
+	.4byte	gHasGoldenDivaChest5
 .L_75cd0:
-	.4byte	gUnk_3000C2D
+	.4byte	gHasGoldenDivaChest6
 .L_75cd4:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75cd8:
 	ldr	r1, .L_75cfc
 	strb	r2, [r1, #0]
@@ -1419,11 +1419,11 @@ func_8075B50:
 	b	.L_75d0c
 	.align	2, 0
 .L_75cfc:
-	.4byte	gUnk_3000C2D
+	.4byte	gHasGoldenDivaChest6
 .L_75d00:
-	.4byte	gUnk_3000C2E
+	.4byte	gHasGoldenDivaChest7
 .L_75d04:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75d08:
 	ldr	r1, .L_75d30
 	strb	r2, [r1, #0]
@@ -1447,11 +1447,11 @@ func_8075B50:
 	b	.L_75d40
 	.align	2, 0
 .L_75d30:
-	.4byte	gUnk_3000C2E
+	.4byte	gHasGoldenDivaChest7
 .L_75d34:
-	.4byte	gUnk_3000C2F
+	.4byte	gHasGoldenDivaChest8
 .L_75d38:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75d3c:
 	ldr	r1, .L_75d64
 	strb	r2, [r1, #0]
@@ -1475,11 +1475,11 @@ func_8075B50:
 	b	.L_75d74
 	.align	2, 0
 .L_75d64:
-	.4byte	gUnk_3000C2F
+	.4byte	gHasGoldenDivaChest8
 .L_75d68:
-	.4byte	gUnk_3000C30
+	.4byte	gHasGoldenDivaChest9
 .L_75d6c:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75d70:
 	ldr	r1, .L_75d94
 	strb	r2, [r1, #0]
@@ -1501,11 +1501,11 @@ func_8075B50:
 	b	.L_75da4
 	.align	2, 0
 .L_75d94:
-	.4byte	gUnk_3000C30
+	.4byte	gHasGoldenDivaChest9
 .L_75d98:
-	.4byte	gUnk_3000C31
+	.4byte	gHasGoldenDivaChest10
 .L_75d9c:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75da0:
 	ldr	r1, .L_75dc8
 	strb	r2, [r1, #0]
@@ -1529,11 +1529,11 @@ func_8075B50:
 	b	.L_75dd8
 	.align	2, 0
 .L_75dc8:
-	.4byte	gUnk_3000C31
+	.4byte	gHasGoldenDivaChest10
 .L_75dcc:
-	.4byte	gUnk_3000C32
+	.4byte	gHasGoldenDivaChest11
 .L_75dd0:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75dd4:
 	ldr	r1, .L_75dfc
 	strb	r2, [r1, #0]
@@ -1557,11 +1557,11 @@ func_8075B50:
 	b	.L_75e0c
 	.align	2, 0
 .L_75dfc:
-	.4byte	gUnk_3000C32
+	.4byte	gHasGoldenDivaChest11
 .L_75e00:
-	.4byte	gUnk_3000C33
+	.4byte	gHasGoldenDivaChest12
 .L_75e04:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75e08:
 	ldr	r1, .L_75e14
 	strb	r2, [r1, #0]
@@ -1571,9 +1571,9 @@ func_8075B50:
 	strb	r2, [r1, #0]
 	b	.L_75f34
 .L_75e14:
-	.4byte	gUnk_3000C33
+	.4byte	gHasGoldenDivaChest12
 .L_75e18:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_75e1c:
 	ldr	r1, .L_75e30
 	mov	r2, #0
@@ -1586,13 +1586,13 @@ func_8075B50:
 	b	.L_75b8a
 	.align	2, 0
 .L_75e30:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_75e34:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75e38:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75e3c:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_75e40:
 	ldr	r2, .L_75e64
 	lsl	r3, r3, #2
@@ -1615,7 +1615,7 @@ func_8075B50:
 .L_75e64:
 	.4byte	gCurrentCollection
 .L_75e68:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_75e6c:
 	ldr	r1, .L_75e8c
 	strb	r5, [r1, #0]
@@ -1635,9 +1635,9 @@ func_8075B50:
 	b	.L_75e98
 	.align	2, 0
 .L_75e8c:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_75e90:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75e94:
 	ldr	r1, .L_75eb4
 	strb	r2, [r1, #0]
@@ -1657,9 +1657,9 @@ func_8075B50:
 	b	.L_75ec0
 	.align	2, 0
 .L_75eb4:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75eb8:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75ebc:
 	ldr	r1, .L_75edc
 	strb	r2, [r1, #0]
@@ -1679,9 +1679,9 @@ func_8075B50:
 	b	.L_75ee8
 	.align	2, 0
 .L_75edc:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75ee0:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_75ee4:
 	ldr	r1, .L_75f04
 	strb	r2, [r1, #0]
@@ -1701,9 +1701,9 @@ func_8075B50:
 	b	.L_75f10
 	.align	2, 0
 .L_75f04:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_75f08:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_75f0c:
 	ldr	r1, .L_75f2c
 	strb	r2, [r1, #0]
@@ -1723,9 +1723,9 @@ func_8075B50:
 	b	.L_75f38
 	.align	2, 0
 .L_75f2c:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_75f30:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 .L_75f34:
 	ldr	r1, .L_75f40
 	strb	r2, [r1, #0]
@@ -1735,7 +1735,7 @@ func_8075B50:
 	bx	r1
 	.align	2, 0
 .L_75f40:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 
 
 thumb_func_start func_8075F44
@@ -1937,7 +1937,7 @@ func_8075F44:
 .L_760bc:
 	.4byte	gUnk_3000C0D
 .L_760c0:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_760c4:
 	.4byte	gUnk_3000A58
 .L_760c8:
@@ -2069,7 +2069,7 @@ func_8075F44:
 .L_761bc:
 	.4byte	gCurrentStageNumber
 .L_761c0:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_761c4:
 	.4byte	sUnk_84045C8
 .L_761c8:
@@ -2102,7 +2102,7 @@ func_8075F44:
 .L_761f8:
 	.4byte	0x80000010
 .L_761fc:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_76200:
 	.4byte	sUnk_84045E8
 .L_76204:
@@ -2135,7 +2135,7 @@ func_8075F44:
 .L_76234:
 	.4byte	0x80000010
 .L_76238:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_7623c:
 	.4byte	sUnk_8404608
 .L_76240:
@@ -2168,7 +2168,7 @@ func_8075F44:
 .L_76270:
 	.4byte	0x80000010
 .L_76274:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_76278:
 	.4byte	sUnk_8404628
 .L_7627c:
@@ -2201,7 +2201,7 @@ func_8075F44:
 .L_762ac:
 	.4byte	0x80000010
 .L_762b0:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_762b4:
 	.4byte	sUnk_8404668
 .L_762b8:
@@ -2922,7 +2922,7 @@ func_80767DC:
 	mov	r0, #133	@ 0x85
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	sub	r4, #100	@ 0x64
 	add	r5, #32
 	cmp	r4, #99	@ 0x63
@@ -2935,7 +2935,7 @@ func_80767DC:
 	mov	r0, #132	@ 0x84
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	sub	r4, #50	@ 0x32
 	add	r5, #32
 .L_7681e:
@@ -2950,7 +2950,7 @@ func_80767DC:
 	mov	r0, #131	@ 0x83
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	sub	r4, #10
 	add	r5, #32
 	cmp	r4, #9
@@ -2963,7 +2963,7 @@ func_80767DC:
 	mov	r0, #130	@ 0x82
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	sub	r4, #5
 	add	r5, #32
 .L_76854:
@@ -2978,7 +2978,7 @@ func_80767DC:
 	mov	r0, #129	@ 0x81
 	mov	r1, #0
 	mov	r2, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 	sub	r4, #1
 	add	r5, #32
 	cmp	r4, #0
@@ -3013,7 +3013,7 @@ func_807687C:
 	mov	r1, #0
 	mov	r2, #0
 	add	r3, r5, #0
-	bl	func_801E328
+	bl	Sprite_SpawnAsChild
 .L_768ac:
 	add	sp, #4
 	pop	{r4, r5}

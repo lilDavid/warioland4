@@ -3591,15 +3591,15 @@ func_801D308:
 .L_1d398:
 	.4byte	gCurrentStageNumber
 .L_1d39c:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_1d3a0:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_1d3a4:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_1d3a8:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_1d3ac:
-	.4byte	gUnk_3000C0B
+	.4byte	gCollectedCD
 .L_1d3b0:
 	cmp	r0, #4
 	bne	.L_1d3c8
@@ -3628,13 +3628,13 @@ func_801D308:
 	bl	func_80811A0
 	b	.L_1d4ce
 .L_1d3e0:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_1d3e4:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_1d3e8:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_1d3ec:
-	.4byte	gUnk_3000C0C
+	.4byte	gCollectedKeyzer
 .L_1d3f0:
 	.4byte	gSubGameMode
 .L_1d3f4:

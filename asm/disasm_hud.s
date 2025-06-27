@@ -1550,7 +1550,7 @@ func_8074F44:
 .L_74f6c:
 	.4byte	gUnk_3000BF0
 .L_74f70:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_74f74:
 	cmp	r2, #0
 	bne	.L_74fa0
@@ -1564,7 +1564,7 @@ func_8074F44:
 	b	.L_74f9c
 	.align	2, 0
 .L_74f8c:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_74f90:
 	cmp	r0, #2
 	bne	.L_74fa0
@@ -1580,7 +1580,7 @@ func_8074F44:
 	bx	r0
 	.align	2, 0
 .L_74fa8:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 
 
 thumb_func_start func_8074FAC
@@ -1594,7 +1594,7 @@ func_8074FAC:
 	b	.L_7506a
 	.align	2, 0
 .L_74fbc:
-	.4byte	gUnk_3000C07
+	.4byte	gCollectedNEJewelPiece
 .L_74fc0:
 	ldr	r4, .L_74fcc
 	ldrb	r0, [r4, #0]
@@ -1603,7 +1603,7 @@ func_8074FAC:
 	mov	r0, #3
 	b	.L_7506a
 .L_74fcc:
-	.4byte	gUnk_3000C0A
+	.4byte	gCollectedNWJewelPiece
 .L_74fd0:
 	ldr	r4, .L_74fdc
 	ldrb	r0, [r4, #0]
@@ -1612,7 +1612,7 @@ func_8074FAC:
 	mov	r0, #6
 	b	.L_7506a
 .L_74fdc:
-	.4byte	gUnk_3000C2E
+	.4byte	gHasGoldenDivaChest7
 .L_74fe0:
 	ldr	r4, .L_74fec
 	ldrb	r0, [r4, #0]
@@ -1621,7 +1621,7 @@ func_8074FAC:
 	mov	r0, #9
 	b	.L_7506a
 .L_74fec:
-	.4byte	gUnk_3000C31
+	.4byte	gHasGoldenDivaChest10
 .L_74ff0:
 	ldr	r4, .L_74ffc
 	ldrb	r0, [r4, #0]
@@ -1630,7 +1630,7 @@ func_8074FAC:
 	mov	r0, #1
 	b	.L_7506a
 .L_74ffc:
-	.4byte	gUnk_3000C08
+	.4byte	gCollectedSEJewelPiece
 .L_75000:
 	ldr	r4, .L_7500c
 	ldrb	r0, [r4, #0]
@@ -1639,7 +1639,7 @@ func_8074FAC:
 	mov	r0, #4
 	b	.L_7506a
 .L_7500c:
-	.4byte	gUnk_3000C2C
+	.4byte	gHasGoldenDivaChest5
 .L_75010:
 	ldr	r4, .L_7501c
 	ldrb	r0, [r4, #0]
@@ -1648,7 +1648,7 @@ func_8074FAC:
 	mov	r0, #7
 	b	.L_7506a
 .L_7501c:
-	.4byte	gUnk_3000C2F
+	.4byte	gHasGoldenDivaChest8
 .L_75020:
 	ldr	r4, .L_7502c
 	ldrb	r0, [r4, #0]
@@ -1657,7 +1657,7 @@ func_8074FAC:
 	mov	r0, #10
 	b	.L_7506a
 .L_7502c:
-	.4byte	gUnk_3000C32
+	.4byte	gHasGoldenDivaChest11
 .L_75030:
 	ldr	r4, .L_7503c
 	ldrb	r0, [r4, #0]
@@ -1666,7 +1666,7 @@ func_8074FAC:
 	mov	r0, #2
 	b	.L_7506a
 .L_7503c:
-	.4byte	gUnk_3000C09
+	.4byte	gCollectedSWJewelPiece
 .L_75040:
 	ldr	r4, .L_7504c
 	ldrb	r0, [r4, #0]
@@ -1675,7 +1675,7 @@ func_8074FAC:
 	mov	r0, #5
 	b	.L_7506a
 .L_7504c:
-	.4byte	gUnk_3000C2D
+	.4byte	gHasGoldenDivaChest6
 .L_75050:
 	ldr	r4, .L_7505c
 	ldrb	r0, [r4, #0]
@@ -1684,7 +1684,7 @@ func_8074FAC:
 	mov	r0, #8
 	b	.L_7506a
 .L_7505c:
-	.4byte	gUnk_3000C30
+	.4byte	gHasGoldenDivaChest9
 .L_75060:
 	ldr	r4, .L_75078
 	ldrb	r0, [r4, #0]
@@ -1700,7 +1700,7 @@ func_8074FAC:
 	pop	{r0}
 	bx	r0
 .L_75078:
-	.4byte	gUnk_3000C33
+	.4byte	gHasGoldenDivaChest12
 
 
 thumb_func_start func_807507C
@@ -1736,7 +1736,7 @@ func_807507C:
 .L_750b0:
 	.4byte	gUnk_3000BF0
 .L_750b4:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_750b8:
 	cmp	r1, #1
 	bne	.L_75164
@@ -1770,7 +1770,7 @@ func_807507C:
 	bl	func_8074FAC
 	b	.L_751f4
 .L_750fc:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75100:
 	ldr	r0, .L_75110
 	ldrb	r0, [r0, #0]
@@ -1781,7 +1781,7 @@ func_807507C:
 	bl	func_8074FAC
 	b	.L_751f4
 .L_75110:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75114:
 	ldr	r0, .L_75124
 	ldrb	r0, [r0, #0]
@@ -1791,7 +1791,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_75124:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75128:
 	ldr	r0, .L_75138
 	ldrb	r0, [r0, #0]
@@ -1801,7 +1801,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_75138:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_7513c:
 	ldr	r0, .L_7514c
 	ldrb	r0, [r0, #0]
@@ -1811,7 +1811,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_7514c:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75150:
 	ldr	r0, .L_75160
 	ldrb	r0, [r0, #0]
@@ -1821,7 +1821,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_75160:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_75164:
 	cmp	r1, #0
 	bne	.L_751f4
@@ -1854,7 +1854,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_751a8:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_751ac:
 	ldr	r0, .L_751bc
 	ldrb	r0, [r0, #0]
@@ -1864,7 +1864,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_751bc:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_751c0:
 	ldr	r0, .L_751d0
 	ldrb	r0, [r0, #0]
@@ -1874,7 +1874,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_751d0:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_751d4:
 	ldr	r0, .L_751e4
 	ldrb	r0, [r0, #0]
@@ -1884,7 +1884,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_751e4:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
 .L_751e8:
 	ldr	r0, .L_751f8
 	ldrb	r0, [r0, #0]
@@ -1895,4 +1895,4 @@ func_807507C:
 	pop	{r0}
 	bx	r0
 .L_751f8:
-	.4byte	gUnk_3000C34
+	.4byte	gGoldenTreasureCount
