@@ -449,7 +449,7 @@ func_8076DA0:
 .L_76dd0:
 	.4byte	gUnk_3000C10
 .L_76dd4:
-	.4byte	sUnk_83B63B4
+	.4byte	sLittleHeartOam_Frame1
 .L_76dd8:
 	.4byte	sUnk_8416774
 .L_76ddc:

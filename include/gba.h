@@ -7,6 +7,7 @@
 #include "gba/interrupt.h"
 #include "gba/memory.h"
 #include "gba/types.h"
+#include "gba/oam.h"
 #include "gba/wait_state.h"
 
 #endif  // GBA_H

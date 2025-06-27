@@ -417,7 +417,11 @@ SECTIONS {
         obj/disasm_oam.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x3F9D64.o(.rodata);
+        obj/blob_0x09540C-0x3B5C5C.o(.rodata);
+        obj/sprite_ai/coins.o(.rodata);
+        obj/blob_0x3B644E-0x3C4AE8.o(.rodata);
+        obj/sprite_ai/rock.o(.rodata);
+        obj/blob_0x3C4B28-0x3F9D64.o(.rodata);
         obj/disasm_0x06EC50.o(.rodata);
         obj/disasm_color_fading.o(.rodata);
         obj/disasm_hblank.o(.rodata);

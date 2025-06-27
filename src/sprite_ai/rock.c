@@ -1,5 +1,6 @@
 #include "clipdata.h"
 #include "in_game.h"
+#include "oam.h"
 #include "sound.h"
 #include "sprite.h"
 #include "sprite_ai.h"
@@ -9,7 +10,33 @@
 #include "wario.h"
 
 
-extern const u8 sRockOamData[];
+const u16 sRockOam_Frame1[] = {
+    2,
+    OAM_ENTRY(-10, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
+    OAM_ENTRY(6, -16, ATTR0_TALL, ATTR1_8x16, 514, 8, 0),
+};
+
+const u16 sRockOam_UnusedFrame1[] = {
+    1,
+    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 515, 8, 0),
+};
+const u16 sRockOam_UnusedFrame2[] = {
+    1,
+    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 547, 8, 0),
+};
+const u16 sRockOam_UnusedFrame3[] = {
+    1,
+    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 516, 8, 0),
+};
+const u16 sRockOam_UnusedFrame4[] = {
+    1,
+    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 548, 8, 0),
+};
+
+const AnimationFrame sRockOamData[] = {
+    { sRockOam_Frame1, 0xC8 },
+    ANIMATION_TERMINATOR
+};
 
 
 static void Rock_Init(void) {
