@@ -832,7 +832,7 @@ static void Coin_Init(void) {
     gCurrentSprite.animationTimer = 0;
 
     if (gWarioData.damageTimer) {
-        if (gWarioData.horizontalDirection & 0x10) {
+        if (gWarioData.horizontalDirection & KEY_RIGHT) {
             gCurrentSprite.pose = POSE_3F;
             gCurrentSprite.statusBits |= SPRITE_STATUS_FACING_RIGHT;
         } else {

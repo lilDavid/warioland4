@@ -20,16 +20,20 @@ SIZE_TABLE = {
 
 _, rom_file, start, end, *_ = sys.argv
 
+start = int(start, 0)
+end = int(end, 0)
+
 with open(rom_file, 'rb') as stream:
-    stream.read(int(start, 0))
-    oam_data = stream.read(int(end, 0) - int(start, 0))
+    stream.read(start)
+    oam_data = stream.read(end - start)
 
 remaining = 0
-for bytepair in itertools.batched(oam_data, 2):
+for addr, bytepair in zip(itertools.count(start, 2), itertools.batched(oam_data, 2)):
     short = int.from_bytes(bytepair, "little")
     if remaining == 0:
         remaining = 3 * short
         print(f"    {short},")
+        print(format(addr + 0x8000000, "X"), file=sys.stderr)
     else:
         if remaining % 3 == 0:
             y = short & 0xFF

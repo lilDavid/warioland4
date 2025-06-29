@@ -124,6 +124,7 @@ void SpriteAI_BoxJewelPieceNW(void);
 void SpriteAI_BoxCD(void);
 void SpriteAI_BoxHeartRefill(void);
 void SpriteAI_Diamond(void);
+void SpriteAI_Keyzer(void);
 void SpriteAI_Rock(void);
 void SpriteAI_Coin(void);
 void SpriteAI_JewelPieceNE(void);

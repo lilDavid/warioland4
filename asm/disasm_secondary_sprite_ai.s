@@ -2807,7 +2807,7 @@ func_8077D5C:
 	b	.L_77fd2
 	.align	2, 0
 .L_77e30:
-	.4byte	sUnk_83B49BC
+	.4byte	sKeyzerOam_83B49BC
 .L_77e34:
 	.4byte	gCurrentSecondarySprite
 .L_77e38:
@@ -2832,7 +2832,7 @@ func_8077D5C:
 .L_77e5c:
 	.4byte	gCurrentSecondarySprite
 .L_77e60:
-	.4byte	sUnk_83B47C4
+	.4byte	sKeyzerOam_83B47C4
 .L_77e64:
 	ldr	r0, .L_77e7c
 	ldrh	r1, [r0, #14]
@@ -2873,7 +2873,7 @@ func_8077D5C:
 .L_77ea8:
 	.4byte	gCurrentSecondarySprite
 .L_77eac:
-	.4byte	sUnk_83B47EC
+	.4byte	sKeyzerOam_83B47EC
 .L_77eb0:
 	ldr	r0, .L_77ec8
 	ldrh	r1, [r0, #14]
@@ -2909,7 +2909,7 @@ func_8077D5C:
 .L_77ee8:
 	.4byte	gCurrentSecondarySprite
 .L_77eec:
-	.4byte	sUnk_83B48DC
+	.4byte	sKeyzerOam_83B48DC
 .L_77ef0:
 	ldr	r1, .L_77f08
 	mov	r2, #0
@@ -2927,7 +2927,7 @@ func_8077D5C:
 .L_77f08:
 	.4byte	gCurrentSecondarySprite
 .L_77f0c:
-	.4byte	sUnk_83B4904
+	.4byte	sKeyzerOam_83B4904
 .L_77f10:
 	ldr	r1, .L_77f28
 	mov	r2, #0
@@ -2945,7 +2945,7 @@ func_8077D5C:
 .L_77f28:
 	.4byte	gCurrentSecondarySprite
 .L_77f2c:
-	.4byte	sUnk_83B4814
+	.4byte	sKeyzerOam_83B4814
 .L_77f30:
 	ldr	r1, .L_77f5c
 	mov	r2, #0
@@ -2973,7 +2973,7 @@ func_8077D5C:
 .L_77f5c:
 	.4byte	gCurrentSecondarySprite
 .L_77f60:
-	.4byte	sUnk_83B483C
+	.4byte	sKeyzerOam_83B483C
 .L_77f64:
 	ldr	r1, .L_77f94
 	mov	r2, #0
@@ -3002,7 +3002,7 @@ func_8077D5C:
 .L_77f94:
 	.4byte	gCurrentSecondarySprite
 .L_77f98:
-	.4byte	sUnk_83B4864
+	.4byte	sKeyzerOam_83B4864
 .L_77f9c:
 	.4byte	gWarioData
 .L_77fa0:
@@ -3040,7 +3040,7 @@ func_8077D5C:
 .L_77fd8:
 	.4byte	gCurrentSecondarySprite
 .L_77fdc:
-	.4byte	sUnk_83B488C
+	.4byte	sKeyzerOam_83B488C
 .L_77fe0:
 	ldr	r1, .L_7800c
 	mov	r2, #0
@@ -3068,7 +3068,7 @@ func_8077D5C:
 .L_7800c:
 	.4byte	gCurrentSecondarySprite
 .L_78010:
-	.4byte	sUnk_83B48B4
+	.4byte	sKeyzerOam_83B48B4
 .L_78014:
 	ldr	r0, .L_78048
 	bl	func_8076A0C
@@ -3097,7 +3097,7 @@ func_8077D5C:
 	b	.L_7805a
 	.align	2, 0
 .L_78048:
-	.4byte	sUnk_83B4864
+	.4byte	sKeyzerOam_83B4864
 .L_7804c:
 	.4byte	gUnk_3000C0E
 .L_78050:

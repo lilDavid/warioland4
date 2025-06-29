@@ -3,7 +3,9 @@
 .section .rodata
 
 
-baserom_blob 0x3B644E, 0x3B9E50
+.align 2, 0
+
+baserom_blob 0x3B6450, 0x3B9E50
 
 .global sUnk_83B9E50
 sUnk_83B9E50:

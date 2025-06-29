@@ -382,7 +382,8 @@ SECTIONS {
         obj/disasm_sprite.o(.text);
         obj/disasm_sprite_wario_interaction.o(.text);
         obj/disasm_sprite_util.o(.text);
-        obj/sprite_ai/blob_0x026FAC-0291B8.o(.text);
+        obj/sprite_ai/blob_0x026FAC-029014.o(.text);
+        obj/sprite_ai/keyzer.o(.text);
         obj/sprite_ai/treasure.o(.text);
         obj/sprite_ai/blob_0x02A878-02BADC.o(.text);
         obj/sprite_ai/coins.o(.text);
@@ -413,17 +414,18 @@ SECTIONS {
         obj/disasm_credits.o(.text);
         */libgcc.a:*(.text);
         */libc.a:*(.text);
-    } > ROM =0xFF
+    } > ROM
 
     .rodata : ALIGN(2) {
         obj/disasm_oam.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x3B4AA0.o(.rodata);
+        obj/blob_0x09540C-0x3B4554.o(.rodata);
+        obj/sprite_ai/keyzer.o(.rodata);
         obj/sprite_ai/treasure.o(.rodata);
         obj/blob_0x3B5014-0x3B5C5C.o(.rodata);
         obj/sprite_ai/coins.o(.rodata);
-        obj/blob_0x3B644E-0x3C4AE8.o(.rodata);
+        obj/blob_0x3B6450-0x3C4AE8.o(.rodata);
         obj/sprite_ai/rock.o(.rodata);
         obj/blob_0x3C4B28-0x3F9D64.o(.rodata);
         obj/disasm_0x06EC50.o(.rodata);
@@ -443,7 +445,7 @@ SECTIONS {
         obj/data/demo_data_pointers.o(.rodata);
         obj/data/hud_pointers.o(.rodata);
         obj/blob_0x78F714-0x78F970.o(.rodata);
-    } > ROM =0xFF
+    } > ROM
 
     /* Discard everything not specifically mentioned above. */
     /DISCARD/ :
