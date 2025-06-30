@@ -1,0 +1,4 @@
+.include "macros.s.inc"
+
+
+baserom_blob 0x05FB24, 0x060A24
