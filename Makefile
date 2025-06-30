@@ -14,10 +14,10 @@ CPP = cpp
 DIFF = diff -u
 MD5SUM = md5sum
 
-TOOLS = tools
-GBAFIX = $(TOOLS)/gbafix/gbafix
+TOOL_DIR = tools
+GBAFIX = $(TOOL_DIR)/gbafix/gbafix
 
-AGBCC_DIR = $(TOOLS)/agbcc
+AGBCC_DIR = $(TOOL_DIR)/agbcc
 CC = $(AGBCC_DIR)/agbcc
 
 
@@ -82,7 +82,7 @@ else
 endif
 
 
-.PHONY: all check dump diff clean help
+.PHONY: all check dump diff tools clean help
 
 all: check
 
@@ -96,14 +96,16 @@ diff: $(DUMPS)
 	$(MSG) DIFF $^
 	$Q$(DIFF) $^
 
+tools: $(CC) $(GBAFIX)
+
 clean:
-	$(MSG) RM build
-	$Qrm -rf build
+	$(MSG) RM build/*
+	$Qrm -rf build/*
 	$(MSG) RM DUMPS
 	$Qrm -f baserom_*.gba.dump
+ifeq ($(TOOLS),1)
 	$(MSG) RM $(GBAFIX)
 	$Qrm -rf $(GBAFIX)
-ifeq ($(AGBCC),1)
 	$(MSG) CLEAN $(CC)
 	$Qcd $(AGBCC_DIR) && git clean -xdf .
 endif
@@ -115,7 +117,7 @@ help:
 	@echo '  dump: dump the ROMs'
 	@echo '  diff: dump and compare the ROMs'
 	@echo '  clean: remove build files'
-	@echo '    AGBCC=1: remove build files for agbcc'
+	@echo '    TOOLS=1: remove build files for tools, including agbcc'
 	@echo '  help: show this message'
 	@echo ''
 	@echo 'Flags:'
@@ -148,13 +150,13 @@ $(OBJ)/%.o: $(BUILT_ASM)/%.s
 	$Qmkdir -p $(shell dirname $@)
 	$Q$(AS) $(ASFLAGS) $< -o $@
 
-$(BUILT_ASM)/%.s: $(SRC)/%.c $(CC)
+$(BUILT_ASM)/%.s: $(SRC)/%.c
 	$(MSG) CC $<
 	$Qmkdir -p $(shell dirname $@)
 	$Q$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
 	@echo '    .align 2, 0' >> $@
 
-$(TOOLS)/%: $(TOOLS)/%.c
+$(TOOL_DIR)/%: $(TOOL_DIR)/%.c
 	$(MSG) HOSTCC $<
 	$Q$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@
 
