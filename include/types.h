@@ -39,6 +39,6 @@ typedef void (*ProcedureFunc)(void);
 
 #define DELTA_TIME 1
 #define TIMER_COUNT_DOWN(timer) (timer) -= DELTA_TIME
-#define TIMER_COUNT_UP(timer) (timer) -= DELTA_TIME
+#define TIMER_COUNT_UP(timer) (timer) += DELTA_TIME
 
 #endif /* TYPES_H */

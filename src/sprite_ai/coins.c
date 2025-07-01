@@ -645,7 +645,7 @@ static void Coin_Pose44(void) {
             yVelocity = sUnk_8352AFC[gCurrentSprite.work3 - 1];
             gCurrentSprite.yPosition += yVelocity;
         } else {
-            gCurrentSprite.work3 += 1;
+            TIMER_COUNT_UP(gCurrentSprite.work3);
             gCurrentSprite.yPosition += yVelocity;
         }
     } else {
@@ -654,7 +654,7 @@ static void Coin_Pose44(void) {
             yVelocity = sUnk_8352ADC[gCurrentSprite.work3 - 1];
             gCurrentSprite.yPosition += yVelocity;
         } else {
-            gCurrentSprite.work3 += 1;
+            TIMER_COUNT_UP(gCurrentSprite.work3);
             gCurrentSprite.yPosition += yVelocity;
         }
     }
@@ -700,7 +700,7 @@ static void Coin_Pose46(void) {
             yVelocity = sUnk_8352AFC[gCurrentSprite.work3 - 1];
             gCurrentSprite.yPosition += yVelocity;
         } else {
-            gCurrentSprite.work3 += 1;
+            TIMER_COUNT_UP(gCurrentSprite.work3);
             gCurrentSprite.yPosition += yVelocity;
         }
     } else {
@@ -709,7 +709,7 @@ static void Coin_Pose46(void) {
             yVelocity = sUnk_8352ADC[gCurrentSprite.work3 - 1];
             gCurrentSprite.yPosition += yVelocity;
         } else {
-            gCurrentSprite.work3 += 1;
+            TIMER_COUNT_UP(gCurrentSprite.work3);
             gCurrentSprite.yPosition += yVelocity;
         }
     }
@@ -999,7 +999,7 @@ static void Diamond_Float(void) {
         yVelocity = sDiamondFloatYVelocity[0];
         frame = 0;
     }
-    gCurrentSprite.work3 = frame + 1;
+    gCurrentSprite.work3 = frame + DELTA_TIME;
     gCurrentSprite.yPosition += yVelocity;
 }
 

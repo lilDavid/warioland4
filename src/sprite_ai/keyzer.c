@@ -383,7 +383,7 @@ void SpriteAI_Keyzer(void) {
                 yVelocity = sKeyzerFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }

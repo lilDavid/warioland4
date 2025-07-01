@@ -807,7 +807,7 @@ void SpriteAI_JewelPieceNE(void) {
                 yVelocity = sTreasureFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }
@@ -846,7 +846,7 @@ void SpriteAI_JewelPieceSE(void) {
                 yVelocity = sTreasureFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }
@@ -885,7 +885,7 @@ void SpriteAI_JewelPieceSW(void) {
                 yVelocity = sTreasureFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }
@@ -924,7 +924,7 @@ void SpriteAI_JewelPieceNW(void) {
                 yVelocity = sTreasureFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }
@@ -963,7 +963,7 @@ void SpriteAI_CD(void) {
                 yVelocity = sTreasureFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }
@@ -1002,7 +1002,7 @@ void SpriteAI_HeartRefill(void) {
                 yVelocity = sTreasureFloatYVelocity[0];
                 frame = 0;
             }
-            gCurrentSprite.work3 = frame + 1;
+            gCurrentSprite.work3 = frame + DELTA_TIME;
             gCurrentSprite.yPosition += yVelocity;
             break;
     }
@@ -1033,7 +1033,7 @@ void SpriteAI_TreasureGlowJewelPieceNE(void) {
                     yVelocity = sTreasureFloatYVelocity[0];
                     frame = 0;
                 }
-                gCurrentSprite.work3 = frame + 1;
+                gCurrentSprite.work3 = frame + DELTA_TIME;
                 gCurrentSprite.yPosition += yVelocity;
             }
             break;
@@ -1072,7 +1072,7 @@ void SpriteAI_TreasureGlowJewelPieceSE(void) {
                     yVelocity = sTreasureFloatYVelocity[0];
                     frame = 0;
                 }
-                gCurrentSprite.work3 = frame + 1;
+                gCurrentSprite.work3 = frame + DELTA_TIME;
                 gCurrentSprite.yPosition += yVelocity;
             }
             break;
@@ -1111,7 +1111,7 @@ void SpriteAI_TreasureGlowJewelPieceSW(void) {
                     yVelocity = sTreasureFloatYVelocity[0];
                     frame = 0;
                 }
-                gCurrentSprite.work3 = frame + 1;
+                gCurrentSprite.work3 = frame + DELTA_TIME;
                 gCurrentSprite.yPosition += yVelocity;
             }
             break;
@@ -1150,7 +1150,7 @@ void SpriteAI_TreasureGlowJewelPieceNW(void) {
                     yVelocity = sTreasureFloatYVelocity[0];
                     frame = 0;
                 }
-                gCurrentSprite.work3 = frame + 1;
+                gCurrentSprite.work3 = frame + DELTA_TIME;
                 gCurrentSprite.yPosition += yVelocity;
             }
             break;
@@ -1189,7 +1189,7 @@ void SpriteAI_TreasureGlowCD(void) {
                     yVelocity = sTreasureFloatYVelocity[0];
                     frame = 0;
                 }
-                gCurrentSprite.work3 = frame + 1;
+                gCurrentSprite.work3 = frame + DELTA_TIME;
                 gCurrentSprite.yPosition += yVelocity;
             }
             break;
@@ -1228,7 +1228,7 @@ void SpriteAI_TreasureGlowHeartRefill(void) {
                     yVelocity = sTreasureFloatYVelocity[0];
                     frame = 0;
                 }
-                gCurrentSprite.work3 = frame + 1;
+                gCurrentSprite.work3 = frame + DELTA_TIME;
                 gCurrentSprite.yPosition += yVelocity;
             }
             break;
