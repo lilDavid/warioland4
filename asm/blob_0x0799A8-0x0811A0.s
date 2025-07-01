@@ -40,23 +40,3 @@ thumb_func_start func_807ACCC
 func_807ACCC:
 
 baserom_blob 0x07ACCC, 0x0811A0
-
-thumb_func_start func_80811A0
-func_80811A0:
-
-baserom_blob 0x0811A0, 0x0813D0
-
-thumb_func_start func_80813D0
-func_80813D0:
-
-baserom_blob 0x0813D0, 0x0814DC
-
-thumb_func_start func_80814DC
-func_80814DC:
-
-baserom_blob 0x0814DC, 0x0814F0
-
-thumb_func_start func_80814F0
-func_80814F0:
-
-baserom_blob 0x0814F0, 0x088620

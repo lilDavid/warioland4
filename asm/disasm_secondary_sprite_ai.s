@@ -3641,14 +3641,14 @@ func_80782A4:
 	ldrb	r0, [r0, #0]
 	cmp	r0, #5
 	bne	.L_78470
-	bl	func_80814F0
+	bl	Autosave_FinalBoss
 	b	.L_789ec
 .L_78468:
 	.4byte	gCollectedKeyzer
 .L_7846c:
 	.4byte	gCurrentPassage
 .L_78470:
-	bl	func_80813D0
+	bl	Autosave_BossClear
 	b	.L_789ec
 .L_78476:
 	ldr	r2, .L_784c0
@@ -3920,7 +3920,7 @@ func_80782A4:
 	beq	.L_7867a
 	b	.L_789ec
 .L_7867a:
-	bl	func_80814DC
+	bl	Autosave_Defeat
 	b	.L_789ec
 	lsl	r7, r0, #1
 	lsl	r0, r0, #12

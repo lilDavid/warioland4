@@ -3625,7 +3625,7 @@ func_801D308:
 	ldr	r1, .L_1d3f8
 	mov	r0, #2
 	strb	r0, [r1, #0]
-	bl	func_80811A0
+	bl	Autosave_StageClear
 	b	.L_1d4ce
 .L_1d3e0:
 	.4byte	gCollectedNEJewelPiece
@@ -3867,7 +3867,7 @@ func_801D4D4:
 	and	r0, r1
 	orr	r0, r6
 	strb	r0, [r2, #0]
-	bl	func_80811A0
+	bl	Autosave_StageClear
 .L_1d59a:
 	mov	r6, #0
 	ldr	r4, .L_1d670

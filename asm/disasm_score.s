@@ -882,7 +882,7 @@ func_8075888:
 	ldrb	r0, [r0, #0]
 	cmp	r0, #4
 	bne	.L_75910
-	bl	func_80814DC
+	bl	Autosave_Defeat
 .L_75910:
 	bl	func_801E4D4
 	mov	r0, #22

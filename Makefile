@@ -99,7 +99,7 @@ diff: $(DUMPS)
 tools: $(CC) $(GBAFIX)
 
 clean:
-	$(MSG) RM build/*
+	$(MSG) RM BUILD
 	$Qrm -rf build/*
 	$(MSG) RM DUMPS
 	$Qrm -f baserom_*.gba.dump
