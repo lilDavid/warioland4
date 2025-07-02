@@ -29,4 +29,6 @@ extern s16 gSubGameMode;
 
 extern u8 gDisableSoftReset;
 
+extern u8 gUnk_3000C41;
+
 #endif  // GAME_STATE_H

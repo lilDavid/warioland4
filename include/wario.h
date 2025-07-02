@@ -75,4 +75,7 @@ extern WarioData gWarioData;
 extern WarioLife gWarioHearts;
 extern WarioLife gHeartGauge;
 
+extern u16 gWarioPauseTimer;
+extern u8 gDisableWario;
+
 #endif  // WARIO_H

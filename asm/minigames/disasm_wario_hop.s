@@ -2579,12 +2579,12 @@ func_808D824:
 	ldrsh	r4, [r0, r3]
 	mov	r2, #6
 	ldrsh	r0, [r1, r2]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	mov	r1, sp
 	strh	r0, [r1, #0]
 	ldr	r3, .L_8dfc0
@@ -2596,12 +2596,12 @@ func_808D824:
 	ldrsh	r4, [r0, r2]
 	mov	r1, #6
 	ldrsh	r0, [r3, r1]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r2, [sp, #8]
 	strh	r0, [r2, #0]
 	ldr	r3, .L_8dfc0
@@ -2615,12 +2615,12 @@ func_808D824:
 	asr	r4, r4, #16
 	mov	r2, #6
 	ldrsh	r0, [r3, r2]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r3, [sp, #12]
 	strh	r0, [r3, #0]
 	ldr	r1, .L_8dfc0
@@ -2633,12 +2633,12 @@ func_808D824:
 	ldrsh	r4, [r0, r3]
 	mov	r2, #6
 	ldrsh	r0, [r1, r2]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	lsl	r0, r0, #16
 	lsr	r0, r0, #16
 	ldr	r3, [sp, #16]
@@ -2662,12 +2662,12 @@ func_808D824:
 	ldr	r6, .L_8dfc8
 	mov	r3, #4
 	ldrsh	r0, [r6, r3]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	mov	r1, sp
 	strh	r0, [r1, #0]
 	ldr	r0, .L_8dfc4
@@ -2675,12 +2675,12 @@ func_808D824:
 	ldrsh	r4, [r0, r1]
 	mov	r2, #4
 	ldrsh	r0, [r6, r2]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r3, [sp, #8]
 .L_8df30:
 	strh	r0, [r3, #0]
@@ -2691,22 +2691,22 @@ func_808D824:
 	asr	r4, r4, #16
 	mov	r1, #4
 	ldrsh	r0, [r6, r1]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r2, [sp, #12]
 	strh	r0, [r2, #0]
 	mov	r3, #4
 	ldrsh	r0, [r6, r3]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r1, [sp, #16]
 	strh	r0, [r1, #0]
 	mov	r1, sp

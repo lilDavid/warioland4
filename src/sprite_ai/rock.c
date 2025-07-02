@@ -398,7 +398,7 @@ void SpriteAI_Rock(void) {
     if ((gCurrentSprite.unk_1D & 0xF) == 1) {
         if (gCurrentSprite.statusBits & SPRITE_STATUS_11) {
             gCurrentSprite.unk_1D += 1;
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_7);
+            Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_07);
             Sound_Play(SOUND_3D);
         }
     } else if ((gCurrentSprite.unk_1D & 0xF) == 2) {

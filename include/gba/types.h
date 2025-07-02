@@ -34,5 +34,7 @@ typedef volatile signed long long vs64;
 
 
 #define NULL ((void*) 0)
+#define TRUE (1)
+#define FALSE (0)
 
 #endif  // GBA_TYPES_H

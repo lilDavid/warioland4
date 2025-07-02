@@ -54,9 +54,9 @@
 #define DMA_TRANSFER(channel, src, dst, cnt)                                   \
     {                                                                          \
         vu32 *dma_ = (vu32 *)REG_DMA##channel;                                 \
-        dma_[0]    = (vu32)src;                                                \
-        dma_[1]    = (vu32)dst;                                                \
-        dma_[2]    = (vu32)cnt;                                                \
+        dma_[0]    = (vu32)(src);                                              \
+        dma_[1]    = (vu32)(dst);                                              \
+        dma_[2]    = (vu32)(cnt);                                              \
         dma_[2];                                                               \
     }
 

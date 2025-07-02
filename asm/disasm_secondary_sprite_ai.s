@@ -82,34 +82,34 @@ func_8076A90:
 	mov	r1, #0
 	ldrsh	r6, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76b3c
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76b40
 	neg	r4, r4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r4, .L_76b44
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_76b2e:
 	pop	{r4, r5, r6, r7}
@@ -172,34 +172,34 @@ func_8076B48:
 	mov	r1, #0
 	ldrsh	r6, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76bf4
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76bf8
 	neg	r4, r4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r4, .L_76bfc
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_76be6:
 	pop	{r4, r5, r6, r7}
@@ -275,34 +275,34 @@ func_8076C00:
 	lsl	r5, r5, #16
 	asr	r5, r5, #16
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_76ccc
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_76cd0
 	neg	r4, r4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r4, .L_76cd4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_76cba:
 	pop	{r3}
@@ -373,34 +373,34 @@ func_8076CD8:
 	mov	r1, #0
 	ldrsh	r6, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76d94
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76d98
 	neg	r4, r4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r4, .L_76d9c
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_76d82:
 	pop	{r4, r5, r6, r7}
@@ -471,34 +471,34 @@ func_8076DA0:
 	mov	r1, #0
 	ldrsh	r6, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76e5c
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_76e60
 	neg	r4, r4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r4, .L_76e64
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_76e4a:
 	pop	{r4, r5, r6, r7}
@@ -1138,10 +1138,10 @@ func_8077248:
 	mov	r1, #0
 	ldrsh	r4, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_77324
 	mov	r1, r8
@@ -1151,10 +1151,10 @@ func_8077248:
 	mov	r1, #0
 	ldrsh	r4, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_77328
 	mov	r1, r8
@@ -1165,10 +1165,10 @@ func_8077248:
 	ldrsh	r4, [r0, r1]
 	neg	r4, r4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_7732c
 	mov	r1, r8
@@ -1179,10 +1179,10 @@ func_8077248:
 	mov	r1, #0
 	ldrsh	r4, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	add	r1, r0, #0
 	strh	r1, [r6, #0]
 	pop	{r3}
@@ -1259,34 +1259,34 @@ func_8077330:
 	mov	r1, #0
 	ldrsh	r6, [r0, r1]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_773ec
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r5, .L_773f0
 	neg	r4, r4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r5, #0]
 	ldr	r4, .L_773f4
 	add	r0, r7, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r6, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	add	r1, r0, #0
 	strh	r1, [r4, #0]
 	pop	{r4, r5, r6, r7}
@@ -3925,7 +3925,7 @@ func_80782A4:
 	lsl	r7, r0, #1
 	lsl	r0, r0, #12
 .L_78684:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_78688:
 	.4byte	gCurrentSecondarySprite
 .L_7868c:
@@ -4407,34 +4407,34 @@ func_80782A4:
 	lsl	r5, r7, #16
 	asr	r5, r5, #16
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_78a74
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_78a78
 	neg	r4, r4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r4, .L_78a7c
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_78a56:
 	pop	{r3}
@@ -4782,10 +4782,10 @@ func_8078A80:
 	ldrsh	r2, [r0, r1]
 	mov	r8, r2
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_78d54
 	lsl	r0, r7, #1
@@ -4793,25 +4793,25 @@ func_8078A80:
 	mov	r2, #0
 	ldrsh	r4, [r0, r2]
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_78d58
 	neg	r4, r4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r4, .L_78d5c
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_78d2e:
 	pop	{r3}
@@ -4888,34 +4888,34 @@ func_8078D98:
 	mov	r5, #128	@ 0x80
 	lsl	r5, r5, #2
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_78e20
 	mov	r0, #0
 	ldrsh	r4, [r4, r0]
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_78e24
 	neg	r4, r4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r4, .L_78e28
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 	ldr	r1, .L_78e2c
 	ldrb	r0, [r1, #4]
@@ -5860,10 +5860,10 @@ func_807915A:
 	mov	r8, r1
 	add	r5, r7, #0
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_79568
 	mov	r1, r9
@@ -5872,25 +5872,25 @@ func_807915A:
 	mov	r2, #0
 	ldrsh	r4, [r0, r2]
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_7956c
 	neg	r4, r4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r4, .L_79570
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_79546:
 	pop	{r3, r4}
@@ -6231,10 +6231,10 @@ func_8079574:
 	mov	r8, r1
 	mov	r5, sl
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_79830
 	mov	r1, r9
@@ -6243,25 +6243,25 @@ func_8079574:
 	mov	r2, #0
 	ldrsh	r4, [r0, r2]
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r6, .L_79834
 	neg	r4, r4
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r6, #0]
 	ldr	r4, .L_79838
 	add	r0, r5, #0
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	mov	r0, r8
-	bl	func_8000A3C
+	bl	FixedMul
 	strh	r0, [r4, #0]
 .L_7980c:
 	pop	{r3, r4, r5}

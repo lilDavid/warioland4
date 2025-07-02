@@ -168,10 +168,10 @@ enum PrimarySpriteID {
     PSPRITE_A0,
     PSPRITE_A1,
     PSPRITE_A2,
-    PSPRITE_A3,
-    PSPRITE_A4,
-    PSPRITE_A5,
-    PSPRITE_A6,
+    PSPRITE_VORTEX_PART_LARGE,
+    PSPRITE_VORTEX_PART_LARGE_2,
+    PSPRITE_VORTEX_PART_MEDIUM,
+    PSPRITE_VORTEX_PART_MEDIUM_2,
     PSPRITE_A7,
     PSPRITE_A8,
     PSPRITE_A9,
@@ -184,13 +184,80 @@ enum PrimarySpriteID {
     PSPRITE_B0,
     PSPRITE_B1,
     PSPRITE_B2,
-    PSPRITE_B3,
-    PSPRITE_B4,
+    PSPRITE_WARIO_EXITING_VORTEX,
+    PSPRITE_WARIO_ENTERING_VORTEX,
     PSPRITE_B5,
     PSPRITE_B6,
     PSPRITE_CHANCE_WHEEL_DIAMOND,
-    // ...
-    PSPRITE_MAX = 252
+    PSPRITE_B7,
+    PSPRITE_B8,
+    PSPRITE_B9,
+    PSPRITE_BA,
+    PSPRITE_BB,
+    PSPRITE_BC,
+    PSPRITE_BD,
+    PSPRITE_BE,
+    PSPRITE_BF,
+    PSPRITE_C0,
+    PSPRITE_C1,
+    PSPRITE_C2,
+    PSPRITE_C3,
+    PSPRITE_C4,
+    PSPRITE_C5,
+    PSPRITE_C6,
+    PSPRITE_C7,
+    PSPRITE_C8,
+    PSPRITE_C9,
+    PSPRITE_CA,
+    PSPRITE_CB,
+    PSPRITE_CC,
+    PSPRITE_0xCD,  // LMAO
+    PSPRITE_CE,
+    PSPRITE_CF,
+    PSPRITE_D0,
+    PSPRITE_D1,
+    PSPRITE_D2,
+    PSPRITE_KEYZER_ENTERING_PORTAL,
+    PSPRITE_D4,
+    PSPRITE_D5,
+    PSPRITE_D6,
+    PSPRITE_D7,
+    PSPRITE_D8,
+    PSPRITE_D9,
+    PSPRITE_DA,
+    PSPRITE_DB,
+    PSPRITE_DC,
+    PSPRITE_DD,
+    PSPRITE_DE,
+    PSPRITE_DF,
+    PSPRITE_E0,
+    PSPRITE_E1,
+    PSPRITE_E2,
+    PSPRITE_E3,
+    PSPRITE_E4,
+    PSPRITE_E5,
+    PSPRITE_E6,
+    PSPRITE_E7,
+    PSPRITE_E8,
+    PSPRITE_E9,
+    PSPRITE_EA,
+    PSPRITE_EB,
+    PSPRITE_EC,
+    PSPRITE_ED,
+    PSPRITE_EE,
+    PSPRITE_EF,
+    PSPRITE_F0,
+    PSPRITE_F1,
+    PSPRITE_F2,
+    PSPRITE_F3,
+    PSPRITE_F4,
+    PSPRITE_F5,
+    PSPRITE_F6,
+    PSPRITE_F7,
+    PSPRITE_F8,
+    PSPRITE_F9,
+    PSPRITE_FA,
+    PSPRITE_MAX
 };
 
 enum SpriteStatusBits {
@@ -233,7 +300,7 @@ typedef struct {
     /* 0x16 */ u8 currentAnimationFrame;
     /* 0x17 */ u8 globalID;
     /* 0x18 */ u8 roomSlot;
-    /* 0x19 */ u8 unk_19;
+    /* 0x19 */ u8 gfxSlot;
     /* 0x1A */ u8 drawPriority;
     /* 0x1B */ u8 palette;
     /* 0x1C */ u8 pose;
@@ -262,6 +329,7 @@ extern u8 gPersistentSpriteData[16][64];
 extern PrimarySpriteData gCurrentSprite;
 
 
-void Sprite_SpawnAsChild(u8 id, u8 parent_slot, u8 unk_a3, u32 y_position, u32 x_position);
+void Sprite_SpawnAsChild(u8 id, u8 roomSlot, u8 gfxSlot, u32 yPosition, u32 xPosition);
+void func_801E430(u8 id, u8 roomSlot, u8 gfxSlot, u32 yPosition, u32 xPosition);
 
 #endif  // SPRITE_H

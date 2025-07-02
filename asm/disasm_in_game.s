@@ -361,7 +361,7 @@ func_801B8BC:
 .L_1bba0:
 	.4byte	gSubGameMode
 .L_1bba4:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 
 
 thumb_func_start func_801BBA8
@@ -543,7 +543,7 @@ func_801BC0C:
 .L_1bd00:
 	.4byte	0x84000100
 .L_1bd04:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_1bd08:
 	.4byte	gWarioData
 .L_1bd0c:
@@ -720,7 +720,7 @@ func_801BD4C:
 .L_1be50:
 	.4byte	0x84000100
 .L_1be54:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_1be58:
 	.4byte	gWarioData
 .L_1be5c:
@@ -932,7 +932,7 @@ func_801BEA8:
 .L_1bfe8:
 	.4byte	0x84000100
 .L_1bfec:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_1bff0:
 	.4byte	gWarioData
 .L_1bff4:
@@ -1097,7 +1097,7 @@ func_801C050:
 .L_1c120:
 	.4byte	0x84000100
 .L_1c124:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_1c128:
 	.4byte	gWarioData
 .L_1c12c:
@@ -1436,7 +1436,7 @@ func_801C1C0:
 .L_1c3c0:
 	.4byte	gWarioPauseTimer
 .L_1c3c4:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_1c3c8:
 	.4byte	gUnk_3000012
 .L_1c3cc:

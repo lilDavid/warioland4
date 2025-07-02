@@ -638,12 +638,12 @@ func_80725AC:
 	ldr	r5, .L_726d0
 	mov	r2, #0
 	ldrsh	r0, [r5, r2]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r3, .L_726d4
 	strh	r0, [r3, #0]
 	ldrh	r0, [r6, #0]
@@ -653,12 +653,12 @@ func_80725AC:
 	ldrsh	r4, [r0, r7]
 	mov	r1, #0
 	ldrsh	r0, [r5, r1]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r2, .L_726d8
 	strh	r0, [r2, #0]
 	ldr	r3, .L_726dc
@@ -678,12 +678,12 @@ func_80725AC:
 	ldr	r5, .L_726e0
 	mov	r1, #0
 	ldrsh	r0, [r5, r1]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r2, .L_726e4
 	mov	sl, r2
 	strh	r0, [r2, #0]
@@ -701,12 +701,12 @@ func_80725AC:
 	asr	r4, r4, #16
 	mov	r7, #0
 	ldrsh	r0, [r5, r7]
-	bl	func_8000A6C
+	bl	FixedInverse
 	add	r1, r0, #0
 	lsl	r1, r1, #16
 	asr	r1, r1, #16
 	add	r0, r4, #0
-	bl	func_8000A3C
+	bl	FixedMul
 	ldr	r6, .L_726e8
 	strh	r0, [r6, #0]
 	ldr	r4, .L_726ec

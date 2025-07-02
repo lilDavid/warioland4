@@ -893,7 +893,7 @@ func_8075888:
 .L_75920:
 	.4byte	gWarioPauseTimer
 .L_75924:
-	.4byte	gUnk_30019F8
+	.4byte	gDisableWario
 .L_75928:
 	.4byte	gUnk_3000C03
 .L_7592c:

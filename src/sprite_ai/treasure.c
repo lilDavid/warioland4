@@ -368,7 +368,7 @@ const AnimationFrame sBoxHeartRefillOpenedOam[] = {
 
 
 void Box_SetCommonProperties(void) {
-    gCurrentSprite.unk_19 = 7;
+    gCurrentSprite.gfxSlot = 7;
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 0;
@@ -1245,7 +1245,7 @@ void SpriteAI_TreasureGlowHeartRefill(void) {
 void SpriteAI_Treasure_Unused1(void) {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            gCurrentSprite.unk_19 = 7;
+            gCurrentSprite.gfxSlot = 7;
             gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
             gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
             gCurrentSprite.drawDistanceUp = 0;

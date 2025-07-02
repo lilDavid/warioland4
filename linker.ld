@@ -190,7 +190,7 @@ SECTIONS {
         . = 0x19f2; gUnk_30019F2 = .;
         . = 0x19f4; gUnk_30019F4 = .;
         . = 0x19f6; gWarioPauseTimer = .;
-        . = 0x19f8; gUnk_30019F8 = .;
+        . = 0x19f8; gDisableWario = .;
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1a00; gHBlankCallback = .;
         . = 0x1a04; gVCountCallback = .;
@@ -389,7 +389,7 @@ SECTIONS {
         obj/sprite_ai/blob_rotating_platform.o(.text);
         obj/sprite_ai/keyzer.o(.text);
         obj/sprite_ai/treasure.o(.text);
-        obj/sprite_ai/blob_vortex.o(.text);
+        obj/sprite_ai/vortex.o(.text);
         obj/sprite_ai/blob_switch.o(.text);
         obj/sprite_ai/coins.o(.text);
         obj/sprite_ai/blob_skeleton_bird.o(.text);
@@ -493,13 +493,14 @@ SECTIONS {
     } > ROM
 
     .rodata : ALIGN(2) {
-        obj/disasm_oam.o(.rodata);
+        obj/data/sin_cos_table.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
         obj/blob_0x09540C-0x3B4554.o(.rodata);
         obj/sprite_ai/keyzer.o(.rodata);
         obj/sprite_ai/treasure.o(.rodata);
-        obj/blob_0x3B5014-0x3B5C5C.o(.rodata);
+        obj/sprite_ai/vortex.o(.rodata);
+        obj/blob_0x3B508C-0x3B5C5C.o(.rodata);
         obj/sprite_ai/coins.o(.rodata);
         obj/blob_0x3B6450-0x3C4AE8.o(.rodata);
         obj/sprite_ai/rock.o(.rodata);
