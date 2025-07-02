@@ -118,7 +118,7 @@ clean:
 	$Qrm -f baserom_*.gba.dump
 ifeq ($(DATA),1)
 	$(MSG) RM DATA
-	$Qrm -rf $(DATA)/*
+	$Qrm -rf data/*
 	$Qrm -rf $(INCLUDE)/data
 endif
 ifeq ($(TOOLS),1)
