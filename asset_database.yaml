@@ -1,0 +1,5 @@
+- path: "sprites/Vortex.pal"
+  count: 512
+  addr:
+    us_jp: 0x3B508C
+  size: 2

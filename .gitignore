@@ -58,3 +58,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Game data
+data/**
+include/data/**
+
+# Python virtual environment
+.venv

@@ -3,6 +3,7 @@ VERSION ?= us
 
 # Build tools
 HOSTCC=cc
+PYTHON = python3
 
 TOOLCHAIN ?= arm-none-eabi-
 AS = $(TOOLCHAIN)as
@@ -17,6 +18,10 @@ MD5SUM = md5sum
 TOOL_DIR = tools
 GBAFIX = $(TOOL_DIR)/gbafix/gbafix
 
+VENV = .venv
+REQUIREMENTS = $(TOOL_DIR)/requirements.txt
+EXTRACTOR = $(TOOL_DIR)/extract_assets.py
+
 AGBCC_DIR = $(TOOL_DIR)/agbcc
 CC = $(AGBCC_DIR)/agbcc
 
@@ -25,6 +30,7 @@ CC = $(AGBCC_DIR)/agbcc
 GAME_NAME = warioland4
 FILENAME = $(GAME_NAME)_$(VERSION)
 BASEROM = baserom_$(VERSION).gba
+DATABASE = asset_database.yaml
 MD5FILE = $(FILENAME).md5
 
 BUILD = build/$(VERSION)
@@ -33,7 +39,6 @@ SRC = src
 INCLUDE = include
 BUILT_ASM = $(BUILD)/asm
 OBJ = $(BUILD)/obj
-LIBS =
 
 SRCS_C = $(shell find $(SRC) -type f -name '*.c')
 SRCS_ASM = $(shell find $(ASM) -type f -name '*.s')
@@ -81,8 +86,10 @@ else
 	MSG = @echo " "
 endif
 
+USE_VENV = . $(VENV)/bin/activate &&
 
-.PHONY: all check dump diff tools clean help
+
+.PHONY: all check dump diff extract tools clean help
 
 all: check
 
@@ -96,18 +103,31 @@ diff: $(DUMPS)
 	$(MSG) DIFF $^
 	$Q$(DIFF) $^
 
-tools: $(CC) $(GBAFIX)
+extract: $(DATABASE) $(EXTRACTOR)
+	$(MSG) PYTHON $(EXTRACTOR)
+	$Q$(USE_VENV) $(PYTHON) $(EXTRACTOR) -v $(VERSION)
+
+tools: $(CC) $(GBAFIX) $(VENV) $(REQUIREMENTS)
+	$(MSG) PIP $(REQUIREMENTS)
+	$Q$(USE_VENV) $(PYTHON) -m pip install -r $(REQUIREMENTS) --quiet
 
 clean:
 	$(MSG) RM BUILD
 	$Qrm -rf build/*
 	$(MSG) RM DUMPS
 	$Qrm -f baserom_*.gba.dump
+ifeq ($(DATA),1)
+	$(MSG) RM DATA
+	$Qrm -rf $(DATA)/*
+	$Qrm -rf $(INCLUDE)/data
+endif
 ifeq ($(TOOLS),1)
 	$(MSG) RM $(GBAFIX)
 	$Qrm -rf $(GBAFIX)
 	$(MSG) CLEAN $(CC)
 	$Qcd $(AGBCC_DIR) && git clean -xdf .
+	$(MSG) RM $(VENV)
+	$Qrm -rf $(VENV)
 endif
 
 help:
@@ -117,6 +137,7 @@ help:
 	@echo '  dump: dump the ROMs'
 	@echo '  diff: dump and compare the ROMs'
 	@echo '  clean: remove build files'
+	@echo '    DATA=1: remove extracted data'
 	@echo '    TOOLS=1: remove build files for tools, including agbcc'
 	@echo '  help: show this message'
 	@echo ''
@@ -164,3 +185,7 @@ $(TOOL_DIR)/%: $(TOOL_DIR)/%.c
 $(CC):
 	$(MSG) MAKE $@
 	$Qcd $(shell dirname $@) && MAKEFLAGS="" ./build.sh
+
+$(VENV):
+	$(MSG) VENV $(VENV)
+	$Q$(PYTHON) -m venv $(VENV)

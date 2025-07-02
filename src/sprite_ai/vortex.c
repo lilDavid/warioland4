@@ -60,8 +60,9 @@ const AnimationFrame sVortexKeyzerOam[] = {
 };
 
 
-// TODO extract
-extern const u16 sVortexPal[];
+const u16 sVortexPal[] = {
+    #include "data/sprites/Vortex.pal.inc"
+};
 
 
 void Vortex_SetCommonProperties(void) {
