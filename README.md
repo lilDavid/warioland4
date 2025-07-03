@@ -20,9 +20,13 @@ git submodule update --init
 make tools
 ```
 
-To build the US version: place the ROM in the repository root as `baserom_us.gba`, then run `make`.
+This will also set up a Python virtual environment and dependencies for the asset extractor.
 
-To build the JP version: name the ROM `baserom_jp.gba` and run `make VERSION=jp`.
+To build the US version: place the ROM in the repository root as `baserom_us.gba`, then run `make extract` to extract
+the assets. Then you can run `make` to build the ROM.
+
+To build the JP version: add `VERSION=jp` when running `make extract` and `make`, e.g.
+`make extract VERSION=jp && make VERSION=jp`.
 
 If there were no problems, a message such as this will be printed to the screen:
 

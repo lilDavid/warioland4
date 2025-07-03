@@ -136,6 +136,8 @@ help:
 	@echo '  check: same as `all`'
 	@echo '  dump: dump the ROMs'
 	@echo '  diff: dump and compare the ROMs'
+	@echo '  tools: set up build tools'
+	@echo '  extract: extract assets from ROM'
 	@echo '  clean: remove build files'
 	@echo '    DATA=1: remove extracted data'
 	@echo '    TOOLS=1: remove build files for tools, including agbcc'
