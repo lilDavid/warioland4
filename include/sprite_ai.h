@@ -140,5 +140,11 @@ void SpriteAI_TreasureGlowJewelPieceNW(void);
 void SpriteAI_TreasureGlowCD(void);
 void SpriteAI_TreasureGlowHeartRefill(void);
 void SpriteAI_ChanceWheelDiamond(void);
+void SpriteAI_Vortex(void);
+void SpriteAI_VortexPartMedium(void);
+void SpriteAI_VortexPartLarge(void);
+void SpriteAI_WarioExitingVortex(void);
+void SpriteAI_WarioEnteringVortex(void);
+void SpriteAI_KeyzerEnteringVortex(void);
 
 #endif
