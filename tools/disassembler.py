@@ -47,7 +47,7 @@ def get_symbol(addr, symbols, ctx=None, strict_addrs=False):
     if strict_addrs:
         return f'0x{addr:X}'
     if addr in IWRAM:
-        return f'gUnk_{addr[-7:].upper()}'
+        return f'gUnk_{addr:X}'
     if addr not in ROM:
         return f'0x{addr:X}'
     if ctx == 'call':

@@ -832,9 +832,42 @@ baserom_blob 0x63A31C, 0x63A3AC
 sUnk_863A3AC:
 
 
-@ Sound room data
+@ Boss door opening cutscene
 
-baserom_blob 0x63A3AC, 0x63C694
+baserom_blob 0x63A3AC, 0x63C5DC
+
+.global sUnk_863C5DC
+sUnk_863C5DC:
+
+baserom_blob 0x63C5DC, 0x63C5EC
+
+.global sUnk_863C5EC
+sUnk_863C5EC:
+
+baserom_blob 0x63C5EC, 0x63C5F4
+
+.global sUnk_863C5F4
+sUnk_863C5F4:
+
+baserom_blob 0x63C5F4, 0x63C634
+
+.global sUnk_863C634
+sUnk_863C634:
+
+baserom_blob 0x63C634, 0x63C654
+
+.global sUnk_863C654
+sUnk_863C654:
+
+baserom_blob 0x63C654, 0x63C674
+
+.global sUnk_863C674
+sUnk_863C674:
+
+baserom_blob 0x63C674, 0x63C694
+
+
+@ Sound room data
 
 .global sUnk_863C694
 sUnk_863C694:
@@ -919,7 +952,12 @@ baserom_blob 0x63D984, 0x63D9A0
 .global sUnk_863D9A0
 sUnk_863D9A0:
 
-baserom_blob 0x63D9A0, 0x64261C
+baserom_blob 0x63D9A0, 0x642464
+
+.global sUnk_8642464
+sUnk_8642464:
+
+baserom_blob 0x642464, 0x64261C
 
 .global sUnk_864261C
 sUnk_864261C:
@@ -959,7 +997,57 @@ baserom_blob 0x642860, 0x642898
 .global sUnk_8642898
 sUnk_8642898:
 
-baserom_blob 0x642898, 0x6B2888
+baserom_blob 0x642898, 0x6A9E48
+
+.global sUnk_86A9E48
+sUnk_86A9E48:
+
+baserom_blob 0x6A9E48, 0x6AA048
+
+.global sUnk_86AA048
+sUnk_86AA048:
+
+baserom_blob 0x6AA048, 0x6AE048
+
+.global sUnk_86AE048
+sUnk_86AE048:
+
+baserom_blob 0x6AE048, 0x6AE248
+
+.global sUnk_86AE248
+sUnk_86AE248:
+
+baserom_blob 0x6AE248, 0x6AE648
+
+.global sUnk_86AE648
+sUnk_86AE648:
+
+baserom_blob 0x6AE648, 0x6B0E48
+
+.global sUnk_86B0E48
+sUnk_86B0E48:
+
+baserom_blob 0x6B0E48, 0x6B1648
+
+.global sUnk_86B1648
+sUnk_86B1648:
+
+baserom_blob 0x6B1648, 0x6B1E48
+
+.global sUnk_86B1E48
+sUnk_86B1E48:
+
+baserom_blob 0x6B1E48, 0x6B2648
+
+.global sUnk_86B2648
+sUnk_86B2648:
+
+baserom_blob 0x6B2648, 0x6B2708
+
+.global sUnk_86B2708
+sUnk_86B2708:
+
+baserom_blob 0x6B2708, 0x6B2888
 
 .global sUnk_86B2888
 sUnk_86B2888:
