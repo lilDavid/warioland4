@@ -239,6 +239,16 @@ SECTIONS {
         . = 0x3c9c; gUnk_3003C9C = .;
         . = 0x3d60; gUnk_3003D60 = .;
         . = 0x3d64; gUnk_3003D64 = .;
+        . = 0x3d98; gUnk_3003D98 = .;
+        . = 0x3da0; gUnk_3003DA0 = .;
+        . = 0x3dc8; gUnk_3003DC8 = .;
+        . = 0x3dd0; gUnk_3003DD0 = .;
+        . = 0x3dd2; gUnk_3003DD2 = .;
+        . = 0x3dd4; gUnk_3003DD4 = .;
+        . = 0x3dd8; gUnk_3003DD8 = .;
+        . = 0x3ddc; gUnk_3003DDC = .;
+        . = 0x3de0; gUnk_3003DE0 = .;
+        . = 0x3de4; gUnk_3003DE4 = .;
         . = 0x4730; gUnk_3004730 = .;
         . = 0x4731; gUnk_3004731 = .;
         . = 0x4738; gUnk_3004738 = .;
@@ -499,7 +509,8 @@ SECTIONS {
         obj/disasm_hud.o(.text);
         obj/disasm_score.o(.text);
         obj/disasm_secondary_sprite_ai.o(.text);
-        obj/blob_0x0799A8-0x0811A0.o(.text);
+        obj/blob_0x0799A8-0x080A6C.o(.text);
+        obj/disasm_stage_results.o(.text);
         obj/disasm_autosave.o(.text);
         obj/blob_0x08167C-0x085E24.o(.text);
         obj/disasm_boss_door_opening.o(.text);

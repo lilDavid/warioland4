@@ -831,10 +831,18 @@ baserom_blob 0x63A31C, 0x63A3AC
 .global sUnk_863A3AC
 sUnk_863A3AC:
 
+baserom_blob 0x63A3AC, 0x63A490
+
+
+@ Stage results
+
+.global sUnk_863A490
+sUnk_863A490:
+
+baserom_blob 0x63A490, 0x63C5DC
+
 
 @ Boss door opening cutscene
-
-baserom_blob 0x63A3AC, 0x63C5DC
 
 .global sUnk_863C5DC
 sUnk_863C5DC:
@@ -997,7 +1005,22 @@ baserom_blob 0x642860, 0x642898
 .global sUnk_8642898
 sUnk_8642898:
 
-baserom_blob 0x642898, 0x6A9E48
+baserom_blob 0x642898, 0x6872DC
+
+.global sUnk_86872DC
+sUnk_86872DC:
+
+baserom_blob 0x6872DC, 0x68A95C
+
+.global sUnk_868A95C
+sUnk_868A95C:
+
+baserom_blob 0x68A95C, 0x68B15C
+
+.global sUnk_868B15C
+sUnk_868B15C:
+
+baserom_blob 0x68B15C, 0x6A9E48
 
 .global sUnk_86A9E48
 sUnk_86A9E48:
