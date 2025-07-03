@@ -44,4 +44,4 @@ baserom_blob 0x07ACCC, 0x07F6B4
 thumb_func_start func_807F6B4
 func_807F6B4:
 
-baserom_blob 0x07F6B4, 0x080A6C
+baserom_blob 0x07F6B4, 0x07F8D0
