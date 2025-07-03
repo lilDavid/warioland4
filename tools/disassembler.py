@@ -13,7 +13,9 @@ STRICT_ADDRESSES = False
 OBJDUMP = shutil.which("arm-none-eabi-objdump")
 OBJDUMP_ARGS = (OBJDUMP, "-bbinary", "-marm7tdmi", "-Dz", "-Mforce-thumb")
 
-TEXT_SEGMENT_END = 0x80953EC
+IWRAM = range(0x3000000, 0x3008000)
+TEXT = range(0x8000000, 0x80953EC)
+ROM = range(0x8000000, 0x8800000)
 
 
 map_regex = re.compile(r'\s*(0x[0-9a-f]+)\s+(\w+)\s*(?:=\s*\.)?\s*')
@@ -32,34 +34,34 @@ def parse_map(path):
             if match is None:
                 continue
             addr, sym = match.groups()
-            symbols[addr] = sym
+            symbols[int(addr, base=0)] = sym
     return symbols
 
 
 def get_symbol(addr, symbols, ctx=None, strict_addrs=False):
+    addr = int(addr, base=0)
     symbol = symbols.get(addr)
     if symbol is not None:
         return symbol
     # Use heuristics to guess certain values are pointers and convert them to undocumented names
-    if strict_addrs or addr[-8] != '0':
-        return addr
-    if addr[-7] == '3':
+    if strict_addrs:
+        return f'0x{addr:X}'
+    if addr in IWRAM:
         return f'gUnk_{addr[-7:].upper()}'
-    if addr[-7] != '8':
-        return addr
-    real_address = int(addr, 0)
+    if addr not in ROM:
+        return f'0x{addr:X}'
     if ctx == 'call':
-        real_address &= ~1
-        return f'func_{real_address:X}'
+        addr &= ~1
+        return f'func_{addr:X}'
     if ctx == 'data':
-        if real_address < TEXT_SEGMENT_END:
-            if real_address & 1:
-                return f'func_{real_address & ~1:X}'
+        if addr in TEXT:
+            if addr & 1:
+                return f'func_{addr & ~1:X}'
             else:
-                return f'.L_{real_address & ~0x8000000:x}'
+                return f'.L_{addr & ~0x8000000:x}'
         else:
-            return f'sUnk_{addr[-7:].upper()}'
-    return addr
+            return f'sUnk_{addr:X}'
+    return f'0x{addr:X}'
 
 
 def make_data(source, iterator, i, inst, symbols, setlabel=True):
