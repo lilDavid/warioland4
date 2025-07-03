@@ -244,6 +244,7 @@ SECTIONS {
         . = 0x3c54; gUnk_3003C54 = .;
         . = 0x3c55; gUnk_3003C55 = .;
         . = 0x3c56; gUnk_3003C56 = .;
+        . = 0x3c62; gUnk_3003C62 = .;
         . = 0x3c98; gUnk_3003C98 = .;
         . = 0x3c99; gUnk_3003C99 = .;
         . = 0x3c9c; gUnk_3003C9C = .;
@@ -259,6 +260,17 @@ SECTIONS {
         . = 0x3ddc; gUnk_3003DDC = .;
         . = 0x3de0; gUnk_3003DE0 = .;
         . = 0x3de4; gUnk_3003DE4 = .;
+        . = 0x40c0; gUnk_30040C0 = .;
+        . = 0x40c8; gUnk_30040C8 = .;
+        . = 0x40e8; gUnk_30040E8 = .;
+        . = 0x40f0; gUnk_30040F0 = .;
+        . = 0x40f8; gUnk_30040F8 = .;
+        . = 0x4108; gUnk_3004108 = .;
+        . = 0x4138; gUnk_3004138 = .;
+        . = 0x4638; gUnk_3004638 = .;
+        . = 0x4639; gUnk_3004639 = .;
+        . = 0x463a; gUnk_300463A = .;
+        . = 0x463c; gUnk_300463C = .;
         . = 0x4640; gUnk_3004640 = .;
         . = 0x4641; gUnk_3004641 = .;
         . = 0x4648; gUnk_3004648 = .;
@@ -542,7 +554,8 @@ SECTIONS {
         obj/blob_0x0799A8-0x080A6C.o(.text);
         obj/disasm_stage_results.o(.text);
         obj/disasm_autosave.o(.text);
-        obj/blob_0x08167C-0x083798.o(.text);
+        obj/blob_0x08167C-0x082024.o(.text);
+        obj/disasm_boss_treasure_cutscene.o(.text);
         obj/disasm_passage_clear.o(.text);
         obj/disasm_passage_screen.o(.text);
         obj/disasm_boss_door_opening.o(.text);
