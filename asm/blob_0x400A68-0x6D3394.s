@@ -839,7 +839,75 @@ baserom_blob 0x63A3AC, 0x63A490
 .global sUnk_863A490
 sUnk_863A490:
 
-baserom_blob 0x63A490, 0x63C41C
+baserom_blob 0x63A490, 0x63BC7C
+
+
+@ CLEAR! screen
+
+.global sUnk_863BC7C
+sUnk_863BC7C:
+
+baserom_blob 0x63BC7C, 0x63BCF8
+
+.global sUnk_863BCF8
+sUnk_863BCF8:
+
+baserom_blob 0x63BCF8, 0x63BE36
+
+.global sUnk_863BE36
+sUnk_863BE36:
+
+baserom_blob 0x63BE36, 0x63C0B2
+
+.global sUnk_863C0B2
+sUnk_863C0B2:
+
+baserom_blob 0x63C0B2, 0x63C330
+
+.global sUnk_863C330
+sUnk_863C330:
+
+baserom_blob 0x63C330, 0x63C348
+
+.global sUnk_863C348
+sUnk_863C348:
+
+baserom_blob 0x63C348, 0x63C360
+
+.global sUnk_863C360
+sUnk_863C360:
+
+baserom_blob 0x63C360, 0x63C378
+
+.global sUnk_863C378
+sUnk_863C378:
+
+baserom_blob 0x63C378, 0x63C390
+
+.global sUnk_863C390
+sUnk_863C390:
+
+baserom_blob 0x63C390, 0x63C3A8
+
+.global sUnk_863C3A8
+sUnk_863C3A8:
+
+baserom_blob 0x63C3A8, 0x63C3D4
+
+.global sUnk_863C3D4
+sUnk_863C3D4:
+
+baserom_blob 0x63C3D4, 0x63C3EC
+
+.global sUnk_863C3EC
+sUnk_863C3EC:
+
+baserom_blob 0x63C3EC, 0x63C404
+
+.global sUnk_863C404
+sUnk_863C404:
+
+baserom_blob 0x63C404, 0x63C41C
 
 
 @ Passage screen
@@ -1068,7 +1136,27 @@ baserom_blob 0x6413BC, 0x6413CC
 .global sUnk_86413CC
 sUnk_86413CC:
 
-baserom_blob 0x6413CC, 0x642464
+baserom_blob 0x6413CC, 0x641718
+
+.global sUnk_8641718
+sUnk_8641718:
+
+baserom_blob 0x641718, 0x641748
+
+.global sUnk_8641748
+sUnk_8641748:
+
+baserom_blob 0x641748, 0x641778
+
+.global sUnk_8641778
+sUnk_8641778:
+
+baserom_blob 0x641778, 0x6417E8
+
+.global sUnk_86417E8
+sUnk_86417E8:
+
+baserom_blob 0x6417E8, 0x642464
 
 .global sUnk_8642464
 sUnk_8642464:
@@ -1133,7 +1221,57 @@ baserom_blob 0x68A95C, 0x68B15C
 .global sUnk_868B15C
 sUnk_868B15C:
 
-baserom_blob 0x68B15C, 0x69CE48
+baserom_blob 0x68B15C, 0x68FEC8
+
+.global sUnk_868FEC8
+sUnk_868FEC8:
+
+baserom_blob 0x68FEC8, 0x68FF28
+
+.global sUnk_868FF28
+sUnk_868FF28:
+
+baserom_blob 0x68FF28, 0x695328
+
+.global sUnk_8695328
+sUnk_8695328:
+
+baserom_blob 0x695328, 0x695528
+
+.global sUnk_8695528
+sUnk_8695528:
+
+baserom_blob 0x695528, 0x69A528
+
+.global sUnk_869A528
+sUnk_869A528:
+
+baserom_blob 0x69A528, 0x69AD28
+
+.global sUnk_869AD28
+sUnk_869AD28:
+
+baserom_blob 0x69AD28, 0x69B528
+
+.global sUnk_869B528
+sUnk_869B528:
+
+baserom_blob 0x69B528, 0x69BD28
+
+.global sUnk_869BD28
+sUnk_869BD28:
+
+baserom_blob 0x69BD28, 0x69C528
+
+.global sUnk_869C528
+sUnk_869C528:
+
+baserom_blob 0x69C528, 0x69CD28
+
+.global sUnk_869CD28
+sUnk_869CD28:
+
+baserom_blob 0x69CD28, 0x69CE48
 
 .global sUnk_869CE48
 sUnk_869CE48:
