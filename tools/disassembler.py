@@ -1,0 +1,226 @@
+from argparse import ArgumentParser
+from collections import namedtuple
+import functools
+import itertools
+import re
+import shutil
+import subprocess
+import sys
+
+
+STRICT_ADDRESSES = False
+
+OBJDUMP = shutil.which("arm-none-eabi-objdump")
+OBJDUMP_ARGS = (OBJDUMP, "-bbinary", "-marm7tdmi", "-Dz", "-Mforce-thumb")
+
+TEXT_SEGMENT_END = 0x80953EC
+
+
+map_regex = re.compile(r'\s*(0x[0-9a-f]+)\s+(\w+)\s*(?:=\s*\.)?\s*')
+disassembly_regex = re.compile(r'\s*([0-9a-f]+):\s+([0-9a-f ]+)\s+(\S+)(?:\s+([^@]+)\s+)?(?:@ (.*))?\s*')
+ldr_regex = re.compile(r'(r\d), \[(\w+), #?(\w+)\]')
+
+
+Instruction = namedtuple('Instruction', ['label', 'raw', 'mnemonic', 'operands', 'comment'])
+
+
+def parse_map(path):
+    symbols = {}
+    with open(path, 'r') as file:
+        for line in file:
+            match = map_regex.match(line)
+            if match is None:
+                continue
+            addr, sym = match.groups()
+            symbols[addr] = sym
+    return symbols
+
+
+def get_symbol(addr, symbols, ctx=None, strict_addrs=False):
+    symbol = symbols.get(addr)
+    if symbol is not None:
+        return symbol
+    # Use heuristics to guess certain values are pointers and convert them to undocumented names
+    if strict_addrs or addr[-8] != '0':
+        return addr
+    if addr[-7] == '3':
+        return f'gUnk_{addr[-7:].upper()}'
+    if addr[-7] != '8':
+        return addr
+    real_address = int(addr, 0)
+    if ctx == 'call':
+        real_address &= ~1
+        return f'func_{real_address:X}'
+    if ctx == 'data':
+        if real_address < TEXT_SEGMENT_END:
+            if real_address & 1:
+                return f'func_{real_address & ~1:X}'
+            else:
+                return f'.L_{real_address & ~0x8000000:x}'
+        else:
+            return f'sUnk_{addr[-7:].upper()}'
+    return addr
+
+
+def make_data(source, iterator, i, inst, symbols, setlabel=True):
+    label = f'.L_{inst.label}' if setlabel else inst.label
+    if len(inst.raw.replace(' ', '')) > 4:
+        value = inst.raw.replace(' ', '')
+        value = value[4:] + value[:4]
+    else:
+        value = f'{source[i+1].raw}{inst.raw}'.replace(' ', '')
+        next(iterator)
+    return Instruction(label, value, '.4byte', get_symbol(f'0x{value}', symbols, 'data'), '')
+
+
+def parse_instructions(file):
+    instructions = []
+    with file:
+        for line in file:
+            match = disassembly_regex.match(line)
+            if match is None:
+                continue
+            instructions.append(Instruction._make(group or '' for group in match.groups()))
+    return instructions
+
+
+# Only works for THUMB
+def cleanup_objdump(instructions, symbols: dict = None):
+    if symbols is None:
+        symbols = {}
+
+    # Remove 's' flag
+    for i, inst in enumerate(instructions):
+        if inst.mnemonic[-1] == 's':
+            instructions[i] = inst._replace(mnemonic=inst.mnemonic[:-1])
+
+    # Remove 4-byte instructions other than bl
+    _instructions, instructions = instructions, []
+    iterator = iter(enumerate(_instructions))
+    for i, inst in iterator:
+        if len(inst.raw.replace(' ', '')) > 4 and inst.mnemonic != 'bl':
+            addr = int(inst.label, base=16)
+            lower, upper = inst.raw.split()
+            instructions.append(Instruction(f"{addr:x}", lower, ".2byte", f"0x{lower}", ""))
+            instructions.append(Instruction(f"{addr + 2:x}", upper, ".2byte", f"0x{upper}", ""))
+        else:
+            instructions.append(inst)
+
+    # Find targets of PC-relative loads and jumps
+    branch_targets = set()
+    pool_addresses = set()
+    for i, inst in enumerate(instructions):
+        if inst.mnemonic == 'ldr':
+            rd, rs, off = ldr_regex.match(inst.operands).groups()
+            if rs == 'pc' and inst.label not in pool_addresses:
+                addr = inst.comment[3:-1]
+                pool_addresses.add(addr)
+                instructions[i] = inst._replace(operands=f'{rd}, .L_{addr}', comment='')
+        if inst.mnemonic.endswith('.n'):
+            addr = inst.operands[2:]
+            branch_targets.add(addr)
+            instructions[i] = inst._replace(mnemonic=inst.mnemonic[:-2], operands=f'.L_{addr}')
+        if inst.mnemonic == 'bl':
+            addr = f'0x{int(inst.operands, base=0) | 0x8000000:08x}'
+            instructions[i] = inst._replace(operands=get_symbol(addr, symbols, 'call'))
+
+    # Add labels to branch targets
+    for i, inst in enumerate(instructions):
+        if inst.label in branch_targets:
+            instructions[i] = inst._replace(label=f'.L_{inst.label}')
+
+    # Convert pool items to data directives and add labels
+    _instructions, instructions = instructions, []
+    iterator = iter(enumerate(_instructions))
+    for i, inst in iterator:
+        if inst.label in pool_addresses:
+            instructions.append(make_data(_instructions, iterator, i, inst, symbols))
+        else:
+            instructions.append(inst)
+
+    # Find jump tables
+    # If a function refers to itself, it's probably pointing at a jump table
+    tables = set()
+    for i, inst in enumerate(instructions):
+        if inst.mnemonic == '.4byte' and inst.operands.startswith('.L_'):
+            tables.add(inst.operands[3:])
+
+    # Add labels to jump tables
+    table_targets = set()
+    _instructions, instructions = instructions, []
+    iterator = iter(enumerate(_instructions))
+    for i, inst in iterator:
+        if inst.label in tables:
+            instructions.append(make_data(_instructions, iterator, i, inst, symbols)._replace(label=f'.L_{inst.label}'))
+            table_targets.add(instructions[-1].operands[3:])
+            i, inst = next(iterator)
+            while inst.label not in table_targets and not inst.label.startswith('.L_'):
+                instructions.append(make_data(_instructions, iterator, i, inst, symbols, setlabel=False))
+                table_targets.add(instructions[-1].operands[3:])
+                i, inst = next(iterator)
+        instructions.append(inst)
+
+    # Add labels to table targets
+    for i, inst in enumerate(instructions):
+        if inst.label in table_targets:
+            instructions[i] = inst._replace(label=f'.L_{inst.label}')
+
+    # Guess that instruction 0000 is an alignment
+    for i, inst in enumerate(instructions):
+        if inst.raw.strip() == '0000':
+            instructions[i] = inst._replace(mnemonic='.align', operands='2, 0')
+    return instructions
+
+
+def objdump(rom, start_addr, end_addr):
+    return subprocess.Popen(OBJDUMP_ARGS + (rom, f"--start-address={start_addr}", f"--stop-address={end_addr}"),
+                            stdout=subprocess.PIPE, text=True)
+
+
+def disassemble_function(rom, start_addr, end_addr, symbols=None, quiet=False):
+    objdump_process = objdump(rom, start_addr, end_addr)
+    instructions = parse_instructions(objdump_process.stdout)
+    if objdump_process.wait() != 0:
+        print(f"Error disassembling 0x{start_addr:06x}-0x{end_addr:06x}", file=sys.stderr)
+        exit(objdump_process.returncode)
+
+    instructions = cleanup_objdump(instructions, symbols)
+    if not quiet:
+        print()
+        print()
+        print(f"thumb_func_start func_8{start_addr:06X}")
+        print(f"func_8{start_addr:06X}:")
+    for inst in instructions:
+        label, raw, mnemonic, operands, comment = inst
+        if label.startswith('.L_'):
+            print(f'{label}:')
+        print('', mnemonic, operands, comment and f'@ {comment}', sep='\t')
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("addresses", type=functools.partial(int, base=16), nargs="+",
+                        help="Address range to disassemble. Give more than 2 addresses to disassemble multiple "
+                             "functions.")
+    parser.add_argument("-v", "--version", type=str, choices=["us", "jp"], default="us",
+                        help="The version of the ROM to disassemble from")
+    parser.add_argument("-q", "--quiet", action="store_true",
+                        help="Only output disassembled code without a label. Only valid if disassembling one function.")
+
+    args = parser.parse_args()
+    if len(args.addresses) < 2:
+        print("Start and end addresses are required", file=sys.stderr)
+        exit(1)
+    if len(args.addresses) > 2 and args.quiet:
+        print("Quiet flag is invalid if disassembling multiple functions", file=sys.stderr)
+        exit(1)
+
+    try:
+        symbols = parse_map(f"build/{args.version}/warioland4_{args.version}.map")
+    except FileNotFoundError:
+        symbols = None
+
+    if not args.quiet:
+        print('.include "macros.s.inc"')
+    for start, end in itertools.pairwise(addr & 0x7FFFFFE for addr in args.addresses):
+        disassemble_function(f"baserom_{args.version}.gba", start, end, symbols=symbols, quiet=args.quiet)
