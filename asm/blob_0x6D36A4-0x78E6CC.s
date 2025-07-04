@@ -36,7 +36,12 @@ baserom_blob 0x6D36FC, 0x6D370C
 .global sUnk_86D370C
 sUnk_86D370C:
 
-baserom_blob 0x6D370C, 0x6D3CF8
+baserom_blob 0x6D370C, 0x6D371C
+
+.global sUnk_86D371C
+sUnk_86D371C:
+
+baserom_blob 0x6D371C, 0x6D3CF8
 
 .global sUnk_86D3CF8
 sUnk_86D3CF8:

@@ -93,4 +93,49 @@ baserom_blob 0x3D9BC0, 0x3D9DB4
 .global sUnk_83D9DB4
 sUnk_83D9DB4:
 
-baserom_blob 0x3D9DB4, 0x3F9D64
+baserom_blob 0x3D9DB4, 0x3F1E80
+
+.global sUnk_83F1E80
+sUnk_83F1E80:
+
+baserom_blob 0x3F1E80, 0x3F2020
+
+.global sUnk_83F2020
+sUnk_83F2020:
+
+baserom_blob 0x3F2020, 0x3F2240
+
+.global sUnk_83F2240
+sUnk_83F2240:
+
+baserom_blob 0x3F2240, 0x3F2298
+
+.global sUnk_83F2298
+sUnk_83F2298:
+
+baserom_blob 0x3F2298, 0x3F7820
+
+.global sUnk_83F7820
+sUnk_83F7820:
+
+baserom_blob 0x3F7820, 0x3F7828
+
+.global sUnk_83F7828
+sUnk_83F7828:
+
+baserom_blob 0x3F7828, 0x3F8098
+
+.global sUnk_83F8098
+sUnk_83F8098:
+
+baserom_blob 0x3F8098, 0x3F8C18
+
+.global sUnk_83F8C18
+sUnk_83F8C18:
+
+baserom_blob 0x3F8C18, 0x3F91D8
+
+.global sUnk_83F91D8
+sUnk_83F91D8:
+
+baserom_blob 0x3F91D8, 0x3F9D64
