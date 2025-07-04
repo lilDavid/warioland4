@@ -2332,11 +2332,11 @@ func_80762E4:
 .L_7639c:
 	.4byte	gCurrentSecondarySprite
 .L_763a0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_763a4:
 	.4byte	gUnk_3000C10
 .L_763a8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_763ac:
 	.4byte	0x000001ff
 .L_763b0:
@@ -2501,11 +2501,11 @@ func_80762E4:
 .L_764dc:
 	.4byte	gUnk_300187C
 .L_764e0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_764e4:
 	.4byte	gUnk_3000C10
 .L_764e8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_764ec:
 	.4byte	gUnk_300187A
 .L_764f0:
@@ -2677,11 +2677,11 @@ func_80762E4:
 	pop	{r0}
 	bx	r0
 .L_76630:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_76634:
 	.4byte	gUnk_3000C10
 .L_76638:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_7663c:
 	.4byte	gUnk_300187A
 .L_76640:

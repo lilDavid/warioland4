@@ -54,7 +54,7 @@ func_80909C0:
 .L_90a0c:
 	.4byte	0x040000d4
 .L_90a10:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_90a14:
 	.4byte	0x84000100
 .L_90a18:
@@ -113,7 +113,7 @@ func_8090A40:
 	bl	InitializeVideoMemory
 	ldr	r0, .L_90b9c
 	strb	r4, [r0, #0]
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	ldr	r1, .L_90ba0
 .L_90a86:
 	ldrh	r0, [r1, #0]
@@ -257,7 +257,7 @@ func_8090A40:
 .L_90b98:
 	.4byte	0x04000050
 .L_90b9c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_90ba0:
 	.4byte	0x04000006
 .L_90ba4:
@@ -534,9 +534,9 @@ func_8090A40:
 .L_90dd0:
 	.4byte	gUnk_3001876
 .L_90dd4:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_90dd8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_90ddc:
 	.4byte	0x84000100
 .L_90de0:
@@ -1512,7 +1512,7 @@ func_80914B4:
 	ldr	r1, .L_91514
 	mov	r0, #0
 	strb	r0, [r1, #0]
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	ldr	r0, .L_91518
 	mov	r1, #0
 	strh	r1, [r0, #0]
@@ -1533,7 +1533,7 @@ func_80914B4:
 .L_91510:
 	.4byte	gUnk_3000C3E
 .L_91514:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_91518:
 	.4byte	0x04000040
 
@@ -2143,7 +2143,7 @@ func_80917A8:
 	ldr	r0, .L_919d0
 	strb	r6, [r0, #0]
 	bl	func_8092534
-	bl	func_8000A0C
+	bl	ResetFreeOam
 .L_919c2:
 	add	r0, r6, #0
 	pop	{r4, r5, r6}
@@ -2153,7 +2153,7 @@ func_80917A8:
 .L_919cc:
 	.4byte	gSubGameMode
 .L_919d0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_80919D4
@@ -3781,9 +3781,9 @@ func_8092534:
 	mov	pc, r0
 	.align	2, 0
 .L_9257c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_92580:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_92584:
 	.4byte	gUnk_3004A70
 .L_92588:
@@ -4046,10 +4046,10 @@ func_8092534:
 .L_927d0:
 	.4byte	gUnk_300187A
 .L_927d4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_927d8:
 	.4byte	0x000001ff
 .L_927dc:
 	.4byte	0xfffffe00
 .L_927e0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

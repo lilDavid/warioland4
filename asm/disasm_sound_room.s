@@ -2052,9 +2052,9 @@ func_8087DB0:
 	b	.L_88088
 	.align	2, 0
 .L_87fc0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_87fc4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_87fc8:
 	.4byte	gUnk_3004772
 .L_87fcc:
@@ -2187,7 +2187,7 @@ func_8087DB0:
 .L_880c0:
 	.4byte	sUnk_863C6D4
 .L_880c4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_880c8:
 	.4byte	sUnk_863C694
 .L_880cc:
@@ -2311,7 +2311,7 @@ func_8087DB0:
 .L_881b4:
 	.4byte	gUnk_3004772
 .L_881b8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_881bc:
 	.4byte	0x1FF
 .L_881c0:
@@ -2393,7 +2393,7 @@ func_8087DB0:
 .L_8824c:
 	.4byte	sUnk_86427BA
 .L_88250:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_88254:
 	.4byte	0x1FF
 .L_88258:
@@ -2509,7 +2509,7 @@ func_8087DB0:
 .L_8832c:
 	.4byte	sUnk_86427BA
 .L_88330:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_88334:
 	.4byte	0x1FF
 .L_88338:
@@ -2636,7 +2636,7 @@ func_8087DB0:
 .L_8841c:
 	.4byte	sUnk_863C854
 .L_88420:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_88424:
 	.4byte	0x1FF
 .L_88428:
@@ -2823,7 +2823,7 @@ func_8087DB0:
 .L_88598:
 	.4byte	gUnk_3004778
 .L_8859c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_885a0:
 	.4byte	0x1FF
 .L_885a4:
@@ -2833,7 +2833,7 @@ func_8087DB0:
 .L_885ac:
 	.4byte	sSinCosTable
 .L_885b0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_80885B4

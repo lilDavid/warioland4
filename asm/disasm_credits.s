@@ -86,7 +86,7 @@ func_8092FD8:
 	cmp	r0, #0
 	beq	.L_93076
 	bl	func_80938EC
-	bl	func_8000A0C
+	bl	ResetFreeOam
 .L_93076:
 	add	r0, r5, #0
 	pop	{r4, r5}
@@ -191,7 +191,7 @@ func_80930B8:
 .L_9312c:
 	.4byte	0x040000d4
 .L_93130:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_93134:
 	.4byte	0x84000100
 .L_93138:
@@ -313,7 +313,7 @@ func_809315C:
 .L_93218:
 	.4byte	0x040000d4
 .L_9321c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_93220:
 	.4byte	0x84000100
 .L_93224:
@@ -1144,7 +1144,7 @@ func_809329C:
 	mov	r4, #0
 	strb	r4, [r0, #0]
 	bl	func_80938EC
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	ldr	r0, .L_938b8
 	strh	r4, [r0, #0]
 	ldr	r0, .L_938bc
@@ -1256,7 +1256,7 @@ func_80938EC:
 	strb	r0, [r2, #2]
 	b	.L_93954
 .L_93938:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_9393c:
 	.4byte	gUnk_3004ABC
 .L_93940:
@@ -1375,7 +1375,7 @@ func_80938EC:
 .L_93a18:
 	.4byte	gUnk_3004AD4
 .L_93a1c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_93a20:
 	.4byte	0xfffffe00
 .L_93a24:
@@ -1715,7 +1715,7 @@ func_80938EC:
 .L_93ca8:
 	.4byte	0x0000013f
 .L_93cac:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_93cb0:
 	.4byte	0x000001ff
 .L_93cb4:
@@ -1855,7 +1855,7 @@ func_80938EC:
 .L_93db0:
 	.4byte	gUnk_3004AC4
 .L_93db4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_93db8:
 	.4byte	0x000001ff
 .L_93dbc:
@@ -1943,7 +1943,7 @@ func_80938EC:
 .L_93e58:
 	.4byte	gUnk_3004AC4
 .L_93e5c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_93e60:
 	.4byte	0x000001ff
 .L_93e64:
@@ -2242,7 +2242,7 @@ func_80938EC:
 .L_940a8:
 	.4byte	gUnk_3004AC4
 .L_940ac:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_940b0:
 	.4byte	0x000001ff
 .L_940b4:
@@ -2600,7 +2600,7 @@ func_80938EC:
 .L_94380:
 	.4byte	gUnk_3004AC4
 .L_94384:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_94388:
 	.4byte	0x000001ff
 .L_9438c:
@@ -2997,7 +2997,7 @@ func_80938EC:
 .L_9467c:
 	.4byte	gUnk_3004AF4
 .L_94680:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_94684:
 	.4byte	0x000001ff
 .L_94688:
@@ -3017,7 +3017,7 @@ func_80938EC:
 .L_946a4:
 	.4byte	sUnk_878661C
 .L_946a8:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_80946AC

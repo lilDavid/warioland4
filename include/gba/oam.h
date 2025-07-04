@@ -27,6 +27,8 @@ typedef struct {
 #define OAM_ATTR ((OBJ_ATTR*) OAM_BASE)
 #define OAM_AFFINE ((OBJ_AFFINE*) OAM_BASE)
 
+#define MAX_OAM_SLOTS (128)
+
 #define ATTR0_Y(y) ((y) & 0xFF)
 
 #define ATTR0_REG (0 << 8)

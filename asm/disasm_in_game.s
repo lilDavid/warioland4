@@ -349,7 +349,7 @@ func_801B8BC:
 	bl	func_801C5D8
 .L_1bb84:
 	bl	func_801D8C4
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	bl	func_806C794
 .L_1bb90:
 	bl	func_80101D0
@@ -539,7 +539,7 @@ func_801BC0C:
 .L_1bcf8:
 	.4byte	0x040000d4
 .L_1bcfc:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1bd00:
 	.4byte	0x84000100
 .L_1bd04:
@@ -716,7 +716,7 @@ func_801BD4C:
 .L_1be48:
 	.4byte	0x040000d4
 .L_1be4c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1be50:
 	.4byte	0x84000100
 .L_1be54:
@@ -928,7 +928,7 @@ func_801BEA8:
 .L_1bfe0:
 	.4byte	0x040000d4
 .L_1bfe4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1bfe8:
 	.4byte	0x84000100
 .L_1bfec:
@@ -1093,7 +1093,7 @@ func_801C050:
 .L_1c118:
 	.4byte	0x040000d4
 .L_1c11c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1c120:
 	.4byte	0x84000100
 .L_1c124:
@@ -1809,9 +1809,9 @@ func_801C5D8:
 .L_1c670:
 	.4byte	gUnk_3000C41
 .L_1c674:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1c678:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_1c67c:
 	.4byte	gUnk_300187A
 .L_1c680:
@@ -2093,7 +2093,7 @@ func_801C5D8:
 .L_1c890:
 	.4byte	sUnk_82DDCD0
 .L_1c894:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1c898:
 	.4byte	0x000001ff
 .L_1c89c:
@@ -2115,7 +2115,7 @@ func_801C5D8:
 .L_1c8bc:
 	.4byte	gUnk_300187C
 .L_1c8c0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_801C8C4
@@ -2159,9 +2159,9 @@ func_801C8C4:
 	mov	pc, r0
 	.align	2, 0
 .L_1c90c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1c910:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_1c914:
 	.4byte	gUnk_3000033
 .L_1c918:
@@ -2549,7 +2549,7 @@ func_801C8C4:
 .L_1cbfc:
 	.4byte	gUnk_300187C
 .L_1cc00:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1cc04:
 	.4byte	0x000001ff
 .L_1cc08:
@@ -2994,7 +2994,7 @@ func_801C8C4:
 .L_1cf4c:
 	.4byte	gUnk_300187C
 .L_1cf50:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1cf54:
 	.4byte	0x000001ff
 .L_1cf58:
@@ -3400,13 +3400,13 @@ func_801C8C4:
 .L_1d234:
 	.4byte	gUnk_300187C
 .L_1d238:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1d23c:
 	.4byte	0x000001ff
 .L_1d240:
 	.4byte	0xfffffe00
 .L_1d244:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_801D248
@@ -3963,7 +3963,7 @@ func_801D4D4:
 .L_1d64c:
 	.4byte	gSubGameMode
 .L_1d650:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1d654:
 	.4byte	0x000003e2
 .L_1d658:

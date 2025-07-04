@@ -1675,7 +1675,7 @@ func_808018C:
 	b	.L_8059c
 	.align	2, 0
 .L_80558:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_8055c:
 	asr	r4, r0, #17
 	lsl	r0, r0, #12
@@ -2057,7 +2057,7 @@ func_808018C:
 .L_80840:
 	.4byte	gUnk_3003D98
 .L_80844:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_80848:
 	.4byte	gUnk_3003DD0
 .L_8084c:
@@ -2249,7 +2249,7 @@ func_808018C:
 .L_809a8:
 	.4byte	sUnk_863DCEC
 .L_809ac:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_809b0:
 	.4byte	0x1FF
 .L_809b4:
@@ -2342,7 +2342,7 @@ func_808018C:
 .L_80a54:
 	.4byte	sUnk_863D9F4
 .L_80a58:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_80a5c:
 	.4byte	0x1FF
 .L_80a60:
@@ -2350,4 +2350,4 @@ func_808018C:
 .L_80a64:
 	.4byte	gUnk_3003DDC
 .L_80a68:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

@@ -141,11 +141,11 @@ SECTIONS {
         . = 0x0c41; gUnk_3000C41 = .;
         . = 0x0c42; gUnk_3000C42 = .;
         . = 0x0c44; gInterruptHandlerBuffer = .;
-        . = 0x1444; gUnk_3001444 = .;
+        . = 0x1444; gOamBuffer = .;
         . = 0x1844; gButtonsHeld = .;
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
-        . = 0x184A; gUnk_300184A = .;
+        . = 0x184A; gOamSlotsUsed = .;
         . = 0x1850; gUnk_3001850 = .;
         . = 0x1852; gUnk_3001852 = .;
         . = 0x1854; gUnk_3001854 = .;
@@ -468,7 +468,7 @@ SECTIONS {
         obj/disasm_0x0007EC.o(.text);
         obj/poll_input.o(.text);
         obj/init_helpers.o(.text);
-        obj/disasm_oam.o(.text);
+        obj/reset_free_oam.o(.text);
         obj/fixed_point.o(.text);
         obj/disasm_0x000A84.o(.text);
         obj/interrupt_callbacks.o(.text);

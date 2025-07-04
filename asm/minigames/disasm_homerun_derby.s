@@ -2310,9 +2310,9 @@ func_808EDFC:
 	strh	r0, [r2, #30]
 	b	.L_8f222
 .L_8f11c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_8f120:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8f124:
 	.4byte	gUnk_30047E4
 .L_8f128:
@@ -2821,7 +2821,7 @@ func_808EDFC:
 .L_8f508:
 	.4byte	sUnk_871E48C
 .L_8f50c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8f510:
 	.4byte	0xfffffe00
 .L_8f514:
@@ -3311,7 +3311,7 @@ func_808EDFC:
 .L_8f8c4:
 	.4byte	gUnk_30047B9
 .L_8f8c8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8f8cc:
 	.4byte	0x000001ff
 .L_8f8d0:
@@ -3323,7 +3323,7 @@ func_808EDFC:
 .L_8f8dc:
 	.4byte	gUnk_3004A18
 .L_8f8e0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_808F8E4

@@ -22,7 +22,7 @@ func_8089900:
 	mov	pc, r0
 	.align	2, 0
 .L_89924:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_89928:
 	.4byte	gSubGameMode
 .L_8992c:
@@ -301,7 +301,7 @@ func_8089900:
 	strh	r0, [r1, #0]
 .L_89b6a:
 	bl	func_8089D4C
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	add	r0, r6, #0
 	pop	{r4, r5, r6}
 	pop	{r1}
@@ -390,7 +390,7 @@ func_8089BCC:
 .L_89bfc:
 	.4byte	0x040000d4
 .L_89c00:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_89c04:
 	.4byte	0x84000100
 .L_89c08:
@@ -449,7 +449,7 @@ func_8089C64:
 .L_89c88:
 	.4byte	0x040000d4
 .L_89c8c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_89c90:
 	.4byte	0x84000100
 .L_89c94:
@@ -2353,9 +2353,9 @@ func_808A8E4:
 	b	.L_8aaec
 	.align	2, 0
 .L_8aab0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_8aab4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8aab8:
 	.4byte	gUnk_30047F8
 .L_8aabc:
@@ -2589,7 +2589,7 @@ func_808A8E4:
 .L_8ac6c:
 	.4byte	gUnk_30047F8
 .L_8ac70:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8ac74:
 	.4byte	0x000001ff
 .L_8ac78:
@@ -2603,4 +2603,4 @@ func_808A8E4:
 .L_8ac88:
 	.4byte	sUnk_86E32AC
 .L_8ac8c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

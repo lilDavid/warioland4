@@ -124,13 +124,13 @@ func_80927E4:
 	mov	r0, #0
 	strb	r0, [r1, #0]
 	bl	func_8092DFC
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	add	r0, r5, #0
 	pop	{r4, r5}
 	pop	{r1}
 	bx	r1
 .L_928e0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_80928E4
@@ -493,7 +493,7 @@ func_8092B30:
 	bl	InitializeVideoMemory
 	ldr	r0, .L_92be0
 	strb	r4, [r0, #0]
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	ldr	r1, .L_92be4
 .L_92b74:
 	ldrh	r0, [r1, #0]
@@ -549,7 +549,7 @@ func_8092B30:
 .L_92bdc:
 	.4byte	0x04000054
 .L_92be0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_92be4:
 	.4byte	0x04000006
 .L_92be8:
@@ -657,7 +657,7 @@ func_8092B30:
 .L_92cb8:
 	.4byte	gUnk_300187C
 .L_92cbc:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_92cc0:
 	.4byte	func_8092DA0
 
@@ -810,7 +810,7 @@ func_8092DA0:
 .L_92dd4:
 	.4byte	0x040000d4
 .L_92dd8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_92ddc:
 	.4byte	0x84000100
 .L_92de0:
@@ -870,9 +870,9 @@ func_8092DFC:
 	mov	pc, r0
 	.align	2, 0
 .L_92e40:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_92e44:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_92e48:
 	.4byte	gUnk_3004A70
 .L_92e4c:
@@ -1060,10 +1060,10 @@ func_8092DFC:
 .L_92fc4:
 	.4byte	gUnk_300187A
 .L_92fc8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_92fcc:
 	.4byte	0x000001ff
 .L_92fd0:
 	.4byte	0xfffffe00
 .L_92fd4:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

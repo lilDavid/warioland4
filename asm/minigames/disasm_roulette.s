@@ -2687,9 +2687,9 @@ func_808BE4C:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_8c08c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_8c090:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8c094:
 	.4byte	gUnk_30047E4
 .L_8c098:
@@ -2832,7 +2832,7 @@ func_808BE4C:
 .L_8c1b0:
 	.4byte	0xfffffe00
 .L_8c1b4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8c1b8:
 	.4byte	0x000001ff
 .L_8c1bc:
@@ -3481,7 +3481,7 @@ func_808BE4C:
 	add	r6, #4
 	b	.L_8c70c
 .L_8c6d0:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8c6d4:
 	.4byte	gUnk_30047B9
 .L_8c6d8:
@@ -3529,7 +3529,7 @@ func_808BE4C:
 	bx	r0
 	.align	2, 0
 .L_8c72c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_808C730

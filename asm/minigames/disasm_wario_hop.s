@@ -2241,9 +2241,9 @@ func_808D824:
 	b	.L_8dc14
 	.align	2, 0
 .L_8dbc0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_8dbc4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8dbc8:
 	.4byte	gUnk_30047E4
 .L_8dbcc:
@@ -2734,7 +2734,7 @@ func_808D824:
 .L_8df98:
 	.4byte	gUnk_3004950
 .L_8df9c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_8dfa0:
 	.4byte	0x000001ff
 .L_8dfa4:
@@ -2758,4 +2758,4 @@ func_808D824:
 .L_8dfc8:
 	.4byte	gUnk_30047E4
 .L_8dfcc:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

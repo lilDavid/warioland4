@@ -2312,9 +2312,9 @@ func_8085580:
 	bne	.L_856ac
 	b	.L_85962
 .L_85700:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_85704:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_85708:
 	.4byte	gUnk_3003C4A
 .L_8570c:
@@ -2819,7 +2819,7 @@ func_8085580:
 .L_85ac4:
 	.4byte	0xFFFFFE00
 .L_85ac8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_85acc:
 	.4byte	gUnk_3003C4A
 .L_85ad0:
@@ -3045,7 +3045,7 @@ func_8085580:
 .L_85c74:
 	.4byte	sUnk_86413CC
 .L_85c78:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_85c7c:
 	.4byte	gUnk_3004729
 .L_85c80:
@@ -3063,7 +3063,7 @@ func_8085580:
 .L_85c98:
 	.4byte	gUnk_3003C40
 .L_85c9c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_8085CA0

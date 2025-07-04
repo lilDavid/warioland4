@@ -1558,9 +1558,9 @@ func_8086720:
 	strh	r0, [r3, #30]
 	b	.L_86b5e
 .L_869ac:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_869b0:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_869b4:
 	.4byte	gUnk_3003C56
 .L_869b8:
@@ -1918,7 +1918,7 @@ func_8086720:
 .L_86c5c:
 	.4byte	0xFFFFFE00
 .L_86c60:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_86c64:
 	.4byte	sUnk_863C5F4
 .L_86c68:
@@ -2410,7 +2410,7 @@ func_8086720:
 .L_87020:
 	.4byte	sSinCosTable
 .L_87024:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_87028:
 	.4byte	0x1FF
 .L_8702c:
@@ -2463,4 +2463,4 @@ func_8086720:
 	bx	r0
 	.align	2, 0
 .L_87088:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

@@ -1319,9 +1319,9 @@ func_8083DDC:
 	b	.L_841b0
 	.align	2, 0
 .L_84168:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_8416c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_84170:
 	.4byte	gUnk_3004648
 .L_84174:
@@ -1845,7 +1845,7 @@ func_8083DDC:
 .L_8456c:
 	.4byte	sUnk_863C404
 .L_84570:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_84574:
 	.4byte	gUnk_30046A0
 .L_84578:
@@ -1907,4 +1907,4 @@ func_8083DDC:
 	pop	{r0}
 	bx	r0
 .L_845ec:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

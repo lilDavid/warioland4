@@ -995,7 +995,7 @@ func_80727F8:
 .L_72888:
 	.4byte	0x040000d4
 .L_7288c:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_72890:
 	.4byte	0x84000100
 .L_72894:

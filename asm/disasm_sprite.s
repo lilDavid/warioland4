@@ -723,11 +723,11 @@ func_801DA70:
 	b	.L_1dc2e
 	.align	2, 0
 .L_1dbf4:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_1dbf8:
 	.4byte	gUnk_3000A54
 .L_1dbfc:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1dc00:
 	.4byte	gCurrentSprite
 .L_1dc04:
@@ -847,9 +847,9 @@ func_801DA70:
 	bx	r0
 	.align	2, 0
 .L_1dce0:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_1dce4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_1dce8:
 	.4byte	gCurrentSprite
 

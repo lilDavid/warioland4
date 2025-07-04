@@ -22,7 +22,7 @@ func_8088678:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_8869c:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_886a0:
 	.4byte	gUnk_3000000
 .L_886a4:
@@ -208,7 +208,7 @@ func_8088678:
 	strh	r0, [r1, #0]
 .L_88818:
 	bl	func_80890C0
-	bl	func_8000A0C
+	bl	ResetFreeOam
 	add	r0, r4, #0
 	pop	{r4}
 	pop	{r1}
@@ -264,7 +264,7 @@ func_8088840:
 .L_8887c:
 	.4byte	0x040000d4
 .L_88880:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_88884:
 	.4byte	0x84000100
 .L_88888:
@@ -1540,9 +1540,9 @@ func_80890C0:
 	b	.L_891fa
 	.align	2, 0
 .L_891c4:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 .L_891c8:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_891cc:
 	.4byte	gUnk_3004790
 .L_891d0:
@@ -2050,7 +2050,7 @@ func_80890C0:
 .L_895a0:
 	.4byte	sUnk_86D370C
 .L_895a4:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_895a8:
 	.4byte	0x000001ff
 .L_895ac:
@@ -2391,7 +2391,7 @@ func_80890C0:
 .L_8982c:
 	.4byte	gUnk_30047AC
 .L_89830:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_89834:
 	.4byte	sUnk_86D36D4
 .L_89838:
@@ -2493,10 +2493,10 @@ func_80890C0:
 .L_898ec:
 	.4byte	sUnk_86D4028
 .L_898f0:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_898f4:
 	.4byte	0x000001ff
 .L_898f8:
 	.4byte	0xfffffe00
 .L_898fc:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed

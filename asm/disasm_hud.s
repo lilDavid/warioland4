@@ -936,7 +936,7 @@ func_8074988:
 	b	.L_74bd6
 	.align	2, 0
 .L_74ad0:
-	.4byte	gUnk_3001444
+	.4byte	gOamBuffer
 .L_74ad4:
 	.4byte	gCurrentStageNumber
 .L_74ad8:
@@ -1298,7 +1298,7 @@ func_8074988:
 .L_74d94:
 	.4byte	0xfffffc00
 .L_74d98:
-	.4byte	gUnk_300184A
+	.4byte	gOamSlotsUsed
 
 
 thumb_func_start func_8074D9C
