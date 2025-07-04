@@ -5,7 +5,7 @@ MEMORY {
 }
 
 SECTIONS {
-    ewram (NOLOAD) : ALIGN(4) {} >EWRAM
+    ewram (NOLOAD) : ALIGN(4) {} > EWRAM
     iwram (NOLOAD) : ALIGN(4) {
         . = 0x0000; gUnk_3000000 = .;
         . = 0x0002; gCurrentPassage = .;
@@ -512,7 +512,7 @@ SECTIONS {
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
         . = 0x7ffc; intr_vector = .;
-    } >IWRAM
+    } > IWRAM
 
     .text : ALIGN(2) {
         obj/rom_header.o(.text);
@@ -674,13 +674,17 @@ SECTIONS {
         obj/disasm_save_file.o(.rodata);
         obj/blob_0x400A68-0x6D3394.o(.rodata);
         obj/voice_set.o(.rodata);
-        obj/blob_0x6D36A4-0x78F5A4.o(.rodata);
-        obj/data/tile_fn_pointers.o(.rodata);
-        obj/data/color_fading_pointers.o(.rodata);
-        obj/data/stage_end_pointers.o(.rodata);
-        obj/data/demo_data_pointers.o(.rodata);
-        obj/data/hud_pointers.o(.rodata);
-        obj/blob_0x78F714-0x78F970.o(.rodata);
+        obj/blob_0x6D36A4-0x78E6CC.o(.rodata);
+    } > ROM
+
+    .data : ALIGN(2) {
+        obj/blob_0x78E6CC-0x78F5A4.o(.data);
+        obj/data/tile_fn_pointers.o(.data);
+        obj/data/color_fading_pointers.o(.data);
+        obj/data/stage_end_pointers.o(.data);
+        obj/data/demo_data_pointers.o(.data);
+        obj/data/hud_pointers.o(.data);
+        obj/blob_0x78F714-0x78F970.o(.data);
     } > ROM
 
     /* Discard everything not specifically mentioned above. */

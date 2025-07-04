@@ -1,6 +1,6 @@
 .include "macros.s.inc"
 
-.section .rodata
+.section .data
 
 
 .global sSecondarySpriteAITable
