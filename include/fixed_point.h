@@ -4,6 +4,16 @@
 #include "types.h"
 
 
+#define Q_8_8(n) ((s16) ((n) * (1 << 8)))
+#define Q_8_8_TO_SHORT(n) ((s16) ((n) / (1 << 8)))
+#define Q_4_12(n) ((s16) ((n) * (1 << 12)))
+#define Q_16_16(n) ((s32) ((n) * (1 << 16)))
+#define Q_24_8(n) ((s32) ((n) * (1 << 8)))
+#define Q_8_8_TO_INT(n) ((s32) ((n) / (1 << 8)))
+#define Q_4_12_TO_INT(n) ((s32) ((n) / (1 << 12)))
+#define Q_24_8_TO_INT(n) ((s32) ((n) / (1 << 8)))
+
+
 #define ANGLE_2PI (256)
 #define ANGLE_PI (ANGLE_2PI / 2)
 #define ANGLE_HALF_PI (ANGLE_PI / 2)

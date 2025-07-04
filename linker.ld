@@ -469,6 +469,7 @@ SECTIONS {
         obj/poll_input.o(.text);
         obj/init_helpers.o(.text);
         obj/disasm_oam.o(.text);
+        obj/fixed_point.o(.text);
         obj/disasm_0x000A84.o(.text);
         obj/interrupt_callbacks.o(.text);
         obj/disasm_sram.o(.text);

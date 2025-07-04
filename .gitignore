@@ -65,3 +65,6 @@ include/data/**
 
 # Python virtual environment
 .venv
+
+# m2ctx
+/ctx.c
