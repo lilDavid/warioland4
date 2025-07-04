@@ -39,4 +39,4 @@ baserom_blob 0x07AB8C, 0x07ACCC
 thumb_func_start func_807ACCC
 func_807ACCC:
 
-baserom_blob 0x07ACCC, 0x07CAB8
+baserom_blob 0x07ACCC, 0x07ADFC
