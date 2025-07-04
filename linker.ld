@@ -247,6 +247,7 @@ SECTIONS {
         . = 0x3c54; gUnk_3003C54 = .;
         . = 0x3c55; gUnk_3003C55 = .;
         . = 0x3c56; gUnk_3003C56 = .;
+        . = 0x3c58; gUnk_3003C58 = .;
         . = 0x3c60; gUnk_3003C60 = .;
         . = 0x3c62; gUnk_3003C62 = .;
         . = 0x3c64; gUnk_3003C64 = .;
@@ -624,7 +625,7 @@ SECTIONS {
         obj/disasm_hud.o(.text);
         obj/disasm_score.o(.text);
         obj/disasm_secondary_sprite_ai.o(.text);
-        obj/blob_0x0799A8-0x07ADFC.o(.text);
+        obj/disasm_stage_select.o(.text);
         obj/disasm_map_screen.o(.text);
         obj/disasm_stage_entry.o(.text);
         obj/disasm_vortex_cutscene.o(.text);
