@@ -144,4 +144,9 @@ thumb_func_start func_8002EBC
 func_8002EBC:
 
 
-    baserom_blob 0x002EBC, 0x003220
+    baserom_blob 0x002EBC, 0x002F30
+
+.global func_8002F30
+func_8002F30:
+
+    baserom_blob 0x002F30, 0x003220
