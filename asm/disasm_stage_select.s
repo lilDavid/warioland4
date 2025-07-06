@@ -1728,7 +1728,7 @@ func_807A700:
 .L_7a7a0:
 	.4byte	gUnk_3000023
 .L_7a7a4:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_7a7a8:
 	.4byte	gUnk_3000BF0
 .L_7a7ac:

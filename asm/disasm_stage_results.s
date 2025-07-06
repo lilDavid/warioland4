@@ -169,7 +169,7 @@ func_8080A6C:
 .L_80bac:
 	.4byte	gUnk_3003DDC
 .L_80bb0:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_80bb4:
 	.4byte	0x3E7
 .L_80bb8:
@@ -225,7 +225,7 @@ func_8080A6C:
 .L_80c14:
 	.4byte	gUnk_3003C39
 .L_80c18:
-	.4byte	gUnk_3003D64
+	.4byte	gNewHighScore
 .L_80c1c:
 	.4byte	gUnk_3003DC8
 .L_80c20:
@@ -314,7 +314,7 @@ func_8080A6C:
 .L_80cbc:
 	.4byte	gUnk_3003C39
 .L_80cc0:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_80cc4:
 	.4byte	0x40000D4
 .L_80cc8:
@@ -856,13 +856,13 @@ func_8081080:
 	bx	r0
 	.align	2, 0
 .L_810a8:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_810ac:
 	.4byte	sUnk_86872DC
 .L_810b0:
 	.4byte	0x8740
 .L_810b4:
-	.4byte	gUnk_3003D60
+	.4byte	gTotalScoreTemp
 .L_810b8:
 	.4byte	0xFFFFFD40
 .L_810bc:
@@ -924,9 +924,9 @@ func_80810C0:
 .L_81120:
 	.4byte	gButtonsPressed
 .L_81124:
-	.4byte	gUnk_3003D60
+	.4byte	gTotalScoreTemp
 .L_81128:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_8112c:
 	.4byte	0x1869F
 .L_81130:
@@ -984,7 +984,7 @@ func_808115C:
 .L_81190:
 	.4byte	0x1D3
 .L_81194:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_81198:
 	.4byte	0x1869F
 .L_8119c:

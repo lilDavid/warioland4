@@ -477,7 +477,7 @@ func_808FCE0:
 .L_8ff10:
 	.4byte	sUnk_8735458
 .L_8ff14:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_8ff18:
 	.4byte	sUnk_8730858
 .L_8ff1c:
@@ -611,7 +611,7 @@ func_808FCE0:
 	b	.L_9001a
 	.align	2, 0
 .L_90014:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_90018:
 	mov	r0, #2
 .L_9001a:
@@ -798,7 +798,7 @@ func_8090114:
 .L_90178:
 	.4byte	gUnk_3003C52
 .L_9017c:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_90180:
 	ldr	r1, .L_90198
 	ldr	r0, .L_9019c
@@ -971,7 +971,7 @@ func_80901C4:
 .L_902c0:
 	.4byte	sUnk_872FF64
 .L_902c4:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_902c8:
 	.4byte	gUnk_300002E
 .L_902cc:
@@ -1176,7 +1176,7 @@ func_8090374:
 .L_90444:
 	.4byte	sUnk_872FF64
 .L_90448:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_9044c:
 	.4byte	sUnk_872FF0C
 .L_90450:

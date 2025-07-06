@@ -172,7 +172,7 @@ AgbMain:
 .L_328:
 	.4byte	gMainGameMode
 .L_32c:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 .L_330:
 	.4byte	gSubGameMode
 .L_334:
@@ -367,7 +367,7 @@ AgbMain:
 	b	.L_62e
 	.align	2, 0
 .L_49c:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_4a0:
 	.4byte	gSubGameMode
 .L_4a4:

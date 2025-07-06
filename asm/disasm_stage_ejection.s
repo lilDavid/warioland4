@@ -276,7 +276,7 @@ func_80816A4:
 .L_8187c:
 	.4byte	gUnk_3004068
 .L_81880:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_81884:
 	.4byte	gUnk_30040B9
 .L_81888:

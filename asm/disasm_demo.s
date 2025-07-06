@@ -160,7 +160,7 @@ func_8072964:
 .L_72a98:
 	.4byte	gUnk_3000012
 .L_72a9c:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_72aa0:
 	.4byte	gCurrentPassage
 .L_72aa4:

@@ -1033,7 +1033,7 @@ func_8075988:
 .L_75a2c:
 	.4byte	gWarioData
 .L_75a30:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_75a34:
 	.4byte	gWarioPauseTimer
 .L_75a38:
@@ -1112,7 +1112,7 @@ func_8075988:
 .L_75ac4:
 	.4byte	0x000001c3
 .L_75ac8:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_75acc:
 	mov	r0, #4
 	strb	r0, [r4, #0]
@@ -1929,7 +1929,7 @@ func_8075F44:
 .L_760ac:
 	.4byte	gUnk_3000BFC
 .L_760b0:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_760b4:
 	.4byte	gUnk_3000BEC
 .L_760b8:
@@ -2733,7 +2733,7 @@ Score_GivePoints:
 .L_76694:
 	.4byte	gUnk_3000C02
 .L_76698:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_7669c:
 	.4byte	gUnk_3000BFC
 .L_766a0:
@@ -3046,7 +3046,7 @@ Score_GiveOrDropCoins:
 	b	.L_76902
 	.align	2, 0
 .L_768e4:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_768e8:
 	.4byte	gUnk_3000C04
 .L_768ec:

@@ -497,11 +497,11 @@ func_807AEF0:
 .L_7b1c0:
 	.4byte	gUnk_3003C7C
 .L_7b1c4:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_7b1c8:
 	.4byte	gUnk_3003C45
 .L_7b1cc:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_7b1d0:
 	.4byte	gUnk_3003C90
 .L_7b1d4:
@@ -1188,7 +1188,7 @@ func_807B544:
 .L_7b6fc:
 	.4byte	gUnk_3003C95
 .L_7b700:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_7b704:
 	.4byte	gUnk_3003C6E
 .L_7b708:
@@ -1272,7 +1272,7 @@ func_807B758:
 .L_7b798:
 	.4byte	0x4000010
 .L_7b79c:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_7b7a0:
 	ldr	r1, .L_7b7b8
 	ldr	r0, .L_7b7bc
@@ -1476,7 +1476,7 @@ func_807B82C:
 .L_7b91c:
 	.4byte	gCurrentPassage
 .L_7b920:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_7b924:
 	.4byte	sUnk_8639500
 .L_7b928:

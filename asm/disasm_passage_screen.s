@@ -663,7 +663,7 @@ func_80846F4:
 .L_84ae0:
 	.4byte	gUnk_3004A30
 .L_84ae4:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_84ae8:
 	.4byte	sUnk_869F648
 .L_84aec:
@@ -1666,7 +1666,7 @@ func_8085178:
 .L_85248:
 	.4byte	0x800000B0
 .L_8524c:
-	.4byte	gUnk_3000B10
+	.4byte	gHighScoreTable
 .L_85250:
 	.4byte	gCurrentPassage
 .L_85254:
@@ -3218,7 +3218,7 @@ func_8085D68:
 .L_85da8:
 	.4byte	gUnk_3003C52
 .L_85dac:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_85db0:
 	ldr	r3, .L_85dd4
 	ldr	r0, .L_85dd8

@@ -9,6 +9,8 @@
 // Convert an amount of points for storage
 #define CONVERT_SCORE(points) ((points) / SCORE_RATIO)
 
+#define MAX_SCORE CONVERT_SCORE(999990)
+
 
 enum ScoreSpriteID {
     SSPRITE_SCORE_10,
@@ -103,6 +105,10 @@ enum ScoreSpriteID {
     SSPRITE_59,
     SSPRITE_MAX = 90
 };
+
+
+extern s32 gTotalScore;
+extern s32 gStageScore;
 
 
 void Score_GivePoints(s32);

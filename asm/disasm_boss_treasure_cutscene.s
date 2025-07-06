@@ -733,7 +733,7 @@ func_8082428:
 .L_825a4:
 	.4byte	gCurrentCollection
 .L_825a8:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_825ac:
 	.4byte	gUnk_30040C8
 .L_825b0:
@@ -928,7 +928,7 @@ func_80826B0:
 .L_82704:
 	.4byte	gUnk_30040F0
 .L_82708:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_8270c:
 	.4byte	sUnk_863AD53
 .L_82710:
@@ -1027,7 +1027,7 @@ func_8082734:
 .L_827c8:
 	.4byte	sUnk_863AD58
 .L_827cc:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_827d0:
 	.4byte	sUnk_863AE26
 .L_827d4:
@@ -1060,7 +1060,7 @@ func_8082734:
 .L_82808:
 	.4byte	sUnk_863AD58
 .L_8280c:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_82810:
 	.4byte	sUnk_863AF96
 .L_82814:
@@ -1093,7 +1093,7 @@ func_8082734:
 .L_82848:
 	.4byte	sUnk_863AD58
 .L_8284c:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_82850:
 	.4byte	sUnk_863B106
 .L_82854:
@@ -1136,7 +1136,7 @@ func_8082734:
 .L_8289c:
 	.4byte	sUnk_863AD58
 .L_828a0:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_828a4:
 	.4byte	sUnk_863B24E
 .L_828a8:
@@ -1179,7 +1179,7 @@ func_8082734:
 .L_828f0:
 	.4byte	sUnk_863AD58
 .L_828f4:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_828f8:
 	.4byte	sUnk_863B36E
 .L_828fc:
@@ -1222,7 +1222,7 @@ func_8082734:
 .L_82944:
 	.4byte	sUnk_863AD58
 .L_82948:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_8294c:
 	.4byte	sUnk_863B48E
 .L_82950:
@@ -1255,7 +1255,7 @@ func_8082734:
 .L_82984:
 	.4byte	sUnk_863AD58
 .L_82988:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_8298c:
 	.4byte	sUnk_863B5D6
 .L_82990:
@@ -1288,7 +1288,7 @@ func_8082734:
 .L_829c4:
 	.4byte	sUnk_863AD58
 .L_829c8:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_829cc:
 	.4byte	sUnk_863B746
 .L_829d0:
@@ -1321,7 +1321,7 @@ func_8082734:
 .L_82a04:
 	.4byte	sUnk_863AD58
 .L_82a08:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_82a0c:
 	.4byte	sUnk_863B8B6
 .L_82a10:
@@ -1364,7 +1364,7 @@ func_8082734:
 .L_82a58:
 	.4byte	sUnk_863AD58
 .L_82a5c:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_82a60:
 	.4byte	sUnk_863B9FE
 .L_82a64:
@@ -1419,7 +1419,7 @@ func_8082734:
 .L_82abc:
 	.4byte	sUnk_863AD58
 .L_82ac0:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_82ac4:
 	.4byte	sUnk_863BB46
 
@@ -2437,7 +2437,7 @@ func_8082F60:
 .L_83264:
 	.4byte	sUnk_863BC00
 .L_83268:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_8326c:
 	ldr	r4, .L_833b4
 .L_8326e:
@@ -2668,7 +2668,7 @@ func_8082F60:
 .L_8342c:
 	.4byte	sUnk_863BC00
 .L_83430:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_83434:
 	ldr	r4, .L_8348c
 .L_83436:
@@ -3073,7 +3073,7 @@ func_8082F60:
 .L_83740:
 	.4byte	gUnk_30040F0
 .L_83744:
-	.4byte	gUnk_3000010
+	.4byte	gCurrentPassageTemp
 .L_83748:
 	.4byte	sUnk_863BC10
 .L_8374c:

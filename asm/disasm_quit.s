@@ -103,7 +103,7 @@ func_8072CA0:
 .L_72d10:
 	.4byte	0x02038008
 .L_72d14:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_72d18:
 .ifdef VERSION_JP
 	.4byte	sUnk_84009A8

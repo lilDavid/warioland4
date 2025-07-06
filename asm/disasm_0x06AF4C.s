@@ -619,7 +619,7 @@ func_806B410:
 .L_6b480:
 	.4byte	sUnk_83F2298
 .L_6b484:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_6b488:
 	cmp	r0, #2
 	bne	.L_6b490

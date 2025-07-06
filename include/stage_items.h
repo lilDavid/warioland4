@@ -11,9 +11,9 @@ extern u8 gCollectedNWJewelPiece;
 extern u8 gCollectedCD;
 extern u8 gCollectedKeyzer;
 
-#define gHasBossChest1 gCollectedNEJewelPiece
-#define gHasBossChest2 gCollectedSEJewelPiece
-#define gHasBossChest3 gCollectedSWJewelPiece
+#define gHasBossChest55sec gCollectedNEJewelPiece
+#define gHasBossChest35sec gCollectedSEJewelPiece
+#define gHasBossChest15sec gCollectedSWJewelPiece
 
 #define gHasGoldenDivaChest1 gCollectedNEJewelPiece
 #define gHasGoldenDivaChest2 gCollectedSEJewelPiece

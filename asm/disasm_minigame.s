@@ -698,7 +698,7 @@ func_8089E60:
 	pop	{r1}
 	bx	r1
 .L_89e70:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 
 
 thumb_func_start func_8089E74
@@ -1283,7 +1283,7 @@ func_8089FFC:
 	bx	r0
 	.align	2, 0
 .L_8a2d0:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_8a2d4:
 	.4byte	0x000059a0
 .L_8a2d8:
@@ -1537,7 +1537,7 @@ func_808A46C:
 .L_8a4ac:
 	.4byte	gUnk_3003C52
 .L_8a4b0:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_8a4b4:
 	ldr	r1, .L_8a4cc
 	ldr	r0, .L_8a4d0
@@ -1647,7 +1647,7 @@ func_808A4F8:
 	strh	r3, [r0, #0]
 	b	.L_8a6d8
 .L_8a584:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_8a588:
 	.4byte	gUnk_300482D
 .L_8a58c:
@@ -1769,7 +1769,7 @@ func_808A4F8:
 .L_8a668:
 	.4byte	sUnk_86E3208
 .L_8a66c:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_8a670:
 	.4byte	gUnk_300482C
 .L_8a674:
@@ -1903,7 +1903,7 @@ func_808A6E8:
 	strb	r0, [r6, #0]
 	b	.L_8a810
 .L_8a75c:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_8a760:
 	.4byte	gUnk_30047BC
 .L_8a764:

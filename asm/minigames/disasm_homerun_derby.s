@@ -210,7 +210,7 @@ func_808DFD0:
 .L_8e178:
 	.4byte	gUnk_3004A10
 .L_8e17c:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_8e180:
 	.4byte	sUnk_871D627
 .L_8e184:
@@ -966,7 +966,7 @@ func_808E55C:
 .L_8e70c:
 	.4byte	sUnk_8725EE4
 .L_8e710:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_8e714:
 	.4byte	sUnk_871E6E4
 .L_8e718:
@@ -3097,7 +3097,7 @@ func_808EDFC:
 	ldr	r2, .L_8f738
 	b	.L_8f73e
 .L_8f734:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_8f738:
 	.4byte	sUnk_871D627
 .L_8f73c:

@@ -291,7 +291,7 @@ func_8090A40:
 .L_90bdc:
 	.4byte	0x0600d000
 .L_90be0:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_90be4:
 	.4byte	sUnk_8742B2C
 .L_90be8:
@@ -649,11 +649,11 @@ func_8090E14:
 .L_90eb0:
 	.4byte	sUnk_8742976
 .L_90eb4:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_90eb8:
 	.4byte	gUnk_3003BF8
 .L_90ebc:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_90ec0:
 	.4byte	sUnk_8742986
 
@@ -728,7 +728,7 @@ func_8090EE4:
 .L_90f44:
 	.4byte	gUnk_3003BF8
 .L_90f48:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_90f4c:
 	.4byte	0xffffe000
 .L_90f50:
@@ -1346,7 +1346,7 @@ func_809137C:
 .L_913b4:
 	.4byte	gUnk_3003BF8
 .L_913b8:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_913bc:
 	.4byte	sUnk_87429B8
 .L_913c0:
@@ -1363,7 +1363,7 @@ func_809137C:
 	b	.L_913e2
 	.align	2, 0
 .L_913d8:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_913dc:
 	.4byte	sUnk_863A3AC
 .L_913e0:
@@ -1390,7 +1390,7 @@ func_809137C:
 	ldr	r1, .L_9140c
 	b	.L_91412
 .L_91408:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_9140c:
 	.4byte	sUnk_8639588
 .L_91410:
@@ -1575,7 +1575,7 @@ func_809151C:
 	b	.L_91584
 	.align	2, 0
 .L_91564:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 .L_91568:
 	.4byte	gUnk_3003BF8
 .L_9156c:
@@ -1587,7 +1587,7 @@ func_809151C:
 .L_91578:
 	.4byte	gCurrentStageNumber
 .L_9157c:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_91580:
 	bl	func_8073FD8
 .L_91584:
@@ -1604,7 +1604,7 @@ func_809151C:
 	bx	r0
 	.align	2, 0
 .L_9159c:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_915a0:
 	.4byte	gUnk_3003BF8
 .L_915a4:
@@ -2013,7 +2013,7 @@ func_80917A8:
 .L_918b8:
 	.4byte	sUnk_8742976
 .L_918bc:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_918c0:
 	.4byte	gSubGameMode
 .L_918c4:
@@ -2340,7 +2340,7 @@ func_8091ACC:
 .L_91b10:
 	.4byte	sUnk_8742976
 .L_91b14:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_91b18:
 	.4byte	gUnk_3004A68
 .L_91b1c:
@@ -2635,7 +2635,7 @@ func_8091ACC:
 .L_91d74:
 	.4byte	sUnk_8742976
 .L_91d78:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 
 
 thumb_func_start func_8091D7C
@@ -2746,7 +2746,7 @@ func_8091E28:
 .L_91e48:
 	.4byte	sUnk_8742976
 .L_91e4c:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 
 
 thumb_func_start func_8091E50
@@ -2946,7 +2946,7 @@ func_8091F88:
 	bl	func_8091D7C
 	b	.L_91ff6
 .L_91fac:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_91fb0:
 	.4byte	gButtonsPressed
 .L_91fb4:
@@ -3356,13 +3356,13 @@ func_8092248:
 	b	.L_922ae
 	.align	2, 0
 .L_92288:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_9228c:
 	.4byte	sUnk_87429D6
 .L_92290:
 	.4byte	gUnk_3003BF8
 .L_92294:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_92298:
 	ldr	r2, .L_922b4
 	ldr	r0, .L_922b8
@@ -3384,7 +3384,7 @@ func_8092248:
 .L_922b8:
 	.4byte	gUnk_3003BF8
 .L_922bc:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_922c0:
 	ldr	r1, .L_92300
 	ldr	r0, .L_92304
@@ -3423,7 +3423,7 @@ func_8092248:
 .L_92300:
 	.4byte	sUnk_87429DC
 .L_92304:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_92308:
 	.4byte	gUnk_3004A70
 .L_9230c:
@@ -3520,7 +3520,7 @@ func_809236C:
 .L_923a8:
 	.4byte	sUnk_8742982
 .L_923ac:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_923b0:
 	.4byte	gUnk_3004A68
 .L_923b4:
@@ -3614,7 +3614,7 @@ func_80923B8:
 .L_92454:
 	.4byte	sUnk_874297C
 .L_92458:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_9245c:
 	.4byte	gUnk_3004A68
 
@@ -3662,7 +3662,7 @@ func_8092460:
 .L_924a8:
 	.4byte	sUnk_874297C
 .L_924ac:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 
 
 thumb_func_start func_80924B0
@@ -3734,7 +3734,7 @@ func_80924B0:
 .L_92528:
 	.4byte	sUnk_874297C
 .L_9252c:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_92530:
 	.4byte	gUnk_3004A68
 

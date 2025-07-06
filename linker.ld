@@ -14,14 +14,14 @@ SECTIONS {
         . = 0x0006; gUnk_3000006 = .;
         . = 0x0008; gUnk_3000008 = .;
         . = 0x000a; gUnk_300000A = .;
-        . = 0x0010; gUnk_3000010 = .;
-        . = 0x0011; gUnk_3000011 = .;
+        . = 0x0010; gCurrentPassageTemp = .;
+        . = 0x0011; gClearMessage = .;
         . = 0x0012; gUnk_3000012 = .;
-        . = 0x0013; gUnk_3000013 = .;
+        . = 0x0013; gSaveFlag = .;
         . = 0x0014; gUnk_3000014 = .;
-        . = 0x0015; gClearedHardDifficulty = .;
-        . = 0x0016; gUnk_3000016 = .;
-        . = 0x0017; gUnk_3000017 = .;
+        . = 0x0015; gTitleScreenStyle = .;
+        . = 0x0016; gLanguage = .;
+        . = 0x0017; gDifficulty = .;
         . = 0x0018; gUnk_3000018 = .;
         . = 0x0019; gUnk_3000019 = .;
         . = 0x001a; gUnk_300001A = .;
@@ -92,13 +92,14 @@ SECTIONS {
         . = 0x0a62; gUnk_3000A62 = .;
         . = 0x0a64; gUnk_3000A64 = .;
         . = 0x0a68; gCurrentCollection = .;
-        . = 0x0b10; gUnk_3000B10 = .;
+        . = 0x0b10; gHighScoreTable = .;
+
         . = 0x0b80; gSecondarySpriteData = .;
         . = 0x0be0; gCurrentSecondarySprite = .;
         . = 0x0bec; gUnk_3000BEC = .;
         . = 0x0bf0; gUnk_3000BF0 = .;
-        . = 0x0bf4; gUnk_3000BF4 = .;
-        . = 0x0bf8; gUnk_3000BF8 = .;
+        . = 0x0bf4; gTotalScore = .;
+        . = 0x0bf8; gStageScore = .;
         . = 0x0bfc; gUnk_3000BFC = .;
         . = 0x0c01; gUnk_3000C01 = .;
         . = 0x0c02; gUnk_3000C02 = .;
@@ -152,6 +153,7 @@ SECTIONS {
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
         . = 0x184A; gOamSlotsUsed = .;
+
         . = 0x1850; gUnk_3001850 = .;
         . = 0x1852; gUnk_3001852 = .;
         . = 0x1854; gUnk_3001854 = .;
@@ -318,8 +320,8 @@ SECTIONS {
         . = 0x3d58; gUnk_3003D58 = .;
         . = 0x3d5a; gUnk_3003D5A = .;
         . = 0x3d5c; gUnk_3003D5C = .;
-        . = 0x3d60; gUnk_3003D60 = .;
-        . = 0x3d64; gUnk_3003D64 = .;
+        . = 0x3d60; gTotalScoreTemp = .;
+        . = 0x3d64; gNewHighScore = .;
         . = 0x3d66; gUnk_3003D66 = .;
         . = 0x3d68; gUnk_3003D68 = .;
         . = 0x3d6a; gUnk_3003D6A = .;
@@ -652,7 +654,7 @@ SECTIONS {
         obj/disasm_stage_entry.o(.text);
         obj/disasm_vortex_cutscene.o(.text);
         obj/disasm_stage_results.o(.text);
-        obj/disasm_autosave.o(.text);
+        obj/autosave.o(.text);
         obj/disasm_stage_ejection.o(.text);
         obj/disasm_boss_treasure_cutscene.o(.text);
         obj/disasm_passage_clear.o(.text);

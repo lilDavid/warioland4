@@ -563,7 +563,7 @@ func_809329C:
 .L_933f8:
 	.4byte	0x06009800
 .L_933fc:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_93400:
 	.4byte	sUnk_87886AC
 .L_93404:
@@ -985,9 +985,9 @@ func_809329C:
 .L_93724:
 	.4byte	gHasGoldenDivaChest12
 .L_93728:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_9372c:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_93730:
 	.4byte	0x00000332
 .L_93734:
@@ -1011,7 +1011,7 @@ func_809329C:
 .L_93758:
 	.4byte	gUnk_3004B0C
 .L_9375c:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_93760:
 	.4byte	0x00000331
 .L_93764:
@@ -1034,7 +1034,7 @@ func_809329C:
 .L_93784:
 	.4byte	gUnk_3004B0C
 .L_93788:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_9378c:
 	cmp	r4, #11
 	bgt	.L_937bc
@@ -1053,7 +1053,7 @@ func_809329C:
 .L_937a8:
 	.4byte	gUnk_3004B0C
 .L_937ac:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_937b0:
 	ldr	r0, .L_937b8
 	bl	func_8001DD0
@@ -1075,7 +1075,7 @@ func_809329C:
 .L_937d4:
 	.4byte	gUnk_3004B0C
 .L_937d8:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_937dc:
 	.4byte	0x0000032f
 .L_937e0:
@@ -1132,7 +1132,7 @@ func_809329C:
 .L_93844:
 	.4byte	sUnk_8747250
 .L_93848:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_9384c:
 	cmp	r0, #2
 	bne	.L_93854
@@ -1379,7 +1379,7 @@ func_80938EC:
 .L_93a20:
 	.4byte	0xfffffe00
 .L_93a24:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_93a28:
 	.4byte	sUnk_878667C
 .L_93a2c:
@@ -1721,7 +1721,7 @@ func_80938EC:
 .L_93cb4:
 	.4byte	0xfffffe00
 .L_93cb8:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_93cbc:
 	.4byte	sUnk_87865A4
 .L_93cc0:
@@ -1861,7 +1861,7 @@ func_80938EC:
 .L_93dbc:
 	.4byte	0xfffffe00
 .L_93dc0:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_93dc4:
 	.4byte	sUnk_878663C
 .L_93dc8:
@@ -2250,7 +2250,7 @@ func_80938EC:
 .L_940b8:
 	.4byte	sUnk_87868F0
 .L_940bc:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_940c0:
 	.4byte	gUnk_3001850
 .L_940c4:
@@ -2614,7 +2614,7 @@ func_80938EC:
 .L_9439c:
 	.4byte	sUnk_87866BC
 .L_943a0:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_943a4:
 	.4byte	sUnk_878654C
 .L_943a8:
@@ -3619,7 +3619,7 @@ func_80946AC:
 .L_94b10:
 	.4byte	0x81000010
 .L_94b14:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_94b18:
 	.4byte	0x0600a000
 .L_94b1c:

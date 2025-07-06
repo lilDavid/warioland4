@@ -3794,7 +3794,7 @@ func_80782A4:
 .L_78584:
 	.4byte	gUnk_3000047
 .L_78588:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_7858c:
 	.4byte	gWarioPauseTimer
 .L_78590:

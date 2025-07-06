@@ -403,7 +403,7 @@ func_80870D4:
 .L_87378:
 	.4byte	gUnk_300477C
 .L_8737c:
-	.4byte	gUnk_3000B10
+	.4byte	gHighScoreTable
 .L_87380:
 	.4byte	0x3E7
 .L_87384:
@@ -466,7 +466,7 @@ func_8087388:
 	b	.L_87582
 	.align	2, 0
 .L_873ec:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_873f0:
 	ldr	r0, .L_873f4
 	b	.L_8754c
@@ -539,7 +539,7 @@ func_8087388:
 .L_87470:
 	.4byte	gUnk_3004A30
 .L_87474:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_87478:
 	ldr	r1, .L_8747c
 	b	.L_87482
@@ -642,7 +642,7 @@ func_8087388:
 .L_87530:
 	.4byte	gUnk_3003C3A
 .L_87534:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_87538:
 	ldr	r2, .L_87558
 	ldr	r0, .L_8755c
@@ -1093,7 +1093,7 @@ func_8087594:
 .L_878b4:
 	.4byte	sUnk_863D97C
 .L_878b8:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_878bc:
 	mov	r0, #2
 .L_878be:
@@ -1599,7 +1599,7 @@ func_8087C10:
 .L_87c5c:
 	.4byte	sUnk_863D97C
 .L_87c60:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_87c64:
 	.4byte	gUnk_3004782
 .L_87c68:

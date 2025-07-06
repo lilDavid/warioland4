@@ -1699,7 +1699,7 @@ func_801C43C:
 .L_1c5ac:
 	.4byte	gCurrentStageNumber
 .L_1c5b0:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_1c5b4:
 	mov	r0, #4
 	b	.L_1c5c2
@@ -1720,7 +1720,7 @@ func_801C43C:
 	pop	{r0}
 	bx	r0
 .L_1c5d0:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_1c5d4:
 	.4byte	gUnk_30031BC
 

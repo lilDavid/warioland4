@@ -209,7 +209,7 @@ func_8092914:
 .L_92968:
 	.4byte	sUnk_8746D70
 .L_9296c:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_92970:
 	ldr	r1, .L_92984
 	ldr	r0, .L_92988
@@ -224,7 +224,7 @@ func_8092914:
 .L_92984:
 	.4byte	sUnk_8746D72
 .L_92988:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_9298c:
 	ldr	r1, .L_92990
 	b	.L_92996
@@ -258,7 +258,7 @@ func_8092914:
 .L_929bc:
 	.4byte	sUnk_8746D76
 .L_929c0:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 
 
 thumb_func_start func_80929C4
@@ -569,7 +569,7 @@ func_8092B30:
 .L_92c04:
 	.4byte	0x06010000
 .L_92c08:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_92c0c:
 	.4byte	sUnk_8746880
 .L_92c10:
@@ -714,7 +714,7 @@ func_8092CC4:
 .L_92d24:
 	.4byte	sUnk_8746D70
 .L_92d28:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 
 
 thumb_func_start func_8092D2C

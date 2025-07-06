@@ -151,7 +151,7 @@ func_8072D24:
 .L_72e50:
 	.4byte	0x0203800a
 .L_72e54:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_72e58:
 	bl	func_8000CE0
 	ldr	r1, .L_72e80
@@ -182,9 +182,9 @@ func_8072D24:
 	bx	r0
 .align 2, 0
 .L_72e80:
-	.4byte	gClearedHardDifficulty
+	.4byte	gTitleScreenStyle
 .L_72e84:
-	.4byte	gUnk_3000016
+	.4byte	gLanguage
 .L_72e88:
 	.4byte	gUnk_300001D
 
@@ -337,7 +337,7 @@ func_8072F0C:
 .L_72f94:
 	.4byte	gUnk_3000023
 .L_72f98:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 .L_72f9c:
 	.4byte	0x02039000
 .L_72fa0:
@@ -888,9 +888,9 @@ func_8072FB0:
 .L_7339c:
 	.4byte	gUnk_3000C0E
 .L_733a0:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_733a4:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_733a8:
 	.4byte	gUnk_3000BEC
 .L_733ac:
@@ -1511,9 +1511,9 @@ func_807345C:
 .L_7382c:
 	.4byte	gUnk_3000C0E
 .L_73830:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_73834:
-	.4byte	gUnk_3000BF8
+	.4byte	gStageScore
 .L_73838:
 	.4byte	gUnk_3000BEC
 .L_7383c:
@@ -1750,7 +1750,7 @@ func_80738FC:
 .L_739ec:
 	.4byte	0x02038118
 .L_739f0:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_739f4:
 	.4byte	gCurrentPassage
 .L_739f8:
@@ -1758,7 +1758,7 @@ func_80738FC:
 .L_739fc:
 	.4byte	gUnk_3000008
 .L_73a00:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_73a04:
 	.4byte	gUnk_300001C
 .L_73a08:
@@ -1766,7 +1766,7 @@ func_80738FC:
 .L_73a0c:
 	.4byte	gCurrentCollection
 .L_73a10:
-	.4byte	gUnk_3000B10
+	.4byte	gHighScoreTable
 .L_73a14:
 	.4byte	gUnk_300000A
 
@@ -1891,7 +1891,7 @@ func_8073A18:
 .L_73ae8:
 	.4byte	0x02038118
 .L_73aec:
-	.4byte	gUnk_3000017
+	.4byte	gDifficulty
 .L_73af0:
 	.4byte	gCurrentPassage
 .L_73af4:
@@ -1899,13 +1899,13 @@ func_8073A18:
 .L_73af8:
 	.4byte	gUnk_3000008
 .L_73afc:
-	.4byte	gUnk_3000BF4
+	.4byte	gTotalScore
 .L_73b00:
 	.4byte	gUnk_300001C
 .L_73b04:
 	.4byte	gCurrentCollection
 .L_73b08:
-	.4byte	gUnk_3000B10
+	.4byte	gHighScoreTable
 .L_73b0c:
 	.4byte	gUnk_300000A
 
@@ -2076,7 +2076,7 @@ func_8073BE0:
 .L_73c34:
 	.4byte	gUnk_3000019
 .L_73c38:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 .L_73c3c:
 	.4byte	gUnk_3000014
 .L_73c40:
@@ -2126,7 +2126,7 @@ func_8073BE0:
 .L_73c94:
 	.4byte	gUnk_3000019
 .L_73c98:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 .L_73c9c:
 	.4byte	gUnk_3003BF8
 .L_73ca0:
@@ -2634,7 +2634,7 @@ func_8073FD8:
 .L_74034:
 	.4byte	0x80001c00
 .L_74038:
-	.4byte	gUnk_3000013
+	.4byte	gSaveFlag
 
 
 thumb_func_start func_807403C
