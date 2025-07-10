@@ -1,4 +1,4 @@
-#include "clipdata.h"
+#include "bg_clip.h"
 #include "game_state.h"
 #include "in_game.h"
 #include "oam.h"
@@ -662,7 +662,7 @@ static void Coin_Pose44(void) {
 
     unk_r2 = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_11;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
     }
 
     if (gUnk_3000A50) {
@@ -717,7 +717,7 @@ static void Coin_Pose46(void) {
 
     unk_r2 = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_11;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
     }
 
     if (gUnk_3000A50) {
@@ -851,7 +851,7 @@ static void Coin_Init(void) {
 
 static void Coin_Pose2F(void) {
     gCurrentSprite.pose = POSE_30;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_11) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
         gCurrentSprite.work0 = CONVERT_SECONDS(8.0 / 15);
     } else {
         gCurrentSprite.work0 = CONVERT_SECONDS(2);
@@ -983,7 +983,7 @@ static void Diamond_Init(void) {
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
-    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.pose = POSE_IDLE;
     gCurrentSprite.warioInteractionFlags = 6;
     gCurrentSprite.yPosition -= PIXEL_SIZE;
     gCurrentSprite.xPosition += HALF_BLOCK_SIZE;
@@ -1059,7 +1059,7 @@ void SpriteAI_Coin(void) {
             return;
         }
     }
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_11) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
         if (gUnk_3000BEC & 1) {
             TIMER_COUNT_DOWN(gCurrentSprite.currentAnimationFrame);
         }
@@ -1079,7 +1079,7 @@ void SpriteAI_Coin(void) {
         case POSE_1D:
             Coin_Pose1D();
         case POSE_1E:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8023EE0();
             break;
 
@@ -1143,7 +1143,7 @@ void SpriteAI_Coin(void) {
         case POSE_47:
             func_8024AC0();
         case POSE_44:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             Coin_Pose44();
             break;
 
@@ -1151,7 +1151,7 @@ void SpriteAI_Coin(void) {
         case POSE_49:
             func_8024BEC();
         case POSE_46:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             Coin_Pose46();
             break;
 
@@ -1167,7 +1167,7 @@ void SpriteAI_Diamond(void) {
             Diamond_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             Diamond_Float();
             break;
 

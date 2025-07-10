@@ -1,5 +1,4 @@
 #include "autosave.h"
-#include "clipdata.h"
 #include "fixed_point.h"
 #include "game_state.h"
 #include "in_game.h"
@@ -155,7 +154,7 @@ void Vortex_InitWarioOrKeyzer(void) {
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.warioInteractionFlags = 0;
-    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.pose = POSE_IDLE;
 }
 
 void SpriteAI_Vortex(void) {
@@ -199,7 +198,7 @@ void SpriteAI_Vortex(void) {
         case POSE_INIT_1:
             if (gUnk_3000C0D) {
                 gCurrentSprite.work2 = U8_MAX;
-                gCurrentSprite.pose = POSE_10;
+                gCurrentSprite.pose = POSE_IDLE;
             } else {
                 gCurrentSprite.work2 = 64;
                 gCurrentSprite.pose = POSE_18;
@@ -219,14 +218,14 @@ void SpriteAI_Vortex(void) {
 
         case POSE_14:
             if (gCurrentSprite.work2 >= U8_MAX) {
-                gCurrentSprite.pose = POSE_10;
+                gCurrentSprite.pose = POSE_IDLE;
                 gCurrentSprite.work2 = U8_MAX;
             } else {
                 gCurrentSprite.work2 += 1;
             }
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             gCurrentSprite.disableWarioInteraction = 0;
             break;
 
@@ -255,7 +254,7 @@ void SpriteAI_VortexPartMedium(void) {
             } else if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_MEDIUM_2) {
                 if (gUnk_3000C0D) {
                     gCurrentSprite.work2 = U8_MAX;
-                    gCurrentSprite.pose = POSE_10;
+                    gCurrentSprite.pose = POSE_IDLE;
                 } else {
                     gCurrentSprite.work2 = 64;
                     gCurrentSprite.pose = POSE_18;
@@ -291,7 +290,7 @@ void SpriteAI_VortexPartMedium(void) {
 
         case POSE_14:
             if (gCurrentSprite.work2 >= U8_MAX) {
-                gCurrentSprite.pose = POSE_10;
+                gCurrentSprite.pose = POSE_IDLE;
                 gCurrentSprite.work2 = U8_MAX;
             } else {
                 gCurrentSprite.work2 += 1;
@@ -322,7 +321,7 @@ void SpriteAI_VortexPartLarge(void) {
             } else if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_LARGE_2) {
                 if (gUnk_3000C0D) {
                     gCurrentSprite.work2 = U8_MAX;
-                    gCurrentSprite.pose = POSE_10;
+                    gCurrentSprite.pose = POSE_IDLE;
                 } else {
                     gCurrentSprite.work2 = 64;
                     gCurrentSprite.pose = POSE_18;
@@ -358,7 +357,7 @@ void SpriteAI_VortexPartLarge(void) {
 
         case POSE_14:
             if (gCurrentSprite.work2 >= U8_MAX) {
-                gCurrentSprite.pose = POSE_10;
+                gCurrentSprite.pose = POSE_IDLE;
                 gCurrentSprite.work2 = U8_MAX;
             } else {
                 gCurrentSprite.work2 += 1;
@@ -390,7 +389,7 @@ void SpriteAI_WarioExitingVortex(void) {
             Sound_Play(SOUND_1CC);
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gCurrentSprite.work2) {
                 gCurrentSprite.work2 += 4;
             }
@@ -432,7 +431,7 @@ void SpriteAI_WarioEnteringVortex(void) {
             gCurrentSprite.work2 = 0;
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if ((u8) (gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
                 gCurrentSprite.work2 -= 4;
             }
@@ -477,7 +476,7 @@ void SpriteAI_KeyzerEnteringVortex(void) {
             gCurrentSprite.work2 = 0;
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if ((u8) (gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
                 gCurrentSprite.work2 -= 4;
             }

@@ -1,4 +1,4 @@
-#include "clipdata.h"
+#include "bg_clip.h"
 #include "in_game.h"
 #include "oam.h"
 #include "sound.h"
@@ -50,15 +50,15 @@ static void Rock_Init(void) {
     gCurrentSprite.hitboxExtentRight = SUBPIXELS_FROM_PIXELS(6);
 }
 
-static void Rock_Pose0F(void) {
+static void Rock_IdleInit(void) {
     gCurrentSprite.animationTimer = gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pOamData = &sRockOamData;
-    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.pose = POSE_IDLE;
     gCurrentSprite.warioInteractionFlags = 5;
     gCurrentSprite.statusBits &= ~(SPRITE_STATUS_8 | SPRITE_STATUS_9);
 }
 
-static void Rock_Pose10(void) {
+static void Rock_Idle(void) {
     func_80238E8();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -149,26 +149,26 @@ static void Rock_Pose55(void) {
 
 
 void SpriteAI_Rock(void) {
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_11 && (gUnk_3000BEC & 3)) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER && (gUnk_3000BEC & 3)) {
         return;
     }
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Rock_Init();
 
-        case POSE_0F:
+        case POSE_IDLE_INIT:
         case POSE_17:
         case POSE_2F:
-            Rock_Pose0F();
-        case POSE_10:
-            Rock_Pose10();
+            Rock_IdleInit();
+        case POSE_IDLE:
+            Rock_Idle();
             break;
 
         case POSE_1B:
         case POSE_1D:
             Rock_Pose1B();
         case POSE_1E:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8023EE0();
             break;
 
@@ -195,7 +195,6 @@ void SpriteAI_Rock(void) {
         case POSE_6A:
             Rock_Pose1F();
         case POSE_34:
-        case POSE_40:
             func_8024988();
             break;
 
@@ -206,7 +205,6 @@ void SpriteAI_Rock(void) {
         case POSE_69:
             Rock_Pose21();
         case POSE_36:
-        case POSE_3A:
             func_802476C();
             break;
 
@@ -218,7 +216,8 @@ void SpriteAI_Rock(void) {
 
         case POSE_39:
             func_802473C();
-            func_802476C();  // jumps to case POSE_36
+        case POSE_3A:
+            func_802476C();
             break;
 
         case POSE_3B:
@@ -236,7 +235,8 @@ void SpriteAI_Rock(void) {
 
         case POSE_3F:
             func_8024958();
-            func_8024988();  // jumps to case POSE_34
+        case POSE_40:
+            func_8024988();
             break;
 
         case POSE_41:
@@ -247,29 +247,29 @@ void SpriteAI_Rock(void) {
 
         case POSE_43:
             func_8024AC0();
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;  // jumps to case POSE_44
+        case POSE_44:
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8024AD4();
             break;
 
         case POSE_45:
             func_8024BEC();
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;  // jumps to case POSE_46
+        case POSE_46:
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8024C00();
             break;
 
         case POSE_47:
             Rock_Pose47();
-        case POSE_44:
         case POSE_48:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8024AD4();
             break;
 
         case POSE_49:
             Rock_Pose49();
-        case POSE_46:
         case POSE_4A:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8024C00();
             break;
 
@@ -294,7 +294,7 @@ void SpriteAI_Rock(void) {
             break;
 
         case POSE_58:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8024F98();
             break;
 
@@ -303,14 +303,14 @@ void SpriteAI_Rock(void) {
             break;
 
         case POSE_56:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025240();
             break;
 
         case POSE_59:
             gCurrentSprite.pose = POSE_5A;
         case POSE_5A:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025634();
             break;
 
@@ -318,14 +318,14 @@ void SpriteAI_Rock(void) {
             gCurrentSprite.pose = POSE_5E;
             gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x10;
         case POSE_5E:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_80256D4();
             break;
 
         case POSE_61:
             gCurrentSprite.pose = POSE_62;
         case POSE_62:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025774();
             break;
 
@@ -333,14 +333,14 @@ void SpriteAI_Rock(void) {
             gCurrentSprite.pose = POSE_66;
             gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x20;
         case POSE_66:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025814();
             break;
 
         case POSE_5B:
             gCurrentSprite.pose = POSE_5C;
         case POSE_5C:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025A00();
             break;
 
@@ -348,14 +348,14 @@ void SpriteAI_Rock(void) {
             gCurrentSprite.pose = POSE_60;
             gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x40;
         case POSE_60:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025AA0();
             break;
 
         case POSE_63:
             gCurrentSprite.pose = POSE_64;
         case POSE_64:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025B40();
             break;
 
@@ -363,7 +363,7 @@ void SpriteAI_Rock(void) {
             gCurrentSprite.pose = POSE_68;
             gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x80;
         case POSE_68:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_11;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025BE0();
             break;
 
@@ -396,7 +396,7 @@ void SpriteAI_Rock(void) {
     }
 
     if ((gCurrentSprite.unk_1D & 0xF) == 1) {
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_11) {
+        if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
             gCurrentSprite.unk_1D += 1;
             Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_07);
             Sound_Play(SOUND_3D);
@@ -404,9 +404,9 @@ void SpriteAI_Rock(void) {
     } else if ((gCurrentSprite.unk_1D & 0xF) == 2) {
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
         if (gUnk_30000A0.unk_02 == 1) {
-            gCurrentSprite.statusBits |= SPRITE_STATUS_11;
+            gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
         }
-        if (!(gCurrentSprite.statusBits & SPRITE_STATUS_11)) {
+        if (!(gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER)) {
             gCurrentSprite.unk_1D -= 1;
         }
     }

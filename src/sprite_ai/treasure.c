@@ -384,7 +384,7 @@ void Box_SetCommonProperties(void) {
 void Box_Init(void) {
     gCurrentSprite.hitboxExtentUp = 2 * BLOCK_SIZE - EIGHTH_BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x1A;
-    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.pose = POSE_IDLE;
     Box_SetCommonProperties();
 }
 
@@ -456,7 +456,7 @@ void Treasure_Init(void) {
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
-    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.pose = POSE_IDLE;
 }
 
 void TreasureGlow_Init(void) {
@@ -474,7 +474,7 @@ void TreasureGlow_Init(void) {
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
-    gCurrentSprite.pose = POSE_10;
+    gCurrentSprite.pose = POSE_IDLE;
 }
 
 void TreasureGlow_Collected(void) {
@@ -1023,7 +1023,7 @@ void SpriteAI_TreasureGlowJewelPieceNE(void) {
             TreasureGlow_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] == MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
@@ -1062,7 +1062,7 @@ void SpriteAI_TreasureGlowJewelPieceSE(void) {
             TreasureGlow_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] == MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
@@ -1101,7 +1101,7 @@ void SpriteAI_TreasureGlowJewelPieceSW(void) {
             TreasureGlow_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] == MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
@@ -1140,7 +1140,7 @@ void SpriteAI_TreasureGlowJewelPieceNW(void) {
             TreasureGlow_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] == MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
@@ -1179,7 +1179,7 @@ void SpriteAI_TreasureGlowCD(void) {
             TreasureGlow_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] == MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
@@ -1218,7 +1218,7 @@ void SpriteAI_TreasureGlowHeartRefill(void) {
             TreasureGlow_Init();
             break;
 
-        case POSE_10:
+        case POSE_IDLE:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] == MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
@@ -1257,7 +1257,7 @@ void SpriteAI_Treasure_Unused1(void) {
             gCurrentSprite.currentAnimationFrame = 0;
             gCurrentSprite.animationTimer = 0;
             gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
-            gCurrentSprite.pose = POSE_10;
+            gCurrentSprite.pose = POSE_IDLE;
             gCurrentSprite.warioInteractionFlags = 0x19;
             gCurrentSprite.work1 = 0;
             break;

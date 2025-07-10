@@ -1234,7 +1234,17 @@ baserom_blob 0x352ADC, 0x352AFC
 .global sUnk_8352AFC
 sUnk_8352AFC:
 
-baserom_blob 0x352AFC, 0x352B58
+baserom_blob 0x352AFC, 0x352B18
+
+.global sUnk_8352B18
+sUnk_8352B18:
+
+baserom_blob 0x352B18, 0x352B40
+
+.global sUnk_8352B40
+sUnk_8352B40:
+
+baserom_blob 0x352B40, 0x352B58
 
 .global sUnk_8352B58
 sUnk_8352B58:
@@ -1289,4 +1299,5 @@ baserom_blob 0x3B35F8, 0x3B37FC
 .global sUnk_83B37FC
 sUnk_83B37FC:
 
-baserom_blob 0x3B37FC, 0x3B4554
+baserom_blob 0x3B37FC, 0x3B3A00
+

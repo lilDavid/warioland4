@@ -273,7 +273,7 @@ enum SpriteStatusBits {
     SPRITE_STATUS_8 = (1 << 8),
     SPRITE_STATUS_9 = (1 << 9),
     SPRITE_STATUS_10 = (1 << 10),
-    SPRITE_STATUS_11 = (1 << 11),
+    SPRITE_STATUS_MAYBE_UNDERWATER = (1 << 11),
     SPRITE_STATUS_12 = (1 << 12),
     SPRITE_STATUS_13 = (1 << 13),
     SPRITE_STATUS_14 = (1 << 14),

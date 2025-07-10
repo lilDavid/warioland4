@@ -345,7 +345,7 @@ void Keyzer_Init() {
         gCurrentSprite.pOamData = sKeyzerIdleOam;
         gCurrentSprite.currentAnimationFrame = 0;
         gCurrentSprite.animationTimer = 0;
-        gCurrentSprite.pose = POSE_10;
+        gCurrentSprite.pose = POSE_IDLE;
         gCurrentSprite.work3 = 0;
         gCurrentSprite.yPosition -= BLOCK_SIZE;
         gCurrentSprite.xPosition -= HALF_BLOCK_SIZE;

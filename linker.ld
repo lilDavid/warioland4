@@ -576,7 +576,7 @@ SECTIONS {
         obj/disasm_sprite.o(.text);
         obj/disasm_sprite_wario_interaction.o(.text);
         obj/disasm_sprite_util.o(.text);
-        obj/sprite_ai/blob_spear_mask.o(.text);
+        obj/sprite_ai/spear_mask.o(.text);
         obj/sprite_ai/blob_rotating_platform.o(.text);
         obj/sprite_ai/keyzer.o(.text);
         obj/sprite_ai/treasure.o(.text);
@@ -703,7 +703,9 @@ SECTIONS {
         obj/data/sin_cos_table.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x3B4554.o(.rodata);
+        obj/blob_0x09540C-0x3B3A00.o(.rodata);
+        obj/sprite_ai/spear_mask.o(.rodata);
+        obj/blob_0x3B451C-0x3B4554.o(.rodata);
         obj/sprite_ai/keyzer.o(.rodata);
         obj/sprite_ai/treasure.o(.rodata);
         obj/sprite_ai/vortex.o(.rodata);

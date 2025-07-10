@@ -1,5 +1,5 @@
-#ifndef CLIPDATA_H
-#define CLIPDATA_H
+#ifndef BG_CLIP_H
+#define BG_CLIP_H
 
 #include "gba.h"
 
@@ -10,4 +10,4 @@ extern struct {
     /* 0x04 */ u16 unk_04;
 } gUnk_30000A0;
 
-#endif  // CLIPDATA_H
+#endif  // BG_CLIP_H

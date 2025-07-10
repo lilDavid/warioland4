@@ -586,8 +586,8 @@ func_8023C94:
 	.4byte	gCurrentSprite
 
 
-thumb_func_start func_8092CD8
-func_8092CD8:
+thumb_func_start func_8023CD8
+func_8023CD8:
 	push	{lr}
 	bl	func_80238E8
 	bl	func_8023B88
@@ -648,8 +648,8 @@ func_8092CD8:
 	bx	r0
 
 
-thumb_func_start func_8092D48
-func_8092D48:
+thumb_func_start func_8023D48
+func_8023D48:
 	push	{r4, r5, r6, lr}
 	ldr	r4, .L_23d7c
 	ldrh	r0, [r4, #8]
@@ -748,8 +748,8 @@ func_8092D48:
 	bx	r0
 
 
-thumb_func_start func_8092E00
-func_8092E00:
+thumb_func_start func_8023E00
+func_8023E00:
 	push	{r4, r5, r6, lr}
 	ldr	r4, .L_23e44
 	ldrh	r0, [r4, #8]

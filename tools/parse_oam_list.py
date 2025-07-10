@@ -1,5 +1,8 @@
+from argparse import ArgumentParser
+import functools
 import itertools
-import sys
+import struct
+import warnings
 
 
 SIZE_TABLE = {
@@ -17,57 +20,102 @@ SIZE_TABLE = {
     ("ATTR0_TALL", 3): "ATTR1_32x64",
 }
 
+GBA_ROM_START = 0x8000000
 
-_, rom_file, start, end, *_ = sys.argv
 
-start = int(start, 0)
-end = int(end, 0)
+def enumerate_by_address(data: bytes, size: int = 1, start_address: int = 0):
+    return zip(itertools.count(start_address, size), map(bytes, itertools.batched(data, size)))
 
-with open(rom_file, 'rb') as stream:
-    stream.read(start)
-    oam_data = stream.read(end - start)
 
-remaining = 0
-for addr, bytepair in zip(itertools.count(start, 2), itertools.batched(oam_data, 2)):
-    short = int.from_bytes(bytepair, "little")
-    if remaining == 0:
-        remaining = 3 * short
-        print(f"    {short},")
-        print(format(addr + 0x8000000, "X"), file=sys.stderr)
-    else:
-        if remaining % 3 == 0:
-            y = short & 0xFF
-            if y & 0x80:
-                y -= 0x100
-            if short & 0xC000 == 0:
-                shape = "ATTR0_SQUARE"
-            elif short & 0xC000 == 0x4000:
-                shape = "ATTR0_WIDE"
-            elif short & 0xC000 == 0x8000:
-                shape = "ATTR0_TALL"
+def parse_frame_data(rom_file: bytes, start_address: int, stop_address: int) -> list[list[tuple[int, int]]]:
+    current = []
+    result = []
+    for addr, bytestring in enumerate_by_address(rom_file[start_address:stop_address], struct.calcsize("<II"), start_address):
+        frame_ptr, timer = struct.unpack("<II", bytestring)
+        current.append((frame_ptr, timer))
+        if frame_ptr == 0:
+            result.append(current)
+            current = []
+    if current != []:
+        warnings.warn("Unterminated frame data list")
+        result.append(current)
+    return result
+
+
+def parse_and_print_frames(rom_file: bytes, start_address: int, stop_address: int):
+    remaining = 0
+    for addr, bytepair in enumerate_by_address(rom_file[start_address:stop_address], 2, start_address):
+        short = int.from_bytes(bytepair, "little")
+        if remaining == 0:
+            remaining = 3 * short
+            print(f"const u16 sOamFrame_{addr | GBA_ROM_START:X}[] = {{")
+            print(f"    {short},")
+            # print(format(addr | GBA_ROM_START, "X"), file=sys.stderr)
+        else:
+            if remaining % 3 == 0:
+                y = short & 0xFF
+                if y & 0x80:
+                    y -= 0x100
+                if short & 0xC000 == 0:
+                    shape = "ATTR0_SQUARE"
+                elif short & 0xC000 == 0x4000:
+                    shape = "ATTR0_WIDE"
+                elif short & 0xC000 == 0x8000:
+                    shape = "ATTR0_TALL"
+                else:
+                    raise ValueError("Invalid shape 3")
+                if short & 0x300:
+                    raise NotImplementedError("Non-regular sprite")
+                if short & 0xC00:
+                    raise NotImplementedError("Gfx mode")
+                if short & 0x1000:
+                    raise NotImplementedError("Mosaic")
+                if short & 0x300:
+                    raise NotImplementedError(f"Non-regular sprite")
+            elif remaining % 3 == 2:
+                x = short & 0x1FF
+                if x & 0x100:
+                    x -= 0x200
+                attr1_flags = [SIZE_TABLE[(shape, (short & 0xC000) >> 14)]]
+                if short & 0x1000:
+                    attr1_flags.append("ATTR1_HFLIP")
+                if short & 0x2000:
+                    attr1_flags.append("ATTR1_VFLIP")
+            elif remaining % 3 == 1:
+                tid = short & 0x3FF
+                prio = (short & 0x0C00) >> 10
+                palette = (short & 0xF000) >> 12
+            remaining -= 1
+            if remaining % 3 == 0:
+                print(f"    OAM_ENTRY({x}, {y}, {shape}, {' | '.join(attr1_flags)}, {tid}, {palette}, {prio}),")
+            if remaining == 0:
+                print("};")
+
+
+def print_frame_data(frame_data: list[list[tuple[int, int]]], start_address: int):
+    address = start_address
+    for frame_list in frame_data:
+        print(f"const AnimationFrame sOam_{address | GBA_ROM_START:X}[] = {{")
+        for frame in frame_list:
+            address += struct.calcsize("<II")
+            if frame[0] == 0:
+                print("    ANIMATION_TERMINATOR")
             else:
-                raise ValueError("Invalid shape 3")
-            if short & 0x300:
-                raise NotImplementedError("Non-regular sprite")
-            if short & 0xC00:
-                raise NotImplementedError("Gfx mode")
-            if short & 0x1000:
-                raise NotImplementedError("Mosaic")
-            if short & 0x300:
-                raise NotImplementedError(f"Non-regular sprite")
-        elif remaining % 3 == 2:
-            x = short & 0x1FF
-            if x & 0x100:
-                x -= 0x200
-            attr1_flags = [SIZE_TABLE[(shape, (short & 0xC000) >> 14)]]
-            if short & 0x1000:
-                attr1_flags.append("ATTR1_HFLIP")
-            if short & 0x2000:
-                attr1_flags.append("ATTR1_VFLIP")
-        elif remaining % 3 == 1:
-            tid = short & 0x3FF
-            prio = (short & 0x0C00) >> 10
-            palette = (short & 0xF000) >> 12
-        remaining -= 1
-        if remaining % 3 == 0:
-            print(f"    OAM_ENTRY({x}, {y}, {shape}, {' | '.join(attr1_flags)}, {tid}, {palette}, {prio}),")
+                print(f"    {{ sOamFrame_{frame[0] | GBA_ROM_START:X}, {frame[1]} }},")
+        print("};")
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("rom_file", help="ROM to read from.")
+    parser.add_argument("start", type=functools.partial(int, base=0), help="Address of the first frame.")
+    parser.add_argument("stop", type=functools.partial(int, base=0), help="Address just after the last frame.")
+    args = parser.parse_args()
+
+    with open(args.rom_file, "rb") as stream:
+        rom_bytes = stream.read()
+    frame_data = parse_frame_data(rom_bytes, args.start, args.stop)
+    min_address = min(fd[0] for fd in itertools.chain.from_iterable(frame_data) if fd[0] != 0)
+    parse_and_print_frames(rom_bytes, min_address & (GBA_ROM_START - 1), args.start)
+    print()
+    print_frame_data(frame_data, args.start)

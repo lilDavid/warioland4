@@ -113,5 +113,6 @@ extern s32 gStageScore;
 
 void Score_GivePoints(s32);
 void Sprite_SpawnSecondary(u32 y, u32 x, u8 id);
+void func_807687C(u32 id, u32 y, u32 x, u32 amount);
 
 #endif  // SCORE_H
