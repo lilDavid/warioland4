@@ -17,9 +17,9 @@ enum SpearMaskExtraPoses {
     SPEAR_MASK_POSE_70,
     SPEAR_MASK_POSE_71,
     SPEAR_MASK_POSE_72,
-    SPEAR_MASK_POSE_73,
+    SPEAR_MASK_STARTING_CHASE,
     SPEAR_MASK_POSE_74,
-    SPEAR_MASK_POSE_75,
+    SPEAR_MASK_CHASING,
 };
 
 #define SPEAR_MASK_PALETTE_YELLOW 0
@@ -27,37 +27,37 @@ enum SpearMaskExtraPoses {
 #define SPEAR_MASK_PALETTE_RED 2
 
 
-const u16 sSpearMaskTuringOam_Frame1[] = {
+const u16 sSpearMaskWalkingOam_Frame1[] = {
     3,
     OAM_ENTRY(-17, -13, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -8, ATTR0_WIDE, ATTR1_16x8, 512, 8, 0),
     OAM_ENTRY(-10, -20, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
 };
-const u16 sSpearMaskTuringOam_Frame2[] = {
+const u16 sSpearMaskWalkingOam_Frame2[] = {
     3,
     OAM_ENTRY(-16, -15, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-9, -8, ATTR0_WIDE, ATTR1_16x8, 544, 8, 0),
     OAM_ENTRY(-10, -22, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
 };
-const u16 sSpearMaskTuringOam_Frame3[] = {
+const u16 sSpearMaskWalkingOam_Frame3[] = {
     3,
     OAM_ENTRY(-15, -13, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 514, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
 };
-const u16 sSpearMaskTuringOam_Frame4[] = {
+const u16 sSpearMaskWalkingOam_Frame4[] = {
     3,
     OAM_ENTRY(-14, -12, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 546, 8, 0),
     OAM_ENTRY(-10, -20, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
 };
-const u16 sSpearMaskTuringOam_Frame5[] = {
+const u16 sSpearMaskWalkingOam_Frame5[] = {
     3,
     OAM_ENTRY(-15, -14, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 516, 8, 0),
     OAM_ENTRY(-10, -22, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
 };
-const u16 sSpearMaskTuringOam_Frame6[] = {
+const u16 sSpearMaskWalkingOam_Frame6[] = {
     3,
     OAM_ENTRY(-16, -14, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 548, 8, 0),
@@ -79,68 +79,68 @@ const u16 sOamFrame_83B3A98[] = {
     OAM_ENTRY(6, -13, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-14, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3AB8[] = {
+const u16 sSpearMaskCrushedOam_Frame1[] = {
     2,
     OAM_ENTRY(-17, -8, ATTR0_WIDE, ATTR1_32x8, 552, 8, 0),
     OAM_ENTRY(-9, -16, ATTR0_WIDE, ATTR1_16x8, 532, 8, 0),
 };
-const u16 sOamFrame_83B3AC6[] = {
+const u16 sSpearMaskCrushedOam_Frame2[] = {
     1,
     OAM_ENTRY(-16, -8, ATTR0_WIDE, ATTR1_32x8, 520, 8, 0),
 };
-const u16 sOamFrame_83B3ACE[] = {
+const u16 sSpearMaskBashedOam_Frame1[] = {
     3,
     OAM_ENTRY(-6, -32, ATTR0_TALL, ATTR1_16x32, 535, 8, 0),
     OAM_ENTRY(-19, -33, ATTR0_SQUARE, ATTR1_16x16, 590, 8, 0),
     OAM_ENTRY(-8, -41, ATTR0_SQUARE, ATTR1_8x8, 565, 8, 0),
 };
-const u16 sOamFrame_83B3AE2[] = {
+const u16 sSpearMaskBashedOam_Frame2[] = {
     1,
     OAM_ENTRY(-6, -32, ATTR0_TALL, ATTR1_16x32, 535, 8, 0),
 };
-const u16 sOamFrame_83B3AEA[] = {
+const u16 sSpearMaskTurning1Oam_Frame1[] = {
     4,
     OAM_ENTRY(-5, -16, ATTR0_SQUARE, ATTR1_8x8, 566, 8, 0),
     OAM_ENTRY(-16, -12, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3B04[] = {
+const u16 sSpearMaskTurning1Oam_Frame2[] = {
     4,
     OAM_ENTRY(-14, -13, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-5, -14, ATTR0_SQUARE, ATTR1_8x8, 566, 8, 0),
     OAM_ENTRY(-10, -19, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 518, 8, 0),
 };
-const u16 sOamFrame_83B3B1E[] = {
+const u16 sSpearMaskTurning2Oam_Frame1[] = {
     4,
     OAM_ENTRY(-13, -12, ATTR0_WIDE, ATTR1_16x8, 593, 8, 0),
     OAM_ENTRY(-5, -16, ATTR0_SQUARE, ATTR1_8x8, 566, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 548, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
 };
-const u16 sOamFrame_83B3B38[] = {
+const u16 sSpearMaskTurning2Oam_Frame2[] = {
     4,
     OAM_ENTRY(-3, -17, ATTR0_SQUARE, ATTR1_8x8, 566, 8, 0),
     OAM_ENTRY(-8, -11, ATTR0_WIDE, ATTR1_16x8, 593, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 526, 8, 0),
     OAM_ENTRY(-8, -22, ATTR0_SQUARE, ATTR1_16x16, 578, 8, 0),
 };
-const u16 sOamFrame_83B3B52[] = {
+const u16 sSpearMaskTurning2Oam_Frame3[] = {
     4,
     OAM_ENTRY(0, -17, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 566, 8, 0),
     OAM_ENTRY(-5, -11, ATTR0_WIDE, ATTR1_16x8 | ATTR1_HFLIP, 593, 8, 0),
     OAM_ENTRY(-6, -22, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 588, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 516, 8, 0),
 };
-const u16 sOamFrame_83B3B6C[] = {
+const u16 sSpearMaskTurning3Oam_Frame1[] = {
     4,
     OAM_ENTRY(-8, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 566, 8, 0),
     OAM_ENTRY(-14, -11, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -19, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 518, 8, 0),
 };
-const u16 sOamFrame_83B3B86[] = {
+const u16 sSpearMaskTurning3Oam_Frame2[] = {
     3,
     OAM_ENTRY(-14, -13, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
@@ -153,13 +153,13 @@ const u16 sOamFrame_83B3B9A[] = {
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 514, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
 };
-const u16 sOamFrame_83B3BB4[] = {
+const u16 sSpearMaskHitWarioOam_Frame1[] = {
     3,
     OAM_ENTRY(-22, -13, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-9, -16, ATTR0_SQUARE, ATTR1_16x16, 580, 8, 0),
     OAM_ENTRY(-12, -22, ATTR0_WIDE, ATTR1_16x8 | ATTR1_HFLIP, 582, 8, 0),
 };
-const u16 sOamFrame_83B3BC8[] = {
+const u16 sSpearMaskStunnedOam_Frame1[] = {
     5,
     OAM_ENTRY(5, -12, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-8, -9, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 566, 8, 0),
@@ -167,7 +167,7 @@ const u16 sOamFrame_83B3BC8[] = {
     OAM_ENTRY(-10, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 588, 8, 0),
     OAM_ENTRY(-12, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3BE8[] = {
+const u16 sSpearMaskStunnedOam_Frame2[] = {
     5,
     OAM_ENTRY(5, -14, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-8, -10, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 566, 8, 0),
@@ -175,7 +175,7 @@ const u16 sOamFrame_83B3BE8[] = {
     OAM_ENTRY(-10, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 588, 8, 0),
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3C08[] = {
+const u16 sSpearMaskStunnedOam_Frame3[] = {
     5,
     OAM_ENTRY(5, -12, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-7, -19, ATTR0_WIDE, ATTR1_16x8 | ATTR1_VFLIP, 546, 8, 0),
@@ -183,7 +183,7 @@ const u16 sOamFrame_83B3C08[] = {
     OAM_ENTRY(-10, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 588, 8, 0),
     OAM_ENTRY(-12, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3C28[] = {
+const u16 sSpearMaskStunnedOam_Frame4[] = {
     5,
     OAM_ENTRY(-8, -20, ATTR0_WIDE, ATTR1_16x8 | ATTR1_VFLIP, 514, 8, 0),
     OAM_ENTRY(5, -13, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
@@ -191,7 +191,7 @@ const u16 sOamFrame_83B3C28[] = {
     OAM_ENTRY(-10, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 588, 8, 0),
     OAM_ENTRY(-13, -12, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3C48[] = {
+const u16 sSpearMaskStunnedOam_Frame5[] = {
     5,
     OAM_ENTRY(-10, -22, ATTR0_WIDE, ATTR1_16x8 | ATTR1_VFLIP, 544, 8, 0),
     OAM_ENTRY(4, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
@@ -199,7 +199,7 @@ const u16 sOamFrame_83B3C48[] = {
     OAM_ENTRY(-11, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 588, 8, 0),
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3C68[] = {
+const u16 sSpearMaskStunnedOam_Frame6[] = {
     5,
     OAM_ENTRY(-10, -19, ATTR0_WIDE, ATTR1_16x8 | ATTR1_VFLIP, 512, 8, 0),
     OAM_ENTRY(5, -13, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
@@ -207,57 +207,57 @@ const u16 sOamFrame_83B3C68[] = {
     OAM_ENTRY(-10, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 588, 8, 0),
     OAM_ENTRY(-13, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3C88[] = {
+const u16 sSpearMaskGettingUpOam_Frame1[] = {
     4,
     OAM_ENTRY(-10, -21, ATTR0_WIDE, ATTR1_16x8, 528, 8, 0),
     OAM_ENTRY(4, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-11, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 576, 8, 0),
     OAM_ENTRY(-14, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3CA2[] = {
+const u16 sSpearMaskGettingUpOam_Frame2[] = {
     4,
     OAM_ENTRY(-10, -23, ATTR0_WIDE, ATTR1_16x8, 562, 8, 0),
     OAM_ENTRY(5, -14, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-10, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 576, 8, 0),
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3CBC[] = {
+const u16 sSpearMaskGettingUpOam_Frame3[] = {
     4,
     OAM_ENTRY(-6, -22, ATTR0_WIDE, ATTR1_16x8, 530, 8, 0),
     OAM_ENTRY(5, -13, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-10, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 576, 8, 0),
     OAM_ENTRY(-13, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3CD6[] = {
+const u16 sSpearMaskGettingUpOam_Frame4[] = {
     2,
     OAM_ENTRY(-9, -21, ATTR0_WIDE, ATTR1_16x8, 528, 8, 0),
     OAM_ENTRY(-10, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 576, 8, 0),
 };
-const u16 sOamFrame_83B3CE4[] = {
+const u16 sSpearMaskGettingUpOam_Frame5[] = {
     1,
     OAM_ENTRY(-8, -16, ATTR0_SQUARE, ATTR1_16x16, 528, 8, 0),
 };
-const u16 sOamFrame_83B3CEC[] = {
+const u16 sSpearMaskGettingUpOam_Frame6[] = {
     4,
     OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-6, -8, ATTR0_WIDE, ATTR1_16x8, 558, 8, 0),
     OAM_ENTRY(-6, -22, ATTR0_SQUARE, ATTR1_16x16, 582, 8, 0),
     OAM_ENTRY(-12, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3D06[] = {
+const u16 sSpearMaskGettingUpOam_Frame7[] = {
     4,
     OAM_ENTRY(4, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-6, -8, ATTR0_WIDE, ATTR1_16x8, 556, 8, 0),
     OAM_ENTRY(-6, -24, ATTR0_SQUARE, ATTR1_16x16, 582, 8, 0),
     OAM_ENTRY(-12, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3D20[] = {
+const u16 sSpearMaskGettingUpOam_Frame8[] = {
     3,
     OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-6, -8, ATTR0_WIDE, ATTR1_16x8, 524, 8, 0),
     OAM_ENTRY(-6, -24, ATTR0_SQUARE, ATTR1_16x16, 582, 8, 0),
 };
-const u16 sOamFrame_83B3D34[] = {
+const u16 sSpearMaskGettingUpOam_Frame9[] = {
     5,
     OAM_ENTRY(-3, -16, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 566, 8, 0),
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
@@ -265,7 +265,7 @@ const u16 sOamFrame_83B3D34[] = {
     OAM_ENTRY(-6, -21, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 588, 8, 0),
     OAM_ENTRY(4, -13, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
 };
-const u16 sOamFrame_83B3D54[] = {
+const u16 sSpearMaskGettingUpOam_Frame10[] = {
     5,
     OAM_ENTRY(-4, -16, ATTR0_SQUARE, ATTR1_8x8, 566, 8, 0),
     OAM_ENTRY(-13, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
@@ -273,7 +273,7 @@ const u16 sOamFrame_83B3D54[] = {
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8 | ATTR1_HFLIP, 526, 8, 0),
     OAM_ENTRY(-8, -21, ATTR0_SQUARE, ATTR1_16x16, 578, 8, 0),
 };
-const u16 sOamFrame_83B3D74[] = {
+const u16 sSpearMaskGettingUpOam_Frame11[] = {
     5,
     OAM_ENTRY(-5, -17, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 566, 8, 0),
     OAM_ENTRY(5, -14, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
@@ -281,21 +281,21 @@ const u16 sOamFrame_83B3D74[] = {
     OAM_ENTRY(-10, -22, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3D94[] = {
+const u16 sSpearMaskGettingUpOam_Frame12[] = {
     4,
     OAM_ENTRY(5, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-10, -20, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 518, 8, 0),
     OAM_ENTRY(-13, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B3DAE[] = {
+const u16 sSpearMaskGettingUpOam_Frame13[] = {
     4,
     OAM_ENTRY(5, -14, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3DC8[] = {
+const u16 sSpearMaskTurningOam_Frame3[] = {
     3,
     OAM_ENTRY(-13, -13, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
@@ -325,7 +325,7 @@ const u16 sSpearMaskSpearTwirlingOam_Frame4[] = {
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3E2C[] = {
+const u16 sSpearMaskTurningOam_Frame1[] = {
     5,
     OAM_ENTRY(-13, -11, ATTR0_SQUARE, ATTR1_8x8, 595, 8, 0),
     OAM_ENTRY(-5, -12, ATTR0_SQUARE, ATTR1_8x8, 596, 8, 0),
@@ -333,7 +333,7 @@ const u16 sOamFrame_83B3E2C[] = {
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3E4C[] = {
+const u16 sSpearMaskTurningOam_Frame2[] = {
     5,
     OAM_ENTRY(-13, -15, ATTR0_SQUARE, ATTR1_8x8, 595, 8, 0),
     OAM_ENTRY(-5, -14, ATTR0_SQUARE, ATTR1_8x8, 596, 8, 0),
@@ -403,68 +403,68 @@ const u16 sOamFrame_83B3F46[] = {
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 588, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3F60[] = {
+const u16 sSpearMaskStartingCaseOam_Frame1[] = {
     3,
     OAM_ENTRY(-15, -19, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -19, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 518, 8, 0),
 };
-const u16 sOamFrame_83B3F74[] = {
+const u16 sSpearMaskStartingCaseOam_Frame2[] = {
     3,
     OAM_ENTRY(-15, -21, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3F88[] = {
+const u16 sSpearMaskStartingCaseOam_Frame3[] = {
     3,
     OAM_ENTRY(-15, -25, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
 };
-const u16 sOamFrame_83B3F9C[] = {
+const u16 sSpearMaskChasingOam_Frame1[] = {
     3,
     OAM_ENTRY(-14, -22, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -8, ATTR0_WIDE, ATTR1_16x8, 512, 8, 0),
     OAM_ENTRY(-10, -20, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
 };
-const u16 sOamFrame_83B3FB0[] = {
+const u16 sSpearMaskChasingOam_Frame2[] = {
     3,
     OAM_ENTRY(-17, -26, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-9, -8, ATTR0_WIDE, ATTR1_16x8, 544, 8, 0),
     OAM_ENTRY(-10, -22, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
 };
-const u16 sOamFrame_83B3FC4[] = {
+const u16 sSpearMaskChasingOam_Frame3[] = {
     3,
     OAM_ENTRY(-16, -23, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 514, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
 };
-const u16 sOamFrame_83B3FD8[] = {
+const u16 sSpearMaskChasingOam_Frame4[] = {
     3,
     OAM_ENTRY(-16, -22, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 546, 8, 0),
     OAM_ENTRY(-10, -20, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
 };
-const u16 sOamFrame_83B3FEC[] = {
+const u16 sSpearMaskChasingOam_Frame5[] = {
     3,
     OAM_ENTRY(-15, -26, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-6, -8, ATTR0_WIDE, ATTR1_16x8, 516, 8, 0),
     OAM_ENTRY(-10, -22, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
 };
-const u16 sOamFrame_83B4000[] = {
+const u16 sSpearMaskChasingOam_Frame6[] = {
     3,
     OAM_ENTRY(-15, -24, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 584, 8, 0),
     OAM_ENTRY(-7, -8, ATTR0_WIDE, ATTR1_16x8, 548, 8, 0),
 };
-const u16 sOamFrame_83B4014[] = {
+const u16 sSpearMaskTransforming1Oam_Frame1[] = {
     4,
     OAM_ENTRY(5, -12, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 586, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
     OAM_ENTRY(-13, -12, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B402E[] = {
+const u16 sSpearMaskTransforming2Oam_Frame1[] = {
     4,
     OAM_ENTRY(5, -12, ATTR0_SQUARE, ATTR1_8x8, 564, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 586, 8, 0),
@@ -478,14 +478,14 @@ const u16 sOamFrame_83B4048[] = {
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 518, 8, 0),
     OAM_ENTRY(-13, -11, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B4062[] = {
+const u16 sSpearMaskRecoveringOam_Frame1[] = {
     4,
     OAM_ENTRY(5, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 564, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
     OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 550, 8, 0),
     OAM_ENTRY(-13, -13, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
-const u16 sOamFrame_83B407C[] = {
+const u16 sSpearMaskRecoveringOam_Frame2[] = {
     3,
     OAM_ENTRY(-16, -10, ATTR0_WIDE, ATTR1_32x8, 595, 8, 0),
     OAM_ENTRY(-10, -21, ATTR0_SQUARE, ATTR1_16x16, 576, 8, 0),
@@ -550,83 +550,83 @@ const u16 sOamFrame_83B4152[] = {
     OAM_ENTRY(-13, -14, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP | ATTR1_VFLIP, 564, 8, 0),
 };
 
-const AnimationFrame sSpearMaskTurningOam[] = {
-    { sSpearMaskTuringOam_Frame1, 7 },
-    { sSpearMaskTuringOam_Frame2, 7 },
-    { sSpearMaskTuringOam_Frame3, 7 },
-    { sSpearMaskTuringOam_Frame4, 7 },
-    { sSpearMaskTuringOam_Frame5, 7 },
-    { sSpearMaskTuringOam_Frame6, 7 },
+const AnimationFrame sSpearMaskWalkingOam[] = {
+    { sSpearMaskWalkingOam_Frame1, 7 },
+    { sSpearMaskWalkingOam_Frame2, 7 },
+    { sSpearMaskWalkingOam_Frame3, 7 },
+    { sSpearMaskWalkingOam_Frame4, 7 },
+    { sSpearMaskWalkingOam_Frame5, 7 },
+    { sSpearMaskWalkingOam_Frame6, 7 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B41A4[] = {
-    { sOamFrame_83B3AB8, 2 },
-    { sOamFrame_83B3AC6, 5 },
+const AnimationFrame sSpearMaskCrushedOam[] = {
+    { sSpearMaskCrushedOam_Frame1, 2 },
+    { sSpearMaskCrushedOam_Frame2, 5 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B41BC[] = {
-    { sOamFrame_83B3ACE, 18 },
-    { sOamFrame_83B3AE2, 40 },
+const AnimationFrame sSpearMaskBashedOam[] = {
+    { sSpearMaskBashedOam_Frame1, 18 },
+    { sSpearMaskBashedOam_Frame2, 40 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B41D4[] = {
-    { sOamFrame_83B3AEA, 5 },
-    { sOamFrame_83B3B04, 7 },
+const AnimationFrame sSpearMaskTurning1Oam[] = {
+    { sSpearMaskTurning1Oam_Frame1, 5 },
+    { sSpearMaskTurning1Oam_Frame2, 7 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B41EC[] = {
-    { sOamFrame_83B3B1E, 6 },
-    { sOamFrame_83B3B38, 6 },
-    { sOamFrame_83B3B52, 6 },
+const AnimationFrame sSpearMaskTurning2Oam[] = {
+    { sSpearMaskTurning2Oam_Frame1, 6 },
+    { sSpearMaskTurning2Oam_Frame2, 6 },
+    { sSpearMaskTurning2Oam_Frame3, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B420C[] = {
-    { sOamFrame_83B3B6C, 8 },
-    { sOamFrame_83B3B86, 8 },
+const AnimationFrame sSpearMaskTurning3Oam[] = {
+    { sSpearMaskTurning3Oam_Frame1, 8 },
+    { sSpearMaskTurning3Oam_Frame2, 8 },
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B4224[] = {
     { sOamFrame_83B3B9A, 7 },
-    { sOamFrame_83B3BB4, 10 },
+    { sSpearMaskHitWarioOam_Frame1, 10 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B423C[] = {
-    { sOamFrame_83B3BC8, 6 },
-    { sOamFrame_83B3BE8, 6 },
-    { sOamFrame_83B3C08, 6 },
-    { sOamFrame_83B3C28, 6 },
-    { sOamFrame_83B3C48, 6 },
-    { sOamFrame_83B3C68, 6 },
+const AnimationFrame sSpearMaskStunnedOam[] = {
+    { sSpearMaskStunnedOam_Frame1, 6 },
+    { sSpearMaskStunnedOam_Frame2, 6 },
+    { sSpearMaskStunnedOam_Frame3, 6 },
+    { sSpearMaskStunnedOam_Frame4, 6 },
+    { sSpearMaskStunnedOam_Frame5, 6 },
+    { sSpearMaskStunnedOam_Frame6, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4274[] = {
-    { sOamFrame_83B3C88, 5 },
-    { sOamFrame_83B3CA2, 5 },
-    { sOamFrame_83B3CBC, 5 },
-    { sOamFrame_83B3CA2, 5 },
-    { sOamFrame_83B3C88, 5 },
-    { sOamFrame_83B3CA2, 5 },
-    { sOamFrame_83B3CBC, 5 },
-    { sOamFrame_83B3CA2, 5 },
-    { sOamFrame_83B3CD6, 5 },
-    { sOamFrame_83B3CE4, 5 },
-    { sOamFrame_83B3CEC, 10 },
-    { sOamFrame_83B3D06, 5 },
-    { sOamFrame_83B3D20, 5 },
-    { sOamFrame_83B3D34, 5 },
-    { sOamFrame_83B3D54, 5 },
-    { sOamFrame_83B3D74, 5 },
-    { sOamFrame_83B3D94, 5 },
-    { sOamFrame_83B3DAE, 5 },
+const AnimationFrame sSpearMaskGettingUpOam[] = {
+    { sSpearMaskGettingUpOam_Frame1, 5 },
+    { sSpearMaskGettingUpOam_Frame2, 5 },
+    { sSpearMaskGettingUpOam_Frame3, 5 },
+    { sSpearMaskGettingUpOam_Frame2, 5 },
+    { sSpearMaskGettingUpOam_Frame1, 5 },
+    { sSpearMaskGettingUpOam_Frame2, 5 },
+    { sSpearMaskGettingUpOam_Frame3, 5 },
+    { sSpearMaskGettingUpOam_Frame2, 5 },
+    { sSpearMaskGettingUpOam_Frame4, 5 },
+    { sSpearMaskGettingUpOam_Frame5, 5 },
+    { sSpearMaskGettingUpOam_Frame6, 10 },
+    { sSpearMaskGettingUpOam_Frame7, 5 },
+    { sSpearMaskGettingUpOam_Frame8, 5 },
+    { sSpearMaskGettingUpOam_Frame9, 5 },
+    { sSpearMaskGettingUpOam_Frame10, 5 },
+    { sSpearMaskGettingUpOam_Frame11, 5 },
+    { sSpearMaskGettingUpOam_Frame12, 5 },
+    { sSpearMaskGettingUpOam_Frame13, 5 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B430C[] = {
-    { sOamFrame_83B4014, 6 },
+const AnimationFrame sSpearMaskTransforming1Oam[] = {
+    { sSpearMaskTransforming1Oam_Frame1, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B431C[] = {
-    { sOamFrame_83B402E, 5 },
-    { sOamFrame_83B4014, 5 },
+const AnimationFrame sSpearMaskTransforming2Oam[] = {
+    { sSpearMaskTransforming2Oam_Frame1, 5 },
+    { sSpearMaskTransforming1Oam_Frame1, 5 },
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B4334[] = {
@@ -634,25 +634,25 @@ const AnimationFrame sSpearMaskOam_83B4334[] = {
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B4344[] = {
-    { sOamFrame_83B3AE2, 4 },
+    { sSpearMaskBashedOam_Frame2, 4 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4354[] = {
-    { sOamFrame_83B3BB4, 4 },
+const AnimationFrame sSpearMaskHitWarioOam[] = {
+    { sSpearMaskHitWarioOam_Frame1, 4 },
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B4364[] = {
-    { sOamFrame_83B3DAE, 6 },
+    { sSpearMaskGettingUpOam_Frame13, 6 },
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B4374[] = {
-    { sOamFrame_83B407C, 4 },
+    { sSpearMaskRecoveringOam_Frame2, 4 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4384[] = {
-    { sOamFrame_83B4062, 5 },
-    { sOamFrame_83B3DAE, 5 },
-    { sOamFrame_83B407C, 10 },
+const AnimationFrame sSpearMaskRecoveringOam[] = {
+    { sSpearMaskRecoveringOam_Frame1, 5 },
+    { sSpearMaskGettingUpOam_Frame13, 5 },
+    { sSpearMaskRecoveringOam_Frame2, 10 },
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B43A4[] = {
@@ -671,10 +671,10 @@ const AnimationFrame sSpearMaskSpearTwirlingOam[] = {
     { sSpearMaskSpearTwirlingOam_Frame4, 7 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4404[] = {
-    { sOamFrame_83B3E2C, 6 },
-    { sOamFrame_83B3E4C, 6 },
-    { sOamFrame_83B3DC8, 8 },
+const AnimationFrame sSpearMaskTurningOam[] = {
+    { sSpearMaskTurningOam_Frame1, 6 },
+    { sSpearMaskTurningOam_Frame2, 6 },
+    { sSpearMaskTurningOam_Frame3, 8 },
     ANIMATION_TERMINATOR
 };
 const AnimationFrame sSpearMaskOam_83B4424[] = {
@@ -706,25 +706,25 @@ const AnimationFrame sSpearMaskOam_83B44AC[] = {
     { sOamFrame_83B3E86, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B44BC[] = {
-    { sOamFrame_83B3F60, 6 },
-    { sOamFrame_83B3F74, 6 },
-    { sOamFrame_83B3F88, 6 },
-    { sOamFrame_83B3F74, 6 },
+const AnimationFrame sSpearMaskStartingChaseOam[] = {
+    { sSpearMaskStartingCaseOam_Frame1, 6 },
+    { sSpearMaskStartingCaseOam_Frame2, 6 },
+    { sSpearMaskStartingCaseOam_Frame3, 6 },
+    { sSpearMaskStartingCaseOam_Frame2, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B44E4[] = {
-    { sOamFrame_83B3F9C, 4 },
-    { sOamFrame_83B3FB0, 4 },
-    { sOamFrame_83B3FC4, 4 },
-    { sOamFrame_83B3FD8, 4 },
-    { sOamFrame_83B3FEC, 4 },
-    { sOamFrame_83B4000, 4 },
+const AnimationFrame sSpearMaskChasingOam[] = {
+    { sSpearMaskChasingOam_Frame1, 4 },
+    { sSpearMaskChasingOam_Frame2, 4 },
+    { sSpearMaskChasingOam_Frame3, 4 },
+    { sSpearMaskChasingOam_Frame4, 4 },
+    { sSpearMaskChasingOam_Frame5, 4 },
+    { sSpearMaskChasingOam_Frame6, 4 },
     ANIMATION_TERMINATOR
 };
 
 
-static void SpearMask_SetWalkingHitbox(void) {
+void SpearMask_SetWalkingHitbox(void) {
     if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
         gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE;
         gCurrentSprite.hitboxExtentRight = 3 * QUARTER_BLOCK_SIZE;
@@ -734,7 +734,7 @@ static void SpearMask_SetWalkingHitbox(void) {
     }
 }
 
-static void SpearMask_Init(void) {
+void SpearMask_Init(void) {
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS * 3 / 2;
     gCurrentSprite.drawDistanceUp = 0;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS * 3 / 2;
@@ -754,12 +754,12 @@ static void SpearMask_Init(void) {
     }
 }
 
-static void SpearMask_WalkInit(void) {
+void SpearMask_InitWalk(void) {
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_IDLE;
     if (gCurrentSprite.globalID == PSPRITE_SPEAR_MASK_YELLOW) {
-        gCurrentSprite.pOamData = sSpearMaskTurningOam;
+        gCurrentSprite.pOamData = sSpearMaskWalkingOam;
         gCurrentSprite.warioInteractionFlags = 3;
         SpearMask_SetWalkingHitbox();
     } else {
@@ -772,7 +772,7 @@ static void SpearMask_WalkInit(void) {
     }
 }
 
-static void SpearMask_WalkYellow(void) {
+void SpearMask_WalkYellow(void) {
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -817,8 +817,8 @@ static void SpearMask_WalkYellow(void) {
     func_8026374();
 }
 
-static void SpearMask_TurnInit(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B41D4;
+void SpearMask_TurnInit(void) {
+    gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_12;
@@ -827,7 +827,7 @@ static void SpearMask_TurnInit(void) {
     SpearMask_SetWalkingHitbox();
 }
 
-static void SpearMask_Turning(void) {
+void SpearMask_Turn(void) {
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -843,7 +843,7 @@ static void SpearMask_Turning(void) {
     switch (gCurrentSprite.pose) {
         case POSE_12:
             gCurrentSprite.warioInteractionFlags = 1;
-            gCurrentSprite.pOamData = sSpearMaskOam_83B41EC;
+            gCurrentSprite.pOamData = sSpearMaskTurning2Oam;
             gCurrentSprite.currentAnimationFrame = 0;
             gCurrentSprite.animationTimer = 0;
             gCurrentSprite.pose = POSE_14;
@@ -856,7 +856,7 @@ static void SpearMask_Turning(void) {
             gCurrentSprite.statusBits ^= SPRITE_STATUS_FACING_RIGHT;
             gCurrentSprite.warioInteractionFlags = 3;
             SpearMask_SetWalkingHitbox();
-            gCurrentSprite.pOamData = sSpearMaskOam_83B420C;
+            gCurrentSprite.pOamData = sSpearMaskTurning3Oam;
             gCurrentSprite.currentAnimationFrame = 0;
             gCurrentSprite.animationTimer = 0;
             gCurrentSprite.pose = POSE_16;
@@ -869,8 +869,8 @@ static void SpearMask_Turning(void) {
     }
 }
 
-static void SpearMask_Pose17(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B4384;
+void SpearMask_Pose17(void) {
+    gCurrentSprite.pOamData = sSpearMaskRecoveringOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_18;
@@ -880,15 +880,15 @@ static void SpearMask_Pose17(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-static void SpearMask_Pose19(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B4274;
+void SpearMask_GetUpInit(void) {
+    gCurrentSprite.pOamData = sSpearMaskGettingUpOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pose = POSE_1A;
     gCurrentSprite.work0 = CONVERT_SECONDS(1.0 + 7.0 / 12.0);
 }
 
-static void SpearMask_Pose1A(void) {
+void SpearMask_GetUp(void) {
     u8 timer;
 
     timer = gCurrentSprite.work0;
@@ -922,7 +922,7 @@ static void SpearMask_Pose1A(void) {
     TIMER_COUNT_DOWN(gCurrentSprite.work0);
 }
 
-static void SpearMask_Pose1B(void) {
+void SpearMask_Pose1B(void) {
     gCurrentSprite.pOamData = sSpearMaskOam_83B43A4;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -931,8 +931,8 @@ static void SpearMask_Pose1B(void) {
     gCurrentSprite.warioInteractionFlags = 1;
 }
 
-static void SpearMask_Pose1D(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B423C;
+void SpearMask_Pose1D(void) {
+    gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_1E;
@@ -943,10 +943,10 @@ static void SpearMask_Pose1D(void) {
 }
 
 // Defeated somehow
-static void SpearMask_80273C0(void) {
+void SpearMask_80273C0(void) {
     u32 value;
 
-    gCurrentSprite.pOamData = sSpearMaskOam_83B41BC;
+    gCurrentSprite.pOamData = sSpearMaskBashedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.unk_1D = 0;
@@ -971,21 +971,21 @@ static void SpearMask_80273C0(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-static void SpearMask_Pose1F(void) {
+void SpearMask_Pose1F(void) {
     gCurrentSprite.pose = POSE_20;
     SpearMask_80273C0();
 }
 
-static void SpearMask_Pose21(void) {
+void SpearMask_Pose21(void) {
     gCurrentSprite.pose = POSE_22;
     SpearMask_80273C0();
 }
 
 // Defeated a different way
-static void SpearMask_8027474(void) {
+void SpearMask_8027474(void) {
     u32 value;
 
-    gCurrentSprite.pOamData = sSpearMaskOam_83B41BC;
+    gCurrentSprite.pOamData = sSpearMaskBashedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.unk_1D = 0;
@@ -1008,17 +1008,17 @@ static void SpearMask_8027474(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-static void SpearMask_Pose6A(void) {
+void SpearMask_Pose6A(void) {
     gCurrentSprite.pose = POSE_20;
     SpearMask_8027474();
 }
 
-static void SpearMask_Pose69(void) {
+void SpearMask_Pose69(void) {
     gCurrentSprite.pose = POSE_22;
     SpearMask_8027474();
 }
 
-static void SpearMask_8027514(void) {
+void SpearMask_8027514(void) {
     gCurrentSprite.pOamData = sSpearMaskOam_83B4364;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -1030,18 +1030,18 @@ static void SpearMask_8027514(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-static void SpearMask_Pose23(void) {
+void SpearMask_Pose23(void) {
     gCurrentSprite.pose = POSE_24;
     SpearMask_8027514();
 }
 
-static void SpearMask_Pose25(void) {
+void SpearMask_Pose25(void) {
     gCurrentSprite.pose = POSE_26;
     SpearMask_8027514();
 }
 
-static void SpearMask_802757C(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B4354;
+void SpearMask_HitWario(void) {
+    gCurrentSprite.pOamData = sSpearMaskHitWarioOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work0 = CONVERT_SECONDS(0.2);
@@ -1049,28 +1049,28 @@ static void SpearMask_802757C(void) {
     gCurrentSprite.work2 = 8;
 }
 
-static void SpearMask_Pose27(void) {
+void SpearMask_HitWario_27(void) {
     gCurrentSprite.pose = POSE_28;
-    SpearMask_802757C();
+    SpearMask_HitWario();
 }
 
-static void SpearMask_Pose29(void) {
+void SpearMask_HitWario_29(void) {
     gCurrentSprite.pose = POSE_2A;
-    SpearMask_802757C();
+    SpearMask_HitWario();
 }
 
-static void SpearMask_80275D4(void) {
+void SpearMask_80275D4(void) {
     gCurrentSprite.work0 = CONVERT_SECONDS(1.0 / 3.0);
     gCurrentSprite.work1 = 0;
     gCurrentSprite.work2 = 8;
 }
 
-static void SpearMask_Pose6E(void) {
+void SpearMask_Pose6E(void) {
     gCurrentSprite.pose = SPEAR_MASK_POSE_6F;
     SpearMask_80275D4();
 }
 
-static void SpearMask_Pose6F(void) {
+void SpearMask_Pose6F(void) {
     func_80238A4();
 
     if (gCurrentSprite.work2 >= 4) {
@@ -1079,7 +1079,7 @@ static void SpearMask_Pose6F(void) {
     }
 
     if (gCurrentSprite.work0 == CONVERT_SECONDS(1.0 / 3.0)) {
-        gCurrentSprite.pOamData = sSpearMaskOam_83B4404;
+        gCurrentSprite.pOamData = sSpearMaskTurningOam;
         gCurrentSprite.currentAnimationFrame = 0;
         gCurrentSprite.animationTimer = 0;
         gCurrentSprite.warioInteractionFlags = 3;
@@ -1092,12 +1092,12 @@ static void SpearMask_Pose6F(void) {
     }
 }
 
-static void SpearMask_Pose70(void) {
+void SpearMask_Pose70(void) {
     gCurrentSprite.pose = SPEAR_MASK_POSE_71;
     SpearMask_80275D4();
 }
 
-static void SpearMask_Pose71(void) {
+void SpearMask_Pose71(void) {
     func_80238A4();
 
     if (gCurrentSprite.work2 >= 4) {
@@ -1106,7 +1106,7 @@ static void SpearMask_Pose71(void) {
     }
 
     if (gCurrentSprite.work0 == CONVERT_SECONDS(1.0 / 3.0)) {
-        gCurrentSprite.pOamData = sSpearMaskOam_83B4404;
+        gCurrentSprite.pOamData = sSpearMaskTurningOam;
         gCurrentSprite.currentAnimationFrame = 0;
         gCurrentSprite.animationTimer = 0;
         gCurrentSprite.warioInteractionFlags = 3;
@@ -1119,8 +1119,8 @@ static void SpearMask_Pose71(void) {
     }
 }
 
-static void SpearMask_80276C4(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B423C;
+void SpearMask_80276C4(void) {
+    gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work1 = 0;
@@ -1129,21 +1129,20 @@ static void SpearMask_80276C4(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-static void SpearMask_Pose2B(void) {
+void SpearMask_Pose2B(void) {
     gCurrentSprite.pose = POSE_2C;
     SpearMask_80276C4();
 }
 
-static void SpearMask_Pose2D(void) {
+void SpearMask_Pose2D(void) {
     gCurrentSprite.pose = POSE_2E;
     SpearMask_80276C4();
 }
 
-// Defeated a third way
-static void SpearMask_Pose31(void) {
+void SpearMask_Crushed(void) {
     u32 value;
 
-    gCurrentSprite.pOamData = sSpearMaskOam_83B41A4;
+    gCurrentSprite.pOamData = sSpearMaskCrushedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_32;
@@ -1165,7 +1164,7 @@ static void SpearMask_Pose31(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-static void SpearMask_InstantlyKill(void) {
+void SpearMask_InstantlyKill(void) {
     u32 value;
 
     switch (gCurrentSprite.globalID) {
@@ -1184,8 +1183,8 @@ static void SpearMask_InstantlyKill(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-static void SpearMask_80277E0(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B423C;
+void SpearMask_80277E0(void) {
+    gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.work0 = CONVERT_SECONDS(1.0 / 15.0);
@@ -1198,18 +1197,18 @@ static void SpearMask_80277E0(void) {
     }
 }
 
-static void SpearMask_Pose33(void) {
+void SpearMask_Pose33(void) {
     gCurrentSprite.pose = POSE_34;
     SpearMask_80277E0();
 }
 
-static void SpearMask_Pose35(void) {
+void SpearMask_Pose35(void) {
     gCurrentSprite.pose = POSE_36;
     SpearMask_80277E0();
 }
 
-static void SpearMask_802784C(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B423C;
+void SpearMask_802784C(void) {
+    gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.work2 = 8;
@@ -1219,18 +1218,18 @@ static void SpearMask_802784C(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-static void SpearMask_Pose47(void) {
+void SpearMask_Pose47(void) {
     gCurrentSprite.pose = POSE_48;
     SpearMask_802784C();
 }
 
-static void SpearMask_Pose49(void) {
+void SpearMask_Pose49(void) {
     gCurrentSprite.pose = POSE_4A;
     SpearMask_802784C();
 }
 
-static void SpearMask_Transform(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B430C;
+void SpearMask_InitTransform(void) {
+    gCurrentSprite.pOamData = sSpearMaskTransforming1Oam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pose = POSE_4C;
@@ -1256,7 +1255,7 @@ static void SpearMask_Transform(void) {
     }
 }
 
-static void SpearMask_Transforming(void) {
+void SpearMask_Transform(void) {
     s16 yVelocity;
     u8 frame;
 
@@ -1280,14 +1279,14 @@ static void SpearMask_Transforming(void) {
         return;
     }
 
-    gCurrentSprite.pOamData = sSpearMaskOam_83B431C;
+    gCurrentSprite.pOamData = sSpearMaskTransforming2Oam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pose = POSE_4D;
     gCurrentSprite.work3 = 0;
 }
 
-static void SpearMask_Pose4D(void) {
+void SpearMask_Pose4D(void) {
     u32 yPosition;
     s16 yVelocity;
     u8 frame;
@@ -1317,7 +1316,7 @@ static void SpearMask_Pose4D(void) {
     }
 }
 
-static void SpearMask_Pose4E(void) {
+void SpearMask_Pose4E(void) {
     TIMER_COUNT_DOWN(gCurrentSprite.work0);
     if (gCurrentSprite.work0) {
         func_8023B88();
@@ -1329,42 +1328,42 @@ static void SpearMask_Pose4E(void) {
     }
 }
 
-static void SpearMask_8027A8C(void) {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B423C;
+void SpearMask_8027A8C(void) {
+    gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
 }
 
-static void SpearMask_Pose51(void) {
+void SpearMask_Pose51(void) {
     gCurrentSprite.pose = POSE_52;
     SpearMask_8027A8C();
 }
 
-static void SpearMask_Pose53(void) {
+void SpearMask_Pose53(void) {
     gCurrentSprite.pose = POSE_54;
     SpearMask_8027A8C();
 }
 
-static void SpearMask_8027ACC(void) {
+void SpearMask_8027ACC(void) {
     gCurrentSprite.disableWarioInteraction = 1;
-    gCurrentSprite.pOamData = sSpearMaskOam_83B423C;
+    gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
 }
 
-static void SpearMask_Pose57(void) {
+void SpearMask_Pose57(void) {
     gCurrentSprite.pose = POSE_58;
     SpearMask_8027ACC();
 }
 
-static void SpearMask_Pose55(void) {
+void SpearMask_Pose55(void) {
     gCurrentSprite.pose = POSE_56;
     SpearMask_8027ACC();
 }
 
-static void SpearMask_8027B10(void) {
-    gCurrentSprite.pose = SPEAR_MASK_POSE_73;
-    gCurrentSprite.pOamData = sSpearMaskOam_83B44BC;
+void SpearMask_StartChasing(void) {
+    gCurrentSprite.pose = SPEAR_MASK_STARTING_CHASE;
+    gCurrentSprite.pOamData = sSpearMaskStartingChaseOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.warioInteractionFlags = 3;
@@ -1372,7 +1371,7 @@ static void SpearMask_8027B10(void) {
     gCurrentSprite.work0 = CONVERT_SECONDS(0.4);
 }
 
-static void SpearMask_Pose73(void) {
+void SpearMask_StartChase(void) {
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -1384,13 +1383,13 @@ static void SpearMask_Pose73(void) {
     if (gCurrentSprite.work0 != 0) {
         return;
     }
-    gCurrentSprite.pose = SPEAR_MASK_POSE_75;
-    gCurrentSprite.pOamData = sSpearMaskOam_83B44E4;
+    gCurrentSprite.pose = SPEAR_MASK_CHASING;
+    gCurrentSprite.pOamData = sSpearMaskChasingOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
 }
 
-static void SpearMask_WalkBlueOrRed(void) {
+void SpearMask_WalkBlueOrRed(void) {
     u32 temp;
 
     func_80238A4();
@@ -1411,7 +1410,7 @@ static void SpearMask_WalkBlueOrRed(void) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
                 if (!gUnk_3000A51) {
                     gCurrentSprite.pose = POSE_11;
-                    gCurrentSprite.pOamData = sSpearMaskOam_83B41D4;
+                    gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
                     gCurrentSprite.currentAnimationFrame = 0;
                     gCurrentSprite.animationTimer = 0;
                     return;
@@ -1419,7 +1418,7 @@ static void SpearMask_WalkBlueOrRed(void) {
                 func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
                 if (gUnk_3000A51 == 0x11) {
                     gCurrentSprite.pose = POSE_11;
-                    gCurrentSprite.pOamData = sSpearMaskOam_83B41D4;
+                    gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
                     gCurrentSprite.currentAnimationFrame = 0;
                     gCurrentSprite.animationTimer = 0;
                     return;
@@ -1430,7 +1429,7 @@ static void SpearMask_WalkBlueOrRed(void) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
                 if (!gUnk_3000A51) {
                     gCurrentSprite.pose = POSE_11;
-                    gCurrentSprite.pOamData = sSpearMaskOam_83B41D4;
+                    gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
                     gCurrentSprite.currentAnimationFrame = 0;
                     gCurrentSprite.animationTimer = 0;
                     return;
@@ -1438,7 +1437,7 @@ static void SpearMask_WalkBlueOrRed(void) {
                 func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
                 if (gUnk_3000A51 == 0x11) {
                     gCurrentSprite.pose = POSE_11;
-                    gCurrentSprite.pOamData = sSpearMaskOam_83B41D4;
+                    gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
                     gCurrentSprite.currentAnimationFrame = 0;
                     gCurrentSprite.animationTimer = 0;
                     return;
@@ -1450,14 +1449,14 @@ static void SpearMask_WalkBlueOrRed(void) {
     if (gCurrentSprite.work0 != 0) {
         TIMER_COUNT_DOWN(gCurrentSprite.work0);
         if (gCurrentSprite.work0 == 0) {
-            gCurrentSprite.pOamData = sSpearMaskTurningOam;
+            gCurrentSprite.pOamData = sSpearMaskWalkingOam;
             gCurrentSprite.currentAnimationFrame = 0;
             gCurrentSprite.animationTimer = 0;
         } else {
             // What
             switch (gCurrentSprite.work0) {
                 case CONVERT_SECONDS(1.0 / 3.0):
-                    gCurrentSprite.pOamData = sSpearMaskOam_83B4404;
+                    gCurrentSprite.pOamData = sSpearMaskTurningOam;
                     gCurrentSprite.currentAnimationFrame = 0;
                     gCurrentSprite.animationTimer = 0;
                     gCurrentSprite.warioInteractionFlags = 3;
@@ -1472,13 +1471,13 @@ static void SpearMask_WalkBlueOrRed(void) {
             temp = func_8026210(0x7F, 400);
             if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
                 if (temp == 8) {
-                    SpearMask_8027B10();
+                    SpearMask_StartChasing();
                 } else {
                     func_8026374();
                 }
             } else {
                 if (temp == 4) {
-                    SpearMask_8027B10();
+                    SpearMask_StartChasing();
                 } else {
                     func_8026374();
                 }
@@ -1500,7 +1499,7 @@ void SpriteAI_SpearMask(void) {
         case POSE_INIT:
             SpearMask_Init();
         case POSE_IDLE_INIT:
-            SpearMask_WalkInit();
+            SpearMask_InitWalk();
         case POSE_IDLE:
             if (gCurrentSprite.globalID == PSPRITE_SPEAR_MASK_YELLOW) {
                 SpearMask_WalkYellow();
@@ -1514,7 +1513,7 @@ void SpriteAI_SpearMask(void) {
         case POSE_12:
         case POSE_14:
         case POSE_16:
-            SpearMask_Turning();
+            SpearMask_Turn();
             break;
 
         case POSE_17:
@@ -1524,9 +1523,9 @@ void SpriteAI_SpearMask(void) {
             break;
 
         case POSE_19:
-            SpearMask_Pose19();
+            SpearMask_GetUpInit();
         case POSE_1A:
-            SpearMask_Pose1A();
+            SpearMask_GetUp();
             break;
 
         case POSE_1B:
@@ -1568,13 +1567,13 @@ void SpriteAI_SpearMask(void) {
             break;
 
         case POSE_27:
-            SpearMask_Pose27();
+            SpearMask_HitWario_27();
         case POSE_28:
             func_8024444();
             break;
 
         case POSE_29:
-            SpearMask_Pose29();
+            SpearMask_HitWario_29();
         case POSE_2A:
             func_8024410();
             break;
@@ -1598,7 +1597,7 @@ void SpriteAI_SpearMask(void) {
             break;
 
         case POSE_31:
-            SpearMask_Pose31();
+            SpearMask_Crushed();
         case POSE_32:
             func_8024524();
             break;
@@ -1676,9 +1675,9 @@ void SpriteAI_SpearMask(void) {
             break;
 
         case POSE_4B:
-            SpearMask_Transform();
+            SpearMask_InitTransform();
         case POSE_4C:
-            SpearMask_Transforming();
+            SpearMask_Transform();
             break;
 
         case POSE_4D:
@@ -1789,11 +1788,11 @@ void SpriteAI_SpearMask(void) {
             SpearMask_Pose71();
             break;
 
-        case SPEAR_MASK_POSE_73:
-            SpearMask_Pose73();
+        case SPEAR_MASK_STARTING_CHASE:
+            SpearMask_StartChase();
             break;
 
-        case SPEAR_MASK_POSE_75:
+        case SPEAR_MASK_CHASING:
             SpearMask_WalkBlueOrRed();
             break;
 
