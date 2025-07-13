@@ -862,7 +862,7 @@ static void Coin_Pose30(void) {
     if (gCurrentSprite.work0 != 0) {
         TIMER_COUNT_DOWN(gCurrentSprite.work0);
         if (gCurrentSprite.work0 == 0) {
-            gCurrentSprite.unk_1D = CONVERT_SECONDS(2);
+            gCurrentSprite.health = CONVERT_SECONDS(2);
         }
     }
     func_8023B88();
@@ -1048,13 +1048,13 @@ static void ChanceWheelDiamond_Init(void) {
 void SpriteAI_Coin(void) {
     u8 despawnTimer;
 
-    despawnTimer = gCurrentSprite.unk_1D;
+    despawnTimer = gCurrentSprite.health;
     if (despawnTimer) {
         if ((despawnTimer & 1) == 0) {
             gCurrentSprite.statusBits = gCurrentSprite.statusBits ^ SPRITE_STATUS_HIDDEN;
         }
-        TIMER_COUNT_DOWN(gCurrentSprite.unk_1D);
-        if (gCurrentSprite.unk_1D == 0) {
+        TIMER_COUNT_DOWN(gCurrentSprite.health);
+        if (gCurrentSprite.health == 0) {
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             return;
         }

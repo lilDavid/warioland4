@@ -976,7 +976,7 @@ func_807714C:
 .L_7716c:
 	.4byte	gCurrentSecondarySprite
 .L_77170:
-	.4byte	gUnk_3000C38
+	.4byte	gCurrentShopItem
 .L_77174:
 	.4byte	.L_77178
 .L_77178:
@@ -3931,19 +3931,19 @@ func_80782A4:
 .L_7868c:
 	.4byte	0x040000d4
 .L_78690:
-	.4byte	sUnk_840F188
+	.4byte	sTimeUpTextPal
 .L_78694:
 	.4byte	0x05000240
 .L_78698:
 	.4byte	0x80000010
 .L_7869c:
-	.4byte	sUnk_8404988
+	.4byte	sTimeUpGfx + 0x300
 .L_786a0:
 	.4byte	0x06010380
 .L_786a4:
 	.4byte	0x80000080
 .L_786a8:
-	.4byte	sUnk_8404D88
+	.4byte	sTimeUpGfx + 0x700
 .L_786ac:
 	.4byte	0x06010780
 .L_786b0:
@@ -3959,7 +3959,7 @@ func_80782A4:
 .L_786c4:
 	.4byte	sUnk_8411AFC
 .L_786c8:
-	.4byte	sUnk_840F1A8
+	.4byte	sTimeUpWarioPal
 .L_786cc:
 	.4byte	0x05000200
 .L_786d0:
@@ -5079,7 +5079,7 @@ func_8078E30:
 .L_78f2c:
 	.4byte	0x040000d4
 .L_78f30:
-	.4byte	sUnk_8404548
+	.4byte	sJewelPieceIconPartialNEGfx
 .L_78f34:
 	.4byte	0x06011c20
 .L_78f38:
@@ -5097,7 +5097,7 @@ func_8078E30:
 .L_78f50:
 	.4byte	0x040000d4
 .L_78f54:
-	.4byte	sUnk_8404568
+	.4byte	sJewelPieceIconPartialSEGfx
 .L_78f58:
 	.4byte	0x06012020
 .L_78f5c:
@@ -5115,7 +5115,7 @@ func_8078E30:
 .L_78f74:
 	.4byte	0x040000d4
 .L_78f78:
-	.4byte	sUnk_8404588
+	.4byte	sJewelPieceIconPartialSWGfx
 .L_78f7c:
 	.4byte	0x06012000
 .L_78f80:
@@ -5154,7 +5154,7 @@ func_8078E30:
 .L_78fbc:
 	.4byte	0x040000d4
 .L_78fc0:
-	.4byte	sUnk_84045A8
+	.4byte	sJewelPieceIconPartialNWGfx
 .L_78fc4:
 	.4byte	0x06011c00
 .L_78fc8:
@@ -5195,7 +5195,7 @@ func_8078E30:
 .L_79008:
 	.4byte	0x040000d4
 .L_7900c:
-	.4byte	sUnk_8404548
+	.4byte	sJewelPieceIconPartialNEGfx
 .L_79010:
 	.4byte	0x06011c20
 .L_79014:
@@ -5210,7 +5210,7 @@ func_8078E30:
 .L_79024:
 	.4byte	0x040000d4
 .L_79028:
-	.4byte	sUnk_8404568
+	.4byte	sJewelPieceIconPartialSEGfx
 .L_7902c:
 	.4byte	0x06012020
 .L_79030:
@@ -5225,7 +5225,7 @@ func_8078E30:
 .L_79040:
 	.4byte	0x040000d4
 .L_79044:
-	.4byte	sUnk_8404588
+	.4byte	sJewelPieceIconPartialSWGfx
 .L_79048:
 	.4byte	0x06012000
 .L_7904c:
@@ -5250,7 +5250,7 @@ func_8078E30:
 .L_7906c:
 	.4byte	0x040000d4
 .L_79070:
-	.4byte	sUnk_84045A8
+	.4byte	sJewelPieceIconPartialNWGfx
 .L_79074:
 	.4byte	0x06011c00
 .L_79078:
@@ -5357,7 +5357,7 @@ func_807907C:
 .L_7912c:
 	.4byte	0x040000d4
 .L_79130:
-	.4byte	sUnk_8404648
+	.4byte	sCDIconPartialGfx
 .L_79134:
 	.4byte	0x060114c0
 .L_79138:
@@ -5381,9 +5381,8 @@ func_807907C:
 	bx	r0
 
 
-thumb_func_start func_807915A
-func_807915A:
-	.align	2, 0
+thumb_func_start func_807915C
+func_807915C:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, r9
 	mov	r6, r8
@@ -5596,13 +5595,13 @@ func_807915A:
 .L_792fc:
 	.4byte	0x040000d4
 .L_79300:
-	.4byte	sUnk_8404E88
+	.4byte	sTimeUpGfx + 0x800
 .L_79304:
 	.4byte	0x06010b00
 .L_79308:
 	.4byte	0x80000080
 .L_7930c:
-	.4byte	sUnk_8404F88
+	.4byte	sTimeUpGfx + 0x900
 .L_79310:
 	.4byte	0x06010f00
 .L_79314:
@@ -5732,13 +5731,13 @@ func_807915A:
 .L_79400:
 	.4byte	0x040000d4
 .L_79404:
-	.4byte	sUnk_8405088
+	.4byte	sTimeUpGfx + 0xA00
 .L_79408:
 	.4byte	0x06010b00
 .L_7940c:
 	.4byte	0x80000080
 .L_79410:
-	.4byte	sUnk_8405188
+	.4byte	sTimeUpGfx + 0xB00
 .L_79414:
 	.4byte	0x06010f00
 .L_79418:

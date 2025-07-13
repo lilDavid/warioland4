@@ -139,7 +139,7 @@ SECTIONS {
         . = 0x0c35; gUnk_3000C35 = .;
         . = 0x0c36; gUnk_3000C36 = .;
         . = 0x0c37; gUnk_3000C37 = .;
-        . = 0x0c38; gUnk_3000C38 = .;
+        . = 0x0c38; gCurrentShopItem = .;
         . = 0x0c3a; gMainGameMode = .;
         . = 0x0c3c; gSubGameMode = .;
         . = 0x0c3e; gUnk_3000C3E = .;
@@ -670,6 +670,8 @@ SECTIONS {
         obj/disasm_demo.o(.text);
         obj/disasm_quit.o(.text);
         obj/disasm_save_file.o(.text);
+        obj/disasm_0x0743BC.o(.text);
+        obj/hud.o(.text);
         obj/disasm_hud.o(.text);
         obj/disasm_score.o(.text);
         obj/disasm_secondary_sprite_ai.o(.text);
@@ -722,7 +724,8 @@ SECTIONS {
         obj/disasm_demo.o(.rodata);
         obj/disasm_quit.o(.rodata);
         obj/disasm_save_file.o(.rodata);
-        obj/blob_0x400A68-0x6D3394.o(.rodata);
+        obj/hud.o(.rodata);
+        obj/blob_0x40F1C8-0x6D3394.o(.rodata);
         obj/voice_set.o(.rodata);
         obj/blob_0x6D36A4-0x78E6CC.o(.rodata);
     } > ROM
@@ -733,7 +736,7 @@ SECTIONS {
         obj/data/color_fading_pointers.o(.data);
         obj/data/stage_end_pointers.o(.data);
         obj/data/demo_data_pointers.o(.data);
-        obj/data/hud_pointers.o(.data);
+        obj/hud.o(.data);
         obj/blob_0x78F714-0x78F970.o(.data);
     } > ROM
 

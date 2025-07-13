@@ -316,7 +316,7 @@ void SpriteAI_Rock(void) {
 
         case POSE_5D:
             gCurrentSprite.pose = POSE_5E;
-            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x10;
+            gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x10;
         case POSE_5E:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_80256D4();
@@ -331,7 +331,7 @@ void SpriteAI_Rock(void) {
 
         case POSE_65:
             gCurrentSprite.pose = POSE_66;
-            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x20;
+            gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x20;
         case POSE_66:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025814();
@@ -346,7 +346,7 @@ void SpriteAI_Rock(void) {
 
         case POSE_5F:
             gCurrentSprite.pose = POSE_60;
-            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x40;
+            gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x40;
         case POSE_60:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025AA0();
@@ -361,27 +361,27 @@ void SpriteAI_Rock(void) {
 
         case POSE_67:
             gCurrentSprite.pose = POSE_68;
-            gCurrentSprite.unk_1D = (gCurrentSprite.unk_1D & 0xF) | 0x80;
+            gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x80;
         case POSE_68:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8025BE0();
             break;
 
         case POSE_6B:
-            if (gCurrentSprite.unk_1D & 0x10) {
-                gCurrentSprite.unk_1D &= 0xF;
+            if (gCurrentSprite.health & 0x10) {
+                gCurrentSprite.health &= 0xF;
                 gCurrentSprite.work2 = 8;
                 func_8024BEC();
-            } else if (gCurrentSprite.unk_1D & 0x20) {
-                gCurrentSprite.unk_1D &= 0xF;
+            } else if (gCurrentSprite.health & 0x20) {
+                gCurrentSprite.health &= 0xF;
                 gCurrentSprite.work2 = 4;
                 func_8024AC0();
-            } else if (gCurrentSprite.unk_1D & 0x40) {
-                gCurrentSprite.unk_1D &= 0xF;
+            } else if (gCurrentSprite.health & 0x40) {
+                gCurrentSprite.health &= 0xF;
                 gCurrentSprite.work2 = 8;
                 func_8024AC0();
-            } else if (gCurrentSprite.unk_1D & 0x80) {
-                gCurrentSprite.unk_1D &= 0xF;
+            } else if (gCurrentSprite.health & 0x80) {
+                gCurrentSprite.health &= 0xF;
                 gCurrentSprite.work2 = 4;
                 func_8024BEC();
             } else {
@@ -395,19 +395,19 @@ void SpriteAI_Rock(void) {
             break;
     }
 
-    if ((gCurrentSprite.unk_1D & 0xF) == 1) {
+    if ((gCurrentSprite.health & 0xF) == 1) {
         if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
-            gCurrentSprite.unk_1D += 1;
+            gCurrentSprite.health += 1;
             Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_07);
             Sound_Play(SOUND_3D);
         }
-    } else if ((gCurrentSprite.unk_1D & 0xF) == 2) {
+    } else if ((gCurrentSprite.health & 0xF) == 2) {
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
         if (gUnk_30000A0.unk_02 == 1) {
             gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
         }
         if (!(gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER)) {
-            gCurrentSprite.unk_1D -= 1;
+            gCurrentSprite.health -= 1;
         }
     }
 }

@@ -50,6 +50,17 @@ enum SaveFile {
     SAVE_COUNT
 };
 
+enum ShopItem {
+    SHOP_ITEM_APPLE_BOMB,
+    SHOP_ITEM_BLAST_CANNON,
+    SHOP_ITEM_VIZORMAN,
+    SHOP_ITEM_BUGLE,
+    SHOP_ITEM_BLACK_DOG,
+    SHOP_ITEM_LARGE_LIPS,
+    SHOP_ITEM_BIG_FIST,
+    SHOP_ITEM_BLACK_DRAGON,
+};
+
 enum GameMode {
     GM_TITLE = 0,
     GM_LEVEL_SELECT = 1,
@@ -86,6 +97,7 @@ extern u8 gDisableSoftReset;
 
 extern u8 gCurrentRoom;
 
+extern u8 gCurrentShopItem;
 extern s16 gMainGameMode;
 extern s16 gSubGameMode;
 

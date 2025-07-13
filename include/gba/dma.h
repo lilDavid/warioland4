@@ -60,6 +60,19 @@
         dma_[2];                                                               \
     }
 
+#define dma_copy(channel, src, dst, size, bit)                                 \
+    DMA_TRANSFER(                                                              \
+        channel,                                                               \
+        src,                                                                   \
+        dst,                                                                   \
+        DMA_ENABLE | DMA_NOW | DMA_##bit | DMA_SRC_INC | DMA_DST_INC | DMA_N((size) / (bit / 8)) \
+    );                                                                         \
+
+#define dma_copy16(channel, src, dest, size)                                   \
+    dma_copy(channel, src, dest, size, 16)
+#define dma_copy32(channel, src, dest, size)                                   \
+    dma_copy(channel, src, dest, size, 32)
+
 #define dma_fill(channel, val, dst, size, bit)                                 \
     {                                                                          \
         vu##bit dma_tmp_ = (vu##bit)val;                                       \

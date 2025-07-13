@@ -133,10 +133,10 @@ void Vortex_AnimatePalette(void) {
     }
 
     destAddress = PALETTE_ROW(gCurrentSprite.gfxSlot + 8);
-    DMA_TRANSFER(3,
-         sVortexPal + COLORS_PER_ROW * gCurrentSprite.work3,
-         OBJ_PALETTE + destAddress,
-         DMA_ENABLE | DMA_NOW | DMA_16 | DMA_SRC_INC | DMA_DST_INC | DMA_N(COLORS_PER_ROW)
+    dma_copy16(3,
+        sVortexPal + COLORS_PER_ROW * gCurrentSprite.work3,
+        OBJ_PALETTE + destAddress,
+        PALETTE_ROW_SIZE
     );
 }
 

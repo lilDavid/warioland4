@@ -949,7 +949,7 @@ void SpearMask_80273C0(void) {
     gCurrentSprite.pOamData = sSpearMaskBashedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
-    gCurrentSprite.unk_1D = 0;
+    gCurrentSprite.health = 0;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
     gCurrentSprite.drawPriority = 0;
@@ -988,7 +988,7 @@ void SpearMask_8027474(void) {
     gCurrentSprite.pOamData = sSpearMaskBashedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
-    gCurrentSprite.unk_1D = 0;
+    gCurrentSprite.health = 0;
     gCurrentSprite.work2 = 7;
     gCurrentSprite.work3 = 0;
     gCurrentSprite.drawPriority = 0;

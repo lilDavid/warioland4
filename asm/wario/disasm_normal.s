@@ -4292,7 +4292,7 @@ func_8012250:
 .L_12294:
 	.4byte	sUnk_8315FE8
 .L_12298:
-	.4byte	gUnk_3000C38
+	.4byte	gCurrentShopItem
 .L_1229c:
 	mov	r0, #2
 	b	.L_122a2

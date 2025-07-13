@@ -9,10 +9,6 @@ void InitializeVideoMemory(void) {
 }
 
 void InitializeInterruptHandler(void) {
-    DMA_TRANSFER(3,
-        irq_handler,
-        gInterruptHandlerBuffer,
-        DMA_ENABLE | DMA_16 | DMA_NOW | DMA_SRC_INC | DMA_DST_INC | DMA_N(sizeof(gInterruptHandlerBuffer) / sizeof(u16))
-    );
+    dma_copy16(3, irq_handler, gInterruptHandlerBuffer, sizeof(gInterruptHandlerBuffer));
     intr_vector = (ProcedureFunc) &gInterruptHandlerBuffer;
 }

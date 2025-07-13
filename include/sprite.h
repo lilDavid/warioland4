@@ -304,7 +304,7 @@ typedef struct {
     /* 0x1A */ u8 drawPriority;
     /* 0x1B */ u8 palette;
     /* 0x1C */ u8 pose;
-    /* 0x1D */ u8 unk_1D;
+    /* 0x1D */ u8 health;
     /* 0x1E */ u8 warioInteractionFlags;
     /* 0x1F */ u8 disableWarioInteraction;
     /* 0x20 */ u8 drawDistanceDown;

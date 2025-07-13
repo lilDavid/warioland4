@@ -10,5 +10,6 @@
 #include "gba/oam.h"
 #include "gba/palette.h"
 #include "gba/wait_state.h"
+#include "gba/vram.h"
 
 #endif  // GBA_H

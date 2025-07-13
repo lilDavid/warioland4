@@ -191,7 +191,7 @@ func_80752F0:
 .L_75364:
 	.4byte	gUnk_3000BFC
 .L_75368:
-	.4byte	sUnk_8403AE8
+	.4byte	sScoreDigitsGfx
 .L_7536c:
 	.4byte	0x06011080
 .L_75370:
@@ -378,13 +378,13 @@ func_8075388:
 .L_75508:
 	.4byte	gUnk_3000BF0
 .L_7550c:
-	.4byte	sUnk_8403C48
+	.4byte	sTimeDigitsUpperGfx
 .L_75510:
 	.4byte	0x06011000
 .L_75514:
 	.4byte	0x80000010
 .L_75518:
-	.4byte	sUnk_8403DC8
+	.4byte	sTimeDigitsLowerGfx
 .L_7551c:
 	.4byte	0x06011400
 .L_75520:
@@ -465,13 +465,13 @@ func_8075388:
 .L_755b0:
 	.4byte	gUnk_3000BF0
 .L_755b4:
-	.4byte	sUnk_8403F48
+	.4byte	sTimeYellowDigitsUpperGfx
 .L_755b8:
 	.4byte	0x06011000
 .L_755bc:
 	.4byte	0x80000010
 .L_755c0:
-	.4byte	sUnk_84040C8
+	.4byte	sTimeYellowDigitsLowerGfx
 .L_755c4:
 	.4byte	0x06011400
 .L_755c8:
@@ -566,13 +566,13 @@ func_8075388:
 .L_75670:
 	.4byte	gUnk_3000BF0
 .L_75674:
-	.4byte	sUnk_8404248
+	.4byte	sTimeRedDigitsUpperGfx
 .L_75678:
 	.4byte	0x06011000
 .L_7567c:
 	.4byte	0x80000010
 .L_75680:
-	.4byte	sUnk_84043C8
+	.4byte	sTimeRedDigitsLowerGfx
 .L_75684:
 	.4byte	0x06011400
 .L_75688:
@@ -687,13 +687,13 @@ func_807569C:
 .L_75794:
 	.4byte	0x040000d4
 .L_75798:
-	.4byte	sUnk_8403D88
+	.4byte	sTimeColonUpperGfx
 .L_7579c:
 	.4byte	0x06011020
 .L_757a0:
 	.4byte	0x80000010
 .L_757a4:
-	.4byte	sUnk_8403F08
+	.4byte	sTimeColonLowerGfx
 .L_757a8:
 	ldr	r0, .L_757bc
 	ldr	r1, .L_757c0
@@ -708,13 +708,13 @@ func_807569C:
 .L_757bc:
 	.4byte	0x040000d4
 .L_757c0:
-	.4byte	sUnk_8403DA8
+	.4byte	sTimeColonEmptyUpperGfx
 .L_757c4:
 	.4byte	0x06011020
 .L_757c8:
 	.4byte	0x80000010
 .L_757cc:
-	.4byte	sUnk_8403F28
+	.4byte	sTimeColonEmptyLowerGfx
 .L_757d0:
 	ldr	r0, .L_757e4
 	ldr	r1, .L_757e8
@@ -729,13 +729,13 @@ func_807569C:
 .L_757e4:
 	.4byte	0x040000d4
 .L_757e8:
-	.4byte	sUnk_8404088
+	.4byte	sTimeYellowColonUpperGfx
 .L_757ec:
 	.4byte	0x06011020
 .L_757f0:
 	.4byte	0x80000010
 .L_757f4:
-	.4byte	sUnk_8404208
+	.4byte	sTimeYellowColonLowerGfx
 .L_757f8:
 	ldr	r0, .L_7580c
 	ldr	r1, .L_75810
@@ -750,13 +750,13 @@ func_807569C:
 .L_7580c:
 	.4byte	0x040000d4
 .L_75810:
-	.4byte	sUnk_84040A8
+	.4byte	sTimeYellowColonEmptyUpperGfx
 .L_75814:
 	.4byte	0x06011020
 .L_75818:
 	.4byte	0x80000010
 .L_7581c:
-	.4byte	sUnk_8404228
+	.4byte	sTimeYellowColonEmptyLowerGfx
 .L_75820:
 	ldr	r0, .L_75834
 	ldr	r1, .L_75838
@@ -771,13 +771,13 @@ func_807569C:
 .L_75834:
 	.4byte	0x040000d4
 .L_75838:
-	.4byte	sUnk_8404388
+	.4byte	sTimeRedColonUpperGfx
 .L_7583c:
 	.4byte	0x06011020
 .L_75840:
 	.4byte	0x80000010
 .L_75844:
-	.4byte	sUnk_8404508
+	.4byte	sTimeRedColonLowerGfx
 .L_75848:
 	ldr	r0, .L_75870
 	ldr	r1, .L_75874
@@ -804,13 +804,13 @@ func_807569C:
 .L_75870:
 	.4byte	0x040000d4
 .L_75874:
-	.4byte	sUnk_84043A8
+	.4byte	sTimeRedColonEmptyUpperGfx
 .L_75878:
 	.4byte	0x06011020
 .L_7587c:
 	.4byte	0x80000010
 .L_75880:
-	.4byte	sUnk_8404528
+	.4byte	sTimeRedColonEmptyLowerGfx
 .L_75884:
 	.4byte	0x06011420
 
@@ -901,23 +901,23 @@ func_8075888:
 .L_75930:
 	.4byte	0x040000d4
 .L_75934:
-	.4byte	sUnk_840F188
+	.4byte	sTimeUpTextPal
 .L_75938:
 	.4byte	0x05000240
 .L_7593c:
 	.4byte	0x80000010
 .L_75940:
-	.4byte	sUnk_8404988
+	.4byte	sTimeUpGfx + 0x300
 .L_75944:
 	.4byte	0x06010380
 .L_75948:
 	.4byte	0x80000080
 .L_7594c:
-	.4byte	sUnk_8404D88
+	.4byte	sTimeUpGfx + 0x700
 .L_75950:
 	.4byte	0x06010780
 .L_75954:
-	.4byte	0xfffffd00
+	.4byte	-0x300
 .L_75958:
 	.4byte	0x06010800
 .L_7595c:
@@ -925,7 +925,7 @@ func_8075888:
 .L_75960:
 	.4byte	0x06010c00
 .L_75964:
-	.4byte	sUnk_840F1A8
+	.4byte	sTimeUpWarioPal
 .L_75968:
 	.4byte	0x05000200
 .L_7596c:
@@ -1925,7 +1925,7 @@ func_8075F44:
 .L_760a4:
 	.4byte	gUnk_3000012
 .L_760a8:
-	.4byte	gUnk_3000C38
+	.4byte	gCurrentShopItem
 .L_760ac:
 	.4byte	gUnk_3000BFC
 .L_760b0:
@@ -2071,7 +2071,7 @@ func_8075F44:
 .L_761c0:
 	.4byte	gCollectedNEJewelPiece
 .L_761c4:
-	.4byte	sUnk_84045C8
+	.4byte	sJewelPieceIconNEGfx
 .L_761c8:
 	cmp	r0, #0
 	beq	.L_761dc
@@ -2096,7 +2096,7 @@ func_8075F44:
 .L_761ec:
 	.4byte	0x040000d4
 .L_761f0:
-	.4byte	sUnk_8404548
+	.4byte	sJewelPieceIconPartialNEGfx
 .L_761f4:
 	.4byte	0x06011c20
 .L_761f8:
@@ -2104,7 +2104,7 @@ func_8075F44:
 .L_761fc:
 	.4byte	gCollectedSEJewelPiece
 .L_76200:
-	.4byte	sUnk_84045E8
+	.4byte	sJewelPieceIconSEGfx
 .L_76204:
 	cmp	r0, #0
 	beq	.L_76218
@@ -2129,7 +2129,7 @@ func_8075F44:
 .L_76228:
 	.4byte	0x040000d4
 .L_7622c:
-	.4byte	sUnk_8404568
+	.4byte	sJewelPieceIconPartialSEGfx
 .L_76230:
 	.4byte	0x06012020
 .L_76234:
@@ -2137,7 +2137,7 @@ func_8075F44:
 .L_76238:
 	.4byte	gCollectedSWJewelPiece
 .L_7623c:
-	.4byte	sUnk_8404608
+	.4byte	sJewelPieceIconSWGfx
 .L_76240:
 	cmp	r0, #0
 	beq	.L_76254
@@ -2162,7 +2162,7 @@ func_8075F44:
 .L_76264:
 	.4byte	0x040000d4
 .L_76268:
-	.4byte	sUnk_8404588
+	.4byte	sJewelPieceIconPartialSWGfx
 .L_7626c:
 	.4byte	0x06012000
 .L_76270:
@@ -2170,7 +2170,7 @@ func_8075F44:
 .L_76274:
 	.4byte	gCollectedNWJewelPiece
 .L_76278:
-	.4byte	sUnk_8404628
+	.4byte	sJewelPieceIconNWGfx
 .L_7627c:
 	cmp	r0, #0
 	beq	.L_76290
@@ -2195,7 +2195,7 @@ func_8075F44:
 .L_762a0:
 	.4byte	0x040000d4
 .L_762a4:
-	.4byte	sUnk_84045A8
+	.4byte	sJewelPieceIconPartialNWGfx
 .L_762a8:
 	.4byte	0x06011c00
 .L_762ac:
@@ -2203,7 +2203,7 @@ func_8075F44:
 .L_762b0:
 	.4byte	gCollectedCD
 .L_762b4:
-	.4byte	sUnk_8404668
+	.4byte	sCDIconGfx
 .L_762b8:
 	cmp	r0, #0
 	beq	.L_762cc
@@ -2224,7 +2224,7 @@ func_8075F44:
 .L_762d4:
 	.4byte	0x040000d4
 .L_762d8:
-	.4byte	sUnk_8404648
+	.4byte	sCDIconPartialGfx
 .L_762dc:
 	.4byte	0x060114c0
 .L_762e0:

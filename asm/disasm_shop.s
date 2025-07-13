@@ -965,7 +965,7 @@ func_80901C4:
 .L_902b4:
 	.4byte	sUnk_8730510
 .L_902b8:
-	.4byte	gUnk_3000C38
+	.4byte	gCurrentShopItem
 .L_902bc:
 	.4byte	gUnk_3004A62
 .L_902c0:
