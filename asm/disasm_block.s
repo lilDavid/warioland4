@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_800D3C0
-func_800D3C0:
+thumb_func_start func_806D3C0
+func_806D3C0:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, sl
 	mov	r6, r9

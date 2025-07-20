@@ -149,6 +149,7 @@ SECTIONS {
         . = 0x0c42; gUnk_3000C42 = .;
         . = 0x0c44; gInterruptHandlerBuffer = .;
         . = 0x1444; gOamBuffer = .;
+        . = 0x144a; gUnk_300144A = .;
         . = 0x1844; gButtonsHeld = .;
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
@@ -205,6 +206,52 @@ SECTIONS {
         . = 0x1a00; gHBlankCallback = .;
         . = 0x1a04; gVCountCallback = .;
         . = 0x2b98; gUnk_3002B98 = .;
+        . = 0x2c28; gUnk_3002C28 = .;
+        . = 0x2c2a; gUnk_3002C2A = .;
+        . = 0x2c2c; gUnk_3002C2C = .;
+        . = 0x2c2e; gUnk_3002C2E = .;
+        . = 0x2c30; gUnk_3002C30 = .;
+        . = 0x2c32; gUnk_3002C32 = .;
+        . = 0x2c42; gUnk_3002C42 = .;
+        . = 0x2c44; gUnk_3002C44 = .;
+        . = 0x2c46; gUnk_3002C46 = .;
+        . = 0x2c48; gUnk_3002C48 = .;
+        . = 0x2c4a; gUnk_3002C4A = .;
+        . = 0x2c4c; gUnk_3002C4C = .;
+        . = 0x2c4e; gUnk_3002C4E = .;
+        . = 0x2c50; gUnk_3002C50 = .;
+        . = 0x2c52; gUnk_3002C52 = .;
+        . = 0x2c54; gUnk_3002C54 = .;
+        . = 0x2c56; gUnk_3002C56 = .;
+        . = 0x2c58; gUnk_3002C58 = .;
+        . = 0x2c5a; gUnk_3002C5A = .;
+        . = 0x2c5c; gUnk_3002C5C = .;
+        . = 0x2c5e; gUnk_3002C5E = .;
+        . = 0x2c60; gUnk_3002C60 = .;
+        . = 0x2c64; gUnk_3002C64 = .;
+        . = 0x2c68; gUnk_3002C68 = .;
+        . = 0x2c6c; gUnk_3002C6C = .;
+        . = 0x2c70; gUnk_3002C70 = .;
+        . = 0x2c74; gUnk_3002C74 = .;
+        . = 0x2c78; gUnk_3002C78 = .;
+        . = 0x2c7c; gUnk_3002C7C = .;
+        . = 0x2c80; gUnk_3002C80 = .;
+        . = 0x2c82; gUnk_3002C82 = .;
+        . = 0x2c84; gUnk_3002C84 = .;
+        . = 0x2c88; gUnk_3002C88 = .;
+        . = 0x2c8c; gUnk_3002C8C = .;
+        . = 0x2c90; gUnk_3002C90 = .;
+        . = 0x2c94; gUnk_3002C94 = .;
+        . = 0x2c98; gUnk_3002C98 = .;
+        . = 0x2c9a; gUnk_3002C9A = .;
+        . = 0x2c9c; gUnk_3002C9C = .;
+        . = 0x2c9e; gUnk_3002C9E = .;
+        . = 0x2ca0; gUnk_3002CA0 = .;
+        . = 0x2ca2; gUnk_3002CA2 = .;
+        . = 0x2ca4; gUnk_3002CA4 = .;
+        . = 0x2ca6; gUnk_3002CA6 = .;
+        . = 0x2ca8; gUnk_3002CA8 = .;
+        . = 0x2cb8; gUnk_3002CB8 = .;
         . = 0x2cc8; gUnk_3002CC8 = .;
         . = 0x2ec8; gUnk_3002EC8 = .;
         . = 0x30c8; gUnk_30030C8 = .;
@@ -534,6 +581,7 @@ SECTIONS {
         . = 0x4b25; gUnk_3004B25 = .;
         . = 0x60f0; gUnk_30060F0 = .;
         . = 0x6130; gUnk_3006130 = .;
+        . = 0x6170; gUnk_3006170 = .;
         . = 0x6230; gUnk_3006230 = .;
 
         . = 0x7e60; sp_sys = .;
@@ -557,7 +605,17 @@ SECTIONS {
         obj/blob_sound.o(.text);
         obj/syscalls.o(.text);
         obj/disasm_0x003228.o(.text);
-        obj/blob_0x0033BC-0x00FD28.o(.text);
+        obj/disasm_title.o(.text);
+        obj/disasm_0x003A18.o(.text);
+        obj/disasm_cutscenes.o(.text);
+        obj/cutscenes/disasm_0x00BE64.o(.text);
+        obj/cutscenes/disasm_0x00C264.o(.text);
+        obj/cutscenes/disasm_0x00C470.o(.text);
+        obj/cutscenes/disasm_0x00C8A0.o(.text);
+        obj/cutscenes/disasm_0x00CFC0.o(.text);
+        obj/cutscenes/disasm_0x00D1AC.o(.text);
+        obj/cutscenes/disasm_0x00F7BC.o(.text);
+        obj/cutscenes/disasm_0x00F9E0.o(.text);
         obj/disasm_wario.o(.text);
         obj/disasm_demo_input.o(.text);
         obj/wario/disasm_normal.o(.text);
@@ -731,7 +789,8 @@ SECTIONS {
     } > ROM
 
     .data (READONLY) : ALIGN(2) {
-        obj/blob_0x78E6CC-0x78F5A4.o(.data);
+        obj/data/cutscene_data.o(.data);
+        obj/blob_0x78E800-0x78F5A4.o(.data);
         obj/data/tile_fn_pointers.o(.data);
         obj/data/color_fading_pointers.o(.data);
         obj/data/stage_end_pointers.o(.data);

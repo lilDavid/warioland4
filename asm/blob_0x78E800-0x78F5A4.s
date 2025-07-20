@@ -7,9 +7,6 @@
 
 .section .data
 
-baserom_blob 0x78E6CC, 0x78E800
-
-
 @ Sprite AI and sprite sets
 
 .global sUnk_878E800

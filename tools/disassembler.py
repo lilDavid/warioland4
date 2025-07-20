@@ -108,69 +108,55 @@ def cleanup_objdump(instructions, symbols: dict = None):
         else:
             instructions.append(inst)
 
-    # Find targets of PC-relative loads and jumps
+    # Find jump tables and other targets of PC-relative loads and jumps
+    _instructions, instructions = instructions, []
+    iterator = iter(enumerate(_instructions))
     branch_targets = set()
     pool_addresses = set()
-    for i, inst in enumerate(instructions):
-        if inst.mnemonic == 'ldr':
-            rd, rs, off = ldr_regex.match(inst.operands).groups()
-            if rs == 'pc' and inst.label not in pool_addresses:
-                addr = inst.comment[3:-1]
-                pool_addresses.add(addr)
-                instructions[i] = inst._replace(operands=f'{rd}, .L_{addr}', comment='')
-        if inst.mnemonic.endswith('.n'):
-            addr = inst.operands[2:]
-            branch_targets.add(addr)
-            instructions[i] = inst._replace(mnemonic=inst.mnemonic[:-2], operands=f'.L_{addr}')
-        if inst.mnemonic == 'bl':
-            addr = f'0x{int(inst.operands, base=0) | 0x8000000:08x}'
-            instructions[i] = inst._replace(operands=get_symbol(addr, symbols, 'call'))
-
-    # Add labels to branch targets
-    for i, inst in enumerate(instructions):
+    state = 'code'
+    for i, inst in iterator:
         if inst.label in branch_targets:
-            instructions[i] = inst._replace(label=f'.L_{inst.label}')
-
-    # Convert pool items to data directives and add labels
-    _instructions, instructions = instructions, []
-    iterator = iter(enumerate(_instructions))
-    for i, inst in iterator:
-        if inst.label in pool_addresses:
-            instructions.append(make_data(_instructions, iterator, i, inst, symbols))
+            state = 'code'
+        if state == 'code':
+            if inst.mnemonic == 'ldr':
+                rd, rs, off = ldr_regex.match(inst.operands).groups()
+                if rs == 'pc' and inst.label not in pool_addresses:
+                    addr = inst.comment[3:-1]
+                    pool_addresses.add(addr)
+                    inst = inst._replace(operands=f'{rd}, .L_{addr}', comment='')
+            if inst.mnemonic.endswith('.n'):
+                addr = inst.operands[2:]
+                branch_targets.add(addr)
+                inst = inst._replace(mnemonic=inst.mnemonic[:-2], operands=f'.L_{addr}')
+            if inst.mnemonic in ('b', 'bx') or inst.mnemonic == 'mov' and inst.operands.startswith('pc'):
+                state = 'data'
+            if inst.mnemonic == 'bl':
+                addr = f'0x{int(inst.operands, base=0) | 0x8000000:08x}'
+                inst = inst._replace(operands=get_symbol(addr, symbols, 'call'))
+        elif state in ('data', 'jumptable'):
+            if inst.raw.startswith("0000"):
+                if inst.raw.strip() == '0000' and inst.label.strip()[-1] in '26AaEe':
+                    instructions.append(inst._replace(mnemonic='.align', operands='2, 0'))
+                    continue
+            inst = make_data(_instructions, iterator, i, inst, symbols, setlabel=False)
+            addr = int(inst.raw.strip().replace(' ', ''), base=16) & 0x7FFFFFE
+            reference_label = format(addr, '04x')
+            if state == 'jumptable':
+                branch_targets.add(reference_label)
+            else:
+                pool_addresses.add(reference_label)
+            # Heuristic: If this points to the very next word, that word's probably a jump table
+            if addr == (int(inst.label.strip().replace(' ', ''), base=16) & 0x7FFFFFE) + 4:
+                state = 'jumptable'
         else:
-            instructions.append(inst)
-
-    # Find jump tables
-    # If a function refers to itself, it's probably pointing at a jump table
-    tables = set()
-    for i, inst in enumerate(instructions):
-        if inst.mnemonic == '.4byte' and inst.operands.startswith('.L_'):
-            tables.add(inst.operands[3:])
-
-    # Add labels to jump tables
-    table_targets = set()
-    _instructions, instructions = instructions, []
-    iterator = iter(enumerate(_instructions))
-    for i, inst in iterator:
-        if inst.label in tables:
-            instructions.append(make_data(_instructions, iterator, i, inst, symbols)._replace(label=f'.L_{inst.label}'))
-            table_targets.add(instructions[-1].operands[3:])
-            i, inst = next(iterator)
-            while inst.label not in table_targets and not inst.label.startswith('.L_'):
-                instructions.append(make_data(_instructions, iterator, i, inst, symbols, setlabel=False))
-                table_targets.add(instructions[-1].operands[3:])
-                i, inst = next(iterator)
+            raise ValueError(f"Reached invalid state: {repr(state)}")
         instructions.append(inst)
 
-    # Add labels to table targets
+    # Add labels to referenced addresses
     for i, inst in enumerate(instructions):
-        if inst.label in table_targets:
+        if inst.label in branch_targets or inst.label in pool_addresses:
             instructions[i] = inst._replace(label=f'.L_{inst.label}')
 
-    # Guess that instruction 0000 is an alignment
-    for i, inst in enumerate(instructions):
-        if inst.raw.strip() == '0000':
-            instructions[i] = inst._replace(mnemonic='.align', operands='2, 0')
     return instructions
 
 
