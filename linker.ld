@@ -730,7 +730,7 @@ SECTIONS {
         obj/blob_0x6D36A4-0x78E6CC.o(.rodata);
     } > ROM
 
-    .data : ALIGN(2) {
+    .data (READONLY) : ALIGN(2) {
         obj/blob_0x78E6CC-0x78F5A4.o(.data);
         obj/data/tile_fn_pointers.o(.data);
         obj/data/color_fading_pointers.o(.data);
