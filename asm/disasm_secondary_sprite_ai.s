@@ -626,7 +626,7 @@ func_8076EF8:
 	cmp	r0, #0
 	bne	.L_76f2a
 	mov	r0, #58	@ 0x3a
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldrb	r0, [r4, #3]
 	add	r0, #1
 	strb	r0, [r4, #3]
@@ -3737,7 +3737,7 @@ func_80782A4:
 	strb	r0, [r3, #0]
 	mov	r0, #226	@ 0xe2
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_789ec
 .L_78520:
 	.4byte	gCurrentSecondarySprite
@@ -4859,7 +4859,7 @@ func_8078D60:
 	beq	.L_78d84
 	mov	r0, #171	@ 0xab
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_78d84:
 	pop	{r0}
 	bx	r0
@@ -5722,7 +5722,7 @@ func_807915C:
 	strb	r0, [r1, #3]
 	mov	r0, #227	@ 0xe3
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_794d4
 .L_793f8:
 	.4byte	gUnk_3000C10
@@ -6084,7 +6084,7 @@ func_8079574:
 	mov	r0, #30
 	strb	r0, [r1, #4]
 	mov	r0, #23
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_7979a
 .L_796a8:
 	.4byte	gCurrentSecondarySprite

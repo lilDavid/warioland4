@@ -168,7 +168,7 @@ func_801945C:
 	cmp	r0, #1
 	bne	.L_19524
 	mov	r0, #3
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_19536
 .L_19520:
 	.4byte	sUnk_833B9E4
@@ -837,7 +837,7 @@ func_801996C:
 .L_19984:
 	mov	r0, #175	@ 0xaf
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #4
 	bl	VoiceSet_Play
 	b	.L_199b0
@@ -937,7 +937,7 @@ func_801996C:
 	mov	r1, #0
 	bl	func_806ACA0
 	mov	r0, #24
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_19aae
 .L_19a4c:
 	.4byte	gWarioData
@@ -961,7 +961,7 @@ func_801996C:
 	ldr	r0, .L_19a80
 	strb	r4, [r0, #1]
 	ldr	r0, .L_19a84
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #0
 	bl	VoiceSet_Play
 	b	.L_19aae
@@ -978,7 +978,7 @@ func_801996C:
 	cmp	r0, #9
 	bhi	.L_19aae
 	mov	r0, #45	@ 0x2d
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_19aae
 .L_19a9c:
 	.4byte	gWarioData
@@ -1313,38 +1313,38 @@ func_8019CF4:
 	ldr	r6, [r4, #0]
 	add	r0, r6, #0
 	mov	r1, #180	@ 0xb4
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r4, [r4, #12]
 	mov	r8, r4
 	mov	r0, r8
 	mov	r1, #180	@ 0xb4
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r4, .L_19d74
 	ldr	r5, .L_19d78
 	add	r0, r6, #0
 	add	r1, r4, #0
 	add	r2, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	mov	r0, r8
 	add	r1, r4, #0
 	add	r2, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	add	r0, r6, #0
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	mov	r0, r8
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	add	r0, r6, #0
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	mov	r0, r8
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	mov	r0, #10
 	strb	r0, [r7, #0]
 .L_19d60:
@@ -1357,7 +1357,7 @@ func_8019CF4:
 .L_19d6c:
 	.4byte	gUnk_30031BC
 .L_19d70:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_19d74:
 	.4byte	0xFFFF
 .L_19d78:

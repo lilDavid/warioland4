@@ -654,7 +654,7 @@ func_806F0D0:
 .L_6f104:
 	add	r0, r0, r2
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4}
 	pop	{r0}
 	bx	r0
@@ -737,7 +737,7 @@ func_806F11C:
 .L_6f1aa:
 	add	r0, r0, r2
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4}
 	pop	{r0}
 	bx	r0
@@ -847,7 +847,7 @@ func_806F1C0:
 .L_6f286:
 	add	r0, r0, r2
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4, r5}
 	pop	{r0}
 	bx	r0
@@ -1137,7 +1137,7 @@ func_806F424:
 	mov	r1, #216	@ 0xd8
 .L_6f480:
 	add	r0, r1, #0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #20
 	mov	r1, #0
 	bl	func_806ACA0
@@ -2007,7 +2007,7 @@ func_806F9D8:
 .L_6faac:
 	add	r0, r0, r2
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_6fae0
 	ldrb	r0, [r1, #1]
 	add	r0, r0, r4
@@ -2535,7 +2535,7 @@ func_806FD74:
 	cmp	r0, #0
 	beq	.L_6fe96
 	mov	r0, #25
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_6ff52
 .L_6fe92:
 	cmp	r0, #8
@@ -2603,16 +2603,16 @@ func_806FD74:
 	bl	func_806E01C
 	ldr	r4, .L_6ff40
 	ldr	r0, [r4, #36]	@ 0x24
-	bl	func_80025C8
+	bl	MPlayStop
 	ldr	r0, [r4, #0]
 	mov	r1, #2
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r0, [r4, #12]
 	mov	r1, #2
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r0, [r4, #24]
 	mov	r1, #2
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	b	.L_6ff52
 	.align	2, 0
 .L_6ff30:
@@ -2624,7 +2624,7 @@ func_806FD74:
 .L_6ff3c:
 	.4byte	gSubGameMode
 .L_6ff40:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6ff44:
 	ldrb	r0, [r1, #1]
 	cmp	r0, #0

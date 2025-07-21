@@ -25,8 +25,8 @@ void InitializeGame(void) {
 
     func_8072D24();
     func_8073BE0();
-    Sound_Init();
-    func_80022C8(0x900000);
+    m4aSoundInit();
+    m4aSoundMode(SOUND_MODE_DA_BIT_8);
 
     REG_IME = TRUE;
     REG_IE = INTR_FLAG_GAMEPAK | INTR_FLAG_VBLANK;

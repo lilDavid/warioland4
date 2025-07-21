@@ -19,7 +19,7 @@ func_80007EC:
 	add	r0, r0, r6
 	ldr	r0, [r0, #0]
 	mov	r1, #10
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	add	r0, r4, #1
 	lsl	r0, r0, #24
 	lsr	r4, r0, #24
@@ -33,7 +33,7 @@ func_80007EC:
 .L_820:
 	.4byte	0x00000008
 .L_824:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 
 
 thumb_func_start func_8000828
@@ -48,8 +48,8 @@ thumb_func_start func_8000834
 func_8000834:
 	push	{r4, lr}
 	sub	sp, #4
-	bl	func_80023B4
-	bl	func_8001ED8
+	bl	m4aSoundVSyncOff
+	bl	m4aMPlayAllStop
 	ldr	r4, .L_88c
 	mov	r3, #0
 	strh	r3, [r4, #0]
@@ -131,14 +131,14 @@ func_8000834:
 	bl	InitializeInterruptHandler
 	ldr	r0, .L_92c
 	bl	InterruptCallback_SetVBlank
-	bl	Sound_Init
+	bl	m4aSoundInit
 	mov	r0, #144	@ 0x90
 	lsl	r0, r0, #16
-	bl	func_80022C8
+	bl	m4aSoundMode
 	ldr	r1, .L_930
 	mov	r0, #1
 	strh	r0, [r1, #0]
-	bl	func_80023B4
+	bl	m4aSoundVSyncOff
 	bl	func_8072D24
 	bl	func_8073BE0
 	ldr	r0, .L_934
@@ -151,7 +151,7 @@ func_8000834:
 	strh	r4, [r0, #0]
 	ldr	r0, .L_944
 	strh	r4, [r0, #0]
-	bl	func_8002430
+	bl	m4aSoundVSyncOn
 	add	sp, #4
 	pop	{r4}
 	pop	{r0}

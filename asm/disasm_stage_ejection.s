@@ -179,7 +179,7 @@ func_80816A4:
 	strh	r0, [r1, #0]
 	mov	r0, #231	@ 0xe7
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #6
 	bl	VoiceSet_Play
 	bl	func_807A428

@@ -131,7 +131,7 @@ func_8093084:
 thumb_func_start func_80930B8
 func_80930B8:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_9312c
 	ldr	r0, .L_93130
 	str	r0, [r1, #0]
@@ -217,7 +217,7 @@ func_80930B8:
 thumb_func_start func_809315C
 func_809315C:
 	push	{r4, lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_93218
 	ldr	r0, .L_9321c
 	str	r0, [r1, #0]
@@ -898,7 +898,7 @@ func_809329C:
 	cmp	r0, #0
 	bne	.L_93734
 	ldr	r0, .L_93730
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 .L_93680:
 	.4byte	sUnk_878944C
@@ -993,7 +993,7 @@ func_809329C:
 .L_93734:
 	mov	r0, #203	@ 0xcb
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 .L_9373e:
 	cmp	r4, #1
@@ -1006,7 +1006,7 @@ func_809329C:
 	cmp	r0, #0
 	bne	.L_93764
 	ldr	r0, .L_93760
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 .L_93758:
 	.4byte	gUnk_3004B0C
@@ -1016,7 +1016,7 @@ func_809329C:
 	.4byte	0x00000331
 .L_93764:
 	ldr	r0, .L_9376c
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 .L_9376c:
 	.4byte	0x00000329
@@ -1048,7 +1048,7 @@ func_809329C:
 .L_9379e:
 	mov	r0, #204	@ 0xcc
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 .L_937a8:
 	.4byte	gUnk_3004B0C
@@ -1056,7 +1056,7 @@ func_809329C:
 	.4byte	gLanguage
 .L_937b0:
 	ldr	r0, .L_937b8
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 .L_937b8:
 	.4byte	0x00000326
@@ -1069,7 +1069,7 @@ func_809329C:
 	cmp	r0, #0
 	bne	.L_937e0
 	ldr	r0, .L_937dc
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_937e6
 	.align	2, 0
 .L_937d4:
@@ -1080,7 +1080,7 @@ func_809329C:
 	.4byte	0x0000032f
 .L_937e0:
 	ldr	r0, .L_93834
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_937e6:
 	ldr	r4, .L_93838
 	ldr	r2, .L_9383c
@@ -3034,16 +3034,16 @@ func_80946AC:
 	bne	.L_946d0
 	mov	r0, #201	@ 0xc9
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 	.align	2, 0
 .L_946cc:
-	.4byte	gUnk_3006230
+	.4byte	gMPlayMemAccArea
 .L_946d0:
 	cmp	r0, #2
 	bne	.L_946e0
 	ldr	r0, .L_946dc
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 .L_946dc:
 	.4byte	0x00000325
@@ -3051,7 +3051,7 @@ func_80946AC:
 	cmp	r0, #3
 	bne	.L_946f0
 	ldr	r0, .L_946ec
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 .L_946ec:
 	.4byte	0x00000327
@@ -3060,13 +3060,13 @@ func_80946AC:
 	bne	.L_946fe
 	mov	r0, #202	@ 0xca
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 .L_946fe:
 	cmp	r0, #5
 	bne	.L_94710
 	ldr	r0, .L_9470c
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 	.align	2, 0
 .L_9470c:
@@ -3075,7 +3075,7 @@ func_80946AC:
 	cmp	r0, #6
 	bne	.L_94720
 	ldr	r0, .L_9471c
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 .L_9471c:
 	.4byte	0x0000032b
@@ -3083,7 +3083,7 @@ func_80946AC:
 	cmp	r0, #7
 	bne	.L_94730
 	ldr	r0, .L_9472c
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_9473a
 .L_9472c:
 	.4byte	0x0000032d
@@ -3091,7 +3091,7 @@ func_80946AC:
 	cmp	r0, #8
 	bne	.L_9473a
 	ldr	r0, .L_94750
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_9473a:
 	ldr	r0, .L_94754
 	ldrb	r1, [r0, #0]
@@ -3220,7 +3220,7 @@ func_80946AC:
 	strb	r0, [r4, #0]
 	ldr	r0, .L_94840
 	mov	r1, #20
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	b	.L_948be
 	.align	2, 0
 .L_94834:
@@ -3230,7 +3230,7 @@ func_80946AC:
 .L_9483c:
 	.4byte	sUnk_87470E0
 .L_94840:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_94844:
 	ldr	r3, .L_94864
 	ldrh	r2, [r3, #4]

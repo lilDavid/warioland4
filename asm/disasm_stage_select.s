@@ -134,7 +134,7 @@ func_80799A8:
 	ldr	r1, .L_79b28
 	mov	r0, #46	@ 0x2e
 	strh	r0, [r1, #0]
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 	bl	.L_7a36a
 	.align	2, 0
 .L_79b24:
@@ -240,15 +240,15 @@ func_80799A8:
 	ldr	r0, [r0, #0]
 	ldr	r1, .L_79c0c
 	mov	r2, #150	@ 0x96
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_79c10
 	mov	r0, #9
 	strh	r0, [r1, #0]
 	b	.L_7a36a
 .L_79c00:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_79c04:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_79c08:
 	.4byte	0x13FC
 .L_79c0c:
@@ -307,7 +307,7 @@ func_80799A8:
 .L_79c74:
 	ldr	r0, .L_79c84
 	strh	r1, [r0, #0]
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 	ldr	r1, .L_79c88
 	mov	r0, #15
 	strh	r0, [r1, #0]
@@ -847,16 +847,16 @@ func_80799A8:
 	ldr	r0, [r0, #0]
 	ldr	r1, .L_7a0b0
 	mov	r2, #150	@ 0x96
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_7a0b4
 	mov	r0, #35	@ 0x23
 	strh	r0, [r1, #0]
 	b	.L_7a36a
 	.align	2, 0
 .L_7a0a4:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_7a0a8:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_7a0ac:
 	.4byte	0x13FC
 .L_7a0b0:
@@ -1003,7 +1003,7 @@ func_80799A8:
 	bne	.L_7a1c4
 	b	.L_7a36a
 .L_7a1c4:
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 	mov	r7, #1
 .L_7a1ca:
 	ldr	r1, .L_7a1d4
@@ -1052,16 +1052,16 @@ func_80799A8:
 	ldr	r0, [r0, #0]
 	ldr	r1, .L_7a240
 	mov	r2, #150	@ 0x96
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_7a244
 	mov	r0, #43	@ 0x2b
 	strh	r0, [r1, #0]
 	b	.L_7a36a
 	.align	2, 0
 .L_7a234:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_7a238:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_7a23c:
 	.4byte	0x13FC
 .L_7a240:
@@ -1123,7 +1123,7 @@ func_80799A8:
 .L_7a2ac:
 	.4byte	gUnk_3003C08
 .L_7a2b0:
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 	mov	r7, #1
 	ldr	r0, .L_7a2bc
 	strh	r4, [r0, #0]
@@ -1212,7 +1212,7 @@ func_80799A8:
 	ldr	r1, .L_7a37c
 	mov	r0, #0
 	strh	r0, [r1, #0]
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 .L_7a36a:
 	bl	func_807ACDC
 	bl	ResetFreeOam
@@ -1461,7 +1461,7 @@ func_807A4B4:
 thumb_func_start func_807A528
 func_807A528:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_7a558
 	ldr	r0, .L_7a55c
 	str	r0, [r1, #0]
@@ -1577,7 +1577,7 @@ func_807A528:
 thumb_func_start func_807A668
 func_807A668:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_7a6a0
 	ldr	r0, .L_7a6a4
 	str	r0, [r1, #0]

@@ -440,7 +440,7 @@ func_80723CC:
 	add	r0, #1
 	strb	r0, [r4, #0]
 	ldr	r0, .L_72464
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_72594
 .L_7245c:
 	.4byte	gUnk_300188E
@@ -923,7 +923,7 @@ func_8072754:
 thumb_func_start func_80727F8
 func_80727F8:
 	push	{r4, lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_72888
 	ldr	r0, .L_7288c
 	str	r0, [r1, #0]

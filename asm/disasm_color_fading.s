@@ -2383,7 +2383,7 @@ func_80712F8:
 	ldr	r0, .L_71338
 	strh	r1, [r0, #0]
 	mov	r0, #221	@ 0xdd
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_7130c:
 	ldrb	r0, [r4, #4]
 	add	r1, r0, #1
@@ -2476,7 +2476,7 @@ func_8071394:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	mov	r0, #222	@ 0xde
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_713aa:
 	add	r7, r4, #0
 	ldr	r3, .L_713d0
@@ -2675,7 +2675,7 @@ func_80714F0:
 	cmp	r0, #1
 	bne	.L_7150c
 	ldr	r0, .L_7154c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_7150c:
 	add	r3, r4, #0
 	add	r1, sp, #20

@@ -41,32 +41,32 @@ func_80743BC:
 	ldrh	r2, [r6, #42]	@ 0x2a
 	lsr	r2, r2, #2
 	add	r1, r5, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #12]
 	ldrh	r2, [r6, #42]	@ 0x2a
 	lsr	r2, r2, #2
 	add	r1, r5, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #24]
 	add	r1, r5, #0
 	mov	r2, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #36]	@ 0x24
 	add	r1, r5, #0
 	mov	r2, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #48]	@ 0x30
 	add	r1, r5, #0
 	mov	r2, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #60]	@ 0x3c
 	add	r1, r5, #0
 	mov	r2, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #72]	@ 0x48
 	add	r1, r5, #0
 	mov	r2, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_74478
 	ldr	r2, .L_7447c
 	add	r0, r2, #0
@@ -78,7 +78,7 @@ func_80743BC:
 	b	.L_7463c
 	.align	2, 0
 .L_7446c:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_74470:
 	.4byte	0x0000ffff
 .L_74474:
@@ -239,7 +239,7 @@ func_80743BC:
 	.4byte	0x0400004a
 .L_7459c:
 	ldr	r0, .L_74600
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r2, .L_74604
 	ldrb	r1, [r2, #0]
 	mov	r0, #55	@ 0x37
@@ -251,33 +251,33 @@ func_80743BC:
 	ldr	r6, .L_74610
 	ldrh	r2, [r6, #42]	@ 0x2a
 	add	r1, r5, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #12]
 	ldrh	r2, [r6, #42]	@ 0x2a
 	add	r1, r5, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #24]
 	mov	r6, #128	@ 0x80
 	lsl	r6, r6, #1
 	add	r1, r5, #0
 	add	r2, r6, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #36]	@ 0x24
 	add	r1, r5, #0
 	add	r2, r6, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #48]	@ 0x30
 	add	r1, r5, #0
 	add	r2, r6, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #60]	@ 0x3c
 	add	r1, r5, #0
 	add	r2, r6, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, [r4, #72]	@ 0x48
 	add	r1, r5, #0
 	add	r2, r6, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	b	.L_7463c
 	.align	2, 0
 .L_74600:
@@ -285,7 +285,7 @@ func_80743BC:
 .L_74604:
 	.4byte	0x0400004a
 .L_74608:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_7460c:
 	.4byte	0x0000ffff
 .L_74610:

@@ -365,7 +365,7 @@ func_8089BBC:
 thumb_func_start func_8089BCC
 func_8089BCC:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_89bfc
 	ldr	r0, .L_89c00
 	str	r0, [r1, #0]
@@ -430,7 +430,7 @@ func_8089BCC:
 thumb_func_start func_8089C64
 func_8089C64:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_89c88
 	ldr	r0, .L_89c8c
 	str	r0, [r1, #0]
@@ -754,7 +754,7 @@ func_8089E74:
 	add	r0, r0, r2
 	ldr	r0, [r0, #0]
 	mov	r1, #8
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r0, .L_89efc
 	strb	r4, [r0, #0]
 	b	.L_89fe2
@@ -764,9 +764,9 @@ func_8089E74:
 .L_89eec:
 	.4byte	gUnk_30047B8
 .L_89ef0:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_89ef4:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_89ef8:
 	.4byte	0x000015ec
 .L_89efc:
@@ -786,7 +786,7 @@ func_8089E74:
 	add	r0, r0, r2
 	ldr	r0, [r0, #0]
 	mov	r1, #12
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r1, .L_89f3c
 	ldrb	r0, [r1, #0]
 	add	r0, #1
@@ -796,9 +796,9 @@ func_8089E74:
 .L_89f2c:
 	.4byte	gUnk_30047F4
 .L_89f30:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_89f34:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_89f38:
 	.4byte	0x000015ec
 .L_89f3c:
@@ -1273,7 +1273,7 @@ func_8089FFC:
 	ldr	r0, .L_8a334
 	strh	r4, [r0, #0]
 	ldr	r0, .L_8a338
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	pop	{r3, r4, r5}
 	mov	r8, r3
 	mov	r9, r4
@@ -1488,7 +1488,7 @@ func_808A3C0:
 	lsl	r0, r0, #2
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4, r5}
 	pop	{r0}
 	bx	r0
@@ -1591,7 +1591,7 @@ func_808A4F8:
 	cmp	r0, #3
 	bne	.L_8a528
 	ldr	r0, .L_8a524
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_8a6d8
 	.align	2, 0
 .L_8a51c:
@@ -1612,7 +1612,7 @@ func_808A4F8:
 	blt	.L_8a5a4
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_8a58c
 	ldr	r0, .L_8a590
 	str	r0, [r1, #0]
@@ -1664,7 +1664,7 @@ func_808A4F8:
 	.4byte	gUnk_3004A30
 .L_8a5a4:
 	ldr	r0, .L_8a5b8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_8a5bc
 	strb	r4, [r0, #0]
 	ldr	r1, .L_8a5c0
@@ -1735,7 +1735,7 @@ func_808A4F8:
 	strh	r0, [r2, #6]
 	mov	r0, #146	@ 0x92
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r5, #0
 	add	r6, r4, #0
 	mov	r4, #0
@@ -1824,7 +1824,7 @@ func_808A4F8:
 	b	.L_8a5b4
 .L_8a6cc:
 	ldr	r0, .L_8a6e0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_8a6e4
 	mov	r0, #3
 	strb	r0, [r1, #0]
@@ -1884,7 +1884,7 @@ func_808A6E8:
 	cmp	r0, #0
 	bne	.L_8a73c
 	ldr	r0, .L_8a764
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_8a73c:
 	ldr	r0, [r4, #0]
 	ldr	r1, .L_8a768
@@ -1925,7 +1925,7 @@ func_808A6E8:
 	lsl	r0, r0, #2
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldrb	r0, [r6, #0]
 	add	r0, #1
 	strb	r0, [r6, #0]
@@ -2078,7 +2078,7 @@ func_808A818:
 	cmp	r0, #0
 	beq	.L_8a8ae
 	ldr	r0, .L_8a8d4
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_8a8ae:
 	ldr	r0, .L_8a8d8
 	mov	r2, #0

@@ -179,6 +179,9 @@ $(BUILT_ASM)/%.s: $(SRC)/%.c
 	$Q$(CPP) $(CPPFLAGS) $< | $(CC) $(CFLAGS) -o $@
 	@echo '    .align 2, 0' >> $@
 
+$(BUILT_ASM)/m4a.s: CC = $(TOOL_DIR)/agbcc/old_agbcc
+$(BUILT_ASM)/m4a.s: CFLAGS = -O2 -mthumb-interwork -fhex-asm -Wall
+
 $(TOOL_DIR)/%: $(TOOL_DIR)/%.c
 	$(MSG) HOSTCC $<
 	$Q$(HOSTCC) $< $(HOSTCFLAGS) $(HOSTCPPFLAGS) -o $@

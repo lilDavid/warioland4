@@ -185,13 +185,6 @@ const s32* const sVoiceSetPointers[VS_MAX] = {
     [VS_22] = sVoiceSet_22,
 };
 
-
-// TODO: Figure out what this is for and move it into an appropriate header
-extern struct {
-    u32 unk_0;
-    u32 unk_4;
-} gUnk_3006130;
-
 void VoiceSet_Play(s32 voiceSet) {
     s32 chosenSound;
 
@@ -210,10 +203,11 @@ void VoiceSet_Play(s32 voiceSet) {
         case VS_WARIO_WORKOUT_END:
         case VS_WARIO_ENTERING_BOSS_ROOM:
         case VS_WARIO_DYING:
-            if (gUnk_3006130.unk_4 & 0xF) {
+            // Don't let Wario interrupt himself if already speaking (excl. "Hurry up!" lines)
+            if (gMPlayInfo_3.status & 0xF) {
                 return;
             }
     }
     chosenSound = Minigame_Random() % sVoiceSetSizes[voiceSet];
-    Sound_Play(sVoiceSetPointers[voiceSet][chosenSound]);
+    m4aSongNumStart(sVoiceSetPointers[voiceSet][chosenSound]);
 }

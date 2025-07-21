@@ -40,8 +40,7 @@ typedef u32 bool32;
 #define S64_MAX (9223372036854775807ll)
 #define U64_MAX (18446744073709551615ull)
 
-struct BgCnt
-{
+struct BgCnt {
     u16 priority:2;
     u16 charBaseBlock:2;
     u16 dummy:2;
@@ -53,8 +52,7 @@ struct BgCnt
 };
 typedef volatile struct BgCnt vBgCnt;
 
-struct PlttData
-{
+struct PlttData {
     u16 r:5; // red
     u16 g:5; // green
     u16 b:5; // blue
@@ -137,8 +135,7 @@ typedef union {
 #define SPRITE_SIZE(dim)  ((dim >> 2) & 0x03)
 #define SPRITE_SHAPE(dim) (dim & 0x03)
 
-struct BgAffineSrcData
-{
+struct BgAffineSrcData {
     s32 texX;
     s32 texY;
     s16 scrX;
@@ -148,8 +145,7 @@ struct BgAffineSrcData
     u16 alpha;
 };
 
-struct BgAffineDstData
-{
+struct BgAffineDstData {
     s16 pa;
     s16 pb;
     s16 pc;
@@ -158,16 +154,14 @@ struct BgAffineDstData
     s32 dy;
 };
 
-struct ObjAffineSrcData
-{
+struct ObjAffineSrcData {
     s16 xScale;
     s16 yScale;
     u16 rotation;
 };
 
 // Normal SIO Control Structure
-struct SioNormalCnt
-{
+struct SioNormalCnt {
     u16 sck_I_O:1;          // Clock I/O Select
     u16 sck:1;              // Internal Clock Select
     u16 ackRecv:1;          // Transfer Enable Flag Receive
@@ -191,8 +185,7 @@ struct SioNormalCnt
 #define ST_SIO_IN_SCK_2M            1       //                  Select 2MHz
 
 // Multi-player SIO Control Structure
-struct SioMultiCnt
-{
+struct SioMultiCnt {
     u16 baudRate:2;    // baud rate
     u16 si:1;          // SI terminal
     u16 sd:1;          // SD terminal
@@ -216,8 +209,7 @@ struct SioMultiCnt
 #define ST_SIO_MULTI_CHILD          0       //                  Connect slave
 
 // UART - SIO Control Structure
-struct SioUartCnt
-{
+struct SioUartCnt {
     u16 baudRate:2;         // Baud Rate
     u16 ctsEnable:1;        // Send Signal Enable
     u16 paritySelect:1;     // Parity Even/Odd
@@ -244,8 +236,7 @@ struct SioUartCnt
 #define ST_SIO_PARITY_ODD           1       // Odd parity
 
 // JOY Bus Communication Control Structure
-struct JoyCnt
-{
+struct JoyCnt {
     u8  ifReset:1;         // JOY Bus Reset Interrupt Request
     u8  ifRecv:1;          // JOY Bus Received Interrupt Request
     u8  ifSend:1;          // JOY Bus Sent Interrupt Request
@@ -255,8 +246,7 @@ struct JoyCnt
 };
 
 // JOY Bus Communication Status Structure
-struct JoyStat
-{
+struct JoyStat {
     u8  unused_0:1;
     u8  recv:1;             // Receive Status
     u8  unused_2:1;
@@ -266,8 +256,7 @@ struct JoyStat
 };
 
 // General Input/Output Control Structure
-struct RCnt
-{
+struct RCnt {
     u8  sc:1;               // Data
     u8  sd:1;
     u8  si:1;

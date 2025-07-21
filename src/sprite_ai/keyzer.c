@@ -357,9 +357,9 @@ void Keyzer_Collect() {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     gCollectedKeyzer = 1;
     if (gWarioData.reaction == REACT_WATER) {
-        Sound_Play(SE_GET_KEYZER_UNDERWATER);
+        m4aSongNumStart(SE_GET_KEYZER_UNDERWATER);
     } else {
-        Sound_Play(SE_GET_KEYZER);
+        m4aSongNumStart(SE_GET_KEYZER);
     }
     Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_KEYZER);
     VoiceSet_Play(VS_WARIO_KEYZER_GET);

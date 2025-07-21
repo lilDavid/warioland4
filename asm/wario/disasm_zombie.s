@@ -654,7 +654,7 @@ func_8018F70:
 	strb	r1, [r0, #1]
 	mov	r0, #186	@ 0xba
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1905c
 	.align	2, 0
 .L_18fe8:
@@ -669,7 +669,7 @@ func_8018F70:
 	mov	r0, #8
 	strb	r0, [r1, #1]
 	ldr	r0, .L_19008
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1905c
 .L_19004:
 	.4byte	gWarioData
@@ -680,7 +680,7 @@ func_8018F70:
 	strb	r4, [r0, #1]
 	mov	r0, #175	@ 0xaf
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #4
 	bl	VoiceSet_Play
 	b	.L_1905c
@@ -710,7 +710,7 @@ func_8018F70:
 	.4byte	gUnk_30018D4
 .L_1904c:
 	ldr	r0, .L_19070
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #0
 	bl	VoiceSet_Play
 .L_19058:
@@ -952,7 +952,7 @@ func_801910C:
 	mov	r4, #6
 	mov	r0, #179	@ 0xb3
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1923c
 .L_19220:
 	cmp	r4, #253	@ 0xfd
@@ -960,14 +960,14 @@ func_801910C:
 	mov	r4, #7
 	mov	r0, #186	@ 0xba
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1923c
 .L_19230:
 	cmp	r0, #9
 	bne	.L_1923c
 	mov	r4, #8
 	ldr	r0, .L_1924c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1923c:
 	cmp	r4, #255	@ 0xff
 	beq	.L_19246
@@ -1097,38 +1097,38 @@ func_801930C:
 	ldr	r6, [r4, #0]
 	add	r0, r6, #0
 	mov	r1, #200	@ 0xc8
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r4, [r4, #12]
 	mov	r8, r4
 	mov	r0, r8
 	mov	r1, #200	@ 0xc8
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r4, .L_1938c
 	ldr	r5, .L_19390
 	add	r0, r6, #0
 	add	r1, r4, #0
 	add	r2, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	mov	r0, r8
 	add	r1, r4, #0
 	add	r2, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	add	r0, r6, #0
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	mov	r0, r8
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	add	r0, r6, #0
 	add	r1, r4, #0
 	mov	r2, #50	@ 0x32
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	mov	r0, r8
 	add	r1, r4, #0
 	mov	r2, #50	@ 0x32
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	mov	r0, #9
 	strb	r0, [r7, #0]
 .L_19378:
@@ -1141,7 +1141,7 @@ func_801930C:
 .L_19384:
 	.4byte	gUnk_30031BC
 .L_19388:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_1938c:
 	.4byte	0xFFFF
 .L_19390:

@@ -592,7 +592,7 @@ AgbMain:
 	ldrsh	r0, [r0, r5]
 	cmp	r0, #0
 	beq	.L_64a
-	bl	func_8001D98
+	bl	m4aSoundMain
 .L_64a:
 	ldr	r0, .L_6a4
 	ldrh	r2, [r0, #0]
@@ -617,7 +617,7 @@ AgbMain:
 	ldrsh	r0, [r5, r1]
 	cmp	r0, #0
 	beq	.L_678
-	bl	func_8001D98
+	bl	m4aSoundMain
 .L_678:
 	ldr	r4, .L_6ac
 	ldrb	r0, [r4, #0]
@@ -625,7 +625,7 @@ AgbMain:
 	bne	.L_682
 	b	.L_1d4
 .L_682:
-	bl	func_80023B4
+	bl	m4aSoundVSyncOff
 	ldrb	r0, [r4, #0]
 	cmp	r0, #2
 	bne	.L_690

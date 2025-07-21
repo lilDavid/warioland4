@@ -120,7 +120,7 @@ func_8085E24:
 .L_85f08:
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_85f24
 	mov	r0, #8
 	strb	r0, [r1, #0]
@@ -162,7 +162,7 @@ func_8085E24:
 	beq	.L_85f7c
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_85f78
 	mov	r0, #8
 	strb	r0, [r1, #0]
@@ -241,7 +241,7 @@ func_8085E24:
 	bhi	.L_86058
 	mov	r0, #212	@ 0xd4
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_8602c
 	mov	r3, #1
 	strb	r3, [r0, #4]
@@ -875,7 +875,7 @@ func_8086354:
 	lsl	r0, r0, #2
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r3, r4, r5}
 	mov	r8, r3
 	mov	r9, r4
@@ -1002,7 +1002,7 @@ func_80864B0:
 	strb	r0, [r3, #0]
 	bl	func_8086064
 	ldr	r0, .L_865a0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r3, r4, r5}
 	mov	r8, r3
 	mov	r9, r4
@@ -1168,7 +1168,7 @@ func_8086648:
 	str	r0, [r1, #0]
 	mov	r0, #238	@ 0xee
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #10
 	bl	VoiceSet_Play
 	b	.L_86718

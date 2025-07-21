@@ -80,7 +80,7 @@ func_8080A6C:
 	mov	r0, #232	@ 0xe8
 	lsl	r0, r0, #1
 .L_80b0a:
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #0
 	str	r0, [r4, #0]
 	b	.L_80ce2
@@ -119,7 +119,7 @@ func_8080A6C:
 	mov	r0, #232	@ 0xe8
 	lsl	r0, r0, #1
 .L_80b54:
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	str	r5, [r4, #0]
 .L_80b5a:
 	ldr	r0, .L_80b68
@@ -218,7 +218,7 @@ func_8080A6C:
 	mov	r1, #1
 	strb	r1, [r0, #4]
 	ldr	r0, .L_80c20
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_80d44
 .L_80c10:
 	.4byte	gUnk_3003DE4
@@ -260,7 +260,7 @@ func_8080A6C:
 .L_80c54:
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_80c5c:
 	ldr	r0, .L_80cb0
 	ldrb	r0, [r0, #0]
@@ -348,7 +348,7 @@ func_8080A6C:
 	cmp	r0, #0
 	beq	.L_80d44
 	ldr	r0, .L_80d2c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_80d02:
 	mov	r1, #128	@ 0x80
 	lsl	r1, r1, #19
@@ -365,7 +365,7 @@ func_8080A6C:
 	ldr	r0, .L_80d40
 	ldr	r0, [r0, #24]
 	mov	r1, #8
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	mov	r0, #1
 	b	.L_80d46
 .L_80d28:
@@ -381,7 +381,7 @@ func_8080A6C:
 .L_80d3c:
 	.4byte	0x3FFF
 .L_80d40:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_80d44:
 	mov	r0, #0
 .L_80d46:
@@ -499,7 +499,7 @@ func_8080D4C:
 	strb	r0, [r2, #0]
 .L_80e18:
 	ldr	r0, .L_80e80
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_80e84
 	mov	r1, r9
 	strb	r1, [r0, #0]
@@ -709,7 +709,7 @@ func_8080ED4:
 	bne	.L_80faa
 	mov	r0, #171	@ 0xab
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_80fd4
 	strb	r4, [r0, #0]
 .L_80faa:
@@ -784,7 +784,7 @@ func_8080FFC:
 	bne	.L_81038
 	mov	r0, #233	@ 0xe9
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_8103e
 .L_81030:
 	.4byte	gUnk_3003D98
@@ -792,7 +792,7 @@ func_8080FFC:
 	.4byte	gUnk_3003DA0
 .L_81038:
 	ldr	r0, .L_81054
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_8103e:
 	ldr	r1, .L_81058
 	ldrb	r0, [r1, #6]
@@ -880,7 +880,7 @@ func_80810C0:
 	beq	.L_810e6
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r2, .L_81124
 	ldr	r3, .L_81128
 	ldr	r0, [r2, #0]
@@ -938,7 +938,7 @@ func_80810C0:
 	cmp	r0, #0
 	bne	.L_81146
 	ldr	r0, .L_81158
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_81146:
 	ldrh	r0, [r4, #0]
 	add	r0, #1
@@ -962,7 +962,7 @@ func_808115C:
 	sub	r0, #1
 	strb	r0, [r1, #0]
 	ldr	r0, .L_81190
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_81194
 	ldr	r0, [r1, #0]
 	add	r0, #5

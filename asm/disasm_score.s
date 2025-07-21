@@ -232,7 +232,7 @@ func_8075388:
 	mov	r4, #35	@ 0x23
 	mov	r0, #225	@ 0xe1
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_753e2
 	.align	2, 0
 .L_753bc:
@@ -886,7 +886,7 @@ func_8075888:
 .L_75910:
 	bl	func_801E4D4
 	mov	r0, #22
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4, r5}
 	pop	{r0}
 	bx	r0
@@ -939,7 +939,7 @@ func_8075974:
 	push	{lr}
 	bl	func_801E4D4
 	ldr	r0, .L_75984
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r0}
 	bx	r0
 .L_75984:
@@ -1092,7 +1092,7 @@ func_8075988:
 	cmp	r0, #0
 	bne	.L_75b1a
 	ldr	r0, .L_75ac4
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_75ac8
 	ldr	r0, [r0, #0]
 	cmp	r0, #0
@@ -3088,14 +3088,14 @@ func_807690C:
 	bne	.L_76940
 	mov	r0, #168	@ 0xa8
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_76948
 .L_7693c:
 	.4byte	gWarioData
 .L_76940:
 	mov	r0, #159	@ 0x9f
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_76948:
 	pop	{r4, r5}
 	pop	{r0}
@@ -3122,7 +3122,7 @@ func_8076950:
 	cmp	r0, #1
 	bne	.L_76988
 	ldr	r0, .L_76984
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_7698e
 	.align	2, 0
 .L_76980:
@@ -3131,7 +3131,7 @@ func_8076950:
 	.4byte	0x00000151
 .L_76988:
 	ldr	r0, .L_76994
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_7698e:
 	pop	{r4, r5}
 	pop	{r0}

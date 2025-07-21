@@ -1338,7 +1338,7 @@ func_800D854:
 	cmp	r4, #78	@ 0x4e
 	bne	.L_da16
 	ldr	r0, .L_da24
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_da16:
 	cmp	r4, #114	@ 0x72
 	bne	.L_da28
@@ -1626,7 +1626,7 @@ func_800DA40:
 	cmp	r4, #76	@ 0x4c
 	bne	.L_dc02
 	ldr	r0, .L_dc10
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_dc02:
 	cmp	r4, #112	@ 0x70
 	bne	.L_dc14
@@ -1955,7 +1955,7 @@ func_800DC2C:
 	cmp	r4, #78	@ 0x4e
 	bne	.L_de36
 	ldr	r0, .L_de44
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_de36:
 	cmp	r4, #134	@ 0x86
 	bne	.L_de48
@@ -2318,7 +2318,7 @@ func_800DE60:
 	cmp	r4, #78	@ 0x4e
 	bne	.L_e0a2
 	ldr	r0, .L_e0b0
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_e0a2:
 	cmp	r4, #134	@ 0x86
 	bne	.L_e0b4
@@ -2804,7 +2804,7 @@ func_800E440:
 	bne	.L_e460
 .L_e45a:
 	mov	r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_e460:
 	cmp	r4, #3
 	bgt	.L_e46c
@@ -2926,7 +2926,7 @@ func_800E508:
 	bne	.L_e528
 .L_e522:
 	mov	r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_e528:
 	cmp	r4, #3
 	bgt	.L_e534
@@ -3069,7 +3069,7 @@ func_800E5F4:
 	bne	.L_e614
 .L_e60e:
 	mov	r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_e614:
 	cmp	r4, #3
 	bgt	.L_e620

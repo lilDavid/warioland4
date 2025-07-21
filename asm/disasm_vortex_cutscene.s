@@ -190,7 +190,7 @@ func_807F924:
 	strh	r1, [r0, #0]
 	bl	func_807FFD8
 	ldr	r0, .L_7faa0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #6
 	bl	VoiceSet_Play
 	pop	{r3, r4, r5}

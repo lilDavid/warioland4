@@ -164,7 +164,7 @@ func_808FB84:
 	ldr	r1, .L_8fcdc
 	mov	r0, #0
 	strh	r0, [r1, #0]
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 .L_8fccc:
 	bl	func_80906B4
 	bl	ResetFreeOam
@@ -640,7 +640,7 @@ func_808FCE0:
 	.4byte	0x48238004
 	strb	r5, [r0, #0]
 	ldr	r0, .L_900d8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r2, #128	@ 0x80
 	lsl	r2, r2, #19
 	mov	r7, #248	@ 0xf8
@@ -747,7 +747,7 @@ func_8090104:
 thumb_func_start func_8090114
 func_8090114:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_9015c
 	ldr	r0, .L_90160
 	str	r0, [r1, #0]
@@ -922,7 +922,7 @@ func_80901C4:
 	.4byte	gUnk_3004A34
 .L_90260:
 	ldr	r0, .L_902ac
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_902b0
 	ldr	r0, .L_902b4
 	str	r0, [r1, #0]
@@ -985,7 +985,7 @@ func_80901C4:
 	mov	r0, #11
 	strb	r0, [r1, #0]
 	ldr	r0, .L_902f0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_90364
 	.align	2, 0
 .L_902e8:
@@ -1001,7 +1001,7 @@ func_80901C4:
 	beq	.L_9030c
 .L_902fc:
 	ldr	r0, .L_90308
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #1
 	b	.L_90366
 	.align	2, 0
@@ -1073,7 +1073,7 @@ func_8090374:
 	strh	r5, [r0, #0]
 	mov	r0, #146	@ 0x92
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_903b0
 	mov	r0, #0
 	strh	r0, [r1, #0]
@@ -1219,7 +1219,7 @@ func_809047C:
 	cmp	r0, #0
 	bne	.L_904a2
 	ldr	r0, .L_904c0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_904c4
 	ldrh	r0, [r1, #0]
 	sub	r0, #1

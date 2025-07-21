@@ -410,7 +410,7 @@ void Box_StartOpening(void) {
     gCurrentSprite.hitboxExtentUp = BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x19;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_1, PERSISTENT_STATUS_LOADED);
-    Sound_Play(SE_BOX_OPENING);
+    m4aSongNumStart(SE_BOX_OPENING);
     VoiceSet_Play(VS_WARIO_TREASURE);
 }
 
@@ -790,7 +790,7 @@ void SpriteAI_JewelPieceNE(void) {
 
         case POSE_31:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
-            Sound_Play(SE_GET_JEWEL_PIECE);
+            m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedNEJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
@@ -829,7 +829,7 @@ void SpriteAI_JewelPieceSE(void) {
 
         case POSE_31:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
-            Sound_Play(SE_GET_JEWEL_PIECE);
+            m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedSEJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
@@ -868,7 +868,7 @@ void SpriteAI_JewelPieceSW(void) {
 
         case POSE_31:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
-            Sound_Play(SE_GET_JEWEL_PIECE);
+            m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedSWJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
@@ -907,7 +907,7 @@ void SpriteAI_JewelPieceNW(void) {
 
         case POSE_31:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
-            Sound_Play(SE_GET_JEWEL_PIECE);
+            m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedNWJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
@@ -946,7 +946,7 @@ void SpriteAI_CD(void) {
 
         case POSE_31:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
-            Sound_Play(SE_GET_CD);
+            m4aSongNumStart(SE_GET_CD);
             gCollectedCD = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
@@ -992,7 +992,7 @@ void SpriteAI_HeartRefill(void) {
             }
             gWarioHearts.unk_2 = gWarioHearts.filling << 3;
             gWarioHearts.unk_3 = 0;
-            Sound_Play(SE_GET_HEART_REFILL);
+            m4aSongNumStart(SE_GET_HEART_REFILL);
             break;
 
         default:

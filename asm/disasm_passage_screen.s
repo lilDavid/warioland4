@@ -912,7 +912,7 @@ func_8084CBC:
 	ldrb	r0, [r0, #0]
 	strb	r0, [r1, #0]
 	ldr	r0, .L_84ce8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_84cec
 	mov	r4, #0
 	strb	r4, [r0, #0]
@@ -949,7 +949,7 @@ func_8084CF4:
 	cmp	r0, #5
 	bne	.L_84d14
 	ldr	r0, .L_84d44
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_84d14:
 	ldr	r0, .L_84d48
 	mov	r2, #0
@@ -1078,7 +1078,7 @@ func_8084DEC:
 	cmp	r0, #0
 	bne	.L_84e06
 	mov	r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_84e06:
 	pop	{r0}
 	bx	r0
@@ -1118,17 +1118,17 @@ func_8084E10:
 	cmp	r0, #5
 	bne	.L_84e54
 	ldr	r0, .L_84e50
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_84e64
 .L_84e50:
 	.4byte	0x127
 .L_84e54:
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #229	@ 0xe5
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_84e64:
 	ldr	r1, .L_84e7c
 	mov	r0, #4
@@ -1136,7 +1136,7 @@ func_8084E10:
 	ldr	r0, .L_84e80
 	ldr	r0, [r0, #24]
 	mov	r1, #6
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r1, .L_84e84
 	mov	r0, #0
 	strb	r0, [r1, #0]
@@ -1144,7 +1144,7 @@ func_8084E10:
 .L_84e7c:
 	.4byte	gUnk_3004700
 .L_84e80:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_84e84:
 	.4byte	gUnk_3003C08
 .L_84e88:
@@ -1160,7 +1160,7 @@ func_8084E10:
 	b	.L_84fbe
 .L_84e9e:
 	mov	r0, #8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_84fbe
 .L_84ea6:
 	ldr	r0, .L_84ecc
@@ -1237,7 +1237,7 @@ func_8084E10:
 	cmp	r0, r7
 	beq	.L_84f34
 	mov	r0, #8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_84f34:
 	ldr	r5, .L_84f70
 	ldrb	r2, [r5, #0]
@@ -1321,7 +1321,7 @@ thumb_func_start func_8084FCC
 func_8084FCC:
 	push	{r4, lr}
 	ldr	r0, .L_84ff8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_84ffc
 	mov	r2, #1
 	strb	r2, [r0, #0]
@@ -1353,7 +1353,7 @@ func_8085008:
 	push	{lr}
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_85024
 	mov	r0, #0
 	strb	r0, [r1, #0]

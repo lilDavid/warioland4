@@ -154,7 +154,7 @@ func_801B8BC:
 	beq	.L_1b9fc
 	mov	r0, #145	@ 0x91
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1b9fc:
 	ldr	r0, .L_1ba28
 	mov	r1, #0
@@ -274,7 +274,7 @@ func_801B8BC:
 	cmp	r0, #3
 	beq	.L_1bae8
 .L_1bae4:
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 .L_1bae8:
 	mov	r5, #1
 	b	.L_1bb04
@@ -416,7 +416,7 @@ func_801BBA8:
 thumb_func_start func_801BC0C
 func_801BC0C:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r2, .L_1bcf8
 	ldr	r0, .L_1bcfc
 	str	r0, [r2, #0]
@@ -766,7 +766,7 @@ func_801BD4C:
 thumb_func_start func_801BEA8
 func_801BEA8:
 	push	{r4, r5, lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r5, .L_1bfe0
 	ldr	r0, .L_1bfe4
 	str	r0, [r5, #0]
@@ -978,8 +978,8 @@ func_801BEA8:
 thumb_func_start func_801C040
 func_801C040:
 	push	{lr}
-	bl	func_80016C4
-	bl	func_8001D98
+	bl	m4aSoundVSync
+	bl	m4aSoundMain
 	pop	{r0}
 	bx	r0
 
@@ -989,7 +989,7 @@ func_801C040:
 thumb_func_start func_801C050
 func_801C050:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r2, .L_1c118
 	ldr	r0, .L_1c11c
 	str	r0, [r2, #0]
@@ -1565,7 +1565,7 @@ func_801C43C:
 .L_1c4b0:
 	bne	.L_1c4ec
 	mov	r0, #41	@ 0x29
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1c5ca
 	.align	2, 0
 .L_1c4bc:
@@ -1598,13 +1598,13 @@ func_801C43C:
 	cmp	r0, #28
 	bne	.L_1c4f8
 	mov	r0, #35	@ 0x23
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1c5ca
 .L_1c4f8:
 	cmp	r0, #35	@ 0x23
 	bne	.L_1c5ca
 	mov	r0, #39	@ 0x27
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1c5ca
 .L_1c504:
 	ldr	r0, .L_1c570

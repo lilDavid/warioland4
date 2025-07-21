@@ -98,7 +98,7 @@ func_8072964:
 	ldrb	r0, [r0, #0]
 	strb	r0, [r2, #2]
 	ldr	r0, .L_72ac8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_72a26:
 	ldr	r0, .L_72acc
 	strb	r7, [r0, #0]
@@ -260,7 +260,7 @@ func_8072B24:
 .L_72b54:
 	mov	r0, #159	@ 0x9f
 	lsl	r0, r0, #2
-	bl	func_8001E70
+	bl	m4aSongNumStop
 	pop	{r0}
 	bx	r0
 .L_72b60:
@@ -291,8 +291,8 @@ func_8072B74:
 thumb_func_start func_8072B88
 func_8072B88:
 	push	{lr}
-	bl	func_80016C4
-	bl	func_8001D98
+	bl	m4aSoundVSync
+	bl	m4aSoundMain
 	pop	{r0}
 	bx	r0
 	.align	2, 0
@@ -319,7 +319,7 @@ func_8072B98:
 	strh	r0, [r3, #0]
 	ldr	r0, .L_72c30
 	bl	InterruptCallback_SetVBlank
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 	ldr	r5, .L_72c34
 	ldrb	r0, [r5, #0]
 	cmp	r0, #1

@@ -676,7 +676,7 @@ func_8003474:
 	beq	.L_3956
 	mov	r0, #146	@ 0x92
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r0, #46	@ 0x2e
 	strh	r0, [r4, #0]
 .L_3956:
@@ -706,7 +706,7 @@ func_8003474:
 thumb_func_start func_8003980
 func_8003980:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r0, .L_39fc
 	ldr	r1, [r0, #0]
 	cmp	r1, #0
@@ -762,7 +762,7 @@ func_8003980:
 	bne	.L_39f2
 	bl	func_800C82C
 .L_39f2:
-	bl	func_8001D98
+	bl	m4aSoundMain
 	pop	{r0}
 	bx	r0
 	.align	2, 0

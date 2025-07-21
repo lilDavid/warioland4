@@ -44,7 +44,7 @@ func_800FD28:
 	cmp	r0, #1
 	bne	.L_fd7e
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_fd7e:
 	pop	{r4}
 	pop	{r0}
@@ -689,7 +689,7 @@ func_80101D0:
 	cmp	r0, #95	@ 0x5f
 	bne	.L_10218
 	ldr	r0, .L_1022c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #0
 	bl	VoiceSet_Play
 .L_10218:
@@ -773,9 +773,9 @@ func_8010230:
 .L_102c8:
 	ldr	r0, .L_102d4
 	ldr	r0, [r0, #36]	@ 0x24
-	bl	func_80025C8
+	bl	MPlayStop
 .L_102d0:
 	pop	{r0}
 	bx	r0
 .L_102d4:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable

@@ -4,6 +4,9 @@ MEMORY {
     ROM   (rx)  : ORIGIN = 0x8000000, LENGTH = 32M
 }
 
+gNumMusicPlayers = 8;
+gMaxLines = 70;
+
 SECTIONS {
     ewram (NOLOAD) : ALIGN(4) {} > EWRAM
     iwram (NOLOAD) : ALIGN(4) {
@@ -579,10 +582,8 @@ SECTIONS {
         . = 0x4b1c; gUnk_3004B1C = .;
         . = 0x4b24; gUnk_3004B24 = .;
         . = 0x4b25; gUnk_3004B25 = .;
-        . = 0x60f0; gUnk_30060F0 = .;
-        . = 0x6130; gUnk_3006130 = .;
-        . = 0x6170; gUnk_3006170 = .;
-        . = 0x6230; gUnk_3006230 = .;
+        . = ALIGN(4); obj/m4a.o(.bss.code);
+        . = ALIGN(16); obj/m4a.o(common_data);
 
         . = 0x7e60; sp_sys = .;
         . = 0x7fa0; sp_irq = .;
@@ -602,7 +603,8 @@ SECTIONS {
         obj/disasm_0x000A84.o(.text);
         obj/interrupt_callbacks.o(.text);
         obj/disasm_sram.o(.text);
-        obj/blob_sound.o(.text);
+        obj/m4a_asm.o(.text);
+        obj/m4a.o(.text);
         obj/syscalls.o(.text);
         obj/disasm_0x003228.o(.text);
         obj/disasm_title.o(.text);
@@ -763,7 +765,8 @@ SECTIONS {
         obj/data/sin_cos_table.o(.rodata);
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
-        obj/blob_0x09540C-0x3B3A00.o(.rodata);
+        obj/m4a_tables.o(.rodata);
+        obj/blob_0x0956E4-0x3B3A00.o(.rodata);
         obj/sprite_ai/spear_mask.o(.rodata);
         obj/blob_0x3B451C-0x3B4554.o(.rodata);
         obj/sprite_ai/keyzer.o(.rodata);

@@ -170,7 +170,7 @@ func_8074808:
 	bne	.L_7494a
 	mov	r0, #228	@ 0xe4
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_7494a:
 	ldr	r0, .L_74964
 	ldr	r1, .L_74968
@@ -903,7 +903,7 @@ func_8074D9C:
 	beq	.L_74ed6
 .L_74ece:
 	mov	r0, #224	@ 0xe0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_74ef2
 .L_74ed6:
 	ldrh	r0, [r1, #6]
@@ -913,13 +913,13 @@ func_8074D9C:
 	strb	r0, [r1, #3]
 .L_74ee0:
 	mov	r0, #225	@ 0xe1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_74ef2
 .L_74ee8:
 	mov	r0, #1
 	strb	r0, [r2, #3]
 	mov	r0, #225	@ 0xe1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_74ef2:
 	ldr	r0, .L_74f0c
 	ldrb	r0, [r0, #0]

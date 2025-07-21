@@ -3,15 +3,15 @@
 .section .rodata
 
 
-baserom_blob 0x09540C, 0x097FC8
+baserom_blob 0x0956E4, 0x097FC8
 
-.global sUnk_8097FC8
-sUnk_8097FC8:
+.global gMPlayTable
+gMPlayTable:
 
 baserom_blob 0x097FC8, 0x098028
 
-.global sUnk_8098028
-sUnk_8098028:
+.global gSongTable
+gSongTable:
 
 baserom_blob 0x098028, 0x283F14
 

@@ -382,7 +382,7 @@ void SpriteAI_WarioExitingVortex(void) {
             gCurrentSprite.work0 = CONVERT_SECONDS(1.0);
             gCurrentSprite.work1 = -ANGLE_PI / 8;
             gCurrentSprite.work2 = 0x100 / 16;
-            Sound_Play(SOUND_1CC);
+            m4aSongNumStart(SOUND_1CC);
             break;
 
         case POSE_IDLE:

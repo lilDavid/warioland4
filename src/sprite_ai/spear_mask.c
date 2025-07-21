@@ -1238,7 +1238,7 @@ void SpearMask_InitTransform(void) {
     gCurrentSprite.warioInteractionFlags = 1;
     gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE + PIXEL_SIZE;
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
-    Sound_Play(SOUND_62);
+    m4aSongNumStart(SOUND_62);
     switch (gCurrentSprite.globalID) {
         case PSPRITE_SPEAR_MASK_YELLOW:
             gCurrentSprite.globalID = PSPRITE_SPEAR_MASK_BLUE;

@@ -10,47 +10,47 @@ func_801E4B0:
 	bne	.L_1e4c8
 	ldr	r0, .L_1e4d0
 	ldr	r0, [r0, #36]	@ 0x24
-	bl	func_80025C8
+	bl	MPlayStop
 	mov	r0, #40	@ 0x28
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1e4c8:
 	pop	{r0}
 	bx	r0
 .L_1e4cc:
 	.4byte	gUnk_3001948
 .L_1e4d0:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 
 
 thumb_func_start func_801E4D4
 func_801E4D4:
 	push	{r4, lr}
 	ldr	r0, .L_1e510
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r4, .L_1e514
 	ldr	r0, [r4, #36]	@ 0x24
-	bl	func_80025C8
+	bl	MPlayStop
 	ldr	r0, [r4, #0]
 	mov	r1, #2
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r0, [r4, #12]
 	mov	r1, #2
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r0, [r4, #24]
 	mov	r1, #2
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	mov	r0, #217	@ 0xd9
-	bl	func_8001E70
+	bl	m4aSongNumStop
 	mov	r0, #225	@ 0xe1
 	lsl	r0, r0, #1
-	bl	func_8001E70
+	bl	m4aSongNumStop
 	pop	{r4}
 	pop	{r0}
 	bx	r0
 .L_1e510:
 	.4byte	0x000001cd
 .L_1e514:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 
 
 thumb_func_start func_801E518
@@ -59,11 +59,11 @@ func_801E518:
 	ldr	r0, .L_1e528
 	ldr	r0, [r0, #12]
 	mov	r1, #4
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	pop	{r0}
 	bx	r0
 .L_1e528:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 
 
 thumb_func_start func_801E52C
@@ -364,7 +364,7 @@ func_801E884:
 	strb	r0, [r1, #28]
 .L_1e8de:
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1e926
 	.align	2, 0
 .L_1e8e8:
@@ -373,7 +373,7 @@ func_801E884:
 	mov	r0, #35	@ 0x23
 	strb	r0, [r1, #28]
 	mov	r0, #52	@ 0x34
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1e926
 .L_1e8f8:
 	mov	r0, #8
@@ -389,7 +389,7 @@ func_801E884:
 	bne	.L_1e91c
 	mov	r0, #53	@ 0x35
 	strb	r0, [r1, #28]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1e926
 .L_1e918:
 	.4byte	gSpriteData
@@ -397,7 +397,7 @@ func_801E884:
 	mov	r0, #37	@ 0x25
 	strb	r0, [r1, #28]
 	mov	r0, #52	@ 0x34
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1e926:
 	pop	{r0}
 	bx	r0
@@ -526,7 +526,7 @@ func_801E92C:
 	strb	r0, [r1, #28]
 .L_1ea14:
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1ea36
 .L_1ea1c:
 	ldr	r1, .L_1ea2c
@@ -1141,7 +1141,7 @@ func_801EE20:
 	strh	r0, [r4, #22]
 .L_1ee48:
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1ee4e:
 	pop	{r4}
 	pop	{r0}
@@ -1175,7 +1175,7 @@ func_801EE5C:
 	strh	r0, [r4, #22]
 .L_1ee84:
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1ee8a:
 	pop	{r4}
 	pop	{r0}
@@ -1216,7 +1216,7 @@ func_801EE9C:
 	strh	r0, [r4, #22]
 .L_1eecc:
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1eed2:
 	pop	{r4, r5}
 	pop	{r0}
@@ -1255,7 +1255,7 @@ func_801EEE0:
 	strh	r0, [r4, #22]
 .L_1ef10:
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1ef16:
 	pop	{r4, r5}
 	pop	{r0}
@@ -1280,7 +1280,7 @@ func_801EF28:
 	mov	r0, #31
 	bl	_call_via_r1
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r0}
 	bx	r0
 	.align	2, 0
@@ -1311,7 +1311,7 @@ func_801EF50:
 	ldr	r0, .L_1ef90
 	strb	r4, [r0, #0]
 	mov	r0, #52	@ 0x34
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1ef7e:
 	pop	{r4, r5}
 	pop	{r0}
@@ -1347,7 +1347,7 @@ func_801EF94:
 	ldr	r0, .L_1efd0
 	strb	r4, [r0, #0]
 	mov	r0, #52	@ 0x34
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1efc2:
 	pop	{r4, r5}
 	pop	{r0}
@@ -1370,7 +1370,7 @@ func_801EFD4:
 	cmp	r0, #12
 	blt	.L_1f004
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_1f000
 	ldrb	r1, [r0, #0]
 	mov	r0, #4
@@ -1524,7 +1524,7 @@ func_801F00C:
 	mov	r4, #80	@ 0x50
 .L_1f102:
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1f142
 .L_1f10a:
 	mov	r4, #53	@ 0x35
@@ -1627,7 +1627,7 @@ func_801F14C:
 	mov	r4, #79	@ 0x4f
 .L_1f1bc:
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1f1f6
 .L_1f1c4:
 	ldr	r1, .L_1f1dc
@@ -1812,7 +1812,7 @@ func_801F200:
 	mov	r4, #80	@ 0x50
 .L_1f342:
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1f432
 .L_1f34a:
 	mov	r4, #53	@ 0x35
@@ -1928,7 +1928,7 @@ func_801F200:
 	mov	r4, #85	@ 0x55
 .L_1f41c:
 	mov	r0, #50	@ 0x32
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1f432
 .L_1f424:
 	.4byte	gUnk_3001948
@@ -2036,7 +2036,7 @@ func_801F43C:
 	mov	r4, #79	@ 0x4f
 .L_1f514:
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1f5d0
 .L_1f51c:
 	mov	r4, #85	@ 0x55
@@ -2124,7 +2124,7 @@ func_801F43C:
 	bl	_call_via_r1
 .L_1f5bc:
 	mov	r0, #50	@ 0x32
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_1f5d0
 .L_1f5c4:
 	.4byte	sUnk_82DECA0
@@ -4044,7 +4044,7 @@ func_80204F4:
 .L_20542:
 	strb	r1, [r0, #28]
 	mov	r0, #60	@ 0x3c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_206ac
 .L_2054c:
 	.4byte	gSpriteData
@@ -4177,7 +4177,7 @@ func_80204F4:
 .L_20638:
 	bl	_call_via_r1
 	mov	r0, #60	@ 0x3c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_206a2
 .L_20644:
 	.4byte	gSpriteData
@@ -4288,7 +4288,7 @@ func_80206B8:
 .L_20706:
 	strb	r1, [r0, #28]
 	mov	r0, #60	@ 0x3c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_207cc
 .L_20710:
 	.4byte	gSpriteData
@@ -4333,7 +4333,7 @@ func_80206B8:
 	mov	r5, #31
 .L_2075e:
 	mov	r0, #60	@ 0x3c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_2077c
 	mov	r0, #64	@ 0x40
 	strh	r0, [r1, #16]
@@ -4453,7 +4453,7 @@ func_80207D8:
 .L_20836:
 	strb	r1, [r0, #28]
 	mov	r0, #60	@ 0x3c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_2094c
 .L_20840:
 	.4byte	gSpriteData
@@ -4717,7 +4717,7 @@ func_80209E0:
 	mov	r1, #49	@ 0x31
 	strb	r1, [r0, #28]
 	mov	r0, #60	@ 0x3c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_20b04
 	.align	2, 0
 .L_20a30:
@@ -4869,7 +4869,7 @@ func_8020B10:
 	cmp	r0, #28
 	bne	.L_20b54
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_20b44:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -4960,7 +4960,7 @@ func_8020BB8:
 	cmp	r0, #28
 	bne	.L_20bfc
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_20bec:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -5065,7 +5065,7 @@ func_8020C78:
 	cmp	r0, #28
 	bne	.L_20cc0
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_20caa:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -5153,7 +5153,7 @@ func_8020CEC:
 	cmp	r0, #28
 	bne	.L_20d68
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_20d54:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -5301,7 +5301,7 @@ func_8020E1C:
 	cmp	r0, #28
 	bne	.L_20e84
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_20e6e:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -5864,7 +5864,7 @@ func_802125C:
 	cmp	r0, #28
 	bne	.L_212a0
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21290:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -6691,7 +6691,7 @@ func_8021784:
 	cmp	r0, #28
 	bne	.L_21890
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21884:
 	mov	r6, #49	@ 0x31
 	bl	func_801EF28
@@ -7212,7 +7212,7 @@ func_8021C30:
 	cmp	r0, #28
 	bne	.L_21ca4
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21c72:
 	ldr	r1, .L_21c9c
 	mov	r0, #44	@ 0x2c
@@ -7294,7 +7294,7 @@ func_8021CC8:
 	cmp	r0, #28
 	bne	.L_21d2c
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21d0a:
 	bl	func_801EF28
 	ldr	r0, .L_21d28
@@ -7374,7 +7374,7 @@ func_8021D5C:
 	cmp	r0, #28
 	bne	.L_21dac
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21d9c:
 	bl	func_801EF28
 	b	.L_21dc6
@@ -7455,7 +7455,7 @@ func_8021DD0:
 	cmp	r0, #28
 	bne	.L_21e3c
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21e30:
 	bl	func_801EF28
 	b	.L_21e56
@@ -7678,7 +7678,7 @@ func_8021F84:
 	cmp	r0, #28
 	bne	.L_2200c
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_21fcc:
 	bl	func_801EF28
 	ldr	r0, .L_22000
@@ -7736,7 +7736,7 @@ func_8021F84:
 	mov	r0, #1
 	strb	r0, [r1, #0]
 	mov	r0, #53	@ 0x35
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_220e6
 	.align	2, 0
 .L_22044:
@@ -8020,7 +8020,7 @@ func_8022220:
 	cmp	r0, #28
 	bne	.L_22264
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_22252:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -8306,7 +8306,7 @@ func_80222D8:
 	mov	r0, #120	@ 0x78
 	strh	r0, [r5, #24]
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_22510
 .L_22478:
 	.4byte	sUnk_82DECA0
@@ -8995,7 +8995,7 @@ func_8022948:
 	cmp	r1, #28
 	bne	.L_229cc
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_229a0:
 	ldr	r0, .L_229c8
 	ldrb	r0, [r0, #0]
@@ -9118,7 +9118,7 @@ func_8022948:
 	mov	r0, #96	@ 0x60
 	strh	r0, [r1, #24]
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_22acc
 	.align	2, 0
 .L_22a90:
@@ -9281,7 +9281,7 @@ func_8022AE8:
 	strb	r1, [r0, #28]
 .L_22bbe:
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_22c40
 	.align	2, 0
 .L_22bc8:
@@ -9636,7 +9636,7 @@ func_8022CE8:
 	mov	r2, #64	@ 0x40
 	bl	Sprite_SpawnSecondary
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_22ed4
 	.align	2, 0
 .L_22e70:
@@ -9944,7 +9944,7 @@ func_8022FC8:
 	mov	r0, #26
 	bl	_call_via_r1
 	mov	r0, #56	@ 0x38
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_23100
 .L_230ac:
 	.4byte	gSpriteData
@@ -10151,7 +10151,7 @@ func_80231F8:
 	cmp	r0, #28
 	bne	.L_2323c
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_2322a:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -10278,7 +10278,7 @@ func_80232C4:
 	cmp	r0, #28
 	bne	.L_2332c
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_23316:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -10394,7 +10394,7 @@ func_80233B8:
 	cmp	r0, #28
 	bne	.L_233fc
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_233ea:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -10531,7 +10531,7 @@ func_802349C:
 	cmp	r0, #28
 	bne	.L_23504
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_234ee:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -10674,7 +10674,7 @@ func_80235A0:
 	cmp	r0, #28
 	bne	.L_235fe
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_235f6:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -10857,7 +10857,7 @@ func_80236C4:
 	cmp	r0, #28
 	bne	.L_2375c
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_23746:
 	mov	r4, #49	@ 0x31
 	bl	func_801EF28
@@ -10960,7 +10960,7 @@ func_80237E4:
 	cmp	r0, #28
 	bne	.L_23824
 	mov	r0, #43	@ 0x2b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_23806:
 	ldr	r1, .L_23820
 	mov	r0, #44	@ 0x2c

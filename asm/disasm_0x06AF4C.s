@@ -2157,7 +2157,7 @@ func_806BF88:
 .L_6bfcc:
 	ldr	r4, .L_6c014
 	ldrh	r0, [r4, #2]
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	ldr	r2, .L_6c028
 	ldr	r1, .L_6c02c
 	ldrh	r0, [r4, #2]
@@ -2172,7 +2172,7 @@ func_806BF88:
 	ldr	r1, .L_6c030
 	ldr	r2, .L_6c01c
 	ldrh	r2, [r2, #42]	@ 0x2a
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldrh	r0, [r4, #2]
 	strh	r0, [r4, #4]
 	ldr	r0, .L_6c024
@@ -2184,7 +2184,7 @@ func_806BF88:
 	cmp	r0, #0
 	beq	.L_6c034
 	mov	r0, #217	@ 0xd9
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_6c0ca
 .L_6c010:
 	.4byte	gUnk_300001C
@@ -2199,15 +2199,15 @@ func_806BF88:
 .L_6c024:
 	.4byte	gUnk_3000012
 .L_6c028:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6c02c:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_6c030:
 	.4byte	0xFFFF
 .L_6c034:
 	mov	r0, #230	@ 0xe6
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_6c0ca
 .L_6c03e:
 	ldr	r0, .L_6c06c
@@ -2223,7 +2223,7 @@ func_806BF88:
 	ldrh	r0, [r4, #8]
 	cmp	r0, #0
 	beq	.L_6c078
-	bl	func_8001E1C
+	bl	m4aSongNumStartOrContinue
 	ldr	r1, .L_6c074
 	ldrh	r0, [r4, #8]
 	lsl	r0, r0, #3
@@ -2238,7 +2238,7 @@ func_806BF88:
 .L_6c070:
 	.4byte	gUnk_3000026
 .L_6c074:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_6c078:
 	ldrh	r0, [r4, #2]
 	ldrh	r1, [r4, #4]
@@ -2255,15 +2255,15 @@ func_806BF88:
 	add	r0, r0, r2
 	ldr	r0, [r0, #0]
 	mov	r1, #1
-	bl	func_8001F6C
+	bl	m4aMPlayFadeIn
 	b	.L_6c0aa
 .L_6c09c:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6c0a0:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_6c0a4:
 	ldrh	r0, [r4, #2]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_6c0aa:
 	ldr	r1, .L_6c0b4
 	ldrh	r0, [r1, #2]
@@ -2298,7 +2298,7 @@ func_806BF88:
 .L_6c0e0:
 	.4byte	gUnk_3003200
 .L_6c0e4:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 
 
 thumb_func_start func_806C0E8
@@ -2319,7 +2319,7 @@ func_806C0E8:
 	strb	r1, [r4, #0]
 	strb	r1, [r4, #1]
 	strh	r0, [r4, #4]
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	ldr	r0, .L_6c128
 	ldr	r1, .L_6c12c
 	add	r0, r0, r1
@@ -2336,7 +2336,7 @@ func_806C0E8:
 .L_6c124:
 	.4byte	0x2A9
 .L_6c128:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_6c12c:
 	.4byte	0x154C
 
@@ -2387,13 +2387,13 @@ func_806C130:
 	ldr	r1, .L_6c194
 	ldr	r2, .L_6c198
 	ldrh	r2, [r2, #42]	@ 0x2a
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	strb	r4, [r6, #0]
 	b	.L_6c200
 .L_6c18c:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6c190:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_6c194:
 	.4byte	0xFFFF
 .L_6c198:
@@ -2406,7 +2406,7 @@ func_806C130:
 	strb	r0, [r6, #1]
 	b	.L_6c200
 .L_6c1a8:
-	.4byte	gUnk_3006230
+	.4byte	gMPlayMemAccArea
 .L_6c1ac:
 	ldr	r1, .L_6c208
 	ldrb	r0, [r6, #1]
@@ -2421,9 +2421,9 @@ func_806C130:
 	add	r0, r0, r4
 	ldr	r0, [r0, #0]
 	mov	r1, #12
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldrh	r0, [r6, #2]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r5, .L_6c210
 	ldrh	r0, [r6, #2]
 	lsl	r0, r0, #3
@@ -2437,7 +2437,7 @@ func_806C130:
 	ldr	r1, .L_6c214
 	ldr	r2, .L_6c218
 	ldrh	r2, [r2, #42]	@ 0x2a
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldrh	r0, [r6, #2]
 	mov	r1, #0
 	strh	r0, [r6, #4]
@@ -2453,11 +2453,11 @@ func_806C130:
 	bx	r0
 	.align	2, 0
 .L_6c208:
-	.4byte	gUnk_3006230
+	.4byte	gMPlayMemAccArea
 .L_6c20c:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6c210:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_6c214:
 	.4byte	0xFFFF
 .L_6c218:
@@ -2501,7 +2501,7 @@ func_806C21C:
 .L_6c258:
 	bl	func_806C2CC
 	ldrh	r0, [r5, #8]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r2, .L_6c284
 	ldrb	r1, [r5, #6]
 	lsl	r0, r1, #1
@@ -2510,7 +2510,7 @@ func_806C21C:
 	add	r0, r0, r2
 	ldr	r0, [r0, #0]
 	mov	r1, #38	@ 0x26
-	bl	func_8001F4C
+	bl	m4aMPlayFadeOutTemporarily
 	ldrb	r0, [r5, #10]
 	add	r0, #1
 	strb	r0, [r5, #10]
@@ -2519,7 +2519,7 @@ func_806C21C:
 .L_6c280:
 	.4byte	gWarioData
 .L_6c284:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6c288:
 	ldr	r1, .L_6c2a0
 	ldrb	r0, [r1, #0]
@@ -2544,9 +2544,9 @@ func_806C21C:
 	add	r0, r0, r2
 	ldr	r0, [r0, #0]
 	mov	r1, #1
-	bl	func_8001F6C
+	bl	m4aMPlayFadeIn
 	ldrh	r0, [r5, #8]
-	bl	func_8001E70
+	bl	m4aSongNumStop
 	strb	r4, [r5, #10]
 	strh	r4, [r5, #8]
 .L_6c2c2:
@@ -2554,7 +2554,7 @@ func_806C21C:
 	pop	{r0}
 	bx	r0
 .L_6c2c8:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 
 
 thumb_func_start func_806C2CC
@@ -2587,7 +2587,7 @@ func_806C2CC:
 .L_6c2fc:
 	.4byte	sUnk_86D371C
 .L_6c300:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 
 
 thumb_func_start func_806C304
@@ -2596,19 +2596,19 @@ func_806C304:
 	ldr	r4, .L_6c328
 	ldr	r0, [r4, #0]
 	mov	r1, #2
-	bl	func_8001F4C
+	bl	m4aMPlayFadeOutTemporarily
 	ldr	r0, [r4, #12]
 	mov	r1, #2
-	bl	func_8001F4C
+	bl	m4aMPlayFadeOutTemporarily
 	ldr	r0, .L_6c32c
 	ldrh	r0, [r0, #8]
-	bl	func_8001E70
+	bl	m4aSongNumStop
 	pop	{r4}
 	pop	{r0}
 	bx	r0
 	.align	2, 0
 .L_6c328:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_6c32c:
 	.4byte	gUnk_3003200
 

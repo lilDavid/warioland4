@@ -109,7 +109,7 @@ func_8083798:
 	mov	r1, #1
 	strb	r1, [r0, #0]
 	ldr	r0, .L_838d0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #2
 	bl	VoiceSet_Play
 	mov	r3, #0
@@ -427,7 +427,7 @@ func_80838E8:
 	strb	r0, [r5, #0]
 	mov	r0, #216	@ 0xd8
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4, r5, r6, r7}
 	pop	{r0}
 	bx	r0

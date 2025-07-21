@@ -55,7 +55,7 @@ func_80927E4:
 .L_9284c:
 	mov	r0, #143	@ 0x8f
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_92864
 	ldrh	r0, [r1, #0]
 	add	r0, #1
@@ -394,7 +394,7 @@ func_80929C4:
 	strb	r2, [r1, #8]
 	strb	r2, [r1, #9]
 	ldr	r0, .L_92ac0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_92b22
 	.align	2, 0
 .L_92ab8:
@@ -408,7 +408,7 @@ func_80929C4:
 	bne	.L_92ad2
 	mov	r0, #146	@ 0x92
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_92b22
 .L_92ad2:
 	cmp	r3, #3
@@ -433,7 +433,7 @@ func_80929C4:
 	strb	r2, [r1, #9]
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_92b22
 	.align	2, 0
 .L_92b04:
@@ -443,7 +443,7 @@ func_80929C4:
 	bne	.L_92b18
 .L_92b0c:
 	ldr	r0, .L_92b14
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_92b22
 .L_92b14:
 	.4byte	0x00000129
@@ -451,7 +451,7 @@ func_80929C4:
 	cmp	r3, #6
 	bne	.L_92b22
 	ldr	r0, .L_92b2c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_92b22:
 	add	r0, r4, #0
 	pop	{r4}
@@ -783,7 +783,7 @@ func_8092D2C:
 thumb_func_start func_8092DA0
 func_8092DA0:
 	push	{lr}
-	bl	func_80016C4
+	bl	m4aSoundVSync
 	ldr	r1, .L_92dd4
 	ldr	r0, .L_92dd8
 	str	r0, [r1, #0]
@@ -824,8 +824,8 @@ func_8092DA0:
 thumb_func_start func_8092DEC
 func_8092DEC:
 	push	{lr}
-	bl	func_80016C4
-	bl	func_8001D98
+	bl	m4aSoundVSync
+	bl	m4aSoundMain
 	pop	{r0}
 	bx	r0
 	.align	2, 0

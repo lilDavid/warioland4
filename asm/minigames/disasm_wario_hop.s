@@ -93,7 +93,7 @@ func_808CB18:
 	cmp	r0, r5
 	bls	.L_8cc1c
 	ldr	r0, .L_8cbf8
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	strh	r5, [r4, #4]
 .L_8cbe8:
 	ldr	r1, .L_8cbfc
@@ -444,7 +444,7 @@ func_808CC5C:
 	ldr	r0, .L_8cfa0
 	strh	r4, [r0, #0]
 	ldr	r0, .L_8cfa4
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r2, #0
 	mov	r3, #1
 	ldr	r0, .L_8cfa8
@@ -645,7 +645,7 @@ func_808CFE8:
 	mov	r0, #0
 	str	r0, [r1, #0]
 	ldr	r0, .L_8d020
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_8d024
 	ldrb	r0, [r1, #0]
 	cmp	r0, #3
@@ -717,7 +717,7 @@ func_808D028:
 	lsl	r0, r0, #2
 	add	r0, r0, r3
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_8d0a4
 	strb	r4, [r0, #0]
 	b	.L_8d0da
@@ -726,7 +726,7 @@ func_808D028:
 .L_8d08c:
 	.4byte	gUnk_3004920
 .L_8d090:
-	.4byte	gUnk_3006230
+	.4byte	gMPlayMemAccArea
 .L_8d094:
 	.4byte	gUnk_30049DA
 .L_8d098:
@@ -739,7 +739,7 @@ func_808D028:
 	.4byte	gUnk_30049DC
 .L_8d0a8:
 	ldr	r0, .L_8d0b0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_8d0da
 .L_8d0b0:
 	.4byte	0x0000023d
@@ -794,7 +794,7 @@ func_808D028:
 	mov	r0, #1
 	strb	r0, [r1, #4]
 	ldr	r0, .L_8d154
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	bl	func_808CFE8
 	b	.L_8d1b4
 	.align	2, 0
@@ -817,7 +817,7 @@ func_808D028:
 .L_8d148:
 	.4byte	gUnk_30049D0
 .L_8d14c:
-	.4byte	gUnk_3006230
+	.4byte	gMPlayMemAccArea
 .L_8d150:
 	.4byte	gUnk_30049A8
 .L_8d154:
@@ -867,7 +867,7 @@ func_808D028:
 	lsl	r0, r0, #2
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_8d1b4:
 	bl	func_808D3C4
 .L_8d1b8:
@@ -890,7 +890,7 @@ func_808D028:
 .L_8d1dc:
 	.4byte	gUnk_30049CB
 .L_8d1e0:
-	.4byte	gUnk_3006230
+	.4byte	gMPlayMemAccArea
 .L_8d1e4:
 	.4byte	gUnk_30049C5
 .L_8d1e8:
@@ -1264,7 +1264,7 @@ func_808D44C:
 	b	.L_8d57a
 	.align	2, 0
 .L_8d47c:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_8d480:
 	.4byte	sUnk_870CDB8
 .L_8d484:
@@ -1287,19 +1287,19 @@ func_808D44C:
 	mov	r1, #140	@ 0x8c
 	lsl	r1, r1, #1
 	add	r0, r4, #0
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r1, .L_8d4c8
 	mov	r2, #100	@ 0x64
 	neg	r2, r2
 	add	r0, r4, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	mov	r0, #143	@ 0x8f
 	lsl	r0, r0, #2
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_8d57a
 	.align	2, 0
 .L_8d4c4:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_8d4c8:
 	.4byte	0x0000ffff
 .L_8d4cc:
@@ -1311,13 +1311,13 @@ func_808D44C:
 	ldr	r4, [r0, #0]
 	add	r0, r4, #0
 	mov	r1, #220	@ 0xdc
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r1, .L_8d4ec
 	mov	r2, #200	@ 0xc8
 	neg	r2, r2
 	b	.L_8d508
 .L_8d4e8:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_8d4ec:
 	.4byte	0x0000ffff
 .L_8d4f0:
@@ -1329,15 +1329,15 @@ func_808D44C:
 	ldr	r4, [r0, #0]
 	add	r0, r4, #0
 	mov	r1, #200	@ 0xc8
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r1, .L_8d514
 	ldr	r2, .L_8d518
 .L_8d508:
 	add	r0, r4, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	b	.L_8d57a
 .L_8d510:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_8d514:
 	.4byte	0x0000ffff
 .L_8d518:
@@ -1351,19 +1351,19 @@ func_808D44C:
 	ldr	r4, [r0, #0]
 	add	r0, r4, #0
 	mov	r1, #160	@ 0xa0
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r5, .L_8d54c
 	ldr	r2, .L_8d550
 	add	r0, r4, #0
 	add	r1, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	add	r0, r4, #0
 	add	r1, r5, #0
 	mov	r2, #15
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	b	.L_8d57a
 .L_8d548:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_8d54c:
 	.4byte	0x0000ffff
 .L_8d550:
@@ -1377,21 +1377,21 @@ func_808D44C:
 	ldr	r4, [r0, #0]
 	add	r0, r4, #0
 	mov	r1, #130	@ 0x82
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r1, .L_8d5a0
 	ldr	r2, .L_8d5a4
 	add	r0, r4, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	add	r0, r4, #0
 	mov	r1, #3
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 .L_8d57a:
 	ldr	r4, .L_8d5a8
 	mov	r2, #0
 	ldrsh	r0, [r4, r2]
 	cmp	r0, #180	@ 0xb4
 	bne	.L_8d588
-	bl	func_8001ED8
+	bl	m4aMPlayAllStop
 .L_8d588:
 	ldrh	r1, [r4, #0]
 	mov	r2, #0
@@ -1405,7 +1405,7 @@ func_808D44C:
 	pop	{r0}
 	bx	r0
 .L_8d59c:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_8d5a0:
 	.4byte	0x0000ffff
 .L_8d5a4:
@@ -1670,7 +1670,7 @@ func_808D74C:
 .L_8d784:
 	mov	r0, #137	@ 0x89
 	lsl	r0, r0, #2
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_8d78c:
 	ldr	r4, .L_8d7b8
 	ldr	r3, .L_8d7bc
@@ -1742,7 +1742,7 @@ func_808D7CC:
 	.4byte	0x000003e7
 .L_8d808:
 	ldr	r0, .L_8d81c
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r1, .L_8d820
 	mov	r0, #1
 	strb	r0, [r1, #0]

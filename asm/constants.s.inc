@@ -24,3 +24,6 @@
 .set IRQ_DMA3, 1 << 11
 .set IRQ_KEYPAD, 1 << 12
 .set IRQ_GAMEPAK, 1 << 13
+
+.set SOUND_INFO_PTR, 0x3007FF0
+

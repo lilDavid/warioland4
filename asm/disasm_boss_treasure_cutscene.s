@@ -126,7 +126,7 @@ func_8082024:
 	bl	func_8082C98
 	mov	r0, #215	@ 0xd7
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_8240a
 .L_82124:
 	.4byte	gUnk_3003C3A
@@ -193,7 +193,7 @@ func_8082024:
 	mov	r0, #214	@ 0xd6
 	lsl	r0, r0, #1
 	str	r3, [sp, #0]
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r3, [sp, #0]
 	ldrb	r0, [r3, #0]
 	cmp	r4, r0
@@ -488,7 +488,7 @@ func_8082024:
 	add	r0, #1
 	strb	r0, [r1, #0]
 	ldr	r0, .L_823f0
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_8240a
 .L_823d8:
 	.4byte	0x4000050
@@ -697,7 +697,7 @@ func_8082428:
 	ldrh	r0, [r2, #0]
 	strh	r0, [r1, #0]
 	ldr	r0, .L_825cc
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	pop	{r4}
 	pop	{r0}
 	bx	r0

@@ -4,8 +4,8 @@
 thumb_func_start func_8072C60
 func_8072C60:
 	push	{lr}
-	bl	func_80016C4
-	bl	func_8001D98
+	bl	m4aSoundVSync
+	bl	m4aSoundMain
 	pop	{r0}
 	bx	r0
 	.align	2, 0

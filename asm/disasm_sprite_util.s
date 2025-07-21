@@ -1289,7 +1289,7 @@ func_8024180:
 	mov	r0, #45	@ 0x2d
 	strb	r0, [r1, #28]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_242c0
 .L_241ec:
 	.4byte	gCurrentSprite
@@ -1462,7 +1462,7 @@ func_80242C8:
 	mov	r0, #43	@ 0x2b
 	strb	r0, [r1, #28]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_24408
 .L_24334:
 	.4byte	gCurrentSprite
@@ -1831,7 +1831,7 @@ func_8024570:
 .L_245be:
 	mov	r4, #69	@ 0x45
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_245e2
 .L_245c8:
 	.4byte	gCurrentSprite
@@ -1906,7 +1906,7 @@ func_80235FC:
 .L_2464a:
 	mov	r4, #67	@ 0x43
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_2466e
 .L_24654:
 	.4byte	gCurrentSprite
@@ -2672,7 +2672,7 @@ func_8024AD4:
 .L_24baa:
 	strb	r0, [r4, #28]
 	mov	r0, #54	@ 0x36
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_24be0
 .L_24bb4:
 	ldrh	r0, [r6, #8]
@@ -2694,7 +2694,7 @@ func_8024AD4:
 	mov	r0, #69	@ 0x45
 	strb	r0, [r6, #28]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_24be0:
 	pop	{r4, r5, r6, r7}
 	pop	{r0}
@@ -2837,7 +2837,7 @@ func_8024C00:
 .L_24cd6:
 	strb	r0, [r4, #28]
 	mov	r0, #54	@ 0x36
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_24d0c
 .L_24ce0:
 	ldrh	r0, [r6, #8]
@@ -2859,7 +2859,7 @@ func_8024C00:
 	mov	r0, #67	@ 0x43
 	strb	r0, [r6, #28]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_24d0c:
 	pop	{r4, r5, r6, r7}
 	pop	{r0}
@@ -3006,7 +3006,7 @@ func_8024D18:
 	strb	r3, [r5, #0]
 .L_24e18:
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_24e48
 .L_24e20:
 	mov	r0, #87	@ 0x57
@@ -3176,7 +3176,7 @@ func_8024E58:
 	strb	r3, [r5, #0]
 .L_24f58:
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_24f88
 .L_24f60:
 	mov	r0, #85	@ 0x55
@@ -3388,7 +3388,7 @@ func_8024F98:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	mov	r0, #54	@ 0x36
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_25230
 	.align	2, 0
 .L_25108:
@@ -3455,7 +3455,7 @@ func_8024F98:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_25230
 	.align	2, 0
 .L_2518c:
@@ -3738,7 +3738,7 @@ func_8025240:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	mov	r0, #54	@ 0x36
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_254d8
 	.align	2, 0
 .L_253b0:
@@ -3805,7 +3805,7 @@ func_8025240:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_254d8
 	.align	2, 0
 .L_25434:
@@ -3992,7 +3992,7 @@ func_80254E8:
 	mov	r0, #57	@ 0x39
 	strb	r0, [r1, #28]
 	mov	r0, #54	@ 0x36
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_2562c
 	.align	2, 0
 .L_2558c:
@@ -4070,7 +4070,7 @@ func_80254E8:
 	strb	r0, [r4, #28]
 .L_25618:
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_2562c
 .L_25620:
 	add	r0, r4, #0
@@ -4520,7 +4520,7 @@ func_80258B4:
 	mov	r0, #63	@ 0x3f
 	strb	r0, [r1, #28]
 	mov	r0, #54	@ 0x36
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_259f8
 	.align	2, 0
 .L_25958:
@@ -4598,7 +4598,7 @@ func_80258B4:
 	strb	r0, [r4, #28]
 .L_259e4:
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_259f8
 .L_259ec:
 	add	r1, r4, #0
@@ -5393,7 +5393,7 @@ func_8025F48:
 .L_25fae:
 	strb	r0, [r4, #28]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_26084
 .L_25fb8:
 	add	r5, r4, #0
@@ -5565,7 +5565,7 @@ func_802608C:
 .L_260f2:
 	strb	r0, [r4, #28]
 	mov	r0, #55	@ 0x37
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_261c8
 .L_260fc:
 	add	r5, r4, #0
@@ -6546,7 +6546,7 @@ func_80265C8:
 	strb	r0, [r1, #31]
 	strb	r0, [r2, #31]
 	mov	r0, #59	@ 0x3b
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_267ae
 .L_2679c:
 	.4byte	0x0000feff
@@ -7512,14 +7512,14 @@ func_8026DD0:
 	bl	Sprite_SpawnSecondary
 	mov	r0, #222	@ 0xde
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	ldr	r0, .L_26e64
 	ldrb	r0, [r0, #0]
 	cmp	r0, #5
 	bne	.L_26e68
 	mov	r0, #172	@ 0xac
 	lsl	r0, r0, #2
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_26e6e
 .L_26e40:
 	.4byte	sUnk_82DECA0
@@ -7543,7 +7543,7 @@ func_8026DD0:
 	.4byte	gCurrentPassage
 .L_26e68:
 	ldr	r0, .L_26e74
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_26e6e:
 	pop	{r4}
 	pop	{r0}

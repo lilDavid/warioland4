@@ -196,7 +196,7 @@ func_8003DC4:
 	add	r0, #1
 	strh	r0, [r1, #0]
 	ldr	r0, .L_3e28
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_3f78
 .L_3e1c:
 	.4byte	sUnk_8283F54
@@ -724,7 +724,7 @@ func_8004070:
 	bne	.L_41fa
 	mov	r0, #159	@ 0x9f
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_41fa:
 	ldr	r0, [r4, #0]
 	add	r1, r0, #0
@@ -1364,7 +1364,7 @@ func_800450C:
 	bne	.L_46c2
 	mov	r0, #159	@ 0x9f
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_46c2:
 	ldr	r0, [r6, #0]
 	add	r0, #1
@@ -2027,11 +2027,11 @@ func_8004B14:
 	ldr	r0, .L_4bf4
 	ldr	r1, .L_4bf8
 	mov	r2, #210	@ 0xd2
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 .L_4b9a:
 	mov	r0, #220	@ 0xdc
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r1, #128	@ 0x80
 	lsl	r1, r1, #19
 	mov	r0, #4
@@ -2074,7 +2074,7 @@ func_8004B14:
 .L_4bf0:
 	.4byte	gUnk_3002C50
 .L_4bf4:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_4bf8:
 	.4byte	0xFFFF
 
@@ -2317,7 +2317,7 @@ func_8004BFC:
 	mov	r4, #0
 	str	r4, [r2, #0]
 	ldr	r0, .L_4e94
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	ldr	r0, .L_4e98
 	str	r4, [r0, #0]
 	ldr	r1, .L_4e9c
@@ -2522,7 +2522,7 @@ func_8004BFC:
 	str	r0, [r6, #0]
 	mov	r0, #221	@ 0xdd
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_50e4
 	.align	2, 0
 .L_5004:
@@ -3537,7 +3537,7 @@ func_8005500:
 	ldr	r1, .L_57b4
 	mov	r2, #128	@ 0x80
 	lsl	r2, r2, #1
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_57b8
 .L_579e:
 	ldrh	r0, [r1, #0]
@@ -3552,7 +3552,7 @@ func_8005500:
 .L_57ac:
 	.4byte	gUnk_3002C64
 .L_57b0:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_57b4:
 	.4byte	0xFFFF
 .L_57b8:
@@ -4047,7 +4047,7 @@ func_80058AC:
 	ldr	r1, .L_5b8c
 	mov	r2, #128	@ 0x80
 	lsl	r2, r2, #1
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	mov	r0, #0
 	str	r0, [r4, #0]
 	ldr	r1, .L_5b90
@@ -4055,7 +4055,7 @@ func_80058AC:
 .L_5b84:
 	.4byte	gUnk_3002C64
 .L_5b88:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_5b8c:
 	.4byte	0xFFFF
 .L_5b90:
@@ -4106,7 +4106,7 @@ func_80058AC:
 	cmp	r0, #0
 	beq	.L_5c4e
 	ldr	r0, .L_5c00
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r0, #0
 	str	r0, [r4, #0]
 	ldr	r1, .L_5c04
@@ -4149,7 +4149,7 @@ func_80058AC:
 	ldr	r0, .L_5c90
 	ldr	r1, .L_5c94
 	mov	r2, #180	@ 0xb4
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_5c98
 .L_5c48:
 	ldrh	r0, [r1, #0]
@@ -4188,7 +4188,7 @@ func_80058AC:
 .L_5c8c:
 	.4byte	gUnk_3002C64
 .L_5c90:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_5c94:
 	.4byte	0xFFFF
 .L_5c98:
@@ -4228,17 +4228,17 @@ func_8005CC0:
 	bl	func_8003BF0
 	ldr	r0, .L_5cec
 	mov	r1, #12
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	ldr	r0, .L_5cf0
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r0, #159	@ 0x9f
 	lsl	r0, r0, #2
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_5d16
 .L_5ce8:
 	.4byte	gUnk_3002C74
 .L_5cec:
-	.4byte	gUnk_3006170
+	.4byte	gMPlayInfo_4
 .L_5cf0:
 	.4byte	0x12B
 .L_5cf4:
@@ -4966,7 +4966,7 @@ func_8005F1C:
 .L_627e:
 	mov	r0, #149	@ 0x95
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r0, #3
 	bl	VoiceSet_Play
 	mov	r0, #0
@@ -5738,7 +5738,7 @@ func_80067BC:
 	ldr	r0, .L_68fc
 	ldr	r1, .L_6900
 	mov	r2, #200	@ 0xc8
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_6904
 	mov	r0, #0
 	str	r0, [r1, #0]
@@ -5778,7 +5778,7 @@ func_80067BC:
 .L_68f8:
 	.4byte	gUnk_3002CA2
 .L_68fc:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_6900:
 	.4byte	0xFFFF
 .L_6904:
@@ -6875,9 +6875,9 @@ func_8006FA0:
 	ldr	r0, .L_71e4
 	ldr	r1, .L_71e8
 	mov	r2, #200	@ 0xc8
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r0, .L_71ec
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r1, #128	@ 0x80
 	lsl	r1, r1, #19
 	mov	r3, #152	@ 0x98
@@ -6910,7 +6910,7 @@ func_8006FA0:
 .L_71e0:
 	.4byte	gUnk_3002C60
 .L_71e4:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_71e8:
 	.4byte	0xFFFF
 .L_71ec:
@@ -7063,7 +7063,7 @@ func_8006FA0:
 	add	r0, #1
 	strh	r0, [r1, #0]
 	ldr	r0, .L_7324
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	mov	r0, #8
 	bl	VoiceSet_Play
 	b	.L_7506
@@ -7230,7 +7230,7 @@ func_8006FA0:
 	bne	.L_7506
 	mov	r0, #219	@ 0xdb
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_7506
 	.align	2, 0
 .L_7468:
@@ -7258,7 +7258,7 @@ func_8006FA0:
 	mov	r2, #16
 	bl	func_800C704
 	ldr	r0, .L_74a0
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	ldr	r1, .L_74a4
 	b	.L_7500
 .L_74a0:
@@ -7621,11 +7621,11 @@ func_8006FA0:
 	cmp	r2, r0
 	bne	.L_77a8
 	ldr	r0, .L_7764
-	bl	func_80025C8
+	bl	MPlayStop
 	b	.L_77a8
 	.align	2, 0
 .L_7764:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_7768:
 	mov	r2, #30
 	ldr	r7, .L_77b8
@@ -7638,23 +7638,23 @@ func_8006FA0:
 	ldr	r4, .L_77c0
 	add	r0, r5, #0
 	add	r1, r4, #0
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	lsl	r2, r7, #16
 	asr	r2, r2, #16
 	add	r0, r5, #0
 	add	r1, r4, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	add	r0, r5, #0
 	add	r1, r4, #0
 	mov	r2, r9
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	add	r0, r5, #0
 	add	r1, r4, #0
 	mov	r2, r8
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	add	r0, r5, #0
 	add	r1, r6, #0
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 .L_77a8:
 	add	sp, #12
 	pop	{r3, r4}
@@ -7667,7 +7667,7 @@ func_8006FA0:
 .L_77b8:
 	.4byte	0xFD44
 .L_77bc:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_77c0:
 	.4byte	0xFFFF
 
@@ -8551,7 +8551,7 @@ func_8007C30:
 	bl	.L_8642
 .L_7e6e:
 	mov	r0, #13
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	bl	.L_8642
 .L_7e78:
 	cmp	r4, #100	@ 0x64
@@ -8652,14 +8652,14 @@ func_8007C30:
 	cmp	r0, #106	@ 0x6a
 	bne	.L_7f34
 	mov	r0, #13
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_7f34:
 	mov	r3, #0
 	ldrsh	r0, [r4, r3]
 	cmp	r0, #120	@ 0x78
 	bne	.L_7f42
 	mov	r0, #24
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_7f42:
 	ldr	r4, .L_7f80
 	mov	r5, #0
@@ -8721,7 +8721,7 @@ func_8007C30:
 	b	.L_8642
 .L_7fba:
 	mov	r0, #6
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_8642
 	.align	2, 0
 .L_7fc4:
@@ -8966,7 +8966,7 @@ func_8007C30:
 	cmp	r0, #118	@ 0x76
 	bne	.L_81a4
 	mov	r0, #13
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_81a4:
 	add	r1, sp, #12
 	mov	r0, #100	@ 0x64
@@ -10021,10 +10021,10 @@ func_8008900:
 	add	r0, r0, r2
 	ldr	r0, [r0, #0]
 	mov	r1, #30
-	bl	func_8001F3C
+	bl	m4aMPlayFadeOut
 	mov	r0, #210	@ 0xd2
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	add	sp, #4
 	pop	{r4, r5}
 	pop	{r0}
@@ -10109,9 +10109,9 @@ func_8008900:
 .L_8abc:
 	.4byte	0x83F
 .L_8ac0:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_8ac4:
-	.4byte	sUnk_8098028
+	.4byte	gSongTable
 .L_8ac8:
 	.4byte	0x1904
 
@@ -10283,7 +10283,7 @@ func_8008B20:
 	cmp	r0, #120	@ 0x78
 	bne	.L_8c08
 	ldr	r0, .L_8c14
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_8c08:
 	ldr	r1, .L_8c18
 	ldr	r0, [r1, #0]
@@ -10304,7 +10304,7 @@ func_8008B20:
 	beq	.L_8c4a
 	mov	r0, #214	@ 0xd6
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	ldr	r0, .L_8c68
 	mov	r3, #0
 	ldrsh	r0, [r0, r3]
@@ -10525,14 +10525,14 @@ func_8008B20:
 	cmp	r0, #0
 	bne	.L_8de0
 	ldr	r0, .L_9124
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_8de0:
 	mov	r1, r8
 	cmp	r1, #90	@ 0x5a
 	bne	.L_8dee
 	mov	r0, #215	@ 0xd7
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_8dee:
 	mov	r0, #0
 	ldr	r2, .L_9128
@@ -13391,7 +13391,7 @@ func_800A43C:
 	cmp	r2, #2
 	bne	.L_a54c
 	mov	r0, #151	@ 0x97
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_a54c:
 	ldrh	r0, [r4, #0]
 	cmp	r0, #10
@@ -13636,7 +13636,7 @@ func_800A43C:
 	b	.L_a8e2
 .L_a726:
 	ldr	r0, .L_a730
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	b	.L_a8e2
 	.align	2, 0
 .L_a730:
@@ -13659,7 +13659,7 @@ func_800A43C:
 	cmp	r1, r0
 	bne	.L_a75a
 	add	r0, #110	@ 0x6e
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_a75a:
 	ldr	r0, [r4, #0]
 	ldr	r3, .L_a774
@@ -14933,7 +14933,7 @@ func_800B15C:
 	beq	.L_b1dc
 	mov	r0, #147	@ 0x93
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 	ldr	r1, .L_b1b4
 	mov	r0, #0
 	str	r0, [r1, #0]
@@ -14959,7 +14959,7 @@ func_800B15C:
 	ldr	r1, .L_b1fc
 	mov	r2, #128	@ 0x80
 	lsl	r2, r2, #1
-	bl	func_8002D58
+	bl	m4aMPlayVolumeControl
 	ldr	r1, .L_b200
 	ldrh	r0, [r1, #0]
 	add	r0, #1
@@ -14979,7 +14979,7 @@ func_800B15C:
 	bl	func_800FA3C
 	b	.L_b252
 .L_b1f8:
-	.4byte	gUnk_30060F0
+	.4byte	gMPlayInfo_2
 .L_b1fc:
 	.4byte	0xFFFF
 .L_b200:
@@ -16074,7 +16074,7 @@ func_800B8C4:
 .L_b9b4:
 	mov	r0, #245	@ 0xf5
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_b9bc:
 	mov	r0, #0
 	cmp	r4, #150	@ 0x96
@@ -16158,7 +16158,7 @@ func_800B9D0:
 .L_ba40:
 	mov	r0, #245	@ 0xf5
 	lsl	r0, r0, #1
-	bl	func_8001DD0
+	bl	m4aSongNumStartOrChange
 .L_ba48:
 	mov	r0, #0
 	cmp	r4, #150	@ 0x96

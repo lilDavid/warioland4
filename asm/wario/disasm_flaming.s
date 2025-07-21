@@ -617,7 +617,7 @@ func_8017ADC:
 	strh	r5, [r1, #22]
 	mov	r0, #175	@ 0xaf
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	mov	r0, #4
 	bl	VoiceSet_Play
 	b	.L_17b34
@@ -755,7 +755,7 @@ func_8017ADC:
 	ldrh	r0, [r0, #22]
 	strh	r0, [r1, #22]
 	ldr	r0, .L_17c24
-	bl	Sound_Play
+	bl	m4aSongNumStart
 	b	.L_17c34
 	.align	2, 0
 .L_17c1c:
@@ -767,7 +767,7 @@ func_8017ADC:
 .L_17c28:
 	mov	r0, #178	@ 0xb2
 	lsl	r0, r0, #1
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_17c30:
 	ldr	r0, .L_17c3c
 	strb	r4, [r0, #1]
@@ -1141,37 +1141,37 @@ func_8017ECC:
 	mov	r5, #175	@ 0xaf
 	lsl	r5, r5, #1
 	add	r1, r5, #0
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r6, [r4, #12]
 	add	r0, r6, #0
 	add	r1, r5, #0
-	bl	func_8002D30
+	bl	m4aMPlayTempoControl
 	ldr	r4, .L_17f4c
 	sub	r5, #94	@ 0x5e
 	mov	r0, r8
 	add	r1, r4, #0
 	add	r2, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	add	r0, r6, #0
 	add	r1, r4, #0
 	add	r2, r5, #0
-	bl	func_8002DC0
+	bl	m4aMPlayPitchControl
 	mov	r0, r8
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	add	r0, r6, #0
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002EBC
+	bl	m4aMPlayModDepthSet
 	mov	r0, r8
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	add	r0, r6, #0
 	add	r1, r4, #0
 	mov	r2, #20
-	bl	func_8002F30
+	bl	m4aMPlayLFOSpeedSet
 	mov	r0, #6
 	strb	r0, [r7, #0]
 .L_17f3a:
@@ -1183,7 +1183,7 @@ func_8017ECC:
 .L_17f44:
 	.4byte	gUnk_30031BC
 .L_17f48:
-	.4byte	sUnk_8097FC8
+	.4byte	gMPlayTable
 .L_17f4c:
 	.4byte	0xFFFF
 

@@ -44,7 +44,7 @@ func_801B5F4:
 	cmp	r0, #10
 	bne	.L_1b61e
 	mov	r0, #131	@ 0x83
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1b61e:
 	ldrh	r2, [r4, #12]
 	cmp	r2, #10
@@ -72,7 +72,7 @@ func_801B5F4:
 	cmp	r0, #130	@ 0x82
 	bne	.L_1b652
 	mov	r0, #132	@ 0x84
-	bl	Sound_Play
+	bl	m4aSongNumStart
 .L_1b652:
 	ldr	r2, .L_1b694
 	ldrb	r0, [r4, #31]

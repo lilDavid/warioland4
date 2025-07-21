@@ -399,7 +399,7 @@ void SpriteAI_Rock(void) {
         if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
             gCurrentSprite.health += 1;
             Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_07);
-            Sound_Play(SOUND_3D);
+            m4aSongNumStart(SOUND_3D);
         }
     } else if ((gCurrentSprite.health & 0xF) == 2) {
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
