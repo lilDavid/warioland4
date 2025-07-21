@@ -12,25 +12,25 @@
 
 const u16 sRockOam_Frame1[] = {
     2,
-    OAM_ENTRY(-10, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(6, -16, ATTR0_TALL, ATTR1_8x16, 514, 8, 0),
+    OAM_ENTRY(-10, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(6, -16, SPRITE_SIZE_8x16, 0, 514, 8, 0),
 };
 
 const u16 sRockOam_UnusedFrame1[] = {
     1,
-    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 515, 8, 0),
+    OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 515, 8, 0),
 };
 const u16 sRockOam_UnusedFrame2[] = {
     1,
-    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 547, 8, 0),
+    OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 547, 8, 0),
 };
 const u16 sRockOam_UnusedFrame3[] = {
     1,
-    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 516, 8, 0),
+    OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 516, 8, 0),
 };
 const u16 sRockOam_UnusedFrame4[] = {
     1,
-    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 548, 8, 0),
+    OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 548, 8, 0),
 };
 
 const AnimationFrame sRockOamData[] = {

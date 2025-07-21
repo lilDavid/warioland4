@@ -1,15 +1,10 @@
 #ifndef OAM_H
 #define OAM_H
 
-#include "gba/oam.h"
 #include "types.h"
 
 
-typedef union {
-    OBJ_ATTR obj[MAX_OAM_SLOTS];
-    OBJ_AFFINE affine[MAX_OAM_SLOTS / 4];
-} OamData;
-
+#define MAX_OAM_SLOTS 128
 
 typedef struct {
     const u16* oam;
@@ -17,10 +12,10 @@ typedef struct {
 } AnimationFrame;
 
 
-#define OAM_ENTRY(x, y, shape, size, tile, palette, priority)\
-    (shape) | ATTR0_COLOR_16 | ATTR0_REG | ATTR0_Y(y),\
-    (size) | ATTR1_X(x),\
-    ATTR2_PALETTE(palette) | ATTR2_PRIO(priority) | ATTR2_ID(tile)
+#define OAM_ENTRY(x, y, dimensions, flip, tile, palette, priority)\
+    SPRITE_SHAPE(dimensions) << 14 | ST_OAM_4BPP << 12 | ST_OAM_AFFINE_OFF << 8 | ((y) & 0xFF),\
+    SPRITE_SIZE(dimensions) << 14 | (flip) << 9 | ((x) & 0x1FF),\
+    ((palette) << 12) | ((priority) << 10) | (tile)
 
 #define ANIMATION_TERMINATOR { NULL, 0 }
 

@@ -3,12 +3,12 @@
 
 
 void InitializeVideoMemory(void) {
-    dma_fill16(3, 0, VRAM_BASE, VRAM_SIZE);
-    dma_fill32(3, U8_MAX, OAM_BASE, OAM_SIZE);
-    dma_fill16(3, 0, PALRAM_BASE, PALRAM_SIZE);
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill32(3, U8_MAX, OAM, OAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
 }
 
 void InitializeInterruptHandler(void) {
-    dma_copy16(3, irq_handler, gInterruptHandlerBuffer, sizeof(gInterruptHandlerBuffer));
+    DmaCopy16(3, irq_handler, gInterruptHandlerBuffer, sizeof(gInterruptHandlerBuffer));
     intr_vector = (ProcedureFunc) &gInterruptHandlerBuffer;
 }

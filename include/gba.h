@@ -1,15 +1,13 @@
-#ifndef GBA_H
-#define GBA_H
+#ifndef GUARD_GBA_H
+#define GUARD_GBA_H
 
-#include "gba/display.h"
-#include "gba/dma.h"
-#include "gba/input.h"
-#include "gba/interrupt.h"
-#include "gba/memory.h"
+#include "gba/defines.h"
+#include "gba/io_reg.h"
 #include "gba/types.h"
-#include "gba/oam.h"
-#include "gba/palette.h"
-#include "gba/wait_state.h"
-#include "gba/vram.h"
+#include "gba/multi_boot.h"
+#include "gba/syscall.h"
+#include "gba/macro.h"
+#include "gba/isagbprint.h"
+#include "gba/m4a.h"
 
-#endif  // GBA_H
+#endif // GUARD_GBA_H

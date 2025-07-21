@@ -18,23 +18,23 @@
 
 const u16 sVortexLargePartOam_Frame1[] = {
     1,
-    OAM_ENTRY(-32, -32, ATTR0_SQUARE, ATTR1_64x64, 512, 8, 0),
+    OAM_ENTRY(-32, -32, SPRITE_SIZE_64x64, 0, 512, 8, 0),
 };
 const u16 sVortexMediumPartOam_Frame1[] = {
     1,
-    OAM_ENTRY(-32, -32, ATTR0_SQUARE, ATTR1_64x64, 520, 8, 0),
+    OAM_ENTRY(-32, -32, SPRITE_SIZE_64x64, 0, 520, 8, 0),
 };
 const u16 sVortexSmallPartOam_Frame1[] = {
     1,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_32x32, 528, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_32x32, 0, 528, 8, 0),
 };
 const u16 sVortexWarioOam_Frame1[] = {
     1,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_32x32, 532, 9, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_32x32, 0, 532, 9, 0),
 };
 const u16 sVortexKeyzerOam_Frame1[] = {
     1,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_32x32, 536, 10, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_32x32, 0, 536, 10, 0),
 };
 
 const AnimationFrame sVortexLargePartOam[] = {
@@ -132,12 +132,8 @@ void Vortex_AnimatePalette(void) {
         gCurrentSprite.work3 = gUnk_3000C41 & 7;
     }
 
-    destAddress = PALETTE_ROW(gCurrentSprite.gfxSlot + 8);
-    dma_copy16(3,
-        sVortexPal + COLORS_PER_ROW * gCurrentSprite.work3,
-        OBJ_PALETTE + destAddress,
-        PALETTE_ROW_SIZE
-    );
+    destAddress = PLTT_ROW_SIZE * (gCurrentSprite.gfxSlot + 8);
+    DmaCopy16(3, sVortexPal + 16 * gCurrentSprite.work3, OBJ_PLTT + destAddress, PLTT_ROW_SIZE);
 }
 
 void Vortex_InitWarioOrKeyzer(void) {

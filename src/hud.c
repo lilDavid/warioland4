@@ -305,38 +305,38 @@ const u8* sHeartMeterGfx[] = {
 
 
 void func_80746C0(void) {
-    dma_copy16(3, sCommonSpritesGfx, 0x6011000, sizeof(sCommonSpritesGfx));
+    DmaCopy16(3, sCommonSpritesGfx, 0x6011000, sizeof(sCommonSpritesGfx));
 
     if (gCurrentStageNumber != STAGE_BOSS) {
         return;
     }
 
-    dma_copy16(3, sBossStageSpritesGfx, 0x6012400, sizeof(sBossStageSpritesGfx));
+    DmaCopy16(3, sBossStageSpritesGfx, 0x6012400, sizeof(sBossStageSpritesGfx));
 
     switch (gCurrentShopItem - 1) {
         case SHOP_ITEM_APPLE_BOMB:
-            dma_copy16(3, sAppleBombGfx, 0x6013000, sizeof(sAppleBombGfx));
+            DmaCopy16(3, sAppleBombGfx, 0x6013000, sizeof(sAppleBombGfx));
             break;
         case SHOP_ITEM_BLAST_CANNON:
-            dma_copy16(3, sBlastCannonGfx, 0x6013000, sizeof(sBlastCannonGfx));
+            DmaCopy16(3, sBlastCannonGfx, 0x6013000, sizeof(sBlastCannonGfx));
             break;
         case SHOP_ITEM_VIZORMAN:
-            dma_copy16(3, sVizormanGfx, 0x6013000, sizeof(sVizormanGfx));
+            DmaCopy16(3, sVizormanGfx, 0x6013000, sizeof(sVizormanGfx));
             break;
         case SHOP_ITEM_BUGLE:
-            dma_copy16(3, sBugleGfx, 0x6013000, sizeof(sBugleGfx));
+            DmaCopy16(3, sBugleGfx, 0x6013000, sizeof(sBugleGfx));
             break;
         case SHOP_ITEM_BLACK_DOG:
-            dma_copy16(3, sBlackDogGfx, 0x6013000, sizeof(sBlackDogGfx));
+            DmaCopy16(3, sBlackDogGfx, 0x6013000, sizeof(sBlackDogGfx));
             break;
         case SHOP_ITEM_LARGE_LIPS:
-            dma_copy16(3, sLargeLipsGfx, 0x6013000, sizeof(sLargeLipsGfx));
+            DmaCopy16(3, sLargeLipsGfx, 0x6013000, sizeof(sLargeLipsGfx));
             break;
         case SHOP_ITEM_BIG_FIST:
-            dma_copy16(3, sBigFistGfx, 0x6013000, sizeof(sBigFistGfx));
+            DmaCopy16(3, sBigFistGfx, 0x6013000, sizeof(sBigFistGfx));
             break;
         case SHOP_ITEM_BLACK_DRAGON:
-            dma_copy16(3, sBlackDragonGfx, 0x6013000, sizeof(sBlackDragonGfx));
+            DmaCopy16(3, sBlackDragonGfx, 0x6013000, sizeof(sBlackDragonGfx));
             break;
     }
 }
@@ -345,5 +345,5 @@ void func_80747D8(void) {
     u8 health;
 
     health = gCurrentSprite.health;
-    dma_copy16(3, sBossLifeMeterGfx[health], 0x6012C00, 10 * TILE_SIZE_4BPP);
+    DmaCopy16(3, sBossLifeMeterGfx[health], 0x6012C00, 10 * TILE_SIZE_4BPP);
 }

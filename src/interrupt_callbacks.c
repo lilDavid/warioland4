@@ -1,5 +1,4 @@
 #include "gba.h"
-#include "io.h"
 #include "interrupt_callbacks.h"
 #include "types.h"
 
@@ -9,7 +8,7 @@ void InterruptCallback_CallVBlank(void) {
         gVBlankCallback();
     }
 
-    write16(REG_IF, read16(REG_IF) | IRQ_VBLANK);
+    REG_IF |= INTR_FLAG_VBLANK;
     gUnk_3000C42 = 1;
 }
 
@@ -25,7 +24,7 @@ void InterruptCallback_CallHBlank(void) {
         gHBlankCallback();
     }
 
-    write16(REG_IF, read16(REG_IF) | IRQ_HBLANK);
+    REG_IF |= INTR_FLAG_HBLANK;
 }
 
 void InterruptCallback_SetHBlank(ProcedureFunc cb) {
@@ -40,7 +39,7 @@ void InterruptCallback_CallVCount(void) {
         gVCountCallback();
     }
 
-    write16(REG_IF, read16(REG_IF) | IRQ_VCOUNT);
+    REG_IF |= INTR_FLAG_VCOUNT;
 }
 
 void InterruptCallback_SetVCount(ProcedureFunc cb) {

@@ -3,7 +3,6 @@
 #include "game_state.h"
 #include "init_helpers.h"
 #include "interrupts.h"
-#include "io.h"
 #include "sound.h"
 #include "sram.h"
 #include "interrupt_callbacks.h"
@@ -13,12 +12,12 @@ void EmptyFunction(void);
 
 
 void InitializeGame(void) {
-    write16(REG_DISPCNT, DCNT_BLANK);
-    write16(REG_DISPSTAT, 0);
-    write16(REG_IME, 0);
+    REG_DISPCNT = DISPCNT_FORCED_BLANK;
+    REG_DISPSTAT = 0;
+    REG_IME = FALSE;
 
-    dma_fill32(3, 0, EWRAM_BASE, EWRAM_SIZE);
-    dma_fill32(3, 0, IWRAM_BASE, IWRAM_SIZE - 0x200);
+    DmaFill32(3, 0, EWRAM_START, EWRAM_SIZE);
+    DmaFill32(3, 0, IWRAM_START, IWRAM_SIZE - 0x200);
 
     InitializeVideoMemory();
     InitializeInterruptHandler();
@@ -29,23 +28,21 @@ void InitializeGame(void) {
     Sound_Init();
     func_80022C8(0x900000);
 
-    write16(REG_IME, 1);
-    write16(REG_IE, IRQ_GAMEPAK | IRQ_VBLANK);
-    write16(REG_DISPSTAT, DSTAT_VBL_IRQ);
-    write16(
-        REG_WAITCNT,
-        WS_SRAM_4CYCLES |
-        WS_ROM0_3CYCLES | WS_ROM0_SUB_1CYCLE | WS_ROM1_3CYCLES | WS_ROM1_SUB_1CYCLE |
-        WS_ROM2_3CYCLES | WS_ROM2_SUB_1CYCLE |
-        WS_CART_OFF | WS_PREFETCH_ENABLE | WS_CART_AGB
-    );
+    REG_IME = TRUE;
+    REG_IE = INTR_FLAG_GAMEPAK | INTR_FLAG_VBLANK;
+    REG_DISPSTAT = DISPSTAT_VBLANK_INTR;
+    REG_WAITCNT = WAITCNT_SRAM_4 |
+                  WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1 |
+                  WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1 |
+                  WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1 |
+                  WAITCNT_PHI_OUT_NONE | WAITCNT_PREFETCH_ENABLE | WAITCNT_AGB;
 
     gButtonsHeld = 0;
     gButtonsHeldCopy = 0;
     gButtonsPressed = 0;
     gSubGameMode = 0;
     PollInput();
-    if (gButtonsPressed == (KEY_L | KEY_R)) {
+    if (gButtonsPressed == (L_BUTTON | R_BUTTON)) {
         gMainGameMode = GM_SAVE_RESET;
     } else {
         gMainGameMode = GM_TITLE;
@@ -65,7 +62,7 @@ void CheckSoftReset(void) {
         return;
     }
 
-    if (CHECK_KEYS_ALL(gButtonsHeld, KEY_A | KEY_B | KEY_START | KEY_SELECT)) {
+    if (CHECK_KEYS_ALL(gButtonsHeld, A_BUTTON | B_BUTTON | START_BUTTON | SELECT_BUTTON)) {
         gMainGameMode = GM_SOFT_RESET;
     }
 }

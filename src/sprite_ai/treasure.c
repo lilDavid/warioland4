@@ -20,84 +20,84 @@ const s16 sTreasureFloatYVelocity[] = {
 
 const u16 sHeartRefillOam_Frame1[] = {
     2,
-    OAM_ENTRY(-8, -16, ATTR0_WIDE, ATTR1_16x8, 164, 6, 0),
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 376, 7, 0),
+    OAM_ENTRY(-8, -16, SPRITE_SIZE_16x8, 0, 164, 6, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 376, 7, 0),
 };
 const u16 sHeartRefillOam_Frame2[] = {
     2,
-    OAM_ENTRY(-8, -16, ATTR0_WIDE, ATTR1_16x8, 164, 6, 0),
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 376, 6, 0),
+    OAM_ENTRY(-8, -16, SPRITE_SIZE_16x8, 0, 164, 6, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 376, 6, 0),
 };
 const u16 sJewelPieceNWOamFrame[] = {
     1,
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 226, 4, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 226, 4, 0),
 };
 const u16 sJewelPieceSWOamFrame[] = {
     1,
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 228, 4, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 228, 4, 0),
 };
 const u16 sJewelPieceNEOamFrame[] = {
     1,
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 230, 4, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 230, 4, 0),
 };
 const u16 sJewelPieceSEOamFrame[] = {
     1,
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 232, 4, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 232, 4, 0),
 };
 const u16 sTreasureUnusedOamFrame1[] = {
     2,
-    OAM_ENTRY(-8, -16, ATTR0_WIDE, ATTR1_16x8, 164, 6, 0),
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 376, 5, 0),
+    OAM_ENTRY(-8, -16, SPRITE_SIZE_16x8, 0, 164, 6, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 376, 5, 0),
 };
 const u16 sTreasureGlowOam_Frame2[] = {
     1,
-    OAM_ENTRY(-4, -4, ATTR0_SQUARE, ATTR1_8x8, 193, 4, 0),
+    OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 193, 4, 0),
 };
 const u16 sTreasureGlowOam_Frame1[] = {
     2,
-    OAM_ENTRY(-16, -16, ATTR0_WIDE, ATTR1_32x16, 444, 4, 0),
-    OAM_ENTRY(-16, 0, ATTR0_WIDE, ATTR1_32x16 | ATTR1_VFLIP, 444, 4, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_32x16, 0, 444, 4, 0),
+    OAM_ENTRY(-16, 0, SPRITE_SIZE_32x16, ST_OAM_VFLIP, 444, 4, 0),
 };
 const u16 sTreasureGlowOam_Frame3[] = {
     2,
-    OAM_ENTRY(-16, -16, ATTR0_WIDE, ATTR1_32x16, 440, 4, 0),
-    OAM_ENTRY(-16, 0, ATTR0_WIDE, ATTR1_32x16 | ATTR1_VFLIP, 440, 4, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_32x16, 0, 440, 4, 0),
+    OAM_ENTRY(-16, 0, SPRITE_SIZE_32x16, ST_OAM_VFLIP, 440, 4, 0),
 };
 const u16 sTreasureGlowDisappearingOam_Frame1[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 378, 4, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 378, 4, 0),
-    OAM_ENTRY(-16, 0, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 378, 4, 0),
-    OAM_ENTRY(0, 0, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP | ATTR1_VFLIP, 378, 4, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 378, 4, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 378, 4, 0),
+    OAM_ENTRY(-16, 0, SPRITE_SIZE_16x16, ST_OAM_VFLIP, 378, 4, 0),
+    OAM_ENTRY(0, 0, SPRITE_SIZE_16x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 378, 4, 0),
 };
 const u16 sTreasureGlowDisappearingOam_Frame2[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 380, 4, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 380, 4, 0),
-    OAM_ENTRY(-16, 0, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 380, 4, 0),
-    OAM_ENTRY(0, 0, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP | ATTR1_VFLIP, 380, 4, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 380, 4, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 380, 4, 0),
+    OAM_ENTRY(-16, 0, SPRITE_SIZE_16x16, ST_OAM_VFLIP, 380, 4, 0),
+    OAM_ENTRY(0, 0, SPRITE_SIZE_16x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 380, 4, 0),
 };
 const u16 sTreasureUnusedOamFrame2[] = {
     1,
-    OAM_ENTRY(0, 0, ATTR0_SQUARE, ATTR1_8x8, 166, 4, 0),
+    OAM_ENTRY(0, 0, SPRITE_SIZE_8x8, 0, 166, 4, 0),
 };
 const u16 sTreasureUnusedOamFrame3[] = {
     1,
-    OAM_ENTRY(0, 0, ATTR0_SQUARE, ATTR1_16x16, 224, 4, 0),
+    OAM_ENTRY(0, 0, SPRITE_SIZE_16x16, 0, 224, 4, 0),
 };
 const u16 sHeartRefillOam_Frame3[] = {
     2,
-    OAM_ENTRY(-8, -16, ATTR0_WIDE, ATTR1_16x8, 164, 6, 0),
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 376, 4, 0),
+    OAM_ENTRY(-8, -16, SPRITE_SIZE_16x8, 0, 164, 6, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 376, 4, 0),
 };
 const u16 sTreasureUnusedOamFrame4[] = {
     1,
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_16x16, 234, 7, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x16, 0, 234, 7, 0),
 };
 const u16 sCDOamFrame[] = {
     2,
-    OAM_ENTRY(-12, -12, ATTR0_WIDE, ATTR1_32x16, 352, 4, 0),
-    OAM_ENTRY(-20, -4, ATTR0_WIDE, ATTR1_32x16 | ATTR1_HFLIP | ATTR1_VFLIP, 352, 4, 0),
+    OAM_ENTRY(-12, -12, SPRITE_SIZE_32x16, 0, 352, 4, 0),
+    OAM_ENTRY(-20, -4, SPRITE_SIZE_32x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 352, 4, 0),
 };
 
 const AnimationFrame sCDOam[] = {
@@ -151,158 +151,158 @@ const AnimationFrame sTreasureGlow_DisappearingOam[] = {
 
 const u16 sBoxCDClosedOamFrame[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 514, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 514, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 514, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 514, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
 };
 const u16 sBoxCDOpeningOam_Frame1[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 516, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 516, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 516, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 516, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
 };
 const u16 sBoxCDOpeningOam_Frame2[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 518, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 518, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 518, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 518, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
 };
 const u16 sBoxCDOpenedOamFrame[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 520, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 520, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 520, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 520, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
 };
 const u16 sBoxCDOpeningOam_Frame3[] = {
     4,
-    OAM_ENTRY(-16, -31, ATTR0_SQUARE, ATTR1_16x16, 520, 8, 0),
-    OAM_ENTRY(0, -31, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 520, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -31, SPRITE_SIZE_16x16, 0, 520, 8, 0),
+    OAM_ENTRY(0, -31, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 520, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
 };
 const u16 sBoxUnusedOamFrame1[] = {
     2,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 520, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 520, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 520, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 520, 8, 0),
 };
 const u16 sBoxUnusedOamFrame2[] = {
     2,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
 };
 const u16 sBoxJewelPieceNWClosedOamFrame[] = {
     5,
-    OAM_ENTRY(-5, -29, ATTR0_SQUARE, ATTR1_8x8, 532, 13, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 524, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 524, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-5, -29, SPRITE_SIZE_8x8, 0, 532, 13, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 524, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 524, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceOpeningOam_Frame1[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 526, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 526, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 526, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 526, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceOpeningOam_Frame2[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 528, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 528, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 528, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 528, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceOpeningOam_Frame3[] = {
     4,
-    OAM_ENTRY(-16, -31, ATTR0_SQUARE, ATTR1_16x16, 530, 8, 0),
-    OAM_ENTRY(0, -31, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 530, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-16, -31, SPRITE_SIZE_16x16, 0, 530, 8, 0),
+    OAM_ENTRY(0, -31, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 530, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceOpenedOamFrame[] = {
     4,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 530, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 530, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 530, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 530, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxUnusedOamFrame3[] = {
     2,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 530, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 530, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 530, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 530, 8, 0),
 };
 const u16 sBoxUnusedOamFrame4[] = {
     2,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceNEClosedOamFrame[] = {
     5,
-    OAM_ENTRY(-3, -29, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 532, 13, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 524, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 524, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-3, -29, SPRITE_SIZE_8x8, ST_OAM_HFLIP, 532, 13, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 524, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 524, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceSWClosedOamFrame[] = {
     5,
-    OAM_ENTRY(-5, -27, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 564, 13, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 524, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 524, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-5, -27, SPRITE_SIZE_8x8, ST_OAM_HFLIP, 564, 13, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 524, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 524, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxJewelPieceSEClosedOamFrame[] = {
     5,
-    OAM_ENTRY(-3, -27, ATTR0_SQUARE, ATTR1_8x8, 564, 13, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 524, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 524, 8, 0),
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 522, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 522, 8, 0),
+    OAM_ENTRY(-3, -27, SPRITE_SIZE_8x8, 0, 564, 13, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 524, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 524, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 522, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 522, 8, 0),
 };
 const u16 sBoxHeartRefillClosedOamFrame[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 533, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 533, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 533, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 533, 8, 0),
 };
 const u16 sBoxHeartRefillOpeningOam_Frame1[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 535, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 535, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 535, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 535, 8, 0),
 };
 const u16 sBoxHeartRefillOpeningOam_Frame2[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 537, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 537, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 537, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 537, 8, 0),
 };
 const u16 sBoxHeartRefillOpenedOamFrame[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 539, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 539, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 539, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 539, 8, 0),
 };
 const u16 sBoxHeartRefillOpeningOam_Frame3[] = {
     4,
-    OAM_ENTRY(-16, -16, ATTR0_SQUARE, ATTR1_16x16, 512, 8, 0),
-    OAM_ENTRY(0, -16, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 512, 8, 0),
-    OAM_ENTRY(-16, -31, ATTR0_SQUARE, ATTR1_16x16, 539, 8, 0),
-    OAM_ENTRY(0, -31, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 539, 8, 0),
+    OAM_ENTRY(-16, -16, SPRITE_SIZE_16x16, 0, 512, 8, 0),
+    OAM_ENTRY(0, -16, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 512, 8, 0),
+    OAM_ENTRY(-16, -31, SPRITE_SIZE_16x16, 0, 539, 8, 0),
+    OAM_ENTRY(0, -31, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 539, 8, 0),
 };
 const u16 sBoxUnusedOamFrame5[] = {
     2,
-    OAM_ENTRY(-16, -32, ATTR0_SQUARE, ATTR1_16x16, 539, 8, 0),
-    OAM_ENTRY(0, -32, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 539, 8, 0),
+    OAM_ENTRY(-16, -32, SPRITE_SIZE_16x16, 0, 539, 8, 0),
+    OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 539, 8, 0),
 };
 
 const AnimationFrame sBoxCDOpeningOam[] = {
@@ -793,7 +793,7 @@ void SpriteAI_JewelPieceNE(void) {
             Sound_Play(SE_GET_JEWEL_PIECE);
             gCollectedNEJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
-            if (gWarioData.horizontalDirection & KEY_LEFT) {
+            if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50), SSPRITE_JEWEL_PIECE_ICONS);
             } else {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18), SSPRITE_JEWEL_PIECE_ICONS);
@@ -832,7 +832,7 @@ void SpriteAI_JewelPieceSE(void) {
             Sound_Play(SE_GET_JEWEL_PIECE);
             gCollectedSEJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
-            if (gWarioData.horizontalDirection & KEY_LEFT) {
+            if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50), SSPRITE_JEWEL_PIECE_ICONS);
             } else {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18), SSPRITE_JEWEL_PIECE_ICONS);
@@ -871,7 +871,7 @@ void SpriteAI_JewelPieceSW(void) {
             Sound_Play(SE_GET_JEWEL_PIECE);
             gCollectedSWJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
-            if (gWarioData.horizontalDirection & KEY_LEFT) {
+            if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50), SSPRITE_JEWEL_PIECE_ICONS);
             } else {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18), SSPRITE_JEWEL_PIECE_ICONS);
@@ -910,7 +910,7 @@ void SpriteAI_JewelPieceNW(void) {
             Sound_Play(SE_GET_JEWEL_PIECE);
             gCollectedNWJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
-            if (gWarioData.horizontalDirection & KEY_LEFT) {
+            if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50), SSPRITE_JEWEL_PIECE_ICONS);
             } else {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18), SSPRITE_JEWEL_PIECE_ICONS);
@@ -949,7 +949,7 @@ void SpriteAI_CD(void) {
             Sound_Play(SE_GET_CD);
             gCollectedCD = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
-            if (gWarioData.horizontalDirection & KEY_LEFT) {
+            if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(34), SSPRITE_CD_ICON);
             } else {
                 Sprite_SpawnSecondary(gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40), gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18), SSPRITE_CD_ICON);

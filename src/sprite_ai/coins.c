@@ -14,114 +14,114 @@
 
 const u16 sCoin500PointsOam_Frame1[] = {
     1,
-    OAM_ENTRY(-8, -15, ATTR0_SQUARE, ATTR1_16x16, 430, 6, 0),
+    OAM_ENTRY(-8, -15, SPRITE_SIZE_16x16, 0, 430, 6, 0),
 };
 const u16 sCoin500PointsOam_Frame2[] = {
     1,
-    OAM_ENTRY(-8, -15, ATTR0_SQUARE, ATTR1_16x16, 434, 6, 0),
+    OAM_ENTRY(-8, -15, SPRITE_SIZE_16x16, 0, 434, 6, 0),
 };
 const u16 sCoin500PointsOam_Frame3[] = {
     1,
-    OAM_ENTRY(-4, -15, ATTR0_TALL, ATTR1_8x16, 436, 6, 0),
+    OAM_ENTRY(-4, -15, SPRITE_SIZE_8x16, 0, 436, 6, 0),
 };
 const u16 sCoin500PointsOam_Frame4[] = {
     1,
-    OAM_ENTRY(-4, -15, ATTR0_TALL, ATTR1_8x16, 437, 6, 0),
+    OAM_ENTRY(-4, -15, SPRITE_SIZE_8x16, 0, 437, 6, 0),
 };
 const u16 sCoin500PointsOam_Frame5[] = {
     1,
-    OAM_ENTRY(-4, -15, ATTR0_TALL, ATTR1_8x16 | ATTR1_HFLIP, 436, 6, 0),
+    OAM_ENTRY(-4, -15, SPRITE_SIZE_8x16, ST_OAM_HFLIP, 436, 6, 0),
 };
 const u16 sCoin500PointsOam_Frame6[] = {
     1,
-    OAM_ENTRY(-8, -15, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 434, 6, 0),
+    OAM_ENTRY(-8, -15, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 434, 6, 0),
 };
 const u16 sCoin500PointsOam_Frame7[] = {
     1,
-    OAM_ENTRY(-8, -15, ATTR0_SQUARE, ATTR1_16x16, 432, 6, 0),
+    OAM_ENTRY(-8, -15, SPRITE_SIZE_16x16, 0, 432, 6, 0),
 };
 const u16 sCoin100PointsOam_Frame1[] = {
     1,
-    OAM_ENTRY(-8, -14, ATTR0_SQUARE, ATTR1_16x16, 423, 4, 0),
+    OAM_ENTRY(-8, -14, SPRITE_SIZE_16x16, 0, 423, 4, 0),
 };
 const u16 sCoin100PointsOam_Frame2[] = {
     1,
-    OAM_ENTRY(-8, -14, ATTR0_SQUARE, ATTR1_16x16, 427, 4, 0),
+    OAM_ENTRY(-8, -14, SPRITE_SIZE_16x16, 0, 427, 4, 0),
 };
 const u16 sCoin100PointsOam_Frame3[] = {
     1,
-    OAM_ENTRY(-4, -14, ATTR0_TALL, ATTR1_8x16, 429, 4, 0),
+    OAM_ENTRY(-4, -14, SPRITE_SIZE_8x16, 0, 429, 4, 0),
 };
 const u16 sCoin100PointsOam_Frame4[] = {
     2,
-    OAM_ENTRY(-4, -13, ATTR0_SQUARE, ATTR1_8x8, 437, 4, 0),
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 437, 4, 0),
+    OAM_ENTRY(-4, -13, SPRITE_SIZE_8x8, 0, 437, 4, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, ST_OAM_VFLIP, 437, 4, 0),
 };
 const u16 sCoin100PointsOam_Frame5[] = {
     1,
-    OAM_ENTRY(-4, -14, ATTR0_TALL, ATTR1_8x16 | ATTR1_HFLIP, 429, 4, 0),
+    OAM_ENTRY(-4, -14, SPRITE_SIZE_8x16, ST_OAM_HFLIP, 429, 4, 0),
 };
 const u16 sCoin100PointsOam_Frame6[] = {
     1,
-    OAM_ENTRY(-8, -14, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 427, 4, 0),
+    OAM_ENTRY(-8, -14, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 427, 4, 0),
 };
 const u16 sCoin100PointsOam_Frame7[] = {
     1,
-    OAM_ENTRY(-8, -14, ATTR0_SQUARE, ATTR1_16x16, 425, 4, 0),
+    OAM_ENTRY(-8, -14, SPRITE_SIZE_16x16, 0, 425, 4, 0),
 };
 const u16 sCoin50PointsOam_Frame1[] = {
     1,
-    OAM_ENTRY(-8, -13, ATTR0_SQUARE, ATTR1_16x16, 416, 7, 0),
+    OAM_ENTRY(-8, -13, SPRITE_SIZE_16x16, 0, 416, 7, 0),
 };
 const u16 sCoin50PointsOam_Frame2[] = {
     1,
-    OAM_ENTRY(-8, -13, ATTR0_SQUARE, ATTR1_16x16, 420, 7, 0),
+    OAM_ENTRY(-8, -13, SPRITE_SIZE_16x16, 0, 420, 7, 0),
 };
 const u16 sCoin50PointsOam_Frame3[] = {
     1,
-    OAM_ENTRY(-4, -13, ATTR0_TALL, ATTR1_8x16, 422, 7, 0),
+    OAM_ENTRY(-4, -13, SPRITE_SIZE_8x16, 0, 422, 7, 0),
 };
 const u16 sCoin50PointsOam_Frame4[] = {
     2,
-    OAM_ENTRY(-4, -11, ATTR0_SQUARE, ATTR1_8x8, 437, 7, 0),
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_VFLIP, 437, 7, 0),
+    OAM_ENTRY(-4, -11, SPRITE_SIZE_8x8, 0, 437, 7, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, ST_OAM_VFLIP, 437, 7, 0),
 };
 const u16 sCoin50PointsOam_Frame5[] = {
     1,
-    OAM_ENTRY(-4, -13, ATTR0_TALL, ATTR1_8x16 | ATTR1_HFLIP, 422, 7, 0),
+    OAM_ENTRY(-4, -13, SPRITE_SIZE_8x16, ST_OAM_HFLIP, 422, 7, 0),
 };
 const u16 sCoin50PointsOam_Frame6[] = {
     1,
-    OAM_ENTRY(-8, -13, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 420, 7, 0),
+    OAM_ENTRY(-8, -13, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 420, 7, 0),
 };
 const u16 sCoin50PointsOam_Frame7[] = {
     1,
-    OAM_ENTRY(-8, -13, ATTR0_SQUARE, ATTR1_16x16, 418, 7, 0),
+    OAM_ENTRY(-8, -13, SPRITE_SIZE_16x16, 0, 418, 7, 0),
 };
 const u16 sCoin10PointsOam_Frame1[] = {
     1,
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8, 499, 5, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, 0, 499, 5, 0),
 };
 const u16 sCoin10PointsOam_Frame2[] = {
     1,
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8, 501, 5, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, 0, 501, 5, 0),
 };
 const u16 sCoin10PointsOam_Frame3[] = {
     1,
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8, 502, 5, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, 0, 502, 5, 0),
 };
 const u16 sCoin10PointsOam_Frame4[] = {
     1,
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8 | ATTR1_HFLIP, 501, 5, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, ST_OAM_HFLIP, 501, 5, 0),
 };
 const u16 sCoin10PointsOam_Frame5[] = {
     1,
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8, 500, 5, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, 0, 500, 5, 0),
 };
 
 const u16 sCoinsUnusedOamFrame[] = {
     1,
-    OAM_ENTRY(-4, -7, ATTR0_SQUARE, ATTR1_8x8, 203, 6, 0),
+    OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, 0, 203, 6, 0),
 };
 
 const AnimationFrame sCoin500PointsOamData[] = {
@@ -184,54 +184,54 @@ const AnimationFrame sCoin10PointsOamData[] = {
 
 const u16 sCoinsUnusedOam_Frame1[] = {
     4,
-    OAM_ENTRY(-16, -28, ATTR0_SQUARE, ATTR1_16x16, 352, 6, 0),
-    OAM_ENTRY(0, -28, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 352, 6, 0),
-    OAM_ENTRY(-16, -12, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 352, 6, 0),
-    OAM_ENTRY(0, -12, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP | ATTR1_VFLIP, 352, 6, 0),
+    OAM_ENTRY(-16, -28, SPRITE_SIZE_16x16, 0, 352, 6, 0),
+    OAM_ENTRY(0, -28, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 352, 6, 0),
+    OAM_ENTRY(-16, -12, SPRITE_SIZE_16x16, ST_OAM_VFLIP, 352, 6, 0),
+    OAM_ENTRY(0, -12, SPRITE_SIZE_16x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 352, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame2[] = {
     2,
-    OAM_ENTRY(-16, -28, ATTR0_WIDE, ATTR1_32x16, 354, 6, 0),
-    OAM_ENTRY(-16, -12, ATTR0_WIDE, ATTR1_32x16 | ATTR1_VFLIP, 354, 6, 0),
+    OAM_ENTRY(-16, -28, SPRITE_SIZE_32x16, 0, 354, 6, 0),
+    OAM_ENTRY(-16, -12, SPRITE_SIZE_32x16, ST_OAM_VFLIP, 354, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame3[] = {
     3,
-    OAM_ENTRY(-8, -28, ATTR0_SQUARE, ATTR1_16x16, 359, 6, 0),
-    OAM_ENTRY(-8, -12, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 359, 6, 0),
-    OAM_ENTRY(-16, -20, ATTR0_TALL, ATTR1_8x16, 358, 6, 0),
+    OAM_ENTRY(-8, -28, SPRITE_SIZE_16x16, 0, 359, 6, 0),
+    OAM_ENTRY(-8, -12, SPRITE_SIZE_16x16, ST_OAM_VFLIP, 359, 6, 0),
+    OAM_ENTRY(-16, -20, SPRITE_SIZE_8x16, 0, 358, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame4[] = {
     2,
-    OAM_ENTRY(-8, -28, ATTR0_SQUARE, ATTR1_16x16, 361, 6, 0),
-    OAM_ENTRY(-8, -12, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_VFLIP, 361, 6, 0),
+    OAM_ENTRY(-8, -28, SPRITE_SIZE_16x16, 0, 361, 6, 0),
+    OAM_ENTRY(-8, -12, SPRITE_SIZE_16x16, ST_OAM_VFLIP, 361, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame5[] = {
     2,
-    OAM_ENTRY(-4, -28, ATTR0_TALL, ATTR1_8x16, 363, 6, 0),
-    OAM_ENTRY(-4, -12, ATTR0_TALL, ATTR1_8x16 | ATTR1_VFLIP, 363, 6, 0),
+    OAM_ENTRY(-4, -28, SPRITE_SIZE_8x16, 0, 363, 6, 0),
+    OAM_ENTRY(-4, -12, SPRITE_SIZE_8x16, ST_OAM_VFLIP, 363, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame6[] = {
     2,
-    OAM_ENTRY(-8, -28, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 361, 6, 0),
-    OAM_ENTRY(-8, -12, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP | ATTR1_VFLIP, 361, 6, 0),
+    OAM_ENTRY(-8, -28, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 361, 6, 0),
+    OAM_ENTRY(-8, -12, SPRITE_SIZE_16x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 361, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame7[] = {
     3,
-    OAM_ENTRY(-8, -28, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP, 359, 6, 0),
-    OAM_ENTRY(-8, -12, ATTR0_SQUARE, ATTR1_16x16 | ATTR1_HFLIP | ATTR1_VFLIP, 359, 6, 0),
-    OAM_ENTRY(8, -20, ATTR0_TALL, ATTR1_8x16 | ATTR1_HFLIP, 358, 6, 0),
+    OAM_ENTRY(-8, -28, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 359, 6, 0),
+    OAM_ENTRY(-8, -12, SPRITE_SIZE_16x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 359, 6, 0),
+    OAM_ENTRY(8, -20, SPRITE_SIZE_8x16, ST_OAM_HFLIP, 358, 6, 0),
 
 };
 const u16 sCoinsUnusedOam_Frame8[] = {
     2,
-    OAM_ENTRY(-16, -28, ATTR0_WIDE, ATTR1_32x16 | ATTR1_HFLIP, 354, 6, 0),
-    OAM_ENTRY(-16, -12, ATTR0_WIDE, ATTR1_32x16 | ATTR1_HFLIP | ATTR1_VFLIP, 354, 6, 0),
+    OAM_ENTRY(-16, -28, SPRITE_SIZE_32x16, ST_OAM_HFLIP, 354, 6, 0),
+    OAM_ENTRY(-16, -12, SPRITE_SIZE_32x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 354, 6, 0),
 
 };
 
@@ -250,221 +250,221 @@ const AnimationFrame sCoinsUnusedOamData[] = {
 
 const u16 sDiamondOam_Frame1[] = {
     3,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame2[] = {
     4,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_TALL, ATTR1_8x16, 359, 5, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_8x16, 0, 359, 5, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame3[] = {
     6,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_SQUARE, ATTR1_16x16, 360, 5, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_SQUARE, ATTR1_8x8, 509, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(4, -12, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_16x16, 0, 360, 5, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_8x8, 0, 509, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame4[] = {
     6,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-1, -24, ATTR0_TALL, ATTR1_8x16 | ATTR1_HFLIP, 362, 5, 0),
-    OAM_ENTRY(-8, -24, ATTR0_TALL, ATTR1_8x16, 362, 5, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(4, -12, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-1, -24, SPRITE_SIZE_8x16, ST_OAM_HFLIP, 362, 5, 0),
+    OAM_ENTRY(-8, -24, SPRITE_SIZE_8x16, 0, 362, 5, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame5[] = {
     3,
-    OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(4, -12, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame6[] = {
     3,
-    OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(4, -12, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame7[] = {
     4,
-    OAM_ENTRY(4, -12, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(4, -12, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame8[] = {
     3,
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame9[] = {
     4,
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame10[] = {
     4,
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame11[] = {
     4,
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame12[] = {
     4,
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame13[] = {
     5,
-    OAM_ENTRY(-14, -10, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
+    OAM_ENTRY(-14, -10, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 220, 4, 0),
 };
 const u16 sDiamondOam_Frame14[] = {
     4,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame15[] = {
     4,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame16[] = {
     4,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(7, -22, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(7, -22, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame17[] = {
     3,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame18[] = {
     3,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame19[] = {
     3,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame20[] = {
     4,
-    OAM_ENTRY(8, -14, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(8, -14, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame21[] = {
     3,
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame22[] = {
     3,
-    OAM_ENTRY(-21, -16, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-21, -16, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame23[] = {
     3,
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame24[] = {
     4,
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame25[] = {
     4,
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame26[] = {
     4,
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 220, 4, 0),
 };
 const u16 sDiamondOam_Frame27[] = {
     4,
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(-20, -16, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(-20, -16, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame28[] = {
     4,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame29[] = {
     4,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame30[] = {
     4,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 219, 4, 0),
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 220, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 219, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 220, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame31[] = {
     4,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 218, 4, 0),
-    OAM_ENTRY(-13, -26, ATTR0_SQUARE, ATTR1_8x8, 221, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 218, 4, 0),
+    OAM_ENTRY(-13, -26, SPRITE_SIZE_8x8, 0, 221, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 const u16 sDiamondOam_Frame32[] = {
     3,
-    OAM_ENTRY(11, -18, ATTR0_SQUARE, ATTR1_8x8, 217, 4, 0),
-    OAM_ENTRY(-16, -24, ATTR0_WIDE, ATTR1_32x16, 298, 5, 0),
-    OAM_ENTRY(-8, -8, ATTR0_WIDE, ATTR1_16x8, 296, 5, 0),
+    OAM_ENTRY(11, -18, SPRITE_SIZE_8x8, 0, 217, 4, 0),
+    OAM_ENTRY(-16, -24, SPRITE_SIZE_32x16, 0, 298, 5, 0),
+    OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 
 const AnimationFrame sDiamondOamData[] = {
@@ -506,19 +506,19 @@ const AnimationFrame sDiamondOamData[] = {
 
 const u16 sLittleHeartOam_Frame1[] = {
     1,
-    OAM_ENTRY(-4, -8, ATTR0_SQUARE, ATTR1_8x8, 496, 6, 0),
+    OAM_ENTRY(-4, -8, SPRITE_SIZE_8x8, 0, 496, 6, 0),
 };
 const u16 sLittleHeartOam_Frame2[] = {
     1,
-    OAM_ENTRY(-4, -8, ATTR0_SQUARE, ATTR1_8x8, 497, 6, 0),
+    OAM_ENTRY(-4, -8, SPRITE_SIZE_8x8, 0, 497, 6, 0),
 };
 const u16 sLittleHeartOam_Frame3[] = {
     1,
-    OAM_ENTRY(-4, -8, ATTR0_SQUARE, ATTR1_8x8, 498, 6, 0),
+    OAM_ENTRY(-4, -8, SPRITE_SIZE_8x8, 0, 498, 6, 0),
 };
 const u16 sLittleHeartOam_Frame4[] = {
     1,
-    OAM_ENTRY(-3, -7, ATTR0_SQUARE, ATTR1_8x8, 497, 6, 0),
+    OAM_ENTRY(-3, -7, SPRITE_SIZE_8x8, 0, 497, 6, 0),
 };
 
 const AnimationFrame sLittleHeartOamData[] = {
@@ -832,7 +832,7 @@ static void Coin_Init(void) {
     gCurrentSprite.animationTimer = 0;
 
     if (gWarioData.damageTimer) {
-        if (gWarioData.horizontalDirection & KEY_RIGHT) {
+        if (gWarioData.horizontalDirection & DPAD_RIGHT) {
             gCurrentSprite.pose = POSE_3F;
             gCurrentSprite.statusBits |= SPRITE_STATUS_FACING_RIGHT;
         } else {
