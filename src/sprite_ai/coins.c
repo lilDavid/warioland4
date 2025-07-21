@@ -124,7 +124,7 @@ const u16 sCoinsUnusedOamFrame[] = {
     OAM_ENTRY(-4, -7, SPRITE_SIZE_8x8, 0, 203, 6, 0),
 };
 
-const AnimationFrame sCoin500PointsOamData[] = {
+const struct AnimationFrame sCoin500PointsOamData[] = {
     { sCoin500PointsOam_Frame1, 3 },
     { sCoin500PointsOam_Frame2, 3 },
     { sCoin500PointsOam_Frame3, 3 },
@@ -139,7 +139,7 @@ const AnimationFrame sCoin500PointsOamData[] = {
     { sCoin500PointsOam_Frame6, 3 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sCoin100PointsOamData[] = {
+const struct AnimationFrame sCoin100PointsOamData[] = {
     { sCoin100PointsOam_Frame1, 3 },
     { sCoin100PointsOam_Frame2, 3 },
     { sCoin100PointsOam_Frame3, 3 },
@@ -154,7 +154,7 @@ const AnimationFrame sCoin100PointsOamData[] = {
     { sCoin100PointsOam_Frame6, 3 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sCoin50PointsOamData[] = {
+const struct AnimationFrame sCoin50PointsOamData[] = {
     { sCoin50PointsOam_Frame1, 3 },
     { sCoin50PointsOam_Frame2, 3 },
     { sCoin50PointsOam_Frame3, 3 },
@@ -169,7 +169,7 @@ const AnimationFrame sCoin50PointsOamData[] = {
     { sCoin50PointsOam_Frame6, 3 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sCoin10PointsOamData[] = {
+const struct AnimationFrame sCoin10PointsOamData[] = {
     { sCoin10PointsOam_Frame1, 3 },
     { sCoin10PointsOam_Frame2, 3 },
     { sCoin10PointsOam_Frame3, 3 },
@@ -235,7 +235,7 @@ const u16 sCoinsUnusedOam_Frame8[] = {
 
 };
 
-const AnimationFrame sCoinsUnusedOamData[] = {
+const struct AnimationFrame sCoinsUnusedOamData[] = {
     { sCoinsUnusedOam_Frame1, 6 },
     { sCoinsUnusedOam_Frame2, 6 },
     { sCoinsUnusedOam_Frame3, 6 },
@@ -467,7 +467,7 @@ const u16 sDiamondOam_Frame32[] = {
     OAM_ENTRY(-8, -8, SPRITE_SIZE_16x8, 0, 296, 5, 0),
 };
 
-const AnimationFrame sDiamondOamData[] = {
+const struct AnimationFrame sDiamondOamData[] = {
     { sDiamondOam_Frame1, 4 },
     { sDiamondOam_Frame2, 4 },
     { sDiamondOam_Frame3, 4 },
@@ -521,7 +521,7 @@ const u16 sLittleHeartOam_Frame4[] = {
     OAM_ENTRY(-3, -7, SPRITE_SIZE_8x8, 0, 497, 6, 0),
 };
 
-const AnimationFrame sLittleHeartOamData[] = {
+const struct AnimationFrame sLittleHeartOamData[] = {
     { sLittleHeartOam_Frame1, 8 },
     { sLittleHeartOam_Frame2, 8 },
     { sLittleHeartOam_Frame3, 8 },

@@ -33,7 +33,7 @@ const u16 sRockOam_UnusedFrame4[] = {
     OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 548, 8, 0),
 };
 
-const AnimationFrame sRockOamData[] = {
+const struct AnimationFrame sRockOamData[] = {
     { sRockOam_Frame1, 0xC8 },
     ANIMATION_TERMINATOR
 };

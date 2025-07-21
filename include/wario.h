@@ -25,7 +25,7 @@ enum WarioReaction {
 };
 
 
-typedef struct {
+struct WarioData {
     /* 0x00 */ u8 reaction;
     /* 0x01 */ u8 unk_01;
     /* 0x02 */ u8 unk_02;
@@ -59,21 +59,21 @@ typedef struct {
     /* 0x38 */ s16 unk_38;
     /* 0x3A */ u8 unk_3A;
     /* 0x3B */ u8 unk_3B;
-} WarioData; /* size: 0x3C */
+}; /* size: 0x3C */
 
 
-typedef struct {
+struct WarioLife {
     u8 current;
     u8 filling;
     u8 unk_2;
     u8 unk_3;
-} WarioLife;
+};
 
 
-extern WarioData gWarioData;
+extern struct WarioData gWarioData;
 
-extern WarioLife gWarioHearts;
-extern WarioLife gHeartGauge;
+extern struct WarioLife gWarioHearts;
+extern struct WarioLife gHeartGauge;
 
 extern u16 gWarioPauseTimer;
 extern u8 gDisableWario;

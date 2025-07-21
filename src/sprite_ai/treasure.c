@@ -100,34 +100,34 @@ const u16 sCDOamFrame[] = {
     OAM_ENTRY(-20, -4, SPRITE_SIZE_32x16, ST_OAM_HFLIP | ST_OAM_VFLIP, 352, 4, 0),
 };
 
-const AnimationFrame sCDOam[] = {
+const struct AnimationFrame sCDOam[] = {
     { sCDOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sHeartRefillOam[] = {
+const struct AnimationFrame sHeartRefillOam[] = {
     { sHeartRefillOam_Frame1, 14 },
     { sHeartRefillOam_Frame2, 12 },
     { sHeartRefillOam_Frame3, 12 },
     { sHeartRefillOam_Frame2, 12 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sJewelPieceNWOam[] = {
+const struct AnimationFrame sJewelPieceNWOam[] = {
     { sJewelPieceNWOamFrame, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sJewelPieceSWOam[] = {
+const struct AnimationFrame sJewelPieceSWOam[] = {
     { sJewelPieceSWOamFrame, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sJewelPieceNEOam[] = {
+const struct AnimationFrame sJewelPieceNEOam[] = {
     { sJewelPieceNEOamFrame, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sJewelPieceSEOam[] = {
+const struct AnimationFrame sJewelPieceSEOam[] = {
     { sJewelPieceSEOamFrame, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sTreasureGlowOam[] = {
+const struct AnimationFrame sTreasureGlowOam[] = {
     { sTreasureGlowOam_Frame1, 2 },
     { sTreasureGlowOam_Frame2, 1 },
     { sTreasureGlowOam_Frame1, 2 },
@@ -138,7 +138,7 @@ const AnimationFrame sTreasureGlowOam[] = {
     { sTreasureGlowOam_Frame2, 1 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sTreasureGlow_DisappearingOam[] = {
+const struct AnimationFrame sTreasureGlow_DisappearingOam[] = {
     { sTreasureGlowOam_Frame1, 2 },
     { sTreasureGlowOam_Frame2, 1 },
     { sTreasureGlowOam_Frame1, 2 },
@@ -305,7 +305,7 @@ const u16 sBoxUnusedOamFrame5[] = {
     OAM_ENTRY(0, -32, SPRITE_SIZE_16x16, ST_OAM_HFLIP, 539, 8, 0),
 };
 
-const AnimationFrame sBoxCDOpeningOam[] = {
+const struct AnimationFrame sBoxCDOpeningOam[] = {
     { sBoxCDOpeningOam_Frame1, 3 },
     { sBoxCDOpeningOam_Frame2, 3 },
     { sBoxCDOpenedOamFrame, 3 },
@@ -313,15 +313,15 @@ const AnimationFrame sBoxCDOpeningOam[] = {
     { sBoxCDOpenedOamFrame, 1 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxCDClosedOam[] = {
+const struct AnimationFrame sBoxCDClosedOam[] = {
     { sBoxCDClosedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxCDOpenedOam[] = {
+const struct AnimationFrame sBoxCDOpenedOam[] = {
     { sBoxCDOpenedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxJewelPieceOpeningOam[] = {
+const struct AnimationFrame sBoxJewelPieceOpeningOam[] = {
     { sBoxJewelPieceOpeningOam_Frame1, 3 },
     { sBoxJewelPieceOpeningOam_Frame2, 3 },
     { sBoxJewelPieceOpenedOamFrame, 3 },
@@ -329,27 +329,27 @@ const AnimationFrame sBoxJewelPieceOpeningOam[] = {
     { sBoxJewelPieceOpenedOamFrame, 1 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxJewelPieceNWClosedOam[] = {
+const struct AnimationFrame sBoxJewelPieceNWClosedOam[] = {
     { sBoxJewelPieceNWClosedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxJewelPieceSWClosedOam[] = {
+const struct AnimationFrame sBoxJewelPieceSWClosedOam[] = {
     { sBoxJewelPieceSWClosedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxJewelPieceNEClosedOam[] = {
+const struct AnimationFrame sBoxJewelPieceNEClosedOam[] = {
     { sBoxJewelPieceNEClosedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxJewelPieceSEClosedOam[] = {
+const struct AnimationFrame sBoxJewelPieceSEClosedOam[] = {
     { sBoxJewelPieceSEClosedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxJewelPieceOpenedOam[] = {
+const struct AnimationFrame sBoxJewelPieceOpenedOam[] = {
     { sBoxJewelPieceOpenedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxHeartRefillOpeningOam[] = {
+const struct AnimationFrame sBoxHeartRefillOpeningOam[] = {
     { sBoxHeartRefillOpeningOam_Frame1, 3 },
     { sBoxHeartRefillOpeningOam_Frame2, 3 },
     { sBoxHeartRefillOpenedOamFrame, 3 },
@@ -357,11 +357,11 @@ const AnimationFrame sBoxHeartRefillOpeningOam[] = {
     { sBoxHeartRefillOpenedOamFrame, 1 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxHeartRefillClosedOam[] = {
+const struct AnimationFrame sBoxHeartRefillClosedOam[] = {
     { sBoxHeartRefillClosedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sBoxHeartRefillOpenedOam[] = {
+const struct AnimationFrame sBoxHeartRefillOpenedOam[] = {
     { sBoxHeartRefillOpenedOamFrame, U8_MAX },
     ANIMATION_TERMINATOR
 };

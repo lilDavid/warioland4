@@ -6,10 +6,10 @@
 
 #define MAX_OAM_SLOTS 128
 
-typedef struct {
+struct AnimationFrame {
     const u16* oam;
     u8 time;
-} AnimationFrame;
+};
 
 
 #define OAM_ENTRY(x, y, dimensions, flip, tile, palette, priority)\

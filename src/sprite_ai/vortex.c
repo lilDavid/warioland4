@@ -37,23 +37,23 @@ const u16 sVortexKeyzerOam_Frame1[] = {
     OAM_ENTRY(-16, -16, SPRITE_SIZE_32x32, 0, 536, 10, 0),
 };
 
-const AnimationFrame sVortexLargePartOam[] = {
+const struct AnimationFrame sVortexLargePartOam[] = {
     { sVortexLargePartOam_Frame1, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sVortexMediumPartOam[] = {
+const struct AnimationFrame sVortexMediumPartOam[] = {
     { sVortexMediumPartOam_Frame1, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sVortexSmallPartOam[] = {
+const struct AnimationFrame sVortexSmallPartOam[] = {
     { sVortexSmallPartOam_Frame1, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sVortexWarioOam[] = {
+const struct AnimationFrame sVortexWarioOam[] = {
     { sVortexWarioOam_Frame1, 200 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sVortexKeyzerOam[] = {
+const struct AnimationFrame sVortexKeyzerOam[] = {
     { sVortexKeyzerOam_Frame1, 200 },
     ANIMATION_TERMINATOR
 };

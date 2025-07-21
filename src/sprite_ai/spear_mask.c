@@ -550,7 +550,7 @@ const u16 sOamFrame_83B4152[] = {
     OAM_ENTRY(-13, -14, SPRITE_SIZE_8x8, ST_OAM_HFLIP | ST_OAM_VFLIP, 564, 8, 0),
 };
 
-const AnimationFrame sSpearMaskWalkingOam[] = {
+const struct AnimationFrame sSpearMaskWalkingOam[] = {
     { sSpearMaskWalkingOam_Frame1, 7 },
     { sSpearMaskWalkingOam_Frame2, 7 },
     { sSpearMaskWalkingOam_Frame3, 7 },
@@ -559,38 +559,38 @@ const AnimationFrame sSpearMaskWalkingOam[] = {
     { sSpearMaskWalkingOam_Frame6, 7 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskCrushedOam[] = {
+const struct AnimationFrame sSpearMaskCrushedOam[] = {
     { sSpearMaskCrushedOam_Frame1, 2 },
     { sSpearMaskCrushedOam_Frame2, 5 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskBashedOam[] = {
+const struct AnimationFrame sSpearMaskBashedOam[] = {
     { sSpearMaskBashedOam_Frame1, 18 },
     { sSpearMaskBashedOam_Frame2, 40 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskTurning1Oam[] = {
+const struct AnimationFrame sSpearMaskTurning1Oam[] = {
     { sSpearMaskTurning1Oam_Frame1, 5 },
     { sSpearMaskTurning1Oam_Frame2, 7 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskTurning2Oam[] = {
+const struct AnimationFrame sSpearMaskTurning2Oam[] = {
     { sSpearMaskTurning2Oam_Frame1, 6 },
     { sSpearMaskTurning2Oam_Frame2, 6 },
     { sSpearMaskTurning2Oam_Frame3, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskTurning3Oam[] = {
+const struct AnimationFrame sSpearMaskTurning3Oam[] = {
     { sSpearMaskTurning3Oam_Frame1, 8 },
     { sSpearMaskTurning3Oam_Frame2, 8 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4224[] = {
+const struct AnimationFrame sSpearMaskOam_83B4224[] = {
     { sOamFrame_83B3B9A, 7 },
     { sSpearMaskHitWarioOam_Frame1, 10 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskStunnedOam[] = {
+const struct AnimationFrame sSpearMaskStunnedOam[] = {
     { sSpearMaskStunnedOam_Frame1, 6 },
     { sSpearMaskStunnedOam_Frame2, 6 },
     { sSpearMaskStunnedOam_Frame3, 6 },
@@ -599,7 +599,7 @@ const AnimationFrame sSpearMaskStunnedOam[] = {
     { sSpearMaskStunnedOam_Frame6, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskGettingUpOam[] = {
+const struct AnimationFrame sSpearMaskGettingUpOam[] = {
     { sSpearMaskGettingUpOam_Frame1, 5 },
     { sSpearMaskGettingUpOam_Frame2, 5 },
     { sSpearMaskGettingUpOam_Frame3, 5 },
@@ -620,42 +620,42 @@ const AnimationFrame sSpearMaskGettingUpOam[] = {
     { sSpearMaskGettingUpOam_Frame13, 5 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskTransforming1Oam[] = {
+const struct AnimationFrame sSpearMaskTransforming1Oam[] = {
     { sSpearMaskTransforming1Oam_Frame1, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskTransforming2Oam[] = {
+const struct AnimationFrame sSpearMaskTransforming2Oam[] = {
     { sSpearMaskTransforming2Oam_Frame1, 5 },
     { sSpearMaskTransforming1Oam_Frame1, 5 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4334[] = {
+const struct AnimationFrame sSpearMaskOam_83B4334[] = {
     { sOamFrame_83B4048, 8 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4344[] = {
+const struct AnimationFrame sSpearMaskOam_83B4344[] = {
     { sSpearMaskBashedOam_Frame2, 4 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskHitWarioOam[] = {
+const struct AnimationFrame sSpearMaskHitWarioOam[] = {
     { sSpearMaskHitWarioOam_Frame1, 4 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4364[] = {
+const struct AnimationFrame sSpearMaskOam_83B4364[] = {
     { sSpearMaskGettingUpOam_Frame13, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4374[] = {
+const struct AnimationFrame sSpearMaskOam_83B4374[] = {
     { sSpearMaskRecoveringOam_Frame2, 4 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskRecoveringOam[] = {
+const struct AnimationFrame sSpearMaskRecoveringOam[] = {
     { sSpearMaskRecoveringOam_Frame1, 5 },
     { sSpearMaskGettingUpOam_Frame13, 5 },
     { sSpearMaskRecoveringOam_Frame2, 10 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B43A4[] = {
+const struct AnimationFrame sSpearMaskOam_83B43A4[] = {
     { sOamFrame_83B40D0, 4 },
     { sOamFrame_83B40EA, 4 },
     { sOamFrame_83B4104, 4 },
@@ -664,56 +664,56 @@ const AnimationFrame sSpearMaskOam_83B43A4[] = {
     { sOamFrame_83B4152, 4 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskSpearTwirlingOam[] = {
+const struct AnimationFrame sSpearMaskSpearTwirlingOam[] = {
     { sSpearMaskSpearTwirlingOam_Frame1, 7 },
     { sSpearMaskSpearTwirlingOam_Frame2, 7 },
     { sSpearMaskSpearTwirlingOam_Frame3, 7 },
     { sSpearMaskSpearTwirlingOam_Frame4, 7 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskTurningOam[] = {
+const struct AnimationFrame sSpearMaskTurningOam[] = {
     { sSpearMaskTurningOam_Frame1, 6 },
     { sSpearMaskTurningOam_Frame2, 6 },
     { sSpearMaskTurningOam_Frame3, 8 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4424[] = {
+const struct AnimationFrame sSpearMaskOam_83B4424[] = {
     { sOamFrame_83B3E6C, 6 },
     { sOamFrame_83B3E86, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B443C[] = {
+const struct AnimationFrame sSpearMaskOam_83B443C[] = {
     { sOamFrame_83B3EA6, 6 },
     { sOamFrame_83B3EC6, 6 },
     { sOamFrame_83B3EE6, 6 },
     { sOamFrame_83B3F06, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4464[] = {
+const struct AnimationFrame sSpearMaskOam_83B4464[] = {
     { sOamFrame_83B3F26, 6 },
     { sOamFrame_83B3F46, 6 },
     { sOamFrame_83B3F26, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B4484[] = {
+const struct AnimationFrame sSpearMaskOam_83B4484[] = {
     { sOamFrame_83B3F06, 6 },
     { sOamFrame_83B3EE6, 6 },
     { sOamFrame_83B3EC6, 6 },
     { sOamFrame_83B3EA6, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskOam_83B44AC[] = {
+const struct AnimationFrame sSpearMaskOam_83B44AC[] = {
     { sOamFrame_83B3E86, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskStartingChaseOam[] = {
+const struct AnimationFrame sSpearMaskStartingChaseOam[] = {
     { sSpearMaskStartingCaseOam_Frame1, 6 },
     { sSpearMaskStartingCaseOam_Frame2, 6 },
     { sSpearMaskStartingCaseOam_Frame3, 6 },
     { sSpearMaskStartingCaseOam_Frame2, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sSpearMaskChasingOam[] = {
+const struct AnimationFrame sSpearMaskChasingOam[] = {
     { sSpearMaskChasingOam_Frame1, 4 },
     { sSpearMaskChasingOam_Frame2, 4 },
     { sSpearMaskChasingOam_Frame3, 4 },

@@ -212,70 +212,70 @@ const u16 sKeyzerOamFrame_83B47B0[] = {
     OAM_ENTRY(-9, -8, SPRITE_SIZE_16x8, ST_OAM_HFLIP, 324, 7, 0),
 };
 
-const AnimationFrame sKeyzerOam_83B47C4[] = {
+const struct AnimationFrame sKeyzerOam_83B47C4[] = {
     { sKeyzerOamFrame_83B4554, 10 },
     { sKeyzerOamFrame_83B4562, 10 },
     { sKeyzerOamFrame_83B4570, 10 },
     { sKeyzerOamFrame_83B457E, 10 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B47EC[] = {
+const struct AnimationFrame sKeyzerOam_83B47EC[] = {
     { sKeyzerOamFrame_83B46AA, 10 },
     { sKeyzerOamFrame_83B46B8, 10 },
     { sKeyzerOamFrame_83B46C6, 10 },
     { sKeyzerOamFrame_83B46D4, 10 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B4814[] = {
+const struct AnimationFrame sKeyzerOam_83B4814[] = {
     { sKeyzerOamFrame_83B4554, 1 },
     { sKeyzerOamFrame_83B4614, 6 },
     { sKeyzerOamFrame_83B4622, 1 },
     { sKeyzerOamFrame_83B463E, 2 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B483C[] = {
+const struct AnimationFrame sKeyzerOam_83B483C[] = {
     { sKeyzerOamFrame_83B46AA, 1 },
     { sKeyzerOamFrame_83B474A, 6 },
     { sKeyzerOamFrame_83B4758, 1 },
     { sKeyzerOamFrame_83B464C, 2 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B4864[] = {
+const struct AnimationFrame sKeyzerOam_83B4864[] = {
     { sKeyzerOamFrame_83B463E, 10 },
     { sKeyzerOamFrame_83B45FC, 10 },
     { sKeyzerOamFrame_83B464C, 10 },
     { sKeyzerOamFrame_83B460C, 10 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B488C[] = {
+const struct AnimationFrame sKeyzerOam_83B488C[] = {
     { sKeyzerOamFrame_83B463E, 3 },
     { sKeyzerOamFrame_83B4622, 1 },
     { sKeyzerOamFrame_83B4614, 6 },
     { sKeyzerOamFrame_83B457E, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B48B4[] = {
+const struct AnimationFrame sKeyzerOam_83B48B4[] = {
     { sKeyzerOamFrame_83B464C, 3 },
     { sKeyzerOamFrame_83B4758, 1 },
     { sKeyzerOamFrame_83B474A, 6 },
     { sKeyzerOamFrame_83B46D4, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B48DC[] = {
+const struct AnimationFrame sKeyzerOam_83B48DC[] = {
     { sKeyzerOamFrame_83B4554, 1 },
     { sKeyzerIdleOam_Frame6, 10 },
     { sKeyzerOamFrame_83B4630, 6 },
     { sKeyzerOamFrame_83B46D4, 8 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B4904[] = {
+const struct AnimationFrame sKeyzerOam_83B4904[] = {
     { sKeyzerOamFrame_83B46AA, 1 },
     { sKeyzerOamFrame_83B4788, 10 },
     { sKeyzerOamFrame_83B4766, 6 },
     { sKeyzerOamFrame_83B457E, 8 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerIdleOam[] = {
+const struct AnimationFrame sKeyzerIdleOam[] = {
     { sKeyzerIdleOam_Frame1, 13 },
     { sKeyzerIdleOam_Frame2, 13 },
     { sKeyzerIdleOam_Frame3, 13 },
@@ -286,7 +286,7 @@ const AnimationFrame sKeyzerIdleOam[] = {
     { sKeyzerIdleOam_Frame8, 13 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B4974[] = {
+const struct AnimationFrame sKeyzerOam_83B4974[] = {
     { sKeyzerOamFrame_83B46E2, 13 },
     { sKeyzerOamFrame_83B46FC, 13 },
     { sKeyzerOamFrame_83B4716, 13 },
@@ -297,7 +297,7 @@ const AnimationFrame sKeyzerOam_83B4974[] = {
     { sKeyzerOamFrame_83B47B0, 13 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B49BC[] = {
+const struct AnimationFrame sKeyzerOam_83B49BC[] = {
     { sKeyzerIdleOam_Frame5, 6 },
     { sKeyzerOamFrame_83B4562, 6 },
     { sKeyzerIdleOam_Frame7, 6 },
@@ -308,7 +308,7 @@ const AnimationFrame sKeyzerOam_83B49BC[] = {
     { sKeyzerOamFrame_83B4570, 6 },
     ANIMATION_TERMINATOR
 };
-const AnimationFrame sKeyzerOam_83B4A04[] = {
+const struct AnimationFrame sKeyzerOam_83B4A04[] = {
     { sKeyzerOamFrame_83B4774, 6 },
     { sKeyzerOamFrame_83B46B8, 6 },
     { sKeyzerOamFrame_83B479C, 6 },
