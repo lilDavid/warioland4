@@ -40,13 +40,13 @@ func_801B8BC:
 	asr	r0, r0, #24
 	cmp	r0, #0
 	bne	.L_1b918
-	bl	func_8010438
+	bl	DemoInput_Init
 .L_1b918:
 	ldr	r0, .L_1b930
 	ldrb	r0, [r0, #0]
 	cmp	r0, #2
 	bne	.L_1b924
-	bl	func_8010404
+	bl	DemoInput_ReadButtons
 .L_1b924:
 	bl	func_801C1C0
 	b	.L_1b942
@@ -54,7 +54,7 @@ func_801B8BC:
 .L_1b92c:
 	.4byte	gUnk_3000C3F
 .L_1b930:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 .L_1b934:
 	bl	func_801C1B4
 	bl	func_801D248
@@ -122,7 +122,7 @@ func_801B8BC:
 .L_1b9b4:
 	.4byte	gUnk_300001B
 .L_1b9b8:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 .L_1b9bc:
 	.4byte	gUnk_3000047
 .L_1b9c0:
@@ -185,7 +185,7 @@ func_801B8BC:
 .L_1ba2c:
 	.4byte	gUnk_3000C35
 .L_1ba30:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 .L_1ba34:
 	.4byte	gButtonsHeld
 .L_1ba38:

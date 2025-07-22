@@ -152,7 +152,6 @@ SECTIONS {
         . = 0x0c42; gUnk_3000C42 = .;
         . = 0x0c44; gInterruptHandlerBuffer = .;
         . = 0x1444; gOamBuffer = .;
-        . = 0x144a; gUnk_300144A = .;
         . = 0x1844; gButtonsHeld = .;
         . = 0x1846; gButtonsHeldCopy = .;
         . = 0x1848; gButtonsPressed = .;
@@ -187,7 +186,7 @@ SECTIONS {
         . = 0x188e; gUnk_300188E = .;
         . = 0x1890; gUnk_3001890 = .;
         . = 0x1892; gUnk_3001892 = .;
-        . = 0x1894; gUnk_3001894 = .;
+        obj/demo_input.o(COMMON);
         . = 0x1898; gWarioData = .;
         . = 0x18D4; gUnk_30018D4 = .;
         . = 0x1910; gWarioHearts = .;
@@ -255,11 +254,11 @@ SECTIONS {
         . = 0x2ca6; gUnk_3002CA6 = .;
         . = 0x2ca8; gUnk_3002CA8 = .;
         . = 0x2cb8; gUnk_3002CB8 = .;
-        . = 0x2cc8; gUnk_3002CC8 = .;
-        . = 0x2ec8; gUnk_3002EC8 = .;
-        . = 0x30c8; gUnk_30030C8 = .;
-        . = 0x30ca; gUnk_30030CA = .;
-        . = 0x30cc; gUnk_30030CC = .;
+        . = 0x2cc8; gDemoInputs = .;
+        . = 0x2ec8; gDemoInputLengths = .;
+        . = 0x30c8; gDemoSequenceIndex = .;
+        . = 0x30ca; gDemoButtonPressTimer = .;
+        . = 0x30cc; gDemoButtonsPressed = .;
         . = 0x30d0; gUnk_30030D0 = .;
         . = 0x3130; gUnk_3003130 = .;
         . = 0x3138; gUnk_3003138 = .;
@@ -615,7 +614,7 @@ SECTIONS {
         obj/cutscenes/disasm_0x00F7BC.o(.text);
         obj/cutscenes/disasm_0x00F9E0.o(.text);
         obj/disasm_wario.o(.text);
-        obj/disasm_demo_input.o(.text);
+        obj/demo_input.o(.text);
         obj/wario/disasm_normal.o(.text);
         obj/wario/disasm_swimming.o(.text);
         obj/wario/disasm_flaming.o(.text);

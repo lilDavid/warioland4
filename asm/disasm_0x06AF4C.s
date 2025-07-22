@@ -1426,7 +1426,7 @@ func_806B864:
 	pop	{r0}
 	bx	r0
 .L_6baa8:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 .L_6baac:
 	.4byte	gUnk_3000C41
 .L_6bab0:

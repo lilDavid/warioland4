@@ -194,19 +194,19 @@ func_8072964:
 .L_72adc:
 	.4byte	gCurrentCollection
 .L_72ae0:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 .L_72ae4:
 	.4byte	0x040000d4
 .L_72ae8:
 	.4byte	sUnk_878F5F4
 .L_72aec:
-	.4byte	gUnk_3002CC8
+	.4byte	gDemoInputs
 .L_72af0:
 	.4byte	sUnk_840084C
 .L_72af4:
 	.4byte	sUnk_878F634
 .L_72af8:
-	.4byte	gUnk_3002EC8
+	.4byte	gDemoInputLengths
 .L_72afc:
 	cmp	r0, #3
 	bne	.L_72b04
@@ -285,7 +285,7 @@ func_8072B74:
 	pop	{r0}
 	bx	r0
 .L_72b84:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 
 
 thumb_func_start func_8072B88
@@ -377,17 +377,17 @@ func_8072B98:
 .L_72c30:
 	.4byte	func_8072B88
 .L_72c34:
-	.4byte	gUnk_3001894
+	.4byte	gDemoState
 .L_72c38:
 	.4byte	0x040000d4
 .L_72c3c:
-	.4byte	gUnk_3002CC8
+	.4byte	gDemoInputs
 .L_72c40:
 	.4byte	0x02038c00
 .L_72c44:
 	.4byte	0x80000100
 .L_72c48:
-	.4byte	gUnk_3002EC8
+	.4byte	gDemoInputLengths
 .L_72c4c:
 	.4byte	0x02038e00
 .L_72c50:

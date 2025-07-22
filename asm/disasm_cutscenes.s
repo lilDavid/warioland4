@@ -15438,7 +15438,7 @@ func_800B4C0:
 	bx	r0
 	.align	2, 0
 .L_b574:
-	.4byte	gUnk_300144A
+	.4byte	gOamBuffer + 6
 .L_b578:
 	.4byte	sSinCosTable
 .L_b57c:
