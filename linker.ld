@@ -584,10 +584,6 @@ SECTIONS {
         . = 0x4b25; gUnk_3004B25 = .;
         . = ALIGN(4); obj/m4a.o(.bss.code);
         . = ALIGN(16); obj/m4a.o(common_data);
-
-        . = 0x7e60; sp_sys = .;
-        . = 0x7fa0; sp_irq = .;
-        . = 0x7ffc; intr_vector = .;
     } > IWRAM
 
     .text : ALIGN(2) {
