@@ -81,7 +81,9 @@ enum GameMode {
 
 extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
+extern s8 gCurrentStageID;
 
+extern u16 gUnk_3000006;
 extern u8 gCurrentPassageTemp;
 extern u8 gClearMessage;
 extern u8 gUnk_3000012;
@@ -94,13 +96,25 @@ extern u8 gUnk_3000018;
 extern u8 gSelectedSaveFile;
 
 extern u8 gDisableSoftReset;
+extern u8 gUnk_3000020;
+
+extern u8 gUnk_3000022;
 
 extern u8 gCurrentRoom;
+extern u8 gUnk_3000025;
 
+extern u8 gUnk_3000048;
+
+extern s8 gUnk_3000C35;
+
+extern s8 gUnk_3000C37;
 extern u8 gCurrentShopItem;
 extern s16 gMainGameMode;
 extern s16 gSubGameMode;
-
+extern s8 gUnk_3000C3E;
+extern s8 gUnk_3000C3F;
+extern s8 gUnk_3000C40;
 extern u8 gUnk_3000C41;
+extern vu16 gUnk_3000C42;
 
 #endif  // GAME_STATE_H

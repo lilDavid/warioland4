@@ -588,7 +588,7 @@ SECTIONS {
     .text : ALIGN(2) {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
-        obj/disasm_agbmain.o(.text);
+        obj/main.o(.text);
         obj/soft_reset.o(.text);
         obj/disasm_0x0007EC.o(.text);
         obj/poll_input.o(.text);
