@@ -101,8 +101,8 @@ func_8003428:
 	.4byte	gUnk_3002C58
 
 
-thumb_func_start func_8003474
-func_8003474:
+thumb_func_start CutsceneSubroutine
+CutsceneSubroutine:
 	push	{r4, r5, r6, r7, lr}
 	sub	sp, #8
 	mov	r6, #0

@@ -854,7 +854,7 @@ func_801A360:
 .L_1a3d0:
 	.4byte	sUnk_82DE8B8
 .L_1a3d4:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_1a3d8:
 	add	r2, #64	@ 0x40
 	b	.L_1a3fe
@@ -873,7 +873,7 @@ func_801A360:
 	b	.L_1a3fe
 	.align	2, 0
 .L_1a3f4:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_1a3f8:
 	.4byte	sUnk_82DE8B8
 .L_1a3fc:

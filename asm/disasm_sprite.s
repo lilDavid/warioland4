@@ -1090,9 +1090,9 @@ func_801DE7C:
 	bx	r0
 	.align	2, 0
 .L_1deb8:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_1debc:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 
 
 thumb_func_start func_801DEC0

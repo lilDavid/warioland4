@@ -45,7 +45,7 @@ void InitializeGame(void) {
     if (gButtonsPressed == (L_BUTTON | R_BUTTON)) {
         gMainGameMode = GM_SAVE_RESET;
     } else {
-        gMainGameMode = GM_TITLE;
+        gMainGameMode = GM_CUTSCENE;
     }
     gButtonsHeld = 0;
     gButtonsHeldCopy = 0;

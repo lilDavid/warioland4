@@ -15463,7 +15463,7 @@ func_800B580:
 	beq	.L_b58e
 	bx	lr
 .L_b59c:
-	.4byte	gUnk_3000C42
+	.4byte	gInterruptCheck
 .L_b5a0:
 	.4byte	0xFFFE
 

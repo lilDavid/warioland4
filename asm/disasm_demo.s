@@ -158,7 +158,7 @@ func_8072964:
 .L_72a94:
 	.4byte	gUnk_3000020
 .L_72a98:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_72a9c:
 	.4byte	gDifficulty
 .L_72aa0:
@@ -184,7 +184,7 @@ func_8072964:
 .L_72ac8:
 	.4byte	0x000001ed
 .L_72acc:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_72ad0:
 	.4byte	gUnk_3000047
 .L_72ad4:
@@ -393,7 +393,7 @@ func_8072B98:
 .L_72c50:
 	.4byte	gUnk_3000C3F
 .L_72c54:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_72c58:
 	.4byte	gUnk_3000022
 .L_72c5c:

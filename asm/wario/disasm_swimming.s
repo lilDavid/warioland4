@@ -3293,7 +3293,7 @@ func_8017394:
 .L_174cc:
 	.4byte	sUnk_82DD6A8
 .L_174d0:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_174d4:
 	.4byte	gUnk_3003130
 .L_174d8:
@@ -3366,7 +3366,7 @@ func_8017394:
 .L_1755c:
 	.4byte	gUnk_3003130
 .L_17560:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_17564:
 	.4byte	sUnk_82DE5D8
 .L_17568:

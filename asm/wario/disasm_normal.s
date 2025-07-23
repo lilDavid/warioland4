@@ -752,7 +752,7 @@ func_8010864:
 	b	.L_10a30
 	.align	2, 0
 .L_10a20:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_10a24:
 	mov	r0, #54	@ 0x36
 	b	.L_10a30
@@ -11037,7 +11037,7 @@ func_8015216:
 .L_15628:
 	.4byte	gUnk_30019F0
 .L_1562c:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_15630:
 	.4byte	gUnk_3003130
 .L_15634:
@@ -11314,7 +11314,7 @@ func_8015216:
 .L_15898:
 	.4byte	sUnk_82DDDA0
 .L_1589c:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_158a0:
 	.4byte	sUnk_82DE4D8
 .L_158a4:

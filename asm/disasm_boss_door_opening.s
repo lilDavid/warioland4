@@ -1096,7 +1096,7 @@ func_80865A4:
 .L_86630:
 	.4byte	0x400001A
 .L_86634:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_86638:
 	.4byte	0x40000D4
 .L_8663c:

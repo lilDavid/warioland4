@@ -9,18 +9,18 @@
 
 #include "game_state.h"  // TODO: Reorganize
 void func_8000828(void);
-void func_8000834(void);
-u32 func_8003474(void);
-u32 func_801B8BC(void);
+void SoftResetSubroutine(void);
+u32 CutsceneSubroutine(void);
+u32 GameScreenSubroutine(void);
 u32 func_8072B98(void);
 u32 func_8072C70(void);
-u32 func_80799A8(void);
-u32 func_8088678(void);
-u32 func_8089900(void);
-u32 func_808FB84(void);
-u32 func_80917A8(void);
-u32 func_80927E4(void);
-u32 func_8092FD8(void);
+u32 StageSelectSubroutine(void);
+u32 PauseScreenSubroutine(void);
+u32 MinigameSubroutine(void);
+u32 ItemShopSubroutine(void);
+u32 FileSelectSubroutine(void);
+u32 SaveResetSubroutine(void);
+u32 CreditsSubroutine(void);
 
 
 void AgbMain(void) {
@@ -32,23 +32,23 @@ void AgbMain(void) {
     while (TRUE) {
         PollInput();
         CheckSoftReset();
-        TIMER_COUNT_UP(gUnk_3000C41);
-        gUnk_3000006 += 1;
+        TIMER_COUNT_UP(gMainTimer);
+        gRandomSeed += 1;
 
         switch (gMainGameMode) {
-            case GM_TITLE:
-                cutsceneResult = func_8003474();
+            case GM_CUTSCENE:
+                cutsceneResult = CutsceneSubroutine();
                 if (cutsceneResult == 1) {
-                    gMainGameMode = GM_9;
+                    gMainGameMode = GM_FILE_SELECT;
                     gSubGameMode = 0;
                 } else if (cutsceneResult == 2) {
-                    gMainGameMode = GM_LEVEL_SELECT;
+                    gMainGameMode = GM_STAGE_SELECT;
                     gSubGameMode = 5;
                 } else if (cutsceneResult == 3) {
-                    gMainGameMode = GM_ENDING;
+                    gMainGameMode = GM_CREDITS;
                     gSubGameMode = 0;
                 } else if (cutsceneResult == 4) {
-                    gMainGameMode = GM_TITLE;
+                    gMainGameMode = GM_CUTSCENE;
                     gSubGameMode = -1;
                     break;
                 } else {
@@ -60,17 +60,17 @@ void AgbMain(void) {
                 }
                 break;
 
-            case GM_9:
-                if (func_80917A8()) {
+            case GM_FILE_SELECT:
+                if (FileSelectSubroutine()) {
                     if (gUnk_3000C3E == 1) {
-                        if (gUnk_3000012) {
+                        if (gHasTemporarySave) {
                             gSubGameMode = 0;
-                            gMainGameMode = GM_IN_GAME;
+                            gMainGameMode = GM_GAME_SCREEN;
                         } else {
-                            gMainGameMode = GM_LEVEL_SELECT;
+                            gMainGameMode = GM_STAGE_SELECT;
                             if (!gSaveFlag) {
                                 gSubGameMode = -2;
-                                gMainGameMode = GM_TITLE;
+                                gMainGameMode = GM_CUTSCENE;
                             } else if (gCurrentStageNumber == STAGE_MAX) {
                                 gSubGameMode = 0;
                             } else {
@@ -79,35 +79,34 @@ void AgbMain(void) {
                         }
                     } else {
                         gSubGameMode = 0;
-                        gMainGameMode = GM_TITLE;
+                        gMainGameMode = GM_CUTSCENE;
                     }
                     gUnk_3000C3E = 0;
                 }
                 gUnk_3000C3F = 0;
                 break;
 
-            case GM_LEVEL_SELECT:
-                if (!func_80799A8()) {
-                    break;
-                }
-                gSubGameMode = 0;
-                gMainGameMode = GM_IN_GAME;
-                if (gCurrentStageID == 6 || gCurrentStageID == 12 || gCurrentStageID == 18 || gCurrentStageID == 24) {
-                    gMainGameMode = GM_6;
+            case GM_STAGE_SELECT:
+                if (StageSelectSubroutine()) {
+                    gSubGameMode = 0;
+                    gMainGameMode = GM_GAME_SCREEN;
+                    if (gCurrentStageID == 6 || gCurrentStageID == 12 || gCurrentStageID == 18 || gCurrentStageID == 24) {
+                        gMainGameMode = GM_MINIGAMES;
+                    }
                 }
                 break;
 
-            case GM_IN_GAME:
-                if (func_801B8BC()) {
-                    if (gUnk_3000C35) {
+            case GM_GAME_SCREEN:
+                if (GameScreenSubroutine()) {
+                    if (gPauseFlag) {
                         gMainGameMode = GM_PAUSE;
                     } else if (gUnk_3000C37) {
-                        gMainGameMode = GM_7;
+                        gMainGameMode = GM_ITEM_SHOP;
                     } else if (gUnk_3000022) {
                         gMainGameMode = GM_11;
                     } else {
-                        gMainGameMode = GM_LEVEL_SELECT;
-                        switch (gUnk_3000048) {
+                        gMainGameMode = GM_STAGE_SELECT;
+                        switch (gStageExitType) {
                             case 0:
                             case 1:
                                 gSubGameMode = 0x15;
@@ -126,7 +125,7 @@ void AgbMain(void) {
                                 if (gCurrentPassageTemp == PASSAGE_ENTRY) {
                                     gSubGameMode = 0x1D;
                                 } else if (gCurrentPassageTemp == PASSAGE_GOLDEN) {
-                                    gMainGameMode = GM_TITLE;
+                                    gMainGameMode = GM_CUTSCENE;
                                     gSubGameMode = -3;
                                 } else {
                                     gSubGameMode = 0x19;
@@ -138,22 +137,22 @@ void AgbMain(void) {
                 break;
 
             case GM_PAUSE:
-                if (func_8088678()) {
-                    switch (gUnk_3000C35) {
+                if (PauseScreenSubroutine()) {
+                    switch (gPauseFlag) {
                         case 1:
-                            gMainGameMode = GM_IN_GAME;
+                            gMainGameMode = GM_GAME_SCREEN;
                             break;
                         case 2:
                             if (gUnk_3000022) {
                                 gMainGameMode = GM_11;
                             } else {
                                 gUnk_3000025 = 0;
-                                gMainGameMode = GM_LEVEL_SELECT;
+                                gMainGameMode = GM_STAGE_SELECT;
                                 gSubGameMode = 0x15;
                             }
                             break;
                         case 3:
-                            gUnk_3000C35 = 0;
+                            gPauseFlag = 0;
                             gMainGameMode = GM_SOFT_RESET;
                             break;
                     }
@@ -166,69 +165,69 @@ void AgbMain(void) {
                 break;
 
             case GM_SOFT_RESET:
-                func_8000834();
+                SoftResetSubroutine();
                 break;
 
-            case GM_6:
-                if (func_8089900()) {
+            case GM_MINIGAMES:
+                if (MinigameSubroutine()) {
                     if (gUnk_3000022) {
                         gMainGameMode = GM_11;
                         gSubGameMode = 0;
                     } else {
-                        gMainGameMode = GM_LEVEL_SELECT;
+                        gMainGameMode = GM_STAGE_SELECT;
                         gSubGameMode = 0x27;
                     }
                 }
                 break;
 
-            case GM_7:
-                if (func_808FB84()) {
-                    gMainGameMode = GM_IN_GAME;
+            case GM_ITEM_SHOP:
+                if (ItemShopSubroutine()) {
+                    gMainGameMode = GM_GAME_SCREEN;
                 }
                 break;
 
             case GM_DEMO:
-                if (func_801B8BC() && gUnk_3000C35) {
+                if (GameScreenSubroutine() && gPauseFlag) {
                     gSubGameMode = func_8072B98() ? 0 : -1;
-                    gMainGameMode = GM_TITLE;
+                    gMainGameMode = GM_CUTSCENE;
                 }
                 break;
 
             case GM_SAVE_RESET:
-                if (func_80927E4()) {
+                if (SaveResetSubroutine()) {
                     gSubGameMode = 0;
                     if (gUnk_3000C3E == 1) {
-                        gUnk_3000018 = 2;
+                        gResetSaveFile = 2;
                     } else {
-                        gMainGameMode = GM_TITLE;
+                        gMainGameMode = GM_CUTSCENE;
                     }
                 }
                 break;
 
-            case GM_ENDING:
-                if (func_8092FD8()) {
-                    gMainGameMode = GM_TITLE;
+            case GM_CREDITS:
+                if (CreditsSubroutine()) {
+                    gMainGameMode = GM_CUTSCENE;
                     gSubGameMode = -4;
                 }
                 break;
         }
-        if (gUnk_3000C40 && gMainGameMode != GM_TITLE) {
+        if (gUnk_3000C40 && gMainGameMode != GM_CUTSCENE) {
             m4aSoundMain();
         }
 
-        gUnk_3000C42 &= ~1;
+        gInterruptCheck &= ~1;
         do {
             SYSCALL(SYSCALL_Halt);
-        } while (!(gUnk_3000C42 & 1));
+        } while (!(gInterruptCheck & 1));
 
         soundcode:
         gUnk_3000C40 = 0;
-        if (gMainGameMode != GM_TITLE) {
+        if (gMainGameMode != GM_CUTSCENE) {
             m4aSoundMain();
         }
-        if (gUnk_3000018) {
+        if (gResetSaveFile) {
             m4aSoundVSyncOff();
-            if (gUnk_3000018 == 2) {
+            if (gResetSaveFile == 2) {
                 func_8000828();
             }
             return;

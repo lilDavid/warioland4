@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_8089900
-func_8089900:
+thumb_func_start MinigameSubroutine
+MinigameSubroutine:
 	push	{r4, r5, r6, lr}
 	mov	r6, #0
 	bl	func_8089BBC
@@ -324,7 +324,7 @@ Minigame_Random:
 	bx	lr
 	.align	2, 0
 .L_89b94:
-	.4byte	gUnk_3000006
+	.4byte	gRandomSeed
 .L_89b98:
 	.4byte	0x000003fd
 

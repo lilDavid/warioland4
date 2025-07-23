@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_80799A8
-func_80799A8:
+thumb_func_start StageSelectSubroutine
+StageSelectSubroutine:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, #0
 	bl	func_807A4B4

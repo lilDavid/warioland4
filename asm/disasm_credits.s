@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_8092FD8
-func_8092FD8:
+thumb_func_start CreditsSubroutine
+CreditsSubroutine:
 	push	{r4, r5, lr}
 	bl	func_8093084
 	mov	r5, #0
@@ -73,7 +73,7 @@ func_8092FD8:
 	strh	r0, [r2, #0]
 	b	.L_93066
 .L_93058:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_9305c:
 	.4byte	gUnk_3001870
 .L_93060:
@@ -201,7 +201,7 @@ func_80930B8:
 .L_93140:
 	.4byte	0x000001ff
 .L_93144:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_93148:
 	.4byte	gUnk_300187A
 .L_9314c:
@@ -339,7 +339,7 @@ func_809315C:
 .L_9324c:
 	.4byte	0x000001ff
 .L_93250:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_93254:
 	.4byte	gUnk_300187A
 .L_93258:
@@ -931,7 +931,7 @@ func_809329C:
 .L_936b8:
 	.4byte	0x00001fdf
 .L_936bc:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_936c0:
 	.4byte	gUnk_3004B25
 .L_936c4:
@@ -3003,7 +3003,7 @@ func_80938EC:
 .L_94688:
 	.4byte	0xfffffe00
 .L_9468c:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_94690:
 	.4byte	gUnk_3004AE4
 .L_94694:
@@ -3160,7 +3160,7 @@ func_80946AC:
 .L_947b8:
 	.4byte	gUnk_3004AC4
 .L_947bc:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_947c0:
 	add	r0, #1
 	strb	r0, [r2, #2]
@@ -3252,7 +3252,7 @@ func_80946AC:
 .L_94864:
 	.4byte	gUnk_3004AC4
 .L_94868:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_9486c:
 	.4byte	0x000001ff
 .L_94870:
@@ -3504,7 +3504,7 @@ func_80946AC:
 	b	.L_94bdc
 	.align	2, 0
 .L_94a38:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_94a3c:
 	.4byte	gUnk_3001872
 .L_94a40:
@@ -3559,7 +3559,7 @@ func_80946AC:
 .L_94a9c:
 	.4byte	gUnk_3004B04
 .L_94aa0:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_94aa4:
 	.4byte	gUnk_3001872
 .L_94aa8:
@@ -3686,7 +3686,7 @@ func_80946AC:
 	b	.L_94bdc
 	.align	2, 0
 .L_94b94:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_94b98:
 	.4byte	gUnk_3001872
 .L_94b9c:
@@ -3738,7 +3738,7 @@ func_80946AC:
 .L_94bf0:
 	.4byte	gUnk_3004B04
 .L_94bf4:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_94bf8:
 	.4byte	gUnk_3001872
 .L_94bfc:
@@ -3946,7 +3946,7 @@ func_8094C00:
 	add	r0, r2, #1
 	b	.L_94dec
 .L_94d84:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_94d88:
 	add	r2, r6, #0
 	ldrh	r3, [r2, #4]
@@ -4010,4 +4010,4 @@ func_8094C00:
 	bx	r1
 	.align	2, 0
 .L_94df8:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer

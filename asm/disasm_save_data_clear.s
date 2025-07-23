@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_80927E4
-func_80927E4:
+thumb_func_start SaveResetSubroutine
+SaveResetSubroutine:
 	push	{r4, r5, lr}
 	mov	r5, #0
 	ldr	r0, .L_92808

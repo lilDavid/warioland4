@@ -16,7 +16,7 @@ func_80720E8:
 	add	r5, r0, #0
 	b	.L_7238c
 .L_72104:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_72108:
 	mov	r4, #0
 	ldr	r0, .L_72120
@@ -108,7 +108,7 @@ func_80720E8:
 .L_721e4:
 	.4byte	gUnk_3000046
 .L_721e8:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_721ec:
 	ldr	r1, .L_72204
 	ldrh	r0, [r1, #0]
@@ -257,7 +257,7 @@ func_80720E8:
 	b	.L_721fe
 	.align	2, 0
 .L_722f8:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_722fc:
 	ldr	r1, .L_7230c
 	mov	r0, #0
@@ -1110,6 +1110,6 @@ func_80728E4:
 	bx	r0
 	.align	2, 0
 .L_7295c:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_72960:
 	.4byte	0x04000052

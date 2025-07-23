@@ -972,7 +972,7 @@ func_807D10C:
 .L_7d1ec:
 	.4byte	gUnk_3000C3F
 .L_7d1f0:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_7d1f4:
 	.4byte	gUnk_3003C98
 .L_7d1f8:
@@ -1124,7 +1124,7 @@ func_807D294:
 .L_7d314:
 	.4byte	gUnk_3000C3F
 .L_7d318:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_7d31c:
 	.4byte	gUnk_3003C98
 .L_7d320:
@@ -1148,7 +1148,7 @@ func_807D294:
 .L_7d344:
 	.4byte	gUnk_3003D5A
 .L_7d348:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_7d34c:
 	.4byte	0x1C7
 .L_7d350:
@@ -1221,7 +1221,7 @@ func_807D364:
 .L_7d3d0:
 	.4byte	gUnk_3000C3F
 .L_7d3d4:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_7d3d8:
 	.4byte	gUnk_3003C98
 .L_7d3dc:
@@ -1319,7 +1319,7 @@ func_807D410:
 .L_7d490:
 	.4byte	gUnk_3000C3F
 .L_7d494:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_7d498:
 	.4byte	gUnk_3003C98
 .L_7d49c:
@@ -3812,7 +3812,7 @@ func_807E6EC:
 .L_7e718:
 	.4byte	gUnk_3003D1E
 .L_7e71c:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 
 
 thumb_func_start func_807E720
@@ -3843,7 +3843,7 @@ func_807E720:
 .L_7e74e:
 	bx	lr
 .L_7e750:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_7e754:
 	.4byte	gUnk_3003D21
 .L_7e758:

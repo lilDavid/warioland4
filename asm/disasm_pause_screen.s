@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_8088678
-func_8088678:
+thumb_func_start PauseScreenSubroutine
+PauseScreenSubroutine:
 	push	{r4, lr}
 	bl	func_8088830
 	ldr	r0, .L_8869c
@@ -193,7 +193,7 @@ func_8088678:
 .L_887fc:
 	.4byte	gUnk_3004790
 .L_88800:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_88804:
 	.4byte	gMainGameMode
 .L_88808:
@@ -1141,7 +1141,7 @@ func_8088EA8:
 .L_88eec:
 	.4byte	sUnk_86D3F58
 .L_88ef0:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_88ef4:
 	mov	r0, #16
 	and	r0, r1
@@ -1276,7 +1276,7 @@ func_8088EA8:
 	pop	{r1}
 	bx	r1
 .L_88fe8:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_88fec:
 	.4byte	0x00000123
 

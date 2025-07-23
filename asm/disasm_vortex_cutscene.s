@@ -1132,7 +1132,7 @@ func_80800EC:
 	bx	r0
 	.align	2, 0
 .L_80130:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_80134:
 	.4byte	gUnk_3003D6A
 .L_80138:

@@ -906,7 +906,7 @@ func_8071BC0:
 	mov	r4, #0
 	b	.L_71c20
 .L_71c10:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_71c14:
 	.4byte	gUnk_3003BEA
 .L_71c18:

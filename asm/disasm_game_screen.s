@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_801B8BC
-func_801B8BC:
+thumb_func_start GameScreenSubroutine
+GameScreenSubroutine:
 	push	{r4, r5, lr}
 	bl	func_801BBA8
 	mov	r5, #0
@@ -183,7 +183,7 @@ func_801B8BC:
 .L_1ba28:
 	.4byte	gSubGameMode
 .L_1ba2c:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_1ba30:
 	.4byte	gDemoState
 .L_1ba34:
@@ -231,7 +231,7 @@ func_801B8BC:
 .L_1ba88:
 	.4byte	gSubGameMode
 .L_1ba8c:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_1ba90:
 	.4byte	gUnk_3000C37
 .L_1ba94:
@@ -281,7 +281,7 @@ func_801B8BC:
 .L_1baec:
 	.4byte	gSubGameMode
 .L_1baf0:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_1baf4:
 	.4byte	gUnk_300001B
 .L_1baf8:
@@ -307,7 +307,7 @@ func_801B8BC:
 .L_1bb20:
 	.4byte	gSubGameMode
 .L_1bb24:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_1bb28:
 	.4byte	gButtonsHeld
 .L_1bb2c:
@@ -1111,7 +1111,7 @@ func_801C050:
 .L_1c13c:
 	.4byte	gUnk_30000C0
 .L_1c140:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_1c144:
 	.4byte	0x04000020
 .L_1c148:
@@ -1432,13 +1432,13 @@ func_801C1C0:
 .L_1c3b8:
 	.4byte	0x04000006
 .L_1c3bc:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_1c3c0:
 	.4byte	gWarioPauseTimer
 .L_1c3c4:
 	.4byte	gDisableWario
 .L_1c3c8:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_1c3cc:
 	.4byte	gUnk_3000025
 .L_1c3d0:
@@ -1569,7 +1569,7 @@ func_801C43C:
 	b	.L_1c5ca
 	.align	2, 0
 .L_1c4bc:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_1c4c0:
 	.4byte	gUnk_30031B8
 .L_1c4c4:
@@ -1578,7 +1578,7 @@ func_801C43C:
 	add	r1, #189	@ 0xbd
 	lsl	r0, r0, #12
 .L_1c4cc:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_1c4d0:
 	.4byte	gUnk_3001938
 .L_1c4d4:
@@ -1665,7 +1665,7 @@ func_801C43C:
 	b	.L_1c5c2
 	.align	2, 0
 .L_1c570:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_1c574:
 	.4byte	sUnk_82DD0A8
 .L_1c578:
@@ -1807,7 +1807,7 @@ func_801C5D8:
 .L_1c66c:
 	.4byte	gUnk_30019F0
 .L_1c670:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_1c674:
 	.4byte	gOamBuffer
 .L_1c678:
@@ -2103,7 +2103,7 @@ func_801C5D8:
 .L_1c8a4:
 	.4byte	gUnk_3001938
 .L_1c8a8:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_1c8ac:
 	.4byte	gUnk_30031B8
 .L_1c8b0:
@@ -3640,7 +3640,7 @@ func_801D308:
 .L_1d3f4:
 	.4byte	gUnk_3000021
 .L_1d3f8:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_1d3fc:
 	ldrh	r1, [r2, #0]
 	mov	r0, #8

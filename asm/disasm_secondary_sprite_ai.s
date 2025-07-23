@@ -4315,7 +4315,7 @@ func_80782A4:
 .L_7895c:
 	.4byte	gUnk_3000021
 .L_78960:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_78964:
 	ldr	r1, .L_78978
 	mov	r0, #6
@@ -4332,7 +4332,7 @@ func_80782A4:
 .L_7897c:
 	.4byte	gUnk_3000021
 .L_78980:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_78984:
 	ldr	r1, .L_78990
 	ldr	r0, .L_78994
@@ -6192,7 +6192,7 @@ func_8079574:
 .L_79770:
 	.4byte	gUnk_3000021
 .L_79774:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_79778:
 	ldr	r1, .L_79788
 	mov	r0, #6
@@ -6207,7 +6207,7 @@ func_8079574:
 .L_7978c:
 	.4byte	gUnk_3000021
 .L_79790:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_79794:
 	ldr	r1, .L_7981c
 	ldr	r0, .L_79820

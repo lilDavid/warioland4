@@ -9,7 +9,7 @@ void InterruptCallback_CallVBlank(void) {
     }
 
     REG_IF |= INTR_FLAG_VBLANK;
-    gUnk_3000C42 = 1;
+    gInterruptCheck = 1;
 }
 
 void InterruptCallback_SetVBlank(ProcedureFunc cb) {

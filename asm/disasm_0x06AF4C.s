@@ -357,9 +357,9 @@ func_806AF4C:
 	b	.L_6b2ce
 	.align	2, 0
 .L_6b2a0:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_6b2a4:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_6b2a8:
 	.4byte	gUnk_30000D8
 .L_6b2ac:
@@ -784,7 +784,7 @@ func_806B410:
 .L_6b5d8:
 	.4byte	gUnk_3000C3F
 .L_6b5dc:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_6b5e0:
 	.4byte	0x40000D4
 .L_6b5e4:
@@ -812,7 +812,7 @@ func_806B410:
 .L_6b610:
 	.4byte	gUnk_30019F4
 .L_6b614:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_6b618:
 	.4byte	gUnk_300187C
 .L_6b61c:
@@ -1113,7 +1113,7 @@ func_806B810:
 	bx	r0
 	.align	2, 0
 .L_6b858:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_6b85c:
 	.4byte	gUnk_300003E
 .L_6b860:
@@ -1252,7 +1252,7 @@ func_806B864:
 .L_6b958:
 	.4byte	gUnk_3000021
 .L_6b95c:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_6b960:
 	.4byte	gUnk_300001A
 .L_6b964:
@@ -1266,7 +1266,7 @@ func_806B864:
 .L_6b974:
 	.4byte	gUnk_3000C3F
 .L_6b978:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_6b97c:
 	.4byte	gUnk_3003200
 .L_6b980:
@@ -1278,7 +1278,7 @@ func_806B864:
 .L_6b98c:
 	.4byte	gUnk_3000028
 .L_6b990:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_6b994:
 	.4byte	gUnk_3000020
 .L_6b998:
@@ -1428,7 +1428,7 @@ func_806B864:
 .L_6baa8:
 	.4byte	gDemoState
 .L_6baac:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_6bab0:
 	.4byte	gUnk_30000C8
 .L_6bab4:
@@ -2197,7 +2197,7 @@ func_806BF88:
 .L_6c020:
 	.4byte	gUnk_3000C3F
 .L_6c024:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_6c028:
 	.4byte	gMPlayTable
 .L_6c02c:
@@ -2234,7 +2234,7 @@ func_806BF88:
 	strb	r0, [r4, #10]
 	b	.L_6c0aa
 .L_6c06c:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_6c070:
 	.4byte	gUnk_3000026
 .L_6c074:
@@ -3063,7 +3063,7 @@ func_806C5FC:
 .L_6c684:
 	.4byte	gUnk_300001B
 .L_6c688:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_6c68c:
 	.4byte	gUnk_3003200
 .L_6c690:

@@ -44,8 +44,8 @@ func_8000828:
 	bx	r0
 
 
-thumb_func_start func_8000834
-func_8000834:
+thumb_func_start SoftResetSubroutine
+SoftResetSubroutine:
 	push	{r4, lr}
 	sub	sp, #4
 	bl	m4aSoundVSyncOff

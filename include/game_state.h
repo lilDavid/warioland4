@@ -62,19 +62,19 @@ enum ShopItem {
 };
 
 enum GameMode {
-    GM_TITLE = 0,
-    GM_LEVEL_SELECT = 1,
-    GM_IN_GAME = 2,
+    GM_CUTSCENE = 0,
+    GM_STAGE_SELECT = 1,
+    GM_GAME_SCREEN = 2,
     GM_SOFT_RESET = 3,
     GM_PAUSE = 4,
     GM_5 = 5,
-    GM_6 = 6,  // Minigames?
-    GM_7 = 7,  // Item shop?
+    GM_MINIGAMES = 6,
+    GM_ITEM_SHOP = 7,
     GM_DEMO = 8,
-    GM_9 = 9,
+    GM_FILE_SELECT = 9,
     GM_SAVE_RESET = 10,
     GM_11 = 11,
-    GM_ENDING = 12,
+    GM_CREDITS = 12,
     GM_MAX = 13
 };
 
@@ -83,16 +83,16 @@ extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
 extern s8 gCurrentStageID;
 
-extern u16 gUnk_3000006;
+extern u16 gRandomSeed;
 extern u8 gCurrentPassageTemp;
 extern u8 gClearMessage;
-extern u8 gUnk_3000012;
+extern u8 gHasTemporarySave;
 extern u8 gSaveFlag;
 extern u8 gUnk_3000014;
 extern u8 gTitleScreenStyle;
 extern u8 gLanguage;
 extern u8 gDifficulty;
-extern u8 gUnk_3000018;
+extern u8 gResetSaveFile;
 extern u8 gSelectedSaveFile;
 
 extern u8 gDisableSoftReset;
@@ -103,9 +103,9 @@ extern u8 gUnk_3000022;
 extern u8 gCurrentRoom;
 extern u8 gUnk_3000025;
 
-extern u8 gUnk_3000048;
+extern u8 gStageExitType;
 
-extern s8 gUnk_3000C35;
+extern s8 gPauseFlag;
 
 extern s8 gUnk_3000C37;
 extern u8 gCurrentShopItem;
@@ -114,7 +114,7 @@ extern s16 gSubGameMode;
 extern s8 gUnk_3000C3E;
 extern s8 gUnk_3000C3F;
 extern s8 gUnk_3000C40;
-extern u8 gUnk_3000C41;
-extern vu16 gUnk_3000C42;
+extern u8 gMainTimer;
+extern vu16 gInterruptCheck;
 
 #endif  // GAME_STATE_H

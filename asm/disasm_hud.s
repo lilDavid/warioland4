@@ -182,7 +182,7 @@ func_8074808:
 .L_74958:
 	.4byte	gUnk_3000047
 .L_7495c:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_74960:
 	.4byte	gWarioPauseTimer
 .L_74964:

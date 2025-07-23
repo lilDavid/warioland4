@@ -85,7 +85,7 @@ func_806D3C0:
 	strb	r0, [r1, #2]
 	b	.L_6d486
 .L_6d460:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_6d464:
 	.4byte	gUnk_300004C
 .L_6d468:

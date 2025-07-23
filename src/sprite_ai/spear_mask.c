@@ -1,6 +1,6 @@
 #include "bg_clip.h"
 #include "game_state.h"
-#include "in_game.h"
+#include "game_screen.h"
 #include "oam.h"
 #include "sprite.h"
 #include "sprite_ai.h"

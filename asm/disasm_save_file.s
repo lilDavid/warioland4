@@ -333,7 +333,7 @@ func_8072F0C:
 .L_72f8c:
 	.4byte	gUnk_3000C3F
 .L_72f90:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_72f94:
 	.4byte	gUnk_3000023
 .L_72f98:
@@ -976,7 +976,7 @@ func_8073418:
 	pop	{r0}
 	bx	r0
 .L_73448:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_7344c:
 	.4byte	gCurrentStageID
 .L_73450:
@@ -2130,7 +2130,7 @@ func_8073BE0:
 .L_73c9c:
 	.4byte	gUnk_3003BF8
 .L_73ca0:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_73ca4:
 	lsl	r0, r1, #24
 	mov	r1, #0
@@ -2159,7 +2159,7 @@ func_8073BE0:
 	pop	{r0}
 	bx	r0
 .L_73cd4:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_73cd8:
 	.4byte	gUnk_300001C
 

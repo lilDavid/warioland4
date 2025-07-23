@@ -1781,7 +1781,7 @@ func_8075F44:
 .L_75f8c:
 	.4byte	gUnk_3000C3F
 .L_75f90:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_75f94:
 	.4byte	gSecondarySpriteData
 .L_75f98:
@@ -1923,7 +1923,7 @@ func_8075F44:
 .L_760a0:
 	.4byte	gSecondarySpriteData
 .L_760a4:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_760a8:
 	.4byte	gCurrentShopItem
 .L_760ac:

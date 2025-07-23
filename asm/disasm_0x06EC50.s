@@ -1686,7 +1686,7 @@ func_806F838:
 .L_6f864:
 	.4byte	gSubGameMode
 .L_6f868:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_6f86c:
 	mov	r2, #0
 	str	r2, [sp, #12]
@@ -2616,7 +2616,7 @@ func_806FD74:
 	b	.L_6ff52
 	.align	2, 0
 .L_6ff30:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_6ff34:
 	.4byte	gUnk_3000025
 .L_6ff38:

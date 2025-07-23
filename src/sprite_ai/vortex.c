@@ -1,7 +1,7 @@
 #include "autosave.h"
 #include "fixed_point.h"
 #include "game_state.h"
-#include "in_game.h"
+#include "game_screen.h"
 #include "oam.h"
 #include "score.h"
 #include "sound.h"
@@ -123,13 +123,13 @@ void Vortex_FinishStage(void) {
 void Vortex_AnimatePalette(void) {
     s32 destAddress;
 
-    if (gUnk_3000C41 & 7 || gSubGameMode != 2) {
+    if (gMainTimer & 7 || gSubGameMode != 2) {
         return;
     }
 
     TIMER_COUNT_UP(gCurrentSprite.work3);
     if (gCurrentSprite.work3 >= 32) {
-        gCurrentSprite.work3 = gUnk_3000C41 & 7;
+        gCurrentSprite.work3 = gMainTimer & 7;
     }
 
     destAddress = PLTT_ROW_SIZE * (gCurrentSprite.gfxSlot + 8);
@@ -294,7 +294,7 @@ void SpriteAI_VortexPartMedium(void) {
             break;
     }
 
-    if ((gUnk_3000C41 & 1) != 0) {
+    if ((gMainTimer & 1) != 0) {
         TIMER_COUNT_DOWN(gCurrentSprite.work1);
     }
     gCurrentSprite.affinePA = FixedMul(COS(gCurrentSprite.work1), FixedInverse(gCurrentSprite.work2));
@@ -361,7 +361,7 @@ void SpriteAI_VortexPartLarge(void) {
             break;
     }
 
-    if ((gUnk_3000C41 & 3) == 0) {
+    if ((gMainTimer & 3) == 0) {
         TIMER_COUNT_DOWN(gCurrentSprite.work1);
     }
     gCurrentSprite.affinePA = FixedMul(COS(gCurrentSprite.work1), FixedInverse(gCurrentSprite.work2));
@@ -443,7 +443,7 @@ void SpriteAI_WarioEnteringVortex(void) {
             if (gCollectedKeyzer != 1) {
                 gSubGameMode = 6;
                 gUnk_3000021 = 0;
-                gUnk_3000048 = 2;
+                gStageExitType = 2;
             }
             break;
     }
@@ -488,7 +488,7 @@ void SpriteAI_KeyzerEnteringVortex(void) {
             if (gCollectedKeyzer == 1) {
                 gSubGameMode = 6;
                 gUnk_3000021 = 0;
-                gUnk_3000048 = 2;
+                gStageExitType = 2;
             }
             break;
     }

@@ -1421,7 +1421,7 @@ func_8070BB8:
 .L_70c1c:
 	.4byte	gUnk_30000F4
 .L_70c20:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_70c24:
 	.4byte	0x02020e00
 .L_70c28:
@@ -1492,7 +1492,7 @@ func_8070C38:
 .L_70c9c:
 	.4byte	gUnk_30000FC
 .L_70ca0:
-	.4byte	gUnk_3000C41
+	.4byte	gMainTimer
 .L_70ca4:
 	.4byte	0x02020c00
 .L_70ca8:

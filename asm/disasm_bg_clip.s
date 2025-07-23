@@ -534,7 +534,7 @@ func_806DDE4:
 .L_6de74:
 	.4byte	gCurrentRoom
 .L_6de78:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_6de7c:
 	add	r2, #12
 	ldrb	r0, [r2, #0]
@@ -813,7 +813,7 @@ func_806E01C:
 .L_6e06c:
 	.4byte	gUnk_3000021
 .L_6e070:
-	.4byte	gUnk_3000048
+	.4byte	gStageExitType
 .L_6e074:
 	ldr	r0, .L_6e088
 	mov	r1, #0

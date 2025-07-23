@@ -514,7 +514,7 @@ func_8090A40:
 .L_90da8:
 	.4byte	gUnk_3000C3F
 .L_90dac:
-	.4byte	gUnk_3000C35
+	.4byte	gPauseFlag
 .L_90db0:
 	.4byte	gUnk_3000047
 .L_90db4:
@@ -1581,7 +1581,7 @@ func_809151C:
 .L_9156c:
 	.4byte	gUnk_3000019
 .L_91570:
-	.4byte	gUnk_3000012
+	.4byte	gHasTemporarySave
 .L_91574:
 	.4byte	gCurrentPassage
 .L_91578:
@@ -1881,8 +1881,8 @@ func_80915A8:
 	.4byte	gUnk_300188E
 
 
-thumb_func_start func_80917A8
-func_80917A8:
+thumb_func_start FileSelectSubroutine
+FileSelectSubroutine:
 	push	{r4, r5, r6, lr}
 	mov	r6, #0
 	ldr	r0, .L_917d0

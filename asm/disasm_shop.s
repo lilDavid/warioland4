@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_808FB84
-func_808FB84:
+thumb_func_start ItemShopSubroutine
+ItemShopSubroutine:
 	push	{r4, lr}
 	mov	r4, #0
 	bl	func_8090104
