@@ -488,7 +488,7 @@ func_806E5D4:
 .L_6e720:
 	.4byte	gUnk_3003BC8
 .L_6e724:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6e728:
 	.4byte	gUnk_300320C
 
@@ -597,7 +597,7 @@ func_806E780:
 .L_6e7f0:
 	.4byte	gWarioData
 .L_6e7f4:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 
 
 thumb_func_start func_806E7F8
@@ -679,7 +679,7 @@ func_806E7F8:
 	b	.L_6e8a8
 	.align	2, 0
 .L_6e88c:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6e890:
 	mov	r0, sp
 	bl	func_806E72C
@@ -738,7 +738,7 @@ func_806E7F8:
 .L_6e8f8:
 	.4byte	gUnk_3001880
 .L_6e8fc:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6e900:
 	.4byte	0xFFE0
 
@@ -772,7 +772,7 @@ func_806E904:
 .L_6e934:
 	.4byte	gUnk_300320C
 .L_6e938:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6e93c:
 	.4byte	0xFFFFFE20
 .L_6e940:
@@ -822,7 +822,7 @@ func_806E904:
 	add	r3, r1, #0
 	b	.L_6e9ae
 .L_6e994:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6e998:
 	ldr	r0, .L_6e9c4
 	ldrh	r0, [r0, #14]
@@ -848,7 +848,7 @@ func_806E904:
 	b	.L_6e9da
 	.align	2, 0
 .L_6e9c4:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6e9c8:
 	.4byte	0xFFFFFE40
 .L_6e9cc:
@@ -911,7 +911,7 @@ func_806E904:
 .L_6ea34:
 	.4byte	gSubGameMode
 .L_6ea38:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6ea3c:
 	.4byte	0xFFFFFDC0
 .L_6ea40:
@@ -1013,7 +1013,7 @@ func_806EACC:
 	ldr	r0, .L_6eaf4
 	b	.L_6eb60
 .L_6eae4:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6eae8:
 	.4byte	gUnk_3001876
 .L_6eaec:
@@ -1155,7 +1155,7 @@ func_806EBA8:
 	add	r0, r2, r3
 	b	.L_6ebf2
 .L_6ebdc:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6ebe0:
 	.4byte	0xFFFFFE20
 .L_6ebe4:
@@ -1198,7 +1198,7 @@ func_806EBA8:
 	add	r0, r2, r3
 	b	.L_6ec3e
 .L_6ec2c:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6ec30:
 	.4byte	gUnk_300187C
 .L_6ec34:

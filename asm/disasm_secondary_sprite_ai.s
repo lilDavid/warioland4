@@ -3103,7 +3103,7 @@ func_8077D5C:
 .L_78050:
 	.4byte	gCurrentSecondarySprite
 .L_78054:
-	.4byte	gUnk_3000C28
+	.4byte	gVortexXPosition
 .L_78058:
 	sub	r0, r3, r4
 .L_7805a:
@@ -3148,7 +3148,7 @@ func_8077D5C:
 	sub	r0, r4, r3
 	b	.L_780a6
 .L_780a0:
-	.4byte	gUnk_3000C26
+	.4byte	gVortexYPosition
 .L_780a4:
 	sub	r0, r3, r4
 .L_780a6:
@@ -3196,7 +3196,7 @@ func_8077D5C:
 	strb	r6, [r0, #0]
 	b	.L_781ee
 .L_780f0:
-	.4byte	gUnk_3000C24
+	.4byte	gVortexGfxSlot
 .L_780f4:
 	.4byte	gCurrentSecondarySprite
 .L_780f8:

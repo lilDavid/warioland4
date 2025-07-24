@@ -518,7 +518,7 @@ func_8090A40:
 .L_90db0:
 	.4byte	gUnk_3000047
 .L_90db4:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_90db8:
 	.4byte	gUnk_300188E
 .L_90dbc:
@@ -564,7 +564,7 @@ func_8090A40:
 .L_90e0c:
 	.4byte	0x0000ffff
 .L_90e10:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 
 
 thumb_func_start func_8090E14

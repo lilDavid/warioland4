@@ -226,7 +226,7 @@ func_80720E8:
 	strb	r2, [r0, #2]
 	b	.L_721fe
 .L_722bc:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_722c0:
 	bl	func_80714F0
 	b	.L_722f0
@@ -240,7 +240,7 @@ func_80720E8:
 	b	.L_721fe
 	.align	2, 0
 .L_722d8:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_722dc:
 	ldr	r0, .L_722f8
 	ldrb	r1, [r0, #0]
@@ -323,7 +323,7 @@ func_80720E8:
 .L_7236c:
 	.4byte	0x0000fffd
 .L_72370:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_72374:
 	.4byte	gUnk_3000C3F
 .L_72378:
@@ -571,7 +571,7 @@ func_80723CC:
 .L_7254c:
 	.4byte	gUnk_300188E
 .L_72550:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_72554:
 	mov	r0, #1
 	mov	r1, #2

@@ -189,7 +189,7 @@ func_80752F0:
 .L_75360:
 	.4byte	0x040000d4
 .L_75364:
-	.4byte	gUnk_3000BFC
+	.4byte	gScoreDigits
 .L_75368:
 	.4byte	sScoreDigitsGfx
 .L_7536c:
@@ -987,7 +987,7 @@ func_8075988:
 .L_759cc:
 	.4byte	gWarioPauseTimer
 .L_759d0:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_759d4:
 	.4byte	gUnk_3000022
 .L_759d8:
@@ -1104,7 +1104,7 @@ func_8075988:
 .L_75ab4:
 	.4byte	gUnk_3000C03
 .L_75ab8:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_75abc:
 	.4byte	gUnk_3000047
 .L_75ac0:
@@ -1927,7 +1927,7 @@ func_8075F44:
 .L_760a8:
 	.4byte	gCurrentShopItem
 .L_760ac:
-	.4byte	gUnk_3000BFC
+	.4byte	gScoreDigits
 .L_760b0:
 	.4byte	gStageScore
 .L_760b4:
@@ -1935,7 +1935,7 @@ func_8075F44:
 .L_760b8:
 	.4byte	gUnk_3000C06
 .L_760bc:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_760c0:
 	.4byte	gGoldenTreasureCount
 .L_760c4:
@@ -1967,11 +1967,11 @@ func_8075F44:
 .L_760f8:
 	.4byte	gUnk_3000C0E
 .L_760fc:
-	.4byte	gUnk_3000C26
+	.4byte	gVortexYPosition
 .L_76100:
-	.4byte	gUnk_3000C28
+	.4byte	gVortexXPosition
 .L_76104:
-	.4byte	gUnk_3000C24
+	.4byte	gVortexGfxSlot
 .L_76108:
 	.4byte	gUnk_3000C02
 .L_7610c:
@@ -2735,7 +2735,7 @@ Score_GivePoints:
 .L_76698:
 	.4byte	gStageScore
 .L_7669c:
-	.4byte	gUnk_3000BFC
+	.4byte	gScoreDigits
 .L_766a0:
 	.4byte	0x00002710
 .L_766a4:

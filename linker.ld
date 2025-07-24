@@ -59,18 +59,21 @@ SECTIONS {
         . = 0x0047; gUnk_3000047 = .;
         . = 0x0048; gStageExitType = .;
         . = 0x004c; gUnk_300004C = .;
-        . = 0x0054; gUnk_3000054 = .;
-        . = 0x0074; gUnk_3000074 = .;
+        . = 0x0054; gBackgroundInfo = .;
+        . = 0x0074; gCurrentRoomHeader = .;
         . = 0x00a0; gUnk_30000A0 = .;
         . = 0x00a8; gUnk_30000A8 = .;
+
         . = 0x00c0; gUnk_30000C0 = .;
         . = 0x00c8; gUnk_30000C8 = .;
         . = 0x00cc; gUnk_30000CC = .;
-        . = 0x00d0; gUnk_30000D0 = .;
+
+        . = 0x00d0; gColorFading = .;
         . = 0x00d8; gUnk_30000D8 = .;
         . = 0x00dc; gUnk_30000DC = .;
         . = 0x00f4; gUnk_30000F4 = .;
         . = 0x00fc; gUnk_30000FC = .;
+
         . = 0x0104; gSpriteData = .;
         . = 0x0524; gUnk_3000524 = .;
         . = 0x0544; gUnk_3000544 = .;
@@ -103,7 +106,7 @@ SECTIONS {
         . = 0x0bf0; gUnk_3000BF0 = .;
         . = 0x0bf4; gTotalScore = .;
         . = 0x0bf8; gStageScore = .;
-        . = 0x0bfc; gUnk_3000BFC = .;
+        . = 0x0bfc; gScoreDigits = .;
         . = 0x0c01; gUnk_3000C01 = .;
         . = 0x0c02; gUnk_3000C02 = .;
         . = 0x0c03; gUnk_3000C03 = .;
@@ -116,18 +119,18 @@ SECTIONS {
         . = 0x0c0a; gCollectedNWJewelPiece = .;
         . = 0x0c0b; gCollectedCD = .;
         . = 0x0c0c; gCollectedKeyzer = .;
-        . = 0x0c0d; gUnk_3000C0D = .;
+        . = 0x0c0d; gSwitchPressed = .;
         . = 0x0c0e; gUnk_3000C0E = .;
         . = 0x0c10; gUnk_3000C10 = .;
         . = 0x0c14; gUnk_3000C14 = .;
         . = 0x0c16; gUnk_3000C16 = .;
         . = 0x0c18; gUnk_3000C18 = .;
         . = 0x0c1a; gUnk_3000C1A = .;
-        . = 0x0c1c; gUnk_3000C1C = .;
-        . = 0x0c20; gUnk_3000C20 = .;
-        . = 0x0c24; gUnk_3000C24 = .;
-        . = 0x0c26; gUnk_3000C26 = .;
-        . = 0x0c28; gUnk_3000C28 = .;
+        . = 0x0c1c; gCurrentHeartMeterGfx = .;
+        . = 0x0c20; gCurrentHeartGaugeGfx = .;
+        . = 0x0c24; gVortexGfxSlot = .;
+        . = 0x0c26; gVortexYPosition = .;
+        . = 0x0c28; gVortexXPosition = .;
         . = 0x0c2a; gUnk_3000C2A = .;
         . = 0x0c2b; gUnk_3000C2B = .;
         . = 0x0c2c; gHasGoldenDivaChest5 = .;
@@ -186,10 +189,12 @@ SECTIONS {
         . = 0x188e; gUnk_300188E = .;
         . = 0x1890; gUnk_3001890 = .;
         . = 0x1892; gUnk_3001892 = .;
+
         obj/demo_input.o(COMMON);
+
         . = 0x1898; gWarioData = .;
-        . = 0x18D4; gUnk_30018D4 = .;
-        . = 0x1910; gWarioHearts = .;
+        . = 0x18D4; gWarioDataCopy = .;
+        . = 0x1910; gHeartMeter = .;
         . = 0x1914; gHeartGauge = .;
         . = 0x1918; gUnk_3001918 = .;
         . = 0x1930; gUnk_3001930 = .;
@@ -207,6 +212,7 @@ SECTIONS {
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1a00; gHBlankCallback = .;
         . = 0x1a04; gVCountCallback = .;
+
         . = 0x2b98; gUnk_3002B98 = .;
         . = 0x2c28; gUnk_3002C28 = .;
         . = 0x2c2a; gUnk_3002C2A = .;
@@ -254,11 +260,13 @@ SECTIONS {
         . = 0x2ca6; gUnk_3002CA6 = .;
         . = 0x2ca8; gUnk_3002CA8 = .;
         . = 0x2cb8; gUnk_3002CB8 = .;
+
         . = 0x2cc8; gDemoInputs = .;
         . = 0x2ec8; gDemoInputLengths = .;
         . = 0x30c8; gDemoSequenceIndex = .;
         . = 0x30ca; gDemoButtonPressTimer = .;
         . = 0x30cc; gDemoButtonsPressed = .;
+
         . = 0x30d0; gUnk_30030D0 = .;
         . = 0x3130; gUnk_3003130 = .;
         . = 0x3138; gUnk_3003138 = .;
@@ -581,6 +589,7 @@ SECTIONS {
         . = 0x4b1c; gUnk_3004B1C = .;
         . = 0x4b24; gUnk_3004B24 = .;
         . = 0x4b25; gUnk_3004B25 = .;
+
         . = ALIGN(4); obj/m4a.o(.bss.code);
         . = ALIGN(16); obj/m4a.o(common_data);
     } > IWRAM

@@ -39,7 +39,7 @@ func_806DAC0:
 .L_6db00:
 	.4byte	gUnk_30000A0
 .L_6db04:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6db08:
 	lsr	r3, r3, #22
 	mov	r8, r3
@@ -79,7 +79,7 @@ func_806DAC0:
 	mov	r2, #5
 	b	.L_6dc40
 .L_6db50:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6db54:
 	.4byte	gUnk_30031F4
 .L_6db58:
@@ -397,7 +397,7 @@ func_806DD44:
 .L_6dd70:
 	.4byte	gUnk_30000A0
 .L_6dd74:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6dd78:
 	ldrh	r0, [r4, #20]
 	mul	r0, r5
@@ -722,7 +722,7 @@ func_806DF3C:
 .L_6dfcc:
 	.4byte	gUnk_300342C
 .L_6dfd0:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6dfd4:
 	.4byte	0x2039F80
 
@@ -764,7 +764,7 @@ func_806DFD8:
 .L_6e014:
 	.4byte	0x2039F00
 .L_6e018:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 
 
 thumb_func_start func_806E01C
@@ -787,7 +787,7 @@ func_806E01C:
 .L_6e038:
 	.4byte	gUnk_30000C0
 .L_6e03c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_6e040:
 	cmp	r0, #4
 	bne	.L_6e074
@@ -807,7 +807,7 @@ func_806E01C:
 	strb	r0, [r1, #0]
 	b	.L_6e082
 .L_6e064:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_6e068:
 	.4byte	gSubGameMode
 .L_6e06c:
@@ -826,4 +826,4 @@ func_806E01C:
 	pop	{r0}
 	bx	r0
 .L_6e088:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading

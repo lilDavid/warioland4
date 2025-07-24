@@ -15,7 +15,7 @@ func_8071598:
 	mov	r3, #6
 	b	.L_715ee
 .L_715b0:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_715b4:
 	sub	r0, r1, #1
 	lsl	r0, r0, #24
@@ -760,7 +760,7 @@ func_8071AE8:
 .L_71b08:
 	.4byte	gUnk_3003BD0
 .L_71b0c:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_71b10:
 	.4byte	sUnk_83F9F48
 .L_71b14:
@@ -879,7 +879,7 @@ func_8071BC0:
 	mov	r3, #160	@ 0xa0
 	b	.L_71bee
 .L_71be0:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_71be4:
 	.4byte	gUnk_3001884
 .L_71be8:
@@ -1286,7 +1286,7 @@ func_8071E24:
 .L_71ebc:
 	.4byte	gUnk_3003BE8
 .L_71ec0:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_71ec4:
 	.4byte	gUnk_300342E
 .L_71ec8:

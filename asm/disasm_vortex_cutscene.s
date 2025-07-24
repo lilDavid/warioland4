@@ -23,7 +23,7 @@ func_807F8D0:
 .L_7f8f4:
 	.4byte	gUnk_3003C34
 .L_7f8f8:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7f8fc:
 	.4byte	0x4000050
 .L_7f900:

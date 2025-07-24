@@ -82,7 +82,7 @@ func_80743BC:
 .L_74470:
 	.4byte	0x0000ffff
 .L_74474:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_74478:
 	.4byte	0x04000042
 .L_7447c:
@@ -289,7 +289,7 @@ func_80743BC:
 .L_7460c:
 	.4byte	0x0000ffff
 .L_74610:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_74614:
 	ldr	r2, .L_74648
 	ldrh	r1, [r2, #0]

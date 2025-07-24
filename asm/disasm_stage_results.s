@@ -375,7 +375,7 @@ func_8080A6C:
 .L_80d30:
 	.4byte	0x401
 .L_80d34:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_80d38:
 	.4byte	0x4000050
 .L_80d3c:
@@ -548,7 +548,7 @@ func_8080D4C:
 .L_80e78:
 	.4byte	gUnk_3003DDC
 .L_80e7c:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_80e80:
 	.4byte	0x282
 .L_80e84:

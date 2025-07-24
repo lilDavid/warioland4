@@ -986,12 +986,12 @@ void SpriteAI_HeartRefill(void) {
         case POSE_31:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
-            gWarioHearts.filling += MAX_HEARTS;
-            if (gWarioHearts.current + gWarioHearts.filling > MAX_HEARTS) {
-                gWarioHearts.filling = MAX_HEARTS - gWarioHearts.current;
+            gHeartMeter.filling += MAX_HEARTS;
+            if (gHeartMeter.current + gHeartMeter.filling > MAX_HEARTS) {
+                gHeartMeter.filling = MAX_HEARTS - gHeartMeter.current;
             }
-            gWarioHearts.unk_2 = gWarioHearts.filling << 3;
-            gWarioHearts.unk_3 = 0;
+            gHeartMeter.unk_2 = gHeartMeter.filling << 3;
+            gHeartMeter.unk_3 = 0;
             m4aSongNumStart(SE_GET_HEART_REFILL);
             break;
 

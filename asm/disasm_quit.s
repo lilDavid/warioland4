@@ -32,7 +32,7 @@ func_8072C70:
 .L_72c94:
 	.4byte	gUnk_3000047
 .L_72c98:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_72c9c:
 	.4byte	gUnk_3000C3F
 

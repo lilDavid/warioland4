@@ -34,7 +34,7 @@ func_806AF4C:
 .L_6af84:
 	.4byte	gUnk_3000033
 .L_6af88:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6af8c:
 	mov	r1, sp
 	ldr	r0, .L_6afb0
@@ -64,7 +64,7 @@ func_806AF4C:
 .L_6afbc:
 	.4byte	0x603
 .L_6afc0:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6afc4:
 	mov	r2, sp
 	mov	r1, #4
@@ -91,7 +91,7 @@ func_806AF4C:
 	mov	pc, r0
 	.align	2, 0
 .L_6aff4:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6aff8:
 	.4byte	.L_6affc
 .L_6affc:
@@ -234,7 +234,7 @@ func_806AF4C:
 .L_6b168:
 	.4byte	gUnk_3000033
 .L_6b16c:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6b170:
 	.4byte	.L_6b174
 .L_6b174:
@@ -411,7 +411,7 @@ func_806AF4C:
 .L_6b304:
 	.4byte	gUnk_300002A
 .L_6b308:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_6b30c:
 	.4byte	gUnk_30000C0
 .L_6b310:
@@ -609,7 +609,7 @@ func_806B410:
 	ldr	r0, [r4, #32]
 	b	.L_6b48e
 .L_6b470:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6b474:
 	.4byte	sUnk_878F280
 .L_6b478:
@@ -778,7 +778,7 @@ func_806B410:
 .L_6b5cc:
 	.4byte	gUnk_300001C
 .L_6b5d0:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6b5d4:
 	.4byte	gUnk_30031F4
 .L_6b5d8:
@@ -927,7 +927,7 @@ func_806B410:
 .L_6b6f4:
 	.4byte	gWarioData
 .L_6b6f8:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6b6fc:
 	.4byte	gUnk_30031F4
 .L_6b700:
@@ -1025,7 +1025,7 @@ func_806B71C:
 	b	.L_6b800
 	.align	2, 0
 .L_6b7b4:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6b7b8:
 	.4byte	0x201F040
 .L_6b7bc:
@@ -1035,7 +1035,7 @@ func_806B71C:
 .L_6b7c4:
 	.4byte	gCurrentRoom
 .L_6b7c8:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6b7cc:
 	.4byte	0x201A040
 .L_6b7d0:
@@ -1256,7 +1256,7 @@ func_806B864:
 .L_6b960:
 	.4byte	gUnk_300001A
 .L_6b964:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_6b968:
 	.4byte	gUnk_3000044
 .L_6b96c:
@@ -1483,7 +1483,7 @@ func_806BAD0:
 	b	.L_6bb22
 	.align	2, 0
 .L_6bb10:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6bb14:
 	.4byte	gUnk_300320C
 .L_6bb18:
@@ -1509,7 +1509,7 @@ func_806BAD0:
 .L_6bb3c:
 	.4byte	gUnk_3003218
 .L_6bb40:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6bb44:
 	strb	r2, [r1, #0]
 .L_6bb46:
@@ -1539,7 +1539,7 @@ func_806BB4C:
 	ldr	r0, .L_6bb78
 	b	.L_6bba8
 .L_6bb70:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6bb74:
 	.4byte	gUnk_3001878
 .L_6bb78:
@@ -1556,7 +1556,7 @@ func_806BB4C:
 	ldr	r0, .L_6bb98
 	b	.L_6bba8
 .L_6bb90:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6bb94:
 	.4byte	gUnk_300187C
 .L_6bb98:
@@ -1781,13 +1781,13 @@ func_806BB4C:
 	pop	{r0}
 	bx	r0
 .L_6bd3c:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6bd40:
 	.4byte	gUnk_3001880
 .L_6bd44:
 	.4byte	gUnk_300187E
 .L_6bd48:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6bd4c:
 	.4byte	0x6000800
 .L_6bd50:
@@ -2191,9 +2191,9 @@ func_806BF88:
 .L_6c014:
 	.4byte	gUnk_3003200
 .L_6c018:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_6c01c:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6c020:
 	.4byte	gUnk_3000C3F
 .L_6c024:
@@ -2397,7 +2397,7 @@ func_806C130:
 .L_6c194:
 	.4byte	0xFFFF
 .L_6c198:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6c19c:
 	mov	r0, #2
 	strb	r0, [r6, #0]
@@ -2461,7 +2461,7 @@ func_806C130:
 .L_6c214:
 	.4byte	0xFFFF
 .L_6c218:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 
 
 thumb_func_start func_806C21C
@@ -2481,7 +2481,7 @@ func_806C21C:
 	beq	.L_6c246
 	b	.L_6c2c2
 .L_6c238:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_6c23c:
 	.4byte	gUnk_3003200
 .L_6c240:
@@ -3005,7 +3005,7 @@ func_806C5FC:
 	bl	func_806AED4
 	b	.L_6c620
 .L_6c610:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6c614:
 	ldrb	r0, [r1, #26]
 	cmp	r0, #23
@@ -3067,7 +3067,7 @@ func_806C5FC:
 .L_6c68c:
 	.4byte	gUnk_3003200
 .L_6c690:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 
 
 thumb_func_start func_806C694

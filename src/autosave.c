@@ -59,8 +59,8 @@ void Autosave_StageClear(void) {
     }
 
     gTotalScoreTemp = gTotalScore;
-    hearts = gWarioHearts.current + gWarioHearts.filling;
-    if (gWarioHearts.current + gWarioHearts.filling > 8) {
+    hearts = gHeartMeter.current + gHeartMeter.filling;
+    if (gHeartMeter.current + gHeartMeter.filling > 8) {
         hearts = 8;
     }
     score = gStageScore + CONVERT_SCORE(50) * hearts;

@@ -634,7 +634,7 @@ func_8018F70:
 .L_18fb8:
 	.4byte	gWarioData
 .L_18fbc:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_18fc0:
 	cmp	r0, #2
 	bne	.L_1905c
@@ -658,7 +658,7 @@ func_8018F70:
 	b	.L_1905c
 	.align	2, 0
 .L_18fe8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_18fec:
 	.4byte	gWarioData
 .L_18ff0:
@@ -707,7 +707,7 @@ func_8018F70:
 .L_19044:
 	.4byte	gWarioData
 .L_19048:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1904c:
 	ldr	r0, .L_19070
 	bl	m4aSongNumStart

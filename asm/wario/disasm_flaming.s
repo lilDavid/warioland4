@@ -624,7 +624,7 @@ func_8017ADC:
 .L_17b20:
 	.4byte	gWarioData
 .L_17b24:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17b28:
 	ldr	r1, .L_17b50
 	ldrb	r0, [r1, #1]
@@ -648,7 +648,7 @@ func_8017ADC:
 	b	.L_17c30
 	.align	2, 0
 .L_17b50:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17b54:
 	cmp	r4, #4
 	beq	.L_17bf0
@@ -694,7 +694,7 @@ func_8017ADC:
 	add	r0, r3, r2
 	lsl	r0, r0, #12
 .L_17ba4:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17ba8:
 	ldr	r0, .L_17bd0
 	ldr	r2, .L_17bd4
@@ -723,7 +723,7 @@ func_8017ADC:
 	add	r0, r3, r2
 	lsl	r0, r0, #12
 .L_17bd8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17bdc:
 	ldr	r0, .L_17be8
 	strb	r4, [r0, #1]
@@ -734,7 +734,7 @@ func_8017ADC:
 .L_17be8:
 	.4byte	gWarioData
 .L_17bec:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17bf0:
 	ldr	r1, .L_17c00
 	strb	r4, [r1, #1]
@@ -747,7 +747,7 @@ func_8017ADC:
 .L_17c00:
 	.4byte	gWarioData
 .L_17c04:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17c08:
 	ldr	r1, .L_17c1c
 	strb	r4, [r1, #1]
@@ -761,7 +761,7 @@ func_8017ADC:
 .L_17c1c:
 	.4byte	gWarioData
 .L_17c20:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_17c24:
 	.4byte	0x163
 .L_17c28:

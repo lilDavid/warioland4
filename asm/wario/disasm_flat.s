@@ -503,7 +503,7 @@ func_801B280:
 	b	.L_1b2ca
 	.align	2, 0
 .L_1b2b8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1b2bc:
 	.4byte	gWarioData
 .L_1b2c0:

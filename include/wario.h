@@ -72,7 +72,7 @@ struct WarioLife {
 
 extern struct WarioData gWarioData;
 
-extern struct WarioLife gWarioHearts;
+extern struct WarioLife gHeartMeter;
 extern struct WarioLife gHeartGauge;
 
 extern u16 gWarioPauseTimer;

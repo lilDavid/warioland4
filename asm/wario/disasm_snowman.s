@@ -842,7 +842,7 @@ func_801996C:
 	bl	VoiceSet_Play
 	b	.L_199b0
 .L_19994:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_19998:
 	cmp	r4, #253	@ 0xfd
 	bne	.L_199b0
@@ -871,7 +871,7 @@ func_801996C:
 .L_199c4:
 	.4byte	sUnk_82DDA90
 .L_199c8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_199cc:
 	cmp	r4, #253	@ 0xfd
 	beq	.L_19a14
@@ -886,7 +886,7 @@ func_801996C:
 	strb	r0, [r1, #1]
 	b	.L_19aae
 .L_199e4:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_199e8:
 	.4byte	gWarioData
 .L_199ec:
@@ -921,7 +921,7 @@ func_801996C:
 	strb	r0, [r1, #1]
 	b	.L_19aae
 .L_19a24:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_19a28:
 	.4byte	gWarioData
 .L_19a2c:
@@ -983,7 +983,7 @@ func_801996C:
 .L_19a9c:
 	.4byte	gWarioData
 .L_19aa0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_19aa4:
 	ldr	r1, .L_19ac8
 	mov	r0, #1
@@ -1009,7 +1009,7 @@ func_801996C:
 .L_19ac8:
 	.4byte	gWarioData
 .L_19acc:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 
 
 thumb_func_start func_8019AD0

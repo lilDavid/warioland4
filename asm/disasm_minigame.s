@@ -60,7 +60,7 @@ MinigameSubroutine:
 .L_8998c:
 	.4byte	0x04000200
 .L_89990:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_89994:
 	bl	func_80703DC
 	bl	func_807A380
@@ -167,7 +167,7 @@ MinigameSubroutine:
 .L_89a58:
 	.4byte	0x04000200
 .L_89a5c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_89a60:
 	.4byte	gSubGameMode
 .L_89a64:
@@ -185,7 +185,7 @@ MinigameSubroutine:
 .L_89a7c:
 	.4byte	0x04000200
 .L_89a80:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_89a84:
 	bl	func_80703DC
 	bl	func_807A380
@@ -222,7 +222,7 @@ MinigameSubroutine:
 .L_89ac8:
 	.4byte	0x04000200
 .L_89acc:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_89ad0:
 	bl	func_80703DC
 	bl	func_807A380
@@ -266,7 +266,7 @@ MinigameSubroutine:
 .L_89b20:
 	.4byte	0x04000200
 .L_89b24:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_89b28:
 	.4byte	gSubGameMode
 .L_89b2c:

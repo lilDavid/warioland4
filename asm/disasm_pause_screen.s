@@ -538,7 +538,7 @@ func_8088900:
 .L_88a78:
 	.4byte	sUnk_86DD638
 .L_88a7c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_88a80:
 	.4byte	0x05000300
 .L_88a84:

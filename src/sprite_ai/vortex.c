@@ -113,9 +113,9 @@ void Vortex_FinishStage(void) {
     func_801E430(PSPRITE_WARIO_ENTERING_VORTEX, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
             gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     gUnk_3000C0E = 1;
-    gUnk_3000C26 = gCurrentSprite.yPosition;
-    gUnk_3000C28 = gCurrentSprite.xPosition;
-    gUnk_3000C24 = gCurrentSprite.gfxSlot;
+    gVortexYPosition = gCurrentSprite.yPosition;
+    gVortexXPosition = gCurrentSprite.xPosition;
+    gVortexGfxSlot = gCurrentSprite.gfxSlot;
     func_801E4D4();
     VoiceSet_Play(VS_WARIO_KEYZER_GET);
 }
@@ -192,7 +192,7 @@ void SpriteAI_Vortex(void) {
             break;
 
         case POSE_INIT_1:
-            if (gUnk_3000C0D) {
+            if (gSwitchPressed) {
                 gCurrentSprite.work2 = U8_MAX;
                 gCurrentSprite.pose = POSE_IDLE;
             } else {
@@ -207,7 +207,7 @@ void SpriteAI_Vortex(void) {
             break;
 
         case POSE_18:
-            if (gUnk_3000C0D) {
+            if (gSwitchPressed) {
                 gCurrentSprite.pose = POSE_14;
             }
             break;
@@ -248,7 +248,7 @@ void SpriteAI_VortexPartMedium(void) {
                 gCurrentSprite.work0 = CONVERT_SECONDS(1.5);
                 gCurrentSprite.work2 = U8_MAX;
             } else if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_MEDIUM_2) {
-                if (gUnk_3000C0D) {
+                if (gSwitchPressed) {
                     gCurrentSprite.work2 = U8_MAX;
                     gCurrentSprite.pose = POSE_IDLE;
                 } else {
@@ -279,7 +279,7 @@ void SpriteAI_VortexPartMedium(void) {
             break;
 
         case POSE_18:
-            if (gUnk_3000C0D) {
+            if (gSwitchPressed) {
                 gCurrentSprite.pose = POSE_14;
             }
             break;
@@ -315,7 +315,7 @@ void SpriteAI_VortexPartLarge(void) {
                 gCurrentSprite.work0 = CONVERT_SECONDS(1.5);
                 gCurrentSprite.work2 = U8_MAX;
             } else if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_LARGE_2) {
-                if (gUnk_3000C0D) {
+                if (gSwitchPressed) {
                     gCurrentSprite.work2 = U8_MAX;
                     gCurrentSprite.pose = POSE_IDLE;
                 } else {
@@ -346,7 +346,7 @@ void SpriteAI_VortexPartLarge(void) {
             break;
 
         case POSE_18:
-            if (gUnk_3000C0D) {
+            if (gSwitchPressed) {
                 gCurrentSprite.pose = POSE_14;
             }
             break;

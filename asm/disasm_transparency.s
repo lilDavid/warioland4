@@ -81,7 +81,7 @@ func_806ADD4:
 .L_6ae64:
 	.4byte	gWarioData
 .L_6ae68:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6ae6c:
 	.4byte	gUnk_30031F4
 .L_6ae70:

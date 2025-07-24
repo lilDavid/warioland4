@@ -77,13 +77,13 @@ func_8074808:
 	b	.L_748c8
 	.align	2, 0
 .L_74894:
-	.4byte	gUnk_3000C20
+	.4byte	gCurrentHeartGaugeGfx
 .L_74898:
 	.4byte	sHeartGaugeGfx
 .L_7489c:
 	.4byte	gHeartGauge
 .L_748a0:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_748a4:
 	mov	r0, #128	@ 0x80
 	strb	r0, [r3, #1]
@@ -133,7 +133,7 @@ func_8074808:
 	b	.L_7490c
 	.align	2, 0
 .L_74900:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_74904:
 	.4byte	gWarioData
 .L_74908:
@@ -178,7 +178,7 @@ func_8074808:
 	str	r1, [r0, #0]
 	b	.L_7497a
 .L_74954:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_74958:
 	.4byte	gUnk_3000047
 .L_7495c:
@@ -186,7 +186,7 @@ func_8074808:
 .L_74960:
 	.4byte	gWarioPauseTimer
 .L_74964:
-	.4byte	gUnk_3000C1C
+	.4byte	gCurrentHeartMeterGfx
 .L_74968:
 	.4byte	sHeartMeterGfx
 .L_7496c:
@@ -202,7 +202,7 @@ func_8074808:
 	pop	{r0}
 	bx	r0
 .L_74980:
-	.4byte	gUnk_3000C1C
+	.4byte	gCurrentHeartMeterGfx
 .L_74984:
 	.4byte	sHeartMeterGfx
 

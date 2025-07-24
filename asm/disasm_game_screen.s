@@ -551,13 +551,13 @@ func_801BC0C:
 .L_1bd10:
 	.4byte	0x06010400
 .L_1bd14:
-	.4byte	gUnk_3000C1C
+	.4byte	gCurrentHeartMeterGfx
 .L_1bd18:
 	.4byte	0x06011200
 .L_1bd1c:
 	.4byte	0x80000080
 .L_1bd20:
-	.4byte	gUnk_3000C20
+	.4byte	gCurrentHeartGaugeGfx
 .L_1bd24:
 	.4byte	0x06011600
 .L_1bd28:
@@ -565,7 +565,7 @@ func_801BC0C:
 .L_1bd2c:
 	.4byte	0x04000050
 .L_1bd30:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_1bd34:
 	.4byte	0x04000042
 .L_1bd38:
@@ -734,13 +734,13 @@ func_801BD4C:
 .L_1be6c:
 	.4byte	gUnk_3003130
 .L_1be70:
-	.4byte	gUnk_3000C1C
+	.4byte	gCurrentHeartMeterGfx
 .L_1be74:
 	.4byte	0x06011200
 .L_1be78:
 	.4byte	0x80000080
 .L_1be7c:
-	.4byte	gUnk_3000C20
+	.4byte	gCurrentHeartGaugeGfx
 .L_1be80:
 	.4byte	0x06011600
 .L_1be84:
@@ -748,7 +748,7 @@ func_801BD4C:
 .L_1be88:
 	.4byte	0x04000050
 .L_1be8c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_1be90:
 	.4byte	0x04000042
 .L_1be94:
@@ -954,13 +954,13 @@ func_801BEA8:
 .L_1c014:
 	.4byte	gUnk_3003130
 .L_1c018:
-	.4byte	gUnk_3000C1C
+	.4byte	gCurrentHeartMeterGfx
 .L_1c01c:
 	.4byte	0x06011200
 .L_1c020:
 	.4byte	0x80000080
 .L_1c024:
-	.4byte	gUnk_3000C20
+	.4byte	gCurrentHeartGaugeGfx
 .L_1c028:
 	.4byte	0x06011600
 .L_1c02c:
@@ -1105,7 +1105,7 @@ func_801C050:
 .L_1c130:
 	.4byte	0x06010400
 .L_1c134:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_1c138:
 	.4byte	0x04000042
 .L_1c13c:
@@ -1448,7 +1448,7 @@ func_801C1C0:
 .L_1c3d8:
 	.4byte	gCurrentStageNumber
 .L_1c3dc:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_1c3e0:
 	.4byte	0x00003e41
 .L_1c3e4:
@@ -1669,7 +1669,7 @@ func_801C43C:
 .L_1c574:
 	.4byte	sUnk_82DD0A8
 .L_1c578:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_1c57c:
 	.4byte	sUnk_82DD0E4
 .L_1c580:
@@ -3424,7 +3424,7 @@ func_801D248:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_1d260:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_1d264:
 	.4byte	.L_1d268
 .L_1d268:
@@ -3476,7 +3476,7 @@ func_801D2A8:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_1d2c0:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_1d2c4:
 	.4byte	.L_1d2c8
 .L_1d2c8:
@@ -3725,7 +3725,7 @@ func_801D308:
 .L_1d48c:
 	.4byte	0x0000fff4
 .L_1d490:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_1d494:
 	add	r0, r0, r5
 	b	.L_1d4a6

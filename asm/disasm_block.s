@@ -91,7 +91,7 @@ func_806D3C0:
 .L_6d468:
 	.4byte	gWarioData
 .L_6d46c:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6d470:
 	.4byte	gUnk_30031F4
 .L_6d474:
@@ -155,7 +155,7 @@ func_806D4C0:
 	b	.L_6d5b2
 	.align	2, 0
 .L_6d4e0:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6d4e4:
 	.4byte	0x1000001
 .L_6d4e8:
@@ -245,7 +245,7 @@ func_806D4C0:
 	b	.L_6d5ae
 	.align	2, 0
 .L_6d590:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6d594:
 	.4byte	sUnk_878F2E4
 .L_6d598:
@@ -270,7 +270,7 @@ func_806D4C0:
 	bx	r1
 	.align	2, 0
 .L_6d5bc:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 
 
 thumb_func_start func_806D5C0
@@ -303,7 +303,7 @@ func_806D5C0:
 	strh	r0, [r1, #2]
 	b	.L_6d71a
 .L_6d5f4:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6d5f8:
 	.4byte	gUnk_30000A0
 .L_6d5fc:
@@ -359,7 +359,7 @@ func_806D5C0:
 .L_6d660:
 	.4byte	gUnk_3000028
 .L_6d664:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6d668:
 	mov	r2, #0
 	strh	r2, [r6, #2]
@@ -436,7 +436,7 @@ func_806D5C0:
 	bl	_call_via_r1
 	b	.L_6d716
 .L_6d6f8:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6d6fc:
 	.4byte	sUnk_878F2E4
 .L_6d700:
@@ -465,7 +465,7 @@ func_806D5C0:
 	bx	r1
 	.align	2, 0
 .L_6d72c:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 
 
 thumb_func_start func_806D730

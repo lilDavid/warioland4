@@ -411,7 +411,7 @@ func_801ABCC:
 .L_1ac10:
 	.4byte	gWarioData
 .L_1ac14:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1ac18:
 	ldr	r1, .L_1ac20
 	mov	r0, #3

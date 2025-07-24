@@ -309,7 +309,7 @@ func_80703DC:
 	bx	lr
 	.align	2, 0
 .L_70428:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7042c:
 	.4byte	0x040000d4
 .L_70430:
@@ -364,7 +364,7 @@ func_8070440:
 	strb	r0, [r3, #4]
 	b	.L_70528
 .L_7048c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70490:
 	.4byte	0x040000d4
 .L_70494:
@@ -574,7 +574,7 @@ func_80705D8:
 	b	.L_70634
 	.align	2, 0
 .L_70610:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70614:
 	.4byte	0x02020000
 .L_70618:
@@ -736,7 +736,7 @@ func_80705D8:
 	bx	r0
 	.align	2, 0
 .L_70744:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 
 
 thumb_func_start func_8070748
@@ -764,7 +764,7 @@ func_8070748:
 	b	.L_708c8
 	.align	2, 0
 .L_70774:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70778:
 	mov	r1, r9
 	ldrb	r0, [r1, #2]
@@ -1816,7 +1816,7 @@ func_8070E24:
 .L_70efc:
 	.4byte	gWarioPauseTimer
 .L_70f00:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f04:
 	mov	r0, #3
 	bl	func_8071600
@@ -1831,7 +1831,7 @@ func_8070E24:
 	strb	r0, [r1, #5]
 	b	.L_70fc6
 .L_70f20:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f24:
 	add	r1, r3, #0
 	mov	r0, #0
@@ -1845,7 +1845,7 @@ func_8070E24:
 	b	.L_70fc6
 	.align	2, 0
 .L_70f3c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f40:
 	ldr	r1, .L_70f54
 	mov	r0, #0
@@ -1859,7 +1859,7 @@ func_8070E24:
 	b	.L_70fce
 	.align	2, 0
 .L_70f54:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f58:
 	add	r1, r3, #0
 	mov	r0, #1
@@ -1873,7 +1873,7 @@ func_8070E24:
 	b	.L_70fc6
 	.align	2, 0
 .L_70f70:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f74:
 	mov	r0, #1
 	bl	func_8070FDC
@@ -1883,7 +1883,7 @@ func_8070E24:
 	strb	r0, [r1, #2]
 	b	.L_70fc6
 .L_70f84:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f88:
 	ldr	r1, .L_70f98
 	mov	r0, #0
@@ -1894,7 +1894,7 @@ func_8070E24:
 	b	.L_70fce
 	.align	2, 0
 .L_70f98:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70f9c:
 	bl	func_8070208
 	bl	func_8070348
@@ -1905,7 +1905,7 @@ func_8070E24:
 	strb	r0, [r1, #5]
 	b	.L_70fc6
 .L_70fb0:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70fb4:
 	mov	r0, #0
 	mov	r1, #2
@@ -1926,7 +1926,7 @@ func_8070E24:
 	bx	r0
 	.align	2, 0
 .L_70fd4:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_70fd8:
 	.4byte	gUnk_3000035
 
@@ -2100,13 +2100,13 @@ func_80710D8:
 	strb	r0, [r3, #3]
 	b	.L_711a2
 .L_71114:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_71118:
 	.4byte	gUnk_3001870
 .L_7111c:
 	.4byte	sUnk_83F9EA2
 .L_71120:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_71124:
 	.4byte	gUnk_3000035
 .L_71128:
@@ -2169,7 +2169,7 @@ func_80710D8:
 	b	.L_711a2
 	.align	2, 0
 .L_71194:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_71198:
 	.4byte	sUnk_83F9EA2
 .L_7119c:
@@ -2214,7 +2214,7 @@ func_80710D8:
 .L_711e0:
 	.4byte	sUnk_83F9DF8
 .L_711e4:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 
 
 thumb_func_start func_80711E8
@@ -2230,7 +2230,7 @@ func_80711E8:
 	beq	.L_7120a
 	b	.L_71228
 .L_711fc:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_71200:
 	bl	func_8071260
 	bl	func_80712B4
@@ -2273,7 +2273,7 @@ func_8071238:
 	beq	.L_71256
 	b	.L_7125a
 .L_7124c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_71250:
 	bl	func_8071260
 	b	.L_7125a
@@ -2321,7 +2321,7 @@ func_8071260:
 	bx	r0
 	.align	2, 0
 .L_712a0:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_712a4:
 	.4byte	0x00007fff
 .L_712a8:
@@ -2343,7 +2343,7 @@ func_80712B4:
 	b	.L_712f4
 	.align	2, 0
 .L_712c4:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_712c8:
 	mov	r2, #0
 	ldr	r1, .L_712e0
@@ -2360,7 +2360,7 @@ func_80712B4:
 .L_712e0:
 	.4byte	gUnk_3000035
 .L_712e4:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_712e8:
 	mov	r0, #17
 	strb	r0, [r1, #0]

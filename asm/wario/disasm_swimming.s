@@ -1377,7 +1377,7 @@ func_8016614:
 .L_1666c:
 	.4byte	gUnk_30019F1
 .L_16670:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_16674:
 	ldr	r0, .L_16698
 	ldr	r0, [r0, #36]	@ 0x24
@@ -1403,7 +1403,7 @@ func_8016614:
 .L_1669c:
 	.4byte	gWarioData
 .L_166a0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_166a4:
 	.4byte	.L_166a8
 .L_166a8:
@@ -1527,7 +1527,7 @@ func_8016614:
 .L_167a0:
 	.4byte	gUnk_300195C
 .L_167a4:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_167a8:
 	.4byte	gWarioData
 .L_167ac:

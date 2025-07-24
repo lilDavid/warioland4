@@ -188,7 +188,7 @@ func_8072964:
 .L_72ad0:
 	.4byte	gUnk_3000047
 .L_72ad4:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_72ad8:
 	.4byte	gUnk_3000C3F
 .L_72adc:

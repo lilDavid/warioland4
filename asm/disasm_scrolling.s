@@ -112,7 +112,7 @@ func_806C8E4:
 	mov	pc, r0
 	.align	2, 0
 .L_6c900:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6c904:
 	.4byte	.L_6c908
 .L_6c908:
@@ -308,7 +308,7 @@ func_806CA00:
 	b	.L_6ca8a
 	.align	2, 0
 .L_6ca60:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6ca64:
 	.4byte	gUnk_3003928
 .L_6ca68:
@@ -639,7 +639,7 @@ func_806CA00:
 .L_6ccd8:
 	.4byte	gUnk_300187E
 .L_6ccdc:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6cce0:
 	.4byte	gUnk_30031F4
 
@@ -1004,7 +1004,7 @@ func_806CF28:
 	b	.L_6cfb2
 	.align	2, 0
 .L_6cf88:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_6cf8c:
 	.4byte	gUnk_30037C0
 .L_6cf90:
@@ -1341,7 +1341,7 @@ func_806CF28:
 .L_6d20c:
 	.4byte	gUnk_300187E
 .L_6d210:
-	.4byte	gUnk_3000054
+	.4byte	gBackgroundInfo
 .L_6d214:
 	.4byte	gUnk_30031F4
 

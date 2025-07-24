@@ -92,7 +92,7 @@ StageSelectSubroutine:
 .L_79ab8:
 	.4byte	0x4000200
 .L_79abc:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79ac0:
 	bl	func_80703DC
 	bl	func_807A380
@@ -164,7 +164,7 @@ StageSelectSubroutine:
 .L_79b54:
 	.4byte	0x4000200
 .L_79b58:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79b5c:
 	ldr	r5, .L_79b74
 	ldrh	r0, [r5, #0]
@@ -180,7 +180,7 @@ StageSelectSubroutine:
 .L_79b74:
 	.4byte	0x4000200
 .L_79b78:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79b7c:
 	ldr	r5, .L_79b94
 	ldrh	r0, [r5, #0]
@@ -196,7 +196,7 @@ StageSelectSubroutine:
 .L_79b94:
 	.4byte	0x4000200
 .L_79b98:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79b9c:
 	ldr	r5, .L_79bc0
 	ldrh	r0, [r5, #0]
@@ -218,7 +218,7 @@ StageSelectSubroutine:
 .L_79bc0:
 	.4byte	0x4000200
 .L_79bc4:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79bc8:
 	.4byte	gSubGameMode
 .L_79bcc:
@@ -345,7 +345,7 @@ StageSelectSubroutine:
 .L_79cbc:
 	.4byte	0x4000200
 .L_79cc0:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79cc4:
 	.4byte	gSubGameMode
 .L_79cc8:
@@ -365,7 +365,7 @@ StageSelectSubroutine:
 .L_79ce4:
 	.4byte	0x4000200
 .L_79ce8:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79cec:
 	.4byte	gSubGameMode
 .L_79cf0:
@@ -385,7 +385,7 @@ StageSelectSubroutine:
 .L_79d0c:
 	.4byte	0x4000200
 .L_79d10:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79d14:
 	.4byte	gSubGameMode
 .L_79d18:
@@ -405,7 +405,7 @@ StageSelectSubroutine:
 .L_79d34:
 	.4byte	0x4000200
 .L_79d38:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79d3c:
 	.4byte	gSubGameMode
 .L_79d40:
@@ -435,7 +435,7 @@ StageSelectSubroutine:
 .L_79d70:
 	.4byte	0x4000200
 .L_79d74:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79d78:
 	.4byte	gUnk_3003C58
 .L_79d7c:
@@ -562,7 +562,7 @@ StageSelectSubroutine:
 .L_79e70:
 	.4byte	0x4000200
 .L_79e74:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79e78:
 	.4byte	gUnk_3003C58
 .L_79e7c:
@@ -590,7 +590,7 @@ StageSelectSubroutine:
 .L_79ea8:
 	.4byte	0x4000200
 .L_79eac:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79eb0:
 	.4byte	gUnk_3003C58
 .L_79eb4:
@@ -647,7 +647,7 @@ StageSelectSubroutine:
 	b	.L_7a36a
 	.align	2, 0
 .L_79f18:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79f1c:
 	.4byte	gSubGameMode
 .L_79f20:
@@ -706,7 +706,7 @@ StageSelectSubroutine:
 .L_79f84:
 	.4byte	0x4000200
 .L_79f88:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79f8c:
 	.4byte	gSubGameMode
 .L_79f90:
@@ -740,7 +740,7 @@ StageSelectSubroutine:
 .L_79fc4:
 	.4byte	gSubGameMode
 .L_79fc8:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_79fcc:
 	bl	func_80703DC
 	bl	func_807A3D4
@@ -825,7 +825,7 @@ StageSelectSubroutine:
 .L_7a064:
 	.4byte	0x4000200
 .L_7a068:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a06c:
 	.4byte	gSubGameMode
 .L_7a070:
@@ -953,7 +953,7 @@ StageSelectSubroutine:
 .L_7a15c:
 	.4byte	0x4000200
 .L_7a160:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a164:
 	.4byte	gSubGameMode
 .L_7a168:
@@ -973,7 +973,7 @@ StageSelectSubroutine:
 .L_7a184:
 	.4byte	0x4000200
 .L_7a188:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a18c:
 	.4byte	gSubGameMode
 .L_7a190:
@@ -993,7 +993,7 @@ StageSelectSubroutine:
 .L_7a1ac:
 	.4byte	0x4000200
 .L_7a1b0:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a1b4:
 	.4byte	gSubGameMode
 .L_7a1b8:
@@ -1030,7 +1030,7 @@ StageSelectSubroutine:
 .L_7a1f4:
 	.4byte	0x4000200
 .L_7a1f8:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a1fc:
 	.4byte	gSubGameMode
 .L_7a200:
@@ -1154,7 +1154,7 @@ StageSelectSubroutine:
 .L_7a2e8:
 	.4byte	0x4000200
 .L_7a2ec:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a2f0:
 	.4byte	gSubGameMode
 .L_7a2f4:
@@ -1179,7 +1179,7 @@ StageSelectSubroutine:
 .L_7a318:
 	.4byte	0x4000200
 .L_7a31c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a320:
 	.4byte	gSubGameMode
 .L_7a324:
@@ -1241,7 +1241,7 @@ func_807A380:
 	add	r2, r0, #0
 	b	.L_7a3ce
 .L_7a39c:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a3a0:
 	cmp	r0, #4
 	bgt	.L_7a3ce
@@ -1289,7 +1289,7 @@ func_807A3D4:
 	add	r2, r0, #0
 	b	.L_7a422
 .L_7a3f0:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a3f4:
 	cmp	r0, #4
 	bgt	.L_7a422
@@ -1335,7 +1335,7 @@ func_807A428:
 	bl	func_807A458
 	b	.L_7a454
 .L_7a440:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_7a444:
 	cmp	r0, #4
 	beq	.L_7a450
@@ -1360,7 +1360,7 @@ func_807A458:
 	pop	{r0}
 	bx	r0
 .L_7a468:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 
 
 thumb_func_start func_807A46C

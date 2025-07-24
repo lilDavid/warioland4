@@ -446,7 +446,7 @@ func_801A090:
 	bl	m4aSongNumStart
 	b	.L_1a0e0
 .L_1a0d4:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1a0d8:
 	ldr	r0, .L_1a0f0
 	ldr	r1, .L_1a0f4
@@ -464,7 +464,7 @@ func_801A090:
 .L_1a0f0:
 	.4byte	gWarioData
 .L_1a0f4:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1a0f8:
 	cmp	r4, #254	@ 0xfe
 	bne	.L_1a1ba
@@ -482,7 +482,7 @@ func_801A090:
 	b	.L_1a162
 	.align	2, 0
 .L_1a118:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1a11c:
 	.4byte	gWarioData
 .L_1a120:
@@ -531,7 +531,7 @@ func_801A090:
 .L_1a170:
 	.4byte	gWarioData
 .L_1a174:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1a178:
 	ldr	r1, .L_1a190
 	ldrb	r0, [r1, #1]

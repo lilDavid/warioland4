@@ -1382,7 +1382,7 @@ func_801E060:
 	pop	{r0}
 	bx	r0
 .L_1e0cc:
-	.4byte	gUnk_3000074
+	.4byte	gCurrentRoomHeader
 .L_1e0d0:
 	.4byte	gUnk_3000964
 

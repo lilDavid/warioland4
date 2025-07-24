@@ -589,7 +589,7 @@ func_8018370:
 	b	.L_183b4
 	.align	2, 0
 .L_183a0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_183a4:
 	.4byte	0x161
 .L_183a8:
@@ -611,7 +611,7 @@ func_8018370:
 .L_183c4:
 	.4byte	gWarioData
 .L_183c8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_183cc:
 	ldr	r3, .L_183ec
 	cmp	r4, #254	@ 0xfe
@@ -632,7 +632,7 @@ func_8018370:
 .L_183ec:
 	.4byte	gWarioData
 .L_183f0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_183f4:
 	mov	r0, #5
 	strb	r0, [r3, #1]
@@ -660,7 +660,7 @@ func_8018370:
 	strb	r0, [r1, #31]
 	b	.L_1845e
 .L_18420:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_18424:
 	.4byte	gWarioData
 .L_18428:

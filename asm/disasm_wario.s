@@ -50,7 +50,7 @@ func_800FD28:
 	pop	{r0}
 	bx	r0
 .L_fd84:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_fd88:
 	.4byte	gWarioData
 .L_fd8c:
@@ -696,7 +696,7 @@ func_80101D0:
 	pop	{r0}
 	bx	r0
 .L_1021c:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_10220:
 	.4byte	gWarioData
 .L_10224:
@@ -749,7 +749,7 @@ func_8010230:
 .L_10278:
 	.4byte	gUnk_3001948
 .L_1027c:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_10280:
 	.4byte	.L_10284
 .L_10284:

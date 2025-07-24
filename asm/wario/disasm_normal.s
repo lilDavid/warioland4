@@ -737,7 +737,7 @@ func_8010864:
 .L_10a00:
 	.4byte	sUnk_834F04C
 .L_10a04:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_10a08:
 	ldrb	r0, [r4, #10]
 	cmp	r0, #6
@@ -5739,7 +5739,7 @@ func_8012BAC:
 .L_12c54:
 	.4byte	gWarioData
 .L_12c58:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_12c5c:
 	.4byte	0xFFC0
 .L_12c60:
@@ -5768,7 +5768,7 @@ func_8012BAC:
 .L_12c8c:
 	.4byte	gButtonsHeld
 .L_12c90:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_12c94:
 	cmp	r0, #39	@ 0x27
 	bne	.L_12ca6
@@ -5822,7 +5822,7 @@ func_8012CC8:
 .L_12cec:
 	.4byte	gWarioData
 .L_12cf0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_12cf4:
 	.4byte	.L_12cf8
 .L_12cf8:
@@ -5937,7 +5937,7 @@ func_8012CC8:
 .L_12e1c:
 	.4byte	gWarioData
 .L_12e20:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_12e24:
 	.4byte	gUnk_3001948
 .L_12e28:
@@ -5995,7 +5995,7 @@ func_8012E5C:
 .L_12e7c:
 	.4byte	gUnk_3001950
 .L_12e80:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_12e84:
 	.4byte	.L_12e88
 .L_12e88:
@@ -6363,7 +6363,7 @@ func_801318C:
 	mov	pc, r0
 	.align	2, 0
 .L_131a8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_131ac:
 	.4byte	.L_131b0
 .L_131b0:
@@ -6619,7 +6619,7 @@ func_801318C:
 	mov	r0, #96	@ 0x60
 	b	.L_13482
 .L_1347c:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13480:
 	ldr	r0, .L_1348c
 .L_13482:
@@ -6645,7 +6645,7 @@ func_801318C:
 	b	.L_13888
 	.align	2, 0
 .L_134ac:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_134b0:
 	ldr	r0, .L_134c8
 	ldrh	r2, [r0, #22]
@@ -6661,7 +6661,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_134c8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_134cc:
 	ldr	r0, .L_134d8
 	ldrh	r0, [r0, #22]
@@ -6670,7 +6670,7 @@ func_801318C:
 	b	.L_137f6
 	.align	2, 0
 .L_134d8:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_134dc:
 	.4byte	gUnk_3001950
 .L_134e0:
@@ -6693,7 +6693,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_13508:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1350c:
 	.4byte	gUnk_3001948
 .L_13510:
@@ -6708,7 +6708,7 @@ func_801318C:
 	ldr	r0, .L_13528
 	b	.L_1352e
 .L_13524:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13528:
 	.4byte	0xFFE0
 .L_1352c:
@@ -6749,7 +6749,7 @@ func_801318C:
 .L_1356c:
 	.4byte	gUnk_3001890
 .L_13570:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13574:
 	.4byte	gUnk_3001892
 .L_13578:
@@ -6780,7 +6780,7 @@ func_801318C:
 .L_135a8:
 	.4byte	gUnk_3001890
 .L_135ac:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_135b0:
 	.4byte	gUnk_3001892
 .L_135b4:
@@ -6816,7 +6816,7 @@ func_801318C:
 	b	.L_13602
 	.align	2, 0
 .L_135f4:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_135f8:
 	.4byte	gWarioData
 .L_135fc:
@@ -6836,7 +6836,7 @@ func_801318C:
 	b	.L_13628
 	.align	2, 0
 .L_13618:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1361c:
 	.4byte	gWarioData
 .L_13620:
@@ -6870,7 +6870,7 @@ func_801318C:
 	ldrh	r0, [r1, #22]
 	b	.L_13888
 .L_13658:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1365c:
 	ldr	r0, .L_1366c
 	ldrh	r0, [r0, #22]
@@ -6880,7 +6880,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_1366c:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13670:
 	ldr	r0, .L_13684
 	ldrh	r0, [r0, #22]
@@ -6892,7 +6892,7 @@ func_801318C:
 	bl	m4aSongNumStart
 	b	.L_1388a
 .L_13684:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13688:
 	.4byte	gUnk_3001940
 .L_1368c:
@@ -6907,7 +6907,7 @@ func_801318C:
 	ldr	r0, .L_136a4
 	b	.L_136aa
 .L_136a0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_136a4:
 	.4byte	0xFFE0
 .L_136a8:
@@ -6955,7 +6955,7 @@ func_801318C:
 .L_136ec:
 	.4byte	gUnk_3001948
 .L_136f0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_136f4:
 	ldr	r1, .L_13710
 	ldrb	r0, [r1, #0]
@@ -6974,7 +6974,7 @@ func_801318C:
 .L_13710:
 	.4byte	gUnk_3001948
 .L_13714:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13718:
 	ldr	r0, .L_13738
 	ldrh	r0, [r0, #22]
@@ -6994,7 +6994,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_13738:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_1373c:
 	.4byte	gUnk_3001948
 .L_13740:
@@ -7050,7 +7050,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_137a0:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_137a4:
 	.4byte	0xFFC0
 .L_137a8:
@@ -7090,7 +7090,7 @@ func_801318C:
 .L_137e8:
 	.4byte	gUnk_3001890
 .L_137ec:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_137f0:
 	.4byte	gUnk_3001892
 .L_137f4:
@@ -7141,7 +7141,7 @@ func_801318C:
 	b	.L_1385e
 	.align	2, 0
 .L_13844:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 .L_13848:
 	.4byte	0x4CF
 .L_1384c:
@@ -7185,7 +7185,7 @@ func_801318C:
 	pop	{r0}
 	bx	r0
 .L_13890:
-	.4byte	gUnk_30018D4
+	.4byte	gWarioDataCopy
 
 
 thumb_func_start func_8013894
@@ -11410,7 +11410,7 @@ func_80158C8:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_1595c:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_15960:
 	.4byte	gUnk_30031BC
 .L_15964:

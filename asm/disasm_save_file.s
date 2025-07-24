@@ -854,7 +854,7 @@ func_8072FB0:
 .L_73358:
 	.4byte	gUnk_3001940
 .L_7335c:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_73360:
 	.4byte	gHeartGauge
 .L_73364:
@@ -864,7 +864,7 @@ func_8072FB0:
 .L_7336c:
 	.4byte	gSpriteData
 .L_73370:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_73374:
 	.4byte	gCollectedNEJewelPiece
 .L_73378:
@@ -904,7 +904,7 @@ func_8072FB0:
 .L_733bc:
 	.4byte	gUnk_3000BF0
 .L_733c0:
-	.4byte	gUnk_3000BFC
+	.4byte	gScoreDigits
 .L_733c4:
 	.4byte	gCurrentCollection
 .L_733c8:
@@ -1477,7 +1477,7 @@ func_807345C:
 .L_737e8:
 	.4byte	gUnk_3001940
 .L_737ec:
-	.4byte	gWarioHearts
+	.4byte	gHeartMeter
 .L_737f0:
 	.4byte	gHeartGauge
 .L_737f4:
@@ -1487,7 +1487,7 @@ func_807345C:
 .L_737fc:
 	.4byte	gSpriteData
 .L_73800:
-	.4byte	gUnk_3000C0D
+	.4byte	gSwitchPressed
 .L_73804:
 	.4byte	gCollectedNEJewelPiece
 .L_73808:
@@ -1527,7 +1527,7 @@ func_807345C:
 .L_7384c:
 	.4byte	gUnk_3000BF0
 .L_73850:
-	.4byte	gUnk_3000BFC
+	.4byte	gScoreDigits
 .L_73854:
 	.4byte	gCurrentCollection
 .L_73858:

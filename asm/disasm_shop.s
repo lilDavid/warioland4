@@ -588,7 +588,7 @@ func_808FCE0:
 .L_8ffe4:
 	.4byte	gUnk_3004A32
 .L_8ffe8:
-	.4byte	gUnk_30000D0
+	.4byte	gColorFading
 .L_8ffec:
 	.4byte	gUnk_3004A58
 .L_8fff0:
