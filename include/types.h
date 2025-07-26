@@ -2,7 +2,7 @@
 #define TYPES_H
 
 
-#include "gba/types.h"
+#include "gba.h"
 
 
 typedef void (*ProcedureFunc)(void);

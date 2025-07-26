@@ -1,49 +1,6 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_80007EC
-func_80007EC:
-	push	{r4, r5, r6, lr}
-	mov	r4, #0
-	ldr	r0, .L_820
-	lsl	r0, r0, #16
-	lsr	r0, r0, #16
-	cmp	r4, r0
-	bcs	.L_818
-	ldr	r6, .L_824
-	add	r5, r0, #0
-.L_7fe:
-	lsl	r0, r4, #1
-	add	r0, r0, r4
-	lsl	r0, r0, #2
-	add	r0, r0, r6
-	ldr	r0, [r0, #0]
-	mov	r1, #10
-	bl	m4aMPlayFadeOut
-	add	r0, r4, #1
-	lsl	r0, r0, #24
-	lsr	r4, r0, #24
-	cmp	r4, r5
-	bcc	.L_7fe
-.L_818:
-	pop	{r4, r5, r6}
-	pop	{r0}
-	bx	r0
-	.align	2, 0
-.L_820:
-	.4byte	0x00000008
-.L_824:
-	.4byte	gMPlayTable
-
-
-thumb_func_start func_8000828
-func_8000828:
-	push	{lr}
-	bl	func_8000CE0
-	pop	{r0}
-	bx	r0
-
-
 thumb_func_start SoftResetSubroutine
 SoftResetSubroutine:
 	push	{r4, lr}
@@ -176,12 +133,3 @@ SoftResetSubroutine:
 	.4byte	gButtonsHeldCopy
 .L_944:
 	.4byte	gButtonsPressed
-
-thumb_func_start func_8000948
-func_8000948:
-	push	{lr}
-	bl	LZ77UnCompVram
-	pop	{r0}
-	bx	r0
-
-	.align 2, 0

@@ -11,6 +11,4 @@ extern u16 gButtonsHeld;
 extern u16 gButtonsHeldCopy;
 extern u16 gButtonsPressed;
 
-void PollInput(void);
-
 #endif  // CONTROL_H

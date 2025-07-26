@@ -11,8 +11,8 @@ func_8072C60:
 	.align	2, 0
 
 
-thumb_func_start func_8072C70
-func_8072C70:
+thumb_func_start QuitSubroutine
+QuitSubroutine:
 	push	{lr}
 	ldr	r0, .L_72c90
 	bl	InterruptCallback_SetVBlank

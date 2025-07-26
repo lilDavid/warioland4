@@ -5,22 +5,36 @@
 
 #include "control.h"
 #include "init_helpers.h"
-#include "soft_reset.h"
+#include "interrupt_callbacks.h"
+#include "interrupts.h"
+#include "global_data.h"
+#include "save_file.h"
+#include "sram.h"
 
-#include "game_state.h"  // TODO: Reorganize
-void func_8000828(void);
-void SoftResetSubroutine(void);
-u32 CutsceneSubroutine(void);
-u32 GameScreenSubroutine(void);
-u32 func_8072B98(void);
-u32 func_8072C70(void);
-u32 StageSelectSubroutine(void);
-u32 PauseScreenSubroutine(void);
-u32 MinigameSubroutine(void);
-u32 ItemShopSubroutine(void);
-u32 FileSelectSubroutine(void);
-u32 SaveResetSubroutine(void);
-u32 CreditsSubroutine(void);
+#include "soft_reset.h"
+#include "cutscene.h"
+#include "game_screen.h"
+#include "demo.h"
+#include "quit.h"
+#include "stage_select.h"
+#include "pause.h"
+#include "minigame.h"
+#include "shop.h"
+#include "file_select.h"
+#include "save_reset.h"
+#include "credits.h"
+
+void irq_handler(void);
+
+
+IWRAM_DATA s16 gMainGameMode = 0;
+IWRAM_DATA s16 gSubGameMode = 0;
+IWRAM_DATA s8 gUnk_3000C3E = 0;
+IWRAM_DATA s8 gUnk_3000C3F = 0;
+IWRAM_DATA s8 gUnk_3000C40 = 0;
+IWRAM_DATA u8 gMainTimer = 0;
+IWRAM_DATA vu16 gInterruptCheck = 0;
+IWRAM_DATA u16 gInterruptHandlerBuffer[] = {};
 
 
 void AgbMain(void) {
@@ -159,8 +173,8 @@ void AgbMain(void) {
                 }
                 break;
 
-            case GM_5:
-                func_8072C70();
+            case GM_QUIT:
+                QuitSubroutine();
                 gMainGameMode = GM_PAUSE;
                 break;
 
@@ -228,9 +242,77 @@ void AgbMain(void) {
         if (gResetSaveFile) {
             m4aSoundVSyncOff();
             if (gResetSaveFile == 2) {
-                func_8000828();
+                ClearSRAM();
             }
             return;
         }
     }
+}
+
+void InitializeGame(void) {
+    REG_DISPCNT = DISPCNT_FORCED_BLANK;
+    REG_DISPSTAT = 0;
+    REG_IME = FALSE;
+
+    DmaFill32(3, 0, EWRAM_START, EWRAM_SIZE);
+    DmaFill32(3, 0, IWRAM_START, IWRAM_SIZE - 0x200);
+
+    InitializeVideoMemory();
+    InitializeInterruptHandler();
+    InterruptCallback_SetVBlank(EmptyFunction);
+
+    func_8072D24();
+    func_8073BE0();
+    m4aSoundInit();
+    m4aSoundMode(SOUND_MODE_DA_BIT_8);
+
+    REG_IME = TRUE;
+    REG_IE = INTR_FLAG_GAMEPAK | INTR_FLAG_VBLANK;
+    REG_DISPSTAT = DISPSTAT_VBLANK_INTR;
+    REG_WAITCNT = WAITCNT_SRAM_4 |
+                  WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1 |
+                  WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1 |
+                  WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1 |
+                  WAITCNT_PHI_OUT_NONE | WAITCNT_PREFETCH_ENABLE | WAITCNT_AGB;
+
+    gButtonsHeld = 0;
+    gButtonsHeldCopy = 0;
+    gButtonsPressed = 0;
+    gSubGameMode = 0;
+    PollInput();
+    if (gButtonsPressed == (L_BUTTON | R_BUTTON)) {
+        gMainGameMode = GM_SAVE_RESET;
+    } else {
+        gMainGameMode = GM_CUTSCENE;
+    }
+    gButtonsHeld = 0;
+    gButtonsHeldCopy = 0;
+    gButtonsPressed = 0;
+
+    gDisableSoftReset = 0;
+};
+
+void EmptyFunction() {
+}
+
+void CheckSoftReset(void) {
+    if (gMainGameMode == GM_SOFT_RESET || gDisableSoftReset) {
+        return;
+    }
+
+    if (CHECK_KEYS_ALL(gButtonsHeld, A_BUTTON | B_BUTTON | START_BUTTON | SELECT_BUTTON)) {
+        gMainGameMode = GM_SOFT_RESET;
+    }
+}
+
+void FadeOutAllSound(void) {
+    u8 i;
+
+    for (i = 0; i < NUM_MUSIC_PLAYERS; i++) {
+        m4aMPlayFadeOut(gMPlayTable[i].info, 10);
+    }
+}
+
+void ClearSRAM(void) {
+    func_8000CE0();
 }

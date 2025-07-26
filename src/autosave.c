@@ -1,13 +1,11 @@
 #include "autosave.h"
 
-#include "collection.h"
-#include "stage_items.h"
-#include "game_state.h"
+#include "main.h"
 #include "score.h"
-#include "sram.h"
+#include "save_file.h"
 #include "types.h"
-#include "wario.h"
 #include "vortex_cutscene.h"
+#include "wario.h"
 
 
 void Autosave_StageClear(void) {

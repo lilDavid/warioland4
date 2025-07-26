@@ -1,5 +1,5 @@
-#ifndef GAME_STATE_H
-#define GAME_STATE_H
+#ifndef GLOBAL_DATA_H
+#define GLOBAL_DATA_H
 
 #include "gba.h"
 
@@ -20,7 +20,6 @@ enum Passage {
 #define STAGE_BOSS (4)
 #define STAGE_MINIGAMES (5)
 #define STAGE_MAX (6)
-
 
 enum Difficulty {
     DIFFICULTY_NORMAL,
@@ -50,40 +49,14 @@ enum SaveFile {
     SAVE_COUNT
 };
 
-enum ShopItem {
-    SHOP_ITEM_APPLE_BOMB,
-    SHOP_ITEM_BLAST_CANNON,
-    SHOP_ITEM_VIZORMAN,
-    SHOP_ITEM_BUGLE,
-    SHOP_ITEM_BLACK_DOG,
-    SHOP_ITEM_LARGE_LIPS,
-    SHOP_ITEM_BIG_FIST,
-    SHOP_ITEM_BLACK_DRAGON,
-};
 
-enum GameMode {
-    GM_CUTSCENE = 0,
-    GM_STAGE_SELECT = 1,
-    GM_GAME_SCREEN = 2,
-    GM_SOFT_RESET = 3,
-    GM_PAUSE = 4,
-    GM_5 = 5,
-    GM_MINIGAMES = 6,
-    GM_ITEM_SHOP = 7,
-    GM_DEMO = 8,
-    GM_FILE_SELECT = 9,
-    GM_SAVE_RESET = 10,
-    GM_11 = 11,
-    GM_CREDITS = 12,
-    GM_MAX = 13
-};
-
-
+// gUnk_3000000
 extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
 extern s8 gCurrentStageID;
-
 extern u16 gRandomSeed;
+// gUnk_3000008
+// gUnk_300000A
 extern u8 gCurrentPassageTemp;
 extern u8 gClearMessage;
 extern u8 gHasTemporarySave;
@@ -93,28 +66,41 @@ extern u8 gTitleScreenStyle;
 extern u8 gLanguage;
 extern u8 gDifficulty;
 extern u8 gResetSaveFile;
-extern u8 gSelectedSaveFile;
-
+// gUnk_3000019
+// gUnk_300001A
+// gUnk_300001B
+// gUnk_300001C
+// gUnk_300001D
 extern u8 gDisableSoftReset;
 extern u8 gUnk_3000020;
-
+// gUnk_3000021
 extern u8 gUnk_3000022;
-
+// gUnk_3000023
 extern u8 gCurrentRoom;
 extern u8 gUnk_3000025;
-
+// gUnk_3000026
+// gUnk_3000027
+// gUnk_3000028
+// gUnk_300002A
+// gUnk_300002C
+// gUnk_300002E
+// gUnk_3000033
+// gUnk_3000034
+// gUnk_3000035
+// gUnk_3000037
+// gUnk_300003A
+// gUnk_300003C
+// gUnk_300003E
+// gUnk_3000040
+// gUnk_3000044
+// gUnk_3000045
+// gUnk_3000046
+// gUnk_3000047
 extern u8 gStageExitType;
+// gUnk_300004C
+// gBackgroundInfo
+// gCurrentRoomHeader
+// gUnk_30000A0
+// gUnk_30000A8
 
-extern s8 gPauseFlag;
-
-extern s8 gUnk_3000C37;
-extern u8 gCurrentShopItem;
-extern s16 gMainGameMode;
-extern s16 gSubGameMode;
-extern s8 gUnk_3000C3E;
-extern s8 gUnk_3000C3F;
-extern s8 gUnk_3000C40;
-extern u8 gMainTimer;
-extern vu16 gInterruptCheck;
-
-#endif  // GAME_STATE_H
+#endif  // GLOBAL_DATA_H

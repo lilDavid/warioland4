@@ -1,6 +1,6 @@
-#include "gba.h"
 #include "interrupt_callbacks.h"
-#include "types.h"
+
+#include "interrupts.h"
 
 
 void InterruptCallback_CallVBlank(void) {

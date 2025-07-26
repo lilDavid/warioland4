@@ -1,5 +1,5 @@
-#include "game_state.h"
-#include "gba.h"
+#include "global_data.h"
+#include "shop.h"
 #include "sprite.h"
 
 

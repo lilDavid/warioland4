@@ -1,6 +1,5 @@
 #include "bg_clip.h"
-#include "game_state.h"
-#include "game_screen.h"
+#include "global_data.h"
 #include "oam.h"
 #include "sound.h"
 #include "sprite.h"

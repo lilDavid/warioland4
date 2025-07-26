@@ -13,4 +13,10 @@ extern u16 gDemoSequenceIndex;
 extern u16 gDemoButtonPressTimer;
 extern u16 gDemoButtonsPressed;
 
+// func_8072964()
+// func_8072B24()
+// func_8072B74()
+// func_8072B88()
+u32 func_8072B98(void);
+
 #endif  // DEMO_H

@@ -146,19 +146,8 @@ SECTIONS {
         . = 0x0c36; gUnk_3000C36 = .;
         . = 0x0c37; gUnk_3000C37 = .;
         . = 0x0c38; gCurrentShopItem = .;
-        . = 0x0c3a; gMainGameMode = .;
-        . = 0x0c3c; gSubGameMode = .;
-        . = 0x0c3e; gUnk_3000C3E = .;
-        . = 0x0c3f; gUnk_3000C3F = .;
-        . = 0x0c40; gUnk_3000C40 = .;
-        . = 0x0c41; gMainTimer = .;
-        . = 0x0c42; gInterruptCheck = .;
-        . = 0x0c44; gInterruptHandlerBuffer = .;
-        . = 0x1444; gOamBuffer = .;
-        . = 0x1844; gButtonsHeld = .;
-        . = 0x1846; gButtonsHeldCopy = .;
-        . = 0x1848; gButtonsPressed = .;
-        . = 0x184A; gOamSlotsUsed = .;
+        . = 0x0c3a; obj/main.o(iwram_data);
+        obj/init_helpers.o(iwram_data);
 
         . = 0x1850; gUnk_3001850 = .;
         . = 0x1852; gUnk_3001852 = .;
@@ -598,11 +587,8 @@ SECTIONS {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
         obj/main.o(.text);
-        obj/soft_reset.o(.text);
-        obj/disasm_0x0007EC.o(.text);
-        obj/poll_input.o(.text);
+        obj/disasm_soft_reset.o(.text);
         obj/init_helpers.o(.text);
-        obj/reset_free_oam.o(.text);
         obj/fixed_point.o(.text);
         obj/disasm_0x000A84.o(.text);
         obj/interrupt_callbacks.o(.text);

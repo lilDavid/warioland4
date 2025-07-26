@@ -1,11 +1,12 @@
-#ifndef INTERRUPT_SERVICE_ROUTINE_H
-#define INTERRUPT_SERVICE_ROUTINE_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
 #include "types.h"
 
 
-extern u32 gInterruptHandlerBuffer[512];
+extern vu16 gInterruptCheck;
+extern u16 gInterruptHandlerBuffer[1024];
 
 void irq_handler(void);
 
-#endif  // INTERRUPT_SERVICE_ROUTINE_H
+#endif  // INTERRUPTS_H

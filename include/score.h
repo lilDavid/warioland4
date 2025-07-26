@@ -1,7 +1,8 @@
 #ifndef SCORE_H
 #define SCORE_H
 
-#include "gba/types.h"
+#include "types.h"
+#include "global_data.h"
 
 
 // Number of points per internal unit of score
@@ -106,10 +107,73 @@ enum ScoreSpriteID {
     SSPRITE_MAX = 90
 };
 
+struct ItemCollection {
+    u8 jewelPieceNE: 1;
+    u8 jewelPieceSE: 1;
+    u8 jewelPieceSW: 1;
+    u8 jewelPieceNW: 1;
+    u8 cd: 1;
+    u8 keyzer: 1;
+};
 
+#define BOSS_REWARD_55_SEC jewelPieceNE
+#define BOSS_REWARD_35_SEC jewelPieceSE
+#define BOSS_REWARD_15_SEC jewelPieceSW
+#define SHOW_BOSS_DOOR_OPENING jewelPieceNW
+#define BOSS_DEFEATED keyzer
+#define DIVA_DEFEATED cd
+
+
+extern struct ItemCollection gCurrentCollection[PASSAGE_MAX][STAGE_MAX];
+extern s32 gHighScoreTable[PASSAGE_MAX][NORMAL_STAGE_COUNT];
+// gSecondarySpriteData
+// gCurrentSecondarySprite
+extern s32 gUnk_3000BEC;
+// gUnk_3000BF0
 extern s32 gTotalScore;
 extern s32 gStageScore;
-
+// gScoreDigits
+// gUnk_3000C01
+// gUnk_3000C02
+extern u8 gUnk_3000C03;
+// gUnk_3000C04
+// gUnk_3000C05
+// gUnk_3000C06
+extern u8 gCollectedNEJewelPiece;
+extern u8 gCollectedSEJewelPiece;
+extern u8 gCollectedSWJewelPiece;
+extern u8 gCollectedNWJewelPiece;
+extern u8 gCollectedCD;
+extern u8 gCollectedKeyzer;
+extern u8 gSwitchPressed;
+extern u8 gUnk_3000C0E;
+// gUnk_3000C10
+// gUnk_3000C14
+// gUnk_3000C16
+// gUnk_3000C18
+// gUnk_3000C1A
+// gCurrentHeartMeterGfx
+// gCurrentHeartGaugeGfx
+extern u8 gVortexGfxSlot;
+extern u16 gVortexYPosition;
+extern u16 gVortexXPosition;
+// gUnk_3000C2A
+// gUnk_3000C2B
+#define gHasBossChest55sec gCollectedNEJewelPiece
+#define gHasBossChest35sec gCollectedSEJewelPiece
+#define gHasBossChest15sec gCollectedSWJewelPiece
+#define gHasGoldenDivaChest1 gCollectedNEJewelPiece
+#define gHasGoldenDivaChest2 gCollectedSEJewelPiece
+#define gHasGoldenDivaChest3 gCollectedSWJewelPiece
+#define gHasGoldenDivaChest4 gCollectedNWJewelPiece
+extern u8 gHasGoldenDivaChest5;
+extern u8 gHasGoldenDivaChest6;
+extern u8 gHasGoldenDivaChest7;
+extern u8 gHasGoldenDivaChest8;
+extern u8 gHasGoldenDivaChest9;
+extern u8 gHasGoldenDivaChest10;
+extern u8 gHasGoldenDivaChest11;
+extern u8 gHasGoldenDivaChest12;
 
 void Score_GivePoints(s32);
 void Sprite_SpawnSecondary(u32 y, u32 x, u8 id);
