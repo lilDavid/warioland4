@@ -190,7 +190,7 @@ SECTIONS {
         . = 0x1890; gUnk_3001890 = .;
         . = 0x1892; gUnk_3001892 = .;
 
-        obj/demo_input.o(COMMON);
+        . = 0x1894; obj/demo_input.o(iwram_data);
 
         . = 0x1898; gWarioData = .;
         . = 0x18D4; gWarioDataCopy = .;

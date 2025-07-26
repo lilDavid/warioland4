@@ -4,7 +4,7 @@
 #include "types.h"
 
 
-u8 gDemoState;
+IWRAM_DATA u8 gDemoState = 0;
 
 
 void func_80102D8(void) {
