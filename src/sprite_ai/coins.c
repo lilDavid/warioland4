@@ -504,7 +504,7 @@ const s16 sDiamondFloatYVelocity[] = {0, 0, 0, 0, 0,           0, 0, 0, 0, -PIXE
                                       0, 0, 0, 0, -PIXEL_SIZE, 0, 0, 0, 0, 0,           0,      0, 0, 0, PIXEL_SIZE,
                                       0, 0, 0, 0, 0,           0, 0, 0, 0, PIXEL_SIZE,  S16_MAX};
 
-static void func_802BADC(void)
+void func_802BADC(void)
 {
     gCurrentSprite.work1 += 1;
     func_8023BFC(
@@ -560,7 +560,7 @@ static void func_802BADC(void)
     }
 }
 
-static void func_802BC24(void)
+void func_802BC24(void)
 {
     gCurrentSprite.work1 += 1;
     func_8023BFC(
@@ -616,7 +616,7 @@ static void func_802BC24(void)
     }
 }
 
-static void CoinPose44(void)
+void CoinPose44(void)
 {
     u32 unk_r2;
     s16 yVelocity;
@@ -674,7 +674,7 @@ static void CoinPose44(void)
     }
 }
 
-static void CoinPose46(void)
+void CoinPose46(void)
 {
     u32 unk_r2;
     s16 yVelocity;
@@ -732,7 +732,7 @@ static void CoinPose46(void)
     }
 }
 
-static void CoinInit(void)
+void CoinInit(void)
 {
     switch (gCurrentSprite.globalID) {
         case PSPRITE_COIN_50POINTS:
@@ -839,7 +839,7 @@ static void CoinInit(void)
     }
 }
 
-static void CoinPose2F(void)
+void CoinPose2F(void)
 {
     gCurrentSprite.pose = POSE_30;
     if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
@@ -849,7 +849,7 @@ static void CoinPose2F(void)
     }
 }
 
-static void CoinPose30(void)
+void CoinPose30(void)
 {
     if (gCurrentSprite.work0 != 0) {
         TIMER_COUNT_DOWN(gCurrentSprite.work0);
@@ -863,7 +863,7 @@ static void CoinPose30(void)
     }
 }
 
-static void CoinCollect(void)
+void CoinCollect(void)
 {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     switch (gCurrentSprite.globalID) {
@@ -932,19 +932,19 @@ static void CoinCollect(void)
     }
 }
 
-static void CoinPose1D(void)
+void CoinPose1D(void)
 {
     gCurrentSprite.pose = POSE_1E;
     gCurrentSprite.work3 = 0;
 }
 
-static void CoinPose2B(void)
+void CoinPose2B(void)
 {
     gCurrentSprite.pose = POSE_2C;
     gCurrentSprite.work1 = 0;
 }
 
-static void CoinPose2C(void)
+void CoinPose2C(void)
 {
     func_80238E8();
     if (gCurrentSprite.work2 >= 2) {
@@ -954,13 +954,13 @@ static void CoinPose2C(void)
     }
 }
 
-static void CoinPose2D(void)
+void CoinPose2D(void)
 {
     gCurrentSprite.pose = POSE_2E;
     gCurrentSprite.work1 = 0;
 }
 
-static void CoinPose2E(void)
+void CoinPose2E(void)
 {
     func_80238E8();
     if (gCurrentSprite.work2 >= 2) {
@@ -970,7 +970,7 @@ static void CoinPose2E(void)
     }
 }
 
-static void DiamondInit(void)
+void DiamondInit(void)
 {
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
     gCurrentSprite.drawDistanceDown = 24;
@@ -990,7 +990,7 @@ static void DiamondInit(void)
     gCurrentSprite.xPosition += HALF_BLOCK_SIZE;
 }
 
-static void DiamondFloat(void)
+void DiamondFloat(void)
 {
     s16 yVelocity;
     u8 frame;
@@ -1005,7 +1005,7 @@ static void DiamondFloat(void)
     gCurrentSprite.yPosition += yVelocity;
 }
 
-static void DiamondCollect(void)
+void DiamondCollect(void)
 {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
@@ -1021,7 +1021,7 @@ static void DiamondCollect(void)
     VoiceSetPlay(VS_WARIO_TREASURE);
 }
 
-static void ChanceWheelDiamondInit(void)
+void ChanceWheelDiamondInit(void)
 {
     gCurrentSprite.globalID = PSPRITE_COIN_1000POINTS;
     gCurrentSprite.pOamData = &sDiamondOamData;

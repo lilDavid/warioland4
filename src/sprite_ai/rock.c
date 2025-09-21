@@ -33,7 +33,7 @@ const u16 sRockOam_UnusedFrame4[] = {
 
 const struct AnimationFrame sRockOamData[] = {{sRockOam_Frame1, 0xC8}, ANIMATION_TERMINATOR};
 
-static void RockInit(void)
+void RockInit(void)
 {
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 0;
@@ -45,7 +45,7 @@ static void RockInit(void)
     gCurrentSprite.hitboxExtentRight = SUBPIXELS_FROM_PIXELS(6);
 }
 
-static void RockIdleInit(void)
+void RockIdleInit(void)
 {
     gCurrentSprite.animationTimer = gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pOamData = &sRockOamData;
@@ -54,7 +54,7 @@ static void RockIdleInit(void)
     gCurrentSprite.statusBits &= ~(SPRITE_STATUS_8 | SPRITE_STATUS_9);
 }
 
-static void RockIdle(void)
+void RockIdle(void)
 {
     func_80238E8();
     func_8023B88();
@@ -70,39 +70,39 @@ static void RockIdle(void)
     }
 }
 
-static void RockPose1B(void)
+void RockPose1B(void)
 {
     gCurrentSprite.pose = POSE_1E;
     gCurrentSprite.work3 = 0;
 }
 
-static void RockPose2B(void)
+void RockPose2B(void)
 {
     gCurrentSprite.pose = POSE_2C;
     gCurrentSprite.work1 = 0;
 }
 
-static void RockPose2D(void)
+void RockPose2D(void)
 {
     gCurrentSprite.pose = POSE_2E;
     gCurrentSprite.work1 = 0;
 }
 
-static void RockPose47(void)
+void RockPose47(void)
 {
     gCurrentSprite.pose = POSE_48;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
-static void RockPose49(void)
+void RockPose49(void)
 {
     gCurrentSprite.pose = POSE_4A;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
-static void RockPose1F(void)
+void RockPose1F(void)
 {
     gCurrentSprite.pose = POSE_34;
     gCurrentSprite.work0 = 4;
@@ -110,7 +110,7 @@ static void RockPose1F(void)
     gCurrentSprite.work3 = 0;
 }
 
-static void RockPose21(void)
+void RockPose21(void)
 {
     gCurrentSprite.pose = POSE_36;
     gCurrentSprite.work0 = 4;
@@ -118,7 +118,7 @@ static void RockPose21(void)
     gCurrentSprite.work3 = 0;
 }
 
-static void RockPose31(void)
+void RockPose31(void)
 {
     if (gCurrentSprite.xPosition > gWarioData.xPosition) {
         RockPose1F();
@@ -127,17 +127,17 @@ static void RockPose31(void)
     }
 }
 
-static void RockPose51(void)
+void RockPose51(void)
 {
     gCurrentSprite.pose = POSE_52;
 }
 
-static void RockPose53(void)
+void RockPose53(void)
 {
     gCurrentSprite.pose = POSE_54;
 }
 
-static void RockPose57(void)
+void RockPose57(void)
 {
     gCurrentSprite.pose = POSE_58;
     gCurrentSprite.disableWarioInteraction = 1;
@@ -146,7 +146,7 @@ static void RockPose57(void)
     }
 }
 
-static void RockPose55(void)
+void RockPose55(void)
 {
     gCurrentSprite.pose = POSE_56;
     gCurrentSprite.disableWarioInteraction = 1;
