@@ -3,7 +3,6 @@
 
 #include "gba.h"
 
-
 enum Passage {
     PASSAGE_ENTRY,
     PASSAGE_EMERALD,
@@ -117,7 +116,6 @@ struct Window {
     u8 bottom;
     u8 content;
 };
-
 
 // gUnk_3000000
 extern u8 gCurrentPassage;

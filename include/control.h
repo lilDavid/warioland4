@@ -3,7 +3,6 @@
 
 #include "gba.h"
 
-
 #define CHECK_KEYS_ANY(input, combination) ((input) & (combination))
 #define CHECK_KEYS_ALL(input, combination) (((input) & (combination)) == (combination))
 

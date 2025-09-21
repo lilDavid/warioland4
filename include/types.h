@@ -1,9 +1,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-
 #include "gba.h"
-
 
 typedef void (*ProcedureFunc)(void);
 
@@ -37,7 +35,7 @@ typedef void (*ProcedureFunc)(void);
 // Target FPS
 #define FRAME_RATE 60
 // Convert a floating-point value of seconds into frames
-#define CONVERT_SECONDS(seconds) ((u32) ((seconds) * FRAME_RATE))
+#define CONVERT_SECONDS(seconds) ((u32)((seconds) * FRAME_RATE))
 
 #define DELTA_TIME 1
 #define TIMER_COUNT_DOWN(timer) (timer) -= DELTA_TIME

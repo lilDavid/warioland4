@@ -2,7 +2,6 @@
 
 #include "interrupts.h"
 
-
 void InterruptCallback_CallVBlank(void) {
     if (gVBlankCallback != NULL) {
         gVBlankCallback();
@@ -49,5 +48,4 @@ void InterruptCallback_SetVCount(ProcedureFunc cb) {
     }
 }
 
-void InterruptCallback_Empty(void) {
-}
+void InterruptCallback_Empty(void) {}

@@ -1,13 +1,12 @@
 #include "bg_clip.h"
 #include "oam.h"
+#include "score.h"
 #include "sound.h"
 #include "sprite.h"
 #include "sprite_ai.h"
 #include "sprite_util.h"
 #include "types.h"
-#include "score.h"
 #include "wario.h"
-
 
 const u16 sRockOam_Frame1[] = {
     2,
@@ -32,11 +31,7 @@ const u16 sRockOam_UnusedFrame4[] = {
     OAM_ENTRY(-4, -4, SPRITE_SIZE_8x8, 0, 548, 8, 0),
 };
 
-const struct AnimationFrame sRockOamData[] = {
-    { sRockOam_Frame1, 0xC8 },
-    ANIMATION_TERMINATOR
-};
-
+const struct AnimationFrame sRockOamData[] = {{sRockOam_Frame1, 0xC8}, ANIMATION_TERMINATOR};
 
 static void Rock_Init(void) {
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
@@ -144,8 +139,6 @@ static void Rock_Pose55(void) {
         gCurrentSprite.statusBits &= ~SPRITE_STATUS_9;
     }
 }
-
-
 
 void SpriteAI_Rock(void) {
     if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER && (gUnk_3000BEC & 3)) {

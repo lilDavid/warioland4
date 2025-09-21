@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 // gUnk_3001850
 // gUnk_3001852
 // gUnk_3001854

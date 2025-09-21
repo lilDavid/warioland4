@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 extern u16 gUnk_3001890;
 extern u16 gUnk_3001892;
 

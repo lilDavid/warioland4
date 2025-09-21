@@ -1,3 +1,5 @@
+// clang-format off
+
 #include "gba/m4a.h"
 
 // Some of these functions have different signatures, so we need to make this

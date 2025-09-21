@@ -1,7 +1,6 @@
 #ifndef SPRITE_AI_H
 #define SPRITE_AI_H
 
-
 enum SpritePose {
     POSE_INIT,
     POSE_INIT_1,
@@ -20,7 +19,7 @@ enum SpritePose {
     POSE_INIT_14,
 
     POSE_IDLE_INIT,  // Idle init
-    POSE_IDLE,  // Idle
+    POSE_IDLE,       // Idle
     POSE_11,
     POSE_12,
     POSE_13,
@@ -115,7 +114,6 @@ enum SpritePose {
     POSE_6C,
     POSE_6D,
 };
-
 
 void SpriteAI_BoxJewelPieceNE(void);
 void SpriteAI_BoxJewelPieceSE(void);

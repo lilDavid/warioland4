@@ -1,7 +1,6 @@
 #ifndef SRAM_H
 #define SRAM_H
 
-
 // func_8000CA8()
 void func_8000CE0(void);
 // func_8000D18()

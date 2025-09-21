@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 struct ColorFading {
     u8 type;
     u8 unk_1;

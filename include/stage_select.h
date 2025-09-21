@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 u32 StageSelectSubroutine(void);
 // func_807A380()
 // func_807A3D4()

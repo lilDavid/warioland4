@@ -1,9 +1,8 @@
 #ifndef SCORE_H
 #define SCORE_H
 
-#include "types.h"
 #include "global_data.h"
-
+#include "types.h"
 
 // Number of points per internal unit of score
 #define SCORE_RATIO 10
@@ -11,7 +10,6 @@
 #define CONVERT_SCORE(points) ((points) / SCORE_RATIO)
 
 #define MAX_SCORE CONVERT_SCORE(999990)
-
 
 enum ScoreSpriteID {
     SSPRITE_SCORE_10,
@@ -108,12 +106,12 @@ enum ScoreSpriteID {
 };
 
 struct ItemCollection {
-    u8 jewelPieceNE: 1;
-    u8 jewelPieceSE: 1;
-    u8 jewelPieceSW: 1;
-    u8 jewelPieceNW: 1;
-    u8 cd: 1;
-    u8 keyzer: 1;
+    u8 jewelPieceNE : 1;
+    u8 jewelPieceSE : 1;
+    u8 jewelPieceSW : 1;
+    u8 jewelPieceNW : 1;
+    u8 cd : 1;
+    u8 keyzer : 1;
 };
 
 #define BOSS_REWARD_55_SEC jewelPieceNE
@@ -122,7 +120,6 @@ struct ItemCollection {
 #define SHOW_BOSS_DOOR_OPENING jewelPieceNW
 #define BOSS_DEFEATED keyzer
 #define DIVA_DEFEATED cd
-
 
 extern struct ItemCollection gCurrentCollection[PASSAGE_MAX][STAGE_MAX];
 extern s32 gHighScoreTable[PASSAGE_MAX][NORMAL_STAGE_COUNT];

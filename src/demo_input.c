@@ -1,11 +1,9 @@
-#include "control.h"
 #include "demo_input.h"
+#include "control.h"
 #include "demo.h"
 #include "types.h"
 
-
 IWRAM_DATA u8 gDemoState = 0;
-
 
 void DemoInputSubroutine(void) {
     if (gDemoState == DEMO_STATE_RECORDING) {

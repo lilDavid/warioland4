@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 extern vu16 gInterruptCheck;
 extern u16 gInterruptHandlerBuffer[1024];
 

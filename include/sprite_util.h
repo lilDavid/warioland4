@@ -3,16 +3,13 @@
 
 #include "gba.h"
 
-
 extern u8 gUnk_3000A50;
 extern u8 gUnk_3000A51;
-
 
 extern const s16 sUnk_8352ADC[];
 extern const s16 sUnk_8352AFC[];
 extern const s16 sUnk_8352B18[];
 extern const s16 sUnk_8352B40[];
-
 
 void func_80238A4(void);
 void func_80238E8(void);

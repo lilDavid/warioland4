@@ -1,0 +1,17 @@
+BasedOnStyle: Chromium
+
+IndentWidth: 4
+ColumnLimit: 120
+UseTab: Never
+
+AlignAfterOpenBracket: BlockIndent
+AllowShortEnumsOnASingleLine: false
+BinPackArguments: false
+InsertBraces: true
+SkipMacroDefinitionBody: true
+
+InsertNewlineAtEOF: true
+KeepEmptyLines:
+  AtEndOfFile: false
+  AtStartOfBlock: false
+  AtStartOfFile: false

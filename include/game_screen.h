@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 u32 GameScreenSubroutine(void);
 void GameScreen_SetVBlank(void);
 void func_801BC0C(void);

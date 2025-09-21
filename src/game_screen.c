@@ -2,8 +2,8 @@
 #include "game_screen_gfx.h"
 #include "game_screen_helpers.h"
 
-#include "backgrounds.h"
 #include "background_registers.h"
+#include "backgrounds.h"
 #include "boss_pause.h"
 #include "color_effects.h"
 #include "control.h"
@@ -20,14 +20,13 @@
 #include "save_file.h"
 #include "score.h"
 #include "scrolling.h"
+#include "shop.h"
 #include "sound.h"
 #include "sprite.h"
-#include "shop.h"
 #include "stage_end.h"
 #include "wario.h"
 #include "wario_effects.h"
 #include "wario_palette.h"
-
 
 u32 GameScreenSubroutine(void) {
     u32 result;
@@ -266,8 +265,8 @@ void func_801BEA8(void) {
         }
         if (gCurrentWarioEffect.type != 0) {
             effect = gCurrentWarioEffect.type - 1;
-            DmaCopy16(3, sWarioEffectsGfx[effect].pGfx1, 0x6010800, (s32) sWarioEffectsGfx[effect].gfx1Size);
-            DmaCopy16(3, sWarioEffectsGfx[effect].pGfx2, 0x6010C00, (s32) sWarioEffectsGfx[effect].gfx2Size);
+            DmaCopy16(3, sWarioEffectsGfx[effect].pGfx1, 0x6010800, (s32)sWarioEffectsGfx[effect].gfx1Size);
+            DmaCopy16(3, sWarioEffectsGfx[effect].pGfx2, 0x6010C00, (s32)sWarioEffectsGfx[effect].gfx2Size);
         }
         DmaCopy16(3, gWarioPalette, OBJ_PLTT, gWarioPaletteSize);
     }
@@ -364,12 +363,13 @@ void GameScreen_InitAndLoadGenerics(void) {
     func_80746C0();
     DmaCopy16(3, sUnk_82DDDA0, OBJ_PLTT, 0x20);
     DmaCopy16(3, sUnk_82DDDC0, OBJ_PLTT + 0x40, 0x20);
-    DmaCopy16(3, sCommonSpritesPal, OBJ_PLTT + 0x80, 0x80)
-    GameScreen_InitWario();
-    do {} while ((u16) (REG_VCOUNT - 0x15) < 0x8C);
+    DmaCopy16(3, sCommonSpritesPal, OBJ_PLTT + 0x80, 0x80) GameScreen_InitWario();
+    do {
+    } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
     func_806B410();
-    do {} while ((u16) (REG_VCOUNT - 0x15) < 0x8C);
+    do {
+    } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
     if ((gPauseFlag == 0) && (gUnk_3000C3F != 0)) {
         Wario_ProcessControls();
@@ -377,7 +377,8 @@ void GameScreen_InitAndLoadGenerics(void) {
     }
     func_8010154();
     func_801BD4C();
-    do {} while ((u16) (REG_VCOUNT - 0x15) < 0x8C);
+    do {
+    } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
     func_8075F44();
     func_801DE7C();
@@ -404,7 +405,8 @@ void GameScreen_InitAndLoadGenerics(void) {
     } else {
         bldcnt = 0x3E41;
     }
-    do {} while ((u16) (REG_VCOUNT - 0x15) < 0x8C);
+    do {
+    } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
     gHasTemporarySave = 0;
     gPauseFlag = 0;

@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 struct WarioEffectGfx {
     void* pGfx1;
     u32 gfx1Size;

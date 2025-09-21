@@ -5,10 +5,8 @@
 
 #include "oam.h"
 
-
 #define MAX_HEARTS (8)
 #define HEART_GAUGE_MAX (8)
-
 
 enum WarioReaction {
     REACT_NORMAL,
@@ -25,7 +23,6 @@ enum WarioReaction {
     REACT_MASK,
     REACT_MAX
 };
-
 
 struct WarioData {
     /* 0x00 */ u8 reaction;
@@ -145,7 +142,6 @@ extern struct WarioAnimation sUnk_82DDCD0[];
 extern u16 sUnk_82DDDA0[];
 extern u16 sUnk_82DDDC0[];
 extern u8 sUnk_82DF094[];
-
 
 void Wario_ProcessControls();
 void Wario_ProcessCollision();

@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 u32 CreditsSubroutine(void);
 // func_8093084()
 // func_80930B8()

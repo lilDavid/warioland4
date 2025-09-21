@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 u32 SaveResetSubroutine(void);
 // func_80928E4()
 // func_8092914()

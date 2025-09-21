@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 enum ShopItem {
     SHOP_ITEM_APPLE_BOMB,
     SHOP_ITEM_BLAST_CANNON,

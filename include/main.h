@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 enum GameMode {
     GM_CUTSCENE = 0,
     GM_STAGE_SELECT = 1,

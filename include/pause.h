@@ -3,9 +3,7 @@
 
 #include "types.h"
 
-
 extern s8 gPauseFlag;
-
 
 u32 PauseScreenSubroutine(void);
 // func_8088830()

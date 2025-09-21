@@ -1,7 +1,6 @@
 #ifndef SAVE_FILE_H
 #define SAVE_FILE_H
 
-
 void func_8072CA0(void);
 void func_8072D24(void);
 // func_8072E8C()

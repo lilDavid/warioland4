@@ -10,9 +10,8 @@
 #include "sprite_util.h"
 #include "sprite_wario_interaction.h"
 #include "types.h"
-#include "wario.h"
 #include "voice_set.h"
-
+#include "wario.h"
 
 const u16 sVortexLargePartOam_Frame1[] = {
     1,
@@ -35,32 +34,15 @@ const u16 sVortexKeyzerOam_Frame1[] = {
     OAM_ENTRY(-16, -16, SPRITE_SIZE_32x32, 0, 536, 10, 0),
 };
 
-const struct AnimationFrame sVortexLargePartOam[] = {
-    { sVortexLargePartOam_Frame1, 200 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sVortexMediumPartOam[] = {
-    { sVortexMediumPartOam_Frame1, 200 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sVortexSmallPartOam[] = {
-    { sVortexSmallPartOam_Frame1, 200 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sVortexWarioOam[] = {
-    { sVortexWarioOam_Frame1, 200 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sVortexKeyzerOam[] = {
-    { sVortexKeyzerOam_Frame1, 200 },
-    ANIMATION_TERMINATOR
-};
-
+const struct AnimationFrame sVortexLargePartOam[] = {{sVortexLargePartOam_Frame1, 200}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sVortexMediumPartOam[] = {{sVortexMediumPartOam_Frame1, 200}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sVortexSmallPartOam[] = {{sVortexSmallPartOam_Frame1, 200}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sVortexWarioOam[] = {{sVortexWarioOam_Frame1, 200}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sVortexKeyzerOam[] = {{sVortexKeyzerOam_Frame1, 200}, ANIMATION_TERMINATOR};
 
 const u16 sVortexPal[] = {
-    #include "data/sprites/Vortex.pal.inc"
+#include "data/sprites/Vortex.pal.inc"
 };
-
 
 void Vortex_SetCommonProperties(void) {
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_7 | SPRITE_STATUS_3;
@@ -108,8 +90,13 @@ void Vortex_FinishStage(void) {
     gWarioPauseTimer = CONVERT_SECONDS(16.0 + 2.0 / 3.0);
     gUnk_3000C03 = 2;
     Autosave_StageClear();
-    func_801E430(PSPRITE_WARIO_ENTERING_VORTEX, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
-            gCurrentSprite.yPosition, gCurrentSprite.xPosition);
+    func_801E430(
+        PSPRITE_WARIO_ENTERING_VORTEX,
+        gCurrentSprite.roomSlot,
+        gCurrentSprite.gfxSlot,
+        gCurrentSprite.yPosition,
+        gCurrentSprite.xPosition
+    );
     gUnk_3000C0E = 1;
     gVortexYPosition = gCurrentSprite.yPosition;
     gVortexXPosition = gCurrentSprite.xPosition;
@@ -155,17 +142,33 @@ void SpriteAI_Vortex(void) {
     gCurrentSprite.disableWarioInteraction = 1;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = MAKE_PERSISTENT_DATA(POSE_INIT_1, PERSISTENT_STATUS_LOADED);
+            gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
+                MAKE_PERSISTENT_DATA(POSE_INIT_1, PERSISTENT_STATUS_LOADED);
             gCurrentSprite.pose = POSE_11;
             gCurrentSprite.work0 = CONVERT_SECONDS(1.5);
             gCurrentSprite.work2 = U8_MAX;
             Vortex_InitSmallPart();
-            Sprite_SpawnAsChild(PSPRITE_VORTEX_PART_MEDIUM, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
-                    gCurrentSprite.yPosition, gCurrentSprite.xPosition);
-            Sprite_SpawnAsChild(PSPRITE_VORTEX_PART_LARGE, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
-                    gCurrentSprite.yPosition, gCurrentSprite.xPosition);
-            Sprite_SpawnAsChild(PSPRITE_WARIO_EXITING_VORTEX, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
-                    gCurrentSprite.yPosition, gCurrentSprite.xPosition);
+            Sprite_SpawnAsChild(
+                PSPRITE_VORTEX_PART_MEDIUM,
+                gCurrentSprite.roomSlot,
+                gCurrentSprite.gfxSlot,
+                gCurrentSprite.yPosition,
+                gCurrentSprite.xPosition
+            );
+            Sprite_SpawnAsChild(
+                PSPRITE_VORTEX_PART_LARGE,
+                gCurrentSprite.roomSlot,
+                gCurrentSprite.gfxSlot,
+                gCurrentSprite.yPosition,
+                gCurrentSprite.xPosition
+            );
+            Sprite_SpawnAsChild(
+                PSPRITE_WARIO_EXITING_VORTEX,
+                gCurrentSprite.roomSlot,
+                gCurrentSprite.gfxSlot,
+                gCurrentSprite.yPosition,
+                gCurrentSprite.xPosition
+            );
             if (gCurrentSprite.globalID == PSPRITE_VORTEX_2) {
                 Sprite_SpawnSecondary(SUBPIXELS_FROM_BLOCKS(8.25), BLOCK_SIZE, SSPRITE_51);
             }
@@ -198,10 +201,20 @@ void SpriteAI_Vortex(void) {
                 gCurrentSprite.pose = POSE_18;
             }
             Vortex_InitSmallPart();
-            Sprite_SpawnAsChild(PSPRITE_VORTEX_PART_MEDIUM_2, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
-                    gCurrentSprite.yPosition, gCurrentSprite.xPosition);
-            Sprite_SpawnAsChild(PSPRITE_VORTEX_PART_LARGE_2, gCurrentSprite.roomSlot, gCurrentSprite.gfxSlot,
-                    gCurrentSprite.yPosition, gCurrentSprite.xPosition);
+            Sprite_SpawnAsChild(
+                PSPRITE_VORTEX_PART_MEDIUM_2,
+                gCurrentSprite.roomSlot,
+                gCurrentSprite.gfxSlot,
+                gCurrentSprite.yPosition,
+                gCurrentSprite.xPosition
+            );
+            Sprite_SpawnAsChild(
+                PSPRITE_VORTEX_PART_LARGE_2,
+                gCurrentSprite.roomSlot,
+                gCurrentSprite.gfxSlot,
+                gCurrentSprite.yPosition,
+                gCurrentSprite.xPosition
+            );
             break;
 
         case POSE_18:
@@ -301,7 +314,6 @@ void SpriteAI_VortexPartMedium(void) {
     gCurrentSprite.affinePD = FixedMul(COS(gCurrentSprite.work1), FixedInverse(gCurrentSprite.work2));
     Vortex_AnimatePalette();
 }
-
 
 void SpriteAI_VortexPartLarge(void) {
     gCurrentSprite.disableWarioInteraction = 1;
@@ -426,7 +438,7 @@ void SpriteAI_WarioEnteringVortex(void) {
             break;
 
         case POSE_IDLE:
-            if ((u8) (gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
+            if ((u8)(gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
                 gCurrentSprite.work2 -= 4;
             }
             gCurrentSprite.work1 -= ANGLE_PI / 16;
@@ -471,7 +483,7 @@ void SpriteAI_KeyzerEnteringVortex(void) {
             break;
 
         case POSE_IDLE:
-            if ((u8) (gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
+            if ((u8)(gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
                 gCurrentSprite.work2 -= 4;
             }
             gCurrentSprite.work1 -= ANGLE_PI / 16;

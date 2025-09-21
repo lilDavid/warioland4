@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 u32 MinigameSubroutine(void);
 s32 Minigame_Random(void);
 // func_8089B9C()

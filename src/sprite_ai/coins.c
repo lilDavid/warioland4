@@ -1,15 +1,14 @@
 #include "bg_clip.h"
 #include "global_data.h"
 #include "oam.h"
+#include "score.h"
 #include "sound.h"
 #include "sprite.h"
 #include "sprite_ai.h"
 #include "sprite_util.h"
-#include "score.h"
 #include "types.h"
 #include "voice_set.h"
 #include "wario.h"
-
 
 const u16 sCoin500PointsOam_Frame1[] = {
     1,
@@ -124,62 +123,61 @@ const u16 sCoinsUnusedOamFrame[] = {
 };
 
 const struct AnimationFrame sCoin500PointsOamData[] = {
-    { sCoin500PointsOam_Frame1, 3 },
-    { sCoin500PointsOam_Frame2, 3 },
-    { sCoin500PointsOam_Frame3, 3 },
-    { sCoin500PointsOam_Frame4, 3 },
-    { sCoin500PointsOam_Frame5, 3 },
-    { sCoin500PointsOam_Frame6, 3 },
-    { sCoin500PointsOam_Frame7, 3 },
-    { sCoin500PointsOam_Frame2, 3 },
-    { sCoin500PointsOam_Frame3, 3 },
-    { sCoin500PointsOam_Frame4, 3 },
-    { sCoin500PointsOam_Frame5, 3 },
-    { sCoin500PointsOam_Frame6, 3 },
+    {sCoin500PointsOam_Frame1, 3},
+    {sCoin500PointsOam_Frame2, 3},
+    {sCoin500PointsOam_Frame3, 3},
+    {sCoin500PointsOam_Frame4, 3},
+    {sCoin500PointsOam_Frame5, 3},
+    {sCoin500PointsOam_Frame6, 3},
+    {sCoin500PointsOam_Frame7, 3},
+    {sCoin500PointsOam_Frame2, 3},
+    {sCoin500PointsOam_Frame3, 3},
+    {sCoin500PointsOam_Frame4, 3},
+    {sCoin500PointsOam_Frame5, 3},
+    {sCoin500PointsOam_Frame6, 3},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sCoin100PointsOamData[] = {
-    { sCoin100PointsOam_Frame1, 3 },
-    { sCoin100PointsOam_Frame2, 3 },
-    { sCoin100PointsOam_Frame3, 3 },
-    { sCoin100PointsOam_Frame4, 3 },
-    { sCoin100PointsOam_Frame5, 3 },
-    { sCoin100PointsOam_Frame6, 3 },
-    { sCoin100PointsOam_Frame7, 3 },
-    { sCoin100PointsOam_Frame2, 3 },
-    { sCoin100PointsOam_Frame3, 3 },
-    { sCoin100PointsOam_Frame4, 3 },
-    { sCoin100PointsOam_Frame5, 3 },
-    { sCoin100PointsOam_Frame6, 3 },
+    {sCoin100PointsOam_Frame1, 3},
+    {sCoin100PointsOam_Frame2, 3},
+    {sCoin100PointsOam_Frame3, 3},
+    {sCoin100PointsOam_Frame4, 3},
+    {sCoin100PointsOam_Frame5, 3},
+    {sCoin100PointsOam_Frame6, 3},
+    {sCoin100PointsOam_Frame7, 3},
+    {sCoin100PointsOam_Frame2, 3},
+    {sCoin100PointsOam_Frame3, 3},
+    {sCoin100PointsOam_Frame4, 3},
+    {sCoin100PointsOam_Frame5, 3},
+    {sCoin100PointsOam_Frame6, 3},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sCoin50PointsOamData[] = {
-    { sCoin50PointsOam_Frame1, 3 },
-    { sCoin50PointsOam_Frame2, 3 },
-    { sCoin50PointsOam_Frame3, 3 },
-    { sCoin50PointsOam_Frame4, 3 },
-    { sCoin50PointsOam_Frame5, 3 },
-    { sCoin50PointsOam_Frame6, 3 },
-    { sCoin50PointsOam_Frame7, 3 },
-    { sCoin50PointsOam_Frame2, 3 },
-    { sCoin50PointsOam_Frame3, 3 },
-    { sCoin50PointsOam_Frame4, 3 },
-    { sCoin50PointsOam_Frame5, 3 },
-    { sCoin50PointsOam_Frame6, 3 },
+    {sCoin50PointsOam_Frame1, 3},
+    {sCoin50PointsOam_Frame2, 3},
+    {sCoin50PointsOam_Frame3, 3},
+    {sCoin50PointsOam_Frame4, 3},
+    {sCoin50PointsOam_Frame5, 3},
+    {sCoin50PointsOam_Frame6, 3},
+    {sCoin50PointsOam_Frame7, 3},
+    {sCoin50PointsOam_Frame2, 3},
+    {sCoin50PointsOam_Frame3, 3},
+    {sCoin50PointsOam_Frame4, 3},
+    {sCoin50PointsOam_Frame5, 3},
+    {sCoin50PointsOam_Frame6, 3},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sCoin10PointsOamData[] = {
-    { sCoin10PointsOam_Frame1, 3 },
-    { sCoin10PointsOam_Frame2, 3 },
-    { sCoin10PointsOam_Frame3, 3 },
-    { sCoin10PointsOam_Frame4, 3 },
-    { sCoin10PointsOam_Frame5, 3 },
-    { sCoin10PointsOam_Frame2, 3 },
-    { sCoin10PointsOam_Frame3, 3 },
-    { sCoin10PointsOam_Frame4, 3 },
+    {sCoin10PointsOam_Frame1, 3},
+    {sCoin10PointsOam_Frame2, 3},
+    {sCoin10PointsOam_Frame3, 3},
+    {sCoin10PointsOam_Frame4, 3},
+    {sCoin10PointsOam_Frame5, 3},
+    {sCoin10PointsOam_Frame2, 3},
+    {sCoin10PointsOam_Frame3, 3},
+    {sCoin10PointsOam_Frame4, 3},
     ANIMATION_TERMINATOR
 };
-
 
 const u16 sCoinsUnusedOam_Frame1[] = {
     4,
@@ -235,17 +233,16 @@ const u16 sCoinsUnusedOam_Frame8[] = {
 };
 
 const struct AnimationFrame sCoinsUnusedOamData[] = {
-    { sCoinsUnusedOam_Frame1, 6 },
-    { sCoinsUnusedOam_Frame2, 6 },
-    { sCoinsUnusedOam_Frame3, 6 },
-    { sCoinsUnusedOam_Frame4, 6 },
-    { sCoinsUnusedOam_Frame5, 6 },
-    { sCoinsUnusedOam_Frame6, 6 },
-    { sCoinsUnusedOam_Frame7, 6 },
-    { sCoinsUnusedOam_Frame8, 6 },
+    {sCoinsUnusedOam_Frame1, 6},
+    {sCoinsUnusedOam_Frame2, 6},
+    {sCoinsUnusedOam_Frame3, 6},
+    {sCoinsUnusedOam_Frame4, 6},
+    {sCoinsUnusedOam_Frame5, 6},
+    {sCoinsUnusedOam_Frame6, 6},
+    {sCoinsUnusedOam_Frame7, 6},
+    {sCoinsUnusedOam_Frame8, 6},
     ANIMATION_TERMINATOR
 };
-
 
 const u16 sDiamondOam_Frame1[] = {
     3,
@@ -467,41 +464,16 @@ const u16 sDiamondOam_Frame32[] = {
 };
 
 const struct AnimationFrame sDiamondOamData[] = {
-    { sDiamondOam_Frame1, 4 },
-    { sDiamondOam_Frame2, 4 },
-    { sDiamondOam_Frame3, 4 },
-    { sDiamondOam_Frame4, 4 },
-    { sDiamondOam_Frame5, 4 },
-    { sDiamondOam_Frame6, 4 },
-    { sDiamondOam_Frame7, 4 },
-    { sDiamondOam_Frame8, 4 },
-    { sDiamondOam_Frame9, 4 },
-    { sDiamondOam_Frame10, 4 },
-    { sDiamondOam_Frame11, 4 },
-    { sDiamondOam_Frame12, 4 },
-    { sDiamondOam_Frame13, 4 },
-    { sDiamondOam_Frame14, 4 },
-    { sDiamondOam_Frame15, 4 },
-    { sDiamondOam_Frame16, 4 },
-    { sDiamondOam_Frame17, 4 },
-    { sDiamondOam_Frame18, 4 },
-    { sDiamondOam_Frame19, 4 },
-    { sDiamondOam_Frame20, 4 },
-    { sDiamondOam_Frame21, 4 },
-    { sDiamondOam_Frame22, 4 },
-    { sDiamondOam_Frame23, 4 },
-    { sDiamondOam_Frame24, 4 },
-    { sDiamondOam_Frame25, 4 },
-    { sDiamondOam_Frame26, 4 },
-    { sDiamondOam_Frame27, 4 },
-    { sDiamondOam_Frame28, 4 },
-    { sDiamondOam_Frame29, 4 },
-    { sDiamondOam_Frame30, 4 },
-    { sDiamondOam_Frame31, 4 },
-    { sDiamondOam_Frame32, 4 },
+    {sDiamondOam_Frame1, 4},  {sDiamondOam_Frame2, 4},  {sDiamondOam_Frame3, 4},  {sDiamondOam_Frame4, 4},
+    {sDiamondOam_Frame5, 4},  {sDiamondOam_Frame6, 4},  {sDiamondOam_Frame7, 4},  {sDiamondOam_Frame8, 4},
+    {sDiamondOam_Frame9, 4},  {sDiamondOam_Frame10, 4}, {sDiamondOam_Frame11, 4}, {sDiamondOam_Frame12, 4},
+    {sDiamondOam_Frame13, 4}, {sDiamondOam_Frame14, 4}, {sDiamondOam_Frame15, 4}, {sDiamondOam_Frame16, 4},
+    {sDiamondOam_Frame17, 4}, {sDiamondOam_Frame18, 4}, {sDiamondOam_Frame19, 4}, {sDiamondOam_Frame20, 4},
+    {sDiamondOam_Frame21, 4}, {sDiamondOam_Frame22, 4}, {sDiamondOam_Frame23, 4}, {sDiamondOam_Frame24, 4},
+    {sDiamondOam_Frame25, 4}, {sDiamondOam_Frame26, 4}, {sDiamondOam_Frame27, 4}, {sDiamondOam_Frame28, 4},
+    {sDiamondOam_Frame29, 4}, {sDiamondOam_Frame30, 4}, {sDiamondOam_Frame31, 4}, {sDiamondOam_Frame32, 4},
     ANIMATION_TERMINATOR
 };
-
 
 const u16 sLittleHeartOam_Frame1[] = {
     1,
@@ -521,31 +493,29 @@ const u16 sLittleHeartOam_Frame4[] = {
 };
 
 const struct AnimationFrame sLittleHeartOamData[] = {
-    { sLittleHeartOam_Frame1, 8 },
-    { sLittleHeartOam_Frame2, 8 },
-    { sLittleHeartOam_Frame3, 8 },
-    { sLittleHeartOam_Frame4, 8 },
+    {sLittleHeartOam_Frame1, 8},
+    {sLittleHeartOam_Frame2, 8},
+    {sLittleHeartOam_Frame3, 8},
+    {sLittleHeartOam_Frame4, 8},
     ANIMATION_TERMINATOR
 };
 
-
-const s16 sDiamondFloatYVelocity[] = {
-    0, 0, 0, 0, 0, 0, 0, 0, 0, -PIXEL_SIZE,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, -PIXEL_SIZE,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, PIXEL_SIZE,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, PIXEL_SIZE,
-    S16_MAX
-};
-
+const s16 sDiamondFloatYVelocity[] = {0, 0, 0, 0, 0,           0, 0, 0, 0, -PIXEL_SIZE, 0,      0, 0, 0, 0,
+                                      0, 0, 0, 0, -PIXEL_SIZE, 0, 0, 0, 0, 0,           0,      0, 0, 0, PIXEL_SIZE,
+                                      0, 0, 0, 0, 0,           0, 0, 0, 0, PIXEL_SIZE,  S16_MAX};
 
 static void func_802BADC(void) {
     gCurrentSprite.work1 += 1;
-    func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
+    func_8023BFC(
+        gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
+    );
     if (gUnk_3000A51 == 0x11) {
         if (gCurrentSprite.work2 >= 2) {
             gCurrentSprite.work2 -= 1;
         } else {
-            func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
+            func_8023BFC(
+                gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+            );
             if (gUnk_3000A51 == 0x11) {
                 gCurrentSprite.work2 = 0;
             }
@@ -558,8 +528,12 @@ static void func_802BADC(void) {
             if (gUnk_3000A50 == 0 && gCurrentSprite.pose == POSE_2C) {
                 gCurrentSprite.pose = POSE_43;
             } else {
-                if ((func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft), gUnk_3000A51 == 0) &&
-                    (func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight), gUnk_3000A51 == 0)) {
+                if ((func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft),
+                     gUnk_3000A51 == 0) &&
+                    (func_8023BFC(
+                         gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+                     ),
+                     gUnk_3000A51 == 0)) {
                     gCurrentSprite.pose = POSE_47;
                 } else {
                     if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
@@ -587,12 +561,16 @@ static void func_802BADC(void) {
 
 static void func_802BC24(void) {
     gCurrentSprite.work1 += 1;
-    func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
+    func_8023BFC(
+        gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+    );
     if (gUnk_3000A51 == 0x11) {
         if (gCurrentSprite.work2 >= 2) {
             gCurrentSprite.work2 -= 1;
         } else {
-            func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
+            func_8023BFC(
+                gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
+            );
             if (gUnk_3000A51 == 0x11) {
                 gCurrentSprite.work2 = 0;
             }
@@ -605,8 +583,12 @@ static void func_802BC24(void) {
             if (gUnk_3000A50 == 0 && gCurrentSprite.pose == POSE_2E) {
                 gCurrentSprite.pose = POSE_45;
             } else {
-                if ((func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight), gUnk_3000A51 == 0) &&
-                    (func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft), gUnk_3000A51 == 0)) {
+                if ((func_8023BFC(
+                         gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+                     ),
+                     gUnk_3000A51 == 0) &&
+                    (func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft),
+                     gUnk_3000A51 == 0)) {
                     gCurrentSprite.pose = POSE_49;
                 } else {
                     if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
@@ -680,7 +662,9 @@ static void Coin_Pose44(void) {
         }
         m4aSongNumStart(SOUND_36);
     } else {
-        func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
+        func_8023BFC(
+            gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
+        );
         if (gUnk_3000A51 == 0x11) {
             gCurrentSprite.pose = POSE_45;
         }
@@ -735,7 +719,9 @@ static void Coin_Pose46(void) {
         }
         m4aSongNumStart(SOUND_36);
     } else {
-        func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
+        func_8023BFC(
+            gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+        );
         if (gUnk_3000A51 == 0x11) {
             gCurrentSprite.pose = POSE_43;
         }
@@ -905,7 +891,9 @@ static void Coin_Collect(void) {
 
         case PSPRITE_COIN_1000POINTS:
             Score_GivePoints(CONVERT_SCORE(1000));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 180, gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000);
+            Sprite_SpawnSecondary(
+                gCurrentSprite.yPosition - 180, gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000
+            );
             if (gWarioData.reaction == REACT_WATER) {
                 m4aSongNumStart(SE_GET_DIAMOND_UNDERWATER);
             } else {
@@ -1007,9 +995,7 @@ static void Diamond_Collect(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     Score_GivePoints(CONVERT_SCORE(1000));
     Sprite_SpawnSecondary(
-        gCurrentSprite.yPosition - SUBPIXELS_FROM_PIXELS(25),
-        gCurrentSprite.xPosition - BLOCK_SIZE,
-        SSPRITE_SCORE_1000
+        gCurrentSprite.yPosition - SUBPIXELS_FROM_PIXELS(25), gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000
     );
     if (gWarioData.reaction == REACT_WATER) {
         m4aSongNumStart(SE_GET_DIAMOND_UNDERWATER);

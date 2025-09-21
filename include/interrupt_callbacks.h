@@ -3,11 +3,9 @@
 
 #include "types.h"
 
-
 extern ProcedureFunc gVBlankCallback;
 extern ProcedureFunc gHBlankCallback;
 extern ProcedureFunc gVCountCallback;
-
 
 void InterruptCallback_CallVBlank(void);
 void InterruptCallback_SetVBlank(ProcedureFunc cb);

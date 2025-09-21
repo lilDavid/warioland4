@@ -9,6 +9,7 @@ This repository can build the following versions:
 ## Dependencies
 
 - `binutils-arm-none-eabi`
+- `clang-format`
 - Python 3
 
 ## Building

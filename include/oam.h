@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 #define MAX_OAM_SLOTS 128
 
 struct AnimationFrame {
@@ -17,14 +16,12 @@ struct AnimationFrameU16 {
     u16 time;
 };
 
-
-#define OAM_ENTRY(x, y, dimensions, flip, tile, palette, priority)\
-    SPRITE_SHAPE(dimensions) << 14 | ST_OAM_4BPP << 12 | ST_OAM_AFFINE_OFF << 8 | ((y) & 0xFF),\
-    SPRITE_SIZE(dimensions) << 14 | (flip) << 9 | ((x) & 0x1FF),\
+#define OAM_ENTRY(x, y, dimensions, flip, tile, palette, priority)                              \
+    SPRITE_SHAPE(dimensions) << 14 | ST_OAM_4BPP << 12 | ST_OAM_AFFINE_OFF << 8 | ((y) & 0xFF), \
+    SPRITE_SIZE(dimensions) << 14 | (flip) << 9 | ((x) & 0x1FF),                                \
     ((palette) << 12) | ((priority) << 10) | (tile)
 
 #define ANIMATION_TERMINATOR { NULL, 0 }
-
 
 extern OamData gOamBuffer[MAX_OAM_SLOTS];
 extern u8 gOamSlotsUsed;

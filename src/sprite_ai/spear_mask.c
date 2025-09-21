@@ -1,14 +1,13 @@
 #include "bg_clip.h"
 #include "global_data.h"
 #include "oam.h"
+#include "score.h"
+#include "sound.h"
 #include "sprite.h"
 #include "sprite_ai.h"
 #include "sprite_util.h"
 #include "types.h"
-#include "score.h"
-#include "sound.h"
 #include "wario.h"
-
 
 enum SpearMaskExtraPoses {
     SPEAR_MASK_POSE_6E = 0x6E,
@@ -24,7 +23,6 @@ enum SpearMaskExtraPoses {
 #define SPEAR_MASK_PALETTE_YELLOW 0
 #define SPEAR_MASK_PALETTE_BLUE 1
 #define SPEAR_MASK_PALETTE_RED 2
-
 
 const u16 sSpearMaskWalkingOam_Frame1[] = {
     3,
@@ -550,178 +548,155 @@ const u16 sOamFrame_83B4152[] = {
 };
 
 const struct AnimationFrame sSpearMaskWalkingOam[] = {
-    { sSpearMaskWalkingOam_Frame1, 7 },
-    { sSpearMaskWalkingOam_Frame2, 7 },
-    { sSpearMaskWalkingOam_Frame3, 7 },
-    { sSpearMaskWalkingOam_Frame4, 7 },
-    { sSpearMaskWalkingOam_Frame5, 7 },
-    { sSpearMaskWalkingOam_Frame6, 7 },
+    {sSpearMaskWalkingOam_Frame1, 7},
+    {sSpearMaskWalkingOam_Frame2, 7},
+    {sSpearMaskWalkingOam_Frame3, 7},
+    {sSpearMaskWalkingOam_Frame4, 7},
+    {sSpearMaskWalkingOam_Frame5, 7},
+    {sSpearMaskWalkingOam_Frame6, 7},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskCrushedOam[] = {
-    { sSpearMaskCrushedOam_Frame1, 2 },
-    { sSpearMaskCrushedOam_Frame2, 5 },
+    {sSpearMaskCrushedOam_Frame1, 2},
+    {sSpearMaskCrushedOam_Frame2, 5},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskBashedOam[] = {
-    { sSpearMaskBashedOam_Frame1, 18 },
-    { sSpearMaskBashedOam_Frame2, 40 },
+    {sSpearMaskBashedOam_Frame1, 18},
+    {sSpearMaskBashedOam_Frame2, 40},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskTurning1Oam[] = {
-    { sSpearMaskTurning1Oam_Frame1, 5 },
-    { sSpearMaskTurning1Oam_Frame2, 7 },
+    {sSpearMaskTurning1Oam_Frame1, 5},
+    {sSpearMaskTurning1Oam_Frame2, 7},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskTurning2Oam[] = {
-    { sSpearMaskTurning2Oam_Frame1, 6 },
-    { sSpearMaskTurning2Oam_Frame2, 6 },
-    { sSpearMaskTurning2Oam_Frame3, 6 },
+    {sSpearMaskTurning2Oam_Frame1, 6},
+    {sSpearMaskTurning2Oam_Frame2, 6},
+    {sSpearMaskTurning2Oam_Frame3, 6},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskTurning3Oam[] = {
-    { sSpearMaskTurning3Oam_Frame1, 8 },
-    { sSpearMaskTurning3Oam_Frame2, 8 },
+    {sSpearMaskTurning3Oam_Frame1, 8},
+    {sSpearMaskTurning3Oam_Frame2, 8},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskOam_83B4224[] = {
-    { sOamFrame_83B3B9A, 7 },
-    { sSpearMaskHitWarioOam_Frame1, 10 },
+    {sOamFrame_83B3B9A, 7},
+    {sSpearMaskHitWarioOam_Frame1, 10},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskStunnedOam[] = {
-    { sSpearMaskStunnedOam_Frame1, 6 },
-    { sSpearMaskStunnedOam_Frame2, 6 },
-    { sSpearMaskStunnedOam_Frame3, 6 },
-    { sSpearMaskStunnedOam_Frame4, 6 },
-    { sSpearMaskStunnedOam_Frame5, 6 },
-    { sSpearMaskStunnedOam_Frame6, 6 },
+    {sSpearMaskStunnedOam_Frame1, 6},
+    {sSpearMaskStunnedOam_Frame2, 6},
+    {sSpearMaskStunnedOam_Frame3, 6},
+    {sSpearMaskStunnedOam_Frame4, 6},
+    {sSpearMaskStunnedOam_Frame5, 6},
+    {sSpearMaskStunnedOam_Frame6, 6},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskGettingUpOam[] = {
-    { sSpearMaskGettingUpOam_Frame1, 5 },
-    { sSpearMaskGettingUpOam_Frame2, 5 },
-    { sSpearMaskGettingUpOam_Frame3, 5 },
-    { sSpearMaskGettingUpOam_Frame2, 5 },
-    { sSpearMaskGettingUpOam_Frame1, 5 },
-    { sSpearMaskGettingUpOam_Frame2, 5 },
-    { sSpearMaskGettingUpOam_Frame3, 5 },
-    { sSpearMaskGettingUpOam_Frame2, 5 },
-    { sSpearMaskGettingUpOam_Frame4, 5 },
-    { sSpearMaskGettingUpOam_Frame5, 5 },
-    { sSpearMaskGettingUpOam_Frame6, 10 },
-    { sSpearMaskGettingUpOam_Frame7, 5 },
-    { sSpearMaskGettingUpOam_Frame8, 5 },
-    { sSpearMaskGettingUpOam_Frame9, 5 },
-    { sSpearMaskGettingUpOam_Frame10, 5 },
-    { sSpearMaskGettingUpOam_Frame11, 5 },
-    { sSpearMaskGettingUpOam_Frame12, 5 },
-    { sSpearMaskGettingUpOam_Frame13, 5 },
+    {sSpearMaskGettingUpOam_Frame1, 5},
+    {sSpearMaskGettingUpOam_Frame2, 5},
+    {sSpearMaskGettingUpOam_Frame3, 5},
+    {sSpearMaskGettingUpOam_Frame2, 5},
+    {sSpearMaskGettingUpOam_Frame1, 5},
+    {sSpearMaskGettingUpOam_Frame2, 5},
+    {sSpearMaskGettingUpOam_Frame3, 5},
+    {sSpearMaskGettingUpOam_Frame2, 5},
+    {sSpearMaskGettingUpOam_Frame4, 5},
+    {sSpearMaskGettingUpOam_Frame5, 5},
+    {sSpearMaskGettingUpOam_Frame6, 10},
+    {sSpearMaskGettingUpOam_Frame7, 5},
+    {sSpearMaskGettingUpOam_Frame8, 5},
+    {sSpearMaskGettingUpOam_Frame9, 5},
+    {sSpearMaskGettingUpOam_Frame10, 5},
+    {sSpearMaskGettingUpOam_Frame11, 5},
+    {sSpearMaskGettingUpOam_Frame12, 5},
+    {sSpearMaskGettingUpOam_Frame13, 5},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskTransforming1Oam[] = {
-    { sSpearMaskTransforming1Oam_Frame1, 6 },
+    {sSpearMaskTransforming1Oam_Frame1, 6},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskTransforming2Oam[] = {
-    { sSpearMaskTransforming2Oam_Frame1, 5 },
-    { sSpearMaskTransforming1Oam_Frame1, 5 },
+    {sSpearMaskTransforming2Oam_Frame1, 5},
+    {sSpearMaskTransforming1Oam_Frame1, 5},
     ANIMATION_TERMINATOR
 };
-const struct AnimationFrame sSpearMaskOam_83B4334[] = {
-    { sOamFrame_83B4048, 8 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sSpearMaskOam_83B4344[] = {
-    { sSpearMaskBashedOam_Frame2, 4 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sSpearMaskHitWarioOam[] = {
-    { sSpearMaskHitWarioOam_Frame1, 4 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sSpearMaskOam_83B4364[] = {
-    { sSpearMaskGettingUpOam_Frame13, 6 },
-    ANIMATION_TERMINATOR
-};
-const struct AnimationFrame sSpearMaskOam_83B4374[] = {
-    { sSpearMaskRecoveringOam_Frame2, 4 },
-    ANIMATION_TERMINATOR
-};
+const struct AnimationFrame sSpearMaskOam_83B4334[] = {{sOamFrame_83B4048, 8}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sSpearMaskOam_83B4344[] = {{sSpearMaskBashedOam_Frame2, 4}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sSpearMaskHitWarioOam[] = {{sSpearMaskHitWarioOam_Frame1, 4}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sSpearMaskOam_83B4364[] = {{sSpearMaskGettingUpOam_Frame13, 6}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sSpearMaskOam_83B4374[] = {{sSpearMaskRecoveringOam_Frame2, 4}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskRecoveringOam[] = {
-    { sSpearMaskRecoveringOam_Frame1, 5 },
-    { sSpearMaskGettingUpOam_Frame13, 5 },
-    { sSpearMaskRecoveringOam_Frame2, 10 },
+    {sSpearMaskRecoveringOam_Frame1, 5},
+    {sSpearMaskGettingUpOam_Frame13, 5},
+    {sSpearMaskRecoveringOam_Frame2, 10},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskOam_83B43A4[] = {
-    { sOamFrame_83B40D0, 4 },
-    { sOamFrame_83B40EA, 4 },
-    { sOamFrame_83B4104, 4 },
-    { sOamFrame_83B411E, 4 },
-    { sOamFrame_83B4138, 4 },
-    { sOamFrame_83B4152, 4 },
+    {sOamFrame_83B40D0, 4},
+    {sOamFrame_83B40EA, 4},
+    {sOamFrame_83B4104, 4},
+    {sOamFrame_83B411E, 4},
+    {sOamFrame_83B4138, 4},
+    {sOamFrame_83B4152, 4},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskSpearTwirlingOam[] = {
-    { sSpearMaskSpearTwirlingOam_Frame1, 7 },
-    { sSpearMaskSpearTwirlingOam_Frame2, 7 },
-    { sSpearMaskSpearTwirlingOam_Frame3, 7 },
-    { sSpearMaskSpearTwirlingOam_Frame4, 7 },
+    {sSpearMaskSpearTwirlingOam_Frame1, 7},
+    {sSpearMaskSpearTwirlingOam_Frame2, 7},
+    {sSpearMaskSpearTwirlingOam_Frame3, 7},
+    {sSpearMaskSpearTwirlingOam_Frame4, 7},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskTurningOam[] = {
-    { sSpearMaskTurningOam_Frame1, 6 },
-    { sSpearMaskTurningOam_Frame2, 6 },
-    { sSpearMaskTurningOam_Frame3, 8 },
+    {sSpearMaskTurningOam_Frame1, 6},
+    {sSpearMaskTurningOam_Frame2, 6},
+    {sSpearMaskTurningOam_Frame3, 8},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskOam_83B4424[] = {
-    { sOamFrame_83B3E6C, 6 },
-    { sOamFrame_83B3E86, 6 },
+    {sOamFrame_83B3E6C, 6},
+    {sOamFrame_83B3E86, 6},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskOam_83B443C[] = {
-    { sOamFrame_83B3EA6, 6 },
-    { sOamFrame_83B3EC6, 6 },
-    { sOamFrame_83B3EE6, 6 },
-    { sOamFrame_83B3F06, 6 },
+    {sOamFrame_83B3EA6, 6},
+    {sOamFrame_83B3EC6, 6},
+    {sOamFrame_83B3EE6, 6},
+    {sOamFrame_83B3F06, 6},
     ANIMATION_TERMINATOR
 };
-const struct AnimationFrame sSpearMaskOam_83B4464[] = {
-    { sOamFrame_83B3F26, 6 },
-    { sOamFrame_83B3F46, 6 },
-    { sOamFrame_83B3F26, 6 },
-    ANIMATION_TERMINATOR
-};
+const struct AnimationFrame sSpearMaskOam_83B4464[] =
+    {{sOamFrame_83B3F26, 6}, {sOamFrame_83B3F46, 6}, {sOamFrame_83B3F26, 6}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskOam_83B4484[] = {
-    { sOamFrame_83B3F06, 6 },
-    { sOamFrame_83B3EE6, 6 },
-    { sOamFrame_83B3EC6, 6 },
-    { sOamFrame_83B3EA6, 6 },
+    {sOamFrame_83B3F06, 6},
+    {sOamFrame_83B3EE6, 6},
+    {sOamFrame_83B3EC6, 6},
+    {sOamFrame_83B3EA6, 6},
     ANIMATION_TERMINATOR
 };
-const struct AnimationFrame sSpearMaskOam_83B44AC[] = {
-    { sOamFrame_83B3E86, 6 },
-    ANIMATION_TERMINATOR
-};
+const struct AnimationFrame sSpearMaskOam_83B44AC[] = {{sOamFrame_83B3E86, 6}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskStartingChaseOam[] = {
-    { sSpearMaskStartingCaseOam_Frame1, 6 },
-    { sSpearMaskStartingCaseOam_Frame2, 6 },
-    { sSpearMaskStartingCaseOam_Frame3, 6 },
-    { sSpearMaskStartingCaseOam_Frame2, 6 },
+    {sSpearMaskStartingCaseOam_Frame1, 6},
+    {sSpearMaskStartingCaseOam_Frame2, 6},
+    {sSpearMaskStartingCaseOam_Frame3, 6},
+    {sSpearMaskStartingCaseOam_Frame2, 6},
     ANIMATION_TERMINATOR
 };
 const struct AnimationFrame sSpearMaskChasingOam[] = {
-    { sSpearMaskChasingOam_Frame1, 4 },
-    { sSpearMaskChasingOam_Frame2, 4 },
-    { sSpearMaskChasingOam_Frame3, 4 },
-    { sSpearMaskChasingOam_Frame4, 4 },
-    { sSpearMaskChasingOam_Frame5, 4 },
-    { sSpearMaskChasingOam_Frame6, 4 },
+    {sSpearMaskChasingOam_Frame1, 4},
+    {sSpearMaskChasingOam_Frame2, 4},
+    {sSpearMaskChasingOam_Frame3, 4},
+    {sSpearMaskChasingOam_Frame4, 4},
+    {sSpearMaskChasingOam_Frame5, 4},
+    {sSpearMaskChasingOam_Frame6, 4},
     ANIMATION_TERMINATOR
 };
-
 
 void SpearMask_SetWalkingHitbox(void) {
     if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
@@ -786,13 +761,17 @@ void SpearMask_WalkYellow(void) {
         }
     } else {
         if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
-            if ((gUnk_3000A50 & 0xF0) && (gCurrentSprite.xPosition % BLOCK_SIZE + gCurrentSprite.hitboxExtentRight >= BLOCK_SIZE)) {
+            if ((gUnk_3000A50 & 0xF0) &&
+                (gCurrentSprite.xPosition % BLOCK_SIZE + gCurrentSprite.hitboxExtentRight >= BLOCK_SIZE)) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
                 if (!(gUnk_3000A51 & 0xF0)) {
                     gCurrentSprite.pose = POSE_11;
                     return;
                 }
-                func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
+                func_8023BFC(
+                    gCurrentSprite.yPosition - HALF_BLOCK_SIZE,
+                    gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+                );
                 if (gUnk_3000A51 & 0x0F) {
                     gCurrentSprite.pose = POSE_11;
                     return;
@@ -805,7 +784,10 @@ void SpearMask_WalkYellow(void) {
                     gCurrentSprite.pose = POSE_11;
                     return;
                 }
-                func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
+                func_8023BFC(
+                    gCurrentSprite.yPosition - HALF_BLOCK_SIZE,
+                    gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
+                );
                 if (gUnk_3000A51 & 0x0F) {
                     gCurrentSprite.pose = POSE_11;
                     return;
@@ -1405,7 +1387,8 @@ void SpearMask_WalkBlueOrRed(void) {
         }
     } else {
         if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
-            if ((gUnk_3000A50 & 0xF0) && (gCurrentSprite.xPosition % BLOCK_SIZE + gCurrentSprite.hitboxExtentRight >= BLOCK_SIZE)) {
+            if ((gUnk_3000A50 & 0xF0) &&
+                (gCurrentSprite.xPosition % BLOCK_SIZE + gCurrentSprite.hitboxExtentRight >= BLOCK_SIZE)) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
                 if (!gUnk_3000A51) {
                     gCurrentSprite.pose = POSE_11;
@@ -1414,7 +1397,10 @@ void SpearMask_WalkBlueOrRed(void) {
                     gCurrentSprite.animationTimer = 0;
                     return;
                 }
-                func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
+                func_8023BFC(
+                    gCurrentSprite.yPosition - HALF_BLOCK_SIZE,
+                    gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
+                );
                 if (gUnk_3000A51 == 0x11) {
                     gCurrentSprite.pose = POSE_11;
                     gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
@@ -1433,7 +1419,10 @@ void SpearMask_WalkBlueOrRed(void) {
                     gCurrentSprite.animationTimer = 0;
                     return;
                 }
-                func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
+                func_8023BFC(
+                    gCurrentSprite.yPosition - HALF_BLOCK_SIZE,
+                    gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
+                );
                 if (gUnk_3000A51 == 0x11) {
                     gCurrentSprite.pose = POSE_11;
                     gCurrentSprite.pOamData = sSpearMaskTurning1Oam;

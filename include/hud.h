@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 extern const u16 sCommonSpritesPal[];
 
 void func_80746C0(void);

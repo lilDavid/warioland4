@@ -1,3 +1,5 @@
+// clang-format off
+
 #ifndef GUARD_GBA_H
 #define GUARD_GBA_H
 
@@ -10,4 +12,4 @@
 #include "gba/isagbprint.h"
 #include "gba/m4a.h"
 
-#endif // GUARD_GBA_H
+#endif  // GUARD_GBA_H

@@ -1,3 +1,5 @@
+// clang-format off
+
 #include "gba/defines.h"
 #include "gba/m4a.h"
 

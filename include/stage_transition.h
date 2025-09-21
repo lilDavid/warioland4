@@ -3,5 +3,4 @@
 
 #include "types.h"
 
-
 #endif  // STAGE_TRANSITION_H

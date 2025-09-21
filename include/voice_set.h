@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 enum VoiceSet {
     VS_WARIO_REACTION_END,
     VS_WARIO_TREASURE,

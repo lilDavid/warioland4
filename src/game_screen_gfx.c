@@ -7,7 +7,6 @@
 #include "main.h"
 #include "wario.h"
 
-
 void GameScreen_DrawWario(void) {
     struct AnimationFrame* pAnimation;
     const u16* src;
@@ -103,8 +102,10 @@ void GameScreen_DrawWario(void) {
         nextSlot += *(src++);
 
         afterimage &= 0x1F;
-        xOffset = PIXELS_FROM_SUBPIXELS(gUnk_3003138.previousXPositions[afterimage]) - PIXELS_FROM_SUBPIXELS(gBg1XPosition);
-        yOffset = PIXELS_FROM_SUBPIXELS(gUnk_3003138.previousYPositions[afterimage]) - PIXELS_FROM_SUBPIXELS(gBg1YPosition);
+        xOffset =
+            PIXELS_FROM_SUBPIXELS(gUnk_3003138.previousXPositions[afterimage]) - PIXELS_FROM_SUBPIXELS(gBg1XPosition);
+        yOffset =
+            PIXELS_FROM_SUBPIXELS(gUnk_3003138.previousYPositions[afterimage]) - PIXELS_FROM_SUBPIXELS(gBg1YPosition);
 
         for (; currentSlot < nextSlot; currentSlot++) {
             attr = *(src++);
@@ -410,28 +411,28 @@ void GameScreen_DrawWarioEffects(void) {
             }
             pAnimation = gWarioDustEffect2.unk8;
             break;
+    }
+    if (gWarioDustEffect2.unk0 != 0) {
+        gWarioDustEffect2.unk1 += 1;
+        xOffset = PIXELS_FROM_SUBPIXELS(gWarioDustEffect2.unk4) - PIXELS_FROM_SUBPIXELS(gBg1XPosition);
+        yOffset = PIXELS_FROM_SUBPIXELS(gWarioDustEffect2.unk6) - PIXELS_FROM_SUBPIXELS(gBg1YPosition);
+        pAnimation += gWarioDustEffect2.unk2;
+        src = pAnimation->oam;
+        nextSlot = nextSlot + *(src++);
+        for (; currentSlot < nextSlot; currentSlot++) {
+            attr = *(src++);
+            *(dest++) = attr;
+            gOamBuffer[currentSlot].split.y = (attr + yOffset) & 0xFF;
+
+            attr = *(src++);
+            *(dest++) = attr;
+            gOamBuffer[currentSlot].split.x = (attr + xOffset) & 0x1FF;
+
+            *(dest++) = *(src++);
+            gOamBuffer[currentSlot].split.priority = priority;
+
+            dest++;
         }
-        if (gWarioDustEffect2.unk0 != 0) {
-            gWarioDustEffect2.unk1 += 1;
-            xOffset = PIXELS_FROM_SUBPIXELS(gWarioDustEffect2.unk4) - PIXELS_FROM_SUBPIXELS(gBg1XPosition);
-            yOffset = PIXELS_FROM_SUBPIXELS(gWarioDustEffect2.unk6) - PIXELS_FROM_SUBPIXELS(gBg1YPosition);
-            pAnimation += gWarioDustEffect2.unk2;
-            src = pAnimation->oam;
-            nextSlot = nextSlot + *(src++);
-            for (; currentSlot < nextSlot; currentSlot++) {
-                attr = *(src++);
-                *(dest++) = attr;
-                gOamBuffer[currentSlot].split.y = (attr + yOffset) & 0xFF;
-
-                attr = *(src++);
-                *(dest++) = attr;
-                gOamBuffer[currentSlot].split.x = (attr + xOffset) & 0x1FF;
-
-                *(dest++) = *(src++);
-                gOamBuffer[currentSlot].split.priority = priority;
-
-                dest++;
-            }
     }
 
     effectX = 0;

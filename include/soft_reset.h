@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 u32 SoftResetSubroutine(void);
 
 #endif  // SOFT_RESET_H

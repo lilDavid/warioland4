@@ -4,28 +4,27 @@
 #include "types.h"
 
 #include "control.h"
+#include "global_data.h"
 #include "init_helpers.h"
 #include "interrupt_callbacks.h"
 #include "interrupts.h"
-#include "global_data.h"
 #include "save_file.h"
 #include "sram.h"
 
-#include "soft_reset.h"
-#include "cutscene.h"
-#include "game_screen.h"
-#include "demo.h"
-#include "quit.h"
-#include "stage_select.h"
-#include "pause.h"
-#include "minigame.h"
-#include "shop.h"
-#include "file_select.h"
-#include "save_reset.h"
 #include "credits.h"
+#include "cutscene.h"
+#include "demo.h"
+#include "file_select.h"
+#include "game_screen.h"
+#include "minigame.h"
+#include "pause.h"
+#include "quit.h"
+#include "save_reset.h"
+#include "shop.h"
+#include "soft_reset.h"
+#include "stage_select.h"
 
-void irq_handler(void);
-
+void irq_handler(void);  // test
 
 IWRAM_DATA s16 gMainGameMode = 0;
 IWRAM_DATA s16 gSubGameMode = 0;
@@ -35,7 +34,6 @@ IWRAM_DATA s8 gUnk_3000C40 = 0;
 IWRAM_DATA u8 gMainTimer = 0;
 IWRAM_DATA vu16 gInterruptCheck = 0;
 IWRAM_DATA u16 gInterruptHandlerBuffer[] = {};
-
 
 void AgbMain(void) {
     u32 cutsceneResult;
@@ -115,7 +113,8 @@ void AgbMain(void) {
                 if (StageSelectSubroutine()) {
                     gSubGameMode = 0;
                     gMainGameMode = GM_GAME_SCREEN;
-                    if (gCurrentStageID == 6 || gCurrentStageID == 12 || gCurrentStageID == 18 || gCurrentStageID == 24) {
+                    if (gCurrentStageID == 6 || gCurrentStageID == 12 || gCurrentStageID == 18 ||
+                        gCurrentStageID == 24) {
                         gMainGameMode = GM_MINIGAMES;
                     }
                 }
@@ -267,11 +266,8 @@ void InitializeGame(void) {
     REG_IME = TRUE;
     REG_IE = INTR_FLAG_GAMEPAK | INTR_FLAG_VBLANK;
     REG_DISPSTAT = DISPSTAT_VBLANK_INTR;
-    REG_WAITCNT = WAITCNT_SRAM_4 |
-                  WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1 |
-                  WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1 |
-                  WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1 |
-                  WAITCNT_PHI_OUT_NONE | WAITCNT_PREFETCH_ENABLE | WAITCNT_AGB;
+    REG_WAITCNT = WAITCNT_SRAM_4 | WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1 | WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1 |
+                  WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1 | WAITCNT_PHI_OUT_NONE | WAITCNT_PREFETCH_ENABLE | WAITCNT_AGB;
 
     gButtonsHeld = 0;
     gButtonsHeldCopy = 0;
@@ -290,8 +286,7 @@ void InitializeGame(void) {
     gDisableSoftReset = 0;
 };
 
-void EmptyFunction() {
-}
+void EmptyFunction() {}
 
 void CheckSoftReset(void) {
     if (gMainGameMode == GM_SOFT_RESET || gDisableSoftReset) {

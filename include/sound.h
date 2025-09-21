@@ -3,7 +3,6 @@
 
 #include "gba/m4a.h"
 
-
 enum SoundID {
     SOUND_NONE,
 
@@ -420,6 +419,5 @@ enum SoundID {
     SE_WARIO_WOWWW,
     SE_WARIO_YAHOO_6,
 };
-
 
 #endif  // SOUND_H

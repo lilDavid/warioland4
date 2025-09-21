@@ -3,7 +3,6 @@
 
 #include "gba.h"
 
-
 enum DemoState {
     DEMO_STATE_NONE,
     DEMO_STATE_RECORDING,
@@ -11,7 +10,6 @@ enum DemoState {
 };
 
 extern u8 gDemoState;
-
 
 void DemoInputSubroutine(void);
 void DemoInput_Record(void);

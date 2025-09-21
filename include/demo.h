@@ -3,9 +3,7 @@
 
 #include "gba.h"
 
-
 #define DEMO_INPUT_SIZE 256
-
 
 extern u16 gDemoInputs[DEMO_INPUT_SIZE];
 extern u16 gDemoInputLengths[DEMO_INPUT_SIZE];

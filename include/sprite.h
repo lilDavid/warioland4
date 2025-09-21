@@ -3,7 +3,6 @@
 
 #include "gba.h"
 
-
 enum PrimarySpriteID {
     PSPRITE_BOX_JEWEL_PIECE_NE,
     PSPRITE_BOX_JEWEL_PIECE_SE,
@@ -286,7 +285,6 @@ enum PersistentSpriteStatus {
     PERSISTENT_STATUS_DESPAWNED,
 };
 
-
 struct PrimarySpriteData {
     /* 0x00 */ u16 statusBits;
     /* 0x04 */ const void* pOamData;
@@ -318,8 +316,7 @@ struct PrimarySpriteData {
     /* 0x28 */ u8 work1;
     /* 0x29 */ u8 work2;
     /* 0x2A */ u8 work3;
-};  /* size: 0x2C */
-
+}; /* size: 0x2C */
 
 // Upper nybble = pose on next load
 // Lower nybble = status
@@ -327,7 +324,6 @@ extern u8 gPersistentSpriteData[16][64];
 #define MAKE_PERSISTENT_DATA(pose, status) (((pose) << 4) | (status))
 
 extern struct PrimarySpriteData gCurrentSprite;
-
 
 void Sprite_SpawnAsChild(u8 id, u8 roomSlot, u8 gfxSlot, u32 yPosition, u32 xPosition);
 void func_801D684(void);

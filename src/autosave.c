@@ -1,12 +1,11 @@
 #include "autosave.h"
 
 #include "main.h"
-#include "score.h"
 #include "save_file.h"
+#include "score.h"
 #include "types.h"
 #include "vortex_cutscene.h"
 #include "wario.h"
-
 
 void Autosave_StageClear(void) {
     s32 i;
@@ -35,23 +34,20 @@ void Autosave_StageClear(void) {
         gCurrentCollection[gCurrentPassage][gCurrentStageNumber].keyzer = TRUE;
     }
 
-    if (gCollectedNEJewelPiece == 2 || gCollectedSEJewelPiece == 2 ||
-        gCollectedSWJewelPiece == 2 || gCollectedNWJewelPiece == 2)
-    {
+    if (gCollectedNEJewelPiece == 2 || gCollectedSEJewelPiece == 2 || gCollectedSWJewelPiece == 2 ||
+        gCollectedNWJewelPiece == 2) {
         completedJewels = 0;
         for (i = 0; i < NORMAL_STAGE_COUNT; i++) {
             if (gCurrentCollection[gCurrentPassage][i].jewelPieceNE &&
                 gCurrentCollection[gCurrentPassage][i].jewelPieceSE &&
                 gCurrentCollection[gCurrentPassage][i].jewelPieceSW &&
-                gCurrentCollection[gCurrentPassage][i].jewelPieceNW)
-            {
+                gCurrentCollection[gCurrentPassage][i].jewelPieceNW) {
                 completedJewels += 1;
             }
         }
         if (completedJewels == NORMAL_STAGE_COUNT ||
-            ((gCurrentPassage == PASSAGE_ENTRY || gCurrentPassage == PASSAGE_GOLDEN)
-             && completedJewels == ENTRY_GOLDEN_STAGE_COUNT))
-        {
+            ((gCurrentPassage == PASSAGE_ENTRY || gCurrentPassage == PASSAGE_GOLDEN) &&
+             completedJewels == ENTRY_GOLDEN_STAGE_COUNT)) {
             gCurrentCollection[gCurrentPassage][STAGE_BOSS].SHOW_BOSS_DOOR_OPENING = TRUE;
         }
     }
@@ -99,8 +95,7 @@ void Autosave_BossClear(void) {
     if (gCurrentCollection[PASSAGE_EMERALD][STAGE_BOSS].BOSS_DEFEATED &&
         gCurrentCollection[PASSAGE_RUBY][STAGE_BOSS].BOSS_DEFEATED &&
         gCurrentCollection[PASSAGE_TOPAZ][STAGE_BOSS].BOSS_DEFEATED &&
-        gCurrentCollection[PASSAGE_SAPPHIRE][STAGE_BOSS].BOSS_DEFEATED)
-    {
+        gCurrentCollection[PASSAGE_SAPPHIRE][STAGE_BOSS].BOSS_DEFEATED) {
         gCurrentPassage = PASSAGE_GOLDEN;
     }
 
@@ -136,8 +131,7 @@ void Autosave_FinalBoss(void) {
 
     if (gHasGoldenDivaChest1 && gHasGoldenDivaChest2 && gHasGoldenDivaChest3 && gHasGoldenDivaChest4 &&
         gHasGoldenDivaChest5 && gHasGoldenDivaChest6 && gHasGoldenDivaChest7 && gHasGoldenDivaChest8 &&
-        gHasGoldenDivaChest9 && gHasGoldenDivaChest10 && gHasGoldenDivaChest11 && gHasGoldenDivaChest12)
-    {
+        gHasGoldenDivaChest9 && gHasGoldenDivaChest10 && gHasGoldenDivaChest11 && gHasGoldenDivaChest12) {
         if (gTitleScreenStyle != TITLE_STYLE_S_HARD_UNLOCKED && gDifficulty == DIFFICULTY_HARD) {
             gClearMessage = CLEAR_MESSAGE_SUPER_HARD_UNLOCKED;
             gTitleScreenStyle = TITLE_STYLE_S_HARD_UNLOCKED;
