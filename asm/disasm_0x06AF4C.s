@@ -2590,8 +2590,8 @@ func_806C2CC:
 	.4byte	gSongTable
 
 
-thumb_func_start Music_PauseFadeOut
-Music_PauseFadeOut:
+thumb_func_start MusicPauseFadeOut
+MusicPauseFadeOut:
 	push	{r4, lr}
 	ldr	r4, .L_6c328
 	ldr	r0, [r4, #0]
@@ -2993,8 +2993,8 @@ func_806C5BC:
 	.align	2, 0
 
 
-thumb_func_start Background_ProcessMain
-Background_ProcessMain:
+thumb_func_start BackgroundProcessMain
+BackgroundProcessMain:
 	push	{r4, lr}
 	ldr	r1, .L_6c610
 	ldrb	r0, [r1, #1]
@@ -3211,8 +3211,8 @@ func_806C75C:
 	.4byte	gUnk_3000046
 
 
-thumb_func_start GameScreen_Draw
-GameScreen_Draw:
+thumb_func_start GameScreenDraw
+GameScreenDraw:
 	push	{lr}
 	bl	func_806C828
 	ldr	r0, .L_6c81c

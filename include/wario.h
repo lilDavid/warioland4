@@ -143,8 +143,8 @@ extern u16 sUnk_82DDDA0[];
 extern u16 sUnk_82DDDC0[];
 extern u8 sUnk_82DF094[];
 
-void Wario_ProcessControls();
-void Wario_ProcessCollision();
+void WarioProcessControls();
+void WarioProcessCollision();
 void func_8010154();
 void func_80101D0();
 void func_8010154();

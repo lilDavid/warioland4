@@ -280,7 +280,7 @@ const s32* const sVoiceSetPointers[VS_MAX] = {
     [VS_22] = sVoiceSet_22,
 };
 
-void VoiceSet_Play(s32 voiceSet)
+void VoiceSetPlay(s32 voiceSet)
 {
     s32 chosenSound;
 
@@ -304,6 +304,6 @@ void VoiceSet_Play(s32 voiceSet)
                 return;
             }
     }
-    chosenSound = Minigame_Random() % sVoiceSetSizes[voiceSet];
+    chosenSound = MinigameRandom() % sVoiceSetSizes[voiceSet];
     m4aSongNumStart(sVoiceSetPointers[voiceSet][chosenSound]);
 }

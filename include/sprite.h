@@ -325,7 +325,7 @@ extern u8 gPersistentSpriteData[16][64];
 
 extern struct PrimarySpriteData gCurrentSprite;
 
-void Sprite_SpawnAsChild(u8 id, u8 roomSlot, u8 gfxSlot, u32 yPosition, u32 xPosition);
+void SpriteSpawnAsChild(u8 id, u8 roomSlot, u8 gfxSlot, u32 yPosition, u32 xPosition);
 void func_801D684(void);
 void func_801D8C4(void);
 void func_801DE7C(void);

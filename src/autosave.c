@@ -7,7 +7,7 @@
 #include "vortex_cutscene.h"
 #include "wario.h"
 
-void Autosave_StageClear(void)
+void AutosaveStageClear(void)
 {
     s32 i;
     s32 score;
@@ -76,7 +76,7 @@ void Autosave_StageClear(void)
     gSaveFlag = TRUE;
 }
 
-void Autosave_BossClear(void)
+void AutosaveBossClear(void)
 {
     if (gHasBossChest55sec) {
         gCurrentCollection[gCurrentPassage][gCurrentStageNumber].BOSS_REWARD_55_SEC = TRUE;
@@ -106,13 +106,13 @@ void Autosave_BossClear(void)
     gCollectedKeyzer = 0;
 }
 
-void Autosave_Defeat(void)
+void AutosaveDefeat(void)
 {
     func_8073880();
     gSaveFlag = 1;
 }
 
-void Autosave_FinalBoss(void)
+void AutosaveFinalBoss(void)
 {
     s32 i;
     u32 passage;

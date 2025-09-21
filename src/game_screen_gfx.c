@@ -7,7 +7,7 @@
 #include "main.h"
 #include "wario.h"
 
-void GameScreen_DrawWario(void)
+void GameScreenDrawWario(void)
 {
     struct AnimationFrame* pAnimation;
     const u16* src;
@@ -22,7 +22,7 @@ void GameScreen_DrawWario(void)
     s32 afterimage;
     s32 i;
 
-    GameScreen_DrawWarioEffects();
+    GameScreenDrawWarioEffects();
 
     if (gWarioData.reaction > 1) {
         gWarioData.damageTimer = 0;
@@ -135,7 +135,7 @@ void GameScreen_DrawWario(void)
     gOamSlotsUsed = nextSlot;
 }
 
-void GameScreen_DrawWarioEffects(void)
+void GameScreenDrawWarioEffects(void)
 {
     struct AnimationFrameU16* pAnimation;
     const u16* src;
@@ -578,7 +578,7 @@ void GameScreen_DrawWarioEffects(void)
     gOamSlotsUsed = nextSlot;
 }
 
-s32 GameScreen_FadeIn(void)
+s32 GameScreenFadeIn(void)
 {
     s32 result;
 
@@ -604,7 +604,7 @@ s32 GameScreen_FadeIn(void)
     return result;
 }
 
-s32 GameScreen_FadeOut(void)
+s32 GameScreenFadeOut(void)
 {
     s32 result;
 

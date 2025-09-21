@@ -826,7 +826,7 @@ func_8086354:
 	strb	r0, [r1, #16]
 	mov	r0, sl
 	strb	r3, [r0, #0]
-	bl	Autosave_Defeat
+	bl	AutosaveDefeat
 	b	.L_86484
 .L_86442:
 	ldrb	r0, [r7, #4]
@@ -1170,7 +1170,7 @@ func_8086648:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #10
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_86718
 .L_866c4:
 	.4byte	gUnk_3003C3A

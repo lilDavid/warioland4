@@ -87,7 +87,7 @@ SoftResetSubroutine:
 	ldr	r0, [r1, #8]
 	bl	InitializeInterruptHandler
 	ldr	r0, .L_92c
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	bl	m4aSoundInit
 	mov	r0, #144	@ 0x90
 	lsl	r0, r0, #16

@@ -2,6 +2,6 @@
 #define MUSIC_H
 
 void func_806C130();
-void Music_PauseFadeOut();
+void MusicPauseFadeOut();
 
 #endif  // MUSIC_H

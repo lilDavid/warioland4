@@ -6270,7 +6270,7 @@ func_8012E5C:
 	mov	r0, #36	@ 0x24
 	bl	m4aSongNumStart
 	mov	r0, #0
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_13134
 	.align	2, 0
 .L_1310c:
@@ -6433,7 +6433,7 @@ func_801318C:
 	ldr	r0, .L_1329c
 	bl	m4aSongNumStart
 	mov	r0, #9
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_13284:
 	ldr	r0, .L_132a0
 	strb	r4, [r0, #1]
@@ -6689,7 +6689,7 @@ func_801318C:
 	mov	r0, #45	@ 0x2d
 	bl	m4aSongNumStart
 	mov	r0, #0
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_1388a
 	.align	2, 0
 .L_13508:
@@ -6798,7 +6798,7 @@ func_801318C:
 	sub	r0, #96	@ 0x60
 	ldrh	r1, [r1, #18]
 	mov	r2, #48	@ 0x30
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 .L_135d4:
 	ldr	r4, .L_135f8
 	mov	r0, #1
@@ -6852,7 +6852,7 @@ func_801318C:
 	mov	r0, #19
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_1388a
 	.align	2, 0
 .L_13640:
@@ -7166,7 +7166,7 @@ func_801318C:
 	b	.L_1388a
 .L_1386e:
 	mov	r0, #2
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_1388a
 .L_13876:
 	ldr	r0, .L_13880

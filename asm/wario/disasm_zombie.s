@@ -682,7 +682,7 @@ func_8018F70:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_1905c
 .L_19020:
 	.4byte	gWarioData
@@ -712,7 +712,7 @@ func_8018F70:
 	ldr	r0, .L_19070
 	bl	m4aSongNumStart
 	mov	r0, #0
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_19058:
 	ldr	r0, .L_19074
 	strb	r4, [r0, #1]

@@ -1443,13 +1443,13 @@ func_807A4B4:
 	.4byte	.L_7a50c
 .L_7a50c:
 	ldr	r0, .L_7a514
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	b	.L_7a51e
 .L_7a514:
 	.4byte	func_807A668
 .L_7a518:
 	ldr	r0, .L_7a524
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 .L_7a51e:
 	pop	{r0}
 	bx	r0

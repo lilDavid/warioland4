@@ -1031,7 +1031,7 @@ func_80728C0:
 	ldr	r0, .L_728dc
 	strb	r1, [r0, #0]
 	ldr	r0, .L_728e0
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	pop	{r0}
 	bx	r0
 	.align	2, 0

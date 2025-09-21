@@ -187,7 +187,7 @@ func_8018844:
 	ldr	r0, .L_188a0
 	bl	m4aSongNumStart
 	mov	r0, #0
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_18894:
 	ldr	r0, .L_188a4
 	strb	r4, [r0, #1]

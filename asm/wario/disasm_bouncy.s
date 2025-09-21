@@ -565,7 +565,7 @@ func_801A090:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_1a1ba:
 	ldr	r0, .L_1a1c4
 	strb	r4, [r0, #1]

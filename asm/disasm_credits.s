@@ -110,7 +110,7 @@ func_8093084:
 	bne	.L_930a8
 .L_93096:
 	ldr	r0, .L_930a4
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	b	.L_930ae
 	.align	2, 0
 .L_930a0:
@@ -119,7 +119,7 @@ func_8093084:
 	.4byte	func_80930B8
 .L_930a8:
 	ldr	r0, .L_930b4
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 .L_930ae:
 	pop	{r0}
 	bx	r0
@@ -1162,9 +1162,9 @@ func_809329C:
 	ldr	r0, .L_938d4
 	strh	r4, [r0, #0]
 	ldr	r0, .L_938d8
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldr	r0, .L_938dc
-	bl	InterruptCallback_SetVCount
+	bl	InterruptCallbackSetVCount
 	ldr	r2, .L_938e0
 	ldrh	r1, [r2, #0]
 	mov	r0, #7

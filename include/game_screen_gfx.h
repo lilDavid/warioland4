@@ -38,10 +38,10 @@ extern struct AnimationFrameU16 sUnk_82E1598[];
 extern struct AnimationFrameU16 sUnk_82E1658[];
 extern struct AnimationFrameU16 sUnk_82E1690[];
 
-void GameScreen_DrawWario(void);
-void GameScreen_DrawWarioEffects(void);
-s32 GameScreen_FadeIn(void);
-s32 GameScreen_FadeOut(void);
+void GameScreenDrawWario(void);
+void GameScreenDrawWarioEffects(void);
+s32 GameScreenFadeIn(void);
+s32 GameScreenFadeOut(void);
 void GameScreenDebugSubroutine(void);
 
 #endif  // GAME_SCREEN_GFX_H

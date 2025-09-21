@@ -481,7 +481,7 @@ func_8092B30:
 	mov	r0, #1
 	strh	r0, [r3, #0]
 	ldr	r0, .L_92bd0
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldr	r1, .L_92bd4
 	mov	r0, #191	@ 0xbf
 	strh	r0, [r1, #0]
@@ -625,7 +625,7 @@ func_8092B30:
 	add	r0, r2, #0
 	strh	r0, [r1, #0]
 	ldr	r0, .L_92cc0
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	pop	{r4}
 	pop	{r0}
 	bx	r0

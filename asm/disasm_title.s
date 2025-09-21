@@ -213,7 +213,7 @@ CutsceneSubroutine:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	ldr	r0, .L_35d8
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldrh	r0, [r4, #0]
 	mov	r1, #1
 	orr	r0, r1
@@ -358,7 +358,7 @@ CutsceneSubroutine:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	ldr	r0, .L_36e0
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldrh	r0, [r4, #0]
 	mov	r1, #1
 	orr	r0, r1
@@ -428,7 +428,7 @@ CutsceneSubroutine:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	ldr	r0, .L_377c
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldrh	r0, [r4, #0]
 	mov	r1, #1
 	orr	r0, r1
@@ -523,7 +523,7 @@ CutsceneSubroutine:
 	and	r0, r1
 	strh	r0, [r4, #0]
 	ldr	r0, .L_3844
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldrh	r0, [r4, #0]
 	mov	r1, #1
 	orr	r0, r1

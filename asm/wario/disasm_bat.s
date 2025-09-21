@@ -424,7 +424,7 @@ func_801ABCC:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_1ac32:
 	ldr	r2, .L_1ac54
 .L_1ac34:

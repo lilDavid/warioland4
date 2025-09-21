@@ -209,7 +209,7 @@ func_8071600:
 	ldr	r0, [r1, #8]
 	mov	r0, #1
 	orr	r0, r2
-	bl	InterruptCallback_SetHBlank
+	bl	InterruptCallbackSetHBlank
 	cmp	r4, #0
 	beq	.L_71740
 	ldr	r2, .L_71758

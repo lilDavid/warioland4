@@ -142,7 +142,7 @@ func_801B6A8:
 	cmp	r4, #0
 	bne	.L_1b6cc
 	mov	r0, #6
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_1b6cc:
 	pop	{r4}
 	pop	{r0}

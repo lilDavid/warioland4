@@ -585,7 +585,7 @@ func_8018370:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_183b4
 	.align	2, 0
 .L_183a0:

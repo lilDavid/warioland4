@@ -30,6 +30,6 @@ enum VoiceSet {
     VS_MAX
 };
 
-void VoiceSet_Play(s32);
+void VoiceSetPlay(s32);
 
 #endif  // VOICE_SET_H

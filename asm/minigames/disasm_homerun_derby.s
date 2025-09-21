@@ -532,7 +532,7 @@ func_808DFD0:
 	ldrb	r0, [r0, #0]
 	cmp	r0, #3
 	bne	.L_8e42c
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #1
 	and	r1, r0
 	cmp	r1, #0
@@ -1172,7 +1172,7 @@ func_808E898:
 	push	{r4, r5, lr}
 	ldr	r5, .L_8e8c0
 	ldr	r4, .L_8e8c4
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #20
 	bl	__modsi3
 	ldr	r1, .L_8e8c8
@@ -2858,7 +2858,7 @@ func_808EDFC:
 	ldrb	r4, [r0, #0]
 	cmp	r4, #1
 	bne	.L_8f592
-	bl	Minigame_Random
+	bl	MinigameRandom
 	and	r4, r0
 	cmp	r4, #0
 	bne	.L_8f570
@@ -3528,7 +3528,7 @@ func_808F9E0:
 	bgt	.L_8faec
 	cmp	r0, #1
 	blt	.L_8faec
-	bl	Minigame_Random
+	bl	MinigameRandom
 	lsr	r1, r0, #31
 	add	r1, r0, r1
 	asr	r1, r1, #1
@@ -3538,7 +3538,7 @@ func_808F9E0:
 	strb	r0, [r5, #8]
 	b	.L_8faec
 .L_8fa6a:
-	bl	Minigame_Random
+	bl	MinigameRandom
 	lsr	r1, r0, #31
 	add	r1, r0, r1
 	asr	r1, r1, #1
@@ -3615,7 +3615,7 @@ func_808F9E0:
 thumb_func_start func_808FAF4
 func_808FAF4:
 	push	{r4, r5, lr}
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r4, .L_8fb44
 	lsr	r1, r0, #31
 	add	r1, r0, r1
@@ -3643,7 +3643,7 @@ func_808FAF4:
 	beq	.L_8fb54
 	add	r0, r5, #1
 	strb	r0, [r4, #8]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #3
 	bl	__modsi3
 	cmp	r0, #0

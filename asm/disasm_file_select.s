@@ -5,7 +5,7 @@ thumb_func_start func_80909B0
 func_80909B0:
 	push	{lr}
 	ldr	r0, .L_909bc
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	pop	{r0}
 	bx	r0
 .L_909bc:
@@ -100,7 +100,7 @@ func_8090A40:
 	mov	r0, #1
 	strh	r0, [r3, #0]
 	ldr	r0, .L_90b94
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldr	r1, .L_90b98
 	mov	r0, #255	@ 0xff
 	strh	r0, [r1, #0]
@@ -1490,7 +1490,7 @@ thumb_func_start func_80914B4
 func_80914B4:
 	push	{lr}
 	ldr	r0, .L_91508
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	ldr	r1, .L_9150c
 	mov	r0, #63	@ 0x3f
 	strb	r0, [r1, #0]

@@ -258,7 +258,7 @@ void InitializeGame(void)
 
     InitializeVideoMemory();
     InitializeInterruptHandler();
-    InterruptCallback_SetVBlank(EmptyFunction);
+    InterruptCallbackSetVBlank(EmptyFunction);
 
     func_8072D24();
     func_8073BE0();

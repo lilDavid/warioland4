@@ -592,7 +592,7 @@ func_8087388:
 	lsl	r0, r0, #16
 	cmp	r0, #0
 	bne	.L_87582
-	bl	Minigame_Random
+	bl	MinigameRandom
 	add	r1, r0, #0
 .L_874dc:
 	cmp	r1, #0
@@ -1038,7 +1038,7 @@ func_8087594:
 	and	r0, r1
 	cmp	r0, #0
 	beq	.L_878bc
-	bl	Minigame_Random
+	bl	MinigameRandom
 	add	r1, r0, #0
 	cmp	r1, #0
 	bge	.L_87850
@@ -2297,7 +2297,7 @@ func_8087DB0:
 	lsr	r6, r0, #16
 	cmp	r6, #0
 	bne	.L_881d0
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #10
 	bl	__modsi3
 	cmp	r0, #4
@@ -2420,7 +2420,7 @@ func_8087DB0:
 	lsr	r6, r0, #16
 	cmp	r6, #0
 	bne	.L_882b0
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #10
 	bl	__modsi3
 	cmp	r0, #4
@@ -2839,7 +2839,7 @@ func_8087DB0:
 thumb_func_start func_80885B4
 func_80885B4:
 	push	{lr}
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #5
 	bl	__modsi3
 	add	r3, r0, #0

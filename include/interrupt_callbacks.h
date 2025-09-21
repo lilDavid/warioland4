@@ -7,12 +7,12 @@ extern ProcedureFunc gVBlankCallback;
 extern ProcedureFunc gHBlankCallback;
 extern ProcedureFunc gVCountCallback;
 
-void InterruptCallback_CallVBlank(void);
-void InterruptCallback_SetVBlank(ProcedureFunc cb);
-void InterruptCallback_CallHBlank(void);
-void InterruptCallback_SetHBlank(ProcedureFunc cb);
-void InterruptCallback_CallVCount(void);
-void InterruptCallback_SetVCount(ProcedureFunc cb);
-void InterruptCallback_Empty(void);
+void InterruptCallbackCallVBlank(void);
+void InterruptCallbackSetVBlank(ProcedureFunc cb);
+void InterruptCallbackCallHBlank(void);
+void InterruptCallbackSetHBlank(ProcedureFunc cb);
+void InterruptCallbackCallVCount(void);
+void InterruptCallbackSetVCount(ProcedureFunc cb);
+void InterruptCallbackEmpty(void);
 
 #endif /* SYS_H */

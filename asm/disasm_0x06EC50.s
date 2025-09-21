@@ -915,7 +915,7 @@ func_806F2D8:
 	mov	r0, #130	@ 0x82
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	b	.L_6f320
 .L_6f30c:
 	mov	r3, #32
@@ -926,7 +926,7 @@ func_806F2D8:
 	mov	r0, #129	@ 0x81
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 .L_6f320:
 	add	sp, #4
 	pop	{r0}
@@ -1212,7 +1212,7 @@ func_806F4BC:
 	lsl	r1, r1, #6
 	add	r1, #32
 	mov	r2, #68	@ 0x44
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	mov	r1, #1
 .L_6f516:
 	add	r0, r1, #0
@@ -2266,7 +2266,7 @@ func_806FBA4:
 	bl	_call_via_r1
 	mov	r0, #10
 	neg	r0, r0
-	bl	Score_GiveOrDropCoins
+	bl	ScoreGiveOrDropCoins
 .L_6fc94:
 	add	r0, r4, #0
 	pop	{r4}

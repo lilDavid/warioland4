@@ -1458,7 +1458,7 @@ func_8082AC8:
 	lsl	r0, r0, #2
 	bl	__divsi3
 	mov	r8, r0
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, sl
 	ldrb	r4, [r1, #0]
 	lsl	r4, r4, #4
@@ -1477,7 +1477,7 @@ func_8082AC8:
 	bl	__divsi3
 	add	r5, r5, r0
 	strh	r5, [r4, #0]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, sl
 	ldrb	r4, [r1, #0]
 	lsl	r4, r4, #4
@@ -1496,7 +1496,7 @@ func_8082AC8:
 	bl	__divsi3
 	add	r5, r5, r0
 	strh	r5, [r4, #2]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, sl
 	ldrb	r4, [r1, #0]
 	lsl	r4, r4, #4
@@ -1512,7 +1512,7 @@ func_8082AC8:
 	mov	r1, r8
 	bl	__divsi3
 	strb	r0, [r4, #5]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, sl
 	ldrb	r4, [r1, #0]
 	lsl	r4, r4, #4

@@ -4592,7 +4592,7 @@ func_8005F1C:
 	.4byte	gUnk_3002C60
 .L_5fc0:
 	ldr	r0, .L_5ffc
-	bl	InterruptCallback_SetVCount
+	bl	InterruptCallbackSetVCount
 	ldr	r2, .L_6000
 	ldrh	r1, [r2, #0]
 	mov	r0, #255	@ 0xff
@@ -4968,7 +4968,7 @@ func_8005F1C:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStartOrChange
 	mov	r0, #3
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	mov	r0, #0
 	str	r0, [r4, #0]
 	ldr	r1, .L_6294
@@ -6149,7 +6149,7 @@ func_80067BC:
 	cmp	r0, #32
 	bne	.L_6bdc
 	mov	r0, #1
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_6bdc:
 	cmp	r4, #0
 	bne	.L_6be2
@@ -6769,7 +6769,7 @@ func_8006FA0:
 	mov	r2, #16
 	bl	func_800C704
 	mov	r0, #3
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_70d0:
 	ldr	r0, [r4, #0]
 	add	r0, #1
@@ -7065,7 +7065,7 @@ func_8006FA0:
 	ldr	r0, .L_7324
 	bl	m4aSongNumStartOrChange
 	mov	r0, #8
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_7506
 .L_731c:
 	.4byte	gUnk_3002C64
@@ -7804,7 +7804,7 @@ func_8007890:
 	add	r0, r2, #0
 	strh	r0, [r1, #0]
 	mov	r0, #6
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_78e8
 .L_78d0:
 	ldr	r0, .L_78f0

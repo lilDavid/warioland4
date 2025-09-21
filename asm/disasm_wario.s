@@ -385,8 +385,8 @@ func_800FF64:
 	.4byte	gUnk_30031BA
 
 
-thumb_func_start Wario_ProcessControls
-Wario_ProcessControls:
+thumb_func_start WarioProcessControls
+WarioProcessControls:
 	push	{r4, r5, lr}
 	ldr	r1, .L_1006c
 	mov	r0, #0
@@ -483,8 +483,8 @@ Wario_ProcessControls:
 	.4byte	gCurrentCarriedSprite
 
 
-thumb_func_start Wario_ProcessCollision
-Wario_ProcessCollision:
+thumb_func_start WarioProcessCollision
+WarioProcessCollision:
 	push	{r4, r5, r6, lr}
 	ldr	r1, .L_100d0
 	mov	r5, #0
@@ -691,7 +691,7 @@ func_80101D0:
 	ldr	r0, .L_1022c
 	bl	m4aSongNumStart
 	mov	r0, #0
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 .L_10218:
 	pop	{r0}
 	bx	r0

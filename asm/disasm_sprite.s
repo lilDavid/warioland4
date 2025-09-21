@@ -1716,8 +1716,8 @@ func_801E258:
 	.align	2, 0
 
 
-thumb_func_start Sprite_SpawnAsChild
-Sprite_SpawnAsChild:
+thumb_func_start SpriteSpawnAsChild
+SpriteSpawnAsChild:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, sl
 	mov	r6, r9

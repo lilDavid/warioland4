@@ -619,7 +619,7 @@ func_8017ADC:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_17b34
 .L_17b20:
 	.4byte	gWarioData

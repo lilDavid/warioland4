@@ -877,12 +877,12 @@ func_8075888:
 	ldrh	r0, [r1, #20]
 	ldrh	r1, [r1, #18]
 	mov	r2, #77	@ 0x4d
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldr	r0, .L_75970
 	ldrb	r0, [r0, #0]
 	cmp	r0, #4
 	bne	.L_75910
-	bl	Autosave_Defeat
+	bl	AutosaveDefeat
 .L_75910:
 	bl	func_801E4D4
 	mov	r0, #22
@@ -1005,12 +1005,12 @@ func_8075988:
 	bne	.L_75a5e
 	mov	r0, #1
 	neg	r0, r0
-	bl	Score_GivePoints
+	bl	ScoreGivePoints
 	ldr	r1, .L_75a2c
 	ldrh	r0, [r1, #20]
 	ldrh	r1, [r1, #18]
 	mov	r2, #46	@ 0x2e
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldr	r0, .L_75a30
 	ldr	r0, [r0, #0]
 	cmp	r0, #0
@@ -2698,8 +2698,8 @@ func_80762E4:
 	.4byte	gUnk_3000C1A
 
 
-thumb_func_start Score_GivePoints
-Score_GivePoints:
+thumb_func_start ScoreGivePoints
+ScoreGivePoints:
 	push	{r4, r5, lr}
 	ldr	r2, .L_76694
 	mov	r1, #1
@@ -2768,8 +2768,8 @@ Score_GivePoints:
 	bx	r0
 
 
-thumb_func_start Sprite_SpawnSecondary
-Sprite_SpawnSecondary:
+thumb_func_start SpriteSpawnSecondary
+SpriteSpawnSecondary:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, r8
 	push	{r7}
@@ -2922,7 +2922,7 @@ func_80767DC:
 	mov	r0, #133	@ 0x85
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	sub	r4, #100	@ 0x64
 	add	r5, #32
 	cmp	r4, #99	@ 0x63
@@ -2935,7 +2935,7 @@ func_80767DC:
 	mov	r0, #132	@ 0x84
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	sub	r4, #50	@ 0x32
 	add	r5, #32
 .L_7681e:
@@ -2950,7 +2950,7 @@ func_80767DC:
 	mov	r0, #131	@ 0x83
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	sub	r4, #10
 	add	r5, #32
 	cmp	r4, #9
@@ -2963,7 +2963,7 @@ func_80767DC:
 	mov	r0, #130	@ 0x82
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	sub	r4, #5
 	add	r5, #32
 .L_76854:
@@ -2978,7 +2978,7 @@ func_80767DC:
 	mov	r0, #129	@ 0x81
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	sub	r4, #1
 	add	r5, #32
 	cmp	r4, #0
@@ -3013,7 +3013,7 @@ func_807687C:
 	mov	r1, #0
 	mov	r2, #0
 	add	r3, r5, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 .L_768ac:
 	add	sp, #4
 	pop	{r4, r5}
@@ -3023,8 +3023,8 @@ func_807687C:
 	.4byte	gUnk_3000C06
 
 
-thumb_func_start Score_GiveOrDropCoins
-Score_GiveOrDropCoins:
+thumb_func_start ScoreGiveOrDropCoins
+ScoreGiveOrDropCoins:
 	push	{r4, r5, lr}
 	add	r5, r0, #0
 	ldr	r0, .L_768e4
@@ -3042,7 +3042,7 @@ Score_GiveOrDropCoins:
 	ldrh	r1, [r1, #18]
 	bl	func_80767DC
 	add	r0, r5, #0
-	bl	Score_GivePoints
+	bl	ScoreGivePoints
 	b	.L_76902
 	.align	2, 0
 .L_768e4:
@@ -3058,7 +3058,7 @@ Score_GiveOrDropCoins:
 	add	r2, r4, #0
 	bl	func_80767DC
 	neg	r0, r4
-	bl	Score_GivePoints
+	bl	ScoreGivePoints
 .L_76902:
 	pop	{r4, r5}
 	pop	{r0}
@@ -3077,11 +3077,11 @@ func_807690C:
 	lsl	r5, r5, #16
 	lsr	r5, r5, #16
 	mov	r0, #1
-	bl	Score_GivePoints
+	bl	ScoreGivePoints
 	add	r0, r4, #0
 	add	r1, r5, #0
 	mov	r2, #0
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldr	r0, .L_7693c
 	ldrb	r0, [r0, #0]
 	cmp	r0, #1
@@ -3112,11 +3112,11 @@ func_8076950:
 	lsl	r5, r5, #16
 	lsr	r5, r5, #16
 	mov	r0, #10
-	bl	Score_GivePoints
+	bl	ScoreGivePoints
 	add	r0, r4, #0
 	add	r1, r5, #0
 	mov	r2, #2
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldr	r0, .L_76980
 	ldrb	r0, [r0, #0]
 	cmp	r0, #1
@@ -3202,7 +3202,7 @@ func_8076998:
 	add	r1, #32
 	lsl	r1, r1, #16
 	lsr	r1, r1, #16
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	pop	{r4, r5, r6}
 	pop	{r0}
 	bx	r0

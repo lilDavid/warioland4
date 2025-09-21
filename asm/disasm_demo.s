@@ -318,7 +318,7 @@ func_8072B98:
 	mov	r0, #1
 	strh	r0, [r3, #0]
 	ldr	r0, .L_72c30
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	bl	m4aMPlayAllStop
 	ldr	r5, .L_72c34
 	ldrb	r0, [r5, #0]

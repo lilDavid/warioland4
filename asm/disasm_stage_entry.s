@@ -878,7 +878,7 @@ func_807D10C:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #6
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	bl	func_807CADC
 	ldr	r0, .L_7d200
 	mov	r6, #0
@@ -1648,7 +1648,7 @@ func_807D628:
 .L_7d704:
 	bne	.L_7d750
 	mov	r0, #3
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	mov	r0, #218	@ 0xda
 	bl	m4aSongNumStart
 	ldr	r0, .L_7d744

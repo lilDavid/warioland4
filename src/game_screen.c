@@ -32,23 +32,23 @@ u32 GameScreenSubroutine(void)
 {
     u32 result;
 
-    GameScreen_SetVBlank();
+    GameScreenSetVBlank();
     result = 0;
     switch (gSubGameMode) {
         case 0:
             if (!gUnk_3000C3F) {
-                DemoInput_Init();
+                DemoInputInit();
             }
             if (gDemoState == DEMO_STATE_PLAYBACK) {
-                DemoInput_ReadButtons();
+                DemoInputReadButtons();
             }
-            GameScreen_InitAndLoadGenerics();
+            GameScreenInitAndLoadGenerics();
             gSubGameMode++;
             break;
 
         case 1:
             func_801C1B4();
-            if (GameScreen_FadeIn()) {
+            if (GameScreenFadeIn()) {
                 gSubGameMode++;
                 break;
             }
@@ -67,7 +67,7 @@ u32 GameScreenSubroutine(void)
                 } else {
                     gSubGameMode++;
                     gPauseFlag = TRUE;
-                    Music_PauseFadeOut();
+                    MusicPauseFadeOut();
                 }
 
                 if (gSubGameMode != 2 && gDemoState != DEMO_STATE_PLAYBACK) {
@@ -82,17 +82,17 @@ u32 GameScreenSubroutine(void)
                 if (gWarioPauseTimer != 0) {
                     gWarioPauseTimer -= 1;
                 } else {
-                    Wario_ProcessControls();
-                    Wario_ProcessCollision();
+                    WarioProcessControls();
+                    WarioProcessCollision();
                 }
             }
 
-            Background_ProcessMain();
+            BackgroundProcessMain();
             break;
 
         case 3:
             func_801C1B4();
-            if (GameScreen_FadeOut()) {
+            if (GameScreenFadeOut()) {
                 gSubGameMode = 0;
                 if (gPauseFlag || gUnk_3000C37 || !gUnk_3000025) {
                     result = 1;
@@ -101,7 +101,7 @@ u32 GameScreenSubroutine(void)
             break;
 
         case 4:
-            Wario_ProcessControls();
+            WarioProcessControls();
             if (gSubGameMode == 2) {
                 func_806DE8C(gUnk_3001892, gUnk_3001890);
             }
@@ -125,7 +125,7 @@ u32 GameScreenSubroutine(void)
             if (gStageExitType == 5) {
                 gButtonsHeld = 0;
                 gButtonsPressed = 0;
-                Wario_ProcessControls();
+                WarioProcessControls();
                 func_8010154();
             }
             break;
@@ -138,7 +138,7 @@ u32 GameScreenSubroutine(void)
 
         case 8:
             GameScreenDebugSubroutine();
-            Background_ProcessMain();
+            BackgroundProcessMain();
             break;
     }
 
@@ -153,11 +153,11 @@ u32 GameScreenSubroutine(void)
         func_8074988();
         ProcessSecondarySprites();
         if (!gDisableWario) {
-            GameScreen_DrawWario();
+            GameScreenDrawWario();
         }
         func_801D8C4();
         ResetFreeOam();
-        GameScreen_Draw();
+        GameScreenDraw();
     }
 
     func_80101D0();
@@ -166,22 +166,22 @@ u32 GameScreenSubroutine(void)
     return result;
 }
 
-void GameScreen_SetVBlank(void)
+void GameScreenSetVBlank(void)
 {
     switch (gSubGameMode) {
         case 0:
         case 1:
         case 3:
-            InterruptCallback_SetVBlank(func_801BC0C);
+            InterruptCallbackSetVBlank(func_801BC0C);
             break;
 
         case 6:
-            InterruptCallback_SetVBlank(func_801C050);
+            InterruptCallbackSetVBlank(func_801C050);
             break;
 
         case 2:
         default:
-            InterruptCallback_SetVBlank(func_801BEA8);
+            InterruptCallbackSetVBlank(func_801BEA8);
     }
 }
 
@@ -342,10 +342,10 @@ void func_801C050(void)
 
 void func_801C1B4(void)
 {
-    ColorFading_Process();
+    ColorFadingProcess();
 }
 
-void GameScreen_InitAndLoadGenerics(void)
+void GameScreenInitAndLoadGenerics(void)
 {
     s16 bldcnt;
     u8 dispcnt;
@@ -354,7 +354,7 @@ void GameScreen_InitAndLoadGenerics(void)
     REG_DISPSTAT &= ~DISPSTAT_HBLANK_INTR;
     REG_IE &= ~INTR_FLAG_HBLANK;
     REG_IME = TRUE;
-    InterruptCallback_SetVBlank(func_801C040);
+    InterruptCallbackSetVBlank(func_801C040);
 
     REG_BLDCNT = 0xFF;
     REG_BLDY = 0x10;
@@ -372,7 +372,7 @@ void GameScreen_InitAndLoadGenerics(void)
     func_80746C0();
     DmaCopy16(3, sUnk_82DDDA0, OBJ_PLTT, 0x20);
     DmaCopy16(3, sUnk_82DDDC0, OBJ_PLTT + 0x40, 0x20);
-    DmaCopy16(3, sCommonSpritesPal, OBJ_PLTT + 0x80, 0x80) GameScreen_InitWario();
+    DmaCopy16(3, sCommonSpritesPal, OBJ_PLTT + 0x80, 0x80) GameScreenInitWario();
     do {
     } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
@@ -381,8 +381,8 @@ void GameScreen_InitAndLoadGenerics(void)
     } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
     if ((gPauseFlag == 0) && (gUnk_3000C3F != 0)) {
-        Wario_ProcessControls();
-        Wario_ProcessCollision();
+        WarioProcessControls();
+        WarioProcessCollision();
     }
     func_8010154();
     func_801BD4C();
@@ -432,10 +432,10 @@ void GameScreen_InitAndLoadGenerics(void)
     REG_BLDCNT = bldcnt;
     dispcnt = (DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON | DISPCNT_WIN1_ON) >> 8;
     REG_DISPCNT = dispcnt << 8;
-    InterruptCallback_SetVBlank(func_801BC0C);
+    InterruptCallbackSetVBlank(func_801BC0C);
 }
 
-void GameScreen_InitWario(void)
+void GameScreenInitWario(void)
 {
     if (!gPauseFlag) {
         gUnk_30031B8 = 0;

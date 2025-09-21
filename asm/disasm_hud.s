@@ -45,7 +45,7 @@ func_8074808:
 	lsl	r1, r1, #16
 	lsr	r1, r1, #16
 	mov	r2, #63	@ 0x3f
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	b	.L_74868
 	.align	2, 0
 .L_74860:
@@ -129,7 +129,7 @@ func_8074808:
 	lsl	r1, r1, #16
 	lsr	r1, r1, #16
 	mov	r2, #62	@ 0x3e
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	b	.L_7490c
 	.align	2, 0
 .L_74900:

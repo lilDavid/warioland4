@@ -192,7 +192,7 @@ func_807F924:
 	ldr	r0, .L_7faa0
 	bl	m4aSongNumStart
 	mov	r0, #6
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	pop	{r3, r4, r5}
 	mov	r8, r3
 	mov	r9, r4

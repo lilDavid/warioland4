@@ -321,7 +321,7 @@ const struct AnimationFrame sKeyzerOam_83B4A04[] = {
 const s16 sKeyzerFloatYVelocity[] = {0, 0, 0, 0, 0, 0, -1, -1, -1, -2, -2, -3, -2, -2, -1, -1, -1, 0, 0, 0,      0,
                                      0, 0, 0, 0, 0, 1, 1,  1,  2,  2,  3,  2,  2,  1,  1,  1,  0,  0, 0, S16_MAX};
 
-void Keyzer_Init()
+void KeyzerInit()
 {
     if (gCollectedKeyzer) {
         gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
@@ -346,7 +346,7 @@ void Keyzer_Init()
     }
 }
 
-void Keyzer_Collect()
+void KeyzerCollect()
 {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
@@ -356,22 +356,22 @@ void Keyzer_Collect()
     } else {
         m4aSongNumStart(SE_GET_KEYZER);
     }
-    Sprite_SpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_KEYZER);
-    VoiceSet_Play(VS_WARIO_KEYZER_GET);
+    SpriteSpawnSecondary(gCurrentSprite.yPosition, gCurrentSprite.xPosition, SSPRITE_KEYZER);
+    VoiceSetPlay(VS_WARIO_KEYZER_GET);
 }
 
-void SpriteAI_Keyzer(void)
+void SpriteKeyzer(void)
 {
     s16 yVelocity;
     u8 frame;
 
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Keyzer_Init();
+            KeyzerInit();
             break;
 
         case POSE_31:
-            Keyzer_Collect();
+            KeyzerCollect();
         default:
             frame = gCurrentSprite.work3;
             yVelocity = sKeyzerFloatYVelocity[frame];

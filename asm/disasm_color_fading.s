@@ -322,8 +322,8 @@ func_80703DC:
 	.4byte	0x05000200
 
 
-thumb_func_start ColorFading_Process
-ColorFading_Process:
+thumb_func_start ColorFadingProcess
+ColorFadingProcess:
 	push	{r4, lr}
 	ldr	r3, .L_7048c
 	ldrb	r2, [r3, #4]

@@ -100,16 +100,16 @@ interrupt_table_ptr: .4byte interrupt_table
 .section .rodata
 
 interrupt_table:
-    .4byte InterruptCallback_CallVBlank  @ INTR_FLAG_VBLANK
-    .4byte InterruptCallback_CallHBlank  @ INTR_FLAG_HBLANK
-    .4byte InterruptCallback_CallVCount  @ INTR_FLAG_VCOUNT
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_TIMER0
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_TIMER1
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_TIMER2
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_TIMER3
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_COM
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_DMA0
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_DMA1
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_DMA2
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_DMA3
-    .4byte InterruptCallback_Empty       @ INTR_FLAG_KEYPAD
+    .4byte InterruptCallbackCallVBlank  @ INTR_FLAG_VBLANK
+    .4byte InterruptCallbackCallHBlank  @ INTR_FLAG_HBLANK
+    .4byte InterruptCallbackCallVCount  @ INTR_FLAG_VCOUNT
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_TIMER0
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_TIMER1
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_TIMER2
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_TIMER3
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_COM
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_DMA0
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_DMA1
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_DMA2
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_DMA3
+    .4byte InterruptCallbackEmpty       @ INTR_FLAG_KEYPAD

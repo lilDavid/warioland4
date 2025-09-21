@@ -8,13 +8,13 @@ IWRAM_DATA u8 gDemoState = 0;
 void DemoInputSubroutine(void)
 {
     if (gDemoState == DEMO_STATE_RECORDING) {
-        DemoInput_Record();
+        DemoInputRecord();
     } else if (gDemoState == DEMO_STATE_PLAYBACK) {
-        DemoInput_Playback();
+        DemoInputPlayback();
     }
 }
 
-void DemoInput_Record(void)
+void DemoInputRecord(void)
 {
     if (gDemoSequenceIndex >= DEMO_INPUT_SIZE - 2) {
         gButtonsPressed = START_BUTTON;
@@ -31,7 +31,7 @@ void DemoInput_Record(void)
     }
 }
 
-void DemoInput_Playback(void)
+void DemoInputPlayback(void)
 {
     if (gDemoSequenceIndex >= DEMO_INPUT_SIZE - 2 || gDemoButtonPressTimer == U16_MAX || gButtonsHeld != 0) {
         gButtonsPressed = START_BUTTON;
@@ -47,14 +47,14 @@ void DemoInput_Playback(void)
     }
 }
 
-void DemoInput_ReadButtons(void)
+void DemoInputReadButtons(void)
 {
     gButtonsHeld = gDemoInputs[gDemoSequenceIndex];
     gButtonsPressed = (gButtonsHeld ^ gDemoButtonsPressed) & gButtonsHeld;
     gDemoButtonsPressed = gButtonsHeld;
 }
 
-void DemoInput_Init(void)
+void DemoInputInit(void)
 {
     s32 i;
 

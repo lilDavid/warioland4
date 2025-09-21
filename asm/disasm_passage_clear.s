@@ -111,7 +111,7 @@ func_8083798:
 	ldr	r0, .L_838d0
 	bl	m4aSongNumStart
 	mov	r0, #2
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	mov	r3, #0
 	ldr	r4, .L_838d4
 	ldr	r2, .L_838d8
@@ -696,7 +696,7 @@ func_8083C94:
 	lsl	r0, r0, #16
 	cmp	r0, #0
 	bne	.L_83cf4
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r5, .L_83dbc
 	ldr	r7, .L_83dc0
 	ldrb	r4, [r7, #0]
@@ -714,7 +714,7 @@ func_8083C94:
 	add	r0, r0, r5
 	ldr	r1, .L_83dc8
 	strh	r1, [r0, #2]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldrb	r4, [r7, #0]
 	lsl	r4, r4, #3
 	add	r4, r4, r5
@@ -739,7 +739,7 @@ func_8083C94:
 	lsl	r0, r0, #16
 	cmp	r0, #0
 	bne	.L_83d52
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r5, .L_83dcc
 	ldr	r7, .L_83dd0
 	ldrb	r4, [r7, #0]
@@ -757,7 +757,7 @@ func_8083C94:
 	add	r0, r0, r5
 	ldr	r1, .L_83dc8
 	strh	r1, [r0, #2]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldrb	r4, [r7, #0]
 	lsl	r4, r4, #3
 	add	r4, r4, r5
@@ -782,7 +782,7 @@ func_8083C94:
 	lsl	r0, r0, #16
 	cmp	r0, #0
 	bne	.L_83db0
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r5, .L_83dd4
 	ldr	r7, .L_83dd8
 	ldrb	r4, [r7, #0]
@@ -800,7 +800,7 @@ func_8083C94:
 	add	r0, r0, r5
 	ldr	r1, .L_83dc8
 	strh	r1, [r0, #2]
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldrb	r4, [r7, #0]
 	lsl	r4, r4, #3
 	add	r4, r4, r5

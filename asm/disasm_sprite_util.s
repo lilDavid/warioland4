@@ -1764,7 +1764,7 @@ func_8024524:
 	sub	r0, #32
 	ldrh	r1, [r2, #10]
 	mov	r2, #5
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 .L_2454c:
 	pop	{r0}
 	bx	r0
@@ -1782,7 +1782,7 @@ func_8024554:
 	sub	r0, #32
 	ldrh	r1, [r1, #10]
 	mov	r2, #5
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	pop	{r0}
 	bx	r0
 .L_2456c:
@@ -5875,8 +5875,8 @@ func_80262BC:
 	bx	r1
 
 
-thumb_func_start SpriteUtil_TurnTowardWario
-SpriteUtil_TurnTowardWario:
+thumb_func_start SpriteUtilTurnTowardWario
+SpriteUtilTurnTowardWario:
 	ldr	r2, .L_2631c
 	ldr	r1, .L_26320
 	ldrh	r0, [r2, #10]
@@ -6727,8 +6727,8 @@ func_8026838:
 	.4byte	0x0000efff
 
 
-thumb_func_start SpriteUtil_DespawnChildWithParent
-SpriteUtil_DespawnChildWithParent:
+thumb_func_start SpriteUtilDespawnChildWithParent
+SpriteUtilDespawnChildWithParent:
 	push	{r4, r5, r6, lr}
 	lsl	r0, r0, #24
 	lsr	r4, r0, #24
@@ -7498,7 +7498,7 @@ func_8026DD0:
 	lsl	r1, r1, #1
 	mov	r0, #200	@ 0xc8
 	mov	r2, #78	@ 0x4e
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldrh	r0, [r4, #20]
 	ldr	r1, .L_26e5c
 	ldrh	r1, [r1, #0]
@@ -7509,7 +7509,7 @@ func_8026DD0:
 	add	r2, #64	@ 0x40
 	sub	r1, r1, r2
 	mov	r2, #79	@ 0x4f
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	mov	r0, #222	@ 0xde
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart

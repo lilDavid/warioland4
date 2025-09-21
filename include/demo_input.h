@@ -12,9 +12,9 @@ enum DemoState {
 extern u8 gDemoState;
 
 void DemoInputSubroutine(void);
-void DemoInput_Record(void);
-void DemoInput_Playback(void);
-void DemoInput_ReadButtons(void);
-void DemoInput_Init(void);
+void DemoInputRecord(void);
+void DemoInputPlayback(void);
+void DemoInputReadButtons(void);
+void DemoInputInit(void);
 
 #endif  // DEMO_INPUT_H

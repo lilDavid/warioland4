@@ -223,7 +223,7 @@ thumb_func_start func_8088830
 func_8088830:
 	push	{lr}
 	ldr	r0, .L_8883c
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	pop	{r0}
 	bx	r0
 .L_8883c:

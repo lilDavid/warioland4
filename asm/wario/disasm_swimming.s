@@ -1363,7 +1363,7 @@ func_8016614:
 	bl	m4aSongNumStart
 	mov	r0, #0
 .L_16654:
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_1667c
 	.align	2, 0
 .L_1665c:
@@ -1516,7 +1516,7 @@ func_8016614:
 	sub	r0, #96	@ 0x60
 	ldrh	r1, [r1, #18]
 	mov	r2, #48	@ 0x30
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 .L_16792:
 	ldr	r1, .L_167a8
 	mov	r0, #1

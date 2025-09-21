@@ -65,7 +65,7 @@ u32 func_8026210(u32, u32);
 void func_8026374(void);
 void func_80263E0(void);
 void func_8026838(void);
-u32 SpriteUtil_DespawnChildWithParent(u32 parentId);
-void SpriteUtil_TurnTowardWario(void);
+u32 SpriteUtilDespawnChildWithParent(u32 parentId);
+void SpriteUtilTurnTowardWario(void);
 
 #endif  // SPRITE_UTIL_H

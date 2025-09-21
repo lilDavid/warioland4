@@ -616,7 +616,7 @@ static void func_802BC24(void)
     }
 }
 
-static void Coin_Pose44(void)
+static void CoinPose44(void)
 {
     u32 unk_r2;
     s16 yVelocity;
@@ -674,7 +674,7 @@ static void Coin_Pose44(void)
     }
 }
 
-static void Coin_Pose46(void)
+static void CoinPose46(void)
 {
     u32 unk_r2;
     s16 yVelocity;
@@ -732,7 +732,7 @@ static void Coin_Pose46(void)
     }
 }
 
-static void Coin_Init(void)
+static void CoinInit(void)
 {
     switch (gCurrentSprite.globalID) {
         case PSPRITE_COIN_50POINTS:
@@ -830,7 +830,7 @@ static void Coin_Init(void)
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_FACING_RIGHT;
         }
     } else {
-        SpriteUtil_TurnTowardWario();
+        SpriteUtilTurnTowardWario();
         if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
             gCurrentSprite.pose = POSE_39;
         } else {
@@ -839,7 +839,7 @@ static void Coin_Init(void)
     }
 }
 
-static void Coin_Pose2F(void)
+static void CoinPose2F(void)
 {
     gCurrentSprite.pose = POSE_30;
     if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
@@ -849,7 +849,7 @@ static void Coin_Pose2F(void)
     }
 }
 
-static void Coin_Pose30(void)
+static void CoinPose30(void)
 {
     if (gCurrentSprite.work0 != 0) {
         TIMER_COUNT_DOWN(gCurrentSprite.work0);
@@ -863,13 +863,13 @@ static void Coin_Pose30(void)
     }
 }
 
-static void Coin_Collect(void)
+static void CoinCollect(void)
 {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     switch (gCurrentSprite.globalID) {
         case PSPRITE_COIN_50POINTS:
-            Score_GivePoints(CONVERT_SCORE(50));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 90, gCurrentSprite.xPosition, SSPRITE_SCORE_50);
+            ScoreGivePoints(CONVERT_SCORE(50));
+            SpriteSpawnSecondary(gCurrentSprite.yPosition - 90, gCurrentSprite.xPosition, SSPRITE_SCORE_50);
             if (gWarioData.reaction == REACT_WATER) {
                 m4aSongNumStart(SE_GET_COIN_50POINTS_UNDERWATER);
             } else {
@@ -878,8 +878,8 @@ static void Coin_Collect(void)
             break;
 
         case PSPRITE_COIN_100POINTS:
-            Score_GivePoints(CONVERT_SCORE(100));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 120, gCurrentSprite.xPosition, SSPRITE_SCORE_100);
+            ScoreGivePoints(CONVERT_SCORE(100));
+            SpriteSpawnSecondary(gCurrentSprite.yPosition - 120, gCurrentSprite.xPosition, SSPRITE_SCORE_100);
             if (gWarioData.reaction == REACT_WATER) {
                 m4aSongNumStart(SE_GET_COIN_100POINTS_UNDERWATER);
             } else {
@@ -888,8 +888,8 @@ static void Coin_Collect(void)
             break;
 
         case PSPRITE_COIN_500POINTS:
-            Score_GivePoints(CONVERT_SCORE(500));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 150, gCurrentSprite.xPosition, SSPRITE_SCORE_500);
+            ScoreGivePoints(CONVERT_SCORE(500));
+            SpriteSpawnSecondary(gCurrentSprite.yPosition - 150, gCurrentSprite.xPosition, SSPRITE_SCORE_500);
             if (gWarioData.reaction == REACT_WATER) {
                 m4aSongNumStart(SE_GET_COIN_500POINTS_UNDERWATER);
             } else {
@@ -898,8 +898,8 @@ static void Coin_Collect(void)
             break;
 
         case PSPRITE_COIN_1000POINTS:
-            Score_GivePoints(CONVERT_SCORE(1000));
-            Sprite_SpawnSecondary(
+            ScoreGivePoints(CONVERT_SCORE(1000));
+            SpriteSpawnSecondary(
                 gCurrentSprite.yPosition - 180, gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000
             );
             if (gWarioData.reaction == REACT_WATER) {
@@ -921,8 +921,8 @@ static void Coin_Collect(void)
             break;
 
         default:
-            Score_GivePoints(CONVERT_SCORE(10));
-            Sprite_SpawnSecondary(gCurrentSprite.yPosition - 60, gCurrentSprite.xPosition, SSPRITE_SCORE_10);
+            ScoreGivePoints(CONVERT_SCORE(10));
+            SpriteSpawnSecondary(gCurrentSprite.yPosition - 60, gCurrentSprite.xPosition, SSPRITE_SCORE_10);
             if (gWarioData.reaction == REACT_WATER) {
                 m4aSongNumStart(SE_GET_COIN_10POINTS_UNDERWATER);
             } else {
@@ -932,19 +932,19 @@ static void Coin_Collect(void)
     }
 }
 
-static void Coin_Pose1D(void)
+static void CoinPose1D(void)
 {
     gCurrentSprite.pose = POSE_1E;
     gCurrentSprite.work3 = 0;
 }
 
-static void Coin_Pose2B(void)
+static void CoinPose2B(void)
 {
     gCurrentSprite.pose = POSE_2C;
     gCurrentSprite.work1 = 0;
 }
 
-static void Coin_Pose2C(void)
+static void CoinPose2C(void)
 {
     func_80238E8();
     if (gCurrentSprite.work2 >= 2) {
@@ -954,13 +954,13 @@ static void Coin_Pose2C(void)
     }
 }
 
-static void Coin_Pose2D(void)
+static void CoinPose2D(void)
 {
     gCurrentSprite.pose = POSE_2E;
     gCurrentSprite.work1 = 0;
 }
 
-static void Coin_Pose2E(void)
+static void CoinPose2E(void)
 {
     func_80238E8();
     if (gCurrentSprite.work2 >= 2) {
@@ -970,7 +970,7 @@ static void Coin_Pose2E(void)
     }
 }
 
-static void Diamond_Init(void)
+static void DiamondInit(void)
 {
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
     gCurrentSprite.drawDistanceDown = 24;
@@ -990,7 +990,7 @@ static void Diamond_Init(void)
     gCurrentSprite.xPosition += HALF_BLOCK_SIZE;
 }
 
-static void Diamond_Float(void)
+static void DiamondFloat(void)
 {
     s16 yVelocity;
     u8 frame;
@@ -1005,12 +1005,12 @@ static void Diamond_Float(void)
     gCurrentSprite.yPosition += yVelocity;
 }
 
-static void Diamond_Collect(void)
+static void DiamondCollect(void)
 {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
-    Score_GivePoints(CONVERT_SCORE(1000));
-    Sprite_SpawnSecondary(
+    ScoreGivePoints(CONVERT_SCORE(1000));
+    SpriteSpawnSecondary(
         gCurrentSprite.yPosition - SUBPIXELS_FROM_PIXELS(25), gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000
     );
     if (gWarioData.reaction == REACT_WATER) {
@@ -1018,10 +1018,10 @@ static void Diamond_Collect(void)
     } else {
         m4aSongNumStart(SE_GET_DIAMOND);
     }
-    VoiceSet_Play(VS_WARIO_TREASURE);
+    VoiceSetPlay(VS_WARIO_TREASURE);
 }
 
-static void ChanceWheelDiamond_Init(void)
+static void ChanceWheelDiamondInit(void)
 {
     gCurrentSprite.globalID = PSPRITE_COIN_1000POINTS;
     gCurrentSprite.pOamData = &sDiamondOamData;
@@ -1033,7 +1033,7 @@ static void ChanceWheelDiamond_Init(void)
     gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE + EIGHTH_BLOCK_SIZE;
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE + EIGHTH_BLOCK_SIZE - PIXEL_SIZE;
     gCurrentSprite.work2 = 4;
-    SpriteUtil_TurnTowardWario();
+    SpriteUtilTurnTowardWario();
     if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
         gCurrentSprite.pose = POSE_3B;
     } else {
@@ -1047,7 +1047,7 @@ static void ChanceWheelDiamond_Init(void)
     gCurrentSprite.animationTimer = 0;
 }
 
-void SpriteAI_Coin(void)
+void SpriteCoin(void)
 {
     u8 despawnTimer;
 
@@ -1072,36 +1072,36 @@ void SpriteAI_Coin(void)
     }
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Coin_Init();
+            CoinInit();
             break;
 
         case POSE_31:
-            Coin_Collect();
+            CoinCollect();
             break;
 
         case POSE_1D:
-            Coin_Pose1D();
+            CoinPose1D();
         case POSE_1E:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
             func_8023EE0();
             break;
 
         case POSE_2B:
-            Coin_Pose2B();
+            CoinPose2B();
         case POSE_2C:
-            Coin_Pose2C();
+            CoinPose2C();
             break;
 
         case POSE_2D:
-            Coin_Pose2D();
+            CoinPose2D();
         case POSE_2E:
-            Coin_Pose2E();
+            CoinPose2E();
             break;
 
         case POSE_2F:
-            Coin_Pose2F();
+            CoinPose2F();
         case POSE_30:
-            Coin_Pose30();
+            CoinPose30();
             break;
 
         case POSE_35:
@@ -1147,7 +1147,7 @@ void SpriteAI_Coin(void)
             func_8024AC0();
         case POSE_44:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
-            Coin_Pose44();
+            CoinPose44();
             break;
 
         case POSE_45:
@@ -1155,7 +1155,7 @@ void SpriteAI_Coin(void)
             func_8024BEC();
         case POSE_46:
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
-            Coin_Pose46();
+            CoinPose46();
             break;
 
         default:
@@ -1164,27 +1164,27 @@ void SpriteAI_Coin(void)
     }
 }
 
-void SpriteAI_Diamond(void)
+void SpriteDiamond(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Diamond_Init();
+            DiamondInit();
             break;
 
         case POSE_IDLE:
-            Diamond_Float();
+            DiamondFloat();
             break;
 
         case POSE_31:
-            Diamond_Collect();
+            DiamondCollect();
             break;
     }
 }
 
-void SpriteAI_ChanceWheelDiamond(void)
+void SpriteChanceWheelDiamond(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            ChanceWheelDiamond_Init();
+            ChanceWheelDiamondInit();
     }
 }

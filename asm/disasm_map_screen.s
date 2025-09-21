@@ -1642,7 +1642,7 @@ func_807B940:
 	ldr	r0, .L_7ba94
 	str	r0, [r1, #0]
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	mov	r0, #218	@ 0xda
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart

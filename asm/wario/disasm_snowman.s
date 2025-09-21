@@ -839,7 +839,7 @@ func_801996C:
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_199b0
 .L_19994:
 	.4byte	gWarioDataCopy
@@ -963,7 +963,7 @@ func_801996C:
 	ldr	r0, .L_19a84
 	bl	m4aSongNumStart
 	mov	r0, #0
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_19aae
 	.align	2, 0
 .L_19a80:

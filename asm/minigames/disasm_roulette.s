@@ -962,7 +962,7 @@ func_808B104:
 	bl	func_808BCA0
 	mov	r5, #0
 .L_8b3de:
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r4, .L_8b4e8
 	add	r4, r5, r4
 	ldr	r1, .L_8b494
@@ -1215,7 +1215,7 @@ func_808B4EC:
 	bge	.L_8b5c2
 	mov	r5, #0
 .L_8b5ce:
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r6, .L_8b658
 	add	r4, r5, r6
 	ldr	r1, .L_8b61c
@@ -2180,7 +2180,7 @@ func_808BCA0:
 	ble	.L_8bce2
 	ldr	r5, .L_8bcec
 .L_8bcc6:
-	bl	Minigame_Random
+	bl	MinigameRandom
 	add	r1, r4, #0
 	bl	__modsi3
 	add	r2, r4, r5
@@ -2221,7 +2221,7 @@ func_808BCF0:
 	mov	r4, #13
 	ldr	r5, .L_8bd58
 .L_8bd0e:
-	bl	Minigame_Random
+	bl	MinigameRandom
 	add	r1, r4, #0
 	bl	__modsi3
 	add	r2, r4, r5

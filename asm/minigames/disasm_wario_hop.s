@@ -168,7 +168,7 @@ func_808CC5C:
 	mov	r6, r9
 	mov	r5, r8
 	push	{r5, r6, r7}
-	bl	Minigame_Random
+	bl	MinigameRandom
 	add	r1, r0, #0
 	mov	r2, #1
 	and	r1, r2
@@ -767,7 +767,7 @@ func_808D028:
 	ldrb	r0, [r6, #0]
 	cmp	r0, #1
 	bne	.L_8d158
-	bl	Minigame_Random
+	bl	MinigameRandom
 	ldr	r1, .L_8d140
 	bl	__modsi3
 	cmp	r0, #0
@@ -1080,7 +1080,7 @@ func_808D2BC:
 	mov	r3, #6
 	b	.L_8d338
 .L_8d32c:
-	bl	Minigame_Random
+	bl	MinigameRandom
 	mov	r1, #5
 	bl	__modsi3
 	add	r3, r0, #0

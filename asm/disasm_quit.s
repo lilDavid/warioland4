@@ -15,7 +15,7 @@ thumb_func_start QuitSubroutine
 QuitSubroutine:
 	push	{lr}
 	ldr	r0, .L_72c90
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	bl	func_8072F0C
 	ldr	r0, .L_72c94
 	mov	r1, #0

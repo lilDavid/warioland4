@@ -737,7 +737,7 @@ thumb_func_start func_8090104
 func_8090104:
 	push	{lr}
 	ldr	r0, .L_90110
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	pop	{r0}
 	bx	r0
 .L_90110:
@@ -896,7 +896,7 @@ func_80901C4:
 	.4byte	gUnk_3004A58
 .L_9022c:
 	mov	r0, #18
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	ldr	r0, .L_9024c
 	strh	r5, [r0, #0]
 	ldr	r1, .L_90250

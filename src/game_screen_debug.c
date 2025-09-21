@@ -45,7 +45,7 @@ void GameScreenDebugSubroutine(void)
         gSubGameMode = 6;
         gUnk_3000021 = 0;
         gStageExitType = 2;
-        Autosave_StageClear();
+        AutosaveStageClear();
         return;
     }
 
@@ -127,7 +127,7 @@ void func_801D4D4(void)
         gOamBuffer[0x7A].split.x = 0xDE;
         gOamBuffer[0x7A].split.tileNum = 0x1F0 + temp;
         gOamBuffer[0x7A].split.paletteNum = 3;
-        Autosave_StageClear();
+        AutosaveStageClear();
     }
 
     var_r6 = 0;

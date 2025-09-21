@@ -307,7 +307,7 @@ func_801E52C:
 .L_1e87a:
 	mov	r0, #0
 .L_1e87c:
-	bl	Score_GiveOrDropCoins
+	bl	ScoreGiveOrDropCoins
 	pop	{r0}
 	bx	r0
 
@@ -8452,7 +8452,7 @@ func_8022524:
 	add	r0, r5, #0
 	add	r1, r6, #0
 	mov	r2, #64	@ 0x40
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldr	r1, .L_225c4
 	mov	r0, #44	@ 0x2c
 	mov	r4, r8
@@ -8464,9 +8464,9 @@ func_8022524:
 	mov	r0, #11
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	mov	r0, #1
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	mov	r0, #15
 	strb	r0, [r4, #31]
 	b	.L_22710
@@ -8493,9 +8493,9 @@ func_8022524:
 	mov	r0, #11
 	mov	r1, #0
 	mov	r2, #0
-	bl	Sprite_SpawnAsChild
+	bl	SpriteSpawnAsChild
 	mov	r0, #1
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	mov	r0, #60	@ 0x3c
 	strb	r0, [r4, #31]
 	mov	r2, r9
@@ -8516,7 +8516,7 @@ func_8022524:
 	ldr	r0, [sp, #4]
 .L_2260e:
 	mov	r2, #64	@ 0x40
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	b	.L_22710
 .L_22616:
 	add	r5, r4, #0
@@ -8756,7 +8756,7 @@ func_8022724:
 	strh	r6, [r5, #20]
 	strb	r2, [r5, #30]
 	mov	r0, #4
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_22936
 .L_227e0:
 	.4byte	gSpriteData
@@ -9231,7 +9231,7 @@ func_8022AE8:
 	ldrh	r1, [r1, #10]
 	sub	r1, #32
 	mov	r2, #6
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	b	.L_22baa
 	.align	2, 0
 .L_22b64:
@@ -9267,7 +9267,7 @@ func_8022AE8:
 	ldrh	r1, [r1, #10]
 	add	r1, #32
 	mov	r2, #6
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 .L_22baa:
 	ldr	r0, .L_22bd0
 	ldrb	r0, [r0, #0]
@@ -9634,7 +9634,7 @@ func_8022CE8:
 	sub	r1, #32
 .L_22e60:
 	mov	r2, #64	@ 0x40
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	mov	r0, #56	@ 0x38
 	bl	m4aSongNumStart
 	b	.L_22ed4

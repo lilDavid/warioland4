@@ -337,7 +337,7 @@ const struct AnimationFrame sBoxHeartRefillOpenedOam[] = {
     ANIMATION_TERMINATOR
 };
 
-void Box_SetCommonProperties(void)
+void BoxSetCommonProperties(void)
 {
     gCurrentSprite.gfxSlot = 7;
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
@@ -352,30 +352,30 @@ void Box_SetCommonProperties(void)
     gCurrentSprite.animationTimer = 0;
 }
 
-void Box_Init(void)
+void BoxInit(void)
 {
     gCurrentSprite.hitboxExtentUp = 2 * BLOCK_SIZE - EIGHTH_BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x1A;
     gCurrentSprite.pose = POSE_IDLE;
-    Box_SetCommonProperties();
+    BoxSetCommonProperties();
 }
 
-void Box_Init1(void)
+void BoxInit1(void)
 {
     gCurrentSprite.hitboxExtentUp = BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x19;
     gCurrentSprite.pose = POSE_32;
     gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
     gCurrentSprite.work0 = CONVERT_SECONDS(5.0 / 6.0);
-    Box_SetCommonProperties();
+    BoxSetCommonProperties();
 }
 
-void Box_Init2(void)
+void BoxInit2(void)
 {
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
 }
 
-void Box_StartOpening(void)
+void BoxStartOpening(void)
 {
     gCurrentSprite.pose = POSE_12;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -387,20 +387,20 @@ void Box_StartOpening(void)
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
         MAKE_PERSISTENT_DATA(POSE_INIT_1, PERSISTENT_STATUS_LOADED);
     m4aSongNumStart(SE_BOX_OPENING);
-    VoiceSet_Play(VS_WARIO_TREASURE);
+    VoiceSetPlay(VS_WARIO_TREASURE);
 }
 
-void Box_FinishOpening(void)
+void BoxFinishOpening(void)
 {
     gCurrentSprite.pose = POSE_32;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
     gCurrentSprite.work0 = CONVERT_SECONDS(5.0 / 6.0);
-    Sprite_SpawnAsChild(PSPRITE_COIN_500POINTS, 0, 0, gCurrentSprite.yPosition - BLOCK_SIZE, gCurrentSprite.xPosition);
+    SpriteSpawnAsChild(PSPRITE_COIN_500POINTS, 0, 0, gCurrentSprite.yPosition - BLOCK_SIZE, gCurrentSprite.xPosition);
 }
 
-void Box_Disappearing(void)
+void BoxDisappearing(void)
 {
     u8 temp, temp2;
 
@@ -465,24 +465,24 @@ void TreasureGlow_Collected(void)
     gCurrentSprite.work0 = 9;
 }
 
-void SpriteAI_BoxJewelPieceNE(void)
+void SpriteBoxJewelPieceNE(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxJewelPieceNEClosedOam;
             break;
 
         case POSE_INIT_1:
-            Box_Init1();
-            Sprite_SpawnAsChild(
+            BoxInit1();
+            SpriteSpawnAsChild(
                 PSPRITE_JEWEL_PIECE_NE,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_JEWEL_PIECE_NE,
                 gCurrentSprite.roomSlot,
                 0,
@@ -492,32 +492,32 @@ void SpriteAI_BoxJewelPieceNE(void)
             break;
 
         case POSE_INIT_2:
-            Box_Init2();
+            BoxInit2();
             break;
 
         case POSE_1F:
         case POSE_21:
         case POSE_33:
         case POSE_35:
-            Box_StartOpening();
+            BoxStartOpening();
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 > 0) {
                 break;
             }
-            Box_FinishOpening();
+            BoxFinishOpening();
             if (gCollectedNEJewelPiece) {
                 gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                     MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             } else {
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_JEWEL_PIECE_NE,
                     gCurrentSprite.roomSlot,
                     0,
                     gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                     gCurrentSprite.xPosition
                 );
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_GLOW_JEWEL_PIECE_NE,
                     gCurrentSprite.roomSlot,
                     0,
@@ -528,7 +528,7 @@ void SpriteAI_BoxJewelPieceNE(void)
         case POSE_32:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
-                Box_Disappearing();
+                BoxDisappearing();
             }
             break;
     }
@@ -536,24 +536,24 @@ void SpriteAI_BoxJewelPieceNE(void)
     func_8026838();
 }
 
-void SpriteAI_BoxJewelPieceSE(void)
+void SpriteBoxJewelPieceSE(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxJewelPieceSEClosedOam;
             break;
 
         case POSE_INIT_1:
-            Box_Init1();
-            Sprite_SpawnAsChild(
+            BoxInit1();
+            SpriteSpawnAsChild(
                 PSPRITE_JEWEL_PIECE_SE,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_JEWEL_PIECE_SE,
                 gCurrentSprite.roomSlot,
                 0,
@@ -563,32 +563,32 @@ void SpriteAI_BoxJewelPieceSE(void)
             break;
 
         case POSE_INIT_2:
-            Box_Init2();
+            BoxInit2();
             break;
 
         case POSE_1F:
         case POSE_21:
         case POSE_33:
         case POSE_35:
-            Box_StartOpening();
+            BoxStartOpening();
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 > 0) {
                 break;
             }
-            Box_FinishOpening();
+            BoxFinishOpening();
             if (gCollectedSEJewelPiece) {
                 gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                     MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             } else {
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_JEWEL_PIECE_SE,
                     gCurrentSprite.roomSlot,
                     0,
                     gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                     gCurrentSprite.xPosition
                 );
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_GLOW_JEWEL_PIECE_SE,
                     gCurrentSprite.roomSlot,
                     0,
@@ -599,7 +599,7 @@ void SpriteAI_BoxJewelPieceSE(void)
         case POSE_32:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
-                Box_Disappearing();
+                BoxDisappearing();
             }
             break;
     }
@@ -607,24 +607,24 @@ void SpriteAI_BoxJewelPieceSE(void)
     func_8026838();
 }
 
-void SpriteAI_BoxJewelPieceSW(void)
+void SpriteBoxJewelPieceSW(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxJewelPieceSWClosedOam;
             break;
 
         case POSE_INIT_1:
-            Box_Init1();
-            Sprite_SpawnAsChild(
+            BoxInit1();
+            SpriteSpawnAsChild(
                 PSPRITE_JEWEL_PIECE_SW,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_JEWEL_PIECE_SW,
                 gCurrentSprite.roomSlot,
                 0,
@@ -634,32 +634,32 @@ void SpriteAI_BoxJewelPieceSW(void)
             break;
 
         case POSE_INIT_2:
-            Box_Init2();
+            BoxInit2();
             break;
 
         case POSE_1F:
         case POSE_21:
         case POSE_33:
         case POSE_35:
-            Box_StartOpening();
+            BoxStartOpening();
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 > 0) {
                 break;
             }
-            Box_FinishOpening();
+            BoxFinishOpening();
             if (gCollectedSWJewelPiece) {
                 gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                     MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             } else {
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_JEWEL_PIECE_SW,
                     gCurrentSprite.roomSlot,
                     0,
                     gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                     gCurrentSprite.xPosition
                 );
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_GLOW_JEWEL_PIECE_SW,
                     gCurrentSprite.roomSlot,
                     0,
@@ -670,7 +670,7 @@ void SpriteAI_BoxJewelPieceSW(void)
         case POSE_32:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
-                Box_Disappearing();
+                BoxDisappearing();
             }
             break;
     }
@@ -678,24 +678,24 @@ void SpriteAI_BoxJewelPieceSW(void)
     func_8026838();
 }
 
-void SpriteAI_BoxJewelPieceNW(void)
+void SpriteBoxJewelPieceNW(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxJewelPieceNWClosedOam;
             break;
 
         case POSE_INIT_1:
-            Box_Init1();
-            Sprite_SpawnAsChild(
+            BoxInit1();
+            SpriteSpawnAsChild(
                 PSPRITE_JEWEL_PIECE_NW,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_JEWEL_PIECE_NW,
                 gCurrentSprite.roomSlot,
                 0,
@@ -705,32 +705,32 @@ void SpriteAI_BoxJewelPieceNW(void)
             break;
 
         case POSE_INIT_2:
-            Box_Init2();
+            BoxInit2();
             break;
 
         case POSE_1F:
         case POSE_21:
         case POSE_33:
         case POSE_35:
-            Box_StartOpening();
+            BoxStartOpening();
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 > 0) {
                 break;
             }
-            Box_FinishOpening();
+            BoxFinishOpening();
             if (gCollectedNWJewelPiece) {
                 gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                     MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             } else {
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_JEWEL_PIECE_NW,
                     gCurrentSprite.roomSlot,
                     0,
                     gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                     gCurrentSprite.xPosition
                 );
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_GLOW_JEWEL_PIECE_NW,
                     gCurrentSprite.roomSlot,
                     0,
@@ -741,7 +741,7 @@ void SpriteAI_BoxJewelPieceNW(void)
         case POSE_32:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
-                Box_Disappearing();
+                BoxDisappearing();
             }
             break;
     }
@@ -749,25 +749,25 @@ void SpriteAI_BoxJewelPieceNW(void)
     func_8026838();
 }
 
-void SpriteAI_BoxCD(void)
+void SpriteBoxCD(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxCDClosedOam;
             break;
 
         case POSE_INIT_1:
-            Box_Init1();
+            BoxInit1();
             gCurrentSprite.pOamData = sBoxCDOpenedOam;
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_CD,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_CD,
                 gCurrentSprite.roomSlot,
                 0,
@@ -777,34 +777,34 @@ void SpriteAI_BoxCD(void)
             break;
 
         case POSE_INIT_2:
-            Box_Init2();
+            BoxInit2();
             break;
 
         case POSE_1F:
         case POSE_21:
         case POSE_33:
         case POSE_35:
-            Box_StartOpening();
+            BoxStartOpening();
             gCurrentSprite.pOamData = sBoxCDOpeningOam;
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 > 0) {
                 break;
             }
-            Box_FinishOpening();
+            BoxFinishOpening();
             gCurrentSprite.pOamData = sBoxCDOpenedOam;
             if (gCollectedCD) {
                 gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                     MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             } else {
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_CD,
                     gCurrentSprite.roomSlot,
                     0,
                     gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                     gCurrentSprite.xPosition
                 );
-                Sprite_SpawnAsChild(
+                SpriteSpawnAsChild(
                     PSPRITE_GLOW_CD,
                     gCurrentSprite.roomSlot,
                     0,
@@ -815,7 +815,7 @@ void SpriteAI_BoxCD(void)
         case POSE_32:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
-                Box_Disappearing();
+                BoxDisappearing();
             }
             break;
     }
@@ -823,25 +823,25 @@ void SpriteAI_BoxCD(void)
     func_8026838();
 }
 
-void SpriteAI_BoxHeartRefill(void)
+void SpriteBoxHeartRefill(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxHeartRefillClosedOam;
             break;
 
         case POSE_INIT_1:
-            Box_Init1();
+            BoxInit1();
             gCurrentSprite.pOamData = sBoxHeartRefillOpenedOam;
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_HEART_REFILL,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_HEART_REFILL,
                 gCurrentSprite.roomSlot,
                 0,
@@ -851,30 +851,30 @@ void SpriteAI_BoxHeartRefill(void)
             break;
 
         case POSE_INIT_2:
-            Box_Init2();
+            BoxInit2();
             break;
 
         case POSE_1F:
         case POSE_21:
         case POSE_33:
         case POSE_35:
-            Box_StartOpening();
+            BoxStartOpening();
             gCurrentSprite.pOamData = sBoxHeartRefillOpeningOam;
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 > 0) {
                 break;
             }
-            Box_FinishOpening();
+            BoxFinishOpening();
             gCurrentSprite.pOamData = sBoxHeartRefillOpenedOam;
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_HEART_REFILL,
                 gCurrentSprite.roomSlot,
                 0,
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-            Sprite_SpawnAsChild(
+            SpriteSpawnAsChild(
                 PSPRITE_GLOW_HEART_REFILL,
                 gCurrentSprite.roomSlot,
                 0,
@@ -884,7 +884,7 @@ void SpriteAI_BoxHeartRefill(void)
         case POSE_32:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
-                Box_Disappearing();
+                BoxDisappearing();
             }
             break;
     }
@@ -892,12 +892,12 @@ void SpriteAI_BoxHeartRefill(void)
     func_8026838();
 }
 
-void SpriteAI_JewelPieceNE(void)
+void SpriteJewelPieceNE(void)
 {
     s16 yVelocity;
     u8 frame;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
         return;
     }
 
@@ -914,13 +914,13 @@ void SpriteAI_JewelPieceNE(void)
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50),
                     SSPRITE_JEWEL_PIECE_ICONS
                 );
             } else {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18),
                     SSPRITE_JEWEL_PIECE_ICONS
@@ -941,12 +941,12 @@ void SpriteAI_JewelPieceNE(void)
     }
 }
 
-void SpriteAI_JewelPieceSE(void)
+void SpriteJewelPieceSE(void)
 {
     s16 yVelocity;
     u8 frame;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
         return;
     }
 
@@ -963,13 +963,13 @@ void SpriteAI_JewelPieceSE(void)
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50),
                     SSPRITE_JEWEL_PIECE_ICONS
                 );
             } else {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18),
                     SSPRITE_JEWEL_PIECE_ICONS
@@ -990,12 +990,12 @@ void SpriteAI_JewelPieceSE(void)
     }
 }
 
-void SpriteAI_JewelPieceSW(void)
+void SpriteJewelPieceSW(void)
 {
     s16 yVelocity;
     u8 frame;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
         return;
     }
 
@@ -1012,13 +1012,13 @@ void SpriteAI_JewelPieceSW(void)
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50),
                     SSPRITE_JEWEL_PIECE_ICONS
                 );
             } else {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18),
                     SSPRITE_JEWEL_PIECE_ICONS
@@ -1039,12 +1039,12 @@ void SpriteAI_JewelPieceSW(void)
     }
 }
 
-void SpriteAI_JewelPieceNW(void)
+void SpriteJewelPieceNW(void)
 {
     s16 yVelocity;
     u8 frame;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
         return;
     }
 
@@ -1061,13 +1061,13 @@ void SpriteAI_JewelPieceNW(void)
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(50),
                     SSPRITE_JEWEL_PIECE_ICONS
                 );
             } else {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18),
                     SSPRITE_JEWEL_PIECE_ICONS
@@ -1088,12 +1088,12 @@ void SpriteAI_JewelPieceNW(void)
     }
 }
 
-void SpriteAI_CD(void)
+void SpriteCD(void)
 {
     s16 yVelocity;
     u8 frame;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_CD)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_CD)) {
         return;
     }
 
@@ -1110,13 +1110,13 @@ void SpriteAI_CD(void)
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition - SUBPIXELS_FROM_PIXELS(34),
                     SSPRITE_CD_ICON
                 );
             } else {
-                Sprite_SpawnSecondary(
+                SpriteSpawnSecondary(
                     gWarioData.yPosition - SUBPIXELS_FROM_PIXELS(40),
                     gWarioData.xPosition + SUBPIXELS_FROM_PIXELS(18),
                     SSPRITE_CD_ICON
@@ -1137,12 +1137,12 @@ void SpriteAI_CD(void)
     }
 }
 
-void SpriteAI_HeartRefill(void)
+void SpriteHeartRefill(void)
 {
     s16 yVelocity;
     u8 frame;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
         return;
     }
 
@@ -1178,14 +1178,14 @@ void SpriteAI_HeartRefill(void)
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceNE(void)
+void SpriteTreasureGlowJewelPieceNE(void)
 {
     s16 yVelocity;
     u8 frame;
 
     gCurrentSprite.disableWarioInteraction = 1;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
         return;
     }
 
@@ -1219,14 +1219,14 @@ void SpriteAI_TreasureGlowJewelPieceNE(void)
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceSE(void)
+void SpriteTreasureGlowJewelPieceSE(void)
 {
     s16 yVelocity;
     u8 frame;
 
     gCurrentSprite.disableWarioInteraction = 1;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
         return;
     }
 
@@ -1260,14 +1260,14 @@ void SpriteAI_TreasureGlowJewelPieceSE(void)
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceSW(void)
+void SpriteTreasureGlowJewelPieceSW(void)
 {
     s16 yVelocity;
     u8 frame;
 
     gCurrentSprite.disableWarioInteraction = 1;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
         return;
     }
 
@@ -1301,14 +1301,14 @@ void SpriteAI_TreasureGlowJewelPieceSW(void)
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceNW(void)
+void SpriteTreasureGlowJewelPieceNW(void)
 {
     s16 yVelocity;
     u8 frame;
 
     gCurrentSprite.disableWarioInteraction = 1;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
         return;
     }
 
@@ -1342,14 +1342,14 @@ void SpriteAI_TreasureGlowJewelPieceNW(void)
     }
 }
 
-void SpriteAI_TreasureGlowCD(void)
+void SpriteTreasureGlowCD(void)
 {
     s16 yVelocity;
     u8 frame;
 
     gCurrentSprite.disableWarioInteraction = 1;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_CD)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_CD)) {
         return;
     }
 
@@ -1383,14 +1383,14 @@ void SpriteAI_TreasureGlowCD(void)
     }
 }
 
-void SpriteAI_TreasureGlowHeartRefill(void)
+void SpriteTreasureGlowHeartRefill(void)
 {
     s16 yVelocity;
     u8 frame;
 
     gCurrentSprite.disableWarioInteraction = 1;
 
-    if (SpriteUtil_DespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
+    if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
         return;
     }
 
@@ -1424,7 +1424,7 @@ void SpriteAI_TreasureGlowHeartRefill(void)
     }
 }
 
-void SpriteAI_Treasure_Unused1(void)
+void SpriteTreasure_Unused1(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
@@ -1449,13 +1449,13 @@ void SpriteAI_Treasure_Unused1(void)
     func_8026838();
 }
 
-void SpriteAI_Treasure_Unused2(void)
+void SpriteTreasure_Unused2(void)
 {
     gCurrentSprite.disableWarioInteraction = 1;
 
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
-            Box_Init();
+            BoxInit();
             gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
             break;
     }

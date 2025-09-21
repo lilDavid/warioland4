@@ -3641,14 +3641,14 @@ func_80782A4:
 	ldrb	r0, [r0, #0]
 	cmp	r0, #5
 	bne	.L_78470
-	bl	Autosave_FinalBoss
+	bl	AutosaveFinalBoss
 	b	.L_789ec
 .L_78468:
 	.4byte	gCollectedKeyzer
 .L_7846c:
 	.4byte	gCurrentPassage
 .L_78470:
-	bl	Autosave_BossClear
+	bl	AutosaveBossClear
 	b	.L_789ec
 .L_78476:
 	ldr	r2, .L_784c0
@@ -3913,14 +3913,14 @@ func_80782A4:
 	ldrh	r0, [r1, #20]
 	ldrh	r1, [r1, #18]
 	mov	r2, #76	@ 0x4c
-	bl	Sprite_SpawnSecondary
+	bl	SpriteSpawnSecondary
 	ldr	r0, .L_786d4
 	ldrb	r0, [r0, #0]
 	cmp	r0, #4
 	beq	.L_7867a
 	b	.L_789ec
 .L_7867a:
-	bl	Autosave_Defeat
+	bl	AutosaveDefeat
 	b	.L_789ec
 	lsl	r7, r0, #1
 	lsl	r0, r0, #12
@@ -5554,7 +5554,7 @@ func_807915C:
 	mov	r5, r8
 	str	r0, [r5, #0]
 	mov	r0, #11
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_794d4
 	.align	2, 0
 .L_792b8:
@@ -6106,7 +6106,7 @@ func_8079574:
 	add	r0, #1
 	strb	r0, [r2, #3]
 	mov	r0, #11
-	bl	VoiceSet_Play
+	bl	VoiceSetPlay
 	b	.L_7979a
 .L_796d4:
 	.4byte	gUnk_3000C10

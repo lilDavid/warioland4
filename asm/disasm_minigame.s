@@ -311,8 +311,8 @@ MinigameSubroutine:
 	.4byte	gSubGameMode
 
 
-thumb_func_start Minigame_Random
-Minigame_Random:
+thumb_func_start MinigameRandom
+MinigameRandom:
 	ldr	r1, .L_89b94
 	ldrh	r2, [r1, #0]
 	mov	r0, #109	@ 0x6d
@@ -355,7 +355,7 @@ thumb_func_start func_8089BBC
 func_8089BBC:
 	push	{lr}
 	ldr	r0, .L_89bc8
-	bl	InterruptCallback_SetVBlank
+	bl	InterruptCallbackSetVBlank
 	pop	{r0}
 	bx	r0
 .L_89bc8:
