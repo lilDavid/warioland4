@@ -616,7 +616,7 @@ func_806DE8C:
 	bl	func_806E01C
 	cmp	r6, #0
 	beq	.L_6df34
-	bl	func_806C304
+	bl	Music_PauseFadeOut
 	ldr	r1, .L_6df28
 	mov	r0, #1
 	strb	r0, [r1, #0]
@@ -785,7 +785,7 @@ func_806E01C:
 	strb	r0, [r1, #0]
 	b	.L_6e082
 .L_6e038:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_6e03c:
 	.4byte	gColorFading
 .L_6e040:

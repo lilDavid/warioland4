@@ -51,7 +51,7 @@ SaveResetSubroutine:
 	strh	r0, [r1, #0]
 	b	.L_928ca
 .L_92848:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_9284c:
 	mov	r0, #143	@ 0x8f
 	lsl	r0, r0, #1
@@ -116,7 +116,7 @@ SaveResetSubroutine:
 	strh	r0, [r1, #0]
 	b	.L_928ca
 .L_928c4:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_928c8:
 	mov	r5, #1
 .L_928ca:
@@ -545,7 +545,7 @@ func_8092B30:
 .L_92bd4:
 	.4byte	0x04000050
 .L_92bd8:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_92bdc:
 	.4byte	0x04000054
 .L_92be0:
@@ -653,9 +653,9 @@ func_8092B30:
 .L_92cb0:
 	.4byte	gUnk_3000C3F
 .L_92cb4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_92cb8:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_92cbc:
 	.4byte	gOamSlotsUsed
 .L_92cc0:
@@ -814,11 +814,11 @@ func_8092DA0:
 .L_92ddc:
 	.4byte	0x84000100
 .L_92de0:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_92de4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_92de8:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 
 
 thumb_func_start func_8092DEC
@@ -1056,9 +1056,9 @@ func_8092DFC:
 .L_92fbc:
 	.4byte	gUnk_3004A70
 .L_92fc0:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_92fc4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_92fc8:
 	.4byte	gOamBuffer
 .L_92fcc:

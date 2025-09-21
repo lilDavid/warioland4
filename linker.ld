@@ -41,10 +41,10 @@ SECTIONS {
         . = 0x0026; gUnk_3000026 = .;
         . = 0x0027; gUnk_3000027 = .;
         . = 0x0028; gUnk_3000028 = .;
-        . = 0x002a; gUnk_300002A = .;
-        . = 0x002c; gUnk_300002C = .;
+        . = 0x002a; gBldAlpha = .;
+        . = 0x002c; gBldCnt = .;
         . = 0x002e; gUnk_300002E = .;
-        . = 0x0033; gUnk_3000033 = .;
+        . = 0x0033; gDrawWarioOverBackground = .;
         . = 0x0034; gUnk_3000034 = .;
         . = 0x0035; gUnk_3000035 = .;
         . = 0x0037; gUnk_3000037 = .;
@@ -62,9 +62,9 @@ SECTIONS {
         . = 0x0054; gBackgroundInfo = .;
         . = 0x0074; gCurrentRoomHeader = .;
         . = 0x00a0; gUnk_30000A0 = .;
-        . = 0x00a8; gUnk_30000A8 = .;
+        . = 0x00a8; gBackgroundScroll = .;
 
-        . = 0x00c0; gUnk_30000C0 = .;
+        . = 0x00c0; gWindow = .;
         . = 0x00c8; gUnk_30000C8 = .;
         . = 0x00cc; gUnk_30000CC = .;
 
@@ -152,23 +152,23 @@ SECTIONS {
         . = 0x1850; gUnk_3001850 = .;
         . = 0x1852; gUnk_3001852 = .;
         . = 0x1854; gUnk_3001854 = .;
-        . = 0x1858; gUnk_3001858 = .;
-        . = 0x185C; gUnk_300185C = .;
-        . = 0x1860; gUnk_3001860 = .;
+        . = 0x1858; gBg2X = .;
+        . = 0x185C; gBg2Y = .;
+        . = 0x1860; gMosaic = .;
         . = 0x1862; gUnk_3001862 = .;
         . = 0x1864; gUnk_3001864 = .;
         . = 0x1866; gUnk_3001866 = .;
-        . = 0x1868; gUnk_3001868 = .;
-        . = 0x186A; gUnk_300186A = .;
-        . = 0x186C; gUnk_300186C = .;
-        . = 0x186E; gUnk_300186E = .;
-        . = 0x1870; gUnk_3001870 = .;
+        . = 0x1868; gBg2PA = .;
+        . = 0x186A; gBg2PB = .;
+        . = 0x186C; gBg2PC = .;
+        . = 0x186E; gBg2PD = .;
+        . = 0x1870; gBldy = .;
         . = 0x1872; gUnk_3001872 = .;
         . = 0x1874; gUnk_3001874 = .;
         . = 0x1876; gUnk_3001876 = .;
         . = 0x1878; gUnk_3001878 = .;
-        . = 0x187a; gUnk_300187A = .;
-        . = 0x187c; gUnk_300187C = .;
+        . = 0x187a; gBg1XPosition = .;
+        . = 0x187c; gBg1YPosition = .;
         . = 0x187e; gUnk_300187E = .;
         . = 0x1880; gUnk_3001880 = .;
         . = 0x1882; gUnk_3001882 = .;
@@ -188,16 +188,17 @@ SECTIONS {
         . = 0x1918; gUnk_3001918 = .;
         . = 0x1930; gUnk_3001930 = .;
         . = 0x1938; gUnk_3001938 = .;
-        . = 0x1940; gUnk_3001940 = .;
-        . = 0x1948; gUnk_3001948 = .;
-        . = 0x1950; gUnk_3001950 = .;
-        . = 0x195C; gUnk_300195C = .;
+        . = 0x1940; gCurrentWarioEffect = .;
+        . = 0x1948; gCurrentCarriedSprite = .;
+        . = 0x1950; gWarioDustEffect1 = .;
+        . = 0x195C; gWarioDustEffect2 = .;
         . = 0x19f0; gUnk_30019F0 = .;
         . = 0x19f1; gUnk_30019F1 = .;
         . = 0x19f2; gUnk_30019F2 = .;
         . = 0x19f4; gUnk_30019F4 = .;
         . = 0x19f6; gWarioPauseTimer = .;
         . = 0x19f8; gDisableWario = .;
+
         . = 0x19fc; gVBlankCallback = .;
         . = 0x1a00; gHBlankCallback = .;
         . = 0x1a04; gVCountCallback = .;
@@ -256,8 +257,9 @@ SECTIONS {
         . = 0x30ca; gDemoButtonPressTimer = .;
         . = 0x30cc; gDemoButtonsPressed = .;
 
-        . = 0x30d0; gUnk_30030D0 = .;
-        . = 0x3130; gUnk_3003130 = .;
+        . = 0x30d0; gWarioPalette = .;
+        . = 0x3130; gWarioPaletteSize = .;
+
         . = 0x3138; gUnk_3003138 = .;
         . = 0x31b8; gUnk_30031B8 = .;
         . = 0x31ba; gUnk_30031BA = .;
@@ -622,7 +624,9 @@ SECTIONS {
         obj/wario/disasm_bat.o(.text);
         obj/wario/disasm_flat.o(.text);
         obj/wario/disasm_mask.o(.text);
-        obj/disasm_game_screen.o(.text);
+        obj/game_screen.o(.text);
+        obj/game_screen_gfx.o(.text);
+        obj/game_screen_debug.o(.text);
         obj/disasm_sprite.o(.text);
         obj/disasm_sprite_wario_interaction.o(.text);
         obj/disasm_sprite_util.o(.text);

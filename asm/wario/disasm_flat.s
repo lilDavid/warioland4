@@ -507,7 +507,7 @@ func_801B280:
 .L_1b2bc:
 	.4byte	gWarioData
 .L_1b2c0:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_1b2c4:
 	ldr	r1, .L_1b2d4
 	mov	r0, #4
@@ -798,7 +798,7 @@ func_801B480:
 .L_1b4e0:
 	.4byte	gWarioData
 .L_1b4e4:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_1b4e8:
 	.4byte	sUnk_82DE918
 

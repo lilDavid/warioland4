@@ -5464,7 +5464,7 @@ func_807915C:
 .L_79208:
 	.4byte	sUnk_8411FE2
 .L_7920c:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_79210:
 	ldr	r0, .L_7921c
 	cmp	r1, r0
@@ -5512,7 +5512,7 @@ func_807915C:
 	b	.L_7928a
 	.align	2, 0
 .L_79264:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_79268:
 	ldr	r0, .L_79278
 	cmp	r1, r0
@@ -5830,7 +5830,7 @@ func_807915C:
 .L_794bc:
 	.4byte	gCurrentSecondarySprite
 .L_794c0:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_794c4:
 	.4byte	0x037F0000
 .L_794c8:
@@ -5995,7 +5995,7 @@ func_8079574:
 .L_795fc:
 	.4byte	sUnk_8411FE2
 .L_79600:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_79604:
 	ldr	r0, .L_79610
 	cmp	r1, r0
@@ -6043,7 +6043,7 @@ func_8079574:
 	b	.L_7967e
 	.align	2, 0
 .L_79658:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_7965c:
 	ldr	r0, .L_7966c
 	cmp	r1, r0
@@ -6182,7 +6182,7 @@ func_8079574:
 .L_7975c:
 	.4byte	sUnk_8411FEA
 .L_79760:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_79764:
 	.4byte	0x037F0000
 .L_79768:

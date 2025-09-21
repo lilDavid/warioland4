@@ -268,9 +268,9 @@ func_80720E8:
 	b	.L_721fe
 	.align	2, 0
 .L_7230c:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_72310:
-	.4byte	gUnk_300002C
+	.4byte	gBldCnt
 .L_72314:
 	ldr	r1, .L_72324
 	ldrh	r0, [r1, #0]
@@ -282,7 +282,7 @@ func_80720E8:
 	strh	r0, [r1, #0]
 	b	.L_7234c
 .L_72324:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_72328:
 	ldr	r2, .L_72360
 	ldrh	r1, [r2, #0]
@@ -551,7 +551,7 @@ func_80723CC:
 .L_72524:
 	.4byte	gUnk_300188E
 .L_72528:
-	.4byte	gUnk_3001860
+	.4byte	gMosaic
 .L_7252c:
 	.4byte	0x0400004c
 .L_72530:
@@ -762,19 +762,19 @@ func_80725AC:
 .L_726d0:
 	.4byte	gUnk_3001862
 .L_726d4:
-	.4byte	gUnk_3001868
+	.4byte	gBg2PA
 .L_726d8:
-	.4byte	gUnk_300186A
+	.4byte	gBg2PB
 .L_726dc:
 	.4byte	gUnk_3003BF2
 .L_726e0:
 	.4byte	gUnk_3001864
 .L_726e4:
-	.4byte	gUnk_300186C
+	.4byte	gBg2PC
 .L_726e8:
-	.4byte	gUnk_300186E
+	.4byte	gBg2PD
 .L_726ec:
-	.4byte	gUnk_3001858
+	.4byte	gBg2X
 .L_726f0:
 	.4byte	gUnk_3003BF6
 .L_726f4:
@@ -782,7 +782,7 @@ func_80725AC:
 .L_726f8:
 	.4byte	gUnk_3003BF5
 .L_726fc:
-	.4byte	gUnk_300185C
+	.4byte	gBg2Y
 .L_72700:
 	.4byte	gUnk_3001854
 
@@ -883,13 +883,13 @@ func_8072754:
 	bx	lr
 	.align	2, 0
 .L_727b0:
-	.4byte	gUnk_3001868
+	.4byte	gBg2PA
 .L_727b4:
-	.4byte	gUnk_300186A
+	.4byte	gBg2PB
 .L_727b8:
-	.4byte	gUnk_300186C
+	.4byte	gBg2PC
 .L_727bc:
-	.4byte	gUnk_300186E
+	.4byte	gBg2PD
 .L_727c0:
 	.4byte	gUnk_3001862
 .L_727c4:
@@ -897,9 +897,9 @@ func_8072754:
 .L_727c8:
 	.4byte	gUnk_3001866
 .L_727cc:
-	.4byte	gUnk_3001858
+	.4byte	gBg2X
 .L_727d0:
-	.4byte	gUnk_300185C
+	.4byte	gBg2Y
 .L_727d4:
 	.4byte	gUnk_3001852
 .L_727d8:
@@ -915,7 +915,7 @@ func_8072754:
 .L_727ec:
 	.4byte	gUnk_3003BF6
 .L_727f0:
-	.4byte	gUnk_3001860
+	.4byte	gMosaic
 .L_727f4:
 	.4byte	gUnk_3003BF2
 
@@ -1001,19 +1001,19 @@ func_80727F8:
 .L_72894:
 	.4byte	0x04000014
 .L_72898:
-	.4byte	gUnk_3001868
+	.4byte	gBg2PA
 .L_7289c:
-	.4byte	gUnk_300186A
+	.4byte	gBg2PB
 .L_728a0:
-	.4byte	gUnk_300186C
+	.4byte	gBg2PC
 .L_728a4:
-	.4byte	gUnk_300186E
+	.4byte	gBg2PD
 .L_728a8:
-	.4byte	gUnk_3001858
+	.4byte	gBg2X
 .L_728ac:
 	.4byte	0x0fff0000
 .L_728b0:
-	.4byte	gUnk_300185C
+	.4byte	gBg2Y
 .L_728b4:
 	.4byte	0x00001601
 .L_728b8:
@@ -1036,7 +1036,7 @@ func_80728C0:
 	bx	r0
 	.align	2, 0
 .L_728d8:
-	.4byte	gUnk_3000033
+	.4byte	gDrawWarioOverBackground
 .L_728dc:
 	.4byte	gUnk_3000046
 .L_728e0:

@@ -152,8 +152,8 @@ extern u8 gUnk_3000C0E;
 // gUnk_3000C16
 // gUnk_3000C18
 // gUnk_3000C1A
-// gCurrentHeartMeterGfx
-// gCurrentHeartGaugeGfx
+u8* gCurrentHeartMeterGfx;
+u8* gCurrentHeartGaugeGfx;
 extern u8 gVortexGfxSlot;
 extern u16 gVortexYPosition;
 extern u16 gVortexXPosition;
@@ -177,6 +177,8 @@ extern u8 gHasGoldenDivaChest12;
 
 void Score_GivePoints(s32);
 void Sprite_SpawnSecondary(u32 y, u32 x, u8 id);
+void func_8075F44(void);
 void func_807687C(u32 id, u32 y, u32 x, u32 amount);
+void ProcessSecondarySprites();
 
 #endif  // SCORE_H

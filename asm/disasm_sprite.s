@@ -731,11 +731,11 @@ func_801DA70:
 .L_1dc00:
 	.4byte	gCurrentSprite
 .L_1dc04:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_1dc08:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_1dc0c:
-	.4byte	gUnk_3000033
+	.4byte	gDrawWarioOverBackground
 .L_1dc10:
 	.4byte	0x000001ff
 .L_1dc14:
@@ -950,9 +950,9 @@ func_801DCEC:
 .L_1dda0:
 	.4byte	gCurrentSprite
 .L_1dda4:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_1dda8:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_1ddac:
 	mov	r3, ip
 	ldrh	r1, [r3, #0]
@@ -1590,9 +1590,9 @@ func_801E1C0:
 	bx	r0
 	.align	2, 0
 .L_1e244:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_1e248:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_1e24c:
 	.4byte	gUnk_3000964
 .L_1e250:
@@ -1679,9 +1679,9 @@ func_801E258:
 	bl	func_801E0EC
 	b	.L_1e30e
 .L_1e2e4:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_1e2e8:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_1e2ec:
 	.4byte	gUnk_3000964
 .L_1e2f0:

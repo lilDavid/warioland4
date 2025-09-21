@@ -115,7 +115,7 @@ func_8010554:
 	mov	r0, #34	@ 0x22
 	b	.L_107de
 .L_10590:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10594:
 	mov	r0, #22
 	b	.L_107de
@@ -207,7 +207,7 @@ func_8010554:
 	strh	r0, [r6, #22]
 	b	.L_1073c
 .L_1063c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10640:
 	add	r0, r1, #2
 	strh	r0, [r6, #22]
@@ -259,7 +259,7 @@ func_8010554:
 	ldr	r3, .L_10698
 	b	.L_1073c
 .L_10698:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1069c:
 	mov	r0, #192	@ 0xc0
 	lsl	r0, r0, #2
@@ -278,7 +278,7 @@ func_8010554:
 	strh	r0, [r6, #22]
 	b	.L_1073c
 .L_106bc:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_106c0:
 	sub	r0, r1, #2
 	strh	r0, [r6, #22]
@@ -422,7 +422,7 @@ func_8010554:
 .L_107c4:
 	.4byte	sUnk_82F1200
 .L_107c8:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_107cc:
 	add	r0, r1, #0
 	cmp	r0, #2
@@ -470,7 +470,7 @@ func_80107E4:
 	mov	r0, #34	@ 0x22
 	b	.L_10862
 .L_10818:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1081c:
 	mov	r0, #22
 	b	.L_10862
@@ -547,7 +547,7 @@ func_8010864:
 	mov	r0, #34	@ 0x22
 	b	.L_10a30
 .L_1089c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_108a0:
 	mov	r0, #22
 	b	.L_10a30
@@ -609,7 +609,7 @@ func_8010864:
 	sub	r0, #4
 	b	.L_10992
 .L_10918:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1091c:
 	.4byte	gWarioData
 .L_10920:
@@ -649,7 +649,7 @@ func_8010864:
 	add	r0, #64	@ 0x40
 	b	.L_10976
 .L_10964:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10968:
 	.4byte	0xFFC0
 .L_1096c:
@@ -733,7 +733,7 @@ func_8010864:
 	mov	r0, #53	@ 0x35
 	b	.L_10a30
 .L_109fc:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10a00:
 	.4byte	sUnk_834F04C
 .L_10a04:
@@ -786,7 +786,7 @@ func_8010A38:
 .L_10a50:
 	.4byte	gButtonsPressed
 .L_10a54:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10a58:
 	ldr	r2, .L_10a90
 	ldr	r3, .L_10a94
@@ -845,7 +845,7 @@ func_8010A9C:
 	orr	r0, r1
 	b	.L_10ace
 .L_10abc:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10ac0:
 	.4byte	gButtonsPressed
 .L_10ac4:
@@ -915,7 +915,7 @@ func_8010A9C:
 .L_10b3c:
 	.4byte	gButtonsHeld
 .L_10b40:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10b44:
 	cmp	r1, #4
 	bne	.L_10b4c
@@ -1054,7 +1054,7 @@ func_8010C04:
 .L_10c38:
 	.4byte	sUnk_82DEB60
 .L_10c3c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10c40:
 	.4byte	gWarioData
 .L_10c44:
@@ -1180,7 +1180,7 @@ func_8010CA0:
 	pop	{r1}
 	bx	r1
 .L_10d18:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8010D1C
@@ -1329,7 +1329,7 @@ func_8010D1C:
 .L_10e28:
 	.4byte	sUnk_82F1380
 .L_10e2c:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_10e30:
 	add	r0, r1, #0
 	cmp	r0, #1
@@ -1394,7 +1394,7 @@ func_8010E48:
 	mov	r0, #4
 	b	.L_10f0e
 .L_10ea0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10ea4:
 	.4byte	gWarioData
 .L_10ea8:
@@ -1480,7 +1480,7 @@ func_8010F14:
 	mov	r0, #254	@ 0xfe
 	b	.L_10fa2
 .L_10f38:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10f3c:
 	.4byte	gWarioData
 .L_10f40:
@@ -1566,7 +1566,7 @@ func_8010FA8:
 	mov	r0, #34	@ 0x22
 	b	.L_11098
 .L_10fd4:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_10fd8:
 	mov	r0, #22
 	b	.L_11098
@@ -1813,7 +1813,7 @@ func_80110A0:
 .L_11194:
 	.4byte	sUnk_82F1428
 .L_11198:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_801119C
@@ -1904,7 +1904,7 @@ func_801119C:
 .L_11238:
 	.4byte	sUnk_82F144C
 .L_1123c:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8011240
@@ -2004,7 +2004,7 @@ func_8011280:
 .L_112e4:
 	.4byte	sUnk_82F14AC
 .L_112e8:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_80112EC
@@ -2089,7 +2089,7 @@ func_8011340:
 	mov	r0, #254	@ 0xfe
 	b	.L_1138e
 .L_1137c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11380:
 	.4byte	gWarioData
 .L_11384:
@@ -2386,7 +2386,7 @@ func_801145C:
 	bx	r1
 	.align	2, 0
 .L_1158c:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8011590
@@ -2496,7 +2496,7 @@ func_8011590:
 	bx	r1
 	.align	2, 0
 .L_1164c:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8011650
@@ -2967,7 +2967,7 @@ func_8011960:
 	mov	r0, #0
 	b	.L_11992
 .L_11984:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11988:
 	.4byte	gButtonsHeld
 .L_1198c:
@@ -3041,7 +3041,7 @@ func_80119E0:
 	mov	r0, #0
 	b	.L_11a12
 .L_11a04:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11a08:
 	.4byte	gButtonsPressed
 .L_11a0c:
@@ -3105,7 +3105,7 @@ func_8011A60:
 	b	.L_11b02
 	.align	2, 0
 .L_11a70:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11a74:
 	ldr	r2, .L_11a88
 	ldrh	r1, [r2, #0]
@@ -3196,7 +3196,7 @@ func_8011B04:
 	mov	r0, #2
 	b	.L_11b8a
 .L_11b10:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11b14:
 	ldr	r0, .L_11b30
 	ldrh	r1, [r0, #0]
@@ -3308,7 +3308,7 @@ func_8011B8C:
 	mov	r0, #51	@ 0x33
 	b	.L_11bf2
 .L_11bd8:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11bdc:
 	.4byte	sUnk_82DEC36
 .L_11be0:
@@ -3367,7 +3367,7 @@ func_8011BF4:
 	mov	r0, #51	@ 0x33
 	b	.L_11c5a
 .L_11c40:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11c44:
 	.4byte	sUnk_82DEC39
 .L_11c48:
@@ -3420,7 +3420,7 @@ func_8011C5C:
 	b	.L_11caa
 	.align	2, 0
 .L_11c9c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11ca0:
 	.4byte	gWarioData
 .L_11ca4:
@@ -3444,7 +3444,7 @@ func_8011CB0:
 	b	.L_11d6a
 	.align	2, 0
 .L_11cc0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_11cc4:
 	ldr	r1, .L_11cec
 	ldr	r2, .L_11cf0
@@ -3639,7 +3639,7 @@ func_8011D70:
 .L_11e1c:
 	.4byte	sUnk_8315EA4
 .L_11e20:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8011E24
@@ -3784,7 +3784,7 @@ func_8011E84:
 .L_11f14:
 	.4byte	gWarioData
 .L_11f18:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8011F1C
@@ -3902,7 +3902,7 @@ func_8011F1C:
 .L_11fe8:
 	.4byte	sUnk_8315EA4
 .L_11fec:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_8011FF0
@@ -4012,7 +4012,7 @@ func_8011FF0:
 .L_120ac:
 	.4byte	sUnk_8315F10
 .L_120b0:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 
 
 thumb_func_start func_80120B4
@@ -4328,7 +4328,7 @@ func_80122A4:
 	mov	r0, #34	@ 0x22
 	b	.L_12358
 .L_122d0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_122d4:
 	mov	r0, #22
 	b	.L_12358
@@ -4419,7 +4419,7 @@ func_8012360:
 	b	.L_1237e
 	.align	2, 0
 .L_12374:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_12378:
 	.4byte	gWarioData
 .L_1237c:
@@ -4726,7 +4726,7 @@ func_80124E4:
 .L_12584:
 	.4byte	sUnk_82F1200
 .L_12588:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_1258c:
 	add	r0, r1, #0
 	cmp	r0, #2
@@ -5211,7 +5211,7 @@ func_80128A4:
 .L_128bc:
 	.4byte	gButtonsPressed
 .L_128c0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_128c4:
 	ldr	r2, .L_12904
 	ldr	r3, .L_12908
@@ -5689,9 +5689,9 @@ func_8012BAC:
 .L_12bf4:
 	.4byte	sUnk_82DD0EC
 .L_12bf8:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_12bfc:
-	.4byte	sUnk_82DD0F4
+	.4byte	sStartingWarioEffect
 .L_12c00:
 	.4byte	gSubGameMode
 .L_12c04:
@@ -5905,7 +5905,7 @@ func_8012CC8:
 	strb	r0, [r1, #0]
 	b	.L_12e3a
 .L_12de8:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_12dec:
 	mov	r0, #4
 .L_12dee:
@@ -5939,7 +5939,7 @@ func_8012CC8:
 .L_12e20:
 	.4byte	gWarioDataCopy
 .L_12e24:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_12e28:
 	mov	r0, #176	@ 0xb0
 .L_12e2a:
@@ -5993,7 +5993,7 @@ func_8012E5C:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_12e7c:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_12e80:
 	.4byte	gWarioDataCopy
 .L_12e84:
@@ -6212,7 +6212,7 @@ func_8012E5C:
 .L_1308c:
 	.4byte	gWarioData
 .L_13090:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_13094:
 	ldr	r0, .L_130a0
 	strb	r2, [r0, #1]
@@ -6341,7 +6341,7 @@ func_8012E5C:
 .L_13180:
 	.4byte	gWarioData
 .L_13184:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13188:
 	.4byte	sUnk_82DEB60
 
@@ -6559,7 +6559,7 @@ func_801318C:
 .L_1340c:
 	.4byte	gWarioData
 .L_13410:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13414:
 	ldr	r1, .L_13424
 	ldrb	r0, [r1, #0]
@@ -6571,7 +6571,7 @@ func_801318C:
 	strb	r0, [r1, #0]
 	b	.L_1388a
 .L_13424:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13428:
 	ldr	r0, .L_13444
 	ldrh	r1, [r0, #0]
@@ -6591,7 +6591,7 @@ func_801318C:
 .L_13444:
 	.4byte	gButtonsHeld
 .L_13448:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1344c:
 	ldr	r1, .L_13468
 	mov	r0, #0
@@ -6608,7 +6608,7 @@ func_801318C:
 	bl	m4aSongNumStart
 	b	.L_1388a
 .L_13468:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1346c:
 	ldr	r0, .L_1347c
 	ldrh	r1, [r0, #14]
@@ -6672,7 +6672,7 @@ func_801318C:
 .L_134d8:
 	.4byte	gWarioDataCopy
 .L_134dc:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_134e0:
 	ldr	r0, .L_13508
 	ldrh	r0, [r0, #28]
@@ -6695,9 +6695,9 @@ func_801318C:
 .L_13508:
 	.4byte	gWarioDataCopy
 .L_1350c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13510:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_13514:
 	ldr	r2, .L_13524
 	ldrh	r1, [r2, #14]
@@ -6858,7 +6858,7 @@ func_801318C:
 .L_13640:
 	.4byte	gWarioData
 .L_13644:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13648:
 	ldr	r1, .L_13658
 	ldrb	r0, [r1, #26]
@@ -6894,7 +6894,7 @@ func_801318C:
 .L_13684:
 	.4byte	gWarioDataCopy
 .L_13688:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_1368c:
 	mov	r0, #8
 	strb	r0, [r3, #31]
@@ -6953,7 +6953,7 @@ func_801318C:
 	strh	r0, [r3, #24]
 	b	.L_1388a
 .L_136ec:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_136f0:
 	.4byte	gWarioDataCopy
 .L_136f4:
@@ -6972,7 +6972,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_13710:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13714:
 	.4byte	gWarioDataCopy
 .L_13718:
@@ -6996,7 +6996,7 @@ func_801318C:
 .L_13738:
 	.4byte	gWarioDataCopy
 .L_1373c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13740:
 	ldr	r1, .L_1374c
 	mov	r0, #1
@@ -7005,7 +7005,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_1374c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13750:
 	ldr	r0, .L_1375c
 	mov	r1, #1
@@ -7014,7 +7014,7 @@ func_801318C:
 	strb	r1, [r0, #1]
 	b	.L_1388a
 .L_1375c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13760:
 	ldr	r1, .L_13770
 	mov	r0, #7
@@ -7024,7 +7024,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_13770:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13774:
 	ldr	r1, .L_13784
 	mov	r0, #12
@@ -7035,7 +7035,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_13784:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_13788:
 	mov	r0, #38	@ 0x26
 	bl	m4aSongNumStart
@@ -7062,7 +7062,7 @@ func_801318C:
 	b	.L_1388a
 	.align	2, 0
 .L_137b8:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_137bc:
 	mov	r0, #96	@ 0x60
 	strh	r0, [r3, #24]
@@ -7086,7 +7086,7 @@ func_801318C:
 .L_137e0:
 	.4byte	gSubGameMode
 .L_137e4:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_137e8:
 	.4byte	gUnk_3001890
 .L_137ec:
@@ -7100,7 +7100,7 @@ func_801318C:
 	strb	r0, [r1, #0]
 	b	.L_1388a
 .L_137fc:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_13800:
 	mov	r0, #16
 	strh	r0, [r3, #14]
@@ -7110,7 +7110,7 @@ func_801318C:
 	strb	r0, [r1, #0]
 	b	.L_1388a
 .L_1380c:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_13810:
 	mov	r0, #16
 	strh	r0, [r3, #14]
@@ -7119,14 +7119,14 @@ func_801318C:
 	strb	r0, [r1, #0]
 	b	.L_1388a
 .L_1381c:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_13820:
 	ldr	r1, .L_13828
 	mov	r0, #8
 	strb	r0, [r1, #0]
 	b	.L_1388a
 .L_13828:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_1382c:
 	ldr	r2, .L_13844
 	ldrh	r1, [r2, #18]
@@ -10809,7 +10809,7 @@ func_8015216:
 	ldr	r1, .L_154a8
 	b	.L_1558c
 .L_154a4:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_154a8:
 	bcc	.L_1549c
 	lsr	r5, r5, #32
@@ -10882,7 +10882,7 @@ func_8015216:
 	mov	r2, #0
 	b	.L_15566
 .L_15520:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_15524:
 	cmp	r2, #1
 	bne	.L_1552c
@@ -10977,7 +10977,7 @@ func_8015216:
 	b	.L_155d2
 	.align	2, 0
 .L_155c0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_155c4:
 	.4byte	sUnk_82DD3D0
 .L_155c8:
@@ -11039,7 +11039,7 @@ func_8015216:
 .L_1562c:
 	.4byte	gMainTimer
 .L_15630:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_15634:
 	.4byte	sUnk_82DE3A0
 .L_15638:
@@ -11134,7 +11134,7 @@ func_8015216:
 	bl	func_800FD90
 	b	.L_158ba
 .L_15740:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_15744:
 	.4byte	sUnk_82DDDE0
 .L_15748:
@@ -11167,7 +11167,7 @@ func_8015216:
 	b	.L_158ba
 	.align	2, 0
 .L_15780:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_15784:
 	svc	192	@ 0xc0
 	lsr	r5, r5, #32
@@ -11202,7 +11202,7 @@ func_8015216:
 	mov	r1, #32
 	b	.L_1588a
 .L_157c4:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_157c8:
 	.4byte	sUnk_82DE4C0
 .L_157cc:
@@ -11231,7 +11231,7 @@ func_8015216:
 	b	.L_1588a
 	.align	2, 0
 .L_157f8:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_157fc:
 	.4byte	sUnk_82DE4F8
 .L_15800:
@@ -11248,7 +11248,7 @@ func_8015216:
 	b	.L_15886
 	.align	2, 0
 .L_15818:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_1581c:
 	.4byte	sUnk_82DDDA0
 .L_15820:
@@ -11266,7 +11266,7 @@ func_8015216:
 	b	.L_15886
 	.align	2, 0
 .L_1583c:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_15840:
 	.4byte	sUnk_82DDDA0
 .L_15844:
@@ -11282,7 +11282,7 @@ func_8015216:
 	bl	func_800FD90
 	b	.L_158ba
 .L_1585c:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_15860:
 	.4byte	sUnk_82DE598
 	ldr	r1, .L_15894
@@ -11310,7 +11310,7 @@ func_8015216:
 	b	.L_158ba
 	.align	2, 0
 .L_15894:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_15898:
 	.4byte	sUnk_82DDDA0
 .L_1589c:
@@ -11333,7 +11333,7 @@ func_8015216:
 	pop	{r0}
 	bx	r0
 .L_158c0:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_158c4:
 	.4byte	sUnk_82DDDA0
 

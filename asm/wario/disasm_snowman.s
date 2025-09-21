@@ -1292,7 +1292,7 @@ func_8019C7C:
 .L_19ce4:
 	.4byte	gWarioData
 .L_19ce8:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_19cec:
 	.4byte	sUnk_82DDDA0
 .L_19cf0:

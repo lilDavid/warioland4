@@ -453,7 +453,7 @@ func_8089C64:
 .L_89c90:
 	.4byte	0x84000100
 .L_89c94:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 
 
 thumb_func_start func_8089C98

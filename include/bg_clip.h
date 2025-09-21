@@ -10,4 +10,7 @@ extern struct {
     /* 0x04 */ u16 unk_04;
 } gUnk_30000A0;
 
+
+s32 func_806DAC0(u16, u16);
+
 #endif  // BG_CLIP_H

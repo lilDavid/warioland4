@@ -97,7 +97,7 @@ func_806E420:
 .L_6e470:
 	.4byte	gSubGameMode
 .L_6e474:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6e478:
 	.4byte	gWarioData
 .L_6e47c:
@@ -151,7 +151,7 @@ func_806E420:
 	b	.L_6e4fa
 	.align	2, 0
 .L_6e4d4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6e4d8:
 	.4byte	gWarioData
 .L_6e4dc:
@@ -726,11 +726,11 @@ func_806E7F8:
 .L_6e8e0:
 	.4byte	gUnk_3001876
 .L_6e8e4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6e8e8:
 	.4byte	gUnk_3001878
 .L_6e8ec:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6e8f0:
 	.4byte	gUnk_3003218
 .L_6e8f4:
@@ -796,7 +796,7 @@ func_806E904:
 .L_6e960:
 	.4byte	gUnk_3003224
 .L_6e964:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6e968:
 	mov	r0, #48	@ 0x30
 	neg	r0, r0
@@ -852,7 +852,7 @@ func_806E904:
 .L_6e9c8:
 	.4byte	0xFFFFFE40
 .L_6e9cc:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6e9d0:
 	mov	r0, #48	@ 0x30
 	neg	r0, r0
@@ -938,7 +938,7 @@ func_806E904:
 	sub	r0, #32
 	b	.L_6ea7e
 .L_6ea6c:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6ea70:
 	sub	r0, r3, r2
 	cmp	r0, #31
@@ -1017,11 +1017,11 @@ func_806EACC:
 .L_6eae8:
 	.4byte	gUnk_3001876
 .L_6eaec:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6eaf0:
 	.4byte	gUnk_3001878
 .L_6eaf4:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6eaf8:
 	cmp	r0, #34	@ 0x22
 	bne	.L_6eb1c
@@ -1036,11 +1036,11 @@ func_806EACC:
 .L_6eb0c:
 	.4byte	gUnk_3001876
 .L_6eb10:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6eb14:
 	.4byte	gUnk_3001878
 .L_6eb18:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6eb1c:
 	cmp	r0, #17
 	bne	.L_6eb50
@@ -1140,7 +1140,7 @@ func_806EBA8:
 .L_6ebbc:
 	.4byte	0x1DF
 .L_6ebc0:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6ebc4:
 	ldrh	r3, [r4, #0]
 	ldr	r0, .L_6ebdc
@@ -1159,7 +1159,7 @@ func_806EBA8:
 .L_6ebe0:
 	.4byte	0xFFFFFE20
 .L_6ebe4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6ebe8:
 	.4byte	0xFFFFFC40
 .L_6ebec:
@@ -1177,13 +1177,13 @@ func_806EBA8:
 	b	.L_6ec3e
 	.align	2, 0
 .L_6ec04:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6ec08:
 	.4byte	0xFFFFFE20
 .L_6ec0c:
 	.4byte	0x1BF
 .L_6ec10:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6ec14:
 	ldrh	r3, [r4, #2]
 	ldr	r0, .L_6ec2c
@@ -1200,7 +1200,7 @@ func_806EBA8:
 .L_6ec2c:
 	.4byte	gBackgroundInfo
 .L_6ec30:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6ec34:
 	.4byte	0xFFFFFD80
 .L_6ec38:
@@ -1214,6 +1214,6 @@ func_806EBA8:
 	bx	r0
 	.align	2, 0
 .L_6ec48:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6ec4c:
 	.4byte	0xFFFFFE40

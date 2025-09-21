@@ -1,8 +1,8 @@
 .include "macros.s.inc"
 
 
-thumb_func_start func_80743BC
-func_80743BC:
+thumb_func_start BossPause
+BossPause:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, #0
 	ldr	r1, .L_743d8

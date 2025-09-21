@@ -385,7 +385,7 @@ func_8018938:
 .L_189fc:
 	.4byte	gWarioData
 .L_18a00:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_18a04:
 	ldr	r1, .L_18a24
 	ldrb	r0, [r1, #17]
@@ -463,7 +463,7 @@ func_8018A28:
 	add	r0, r3, r2
 	lsl	r0, r0, #12
 .L_18a94:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_18a98:
 	.4byte	sUnk_82DDDA0
 .L_18a9c:

@@ -41,7 +41,7 @@ CreditsSubroutine:
 .L_9301c:
 	.4byte	gUnk_3004B04
 .L_93020:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_93024:
 	strb	r5, [r1, #5]
 	b	.L_93036
@@ -75,7 +75,7 @@ CreditsSubroutine:
 .L_93058:
 	.4byte	gMainTimer
 .L_9305c:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_93060:
 	ldr	r0, .L_93080
 	strb	r1, [r0, #0]
@@ -195,7 +195,7 @@ func_80930B8:
 .L_93134:
 	.4byte	0x84000100
 .L_93138:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_9313c:
 	.4byte	gUnk_3001876
 .L_93140:
@@ -203,7 +203,7 @@ func_80930B8:
 .L_93144:
 	.4byte	gMainTimer
 .L_93148:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_9314c:
 	.4byte	0x04000010
 .L_93150:
@@ -341,7 +341,7 @@ func_809315C:
 .L_93250:
 	.4byte	gMainTimer
 .L_93254:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_93258:
 	.4byte	0x04000010
 .L_9325c:
@@ -927,7 +927,7 @@ func_809329C:
 .L_936b0:
 	.4byte	gUnk_3001874
 .L_936b4:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_936b8:
 	.4byte	0x00001fdf
 .L_936bc:
@@ -1191,9 +1191,9 @@ func_809329C:
 .L_938bc:
 	.4byte	gUnk_3001878
 .L_938c0:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_938c4:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_938c8:
 	.4byte	gUnk_300187E
 .L_938cc:

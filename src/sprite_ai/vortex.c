@@ -9,7 +9,6 @@
 #include "sprite_ai.h"
 #include "sprite_util.h"
 #include "sprite_wario_interaction.h"
-#include "stage_transition.h"
 #include "types.h"
 #include "wario.h"
 #include "voice_set.h"

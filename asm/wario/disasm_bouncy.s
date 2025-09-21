@@ -502,7 +502,7 @@ func_801A090:
 .L_1a13c:
 	.4byte	gWarioData
 .L_1a140:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_1a144:
 	.4byte	0x171
 .L_1a148:
@@ -850,7 +850,7 @@ func_801A360:
 .L_1a3c8:
 	.4byte	gWarioData
 .L_1a3cc:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_1a3d0:
 	.4byte	sUnk_82DE8B8
 .L_1a3d4:

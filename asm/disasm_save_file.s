@@ -927,19 +927,19 @@ func_8072FB0:
 .L_7334c:
 	.4byte	gUnk_3001938
 .L_73350:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_73354:
 	.4byte	gUnk_3001930
 .L_73358:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_7335c:
 	.4byte	gHeartMeter
 .L_73360:
 	.4byte	gHeartGauge
 .L_73364:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_73368:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_7336c:
 	.4byte	gSpriteData
 .L_73370:
@@ -995,9 +995,9 @@ func_8072FB0:
 .L_733d4:
 	.4byte	gUnk_3001878
 .L_733d8:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_733dc:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_733e0:
 	.4byte	gUnk_300187E
 .L_733e4:
@@ -1550,19 +1550,19 @@ func_807345C:
 .L_737dc:
 	.4byte	gUnk_3001938
 .L_737e0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_737e4:
 	.4byte	gUnk_3001930
 .L_737e8:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_737ec:
 	.4byte	gHeartMeter
 .L_737f0:
 	.4byte	gHeartGauge
 .L_737f4:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_737f8:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_737fc:
 	.4byte	gSpriteData
 .L_73800:
@@ -1618,9 +1618,9 @@ func_807345C:
 .L_73864:
 	.4byte	gUnk_3001878
 .L_73868:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_7386c:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_73870:
 	.4byte	gUnk_300187E
 .L_73874:

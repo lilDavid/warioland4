@@ -487,7 +487,7 @@ func_801A80C:
 .L_1a86c:
 	.4byte	gWarioData
 .L_1a870:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_1a874:
 	.4byte	sUnk_82DE918
 

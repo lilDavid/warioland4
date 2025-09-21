@@ -142,7 +142,7 @@ func_806ADD4:
 	bx	r0
 	.align	2, 0
 .L_6aed0:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 
 
 thumb_func_start func_806AED4
@@ -211,4 +211,4 @@ func_806AED4:
 	pop	{r0}
 	bx	r0
 .L_6af48:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha

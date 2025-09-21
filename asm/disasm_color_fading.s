@@ -322,8 +322,8 @@ func_80703DC:
 	.4byte	0x05000200
 
 
-thumb_func_start func_8070440
-func_8070440:
+thumb_func_start ColorFading_Process
+ColorFading_Process:
 	push	{r4, lr}
 	ldr	r3, .L_7048c
 	ldrb	r2, [r3, #4]
@@ -2102,7 +2102,7 @@ func_80710D8:
 .L_71114:
 	.4byte	gColorFading
 .L_71118:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7111c:
 	.4byte	sUnk_83F9EA2
 .L_71120:
@@ -2143,7 +2143,7 @@ func_80710D8:
 .L_71160:
 	.4byte	0x04000050
 .L_71164:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_71168:
 	.4byte	0x04000054
 .L_7116c:
@@ -2407,9 +2407,9 @@ func_80712F8:
 	b	.L_71340
 	.align	2, 0
 .L_71334:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_71338:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7133c:
 	strb	r5, [r4, #0]
 	mov	r5, #1
@@ -2423,7 +2423,7 @@ func_80712F8:
 	strb	r0, [r3, #2]
 	b	.L_7135a
 .L_71350:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_71354:
 	mov	r0, #0
 	strb	r0, [r3, #2]
@@ -2497,13 +2497,13 @@ func_8071394:
 	mov	r6, #0
 	b	.L_713e4
 .L_713cc:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_713d0:
 	.4byte	gWarioData
 .L_713d4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_713d8:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_713dc:
 	asr	r6, r6, #2
 	cmp	r6, #240	@ 0xf0
@@ -2657,9 +2657,9 @@ func_8071394:
 	bx	r1
 	.align	2, 0
 .L_714e8:
-	.4byte	gUnk_300002C
+	.4byte	gBldCnt
 .L_714ec:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 
 
 thumb_func_start func_80714F0
@@ -2710,7 +2710,7 @@ func_80714F0:
 .L_71544:
 	.4byte	sUnk_83F9EA5
 .L_71548:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_7154c:
 	.4byte	0x000001c1
 .L_71550:

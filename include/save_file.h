@@ -7,7 +7,7 @@ void func_8072D24(void);
 // func_8072E8C()
 // func_8072F0C()
 // func_8072FB0()
-// func_8073418()
+void func_8073418(void);
 // func_807345C()
 void func_8073880(void);
 // func_80738FC()
@@ -15,7 +15,7 @@ void func_8073880(void);
 // func_8073B10()
 // func_8073B24()
 // func_8073B38()
-// func_8073BA0()
+void func_8073BA0(void);
 void func_8073BE0(void);
 // func_8073CDC()
 // func_8073DA4()

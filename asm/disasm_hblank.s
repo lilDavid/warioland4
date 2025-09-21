@@ -338,7 +338,7 @@ func_80717E4:
 .L_71800:
 	.4byte	0x0400001c
 .L_71804:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71808:
 	.4byte	gUnk_300342E
 
@@ -362,7 +362,7 @@ func_807180C:
 .L_71828:
 	.4byte	0x0400001c
 .L_7182c:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71830:
 	.4byte	gUnk_30035F6
 
@@ -386,7 +386,7 @@ func_8071834:
 .L_71850:
 	.4byte	0x04000010
 .L_71854:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71858:
 	.4byte	gUnk_30035F6
 
@@ -424,7 +424,7 @@ func_807185C:
 .L_71894:
 	.4byte	0x0400001c
 .L_71898:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_7189c:
 	.4byte	0x04000014
 
@@ -464,7 +464,7 @@ func_80718A0:
 .L_718dc:
 	.4byte	0x04000010
 .L_718e0:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 
 
 thumb_func_start func_80718E4
@@ -496,7 +496,7 @@ func_80718E4:
 .L_71914:
 	.4byte	0x0400001c
 .L_71918:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_7191c:
 	.4byte	gUnk_300342E
 .L_71920:
@@ -532,7 +532,7 @@ func_8071924:
 .L_71954:
 	.4byte	0x0400001c
 .L_71958:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_7195c:
 	.4byte	gUnk_300342E
 .L_71960:
@@ -574,7 +574,7 @@ func_8071964:
 .L_719a0:
 	.4byte	0x0400001c
 .L_719a4:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 
 
 thumb_func_start func_80719A8
@@ -606,7 +606,7 @@ func_80719A8:
 .L_719d8:
 	.4byte	0x04000014
 .L_719dc:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_719e0:
 	.4byte	gUnk_300342E
 .L_719e4:
@@ -650,7 +650,7 @@ func_8071A04:
 .L_71a20:
 	.4byte	0x0400001e
 .L_71a24:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71a28:
 	.4byte	gUnk_300342E
 
@@ -805,7 +805,7 @@ func_8071AE8:
 .L_71b5c:
 	.4byte	gUnk_3003BE8
 .L_71b60:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_71b64:
 	cmp	r0, #0
 	bge	.L_71b6a
@@ -857,7 +857,7 @@ func_8071AE8:
 .L_71bb8:
 	.4byte	gUnk_3003BE8
 .L_71bbc:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 
 
 thumb_func_start func_8071BC0
@@ -1017,7 +1017,7 @@ func_8071C54:
 .L_71cd0:
 	.4byte	gUnk_3003BE8
 .L_71cd4:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71cd8:
 	.4byte	gUnk_300342E
 .L_71cdc:
@@ -1056,7 +1056,7 @@ func_8071C54:
 	bx	r0
 	.align	2, 0
 .L_71d1c:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71d20:
 	.4byte	gUnk_300342E
 .L_71d24:
@@ -1137,7 +1137,7 @@ func_8071D28:
 .L_71dac:
 	.4byte	gUnk_3003BE8
 .L_71db0:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71db4:
 	.4byte	gUnk_300342E
 
@@ -1197,7 +1197,7 @@ func_8071DB8:
 .L_71e18:
 	.4byte	gUnk_3003BE8
 .L_71e1c:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71e20:
 	.4byte	gUnk_30035F6
 
@@ -1292,7 +1292,7 @@ func_8071E24:
 .L_71ec8:
 	.4byte	gUnk_30035F6
 .L_71ecc:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71ed0:
 	ldr	r0, .L_71f20
 	mov	r9, r0
@@ -1341,7 +1341,7 @@ func_8071E24:
 .L_71f24:
 	.4byte	gUnk_300342E
 .L_71f28:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 
 
 thumb_func_start func_8071F2C
@@ -1414,7 +1414,7 @@ func_8071F2C:
 .L_71fac:
 	.4byte	gUnk_3003BE8
 .L_71fb0:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_71fb4:
 	.4byte	gUnk_300342E
 
@@ -1585,7 +1585,7 @@ func_8072050:
 .L_720dc:
 	.4byte	gUnk_300003C
 .L_720e0:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_720e4:
 	.4byte	gUnk_300342E
 

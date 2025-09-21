@@ -4525,18 +4525,18 @@ baserom_blob 0x2DCFCC, 0x2DD0A8
 
 //-----
 
-.global sUnk_82DD0A8
-sUnk_82DD0A8:
+.global sStartingWarioData
+sStartingWarioData:
 
 baserom_blob 0x2DD0A8, 0x2DD0E4
 
-.global sUnk_82DD0E4
-sUnk_82DD0E4:
+.global sStartingHeartMeter
+sStartingHeartMeter:
 
 baserom_blob 0x2DD0E4, 0x2DD0E8
 
-.global sUnk_82DD0E8
-sUnk_82DD0E8:
+.global sStartingHeartGauge
+sStartingHeartGauge:
 
 baserom_blob 0x2DD0E8, 0x2DD0EC
 
@@ -4545,18 +4545,18 @@ sUnk_82DD0EC:
 
 baserom_blob 0x2DD0EC, 0x2DD0F4
 
-.global sUnk_82DD0F4
-sUnk_82DD0F4:
+.global sStartingWarioEffect
+sStartingWarioEffect:
 
 baserom_blob 0x2DD0F4, 0x2DD0FC
 
-.global sUnk_82DD0FC
-sUnk_82DD0FC:
+.global sEmptyCarriedSprite
+sEmptyCarriedSprite:
 
 baserom_blob 0x2DD0FC, 0x2DD104
 
-.global sUnk_82DD104
-sUnk_82DD104:
+.global sEmptyDustEffect
+sEmptyDustEffect:
 
 baserom_blob 0x2DD104, 0x2DD110
 
@@ -4715,8 +4715,8 @@ sUnk_82DDCF0:
 
 baserom_blob 0x2DDCF0, 0x2DDD20
 
-.global sUnk_82DDD20
-sUnk_82DDD20:
+.global sWarioEffectsGfx
+sWarioEffectsGfx:
 
 baserom_blob 0x2DDD20, 0x2DDDA0
 
@@ -5064,12 +5064,27 @@ baserom_blob 0x2E03BC, 0x2E04C4
 .global sUnk_82E04C4
 sUnk_82E04C4:
 
-baserom_blob 0x2E04C4, 0x2E09A4
+baserom_blob 0x2E04C4, 0x2E06BC
+
+.global sUnk_82E06BC
+sUnk_82E06BC:
+
+baserom_blob 0x2E06BC, 0x2E09A4
 
 .global sUnk_82E09A4
 sUnk_82E09A4:
 
-baserom_blob 0x2E09A4, 0x2E11E4
+baserom_blob 0x2E09A4, 0x2E0BA8
+
+.global sUnk_82E0BA8
+sUnk_82E0BA8:
+
+baserom_blob 0x2E0BA8, 0x2E0CD8
+
+.global sUnk_82E0CD8
+sUnk_82E0CD8:
+
+baserom_blob 0x2E0CD8, 0x2E11E4
 
 .global sUnk_82E11E4
 sUnk_82E11E4:

@@ -1264,7 +1264,7 @@ func_807A380:
 .L_7a3c4:
 	.4byte	gUnk_300188E
 .L_7a3c8:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7a3cc:
 	mov	r2, #1
 .L_7a3ce:
@@ -1312,7 +1312,7 @@ func_807A3D4:
 .L_7a418:
 	.4byte	gUnk_300188E
 .L_7a41c:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7a420:
 	mov	r2, #1
 .L_7a422:
@@ -1376,7 +1376,7 @@ func_807A46C:
 	strh	r0, [r1, #0]
 	bx	lr
 .L_7a480:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7a484:
 	.4byte	0x4000054
 .L_7a488:
@@ -1398,7 +1398,7 @@ func_807A490:
 	strh	r0, [r1, #0]
 	bx	lr
 .L_7a4a4:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7a4a8:
 	.4byte	0x4000054
 .L_7a4ac:
@@ -1610,7 +1610,7 @@ func_807A668:
 .L_7a6a8:
 	.4byte	0x84000100
 .L_7a6ac:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_7a6b0:
 	.4byte	gSubGameMode
 .L_7a6b4:

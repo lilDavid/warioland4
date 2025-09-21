@@ -2497,9 +2497,9 @@ func_80762E4:
 	b	.L_765fc
 	.align	2, 0
 .L_764d8:
-	.4byte	gUnk_3000033
+	.4byte	gDrawWarioOverBackground
 .L_764dc:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_764e0:
 	.4byte	gOamSlotsUsed
 .L_764e4:
@@ -2507,7 +2507,7 @@ func_80762E4:
 .L_764e8:
 	.4byte	gOamBuffer
 .L_764ec:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_764f0:
 	.4byte	0x000001ff
 .L_764f4:
@@ -2537,7 +2537,7 @@ func_80762E4:
 	strb	r0, [r4, #0]
 	b	.L_76620
 .L_76524:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_76528:
 	ldrh	r0, [r4, #8]
 	lsr	r0, r0, #2
@@ -2683,7 +2683,7 @@ func_80762E4:
 .L_76638:
 	.4byte	gOamBuffer
 .L_7663c:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_76640:
 	.4byte	0x000001ff
 .L_76644:

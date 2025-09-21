@@ -70,13 +70,13 @@ func_806C828:
 	pop	{r0}
 	bx	r0
 .L_6c8b4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6c8b8:
 	.4byte	0x1FF
 .L_6c8bc:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6c8c0:
-	.4byte	gUnk_30000A8
+	.4byte	gBackgroundScroll
 .L_6c8c4:
 	.4byte	gUnk_300187E
 .L_6c8c8:
@@ -170,7 +170,7 @@ func_806C8E4:
 .L_6c968:
 	.4byte	gUnk_3001882
 .L_6c96c:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6c970:
 	ldr	r1, .L_6c994
 	ldr	r0, .L_6c998
@@ -194,7 +194,7 @@ func_806C8E4:
 .L_6c994:
 	.4byte	gUnk_3001882
 .L_6c998:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6c99c:
 	.4byte	gUnk_3001884
 .L_6c9a0:
@@ -211,7 +211,7 @@ func_806C8E4:
 .L_6c9b4:
 	.4byte	gUnk_3001884
 .L_6c9b8:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6c9bc:
 	ldr	r1, .L_6c9cc
 	ldr	r0, .L_6c9d0
@@ -225,7 +225,7 @@ func_806C8E4:
 .L_6c9cc:
 	.4byte	gUnk_3001884
 .L_6c9d0:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 
 
 thumb_func_start func_806C9D4
@@ -323,9 +323,9 @@ func_806CA00:
 	ldr	r0, .L_6ca80
 	b	.L_6ca8a
 .L_6ca7c:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6ca80:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6ca84:
 	ldr	r0, .L_6ccd4
 	ldrh	r1, [r0, #0]
@@ -1019,9 +1019,9 @@ func_806CF28:
 	ldr	r0, .L_6cfa8
 	b	.L_6cfb2
 .L_6cfa4:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6cfa8:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6cfac:
 	ldr	r0, .L_6d208
 	ldrh	r4, [r0, #0]

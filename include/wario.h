@@ -3,6 +3,8 @@
 
 #include "gba.h"
 
+#include "oam.h"
+
 
 #define MAX_HEARTS (8)
 #define HEART_GAUGE_MAX (8)
@@ -48,11 +50,11 @@ struct WarioData {
     /* 0x1C */ s16 unk_1C;
     /* 0x1E */ u8 unk_1E;
     /* 0x1F */ u8 unk_1F;
-    /* 0x20 */ void* unk_20;
-    /* 0x24 */ void* unk_24;
-    /* 0x28 */ u16 unk_28;
-    /* 0x2C */ void* unk_2C;
-    /* 0x30 */ u16 unk_30;
+    /* 0x20 */ const u16* pOamData;
+    /* 0x24 */ u8* pObjData1;
+    /* 0x28 */ u16 objData1Size;
+    /* 0x2C */ u8* pObjData2;
+    /* 0x30 */ u16 objData2Size;
     /* 0x32 */ s16 unk_32;
     /* 0x34 */ s16 unk_34;
     /* 0x36 */ s16 unk_36;
@@ -61,7 +63,6 @@ struct WarioData {
     /* 0x3B */ u8 unk_3B;
 }; /* size: 0x3C */
 
-
 struct WarioLife {
     u8 current;
     u8 filling;
@@ -69,13 +70,87 @@ struct WarioLife {
     u8 unk_3;
 };
 
+struct WarioAfterimage {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    const u16* unk4;
+};
+
+struct WarioEffect {
+    u8 type;
+    u8 status;
+    u8 animationTimer;
+    u8 unk_3;
+    void* pObjData;
+};
+
+struct CarriedSprite {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u16 unk4;
+};
+
+struct WarioDustEffect {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u16 unk4;
+    u16 unk6;
+    struct AnimationFrameU16* unk8;
+};
+
+struct WarioAfterimageData {
+    u16 previousXPositions[32];
+    u16 previousYPositions[32];
+};
+
+struct WarioAnimation {
+    struct AnimationFrame* left;
+    struct AnimationFrame* right;
+};
 
 extern struct WarioData gWarioData;
-
+extern struct WarioData gWarioDataCopy;
 extern struct WarioLife gHeartMeter;
 extern struct WarioLife gHeartGauge;
-
+extern struct WarioAfterimage gUnk_3001930;
+extern struct WarioAfterimage gUnk_3001938;
+extern struct WarioEffect gCurrentWarioEffect;
+extern struct CarriedSprite gCurrentCarriedSprite;
+extern struct WarioDustEffect gWarioDustEffect1;
+extern struct WarioDustEffect gWarioDustEffect2;
+extern u8 gUnk_30019F0;
+extern u16 gUnk_30019F2;
+extern u16 gUnk_30019F4;
 extern u16 gWarioPauseTimer;
 extern u8 gDisableWario;
+
+extern struct WarioAfterimageData gUnk_3003138;
+extern s16 gUnk_30031B8;
+extern s8 gUnk_30031BA;
+extern s8 gUnk_30031BC;
+extern u8 gUnk_30031BD;
+extern s8 gUnk_30031BE;
+
+extern struct WarioData sStartingWarioData;
+extern struct WarioLife sStartingHeartMeter;
+extern struct WarioLife sStartingHeartGauge;
+extern struct WarioAfterimage sUnk_82DD0EC;
+extern struct WarioEffect sStartingWarioEffect;
+extern struct CarriedSprite sEmptyCarriedSprite;
+extern struct WarioDustEffect sEmptyDustEffect;
+extern struct WarioAnimation sUnk_82DDCD0[];
+extern u16 sUnk_82DDDA0[];
+extern u16 sUnk_82DDDC0[];
+extern u8 sUnk_82DF094[];
+
+
+void Wario_ProcessControls();
+void Wario_ProcessCollision();
+void func_8010154();
+void func_80101D0();
+void func_8010154();
 
 #endif  // WARIO_H

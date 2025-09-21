@@ -116,11 +116,11 @@ func_8015D34:
 	strb	r0, [r1, #0]
 	b	.L_15dcc
 .L_15dbc:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_15dc0:
 	.4byte	sUnk_82FC108
 .L_15dc4:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_15dc8:
 	ldr	r0, .L_15dd0
 	strb	r2, [r0, #3]
@@ -129,7 +129,7 @@ func_8015D34:
 .L_15dce:
 	bx	lr
 .L_15dd0:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 
 
 thumb_func_start func_8015DD4
@@ -208,11 +208,11 @@ func_8015DD4:
 	strb	r0, [r1, #0]
 	b	.L_15e6c
 .L_15e5c:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_15e60:
 	.4byte	sUnk_82FC2F4
 .L_15e64:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_15e68:
 	ldr	r0, .L_15e70
 	strb	r2, [r0, #3]
@@ -221,7 +221,7 @@ func_8015DD4:
 .L_15e6e:
 	bx	lr
 .L_15e70:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 
 
 thumb_func_start func_8015E74
@@ -373,7 +373,7 @@ func_8015E74:
 .L_15f7c:
 	.4byte	0xFFE0
 .L_15f80:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_15f84:
 	.4byte	sUnk_82FC168
 
@@ -408,7 +408,7 @@ func_8015F88:
 .L_15fbc:
 	.4byte	gWarioData
 .L_15fc0:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_15fc4:
 	mov	r0, #2
 	and	r0, r1
@@ -547,7 +547,7 @@ func_8015F88:
 .L_160bc:
 	.4byte	gWarioData
 .L_160c0:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_160c4:
 	ldrh	r0, [r4, #12]
 	cmp	r0, #0
@@ -576,7 +576,7 @@ func_8015F88:
 	bx	r1
 	.align	2, 0
 .L_160f0:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 
 
 thumb_func_start func_80160F4
@@ -1048,7 +1048,7 @@ func_80163F8:
 	strh	r2, [r4, #22]
 	b	.L_1644e
 .L_16424:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_16428:
 	.4byte	gButtonsHeld
 .L_1642c:
@@ -1324,7 +1324,7 @@ func_80165B0:
 	bx	lr
 	.align	2, 0
 .L_1660c:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_16610:
 	.4byte	sUnk_82FC1D4
 
@@ -1371,9 +1371,9 @@ func_8016614:
 .L_16660:
 	.4byte	sUnk_82DD0EC
 .L_16664:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_16668:
-	.4byte	sUnk_82DD0F4
+	.4byte	sStartingWarioEffect
 .L_1666c:
 	.4byte	gUnk_30019F1
 .L_16670:
@@ -1443,9 +1443,9 @@ func_8016614:
 	bl	m4aSongNumStart
 	b	.L_16880
 .L_1670c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_16710:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_16714:
 	.4byte	0xFF94
 .L_16718:
@@ -1485,7 +1485,7 @@ func_8016614:
 .L_16750:
 	.4byte	0xFF80
 .L_16754:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_16758:
 	mov	r0, #0
 	strh	r0, [r4, #24]
@@ -1494,7 +1494,7 @@ func_8016614:
 	strb	r0, [r1, #0]
 	b	.L_16880
 .L_16764:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_16768:
 	mov	r0, #6
 	strb	r0, [r4, #31]
@@ -1525,7 +1525,7 @@ func_8016614:
 	bl	m4aSongNumStart
 	b	.L_16880
 .L_167a0:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_167a4:
 	.4byte	gHeartMeter
 .L_167a8:
@@ -1546,9 +1546,9 @@ func_8016614:
 .L_167c4:
 	.4byte	gUnk_3001930
 .L_167c8:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_167cc:
-	.4byte	gUnk_3001950
+	.4byte	gWarioDustEffect1
 .L_167d0:
 	mov	r0, #0
 	strh	r0, [r4, #24]
@@ -1566,7 +1566,7 @@ func_8016614:
 .L_167ec:
 	.4byte	gUnk_3001930
 .L_167f0:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_167f4:
 	ldrh	r1, [r4, #14]
 	mov	r0, #16
@@ -1603,7 +1603,7 @@ func_8016614:
 	strb	r0, [r1, #0]
 	b	.L_16880
 .L_1682c:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_16830:
 	ldr	r1, .L_16844
 	mov	r0, #4
@@ -1637,7 +1637,7 @@ func_8016614:
 .L_1686c:
 	.4byte	gUnk_3001930
 .L_16870:
-	.4byte	gUnk_300195C
+	.4byte	gWarioDustEffect2
 .L_16874:
 	mov	r0, #0
 	strh	r0, [r4, #24]
@@ -3295,7 +3295,7 @@ func_8017394:
 .L_174d0:
 	.4byte	gMainTimer
 .L_174d4:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_174d8:
 	.4byte	sUnk_82DE3A0
 .L_174dc:
@@ -3331,7 +3331,7 @@ func_8017394:
 	b	.L_17552
 	.align	2, 0
 .L_1751c:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_17520:
 	.4byte	sUnk_82DE4C0
 .L_17524:
@@ -3364,7 +3364,7 @@ func_8017394:
 	b	.L_1758e
 	.align	2, 0
 .L_1755c:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_17560:
 	.4byte	gMainTimer
 .L_17564:
@@ -3392,7 +3392,7 @@ func_8017394:
 	pop	{r0}
 	bx	r0
 .L_17594:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_17598:
 	.4byte	sUnk_82DDDA0
 .L_1759c:

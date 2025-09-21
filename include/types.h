@@ -9,6 +9,8 @@ typedef void (*ProcedureFunc)(void);
 
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
 
+#define SIGN_BIT(value) ((value) & (1 << (8 * (sizeof(value)) - 1)))
+
 // Amount of subpixels in one visible pixel
 #define PIXEL_SIZE 4
 // Amount of pixels in one block

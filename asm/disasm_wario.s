@@ -82,7 +82,7 @@ func_800FD90:
 	pop	{r0}
 	bx	r0
 .L_fdb8:
-	.4byte	gUnk_30030D0
+	.4byte	gWarioPalette
 
 
 thumb_func_start func_800FDBC
@@ -130,7 +130,7 @@ func_800FDBC:
 .L_fe08:
 	.4byte	gWarioData
 .L_fe0c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_fe10:
 	.4byte	0xFFD8
 .L_fe14:
@@ -288,7 +288,7 @@ func_800FF0C:
 .L_ff28:
 	.4byte	gWarioData
 .L_ff2c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_ff30:
 	.4byte	sUnk_82DEC40
 .L_ff34:
@@ -312,7 +312,7 @@ func_800FF0C:
 	strh	r0, [r2, #4]
 	bx	lr
 .L_ff58:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_ff5c:
 	.4byte	sUnk_82DEC40
 .L_ff60:
@@ -385,8 +385,8 @@ func_800FF64:
 	.4byte	gUnk_30031BA
 
 
-thumb_func_start func_800FFDC
-func_800FFDC:
+thumb_func_start Wario_ProcessControls
+Wario_ProcessControls:
 	push	{r4, r5, lr}
 	ldr	r1, .L_1006c
 	mov	r0, #0
@@ -480,11 +480,11 @@ func_800FFDC:
 .L_10094:
 	.4byte	sUnk_82DECD0
 .L_10098:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 
 
-thumb_func_start func_801009C
-func_801009C:
+thumb_func_start Wario_ProcessCollision
+Wario_ProcessCollision:
 	push	{r4, r5, r6, lr}
 	ldr	r1, .L_100d0
 	mov	r5, #0
@@ -605,7 +605,7 @@ func_8010154:
 	b	.L_10182
 	.align	2, 0
 .L_10178:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1017c:
 	.4byte	gWarioData
 .L_10180:
@@ -743,11 +743,11 @@ func_8010230:
 .L_1026c:
 	.4byte	sUnk_82DD0EC
 .L_10270:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_10274:
-	.4byte	sUnk_82DD0F4
+	.4byte	sStartingWarioEffect
 .L_10278:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1027c:
 	.4byte	gWarioDataCopy
 .L_10280:

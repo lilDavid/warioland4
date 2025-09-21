@@ -32,7 +32,7 @@ func_806AF4C:
 	b	.L_6af92
 	.align	2, 0
 .L_6af84:
-	.4byte	gUnk_3000033
+	.4byte	gDrawWarioOverBackground
 .L_6af88:
 	.4byte	gCurrentRoomHeader
 .L_6af8c:
@@ -198,7 +198,7 @@ func_806AF4C:
 	b	.L_6b14e
 	.align	2, 0
 .L_6b128:
-	.4byte	gUnk_3000033
+	.4byte	gDrawWarioOverBackground
 .L_6b12c:
 	mov	r2, sp
 	mov	r0, sp
@@ -232,7 +232,7 @@ func_806AF4C:
 	mov	pc, r0
 	.align	2, 0
 .L_6b168:
-	.4byte	gUnk_3000033
+	.4byte	gDrawWarioOverBackground
 .L_6b16c:
 	.4byte	gCurrentRoomHeader
 .L_6b170:
@@ -367,7 +367,7 @@ func_806AF4C:
 .L_6b2b0:
 	.4byte	0x4000052
 .L_6b2b4:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 .L_6b2b8:
 	ldr	r0, .L_6b2fc
 	mov	r2, #0
@@ -409,15 +409,15 @@ func_806AF4C:
 .L_6b300:
 	.4byte	0x4000052
 .L_6b304:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 .L_6b308:
 	.4byte	gColorFading
 .L_6b30c:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_6b310:
 	.4byte	gWarioData
 .L_6b314:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6b318:
 	mov	r0, #240	@ 0xf0
 .L_6b31a:
@@ -442,7 +442,7 @@ func_806AF4C:
 	mov	r0, #0
 	b	.L_6b346
 .L_6b340:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6b344:
 	mov	r0, #160	@ 0xa0
 .L_6b346:
@@ -519,7 +519,7 @@ func_806AF4C:
 	pop	{r0}
 	bx	r0
 .L_6b3d0:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_6b3d4:
 	.4byte	0x400004A
 .L_6b3d8:
@@ -529,7 +529,7 @@ func_806AF4C:
 .L_6b3e0:
 	.4byte	0x4000040
 .L_6b3e4:
-	.4byte	gUnk_3001860
+	.4byte	gMosaic
 
 
 thumb_func_start func_806B3E8
@@ -814,11 +814,11 @@ func_806B410:
 .L_6b614:
 	.4byte	gPauseFlag
 .L_6b618:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6b61c:
 	.4byte	gUnk_3003224
 .L_6b620:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6b624:
 	.4byte	gUnk_300001B
 .L_6b628:
@@ -1260,7 +1260,7 @@ func_806B864:
 .L_6b968:
 	.4byte	gUnk_3000044
 .L_6b96c:
-	.4byte	gUnk_300002C
+	.4byte	gBldCnt
 .L_6b970:
 	.4byte	gUnk_30037BE
 .L_6b974:
@@ -1434,9 +1434,9 @@ func_806B864:
 .L_6bab4:
 	.4byte	gUnk_30000CC
 .L_6bab8:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6babc:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6bac0:
 	.4byte	gUnk_3001876
 .L_6bac4:
@@ -1558,9 +1558,9 @@ func_806BB4C:
 .L_6bb90:
 	.4byte	gCurrentRoomHeader
 .L_6bb94:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_6bb98:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_6bb9c:
 	ldr	r0, .L_6bd3c
 	ldrb	r0, [r0, #3]
@@ -2590,8 +2590,8 @@ func_806C2CC:
 	.4byte	gSongTable
 
 
-thumb_func_start func_806C304
-func_806C304:
+thumb_func_start Music_PauseFadeOut
+Music_PauseFadeOut:
 	push	{r4, lr}
 	ldr	r4, .L_6c328
 	ldr	r0, [r4, #0]
@@ -2704,7 +2704,7 @@ func_806C330:
 .L_6c3e8:
 	.4byte	gUnk_3001872
 .L_6c3ec:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 .L_6c3f0:
 	ldr	r3, .L_6c428
 	ldrh	r1, [r3, #0]
@@ -2772,7 +2772,7 @@ func_806C330:
 .L_6c468:
 	.4byte	gUnk_3001874
 .L_6c46c:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 .L_6c470:
 	.4byte	gUnk_3001872
 .L_6c474:
@@ -2815,7 +2815,7 @@ func_806C330:
 .L_6c4b8:
 	.4byte	gUnk_3001872
 .L_6c4bc:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 .L_6c4c0:
 	.4byte	gUnk_3001874
 .L_6c4c4:
@@ -2886,7 +2886,7 @@ func_806C330:
 .L_6c538:
 	.4byte	gUnk_3001874
 .L_6c53c:
-	.4byte	gUnk_300002A
+	.4byte	gBldAlpha
 .L_6c540:
 	ldr	r3, .L_6c5a8
 	ldrh	r1, [r3, #0]
@@ -2993,8 +2993,8 @@ func_806C5BC:
 	.align	2, 0
 
 
-thumb_func_start func_806C5FC
-func_806C5FC:
+thumb_func_start Background_ProcessMain
+Background_ProcessMain:
 	push	{r4, lr}
 	ldr	r1, .L_6c610
 	ldrb	r0, [r1, #1]
@@ -3126,7 +3126,7 @@ func_806C694:
 .L_6c6f8:
 	.4byte	gUnk_30037BF
 .L_6c6fc:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_6c700:
 	.4byte	0x7FFF
 .L_6c704:
@@ -3161,7 +3161,7 @@ func_806C694:
 .L_6c73c:
 	.4byte	gUnk_30037BF
 .L_6c740:
-	.4byte	gUnk_30000C0
+	.4byte	gWindow
 .L_6c744:
 	.4byte	0x4000046
 .L_6c748:
@@ -3211,8 +3211,8 @@ func_806C75C:
 	.4byte	gUnk_3000046
 
 
-thumb_func_start func_806C794
-func_806C794:
+thumb_func_start GameScreen_Draw
+GameScreen_Draw:
 	push	{lr}
 	bl	func_806C828
 	ldr	r0, .L_6c81c

@@ -17,7 +17,7 @@ func_801E4B0:
 	pop	{r0}
 	bx	r0
 .L_1e4cc:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1e4d0:
 	.4byte	gMPlayTable
 
@@ -1323,7 +1323,7 @@ func_801EF50:
 .L_1ef8c:
 	.4byte	0x0000fff0
 .L_1ef90:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 
 
 thumb_func_start func_801EF94
@@ -1357,7 +1357,7 @@ func_801EF94:
 .L_1efcc:
 	.4byte	sUnk_82DECA0
 .L_1efd0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 
 
 thumb_func_start func_801EFD4
@@ -1858,7 +1858,7 @@ func_801F200:
 .L_1f394:
 	.4byte	gSpriteData
 .L_1f398:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1f39c:
 	ldr	r1, .L_1f3c0
 	mov	r0, #1
@@ -1879,7 +1879,7 @@ func_801F200:
 	b	.L_1f41c
 	.align	2, 0
 .L_1f3c0:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1f3c4:
 	.4byte	sUnk_82DECA0
 .L_1f3c8:
@@ -1908,7 +1908,7 @@ func_801F200:
 .L_1f3f4:
 	.4byte	gSpriteData
 .L_1f3f8:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1f3fc:
 	ldr	r1, .L_1f424
 	mov	r0, #1
@@ -1931,7 +1931,7 @@ func_801F200:
 	bl	m4aSongNumStart
 	b	.L_1f432
 .L_1f424:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1f428:
 	.4byte	sUnk_82DECA0
 .L_1f42c:
@@ -2059,7 +2059,7 @@ func_801F43C:
 .L_1f53c:
 	.4byte	gSpriteData
 .L_1f540:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1f544:
 	ldr	r1, .L_1f564
 	mov	r0, #1
@@ -2078,7 +2078,7 @@ func_801F43C:
 	bl	_call_via_r1
 	b	.L_1f5bc
 .L_1f564:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1f568:
 	.4byte	sUnk_82DECA0
 .L_1f56c:
@@ -2650,7 +2650,7 @@ func_801F628:
 	b	.L_1fa60
 	.align	2, 0
 .L_1fa48:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1fa4c:
 	.4byte	gUnk_3000A51
 .L_1fa50:
@@ -2682,7 +2682,7 @@ func_801F628:
 	bl	func_8020F28
 	b	.L_1fa9c
 .L_1fa88:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_1fa8c:
 	add	r0, r7, #0
 	add	r1, r4, #0
@@ -3443,7 +3443,7 @@ func_801F628:
 .L_20048:
 	.4byte	gSpriteData
 .L_2004c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_20050:
 	ldrb	r0, [r6, #0]
 	cmp	r0, #0

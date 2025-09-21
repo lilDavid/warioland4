@@ -7,7 +7,7 @@
 IWRAM_DATA u8 gDemoState = 0;
 
 
-void func_80102D8(void) {
+void DemoInputSubroutine(void) {
     if (gDemoState == DEMO_STATE_RECORDING) {
         DemoInput_Record();
     } else if (gDemoState == DEMO_STATE_PLAYBACK) {

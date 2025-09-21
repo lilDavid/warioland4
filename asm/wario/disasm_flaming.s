@@ -1045,7 +1045,7 @@ func_8017DCC:
 .L_17e2c:
 	.4byte	gWarioData
 .L_17e30:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_17e34:
 	.4byte	.L_17e38
 .L_17e38:

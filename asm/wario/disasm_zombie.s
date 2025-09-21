@@ -1078,7 +1078,7 @@ func_801929E:
 .L_19300:
 	.4byte	gWarioData
 .L_19304:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_19308:
 	.4byte	sUnk_82DE838
 

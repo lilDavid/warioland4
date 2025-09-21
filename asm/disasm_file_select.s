@@ -62,9 +62,9 @@ func_80909C0:
 .L_90a1c:
 	.4byte	gUnk_3001880
 .L_90a20:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_90a24:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_90a28:
 	.4byte	gUnk_3001876
 .L_90a2c:
@@ -506,7 +506,7 @@ func_8090A40:
 .L_90d98:
 	.4byte	0x00007801
 .L_90d9c:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_90da0:
 	.4byte	gUnk_3001874
 .L_90da4:
@@ -526,9 +526,9 @@ func_8090A40:
 .L_90dc0:
 	.4byte	gUnk_3001880
 .L_90dc4:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_90dc8:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_90dcc:
 	.4byte	gUnk_3001878
 .L_90dd0:
@@ -4042,9 +4042,9 @@ func_8092534:
 .L_927c8:
 	.4byte	gUnk_3004A70
 .L_927cc:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_927d0:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_927d4:
 	.4byte	gOamBuffer
 .L_927d8:

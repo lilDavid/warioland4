@@ -131,7 +131,7 @@ func_8082024:
 .L_82124:
 	.4byte	gUnk_3003C3A
 .L_82128:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_8212c:
 	.4byte	0x4000054
 .L_82130:
@@ -255,7 +255,7 @@ func_8082024:
 .L_82218:
 	.4byte	gUnk_3003C3A
 .L_8221c:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_82220:
 	.4byte	0x4000054
 .L_82224:
@@ -527,7 +527,7 @@ func_8082024:
 	pop	{r1}
 	bx	r1
 .L_8241c:
-	.4byte	gUnk_3001870
+	.4byte	gBldy
 .L_82420:
 	.4byte	0x4000054
 .L_82424:

@@ -2805,7 +2805,7 @@ func_806FFB0:
 .L_70084:
 	.4byte	0x0203a000
 .L_70088:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_7008c:
 	.4byte	0x06001000
 .L_70090:
@@ -2905,7 +2905,7 @@ func_8070098:
 .L_70140:
 	.4byte	gBackgroundInfo
 .L_70144:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_70148:
 	.4byte	0x06001000
 .L_7014c:

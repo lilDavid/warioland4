@@ -11,6 +11,12 @@ struct AnimationFrame {
     u8 time;
 };
 
+// ????
+struct AnimationFrameU16 {
+    const u16* oam;
+    u16 time;
+};
+
 
 #define OAM_ENTRY(x, y, dimensions, flip, tile, palette, priority)\
     SPRITE_SHAPE(dimensions) << 14 | ST_OAM_4BPP << 12 | ST_OAM_AFFINE_OFF << 8 | ((y) & 0xFF),\

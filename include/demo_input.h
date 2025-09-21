@@ -13,7 +13,7 @@ enum DemoState {
 extern u8 gDemoState;
 
 
-void func_80102D8(void);
+void DemoInputSubroutine(void);
 void DemoInput_Record(void);
 void DemoInput_Playback(void);
 void DemoInput_ReadButtons(void);

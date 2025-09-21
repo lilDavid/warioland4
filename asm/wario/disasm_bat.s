@@ -55,7 +55,7 @@ func_801A964:
 	mov	r0, #3
 	b	.L_1a9ae
 .L_1a9a0:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_1a9a4:
 	.4byte	gWarioData
 .L_1a9a8:
@@ -450,9 +450,9 @@ func_801ABCC:
 .L_1ac58:
 	.4byte	sUnk_82DD0EC
 .L_1ac5c:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_1ac60:
-	.4byte	sUnk_82DD0F4
+	.4byte	sStartingWarioEffect
 .L_1ac64:
 	.4byte	gWarioData
 .L_1ac68:
@@ -725,11 +725,11 @@ func_801ADF0:
 .L_1ae54:
 	.4byte	gWarioData
 .L_1ae58:
-	.4byte	gUnk_3001940
+	.4byte	gCurrentWarioEffect
 .L_1ae5c:
 	.4byte	sUnk_82DDBF0
 .L_1ae60:
-	.4byte	gUnk_3003130
+	.4byte	gWarioPaletteSize
 .L_1ae64:
 	.4byte	sUnk_82DE938
 

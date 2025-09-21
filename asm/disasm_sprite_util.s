@@ -2904,7 +2904,7 @@ func_8024D18:
 .L_24d50:
 	.4byte	gCurrentSprite
 .L_24d54:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_24d58:
 	.4byte	gWarioData
 .L_24d5c:
@@ -3074,7 +3074,7 @@ func_8024E58:
 .L_24e90:
 	.4byte	gCurrentSprite
 .L_24e94:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_24e98:
 	.4byte	gWarioData
 .L_24e9c:
@@ -3235,7 +3235,7 @@ func_8024F98:
 .L_24fc0:
 	.4byte	gCurrentSprite
 .L_24fc4:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_24fc8:
 	.4byte	.L_24fcc
 .L_24fcc:
@@ -3585,7 +3585,7 @@ func_8025240:
 .L_25268:
 	.4byte	gCurrentSprite
 .L_2526c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_25270:
 	.4byte	.L_25274
 .L_25274:
@@ -6431,7 +6431,7 @@ func_80265C8:
 .L_266c4:
 	.4byte	0x00000607
 .L_266c8:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_266cc:
 	mov	r0, #53	@ 0x35
 	strb	r0, [r5, #28]
@@ -6467,7 +6467,7 @@ func_80265C8:
 	mov	r0, r9
 	b	.L_2675c
 .L_2670c:
-	.4byte	gUnk_3001948
+	.4byte	gCurrentCarriedSprite
 .L_26710:
 	mov	r1, r9
 	strb	r1, [r5, #28]
@@ -7536,9 +7536,9 @@ func_8026DD0:
 .L_26e58:
 	.4byte	gUnk_3000C03
 .L_26e5c:
-	.4byte	gUnk_300187C
+	.4byte	gBg1YPosition
 .L_26e60:
-	.4byte	gUnk_300187A
+	.4byte	gBg1XPosition
 .L_26e64:
 	.4byte	gCurrentPassage
 .L_26e68:

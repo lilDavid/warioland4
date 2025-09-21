@@ -41,9 +41,20 @@ void AgbMain(void) {
     u32 cutsceneResult;
 
     InitializeGame();
-    goto soundcode;
 
     while (TRUE) {
+        gUnk_3000C40 = 0;
+        if (gMainGameMode != GM_CUTSCENE) {
+            m4aSoundMain();
+        }
+        if (gResetSaveFile) {
+            m4aSoundVSyncOff();
+            if (gResetSaveFile == 2) {
+                ClearSRAM();
+            }
+            break;
+        }
+
         PollInput();
         CheckSoftReset();
         TIMER_COUNT_UP(gMainTimer);
@@ -233,19 +244,6 @@ void AgbMain(void) {
         do {
             SYSCALL(SYSCALL_Halt);
         } while (!(gInterruptCheck & 1));
-
-        soundcode:
-        gUnk_3000C40 = 0;
-        if (gMainGameMode != GM_CUTSCENE) {
-            m4aSoundMain();
-        }
-        if (gResetSaveFile) {
-            m4aSoundVSyncOff();
-            if (gResetSaveFile == 2) {
-                ClearSRAM();
-            }
-            return;
-        }
     }
 }
 
