@@ -698,7 +698,8 @@ const struct AnimationFrame sSpearMaskChasingOam[] = {
     ANIMATION_TERMINATOR
 };
 
-void SpearMask_SetWalkingHitbox(void) {
+void SpearMask_SetWalkingHitbox(void)
+{
     if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
         gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE;
         gCurrentSprite.hitboxExtentRight = 3 * QUARTER_BLOCK_SIZE;
@@ -708,7 +709,8 @@ void SpearMask_SetWalkingHitbox(void) {
     }
 }
 
-void SpearMask_Init(void) {
+void SpearMask_Init(void)
+{
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS * 3 / 2;
     gCurrentSprite.drawDistanceUp = 0;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS * 3 / 2;
@@ -728,7 +730,8 @@ void SpearMask_Init(void) {
     }
 }
 
-void SpearMask_InitWalk(void) {
+void SpearMask_InitWalk(void)
+{
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_IDLE;
@@ -746,7 +749,8 @@ void SpearMask_InitWalk(void) {
     }
 }
 
-void SpearMask_WalkYellow(void) {
+void SpearMask_WalkYellow(void)
+{
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -798,7 +802,8 @@ void SpearMask_WalkYellow(void) {
     func_8026374();
 }
 
-void SpearMask_TurnInit(void) {
+void SpearMask_TurnInit(void)
+{
     gCurrentSprite.pOamData = sSpearMaskTurning1Oam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -808,7 +813,8 @@ void SpearMask_TurnInit(void) {
     SpearMask_SetWalkingHitbox();
 }
 
-void SpearMask_Turn(void) {
+void SpearMask_Turn(void)
+{
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -850,7 +856,8 @@ void SpearMask_Turn(void) {
     }
 }
 
-void SpearMask_Pose17(void) {
+void SpearMask_Pose17(void)
+{
     gCurrentSprite.pOamData = sSpearMaskRecoveringOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -861,7 +868,8 @@ void SpearMask_Pose17(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-void SpearMask_GetUpInit(void) {
+void SpearMask_GetUpInit(void)
+{
     gCurrentSprite.pOamData = sSpearMaskGettingUpOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -869,7 +877,8 @@ void SpearMask_GetUpInit(void) {
     gCurrentSprite.work0 = CONVERT_SECONDS(1.0 + 7.0 / 12.0);
 }
 
-void SpearMask_GetUp(void) {
+void SpearMask_GetUp(void)
+{
     u8 timer;
 
     timer = gCurrentSprite.work0;
@@ -903,7 +912,8 @@ void SpearMask_GetUp(void) {
     TIMER_COUNT_DOWN(gCurrentSprite.work0);
 }
 
-void SpearMask_Pose1B(void) {
+void SpearMask_Pose1B(void)
+{
     gCurrentSprite.pOamData = sSpearMaskOam_83B43A4;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -912,7 +922,8 @@ void SpearMask_Pose1B(void) {
     gCurrentSprite.warioInteractionFlags = 1;
 }
 
-void SpearMask_Pose1D(void) {
+void SpearMask_Pose1D(void)
+{
     gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -924,7 +935,8 @@ void SpearMask_Pose1D(void) {
 }
 
 // Defeated somehow
-void SpearMask_80273C0(void) {
+void SpearMask_80273C0(void)
+{
     u32 value;
 
     gCurrentSprite.pOamData = sSpearMaskBashedOam;
@@ -952,18 +964,21 @@ void SpearMask_80273C0(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-void SpearMask_Pose1F(void) {
+void SpearMask_Pose1F(void)
+{
     gCurrentSprite.pose = POSE_20;
     SpearMask_80273C0();
 }
 
-void SpearMask_Pose21(void) {
+void SpearMask_Pose21(void)
+{
     gCurrentSprite.pose = POSE_22;
     SpearMask_80273C0();
 }
 
 // Defeated a different way
-void SpearMask_8027474(void) {
+void SpearMask_8027474(void)
+{
     u32 value;
 
     gCurrentSprite.pOamData = sSpearMaskBashedOam;
@@ -989,17 +1004,20 @@ void SpearMask_8027474(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-void SpearMask_Pose6A(void) {
+void SpearMask_Pose6A(void)
+{
     gCurrentSprite.pose = POSE_20;
     SpearMask_8027474();
 }
 
-void SpearMask_Pose69(void) {
+void SpearMask_Pose69(void)
+{
     gCurrentSprite.pose = POSE_22;
     SpearMask_8027474();
 }
 
-void SpearMask_8027514(void) {
+void SpearMask_8027514(void)
+{
     gCurrentSprite.pOamData = sSpearMaskOam_83B4364;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -1011,17 +1029,20 @@ void SpearMask_8027514(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-void SpearMask_Pose23(void) {
+void SpearMask_Pose23(void)
+{
     gCurrentSprite.pose = POSE_24;
     SpearMask_8027514();
 }
 
-void SpearMask_Pose25(void) {
+void SpearMask_Pose25(void)
+{
     gCurrentSprite.pose = POSE_26;
     SpearMask_8027514();
 }
 
-void SpearMask_HitWario(void) {
+void SpearMask_HitWario(void)
+{
     gCurrentSprite.pOamData = sSpearMaskHitWarioOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -1030,28 +1051,33 @@ void SpearMask_HitWario(void) {
     gCurrentSprite.work2 = 8;
 }
 
-void SpearMask_HitWario_27(void) {
+void SpearMask_HitWario_27(void)
+{
     gCurrentSprite.pose = POSE_28;
     SpearMask_HitWario();
 }
 
-void SpearMask_HitWario_29(void) {
+void SpearMask_HitWario_29(void)
+{
     gCurrentSprite.pose = POSE_2A;
     SpearMask_HitWario();
 }
 
-void SpearMask_80275D4(void) {
+void SpearMask_80275D4(void)
+{
     gCurrentSprite.work0 = CONVERT_SECONDS(1.0 / 3.0);
     gCurrentSprite.work1 = 0;
     gCurrentSprite.work2 = 8;
 }
 
-void SpearMask_Pose6E(void) {
+void SpearMask_Pose6E(void)
+{
     gCurrentSprite.pose = SPEAR_MASK_POSE_6F;
     SpearMask_80275D4();
 }
 
-void SpearMask_Pose6F(void) {
+void SpearMask_Pose6F(void)
+{
     func_80238A4();
 
     if (gCurrentSprite.work2 >= 4) {
@@ -1073,12 +1099,14 @@ void SpearMask_Pose6F(void) {
     }
 }
 
-void SpearMask_Pose70(void) {
+void SpearMask_Pose70(void)
+{
     gCurrentSprite.pose = SPEAR_MASK_POSE_71;
     SpearMask_80275D4();
 }
 
-void SpearMask_Pose71(void) {
+void SpearMask_Pose71(void)
+{
     func_80238A4();
 
     if (gCurrentSprite.work2 >= 4) {
@@ -1100,7 +1128,8 @@ void SpearMask_Pose71(void) {
     }
 }
 
-void SpearMask_80276C4(void) {
+void SpearMask_80276C4(void)
+{
     gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -1110,17 +1139,20 @@ void SpearMask_80276C4(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-void SpearMask_Pose2B(void) {
+void SpearMask_Pose2B(void)
+{
     gCurrentSprite.pose = POSE_2C;
     SpearMask_80276C4();
 }
 
-void SpearMask_Pose2D(void) {
+void SpearMask_Pose2D(void)
+{
     gCurrentSprite.pose = POSE_2E;
     SpearMask_80276C4();
 }
 
-void SpearMask_Crushed(void) {
+void SpearMask_Crushed(void)
+{
     u32 value;
 
     gCurrentSprite.pOamData = sSpearMaskCrushedOam;
@@ -1145,7 +1177,8 @@ void SpearMask_Crushed(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-void SpearMask_InstantlyKill(void) {
+void SpearMask_InstantlyKill(void)
+{
     u32 value;
 
     switch (gCurrentSprite.globalID) {
@@ -1164,7 +1197,8 @@ void SpearMask_InstantlyKill(void) {
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-void SpearMask_80277E0(void) {
+void SpearMask_80277E0(void)
+{
     gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -1178,17 +1212,20 @@ void SpearMask_80277E0(void) {
     }
 }
 
-void SpearMask_Pose33(void) {
+void SpearMask_Pose33(void)
+{
     gCurrentSprite.pose = POSE_34;
     SpearMask_80277E0();
 }
 
-void SpearMask_Pose35(void) {
+void SpearMask_Pose35(void)
+{
     gCurrentSprite.pose = POSE_36;
     SpearMask_80277E0();
 }
 
-void SpearMask_802784C(void) {
+void SpearMask_802784C(void)
+{
     gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -1199,17 +1236,20 @@ void SpearMask_802784C(void) {
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-void SpearMask_Pose47(void) {
+void SpearMask_Pose47(void)
+{
     gCurrentSprite.pose = POSE_48;
     SpearMask_802784C();
 }
 
-void SpearMask_Pose49(void) {
+void SpearMask_Pose49(void)
+{
     gCurrentSprite.pose = POSE_4A;
     SpearMask_802784C();
 }
 
-void SpearMask_InitTransform(void) {
+void SpearMask_InitTransform(void)
+{
     gCurrentSprite.pOamData = sSpearMaskTransforming1Oam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -1236,7 +1276,8 @@ void SpearMask_InitTransform(void) {
     }
 }
 
-void SpearMask_Transform(void) {
+void SpearMask_Transform(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1267,7 +1308,8 @@ void SpearMask_Transform(void) {
     gCurrentSprite.work3 = 0;
 }
 
-void SpearMask_Pose4D(void) {
+void SpearMask_Pose4D(void)
+{
     u32 yPosition;
     s16 yVelocity;
     u8 frame;
@@ -1297,7 +1339,8 @@ void SpearMask_Pose4D(void) {
     }
 }
 
-void SpearMask_Pose4E(void) {
+void SpearMask_Pose4E(void)
+{
     TIMER_COUNT_DOWN(gCurrentSprite.work0);
     if (gCurrentSprite.work0) {
         func_8023B88();
@@ -1309,40 +1352,47 @@ void SpearMask_Pose4E(void) {
     }
 }
 
-void SpearMask_8027A8C(void) {
+void SpearMask_8027A8C(void)
+{
     gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
 }
 
-void SpearMask_Pose51(void) {
+void SpearMask_Pose51(void)
+{
     gCurrentSprite.pose = POSE_52;
     SpearMask_8027A8C();
 }
 
-void SpearMask_Pose53(void) {
+void SpearMask_Pose53(void)
+{
     gCurrentSprite.pose = POSE_54;
     SpearMask_8027A8C();
 }
 
-void SpearMask_8027ACC(void) {
+void SpearMask_8027ACC(void)
+{
     gCurrentSprite.disableWarioInteraction = 1;
     gCurrentSprite.pOamData = sSpearMaskStunnedOam;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.currentAnimationFrame = 0;
 }
 
-void SpearMask_Pose57(void) {
+void SpearMask_Pose57(void)
+{
     gCurrentSprite.pose = POSE_58;
     SpearMask_8027ACC();
 }
 
-void SpearMask_Pose55(void) {
+void SpearMask_Pose55(void)
+{
     gCurrentSprite.pose = POSE_56;
     SpearMask_8027ACC();
 }
 
-void SpearMask_StartChasing(void) {
+void SpearMask_StartChasing(void)
+{
     gCurrentSprite.pose = SPEAR_MASK_STARTING_CHASE;
     gCurrentSprite.pOamData = sSpearMaskStartingChaseOam;
     gCurrentSprite.currentAnimationFrame = 0;
@@ -1352,7 +1402,8 @@ void SpearMask_StartChasing(void) {
     gCurrentSprite.work0 = CONVERT_SECONDS(0.4);
 }
 
-void SpearMask_StartChase(void) {
+void SpearMask_StartChase(void)
+{
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -1370,7 +1421,8 @@ void SpearMask_StartChase(void) {
     gCurrentSprite.animationTimer = 0;
 }
 
-void SpearMask_WalkBlueOrRed(void) {
+void SpearMask_WalkBlueOrRed(void)
+{
     u32 temp;
 
     func_80238A4();
@@ -1478,7 +1530,8 @@ void SpearMask_WalkBlueOrRed(void) {
     }
 }
 
-void SpriteAI_SpearMask(void) {
+void SpriteAI_SpearMask(void)
+{
     if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
         gCurrentSprite.pose = POSE_6B;
     }

@@ -303,7 +303,8 @@ const u8* sHeartMeterGfx[] = {
     sHeartMeter1HeartFlashingGfx,
 };
 
-void func_80746C0(void) {
+void func_80746C0(void)
+{
     DmaCopy16(3, sCommonSpritesGfx, 0x6011000, sizeof(sCommonSpritesGfx));
 
     if (gCurrentStageNumber != STAGE_BOSS) {
@@ -340,7 +341,8 @@ void func_80746C0(void) {
     }
 }
 
-void func_80747D8(void) {
+void func_80747D8(void)
+{
     u8 health;
 
     health = gCurrentSprite.health;

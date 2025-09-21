@@ -28,7 +28,8 @@
 #include "wario_effects.h"
 #include "wario_palette.h"
 
-u32 GameScreenSubroutine(void) {
+u32 GameScreenSubroutine(void)
+{
     u32 result;
 
     GameScreen_SetVBlank();
@@ -165,7 +166,8 @@ u32 GameScreenSubroutine(void) {
     return result;
 }
 
-void GameScreen_SetVBlank(void) {
+void GameScreen_SetVBlank(void)
+{
     switch (gSubGameMode) {
         case 0:
         case 1:
@@ -183,7 +185,8 @@ void GameScreen_SetVBlank(void) {
     }
 }
 
-void func_801BC0C(void) {
+void func_801BC0C(void)
+{
     m4aSoundVSync();
 
     DmaCopy32(3, gOamBuffer, OAM, sizeof(gOamBuffer));
@@ -217,7 +220,8 @@ void func_801BC0C(void) {
     REG_BG3VOFS = gBackgroundScroll.bg3Vertical;
 }
 
-void func_801BD4C(void) {
+void func_801BD4C(void)
+{
     DmaCopy32(3, gOamBuffer, OAM, sizeof(gOamBuffer));
     if (!gDisableWario) {
         if (gWarioData.objData1Size > 0) {
@@ -250,7 +254,8 @@ void func_801BD4C(void) {
     REG_BG3VOFS = gBackgroundScroll.bg3Vertical;
 }
 
-void func_801BEA8(void) {
+void func_801BEA8(void)
+{
     s32 effect;
 
     m4aSoundVSync();
@@ -288,12 +293,14 @@ void func_801BEA8(void) {
     REG_BG3VOFS = gBackgroundScroll.bg3Vertical;
 }
 
-void func_801C040(void) {
+void func_801C040(void)
+{
     m4aSoundVSync();
     m4aSoundMain();
 }
 
-void func_801C050(void) {
+void func_801C050(void)
+{
     m4aSoundVSync();
 
     DmaCopy32(3, gOamBuffer, OAM, sizeof(gOamBuffer));
@@ -333,11 +340,13 @@ void func_801C050(void) {
     REG_BG3VOFS = gBackgroundScroll.bg3Vertical;
 }
 
-void func_801C1B4(void) {
+void func_801C1B4(void)
+{
     ColorFading_Process();
 }
 
-void GameScreen_InitAndLoadGenerics(void) {
+void GameScreen_InitAndLoadGenerics(void)
+{
     s16 bldcnt;
     u8 dispcnt;
 
@@ -426,7 +435,8 @@ void GameScreen_InitAndLoadGenerics(void) {
     InterruptCallback_SetVBlank(func_801BC0C);
 }
 
-void GameScreen_InitWario(void) {
+void GameScreen_InitWario(void)
+{
     if (!gPauseFlag) {
         gUnk_30031B8 = 0;
         gUnk_30031BA = 0;

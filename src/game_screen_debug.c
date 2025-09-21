@@ -9,7 +9,8 @@
 #include "score.h"
 #include "wario.h"
 
-void GameScreenDebugSubroutine(void) {
+void GameScreenDebugSubroutine(void)
+{
     s32 temp;
     s16 xVelocity;
     s16 yVelocity;
@@ -106,7 +107,8 @@ void GameScreenDebugSubroutine(void) {
     }
 }
 
-void func_801D4D4(void) {
+void func_801D4D4(void)
+{
     s32 var_r6;
     u8 temp;
 

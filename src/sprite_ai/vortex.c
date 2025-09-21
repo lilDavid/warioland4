@@ -44,7 +44,8 @@ const u16 sVortexPal[] = {
 #include "data/sprites/Vortex.pal.inc"
 };
 
-void Vortex_SetCommonProperties(void) {
+void Vortex_SetCommonProperties(void)
+{
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_7 | SPRITE_STATUS_3;
     gCurrentSprite.drawPriority |= 0x80;
     gCurrentSprite.hitboxExtentUp = PIXEL_SIZE;
@@ -58,7 +59,8 @@ void Vortex_SetCommonProperties(void) {
     gCurrentSprite.work3 = 0;
 }
 
-void Vortex_InitSmallPart(void) {
+void Vortex_InitSmallPart(void)
+{
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -66,7 +68,8 @@ void Vortex_InitSmallPart(void) {
     Vortex_SetCommonProperties();
 }
 
-void Vortex_InitMediumPart(void) {
+void Vortex_InitMediumPart(void)
+{
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 2 * BLOCK_SIZE_PIXELS;
@@ -75,7 +78,8 @@ void Vortex_InitMediumPart(void) {
     Vortex_SetCommonProperties();
 }
 
-void Vortex_InitLargePart(void) {
+void Vortex_InitLargePart(void)
+{
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 2 * BLOCK_SIZE_PIXELS;
@@ -84,7 +88,8 @@ void Vortex_InitLargePart(void) {
     Vortex_SetCommonProperties();
 }
 
-void Vortex_FinishStage(void) {
+void Vortex_FinishStage(void)
+{
     gCurrentSprite.pose = POSE_32;
     gDisableWario = 1;
     gWarioPauseTimer = CONVERT_SECONDS(16.0 + 2.0 / 3.0);
@@ -105,7 +110,8 @@ void Vortex_FinishStage(void) {
     VoiceSet_Play(VS_WARIO_KEYZER_GET);
 }
 
-void Vortex_AnimatePalette(void) {
+void Vortex_AnimatePalette(void)
+{
     s32 destAddress;
 
     if (gMainTimer & 7 || gSubGameMode != 2) {
@@ -121,7 +127,8 @@ void Vortex_AnimatePalette(void) {
     DmaCopy16(3, sVortexPal + 16 * gCurrentSprite.work3, OBJ_PLTT + destAddress, PLTT_ROW_SIZE);
 }
 
-void Vortex_InitWarioOrKeyzer(void) {
+void Vortex_InitWarioOrKeyzer(void)
+{
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_7;
     gCurrentSprite.drawPriority |= 0x80;
@@ -138,7 +145,8 @@ void Vortex_InitWarioOrKeyzer(void) {
     gCurrentSprite.pose = POSE_IDLE;
 }
 
-void SpriteAI_Vortex(void) {
+void SpriteAI_Vortex(void)
+{
     gCurrentSprite.disableWarioInteraction = 1;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
@@ -249,7 +257,8 @@ void SpriteAI_Vortex(void) {
     Vortex_AnimatePalette();
 }
 
-void SpriteAI_VortexPartMedium(void) {
+void SpriteAI_VortexPartMedium(void)
+{
     gCurrentSprite.disableWarioInteraction = 1;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
@@ -315,7 +324,8 @@ void SpriteAI_VortexPartMedium(void) {
     Vortex_AnimatePalette();
 }
 
-void SpriteAI_VortexPartLarge(void) {
+void SpriteAI_VortexPartLarge(void)
+{
     gCurrentSprite.disableWarioInteraction = 1;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
@@ -381,7 +391,8 @@ void SpriteAI_VortexPartLarge(void) {
     Vortex_AnimatePalette();
 }
 
-void SpriteAI_WarioExitingVortex(void) {
+void SpriteAI_WarioExitingVortex(void)
+{
     s32 scale;
 
     gCurrentSprite.disableWarioInteraction = 1;
@@ -424,7 +435,8 @@ void SpriteAI_WarioExitingVortex(void) {
     gCurrentSprite.affinePD = FixedMul(COS(gCurrentSprite.work1), FixedInverse(scale));
 }
 
-void SpriteAI_WarioEnteringVortex(void) {
+void SpriteAI_WarioEnteringVortex(void)
+{
     s32 scale;
 
     gCurrentSprite.disableWarioInteraction = 1;
@@ -469,7 +481,8 @@ void SpriteAI_WarioEnteringVortex(void) {
     gCurrentSprite.affinePD = FixedMul(COS(gCurrentSprite.work1), FixedInverse(scale));
 }
 
-void SpriteAI_KeyzerEnteringVortex(void) {
+void SpriteAI_KeyzerEnteringVortex(void)
+{
     s32 scale;
 
     gCurrentSprite.disableWarioInteraction = 1;

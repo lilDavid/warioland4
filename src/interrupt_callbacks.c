@@ -2,7 +2,8 @@
 
 #include "interrupts.h"
 
-void InterruptCallback_CallVBlank(void) {
+void InterruptCallback_CallVBlank(void)
+{
     if (gVBlankCallback != NULL) {
         gVBlankCallback();
     }
@@ -11,14 +12,16 @@ void InterruptCallback_CallVBlank(void) {
     gInterruptCheck = 1;
 }
 
-void InterruptCallback_SetVBlank(ProcedureFunc cb) {
+void InterruptCallback_SetVBlank(ProcedureFunc cb)
+{
     gVBlankCallback = cb;
     if (cb == NULL) {
         gVBlankCallback = InterruptCallback_Empty;
     }
 }
 
-void InterruptCallback_CallHBlank(void) {
+void InterruptCallback_CallHBlank(void)
+{
     if (gHBlankCallback != NULL) {
         gHBlankCallback();
     }
@@ -26,14 +29,16 @@ void InterruptCallback_CallHBlank(void) {
     REG_IF |= INTR_FLAG_HBLANK;
 }
 
-void InterruptCallback_SetHBlank(ProcedureFunc cb) {
+void InterruptCallback_SetHBlank(ProcedureFunc cb)
+{
     gHBlankCallback = cb;
     if (cb == NULL) {
         gHBlankCallback = InterruptCallback_Empty;
     }
 }
 
-void InterruptCallback_CallVCount(void) {
+void InterruptCallback_CallVCount(void)
+{
     if (gVCountCallback != NULL) {
         gVCountCallback();
     }
@@ -41,7 +46,8 @@ void InterruptCallback_CallVCount(void) {
     REG_IF |= INTR_FLAG_VCOUNT;
 }
 
-void InterruptCallback_SetVCount(ProcedureFunc cb) {
+void InterruptCallback_SetVCount(ProcedureFunc cb)
+{
     gVCountCallback = cb;
     if (cb == NULL) {
         gVCountCallback = InterruptCallback_Empty;

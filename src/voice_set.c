@@ -280,7 +280,8 @@ const s32* const sVoiceSetPointers[VS_MAX] = {
     [VS_22] = sVoiceSet_22,
 };
 
-void VoiceSet_Play(s32 voiceSet) {
+void VoiceSet_Play(s32 voiceSet)
+{
     s32 chosenSound;
 
     if (voiceSet >= (s32)ARRAY_SIZE(sVoiceSetSizes)) {

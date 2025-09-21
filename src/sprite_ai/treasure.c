@@ -337,7 +337,8 @@ const struct AnimationFrame sBoxHeartRefillOpenedOam[] = {
     ANIMATION_TERMINATOR
 };
 
-void Box_SetCommonProperties(void) {
+void Box_SetCommonProperties(void)
+{
     gCurrentSprite.gfxSlot = 7;
     gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
@@ -351,14 +352,16 @@ void Box_SetCommonProperties(void) {
     gCurrentSprite.animationTimer = 0;
 }
 
-void Box_Init(void) {
+void Box_Init(void)
+{
     gCurrentSprite.hitboxExtentUp = 2 * BLOCK_SIZE - EIGHTH_BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x1A;
     gCurrentSprite.pose = POSE_IDLE;
     Box_SetCommonProperties();
 }
 
-void Box_Init1(void) {
+void Box_Init1(void)
+{
     gCurrentSprite.hitboxExtentUp = BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x19;
     gCurrentSprite.pose = POSE_32;
@@ -367,11 +370,13 @@ void Box_Init1(void) {
     Box_SetCommonProperties();
 }
 
-void Box_Init2(void) {
+void Box_Init2(void)
+{
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
 }
 
-void Box_StartOpening(void) {
+void Box_StartOpening(void)
+{
     gCurrentSprite.pose = POSE_12;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -385,7 +390,8 @@ void Box_StartOpening(void) {
     VoiceSet_Play(VS_WARIO_TREASURE);
 }
 
-void Box_FinishOpening(void) {
+void Box_FinishOpening(void)
+{
     gCurrentSprite.pose = POSE_32;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -394,7 +400,8 @@ void Box_FinishOpening(void) {
     Sprite_SpawnAsChild(PSPRITE_COIN_500POINTS, 0, 0, gCurrentSprite.yPosition - BLOCK_SIZE, gCurrentSprite.xPosition);
 }
 
-void Box_Disappearing(void) {
+void Box_Disappearing(void)
+{
     u8 temp, temp2;
 
     temp = TIMER_COUNT_DOWN(gCurrentSprite.work0);
@@ -412,7 +419,8 @@ void Box_Disappearing(void) {
     }
 }
 
-void Treasure_Init(void) {
+void Treasure_Init(void)
+{
     gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_10;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
@@ -429,7 +437,8 @@ void Treasure_Init(void) {
     gCurrentSprite.pose = POSE_IDLE;
 }
 
-void TreasureGlow_Init(void) {
+void TreasureGlow_Init(void)
+{
     gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_10;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
@@ -447,7 +456,8 @@ void TreasureGlow_Init(void) {
     gCurrentSprite.pose = POSE_IDLE;
 }
 
-void TreasureGlow_Collected(void) {
+void TreasureGlow_Collected(void)
+{
     gCurrentSprite.pOamData = sTreasureGlow_DisappearingOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -455,7 +465,8 @@ void TreasureGlow_Collected(void) {
     gCurrentSprite.work0 = 9;
 }
 
-void SpriteAI_BoxJewelPieceNE(void) {
+void SpriteAI_BoxJewelPieceNE(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Box_Init();
@@ -525,7 +536,8 @@ void SpriteAI_BoxJewelPieceNE(void) {
     func_8026838();
 }
 
-void SpriteAI_BoxJewelPieceSE(void) {
+void SpriteAI_BoxJewelPieceSE(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Box_Init();
@@ -595,7 +607,8 @@ void SpriteAI_BoxJewelPieceSE(void) {
     func_8026838();
 }
 
-void SpriteAI_BoxJewelPieceSW(void) {
+void SpriteAI_BoxJewelPieceSW(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Box_Init();
@@ -665,7 +678,8 @@ void SpriteAI_BoxJewelPieceSW(void) {
     func_8026838();
 }
 
-void SpriteAI_BoxJewelPieceNW(void) {
+void SpriteAI_BoxJewelPieceNW(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Box_Init();
@@ -735,7 +749,8 @@ void SpriteAI_BoxJewelPieceNW(void) {
     func_8026838();
 }
 
-void SpriteAI_BoxCD(void) {
+void SpriteAI_BoxCD(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Box_Init();
@@ -808,7 +823,8 @@ void SpriteAI_BoxCD(void) {
     func_8026838();
 }
 
-void SpriteAI_BoxHeartRefill(void) {
+void SpriteAI_BoxHeartRefill(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             Box_Init();
@@ -876,7 +892,8 @@ void SpriteAI_BoxHeartRefill(void) {
     func_8026838();
 }
 
-void SpriteAI_JewelPieceNE(void) {
+void SpriteAI_JewelPieceNE(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -924,7 +941,8 @@ void SpriteAI_JewelPieceNE(void) {
     }
 }
 
-void SpriteAI_JewelPieceSE(void) {
+void SpriteAI_JewelPieceSE(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -972,7 +990,8 @@ void SpriteAI_JewelPieceSE(void) {
     }
 }
 
-void SpriteAI_JewelPieceSW(void) {
+void SpriteAI_JewelPieceSW(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1020,7 +1039,8 @@ void SpriteAI_JewelPieceSW(void) {
     }
 }
 
-void SpriteAI_JewelPieceNW(void) {
+void SpriteAI_JewelPieceNW(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1068,7 +1088,8 @@ void SpriteAI_JewelPieceNW(void) {
     }
 }
 
-void SpriteAI_CD(void) {
+void SpriteAI_CD(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1116,7 +1137,8 @@ void SpriteAI_CD(void) {
     }
 }
 
-void SpriteAI_HeartRefill(void) {
+void SpriteAI_HeartRefill(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1156,7 +1178,8 @@ void SpriteAI_HeartRefill(void) {
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceNE(void) {
+void SpriteAI_TreasureGlowJewelPieceNE(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1196,7 +1219,8 @@ void SpriteAI_TreasureGlowJewelPieceNE(void) {
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceSE(void) {
+void SpriteAI_TreasureGlowJewelPieceSE(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1236,7 +1260,8 @@ void SpriteAI_TreasureGlowJewelPieceSE(void) {
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceSW(void) {
+void SpriteAI_TreasureGlowJewelPieceSW(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1276,7 +1301,8 @@ void SpriteAI_TreasureGlowJewelPieceSW(void) {
     }
 }
 
-void SpriteAI_TreasureGlowJewelPieceNW(void) {
+void SpriteAI_TreasureGlowJewelPieceNW(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1316,7 +1342,8 @@ void SpriteAI_TreasureGlowJewelPieceNW(void) {
     }
 }
 
-void SpriteAI_TreasureGlowCD(void) {
+void SpriteAI_TreasureGlowCD(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1356,7 +1383,8 @@ void SpriteAI_TreasureGlowCD(void) {
     }
 }
 
-void SpriteAI_TreasureGlowHeartRefill(void) {
+void SpriteAI_TreasureGlowHeartRefill(void)
+{
     s16 yVelocity;
     u8 frame;
 
@@ -1396,7 +1424,8 @@ void SpriteAI_TreasureGlowHeartRefill(void) {
     }
 }
 
-void SpriteAI_Treasure_Unused1(void) {
+void SpriteAI_Treasure_Unused1(void)
+{
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             gCurrentSprite.gfxSlot = 7;
@@ -1420,7 +1449,8 @@ void SpriteAI_Treasure_Unused1(void) {
     func_8026838();
 }
 
-void SpriteAI_Treasure_Unused2(void) {
+void SpriteAI_Treasure_Unused2(void)
+{
     gCurrentSprite.disableWarioInteraction = 1;
 
     switch (gCurrentSprite.pose) {

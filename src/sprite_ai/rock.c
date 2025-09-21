@@ -33,7 +33,8 @@ const u16 sRockOam_UnusedFrame4[] = {
 
 const struct AnimationFrame sRockOamData[] = {{sRockOam_Frame1, 0xC8}, ANIMATION_TERMINATOR};
 
-static void Rock_Init(void) {
+static void Rock_Init(void)
+{
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 0;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -44,7 +45,8 @@ static void Rock_Init(void) {
     gCurrentSprite.hitboxExtentRight = SUBPIXELS_FROM_PIXELS(6);
 }
 
-static void Rock_IdleInit(void) {
+static void Rock_IdleInit(void)
+{
     gCurrentSprite.animationTimer = gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pOamData = &sRockOamData;
     gCurrentSprite.pose = POSE_IDLE;
@@ -52,7 +54,8 @@ static void Rock_IdleInit(void) {
     gCurrentSprite.statusBits &= ~(SPRITE_STATUS_8 | SPRITE_STATUS_9);
 }
 
-static void Rock_Idle(void) {
+static void Rock_Idle(void)
+{
     func_80238E8();
     func_8023B88();
     if (!gUnk_3000A50) {
@@ -67,48 +70,56 @@ static void Rock_Idle(void) {
     }
 }
 
-static void Rock_Pose1B(void) {
+static void Rock_Pose1B(void)
+{
     gCurrentSprite.pose = POSE_1E;
     gCurrentSprite.work3 = 0;
 }
 
-static void Rock_Pose2B(void) {
+static void Rock_Pose2B(void)
+{
     gCurrentSprite.pose = POSE_2C;
     gCurrentSprite.work1 = 0;
 }
 
-static void Rock_Pose2D(void) {
+static void Rock_Pose2D(void)
+{
     gCurrentSprite.pose = POSE_2E;
     gCurrentSprite.work1 = 0;
 }
 
-static void Rock_Pose47(void) {
+static void Rock_Pose47(void)
+{
     gCurrentSprite.pose = POSE_48;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
-static void Rock_Pose49(void) {
+static void Rock_Pose49(void)
+{
     gCurrentSprite.pose = POSE_4A;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
-static void Rock_Pose1F(void) {
+static void Rock_Pose1F(void)
+{
     gCurrentSprite.pose = POSE_34;
     gCurrentSprite.work0 = 4;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
-static void Rock_Pose21(void) {
+static void Rock_Pose21(void)
+{
     gCurrentSprite.pose = POSE_36;
     gCurrentSprite.work0 = 4;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
-static void Rock_Pose31(void) {
+static void Rock_Pose31(void)
+{
     if (gCurrentSprite.xPosition > gWarioData.xPosition) {
         Rock_Pose1F();
     } else {
@@ -116,15 +127,18 @@ static void Rock_Pose31(void) {
     }
 }
 
-static void Rock_Pose51(void) {
+static void Rock_Pose51(void)
+{
     gCurrentSprite.pose = POSE_52;
 }
 
-static void Rock_Pose53(void) {
+static void Rock_Pose53(void)
+{
     gCurrentSprite.pose = POSE_54;
 }
 
-static void Rock_Pose57(void) {
+static void Rock_Pose57(void)
+{
     gCurrentSprite.pose = POSE_58;
     gCurrentSprite.disableWarioInteraction = 1;
     if (gCurrentSprite.statusBits | SPRITE_STATUS_9) {
@@ -132,7 +146,8 @@ static void Rock_Pose57(void) {
     }
 }
 
-static void Rock_Pose55(void) {
+static void Rock_Pose55(void)
+{
     gCurrentSprite.pose = POSE_56;
     gCurrentSprite.disableWarioInteraction = 1;
     if (gCurrentSprite.statusBits | SPRITE_STATUS_9) {
@@ -140,7 +155,8 @@ static void Rock_Pose55(void) {
     }
 }
 
-void SpriteAI_Rock(void) {
+void SpriteAI_Rock(void)
+{
     if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER && (gUnk_3000BEC & 3)) {
         return;
     }

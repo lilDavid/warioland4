@@ -35,7 +35,8 @@ IWRAM_DATA u8 gMainTimer = 0;
 IWRAM_DATA vu16 gInterruptCheck = 0;
 IWRAM_DATA u16 gInterruptHandlerBuffer[] = {};
 
-void AgbMain(void) {
+void AgbMain(void)
+{
     u32 cutsceneResult;
 
     InitializeGame();
@@ -246,7 +247,8 @@ void AgbMain(void) {
     }
 }
 
-void InitializeGame(void) {
+void InitializeGame(void)
+{
     REG_DISPCNT = DISPCNT_FORCED_BLANK;
     REG_DISPSTAT = 0;
     REG_IME = FALSE;
@@ -288,7 +290,8 @@ void InitializeGame(void) {
 
 void EmptyFunction() {}
 
-void CheckSoftReset(void) {
+void CheckSoftReset(void)
+{
     if (gMainGameMode == GM_SOFT_RESET || gDisableSoftReset) {
         return;
     }
@@ -298,7 +301,8 @@ void CheckSoftReset(void) {
     }
 }
 
-void FadeOutAllSound(void) {
+void FadeOutAllSound(void)
+{
     u8 i;
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++) {
@@ -306,6 +310,7 @@ void FadeOutAllSound(void) {
     }
 }
 
-void ClearSRAM(void) {
+void ClearSRAM(void)
+{
     func_8000CE0();
 }
