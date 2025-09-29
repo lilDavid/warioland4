@@ -2277,7 +2277,6 @@ void func_802655C(void)
     }
 }
 
-#ifdef NON_MATCHING
 void func_80265C8(s32 slot)
 {
     s32 i;
@@ -2296,7 +2295,6 @@ void func_80265C8(s32 slot)
     u16 otherLeft;
     u16 otherRight;
 
-    u16 statusBits;
     u16 statusCheck;
 
     yPosition = gSpriteData[slot].yPosition;
@@ -2306,15 +2304,13 @@ void func_80265C8(s32 slot)
     thisLeft = xPosition - gSpriteData[slot].hitboxExtentLeft;
     thisRight = xPosition + gSpriteData[slot].hitboxExtentRight;
 
+    statusCheck = SPRITE_STATUS_10 | SPRITE_STATUS_9 | SPRITE_STATUS_HIDDEN | SPRITE_STATUS_1 | SPRITE_STATUS_EXISTS;
     for (i = 0; i < MAX_SPRITE_COUNT; i++) {
         if (i == slot) {
             continue;
         }
 
-        statusBits = gSpriteData[i].statusBits;
-        statusCheck =
-            SPRITE_STATUS_10 | SPRITE_STATUS_9 | SPRITE_STATUS_HIDDEN | SPRITE_STATUS_1 | SPRITE_STATUS_EXISTS;
-        if ((statusBits & statusCheck) != (SPRITE_STATUS_1 | SPRITE_STATUS_EXISTS)) {
+        if ((gSpriteData[i].statusBits & statusCheck) != (SPRITE_STATUS_1 | SPRITE_STATUS_EXISTS)) {
             continue;
         }
 
@@ -2395,282 +2391,6 @@ void func_80265C8(s32 slot)
         return;
     }
 }
-#else
-NAKED void func_80265C8(s32 slot)
-{
-    __asm__(
-        "\
-	push	{r4, r5, r6, r7, lr} \n\
-	mov	r7, sl \n\
-	mov	r6, r9 \n\
-	mov	r5, r8 \n\
-	push	{r5, r6, r7} \n\
-	sub	sp, #40	@ 0x28 \n\
-	str	r0, [sp, #16] \n\
-	ldr	r2, .L_266c0 \n\
-	mov	r0, #44	@ 0x2c \n\
-	ldr	r1, [sp, #16] \n\
-	mul	r0, r1 \n\
-	add	r3, r0, r2 \n\
-	ldrh	r1, [r3, #8] \n\
-	ldrh	r7, [r3, #10] \n\
-	add	r0, r3, #0 \n\
-	add	r0, #35	@ 0x23 \n\
-	ldrb	r0, [r0, #0] \n\
-	sub	r0, r1, r0 \n\
-	lsl	r0, r0, #16 \n\
-	lsr	r0, r0, #16 \n\
-	str	r0, [sp, #20] \n\
-	add	r0, r3, #0 \n\
-	add	r0, #36	@ 0x24 \n\
-	ldrb	r0, [r0, #0] \n\
-	add	r1, r1, r0 \n\
-	lsl	r1, r1, #16 \n\
-	lsr	r1, r1, #16 \n\
-	str	r1, [sp, #24] \n\
-	add	r0, r3, #0 \n\
-	add	r0, #37	@ 0x25 \n\
-	ldrb	r0, [r0, #0] \n\
-	sub	r0, r7, r0 \n\
-	lsl	r0, r0, #16 \n\
-	lsr	r0, r0, #16 \n\
-	str	r0, [sp, #28] \n\
-	add	r0, r3, #0 \n\
-	add	r0, #38	@ 0x26 \n\
-	ldrb	r0, [r0, #0] \n\
-	add	r0, r7, r0 \n\
-	lsl	r0, r0, #16 \n\
-	lsr	r0, r0, #16 \n\
-	str	r0, [sp, #32] \n\
-	mov	r5, #0 \n\
-	mov	r0, #106	@ 0x6a \n\
-	mov	sl, r0 \n\
-	mov	r1, #105	@ 0x69 \n\
-	mov	r9, r1 \n\
-	mov	r8, r3 \n\
-	str	r2, [sp, #36]	@ 0x24 \n\
-.L_2662a: \n\
-	ldr	r2, [sp, #16] \n\
-	cmp	r5, r2 \n\
-	bne	.L_26632 \n\
-	b	.L_267a0 \n\
-.L_26632: \n\
-	mov	r1, #44	@ 0x2c \n\
-	add	r0, r5, #0 \n\
-	mul	r0, r1 \n\
-	ldr	r2, .L_266c0 \n\
-	add	r4, r0, r2 \n\
-	ldrh	r0, [r4, #0] \n\
-	ldr	r1, .L_266c4 \n\
-	and	r0, r1 \n\
-	cmp	r0, #3 \n\
-	beq	.L_26648 \n\
-	b	.L_267a0 \n\
-.L_26648: \n\
-	ldrh	r3, [r4, #8] \n\
-	ldrh	r6, [r4, #10] \n\
-	add	r0, r4, #0 \n\
-	add	r0, #35	@ 0x23 \n\
-	ldrb	r2, [r0, #0] \n\
-	sub	r2, r3, r2 \n\
-	lsl	r2, r2, #16 \n\
-	lsr	r2, r2, #16 \n\
-	add	r0, #1 \n\
-	ldrb	r0, [r0, #0] \n\
-	add	r3, r3, r0 \n\
-	lsl	r3, r3, #16 \n\
-	lsr	r3, r3, #16 \n\
-	add	r0, r4, #0 \n\
-	add	r0, #37	@ 0x25 \n\
-	ldrb	r1, [r0, #0] \n\
-	sub	r1, r6, r1 \n\
-	lsl	r1, r1, #16 \n\
-	lsr	r1, r1, #16 \n\
-	add	r0, #1 \n\
-	ldrb	r0, [r0, #0] \n\
-	add	r0, r6, r0 \n\
-	lsl	r0, r0, #16 \n\
-	lsr	r0, r0, #16 \n\
-	str	r2, [sp, #0] \n\
-	str	r3, [sp, #4] \n\
-	str	r1, [sp, #8] \n\
-	str	r0, [sp, #12] \n\
-	ldr	r0, [sp, #20] \n\
-	ldr	r1, [sp, #24] \n\
-	ldr	r2, [sp, #28] \n\
-	ldr	r3, [sp, #32] \n\
-	bl	SpriteUtilCheckObjectsTouching \n\
-	cmp	r0, #0 \n\
-	bne	.L_26692 \n\
-	b	.L_267a0 \n\
-.L_26692: \n\
-	ldr	r2, [sp, #16] \n\
-	mov	r1, #44	@ 0x2c \n\
-	add	r0, r2, #0 \n\
-	mul	r0, r1 \n\
-	ldr	r2, .L_266c0 \n\
-	add	r5, r0, r2 \n\
-	ldrb	r0, [r5, #28] \n\
-	cmp	r0, #86	@ 0x56 \n\
-	beq	.L_266a8 \n\
-	cmp	r0, #88	@ 0x58 \n\
-	bne	.L_266d4 \n\
-.L_266a8: \n\
-	bl	func_801E4B0 \n\
-	ldr	r0, .L_266c8 \n\
-	mov	r1, #0 \n\
-	strb	r1, [r0, #0] \n\
-	cmp	r7, r6 \n\
-	bls	.L_266cc \n\
-	mov	r2, #51	@ 0x33 \n\
-	strb	r2, [r5, #28] \n\
-	mov	r0, #53	@ 0x35 \n\
-	b	.L_2675c \n\
-	.align	2, 0 \n\
-.L_266c0: \n\
-	.4byte	gSpriteData \n\
-.L_266c4: \n\
-	.4byte	0x00000607 \n\
-.L_266c8: \n\
-	.4byte	gCurrentCarriedSprite \n\
-.L_266cc: \n\
-	mov	r0, #53	@ 0x35 \n\
-	strb	r0, [r5, #28] \n\
-	mov	r0, #51	@ 0x33 \n\
-	b	.L_2675c \n\
-.L_266d4: \n\
-	ldrb	r0, [r4, #28] \n\
-	sub	r0, #81	@ 0x51 \n\
-	lsl	r0, r0, #24 \n\
-	lsr	r0, r0, #24 \n\
-	cmp	r0, #7 \n\
-	bhi	.L_266ea \n\
-	bl	func_801E4B0 \n\
-	ldr	r0, .L_2670c \n\
-	mov	r1, #0 \n\
-	strb	r1, [r0, #0] \n\
-.L_266ea: \n\
-	ldrh	r1, [r5, #0] \n\
-	mov	r2, #32 \n\
-	add	r0, r2, #0 \n\
-	and	r0, r1 \n\
-	cmp	r0, #0 \n\
-	beq	.L_26728 \n\
-	ldrh	r1, [r4, #0] \n\
-	add	r0, r2, #0 \n\
-	and	r0, r1 \n\
-	cmp	r0, #0 \n\
-	beq	.L_26716 \n\
-	cmp	r7, r6 \n\
-	bls	.L_26710 \n\
-	mov	r2, sl \n\
-	strb	r2, [r5, #28] \n\
-	mov	r0, r9 \n\
-	b	.L_2675c \n\
-.L_2670c: \n\
-	.4byte	gCurrentCarriedSprite \n\
-.L_26710: \n\
-	mov	r1, r9 \n\
-	strb	r1, [r5, #28] \n\
-	b	.L_26722 \n\
-.L_26716: \n\
-	cmp	r7, r6 \n\
-	bls	.L_2671e \n\
-	mov	r0, #51	@ 0x33 \n\
-	b	.L_2674e \n\
-.L_2671e: \n\
-	mov	r0, #53	@ 0x35 \n\
-	strb	r0, [r5, #28] \n\
-.L_26722: \n\
-	mov	r2, sl \n\
-	strb	r2, [r4, #28] \n\
-	b	.L_2675e \n\
-.L_26728: \n\
-	ldrh	r1, [r4, #0] \n\
-	add	r0, r2, #0 \n\
-	and	r0, r1 \n\
-	cmp	r0, #0 \n\
-	beq	.L_26748 \n\
-	cmp	r7, r6 \n\
-	bls	.L_2673e \n\
-	mov	r0, sl \n\
-	strb	r0, [r5, #28] \n\
-	mov	r0, #53	@ 0x35 \n\
-	b	.L_2675c \n\
-.L_2673e: \n\
-	mov	r1, r9 \n\
-	strb	r1, [r5, #28] \n\
-	mov	r2, #51	@ 0x33 \n\
-	strb	r2, [r4, #28] \n\
-	b	.L_2675e \n\
-.L_26748: \n\
-	cmp	r7, r6 \n\
-	bls	.L_26756 \n\
-	mov	r0, sl \n\
-.L_2674e: \n\
-	strb	r0, [r5, #28] \n\
-	mov	r1, r9 \n\
-	strb	r1, [r4, #28] \n\
-	b	.L_2675e \n\
-.L_26756: \n\
-	mov	r2, r9 \n\
-	strb	r2, [r5, #28] \n\
-	mov	r0, sl \n\
-.L_2675c: \n\
-	strb	r0, [r4, #28] \n\
-.L_2675e: \n\
-	ldr	r1, [sp, #36]	@ 0x24 \n\
-	ldrh	r0, [r1, #0] \n\
-	mov	r2, #128	@ 0x80 \n\
-	lsl	r2, r2, #2 \n\
-	add	r1, r2, #0 \n\
-	orr	r0, r1 \n\
-	ldr	r2, [sp, #36]	@ 0x24 \n\
-	strh	r0, [r2, #0] \n\
-	mov	r2, r8 \n\
-	ldrh	r0, [r2, #0] \n\
-	orr	r0, r1 \n\
-	strh	r0, [r2, #0] \n\
-	ldr	r0, [sp, #36]	@ 0x24 \n\
-	ldrh	r2, [r0, #0] \n\
-	ldr	r1, .L_2679c \n\
-	add	r0, r1, #0 \n\
-	and	r0, r2 \n\
-	ldr	r2, [sp, #36]	@ 0x24 \n\
-	strh	r0, [r2, #0] \n\
-	mov	r2, r8 \n\
-	ldrh	r0, [r2, #0] \n\
-	and	r1, r0 \n\
-	strh	r1, [r2, #0] \n\
-	mov	r0, #15 \n\
-	ldr	r1, [sp, #36]	@ 0x24 \n\
-	strb	r0, [r1, #31] \n\
-	strb	r0, [r2, #31] \n\
-	mov	r0, #59	@ 0x3b \n\
-	bl	m4aSongNumStart \n\
-	b	.L_267ae \n\
-.L_2679c: \n\
-	.4byte	0x0000feff \n\
-.L_267a0: \n\
-	ldr	r2, [sp, #36]	@ 0x24 \n\
-	add	r2, #44	@ 0x2c \n\
-	str	r2, [sp, #36]	@ 0x24 \n\
-	add	r5, #1 \n\
-	cmp	r5, #23 \n\
-	bgt	.L_267ae \n\
-	b	.L_2662a \n\
-.L_267ae: \n\
-	add	sp, #40	@ 0x28 \n\
-	pop	{r3, r4, r5} \n\
-	mov	r8, r3 \n\
-	mov	r9, r4 \n\
-	mov	sl, r5 \n\
-	pop	{r4, r5, r6, r7} \n\
-	pop	{r0} \n\
-	bx	r0 "
-    );
-}
-#endif
 
 void func_80267C0(void)
 {
