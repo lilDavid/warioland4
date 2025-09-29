@@ -174,7 +174,7 @@ func_806DAC0:
 	bne	.L_6dc40
 	b	.L_6dc08
 .L_6dbf0:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6dbf4:
 	ldr	r1, .L_6dc0c
 	add	r0, r3, #0
@@ -190,7 +190,7 @@ func_806DAC0:
 	mov	r2, #1
 	b	.L_6dc40
 .L_6dc0c:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6dc10:
 	add	r0, r3, #0
 	sub	r0, #152	@ 0x98
@@ -211,7 +211,7 @@ func_806DAC0:
 	b	.L_6dc40
 	.align	2, 0
 .L_6dc34:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6dc38:
 	cmp	r4, #1
 	ble	.L_6dc40
@@ -327,7 +327,7 @@ func_806DAC0:
 	mov	r4, #12
 	b	.L_6dd1a
 .L_6dd00:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6dd04:
 	cmp	r0, #77	@ 0x4d
 	bne	.L_6dd0c

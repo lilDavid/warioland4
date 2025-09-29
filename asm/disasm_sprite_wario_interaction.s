@@ -2140,8 +2140,8 @@ func_801F43C:
 	bx	r1
 
 
-thumb_func_start func_801F5D8
-func_801F5D8:
+thumb_func_start SpriteUtilCheckObjectsTouching
+SpriteUtilCheckObjectsTouching:
 	push	{r4, r5, r6, r7, lr}
 	mov	r7, r8
 	push	{r7}
@@ -2312,7 +2312,7 @@ func_801F628:
 	ldr	r1, [sp, #28]
 	ldr	r2, [sp, #32]
 	ldr	r3, [sp, #36]	@ 0x24
-	bl	func_801F5D8
+	bl	SpriteUtilCheckObjectsTouching
 	cmp	r0, #0
 	bne	.L_1f726
 	bl	.L_203ee

@@ -17,7 +17,7 @@ enum ScoreSpriteID {
     SSPRITE_SCORE_100,
     SSPRITE_SCORE_500,
     SSPRITE_SCORE_1000,
-    SSPRITE_05,
+    SSPRITE_ENEMY_KILLED_EFFECT,
     SSPRITE_06,
     SSPRITE_07,
     SSPRITE_08,
@@ -130,7 +130,7 @@ extern s32 gUnk_3000BEC;
 extern s32 gTotalScore;
 extern s32 gStageScore;
 // gScoreDigits
-// gUnk_3000C01
+extern s8 gUnk_3000C01;
 // gUnk_3000C02
 extern u8 gUnk_3000C03;
 // gUnk_3000C04

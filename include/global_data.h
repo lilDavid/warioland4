@@ -48,12 +48,19 @@ enum SaveFile {
     SAVE_COUNT
 };
 
-struct Unk_300002E_Data {
-    u8 unk_0;
-    u8 unk_1;
-    u8 unk_2;
-    u8 unk_3;
-    u8 unk_4;
+enum SwitchState {
+    SWITCH_STATE_OFF,
+    SWITCH_STATE_ON,
+    SWITCH_STATE_SWITCHING_ON,
+    SWITCH_STATE_SWITCHING_OFF,
+};
+
+struct SwitchStates {
+    u8 unknown;
+    u8 red;
+    u8 purple;
+    u8 green;
+    u8 escape;
 };
 
 struct DebugInfo {
@@ -96,6 +103,12 @@ struct RoomHeader {
     u8 raster;
     u8 water;
     u16 musicVolume;
+};
+
+struct Unk_30000A0 {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
 };
 
 struct BackgroundScroll {
@@ -147,10 +160,10 @@ extern u8 gCurrentRoom;
 extern u8 gUnk_3000025;
 // gUnk_3000026
 // gUnk_3000027
-// gUnk_3000028
+extern s8 gUnk_3000028;
 extern u16 gBldAlpha;
 extern u16 gBldCnt;
-extern struct Unk_300002E_Data gUnk_300002E;
+extern struct SwitchStates gSwitchStates;
 extern u8 gDrawWarioOverBackground;
 // gUnk_3000034
 // gUnk_3000035
@@ -167,8 +180,9 @@ extern u8 gStageExitType;
 extern struct DebugInfo gUnk_300004C;
 extern struct BackgroundInfo gBackgroundInfo;
 extern struct RoomHeader gCurrentRoomHeader;
-// gUnk_30000A0
+extern struct Unk_30000A0 gUnk_30000A0;
 extern struct BackgroundScroll gBackgroundScroll;
 extern struct Window gWindow;
+extern u8 gUnk_30000C8;
 
 #endif  // GLOBAL_DATA_H

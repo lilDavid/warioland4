@@ -1,4 +1,4 @@
-#include "bg_clip.h"
+#include "global_data.h"
 #include "oam.h"
 #include "score.h"
 #include "sound.h"
@@ -48,7 +48,7 @@ void RockInit(void)
 void RockIdleInit(void)
 {
     gCurrentSprite.animationTimer = gCurrentSprite.currentAnimationFrame = 0;
-    gCurrentSprite.pOamData = &sRockOamData;
+    gCurrentSprite.pOamData = sRockOamData;
     gCurrentSprite.pose = POSE_IDLE;
     gCurrentSprite.warioInteractionFlags = 5;
     gCurrentSprite.statusBits &= ~(SPRITE_STATUS_8 | SPRITE_STATUS_9);
@@ -393,13 +393,13 @@ void SpriteRock(void)
                 gCurrentSprite.work2 = 4;
                 func_8024BEC();
             } else {
-                func_8024554();
+                SpriteUtilDie();
                 break;
             }
             break;
 
         default:
-            func_8024554();
+            SpriteUtilDie();
             break;
     }
 

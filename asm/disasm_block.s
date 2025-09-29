@@ -875,7 +875,7 @@ func_806D89C:
 	bne	.L_6da84
 	b	.L_6da54
 .L_6da1c:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6da20:
 	ldr	r1, .L_6da38
 	ldr	r0, [r2, #12]
@@ -889,7 +889,7 @@ func_806D89C:
 	bl	func_806D7F8
 	b	.L_6dab8
 .L_6da38:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6da3c:
 	ldr	r1, .L_6da50
 	ldr	r0, [r2, #12]
@@ -902,7 +902,7 @@ func_806D89C:
 	mov	r0, #12
 	b	.L_6da56
 .L_6da50:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6da54:
 	mov	r0, #0
 .L_6da56:
@@ -928,7 +928,7 @@ func_806D89C:
 	b	.L_6dab8
 	.align	2, 0
 .L_6da80:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6da84:
 	str	r3, [r2, #0]
 	add	r0, r2, #0
@@ -951,7 +951,7 @@ func_806D89C:
 	bl	func_806D75C
 	b	.L_6dab8
 .L_6daac:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6dab0:
 	str	r3, [r2, #0]
 	add	r0, r2, #0

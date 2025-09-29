@@ -224,7 +224,7 @@ func_806E1E8:
 .L_6e22c:
 	.4byte	gUnk_3003B08
 .L_6e230:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6e234:
 	.4byte	sUnk_83F8C18
 .L_6e238:
@@ -323,7 +323,7 @@ func_806E2B8:
 	bx	r0
 	.align	2, 0
 .L_6e2e4:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 
 
 thumb_func_start func_806E2E8
@@ -368,7 +368,7 @@ func_806E2E8:
 .L_6e330:
 	.4byte	gUnk_3003B08
 .L_6e334:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6e338:
 	.4byte	0x40000D4
 .L_6e33c:

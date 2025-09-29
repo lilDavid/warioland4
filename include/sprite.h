@@ -3,6 +3,9 @@
 
 #include "gba.h"
 
+#define MAX_SPRITE_COUNT 24
+#define MAX_SPRITE_SLOTS_PER_ROOM 64
+
 enum PrimarySpriteID {
     PSPRITE_BOX_JEWEL_PIECE_NE,
     PSPRITE_BOX_JEWEL_PIECE_SE,
@@ -18,7 +21,7 @@ enum PrimarySpriteID {
     PSPRITE_0B,
     PSPRITE_0C,
     PSPRITE_LITTLE_HEART,
-    PSPRITE_0E,
+    PSPRITE_0E,  // Boss treasure chest?
     PSPRITE_0F,
     PSPRITE_SHOPKEEPER,
     PSPRITE_SPEAR_MASK_YELLOW,
@@ -132,7 +135,7 @@ enum PrimarySpriteID {
     PSPRITE_BOSS_GOLDEN_DIVA,
     PSPRITE_CHANDELIER,
     PSPRITE_CRUMBLING_BLOCK,
-    PSPRITE_PROFESSOR_SHITAIN,
+    PSPRITE_PROFESSOR,
     PSPRITE_COIN_10POINTS,
     PSPRITE_COIN_50POINTS,
     PSPRITE_COIN_100POINTS,
@@ -188,7 +191,6 @@ enum PrimarySpriteID {
     PSPRITE_B5,
     PSPRITE_B6,
     PSPRITE_CHANCE_WHEEL_DIAMOND,
-    PSPRITE_B7,
     PSPRITE_B8,
     PSPRITE_B9,
     PSPRITE_BA,
@@ -216,7 +218,7 @@ enum PrimarySpriteID {
     PSPRITE_D0,
     PSPRITE_D1,
     PSPRITE_D2,
-    PSPRITE_KEYZER_ENTERING_PORTAL,
+    PSPRITE_KEYZER_ENTERING_VORTEX,
     PSPRITE_D4,
     PSPRITE_D5,
     PSPRITE_D6,
@@ -287,7 +289,7 @@ enum PersistentSpriteStatus {
 
 struct PrimarySpriteData {
     /* 0x00 */ u16 statusBits;
-    /* 0x04 */ const void* pOamData;
+    /* 0x04 */ const struct AnimationFrame* pOamData;
     /* 0x08 */ u16 yPosition;
     /* 0x0A */ u16 xPosition;
     /* 0x0C */ u16 affinePA;
@@ -318,12 +320,15 @@ struct PrimarySpriteData {
     /* 0x2A */ u8 work3;
 }; /* size: 0x2C */
 
+extern struct PrimarySpriteData gSpriteData[MAX_SPRITE_COUNT];
 // Upper nybble = pose on next load
 // Lower nybble = status
-extern u8 gPersistentSpriteData[16][64];
+extern u8 gPersistentSpriteData[16][MAX_SPRITE_SLOTS_PER_ROOM];
 #define MAKE_PERSISTENT_DATA(pose, status) (((pose) << 4) | (status))
-
 extern struct PrimarySpriteData gCurrentSprite;
+
+extern const u16 sUnk_83B35F8[][2];
+extern const u16 sUnk_83B37FC[][2];
 
 void SpriteSpawnAsChild(u8 id, u8 roomSlot, u8 gfxSlot, u32 yPosition, u32 xPosition);
 void func_801D684(void);

@@ -1161,7 +1161,7 @@ func_806F424:
 	pop	{r1}
 	bx	r1
 .L_6f4b0:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6f4b4:
 	.4byte	gUnk_3001918
 .L_6f4b8:
@@ -1946,7 +1946,7 @@ func_806F9D8:
 .L_6fa3c:
 	.4byte	gUnk_30031F4
 .L_6fa40:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6fa44:
 	cmp	r2, #75	@ 0x4b
 	bne	.L_6fa52
@@ -2168,7 +2168,7 @@ func_806FBA4:
 	b	.L_6fc6e
 	.align	2, 0
 .L_6fbdc:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6fbe0:
 	add	r0, r2, #0
 	sub	r0, #126	@ 0x7e
@@ -2275,7 +2275,7 @@ func_806FBA4:
 .L_6fc9c:
 	.4byte	gUnk_300001B
 .L_6fca0:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6fca4:
 	.4byte	gWarioData
 .L_6fca8:

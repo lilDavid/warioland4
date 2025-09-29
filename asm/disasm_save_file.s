@@ -979,7 +979,7 @@ func_8072FB0:
 .L_733b4:
 	.4byte	gPersistentSpriteData
 .L_733b8:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_733bc:
 	.4byte	gUnk_3000BF0
 .L_733c0:
@@ -1602,7 +1602,7 @@ func_807345C:
 .L_73844:
 	.4byte	gPersistentSpriteData
 .L_73848:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_7384c:
 	.4byte	gUnk_3000BF0
 .L_73850:

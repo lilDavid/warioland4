@@ -973,7 +973,7 @@ func_80901C4:
 .L_902c4:
 	.4byte	gDifficulty
 .L_902c8:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_902cc:
 	.4byte	gUnk_3004A30
 .L_902d0:

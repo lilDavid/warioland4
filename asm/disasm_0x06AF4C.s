@@ -1290,7 +1290,7 @@ func_806B864:
 .L_6b9a4:
 	.4byte	gUnk_300003C
 .L_6b9a8:
-	.4byte	gUnk_300002E
+	.4byte	gSwitchStates
 .L_6b9ac:
 	.4byte	gUnk_3000046
 .L_6b9b0:

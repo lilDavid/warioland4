@@ -8,6 +8,8 @@
 #define MAX_HEARTS (8)
 #define HEART_GAUGE_MAX (8)
 
+typedef void (*WarioInteractionFunc)(u32);
+
 enum WarioReaction {
     REACT_NORMAL,
     REACT_WATER,
@@ -83,10 +85,10 @@ struct WarioEffect {
 };
 
 struct CarriedSprite {
-    u8 unk0;
+    u8 state;
     u8 unk1;
-    u16 unk2;
-    u16 unk4;
+    u16 xOffset;
+    u16 yOffset;
 };
 
 struct WarioDustEffect {
@@ -141,6 +143,7 @@ extern struct WarioDustEffect sEmptyDustEffect;
 extern struct WarioAnimation sUnk_82DDCD0[];
 extern u16 sUnk_82DDDA0[];
 extern u16 sUnk_82DDDC0[];
+extern WarioInteractionFunc sUnk_82DECA0[];
 extern u8 sUnk_82DF094[];
 
 void WarioProcessControls();

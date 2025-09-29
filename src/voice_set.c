@@ -26,7 +26,7 @@ const s32 sVoiceSet_20[3];
 const s32 sVoiceSet_21[3];
 const s32 sVoiceSet_22[3];
 
-const s32 sVoiceSetSizes[VS_MAX] = {
+const s32 sVoiceSetSizes[VS_COUNT] = {
     [VS_WARIO_REACTION_END] = ARRAY_SIZE(sVoiceSet_Wario_ReactionEnd),
     [VS_WARIO_TREASURE] = ARRAY_SIZE(sVoiceSet_Wario_Treasure),
     [VS_WARIO_KEYZER_GET] = ARRAY_SIZE(sVoiceSet_Wario_KeyzerGet),
@@ -254,7 +254,7 @@ const s32 sVoiceSet_22[] = {
     SOUND_1E8,
 };
 
-const s32* const sVoiceSetPointers[VS_MAX] = {
+const s32* const sVoiceSetPointers[VS_COUNT] = {
     [VS_WARIO_REACTION_END] = sVoiceSet_Wario_ReactionEnd,
     [VS_WARIO_TREASURE] = sVoiceSet_Wario_Treasure,
     [VS_WARIO_KEYZER_GET] = sVoiceSet_Wario_KeyzerGet,
@@ -284,7 +284,7 @@ void VoiceSetPlay(s32 voiceSet)
 {
     s32 chosenSound;
 
-    if (voiceSet >= (s32)ARRAY_SIZE(sVoiceSetSizes)) {
+    if (voiceSet >= VS_COUNT) {
         return;
     }
     switch (voiceSet) {

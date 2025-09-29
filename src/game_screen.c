@@ -60,7 +60,7 @@ u32 GameScreenSubroutine(void)
 
             if (CHECK_KEYS_ALL(gButtonsPressed, START_BUTTON) && (gWarioPauseTimer == 0) && (gWarioData.unk_02 == 0)) {
                 if ((gUnk_300001B != 0) && (gDemoState == 0)) {
-                    if ((gUnk_3000047 == 1) || ((gCurrentRoom | gUnk_300002E.unk_1) == 0)) {
+                    if ((gUnk_3000047 == 1) || ((gCurrentRoom | gSwitchStates.red) == 0)) {
                         gSubGameMode = 7;
                         gUnk_300001A = 1;
                     }

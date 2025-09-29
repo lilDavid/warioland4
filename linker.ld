@@ -43,7 +43,7 @@ SECTIONS {
         . = 0x0028; gUnk_3000028 = .;
         . = 0x002a; gBldAlpha = .;
         . = 0x002c; gBldCnt = .;
-        . = 0x002e; gUnk_300002E = .;
+        . = 0x002e; gSwitchStates = .;
         . = 0x0033; gDrawWarioOverBackground = .;
         . = 0x0034; gUnk_3000034 = .;
         . = 0x0035; gUnk_3000035 = .;
@@ -629,7 +629,7 @@ SECTIONS {
         obj/game_screen_debug.o(.text);
         obj/disasm_sprite.o(.text);
         obj/disasm_sprite_wario_interaction.o(.text);
-        obj/disasm_sprite_util.o(.text);
+        obj/sprite_util.o(.text);
         obj/sprite_ai/spear_mask.o(.text);
         obj/sprite_ai/blob_rotating_platform.o(.text);
         obj/sprite_ai/keyzer.o(.text);

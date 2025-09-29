@@ -894,9 +894,6 @@ void SpriteBoxHeartRefill(void)
 
 void SpriteJewelPieceNE(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
         return;
     }
@@ -929,23 +926,13 @@ void SpriteJewelPieceNE(void)
             break;
 
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sTreasureFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sTreasureFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             break;
     }
 }
 
 void SpriteJewelPieceSE(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
         return;
     }
@@ -978,23 +965,13 @@ void SpriteJewelPieceSE(void)
             break;
 
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sTreasureFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sTreasureFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             break;
     }
 }
 
 void SpriteJewelPieceSW(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
         return;
     }
@@ -1027,23 +1004,13 @@ void SpriteJewelPieceSW(void)
             break;
 
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sTreasureFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sTreasureFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             break;
     }
 }
 
 void SpriteJewelPieceNW(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
         return;
     }
@@ -1076,23 +1043,13 @@ void SpriteJewelPieceNW(void)
             break;
 
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sTreasureFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sTreasureFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             break;
     }
 }
 
 void SpriteCD(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_CD)) {
         return;
     }
@@ -1125,23 +1082,13 @@ void SpriteCD(void)
             break;
 
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sTreasureFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sTreasureFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             break;
     }
 }
 
 void SpriteHeartRefill(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
         return;
     }
@@ -1166,23 +1113,13 @@ void SpriteHeartRefill(void)
             break;
 
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sTreasureFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sTreasureFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             break;
     }
 }
 
 void SpriteTreasureGlowJewelPieceNE(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     gCurrentSprite.disableWarioInteraction = 1;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
@@ -1199,14 +1136,7 @@ void SpriteTreasureGlowJewelPieceNE(void)
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
-                frame = gCurrentSprite.work3;
-                yVelocity = sTreasureFloatYVelocity[frame];
-                if (yVelocity == S16_MAX) {
-                    yVelocity = sTreasureFloatYVelocity[0];
-                    frame = 0;
-                }
-                gCurrentSprite.work3 = frame + DELTA_TIME;
-                gCurrentSprite.yPosition += yVelocity;
+                SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             }
             break;
 
@@ -1221,9 +1151,6 @@ void SpriteTreasureGlowJewelPieceNE(void)
 
 void SpriteTreasureGlowJewelPieceSE(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     gCurrentSprite.disableWarioInteraction = 1;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
@@ -1240,14 +1167,7 @@ void SpriteTreasureGlowJewelPieceSE(void)
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
-                frame = gCurrentSprite.work3;
-                yVelocity = sTreasureFloatYVelocity[frame];
-                if (yVelocity == S16_MAX) {
-                    yVelocity = sTreasureFloatYVelocity[0];
-                    frame = 0;
-                }
-                gCurrentSprite.work3 = frame + DELTA_TIME;
-                gCurrentSprite.yPosition += yVelocity;
+                SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             }
             break;
 
@@ -1262,9 +1182,6 @@ void SpriteTreasureGlowJewelPieceSE(void)
 
 void SpriteTreasureGlowJewelPieceSW(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     gCurrentSprite.disableWarioInteraction = 1;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
@@ -1281,14 +1198,7 @@ void SpriteTreasureGlowJewelPieceSW(void)
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
-                frame = gCurrentSprite.work3;
-                yVelocity = sTreasureFloatYVelocity[frame];
-                if (yVelocity == S16_MAX) {
-                    yVelocity = sTreasureFloatYVelocity[0];
-                    frame = 0;
-                }
-                gCurrentSprite.work3 = frame + DELTA_TIME;
-                gCurrentSprite.yPosition += yVelocity;
+                SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             }
             break;
 
@@ -1303,9 +1213,6 @@ void SpriteTreasureGlowJewelPieceSW(void)
 
 void SpriteTreasureGlowJewelPieceNW(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     gCurrentSprite.disableWarioInteraction = 1;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
@@ -1322,14 +1229,7 @@ void SpriteTreasureGlowJewelPieceNW(void)
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
-                frame = gCurrentSprite.work3;
-                yVelocity = sTreasureFloatYVelocity[frame];
-                if (yVelocity == S16_MAX) {
-                    yVelocity = sTreasureFloatYVelocity[0];
-                    frame = 0;
-                }
-                gCurrentSprite.work3 = frame + DELTA_TIME;
-                gCurrentSprite.yPosition += yVelocity;
+                SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             }
             break;
 
@@ -1344,9 +1244,6 @@ void SpriteTreasureGlowJewelPieceNW(void)
 
 void SpriteTreasureGlowCD(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     gCurrentSprite.disableWarioInteraction = 1;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_CD)) {
@@ -1363,14 +1260,7 @@ void SpriteTreasureGlowCD(void)
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
-                frame = gCurrentSprite.work3;
-                yVelocity = sTreasureFloatYVelocity[frame];
-                if (yVelocity == S16_MAX) {
-                    yVelocity = sTreasureFloatYVelocity[0];
-                    frame = 0;
-                }
-                gCurrentSprite.work3 = frame + DELTA_TIME;
-                gCurrentSprite.yPosition += yVelocity;
+                SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             }
             break;
 
@@ -1385,9 +1275,6 @@ void SpriteTreasureGlowCD(void)
 
 void SpriteTreasureGlowHeartRefill(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     gCurrentSprite.disableWarioInteraction = 1;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
@@ -1404,14 +1291,7 @@ void SpriteTreasureGlowHeartRefill(void)
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 TreasureGlow_Collected();
             } else {
-                frame = gCurrentSprite.work3;
-                yVelocity = sTreasureFloatYVelocity[frame];
-                if (yVelocity == S16_MAX) {
-                    yVelocity = sTreasureFloatYVelocity[0];
-                    frame = 0;
-                }
-                gCurrentSprite.work3 = frame + DELTA_TIME;
-                gCurrentSprite.yPosition += yVelocity;
+                SpriteUtilLookupFloatingAnimation(sTreasureFloatYVelocity);
             }
             break;
 

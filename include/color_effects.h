@@ -15,6 +15,7 @@ struct ColorFading {
 extern struct ColorFading gColorFading;
 
 void ColorFadingProcess(void);
+void func_8070A84(u8, u8, u8);
 s32 func_80710D8(u8, u8);
 void func_80711E8(void);
 s32 func_80712F8(void);

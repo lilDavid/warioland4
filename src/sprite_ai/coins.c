@@ -1,4 +1,3 @@
-#include "bg_clip.h"
 #include "global_data.h"
 #include "oam.h"
 #include "score.h"
@@ -620,28 +619,9 @@ void CoinPose44(void)
 {
     u32 unk_r2;
     s16 yVelocity;
-    u8 velocityTableIndex;
+    u32 timer;
 
-    velocityTableIndex = gCurrentSprite.work3;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
-        yVelocity = sUnk_8352AFC[gCurrentSprite.work3];
-        if (yVelocity == S16_MAX) {
-            yVelocity = sUnk_8352AFC[gCurrentSprite.work3 - 1];
-            gCurrentSprite.yPosition += yVelocity;
-        } else {
-            TIMER_COUNT_UP(gCurrentSprite.work3);
-            gCurrentSprite.yPosition += yVelocity;
-        }
-    } else {
-        yVelocity = sUnk_8352ADC[gCurrentSprite.work3];
-        if (yVelocity == S16_MAX) {
-            yVelocity = sUnk_8352ADC[gCurrentSprite.work3 - 1];
-            gCurrentSprite.yPosition += yVelocity;
-        } else {
-            TIMER_COUNT_UP(gCurrentSprite.work3);
-            gCurrentSprite.yPosition += yVelocity;
-        }
-    }
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352AFC, sUnk_8352ADC);
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
 
     unk_r2 = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
@@ -678,28 +658,9 @@ void CoinPose46(void)
 {
     u32 unk_r2;
     s16 yVelocity;
-    u8 velocityTableIndex;
+    u32 timer;
 
-    velocityTableIndex = gCurrentSprite.work3;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
-        yVelocity = sUnk_8352AFC[gCurrentSprite.work3];
-        if (yVelocity == S16_MAX) {
-            yVelocity = sUnk_8352AFC[gCurrentSprite.work3 - 1];
-            gCurrentSprite.yPosition += yVelocity;
-        } else {
-            TIMER_COUNT_UP(gCurrentSprite.work3);
-            gCurrentSprite.yPosition += yVelocity;
-        }
-    } else {
-        yVelocity = sUnk_8352ADC[gCurrentSprite.work3];
-        if (yVelocity == S16_MAX) {
-            yVelocity = sUnk_8352ADC[gCurrentSprite.work3 - 1];
-            gCurrentSprite.yPosition += yVelocity;
-        } else {
-            TIMER_COUNT_UP(gCurrentSprite.work3);
-            gCurrentSprite.yPosition += yVelocity;
-        }
-    }
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352AFC, sUnk_8352ADC);
     gCurrentSprite.xPosition += gCurrentSprite.work2;
 
     unk_r2 = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
@@ -736,7 +697,7 @@ void CoinInit(void)
 {
     switch (gCurrentSprite.globalID) {
         case PSPRITE_COIN_50POINTS:
-            gCurrentSprite.pOamData = &sCoin50PointsOamData;
+            gCurrentSprite.pOamData = sCoin50PointsOamData;
             gCurrentSprite.work2 = 7;
             gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
             gCurrentSprite.drawDistanceUp = 0;
@@ -748,7 +709,7 @@ void CoinInit(void)
             break;
 
         case PSPRITE_COIN_100POINTS:
-            gCurrentSprite.pOamData = &sCoin100PointsOamData;
+            gCurrentSprite.pOamData = sCoin100PointsOamData;
             gCurrentSprite.work2 = 6;
             gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
             gCurrentSprite.drawDistanceUp = 0;
@@ -760,7 +721,7 @@ void CoinInit(void)
             break;
 
         case PSPRITE_COIN_500POINTS:
-            gCurrentSprite.pOamData = &sCoin500PointsOamData;
+            gCurrentSprite.pOamData = sCoin500PointsOamData;
             gCurrentSprite.work2 = 5;
             gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
             gCurrentSprite.drawDistanceUp = 0;
@@ -772,7 +733,7 @@ void CoinInit(void)
             break;
 
         case PSPRITE_COIN_1000POINTS:
-            gCurrentSprite.pOamData = &sDiamondOamData;
+            gCurrentSprite.pOamData = sDiamondOamData;
             gCurrentSprite.work2 = 4;
             gCurrentSprite.drawDistanceDown = 24;
             gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS / 2;
@@ -801,7 +762,7 @@ void CoinInit(void)
             break;
 
         default:
-            gCurrentSprite.pOamData = &sCoin10PointsOamData;
+            gCurrentSprite.pOamData = sCoin10PointsOamData;
             gCurrentSprite.work2 = 8;
             gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS / 2;
             gCurrentSprite.drawDistanceUp = 0;
@@ -980,7 +941,7 @@ void DiamondInit(void)
     gCurrentSprite.hitboxExtentDown = 2 * BLOCK_SIZE + EIGHTH_BLOCK_SIZE;
     gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE + EIGHTH_BLOCK_SIZE;
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE + EIGHTH_BLOCK_SIZE - PIXEL_SIZE;
-    gCurrentSprite.pOamData = &sDiamondOamData;
+    gCurrentSprite.pOamData = sDiamondOamData;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
@@ -992,17 +953,7 @@ void DiamondInit(void)
 
 void DiamondFloat(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
-    frame = gCurrentSprite.work3;
-    yVelocity = sDiamondFloatYVelocity[frame];
-    if (yVelocity == S16_MAX) {
-        yVelocity = sDiamondFloatYVelocity[0];
-        frame = 0;
-    }
-    gCurrentSprite.work3 = frame + DELTA_TIME;
-    gCurrentSprite.yPosition += yVelocity;
+    SpriteUtilLookupFloatingAnimation(sDiamondFloatYVelocity);
 }
 
 void DiamondCollect(void)
@@ -1024,7 +975,7 @@ void DiamondCollect(void)
 void ChanceWheelDiamondInit(void)
 {
     gCurrentSprite.globalID = PSPRITE_COIN_1000POINTS;
-    gCurrentSprite.pOamData = &sDiamondOamData;
+    gCurrentSprite.pOamData = sDiamondOamData;
     gCurrentSprite.drawDistanceDown = 24;
     gCurrentSprite.drawDistanceUp = 8;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;

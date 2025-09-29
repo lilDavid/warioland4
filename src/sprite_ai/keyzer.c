@@ -362,9 +362,6 @@ void KeyzerCollect()
 
 void SpriteKeyzer(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             KeyzerInit();
@@ -373,14 +370,7 @@ void SpriteKeyzer(void)
         case POSE_31:
             KeyzerCollect();
         default:
-            frame = gCurrentSprite.work3;
-            yVelocity = sKeyzerFloatYVelocity[frame];
-            if (yVelocity == S16_MAX) {
-                yVelocity = sKeyzerFloatYVelocity[0];
-                frame = 0;
-            }
-            gCurrentSprite.work3 = frame + DELTA_TIME;
-            gCurrentSprite.yPosition += yVelocity;
+            SpriteUtilLookupFloatingAnimation(sKeyzerFloatYVelocity);
             break;
     }
 

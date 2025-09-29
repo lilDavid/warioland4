@@ -27,7 +27,7 @@ enum VoiceSet {
     VS_20,
     VS_21,
     VS_22,
-    VS_MAX
+    VS_COUNT
 };
 
 void VoiceSetPlay(s32);

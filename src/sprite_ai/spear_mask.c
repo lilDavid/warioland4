@@ -1,4 +1,3 @@
-#include "bg_clip.h"
 #include "global_data.h"
 #include "oam.h"
 #include "score.h"
@@ -1193,7 +1192,7 @@ void SpearMaskInstantlyKill(void)
             break;
     }
     func_807687C(gCurrentSprite.globalID, gCurrentSprite.yPosition, gCurrentSprite.xPosition, value);
-    func_8024554();
+    SpriteUtilDie();
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
@@ -1278,9 +1277,6 @@ void SpearMaskInitTransform(void)
 
 void SpearMaskTransform(void)
 {
-    s16 yVelocity;
-    u8 frame;
-
     TIMER_COUNT_DOWN(gCurrentSprite.work0);
     if (gCurrentSprite.work0 > 0) {
         func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition);
@@ -1289,15 +1285,7 @@ void SpearMaskTransform(void)
             return;
         }
 
-        frame = gCurrentSprite.work3;
-        yVelocity = sUnk_8352B18[frame];
-        if (yVelocity == S16_MAX) {
-            yVelocity = sUnk_8352B18[frame - 1];
-            gCurrentSprite.yPosition += yVelocity;
-        } else {
-            TIMER_COUNT_UP(gCurrentSprite.work3);
-            gCurrentSprite.yPosition += yVelocity;
-        }
+        SpriteUtilLookupGravity(sUnk_8352B18);
         return;
     }
 
@@ -1311,8 +1299,6 @@ void SpearMaskTransform(void)
 void SpearMaskPose4D(void)
 {
     u32 yPosition;
-    s16 yVelocity;
-    u8 frame;
 
     yPosition = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
@@ -1328,15 +1314,7 @@ void SpearMaskPose4D(void)
         return;
     }
 
-    frame = gCurrentSprite.work3;
-    yVelocity = sUnk_8352B40[frame];
-    if (yVelocity == S16_MAX) {
-        yVelocity = sUnk_8352B40[frame - 1];
-        gCurrentSprite.yPosition += yVelocity;
-    } else {
-        TIMER_COUNT_UP(gCurrentSprite.work3);
-        gCurrentSprite.yPosition += yVelocity;
-    }
+    SpriteUtilLookupGravity(sUnk_8352B40);
 }
 
 void SpearMaskPose4E(void)
@@ -1508,15 +1486,15 @@ void SpearMaskWalkBlueOrRed(void)
 
     if (gCurrentSprite.globalID == PSPRITE_SPEAR_MASK_RED) {
         if (gCurrentSprite.pose == POSE_IDLE) {
-            temp = func_8026210(0x7F, 400);
+            temp = SpriteUtilWaitCheckWarioNearbyLeftRight(2 * BLOCK_SIZE - 1, SUBPIXELS_FROM_PIXELS(100));
             if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
-                if (temp == 8) {
+                if (temp == NS_RIGHT) {
                     SpearMaskStartChasing();
                 } else {
                     func_8026374();
                 }
             } else {
-                if (temp == 4) {
+                if (temp == NS_LEFT) {
                     SpearMaskStartChasing();
                 } else {
                     func_8026374();
@@ -1640,7 +1618,7 @@ void SpriteSpearMask(void)
         case POSE_31:
             SpearMaskCrushed();
         case POSE_32:
-            func_8024524();
+            SpriteUtilDieAfterDelay();
             break;
 
         case POSE_33:

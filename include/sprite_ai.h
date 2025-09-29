@@ -18,8 +18,8 @@ enum SpritePose {
     POSE_INIT_13,
     POSE_INIT_14,
 
-    POSE_IDLE_INIT,  // Idle init
-    POSE_IDLE,       // Idle
+    POSE_IDLE_INIT,
+    POSE_IDLE,
     POSE_11,
     POSE_12,
     POSE_13,
