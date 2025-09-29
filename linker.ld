@@ -94,6 +94,7 @@ SECTIONS {
         . = 0x0a5e; gUnk_3000A5E = .;
         . = 0x0a5f; gUnk_3000A5F = .;
         . = 0x0a60; gUnk_3000A60 = .;
+
         . = 0x0a61; gUnk_3000A61 = .;
         . = 0x0a62; gUnk_3000A62 = .;
         . = 0x0a64; gUnk_3000A64 = .;
@@ -760,7 +761,9 @@ SECTIONS {
         obj/crt0.o(.rodata);
         obj/disasm_sram.o(.rodata);
         obj/m4a_tables.o(.rodata);
-        obj/blob_0x0956E4-0x3B3A00.o(.rodata);
+        obj/blob_0x0956E4-0x3529A8.o(.rodata);
+        obj/sprite_util.o(.rodata);
+        obj/blob_0x352CF0-0x3B3A00.o(.rodata);
         obj/sprite_ai/spear_mask.o(.rodata);
         obj/blob_0x3B451C-0x3B4554.o(.rodata);
         obj/sprite_ai/keyzer.o(.rodata);

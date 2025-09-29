@@ -74,6 +74,7 @@ extern const u16 sUnk_8352AD4[];
 extern const s16 sUnk_8352ADC[];
 extern const s16 sUnk_8352AFC[];
 extern const s16 sUnk_8352B18[];
+extern const s16 sUnk_8352B2C[];
 extern const s16 sUnk_8352B40[];
 extern const s16 sUnk_8352B58[];
 extern const s16 sUnk_8352B78[];
