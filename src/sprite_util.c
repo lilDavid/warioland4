@@ -11,12 +11,12 @@
 #include "sprite_wario_interaction.h"
 #include "wario.h"
 
-const s16 sUnk_83529A8[] = {
+const s16 sSpriteUtilFallingOffscreenYVelocity[] = {
     -28, -24, -20, -16, -12, -12, -8, -8, -4, -4, 0,  0,  0,  0,  0,  0,
     0,   4,   0,   4,   8,   8,   12, 8,  12, 12, 16, 16, 20, 24, 28, S16_MAX,
 };
 
-const s16 sUnk_83529E8[] = {
+const s16 sSpriteUtilFallingOffscreenYVelocityHeavy[] = {
     -16, -12, -12, -12, -8, -8, -4, -4, -4, 0,  0,  4,  0,  4,  0,  4,
     8,   8,   8,   8,   8,  12, 12, 12, 16, 20, 24, 28, 32, 36, 40, S16_MAX,
 };
@@ -153,7 +153,7 @@ const s16 sUnk_8352B40[] = {
     S16_MAX,
 };
 
-const s16 sUnk_8352B58[] = {
+const s16 sSpriteUtilThrownForwardSoftYVelocity[] = {
     -4,
     0,
     4,
@@ -172,7 +172,7 @@ const s16 sUnk_8352B58[] = {
     S16_MAX,
 };
 
-const s16 sUnk_8352B78[] = {
+const s16 sSpriteUtilThrownForwardSoftYVelocityHeavy[] = {
     -4,
     2,
     3,
@@ -187,29 +187,29 @@ const s16 sUnk_8352B78[] = {
     S16_MAX,
 };
 
-const u16 sUnk_8352B90[] = {
+const u16 sSpriteUtilThrownForwardHardYVelocity[] = {
     -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 4, 4, 4, 4, 8, 8, 8, 12, 12, 16, S16_MAX,
 };
 
-const u16 sUnk_8352BD0[] = {
+const u16 sSpriteUtilThrownForwardHardYVelocityHeavy[] = {
     -4, -4, 0, 0, 0, 0, 0, 0, 2, 4, 6, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, S16_MAX,
 };
 
-const u16 sUnk_8352BFC[] = {
+const u16 sSpriteUtilThrownUpSoftYVelocity[] = {
     -20, -20, -16, -16, -16, -16, -12, -12, -12, -12, -12, -12, -8, -8, -4, -4,
     0,   0,   0,   4,   4,   4,   8,   8,   8,   12,  12,  12,  16, 16, 20, S16_MAX,
 };
 
-const u16 sUnk_8352C3C[] = {
+const u16 sSpriteUtilThrownUpSoftYVelocityHeavy[] = {
     -16, -16, -12, -12, -10, -10, -8, -8, -4, -4, 0, 0, 0, 4, 4, 4, 8, 8, 12, 12, 12, 16, 16, 16, 20, S16_MAX,
 };
 
-const u16 sUnk_8352C70[] = {
+const u16 sSpriteUtilThrownUpHardYVelocity[] = {
     -36, -36, -36, -32, -32, -28, -28, -24, -24, -20, -20, -20, -16, -16, -16, -12,
     -12, -12, -8,  -8,  -4,  0,   0,   0,   0,   4,   4,   8,   12,  16,  20,  S16_MAX,
 };
 
-const u16 sUnk_8352CB0[] = {
+const u16 sSpriteUtilThrownUpHardYVelocityHeavy[] = {
     -28, -24, -20, -20, -20, -16, -16, -16, -12, -12, -12, -12, -8, -8, -4,      -4,
     0,   0,   0,   4,   4,   8,   8,   12,  12,  16,  16,  20,  20, 24, S16_MAX,
 };
@@ -516,7 +516,7 @@ void func_8023D48(void)
 
     temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
@@ -524,7 +524,7 @@ void func_8023D48(void)
         return;
     }
 
-    SpriteUtilLookupGravityByStatus5(sUnk_8352A68, sUnk_8352A28);
+    SpriteUtilLookupGravityByWeight(sUnk_8352A68, sUnk_8352A28);
 }
 
 void func_8023E00(void)
@@ -533,7 +533,7 @@ void func_8023E00(void)
 
     temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
@@ -553,7 +553,7 @@ void func_8023E00(void)
         return;
     }
 
-    SpriteUtilLookupGravityByStatus5(sUnk_8352A68, sUnk_8352A28);
+    SpriteUtilLookupGravityByWeight(sUnk_8352A68, sUnk_8352A28);
 }
 
 void func_8023EE0(void)
@@ -562,7 +562,7 @@ void func_8023EE0(void)
 
     temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
@@ -574,7 +574,7 @@ void func_8023EE0(void)
         return;
     }
 
-    SpriteUtilLookupGravityByStatus5(sUnk_8352AFC, sUnk_8352ADC);
+    SpriteUtilLookupGravityByWeight(sUnk_8352AFC, sUnk_8352ADC);
 }
 
 void func_8023FA8(void)
@@ -583,7 +583,7 @@ void func_8023FA8(void)
 
     temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
@@ -591,21 +591,21 @@ void func_8023FA8(void)
         return;
     }
 
-    SpriteUtilLookupGravityByStatus5(sUnk_8352AFC, sUnk_8352ADC);
+    SpriteUtilLookupGravityByWeight(sUnk_8352AFC, sUnk_8352ADC);
 }
 
-void func_8024060(void)
+void SpriteUtilFallOffscreenRight(void)
 {
     gCurrentSprite.disableWarioInteraction = TRUE;
     gCurrentSprite.xPosition += gCurrentSprite.work2;
-    SpriteUtilLookupGravityByStatus5(sUnk_83529E8, sUnk_83529A8);
+    SpriteUtilLookupGravityByWeight(sSpriteUtilFallingOffscreenYVelocityHeavy, sSpriteUtilFallingOffscreenYVelocity);
 }
 
-void func_80240F0(void)
+void SpriteUtilFallOffscreenLeft(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioInteraction = TRUE;
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
-    SpriteUtilLookupGravityByStatus5(sUnk_83529E8, sUnk_83529A8);
+    SpriteUtilLookupGravityByWeight(sSpriteUtilFallingOffscreenYVelocityHeavy, sSpriteUtilFallingOffscreenYVelocity);
 }
 
 void func_8024180(void)
@@ -645,7 +645,7 @@ void func_8024180(void)
                 return;
             }
         }
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+        if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
             if (!(gCurrentSprite.work1 & 1)) {
                 gCurrentSprite.work2--;
             }
@@ -726,7 +726,7 @@ void func_80242C8(void)
     }
 }
 
-void func_8024410(void)
+void SpriteUtilPushedLeft(void)
 {
     func_80238A4();
     if (gCurrentSprite.work2 > 2) {
@@ -740,7 +740,7 @@ void func_8024410(void)
     }
 }
 
-void func_8024444(void)
+void SpriteUtilPushedRight(void)
 {
     func_80238A4();
     if (gCurrentSprite.work2 > 2) {
@@ -780,7 +780,7 @@ void func_80244C0(void)
 {
     gCurrentSprite.pose = POSE_30;
     gCurrentSprite.work0 = 0x50;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
 }
 
 void func_80244E0(void)
@@ -838,7 +838,7 @@ void func_8024570(void)
         pose = POSE_43;
     }
     gCurrentSprite.pose = pose;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_9;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_DEAD;
 }
 
 void func_80245FC(void)
@@ -862,14 +862,14 @@ void func_80245FC(void)
         pose = POSE_45;
     }
     gCurrentSprite.pose = pose;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_9;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_DEAD;
 }
 
 void func_8024688(void)
 {
     gCurrentSprite.pose = POSE_38;
     gCurrentSprite.work3 = 0;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 1;
     } else {
         gCurrentSprite.work0 = 4;
@@ -878,7 +878,7 @@ void func_8024688(void)
 
 void func_80246B8(void)
 {
-    SpriteUtilLookupGravityByStatus5(sUnk_8352AAC, sUnk_8352AA2);
+    SpriteUtilLookupGravityByWeight(sUnk_8352AAC, sUnk_8352AA2);
     func_8024570();
 }
 
@@ -886,7 +886,7 @@ void func_802473C(void)
 {
     gCurrentSprite.pose = POSE_3A;
     gCurrentSprite.work3 = 0;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
     } else {
         gCurrentSprite.work0 = 5;
@@ -895,7 +895,7 @@ void func_802473C(void)
 
 void func_802476C(void)
 {
-    SpriteUtilLookupGravityByStatus5(sUnk_8352ABE, sUnk_8352AB2);
+    SpriteUtilLookupGravityByWeight(sUnk_8352ABE, sUnk_8352AB2);
     func_8024570();
 }
 
@@ -903,7 +903,7 @@ void func_80247F0(void)
 {
     gCurrentSprite.pose = POSE_3C;
     gCurrentSprite.work3 = 0;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
     } else {
         gCurrentSprite.work0 = 6;
@@ -912,7 +912,7 @@ void func_80247F0(void)
 
 void func_8024820(void)
 {
-    SpriteUtilLookupGravityByStatus5(sUnk_8352AD4, sUnk_8352AC6);
+    SpriteUtilLookupGravityByWeight(sUnk_8352AD4, sUnk_8352AC6);
     func_8024570();
 }
 
@@ -920,7 +920,7 @@ void func_80248A4(void)
 {
     gCurrentSprite.pose = POSE_3E;
     gCurrentSprite.work3 = 0;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 1;
     } else {
         gCurrentSprite.work0 = 4;
@@ -929,7 +929,7 @@ void func_80248A4(void)
 
 void func_80248D4(void)
 {
-    SpriteUtilLookupGravityByStatus5(sUnk_8352AAC, sUnk_8352AA2);
+    SpriteUtilLookupGravityByWeight(sUnk_8352AAC, sUnk_8352AA2);
     func_80245FC();
 }
 
@@ -937,7 +937,7 @@ void func_8024958(void)
 {
     gCurrentSprite.pose = POSE_40;
     gCurrentSprite.work3 = 0;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
     } else {
         gCurrentSprite.work0 = 5;
@@ -946,7 +946,7 @@ void func_8024958(void)
 
 void func_8024988(void)
 {
-    SpriteUtilLookupGravityByStatus5(sUnk_8352ABE, sUnk_8352AB2);
+    SpriteUtilLookupGravityByWeight(sUnk_8352ABE, sUnk_8352AB2);
     func_80245FC();
 }
 
@@ -954,7 +954,7 @@ void func_8024A0C(void)
 {
     gCurrentSprite.pose = POSE_42;
     gCurrentSprite.work3 = 0;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
     } else {
         gCurrentSprite.work0 = 6;
@@ -963,7 +963,7 @@ void func_8024A0C(void)
 
 void func_8024A3C(void)
 {
-    SpriteUtilLookupGravityByStatus5(sUnk_8352AD4, sUnk_8352AC6);
+    SpriteUtilLookupGravityByWeight(sUnk_8352AD4, sUnk_8352AC6);
     func_80245FC();
 }
 
@@ -979,11 +979,11 @@ void func_8024AD4(void)
     u32 timer;
     u32 temp;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352AFC, sUnk_8352ADC);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sUnk_8352AFC, sUnk_8352ADC);
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
     temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
 
     if (gUnk_3000A50 != 0) {
@@ -1026,11 +1026,11 @@ void func_8024C00(void)
     u32 timer;
     u32 temp;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352AFC, sUnk_8352ADC);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sUnk_8352AFC, sUnk_8352ADC);
     gCurrentSprite.xPosition += gCurrentSprite.work2;
     temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
 
     if (gUnk_3000A50 != 0) {
@@ -1061,7 +1061,7 @@ void func_8024C00(void)
     }
 }
 
-void func_8024D18(void)
+void SpriteUtilLiftingSpriteRight(void)
 {
     s32 clipCheck;
     u16 yPositionBackup;
@@ -1075,7 +1075,7 @@ void func_8024D18(void)
                 gCurrentSprite.pose = POSE_33;
                 gCurrentCarriedSprite.state = 0;
             } else {
-                gCurrentSprite.pose = POSE_58;
+                gCurrentSprite.pose = POSE_CARRIED_RIGHT;
                 gCurrentSprite.yPosition = gWarioData.yPosition + gCurrentCarriedSprite.yOffset;
                 gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             }
@@ -1105,7 +1105,7 @@ void func_8024D18(void)
 
             gCurrentSprite.yPosition = yPositionBackup;
             gCurrentSprite.xPosition = xPositionBackup;
-            if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+            if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                 gCurrentSprite.work2 = 6;
                 gCurrentSprite.pose = POSE_47;
                 gCurrentSprite.disableWarioInteraction = 0x1F;
@@ -1123,7 +1123,7 @@ void func_8024D18(void)
                 return;
             }
 
-            gCurrentSprite.pose = POSE_57;
+            gCurrentSprite.pose = POSE_CARRIED_RIGHT_INIT;
             gCurrentCarriedSprite.unk1 = 1;
             gCurrentCarriedSprite.state = 4;
             sUnk_82DECA0[gWarioData.reaction](2);
@@ -1135,7 +1135,7 @@ void func_8024D18(void)
     }
 }
 
-void func_8024E58(void)
+void SpriteUtilLiftingSpriteLeft(void)
 {
     s32 clipCheck;
     u16 yPositionBackup;
@@ -1149,7 +1149,7 @@ void func_8024E58(void)
                 gCurrentSprite.pose = POSE_35;
                 gCurrentCarriedSprite.state = 0;
             } else {
-                gCurrentSprite.pose = POSE_56;
+                gCurrentSprite.pose = POSE_CARRIED_LEFT;
                 gCurrentSprite.yPosition = gWarioData.yPosition + gCurrentCarriedSprite.yOffset;
                 gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             }
@@ -1179,7 +1179,7 @@ void func_8024E58(void)
 
             gCurrentSprite.yPosition = yPositionBackup;
             gCurrentSprite.xPosition = xPositionBackup;
-            if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+            if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                 gCurrentSprite.work2 = 6;
                 gCurrentSprite.pose = POSE_49;
                 gCurrentSprite.disableWarioInteraction = 0x1F;
@@ -1197,7 +1197,7 @@ void func_8024E58(void)
                 return;
             }
 
-            gCurrentSprite.pose = POSE_55;
+            gCurrentSprite.pose = POSE_CARRIED_LEFT_INIT;
             gCurrentCarriedSprite.unk1 = 1;
             gCurrentCarriedSprite.state = 4;
             sUnk_82DECA0[gWarioData.reaction](2);
@@ -1209,7 +1209,7 @@ void func_8024E58(void)
     }
 }
 
-void func_8024F98(void)
+void SpriteUtilCarryingSpriteRight(void)
 {
     u16 yPositionBackup;
     u16 xPositionBackup;
@@ -1219,12 +1219,12 @@ void func_8024F98(void)
     switch (gCurrentCarriedSprite.state - 4) {
         case 0:
         case 4:
-            gCurrentSprite.statusBits |= SPRITE_STATUS_8;
+            gCurrentSprite.statusBits |= SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             gCurrentSprite.yPosition = gWarioData.yPosition + gCurrentCarriedSprite.yOffset;
             gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 gCurrentSprite.statusBits ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_56;
+                gCurrentSprite.pose = POSE_CARRIED_LEFT;
                 return;
             }
 
@@ -1236,7 +1236,7 @@ void func_8024F98(void)
                 gCurrentSprite.pose = POSE_47;
                 gCurrentSprite.disableWarioInteraction = 0x1F;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
-                gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+                gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
                 return;
             }
@@ -1250,14 +1250,14 @@ void func_8024F98(void)
                 gCurrentSprite.pose = POSE_49;
                 gCurrentSprite.disableWarioInteraction = 0x1F;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
-                gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+                gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
                 return;
             }
 
             temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
             if (gUnk_30000A0.unk_02 == 1) {
-                gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+                gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
             }
             if (!(0xF & gUnk_3000A50)) {
                 return;
@@ -1268,7 +1268,7 @@ void func_8024F98(void)
             gCurrentSprite.pose = POSE_37;
             gCurrentSprite.work2 = 4;
             gCurrentCarriedSprite.state = 0;
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             m4aSongNumStart(SOUND_36);
             return;
 
@@ -1280,7 +1280,7 @@ void func_8024F98(void)
         case 7:
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 gCurrentSprite.statusBits ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_56;
+                gCurrentSprite.pose = POSE_CARRIED_LEFT;
             }
             yPositionBackup = gCurrentSprite.yPosition;
             xPositionBackup = gCurrentSprite.xPosition;
@@ -1298,7 +1298,7 @@ void func_8024F98(void)
                 gCurrentSprite.disableWarioInteraction = 0x1F;
                 func_801E4B0();
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
-                gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+                gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
             }
             return;
@@ -1310,16 +1310,16 @@ void func_8024F98(void)
             if (gCurrentCarriedSprite.unk1 & 0x80) {
                 gCurrentSprite.work2 = 4;
                 if (gWarioData.unk_01 == 0x25) {
-                    gCurrentSprite.pose = POSE_67;
+                    gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_HARD_INIT;
                 } else {
-                    gCurrentSprite.pose = POSE_63;
+                    gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_SOFT_INIT;
                 }
                 return;
             }
 
             if (gWarioData.unk_01 == 0x25) {
-                gCurrentSprite.pose = POSE_5F;
-                if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+                gCurrentSprite.pose = POSE_THROWN_RIGHT_HARD_INIT;
+                if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                     gCurrentSprite.work2 = 0x10;
                 } else {
                     gCurrentSprite.work2 = 0x1B;
@@ -1328,7 +1328,7 @@ void func_8024F98(void)
             }
 
             gCurrentSprite.work2 = 0xC;
-            gCurrentSprite.pose = POSE_5B;
+            gCurrentSprite.pose = POSE_THROWN_RIGHT_SOFT_INIT;
             return;
 
         default:
@@ -1338,12 +1338,12 @@ void func_8024F98(void)
                 gCurrentSprite.pose = POSE_1D;
             }
             gCurrentSprite.disableWarioInteraction = 0xF;
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             return;
     }
 }
 
-void func_8025240(void)
+void SpriteUtilCarryingSpriteLeft(void)
 {
     u16 yPositionBackup;
     u16 xPositionBackup;
@@ -1353,12 +1353,12 @@ void func_8025240(void)
     switch (gCurrentCarriedSprite.state - 4) {
         case 0:
         case 4:
-            gCurrentSprite.statusBits |= SPRITE_STATUS_8;
+            gCurrentSprite.statusBits |= SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             gCurrentSprite.yPosition = gWarioData.yPosition + gCurrentCarriedSprite.yOffset;
             gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             if (gWarioData.horizontalDirection & DPAD_RIGHT) {
                 gCurrentSprite.statusBits ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_58;
+                gCurrentSprite.pose = POSE_CARRIED_RIGHT;
                 return;
             }
 
@@ -1370,7 +1370,7 @@ void func_8025240(void)
                 gCurrentSprite.pose = POSE_49;
                 gCurrentSprite.disableWarioInteraction = 0x1F;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
-                gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+                gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
                 return;
             }
@@ -1384,14 +1384,14 @@ void func_8025240(void)
                 gCurrentSprite.pose = POSE_47;
                 gCurrentSprite.disableWarioInteraction = 0x1F;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
-                gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+                gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
                 return;
             }
 
             temp = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
             if (gUnk_30000A0.unk_02 == 1) {
-                gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+                gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
             }
             if (!(0xF & gUnk_3000A50)) {
                 return;
@@ -1402,7 +1402,7 @@ void func_8025240(void)
             gCurrentSprite.pose = POSE_3D;
             gCurrentSprite.work2 = 4;
             gCurrentCarriedSprite.state = 0;
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             m4aSongNumStart(SOUND_36);
             return;
 
@@ -1414,7 +1414,7 @@ void func_8025240(void)
         case 7:
             if (gWarioData.horizontalDirection & DPAD_RIGHT) {
                 gCurrentSprite.statusBits ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_58;
+                gCurrentSprite.pose = POSE_CARRIED_RIGHT;
             }
             yPositionBackup = gCurrentSprite.yPosition;
             xPositionBackup = gCurrentSprite.xPosition;
@@ -1432,7 +1432,7 @@ void func_8025240(void)
                 gCurrentSprite.disableWarioInteraction = 0x1F;
                 func_801E4B0();
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
-                gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+                gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
             }
             return;
@@ -1444,16 +1444,16 @@ void func_8025240(void)
             if (gCurrentCarriedSprite.unk1 & 0x80) {
                 gCurrentSprite.work2 = 4;
                 if (gWarioData.unk_01 == 0x25) {
-                    gCurrentSprite.pose = POSE_65;
+                    gCurrentSprite.pose = POSE_THROWN_UP_LEFT_HARD_INIT;
                 } else {
-                    gCurrentSprite.pose = POSE_61;
+                    gCurrentSprite.pose = POSE_THROWN_UP_LEFT_SOFT_INIT;
                 }
                 return;
             }
 
             if (gWarioData.unk_01 == 0x25) {
-                gCurrentSprite.pose = POSE_5D;
-                if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+                gCurrentSprite.pose = POSE_THROWN_LEFT_HARD_INIT;
+                if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                     gCurrentSprite.work2 = 0x10;
                 } else {
                     gCurrentSprite.work2 = 0x1B;
@@ -1462,7 +1462,7 @@ void func_8025240(void)
             }
 
             gCurrentSprite.work2 = 0xC;
-            gCurrentSprite.pose = POSE_59;
+            gCurrentSprite.pose = POSE_THROWN_LEFT_SOFT_INIT;
             return;
 
         default:
@@ -1472,7 +1472,7 @@ void func_8025240(void)
                 gCurrentSprite.pose = POSE_1D;
             }
             gCurrentSprite.disableWarioInteraction = 0xF;
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             return;
     }
 }
@@ -1485,7 +1485,7 @@ void func_80254E8(void)
         gUnk_3000028 = 1;
         temp = func_8023A60(gCurrentSprite.yPosition - PIXEL_SIZE, gCurrentSprite.xPosition);
         if (gUnk_30000A0.unk_02 == 1) {
-            gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+            gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
         }
         if (gUnk_3000A50 != 0) {
             func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition);
@@ -1510,7 +1510,8 @@ void func_80254E8(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
     );
     if (gUnk_3000A51 == 0x11) {
-        if ((gCurrentSprite.pose == POSE_5A) || (gCurrentSprite.pose == POSE_62) || (gCurrentSprite.work0 == 2)) {
+        if ((gCurrentSprite.pose == POSE_THROWN_LEFT_SOFT) || (gCurrentSprite.pose == POSE_THROWN_UP_LEFT_SOFT) ||
+            (gCurrentSprite.work0 == 2)) {
             gCurrentSprite.pose = POSE_49;
             m4aSongNumStart(SOUND_37);
         } else {
@@ -1522,7 +1523,7 @@ void func_80254E8(void)
     gUnk_3000028 = 1;
     func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition);
     if (0xF & gUnk_3000A51) {
-        if ((gCurrentSprite.pose == POSE_5E) || (gCurrentSprite.pose == POSE_66)) {
+        if ((gCurrentSprite.pose == POSE_THROWN_LEFT_HARD) || (gCurrentSprite.pose == POSE_THROWN_UP_LEFT_HARD)) {
             gCurrentSprite.pose = POSE_6B;
         } else {
             gCurrentSprite.pose = POSE_47;
@@ -1534,12 +1535,14 @@ void func_80254E8(void)
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
 }
 
-void func_8025634(void)
+void SpriteUtilThrownLeftSoft(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352B78, sUnk_8352B58);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
+        sSpriteUtilThrownForwardSoftYVelocityHeavy, sSpriteUtilThrownForwardSoftYVelocity
+    );
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1550,12 +1553,14 @@ void func_8025634(void)
     func_80254E8();
 }
 
-void func_80256D4(void)
+void SpriteUtilThrownLeftHard(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352BD0, sUnk_8352B90);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
+        sSpriteUtilThrownForwardHardYVelocityHeavy, sSpriteUtilThrownForwardHardYVelocity
+    );
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1566,12 +1571,12 @@ void func_80256D4(void)
     func_80254E8();
 }
 
-void func_8025774(void)
+void SpriteUtilThrownUpLeftSoft(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352C3C, sUnk_8352BFC);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpSoftYVelocityHeavy, sSpriteUtilThrownUpSoftYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1582,12 +1587,12 @@ void func_8025774(void)
     func_80254E8();
 }
 
-void func_8025814(void)
+void SpriteUtilThrownUpLeftHard(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352CB0, sUnk_8352C70);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpHardYVelocityHeavy, sSpriteUtilThrownUpHardYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1606,7 +1611,7 @@ void func_80258B4(void)
         gUnk_3000028 = 1;
         temp = func_8023A60(gCurrentSprite.yPosition - PIXEL_SIZE, gCurrentSprite.xPosition);
         if (gUnk_30000A0.unk_02 == 1) {
-            gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+            gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
         }
         if (gUnk_3000A50 != 0) {
             func_8023BFC(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition);
@@ -1631,7 +1636,8 @@ void func_80258B4(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
     );
     if (gUnk_3000A51 == 0x11) {
-        if ((gCurrentSprite.pose == POSE_5C) || (gCurrentSprite.pose == POSE_64) || (gCurrentSprite.work0 == 2)) {
+        if ((gCurrentSprite.pose == POSE_THROWN_RIGHT_SOFT) || (gCurrentSprite.pose == POSE_THROWN_UP_RIGHT_SOFT) ||
+            (gCurrentSprite.work0 == 2)) {
             gCurrentSprite.pose = POSE_47;
             m4aSongNumStart(SOUND_37);
         } else {
@@ -1643,7 +1649,7 @@ void func_80258B4(void)
     gUnk_3000028 = 1;
     func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition);
     if (0xF & gUnk_3000A51) {
-        if ((gCurrentSprite.pose == POSE_60) || (gCurrentSprite.pose == POSE_68)) {
+        if ((gCurrentSprite.pose == POSE_THROWN_RIGHT_HARD) || (gCurrentSprite.pose == POSE_THROWN_UP_RIGHT_HARD)) {
             gCurrentSprite.pose = POSE_6B;
         } else {
             gCurrentSprite.pose = POSE_49;
@@ -1655,12 +1661,14 @@ void func_80258B4(void)
     gCurrentSprite.xPosition += gCurrentSprite.work2;
 }
 
-void func_8025A00(void)
+void SpriteUtilThrownRightSoft(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352B78, sUnk_8352B58);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
+        sSpriteUtilThrownForwardSoftYVelocityHeavy, sSpriteUtilThrownForwardSoftYVelocity
+    );
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1671,12 +1679,14 @@ void func_8025A00(void)
     func_80258B4();
 }
 
-void func_8025AA0(void)
+void SpriteUtilThrownRightHard(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352BD0, sUnk_8352B90);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
+        sSpriteUtilThrownForwardHardYVelocityHeavy, sSpriteUtilThrownForwardHardYVelocity
+    );
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1687,12 +1697,12 @@ void func_8025AA0(void)
     func_80258B4();
 }
 
-void func_8025B40(void)
+void SpriteUtilThrownUpRightSoft(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352C3C, sUnk_8352BFC);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpSoftYVelocityHeavy, sSpriteUtilThrownUpSoftYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1703,12 +1713,12 @@ void func_8025B40(void)
     func_80258B4();
 }
 
-void func_8025BE0(void)
+void SpriteUtilThrownUpRightHard(void)
 {
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352CB0, sUnk_8352C70);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpHardYVelocityHeavy, sSpriteUtilThrownUpHardYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1740,10 +1750,10 @@ void func_8025C80(void)
                 }
             }
         } else if (0xF1 & gUnk_3000A50) {
-            gCurrentSprite.pose = POSE_31;
+            gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
         }
     } else {
-        gCurrentSprite.pose = POSE_31;
+        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
     }
 }
 
@@ -1768,10 +1778,10 @@ void func_8025D34(void)
                 }
             }
         } else if ((0xF1 & gUnk_3000A50) != 1) {
-            gCurrentSprite.pose = POSE_31;
+            gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
         }
     } else {
-        gCurrentSprite.pose = POSE_31;
+        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
     }
 }
 
@@ -1781,7 +1791,7 @@ void func_8025DE8(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
     );
     if (gUnk_3000A51 == 0x11) {
-        gCurrentSprite.pose = POSE_31;
+        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
         return;
     }
 
@@ -1810,7 +1820,7 @@ void func_8025E98(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
     );
     if (gUnk_3000A51 == 0x11) {
-        gCurrentSprite.pose = POSE_31;
+        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
         return;
     }
 
@@ -1871,7 +1881,7 @@ void func_8025F48(void)
                 return;
             }
         }
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+        if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
             if (!(gCurrentSprite.work0 & 1)) {
                 gCurrentSprite.work2 -= 1;
             }
@@ -1931,7 +1941,7 @@ void func_802608C(void)
                 return;
             }
         }
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+        if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
             if (!(gCurrentSprite.work0 & 1)) {
                 gCurrentSprite.work2 -= 1;
             }
@@ -2304,13 +2314,14 @@ void func_80265C8(s32 slot)
     thisLeft = xPosition - gSpriteData[slot].hitboxExtentLeft;
     thisRight = xPosition + gSpriteData[slot].hitboxExtentRight;
 
-    statusCheck = SPRITE_STATUS_10 | SPRITE_STATUS_9 | SPRITE_STATUS_HIDDEN | SPRITE_STATUS_1 | SPRITE_STATUS_EXISTS;
+    statusCheck = SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_MAYBE_DEAD | SPRITE_STATUS_HIDDEN |
+                  SPRITE_STATUS_ONSCREEN | SPRITE_STATUS_EXISTS;
     for (i = 0; i < MAX_SPRITE_COUNT; i++) {
         if (i == slot) {
             continue;
         }
 
-        if ((gSpriteData[i].statusBits & statusCheck) != (SPRITE_STATUS_1 | SPRITE_STATUS_EXISTS)) {
+        if ((gSpriteData[i].statusBits & statusCheck) != (SPRITE_STATUS_ONSCREEN | SPRITE_STATUS_EXISTS)) {
             continue;
         }
 
@@ -2381,10 +2392,10 @@ void func_80265C8(s32 slot)
             }
         }
 
-        gSpriteData[i].statusBits |= SPRITE_STATUS_9;
-        gSpriteData[slot].statusBits |= SPRITE_STATUS_9;
-        gSpriteData[i].statusBits &= ~SPRITE_STATUS_8;
-        gSpriteData[slot].statusBits &= ~SPRITE_STATUS_8;
+        gSpriteData[i].statusBits |= SPRITE_STATUS_MAYBE_DEAD;
+        gSpriteData[slot].statusBits |= SPRITE_STATUS_MAYBE_DEAD;
+        gSpriteData[i].statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
+        gSpriteData[slot].statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
         gSpriteData[i].disableWarioInteraction = 0xF;
         gSpriteData[slot].disableWarioInteraction = 0xF;
         m4aSongNumStart(SOUND_3B);
@@ -2400,7 +2411,7 @@ void func_80267C0(void)
     u16 statusCheck;
 
     found = FALSE;
-    statusCheck = SPRITE_STATUS_8 | SPRITE_STATUS_EXISTS;
+    statusCheck = SPRITE_STATUS_CAN_HIT_OTHER_SPRITES | SPRITE_STATUS_EXISTS;
     for (i = 0; i < MAX_SPRITE_COUNT; i++) {
         if ((gSpriteData[i].statusBits & statusCheck) == statusCheck) {
             found++;
@@ -2662,15 +2673,15 @@ s32 SpriteUtilFindParentSlotOrU8Max(u8 parentId)
     return U8_MAX;
 }
 
-s32 SpriteUtilFindSprite14(u8 roomSlot)
+s32 SpriteUtilFindBossTreasureChest(u8 roomSlot)
 {
     s32 i;
     u32 slot;
 
     slot = U8_MAX;
     for (i = 0; i < MAX_SPRITE_COUNT; i++) {
-        if (gSpriteData[i].globalID == PSPRITE_0E && (gSpriteData[i].statusBits & SPRITE_STATUS_EXISTS) &&
-            gSpriteData[i].roomSlot == roomSlot) {
+        if (gSpriteData[i].globalID == PSPRITE_BOSS_TREASURE_CHEST &&
+            (gSpriteData[i].statusBits & SPRITE_STATUS_EXISTS) && gSpriteData[i].roomSlot == roomSlot) {
             slot = i;
             break;
         }

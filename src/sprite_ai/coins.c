@@ -536,7 +536,7 @@ void func_802BADC(void)
                      gUnk_3000A51 == 0)) {
                     gCurrentSprite.pose = POSE_47;
                 } else {
-                    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+                    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                         if ((gCurrentSprite.work1 & 1) == 0) {
                             gCurrentSprite.work2 -= 1;
                         }
@@ -592,7 +592,7 @@ void func_802BC24(void)
                      gUnk_3000A51 == 0)) {
                     gCurrentSprite.pose = POSE_49;
                 } else {
-                    if (gCurrentSprite.statusBits & SPRITE_STATUS_5) {
+                    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                         if ((gCurrentSprite.work1 & 1) == 0) {
                             gCurrentSprite.work2 -= 1;
                         }
@@ -621,12 +621,12 @@ void CoinPose44(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352AFC, sUnk_8352ADC);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sUnk_8352AFC, sUnk_8352ADC);
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
 
     unk_r2 = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
 
     if (gUnk_3000A50) {
@@ -660,12 +660,12 @@ void CoinPose46(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_STATUS_5(sUnk_8352AFC, sUnk_8352ADC);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sUnk_8352AFC, sUnk_8352ADC);
     gCurrentSprite.xPosition += gCurrentSprite.work2;
 
     unk_r2 = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
 
     if (gUnk_3000A50) {
@@ -773,7 +773,7 @@ void CoinInit(void)
             gCurrentSprite.hitboxExtentRight = 3 * PIXEL_SIZE;
             break;
     }
-    gCurrentSprite.statusBits |= SPRITE_STATUS_10;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
 
     gCurrentSprite.disableWarioInteraction = 15;
@@ -803,7 +803,7 @@ void CoinInit(void)
 void CoinPose2F(void)
 {
     gCurrentSprite.pose = POSE_30;
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_UNDERWATER) {
         gCurrentSprite.work0 = CONVERT_SECONDS(8.0 / 15);
     } else {
         gCurrentSprite.work0 = CONVERT_SECONDS(2);
@@ -933,7 +933,7 @@ void CoinPose2E(void)
 
 void DiamondInit(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
     gCurrentSprite.drawDistanceDown = 24;
     gCurrentSprite.drawDistanceUp = 8;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -990,7 +990,7 @@ void ChanceWheelDiamondInit(void)
     } else {
         gCurrentSprite.pose = POSE_41;
     }
-    gCurrentSprite.statusBits |= SPRITE_STATUS_10;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.disableWarioInteraction = 15;
     gCurrentSprite.warioInteractionFlags = 6;
@@ -1013,11 +1013,11 @@ void SpriteCoin(void)
             return;
         }
     }
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_UNDERWATER) {
         if (gUnk_3000BEC & 1) {
             TIMER_COUNT_DOWN(gCurrentSprite.currentAnimationFrame);
         }
-        if (gUnk_3000BEC & 3 && gCurrentSprite.pose != POSE_31) {
+        if (gUnk_3000BEC & 3 && gCurrentSprite.pose != POSE_CRUSHED_OR_COLLECTED_INIT) {
             return;
         }
     }
@@ -1026,14 +1026,14 @@ void SpriteCoin(void)
             CoinInit();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             CoinCollect();
             break;
 
         case POSE_1D:
             CoinPose1D();
         case POSE_1E:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_UNDERWATER;
             func_8023EE0();
             break;
 
@@ -1097,7 +1097,7 @@ void SpriteCoin(void)
         case POSE_47:
             func_8024AC0();
         case POSE_44:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_UNDERWATER;
             CoinPose44();
             break;
 
@@ -1105,7 +1105,7 @@ void SpriteCoin(void)
         case POSE_49:
             func_8024BEC();
         case POSE_46:
-            gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_UNDERWATER;
+            gCurrentSprite.statusBits &= ~SPRITE_STATUS_UNDERWATER;
             CoinPose46();
             break;
 
@@ -1126,7 +1126,7 @@ void SpriteDiamond(void)
             DiamondFloat();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             DiamondCollect();
             break;
     }

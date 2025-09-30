@@ -327,7 +327,7 @@ void KeyzerInit()
         gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
         gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     } else {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
         gCurrentSprite.warioInteractionFlags = 6;
         gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
         gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
@@ -367,7 +367,7 @@ void SpriteKeyzer(void)
             KeyzerInit();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             KeyzerCollect();
         default:
             SpriteUtilLookupFloatingAnimation(sKeyzerFloatYVelocity);

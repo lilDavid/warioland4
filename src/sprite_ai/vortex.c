@@ -46,7 +46,7 @@ const u16 sVortexPal[] = {
 
 void VortexSetCommonProperties(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_7 | SPRITE_STATUS_3;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_AFFINE | SPRITE_STATUS_3;
     gCurrentSprite.drawPriority |= 0x80;
     gCurrentSprite.hitboxExtentUp = PIXEL_SIZE;
     gCurrentSprite.hitboxExtentDown = 0;
@@ -90,7 +90,7 @@ void VortexInitLargePart(void)
 
 void VortexFinishStage(void)
 {
-    gCurrentSprite.pose = POSE_32;
+    gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
     gDisableWario = 1;
     gWarioPauseTimer = CONVERT_SECONDS(16.0 + 2.0 / 3.0);
     gUnk_3000C03 = 2;
@@ -130,7 +130,7 @@ void VortexAnimatePalette(void)
 void VortexInitWarioOrKeyzer(void)
 {
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_7;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_AFFINE;
     gCurrentSprite.drawPriority |= 0x80;
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
@@ -244,7 +244,7 @@ void SpriteVortex(void)
             gCurrentSprite.disableWarioInteraction = 0;
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             VortexFinishStage();
             break;
     }
@@ -413,7 +413,7 @@ void SpriteWarioExitingVortex(void)
             gCurrentSprite.work1 -= ANGLE_PI / 16;
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_32;
+                gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
             }
             break;
 
@@ -456,7 +456,7 @@ void SpriteWarioEnteringVortex(void)
             gCurrentSprite.work1 -= ANGLE_PI / 16;
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_32;
+                gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
             }
             break;
 
@@ -502,7 +502,7 @@ void SpriteKeyzerEnteringVortex(void)
             gCurrentSprite.work1 -= ANGLE_PI / 16;
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_32;
+                gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
             }
             break;
 

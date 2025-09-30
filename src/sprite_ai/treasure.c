@@ -340,7 +340,7 @@ const struct AnimationFrame sBoxHeartRefillOpenedOam[] = {
 void BoxSetCommonProperties(void)
 {
     gCurrentSprite.gfxSlot = 7;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 0;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -364,7 +364,7 @@ void BoxInit1(void)
 {
     gCurrentSprite.hitboxExtentUp = BLOCK_SIZE;
     gCurrentSprite.warioInteractionFlags = 0x19;
-    gCurrentSprite.pose = POSE_32;
+    gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
     gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
     gCurrentSprite.work0 = CONVERT_SECONDS(5.0 / 6.0);
     BoxSetCommonProperties();
@@ -392,7 +392,7 @@ void BoxStartOpening(void)
 
 void BoxFinishOpening(void)
 {
-    gCurrentSprite.pose = POSE_32;
+    gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
@@ -421,7 +421,7 @@ void BoxDisappearing(void)
 
 void Treasure_Init(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_10;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
@@ -439,7 +439,7 @@ void Treasure_Init(void)
 
 void TreasureGlow_Init(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_10;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
@@ -495,8 +495,8 @@ void SpriteBoxJewelPieceNE(void)
             BoxInit2();
             break;
 
-        case POSE_1F:
-        case POSE_21:
+        case POSE_TACKLED_RIGHT_INIT:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_33:
         case POSE_35:
             BoxStartOpening();
@@ -525,7 +525,7 @@ void SpriteBoxJewelPieceNE(void)
                     gCurrentSprite.xPosition
                 );
             }
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 BoxDisappearing();
@@ -566,8 +566,8 @@ void SpriteBoxJewelPieceSE(void)
             BoxInit2();
             break;
 
-        case POSE_1F:
-        case POSE_21:
+        case POSE_TACKLED_RIGHT_INIT:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_33:
         case POSE_35:
             BoxStartOpening();
@@ -596,7 +596,7 @@ void SpriteBoxJewelPieceSE(void)
                     gCurrentSprite.xPosition
                 );
             }
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 BoxDisappearing();
@@ -637,8 +637,8 @@ void SpriteBoxJewelPieceSW(void)
             BoxInit2();
             break;
 
-        case POSE_1F:
-        case POSE_21:
+        case POSE_TACKLED_RIGHT_INIT:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_33:
         case POSE_35:
             BoxStartOpening();
@@ -667,7 +667,7 @@ void SpriteBoxJewelPieceSW(void)
                     gCurrentSprite.xPosition
                 );
             }
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 BoxDisappearing();
@@ -708,8 +708,8 @@ void SpriteBoxJewelPieceNW(void)
             BoxInit2();
             break;
 
-        case POSE_1F:
-        case POSE_21:
+        case POSE_TACKLED_RIGHT_INIT:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_33:
         case POSE_35:
             BoxStartOpening();
@@ -738,7 +738,7 @@ void SpriteBoxJewelPieceNW(void)
                     gCurrentSprite.xPosition
                 );
             }
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 BoxDisappearing();
@@ -780,8 +780,8 @@ void SpriteBoxCD(void)
             BoxInit2();
             break;
 
-        case POSE_1F:
-        case POSE_21:
+        case POSE_TACKLED_RIGHT_INIT:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_33:
         case POSE_35:
             BoxStartOpening();
@@ -812,7 +812,7 @@ void SpriteBoxCD(void)
                     gCurrentSprite.xPosition
                 );
             }
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 BoxDisappearing();
@@ -854,8 +854,8 @@ void SpriteBoxHeartRefill(void)
             BoxInit2();
             break;
 
-        case POSE_1F:
-        case POSE_21:
+        case POSE_TACKLED_RIGHT_INIT:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_33:
         case POSE_35:
             BoxStartOpening();
@@ -881,7 +881,7 @@ void SpriteBoxHeartRefill(void)
                 gCurrentSprite.yPosition - 2 * BLOCK_SIZE,
                 gCurrentSprite.xPosition
             );
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             if (gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] ==
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED)) {
                 BoxDisappearing();
@@ -904,7 +904,7 @@ void SpriteJewelPieceNE(void)
             Treasure_Init();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedNEJewelPiece = 1;
@@ -943,7 +943,7 @@ void SpriteJewelPieceSE(void)
             Treasure_Init();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedSEJewelPiece = 1;
@@ -982,7 +982,7 @@ void SpriteJewelPieceSW(void)
             Treasure_Init();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedSWJewelPiece = 1;
@@ -1021,7 +1021,7 @@ void SpriteJewelPieceNW(void)
             Treasure_Init();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedNWJewelPiece = 1;
@@ -1060,7 +1060,7 @@ void SpriteCD(void)
             Treasure_Init();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_CD);
             gCollectedCD = 1;
@@ -1099,7 +1099,7 @@ void SpriteHeartRefill(void)
             Treasure_Init();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
@@ -1309,7 +1309,7 @@ void SpriteTreasure_Unused1(void)
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             gCurrentSprite.gfxSlot = 7;
-            gCurrentSprite.statusBits |= SPRITE_STATUS_10 | SPRITE_STATUS_3;
+            gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
             gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
             gCurrentSprite.drawDistanceUp = 0;
             gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;

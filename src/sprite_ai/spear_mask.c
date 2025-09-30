@@ -560,7 +560,7 @@ const struct AnimationFrame sSpearMaskCrushedOam[] = {
     {sSpearMaskCrushedOam_Frame2, 5},
     ANIMATION_TERMINATOR
 };
-const struct AnimationFrame sSpearMaskBashedOam[] = {
+const struct AnimationFrame sSpearMaskTackledOam[] = {
     {sSpearMaskBashedOam_Frame1, 18},
     {sSpearMaskBashedOam_Frame2, 40},
     ANIMATION_TERMINATOR
@@ -628,7 +628,7 @@ const struct AnimationFrame sSpearMaskTransforming2Oam[] = {
 const struct AnimationFrame sSpearMaskOam_83B4334[] = {{sOamFrame_83B4048, 8}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskOam_83B4344[] = {{sSpearMaskBashedOam_Frame2, 4}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskHitWarioOam[] = {{sSpearMaskHitWarioOam_Frame1, 4}, ANIMATION_TERMINATOR};
-const struct AnimationFrame sSpearMaskOam_83B4364[] = {{sSpearMaskGettingUpOam_Frame13, 6}, ANIMATION_TERMINATOR};
+const struct AnimationFrame sSpearMaskPushedOam[] = {{sSpearMaskGettingUpOam_Frame13, 6}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskOam_83B4374[] = {{sSpearMaskRecoveringOam_Frame2, 4}, ANIMATION_TERMINATOR};
 const struct AnimationFrame sSpearMaskRecoveringOam[] = {
     {sSpearMaskRecoveringOam_Frame1, 5},
@@ -933,12 +933,11 @@ void SpearMaskPose1D(void)
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-// Defeated somehow
-void func_80273C0(void)
+void SpearMaskTackledInit(void)
 {
     u32 value;
 
-    gCurrentSprite.pOamData = sSpearMaskBashedOam;
+    gCurrentSprite.pOamData = sSpearMaskTackledOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.health = 0;
@@ -958,21 +957,21 @@ void func_80273C0(void)
     }
     func_807687C(gCurrentSprite.globalID, gCurrentSprite.yPosition, gCurrentSprite.xPosition, value);
     SpriteSpawnSecondary(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition, SSPRITE_06);
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_9;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_DEAD;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
-void SpearMaskPose1F(void)
+void SpearMaskTackledRightInit(void)
 {
-    gCurrentSprite.pose = POSE_20;
-    func_80273C0();
+    gCurrentSprite.pose = POSE_TACKLED_RIGHT;
+    SpearMaskTackledInit();
 }
 
-void SpearMaskPose21(void)
+void SpearMaskTackledLeftInit(void)
 {
-    gCurrentSprite.pose = POSE_22;
-    func_80273C0();
+    gCurrentSprite.pose = POSE_TACKLED_LEFT;
+    SpearMaskTackledInit();
 }
 
 // Defeated a different way
@@ -980,7 +979,7 @@ void func_8027474(void)
 {
     u32 value;
 
-    gCurrentSprite.pOamData = sSpearMaskBashedOam;
+    gCurrentSprite.pOamData = sSpearMaskTackledOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.health = 0;
@@ -1005,19 +1004,19 @@ void func_8027474(void)
 
 void SpearMaskPose6A(void)
 {
-    gCurrentSprite.pose = POSE_20;
+    gCurrentSprite.pose = POSE_TACKLED_RIGHT;
     func_8027474();
 }
 
 void SpearMaskPose69(void)
 {
-    gCurrentSprite.pose = POSE_22;
+    gCurrentSprite.pose = POSE_TACKLED_LEFT;
     func_8027474();
 }
 
-void func_8027514(void)
+void SpearMaskPushedInit(void)
 {
-    gCurrentSprite.pOamData = sSpearMaskOam_83B4364;
+    gCurrentSprite.pOamData = sSpearMaskPushedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work0 = CONVERT_SECONDS(0.2);
@@ -1028,16 +1027,16 @@ void func_8027514(void)
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE;
 }
 
-void SpearMaskPose23(void)
+void SpearMaskPushedRightInit(void)
 {
-    gCurrentSprite.pose = POSE_24;
-    func_8027514();
+    gCurrentSprite.pose = POSE_PUSHED_RIGHT;
+    SpearMaskPushedInit();
 }
 
-void SpearMaskPose25(void)
+void SpearMaskPushedLeftInit(void)
 {
-    gCurrentSprite.pose = POSE_26;
-    func_8027514();
+    gCurrentSprite.pose = POSE_PUSHED_LEFT;
+    SpearMaskPushedInit();
 }
 
 void SpearMaskHitWario(void)
@@ -1050,13 +1049,13 @@ void SpearMaskHitWario(void)
     gCurrentSprite.work2 = 8;
 }
 
-void SpearMaskHitWario_27(void)
+void SpearMaskHitWarioLeftInit(void)
 {
     gCurrentSprite.pose = POSE_28;
     SpearMaskHitWario();
 }
 
-void SpearMaskHitWario_29(void)
+void SpearMaskHitWarioRightInit(void)
 {
     gCurrentSprite.pose = POSE_2A;
     SpearMaskHitWario();
@@ -1157,10 +1156,10 @@ void SpearMaskCrushed(void)
     gCurrentSprite.pOamData = sSpearMaskCrushedOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
-    gCurrentSprite.pose = POSE_32;
+    gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
     gCurrentSprite.work0 = CONVERT_SECONDS(2.0 / 15.0);  // 8?
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_8;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_9;
+    gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
+    gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_DEAD;
     switch (gCurrentSprite.globalID) {
         case PSPRITE_SPEAR_MASK_RED:
             value = CONVERT_SCORE(100);
@@ -1302,7 +1301,7 @@ void SpearMaskPose4D(void)
 
     yPosition = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_UNDERWATER;
+        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = yPosition;
@@ -1337,15 +1336,15 @@ void func_8027A8C(void)
     gCurrentSprite.currentAnimationFrame = 0;
 }
 
-void SpearMaskPose51(void)
+void SpearMaskLiftedRightInit(void)
 {
-    gCurrentSprite.pose = POSE_52;
+    gCurrentSprite.pose = POSE_BEING_LIFTED_RIGHT;
     func_8027A8C();
 }
 
-void SpearMaskPose53(void)
+void SpearMaskLiftedLeftInit(void)
 {
-    gCurrentSprite.pose = POSE_54;
+    gCurrentSprite.pose = POSE_BEING_LIFTED_LEFT;
     func_8027A8C();
 }
 
@@ -1357,15 +1356,15 @@ void func_8027ACC(void)
     gCurrentSprite.currentAnimationFrame = 0;
 }
 
-void SpearMaskPose57(void)
+void SpearMaskCarriedRight(void)
 {
-    gCurrentSprite.pose = POSE_58;
+    gCurrentSprite.pose = POSE_CARRIED_RIGHT;
     func_8027ACC();
 }
 
-void SpearMaskPose55(void)
+void SpearMaskCarriedLeft(void)
 {
-    gCurrentSprite.pose = POSE_56;
+    gCurrentSprite.pose = POSE_CARRIED_LEFT;
     func_8027ACC();
 }
 
@@ -1510,7 +1509,7 @@ void SpearMaskWalkBlueOrRed(void)
 
 void SpriteSpearMask(void)
 {
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_MAYBE_UNDERWATER) {
+    if (gCurrentSprite.statusBits & SPRITE_STATUS_UNDERWATER) {
         gCurrentSprite.pose = POSE_6B;
     }
 
@@ -1559,42 +1558,42 @@ void SpriteSpearMask(void)
             func_8023EE0();
             break;
 
-        case POSE_1F:
+        case POSE_TACKLED_RIGHT_INIT:
         case POSE_4F:
-            SpearMaskPose1F();
-        case POSE_20:
-            func_8024060();
+            SpearMaskTackledRightInit();
+        case POSE_TACKLED_RIGHT:
+            SpriteUtilFallOffscreenRight();
             break;
 
-        case POSE_21:
+        case POSE_TACKLED_LEFT_INIT:
         case POSE_50:
-            SpearMaskPose21();
-        case POSE_22:
-            func_80240F0();
+            SpearMaskTackledLeftInit();
+        case POSE_TACKLED_LEFT:
+            SpriteUtilFallOffscreenLeft();
             break;
 
-        case POSE_23:
-            SpearMaskPose23();
-        case POSE_24:
-            func_8024444();
+        case POSE_PUSHED_RIGHT_INIT:
+            SpearMaskPushedRightInit();
+        case POSE_PUSHED_RIGHT:
+            SpriteUtilPushedRight();
             break;
 
-        case POSE_25:
-            SpearMaskPose25();
-        case POSE_26:
-            func_8024410();
+        case POSE_PUSHED_LEFT_INIT:
+            SpearMaskPushedLeftInit();
+        case POSE_PUSHED_LEFT:
+            SpriteUtilPushedLeft();
             break;
 
         case POSE_27:
-            SpearMaskHitWario_27();
+            SpearMaskHitWarioLeftInit();
         case POSE_28:
-            func_8024444();
+            SpriteUtilPushedRight();
             break;
 
         case POSE_29:
-            SpearMaskHitWario_29();
+            SpearMaskHitWarioRightInit();
         case POSE_2A:
-            func_8024410();
+            SpriteUtilPushedLeft();
             break;
 
         case POSE_2B:
@@ -1615,9 +1614,9 @@ void SpriteSpearMask(void)
             func_80244E0();
             break;
 
-        case POSE_31:
+        case POSE_CRUSHED_OR_COLLECTED_INIT:
             SpearMaskCrushed();
-        case POSE_32:
+        case POSE_CRUSHED_OR_COLLECTED:
             SpriteUtilDieAfterDelay();
             break;
 
@@ -1707,84 +1706,84 @@ void SpriteSpearMask(void)
             SpearMaskPose4E();
             break;
 
-        case POSE_51:
-            SpearMaskPose51();
+        case POSE_BEING_LIFTED_RIGHT_INIT:
+            SpearMaskLiftedRightInit();
             break;
 
-        case POSE_52:
-            func_8024D18();
+        case POSE_BEING_LIFTED_RIGHT:
+            SpriteUtilLiftingSpriteRight();
             break;
 
-        case POSE_53:
-            SpearMaskPose53();
+        case POSE_BEING_LIFTED_LEFT_INIT:
+            SpearMaskLiftedLeftInit();
             break;
 
-        case POSE_54:
-            func_8024E58();
+        case POSE_BEING_LIFTED_LEFT:
+            SpriteUtilLiftingSpriteLeft();
             break;
 
-        case POSE_57:
-            SpearMaskPose57();
+        case POSE_CARRIED_RIGHT_INIT:
+            SpearMaskCarriedRight();
             break;
 
-        case POSE_58:
-            func_8024F98();
+        case POSE_CARRIED_RIGHT:
+            SpriteUtilCarryingSpriteRight();
             break;
 
-        case POSE_55:
-            SpearMaskPose55();
+        case POSE_CARRIED_LEFT_INIT:
+            SpearMaskCarriedLeft();
             break;
 
-        case POSE_56:
-            func_8025240();
+        case POSE_CARRIED_LEFT:
+            SpriteUtilCarryingSpriteLeft();
             break;
 
-        case POSE_59:
-            gCurrentSprite.pose = POSE_5A;
-        case POSE_5A:
-            func_8025634();
+        case POSE_THROWN_LEFT_SOFT_INIT:
+            gCurrentSprite.pose = POSE_THROWN_LEFT_SOFT;
+        case POSE_THROWN_LEFT_SOFT:
+            SpriteUtilThrownLeftSoft();
             break;
 
-        case POSE_5D:
-            gCurrentSprite.pose = POSE_5E;
-        case POSE_5E:
-            func_80256D4();
+        case POSE_THROWN_LEFT_HARD_INIT:
+            gCurrentSprite.pose = POSE_THROWN_LEFT_HARD;
+        case POSE_THROWN_LEFT_HARD:
+            SpriteUtilThrownLeftHard();
             break;
 
-        case POSE_61:
-            gCurrentSprite.pose = POSE_62;
-        case POSE_62:
-            func_8025774();
+        case POSE_THROWN_UP_LEFT_SOFT_INIT:
+            gCurrentSprite.pose = POSE_THROWN_UP_LEFT_SOFT;
+        case POSE_THROWN_UP_LEFT_SOFT:
+            SpriteUtilThrownUpLeftSoft();
             break;
 
-        case POSE_65:
-            gCurrentSprite.pose = POSE_66;
-        case POSE_66:
-            func_8025814();
+        case POSE_THROWN_UP_LEFT_HARD_INIT:
+            gCurrentSprite.pose = POSE_THROWN_UP_LEFT_HARD;
+        case POSE_THROWN_UP_LEFT_HARD:
+            SpriteUtilThrownUpLeftHard();
             break;
 
-        case POSE_5B:
-            gCurrentSprite.pose = POSE_5C;
-        case POSE_5C:
-            func_8025A00();
+        case POSE_THROWN_RIGHT_SOFT_INIT:
+            gCurrentSprite.pose = POSE_THROWN_RIGHT_SOFT;
+        case POSE_THROWN_RIGHT_SOFT:
+            SpriteUtilThrownRightSoft();
             break;
 
-        case POSE_5F:
-            gCurrentSprite.pose = POSE_60;
-        case POSE_60:
-            func_8025AA0();
+        case POSE_THROWN_RIGHT_HARD_INIT:
+            gCurrentSprite.pose = POSE_THROWN_RIGHT_HARD;
+        case POSE_THROWN_RIGHT_HARD:
+            SpriteUtilThrownRightHard();
             break;
 
-        case POSE_63:
-            gCurrentSprite.pose = POSE_64;
-        case POSE_64:
-            func_8025B40();
+        case POSE_THROWN_UP_RIGHT_SOFT_INIT:
+            gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_SOFT;
+        case POSE_THROWN_UP_RIGHT_SOFT:
+            SpriteUtilThrownUpRightSoft();
             break;
 
-        case POSE_67:
-            gCurrentSprite.pose = POSE_68;
-        case POSE_68:
-            func_8025BE0();
+        case POSE_THROWN_UP_RIGHT_HARD_INIT:
+            gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_HARD;
+        case POSE_THROWN_UP_RIGHT_HARD:
+            SpriteUtilThrownUpRightHard();
             break;
 
         case POSE_69:
