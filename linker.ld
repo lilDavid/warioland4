@@ -790,7 +790,8 @@ SECTIONS {
 
     .data (READONLY) : ALIGN(2) {
         obj/data/cutscene_data.o(.data);
-        obj/blob_0x78E800-0x78F5A4.o(.data);
+        obj/sprite.o(.data);
+        obj/blob_0x78EBF0-0x78F5A4.o(.data);
         obj/data/tile_fn_pointers.o(.data);
         obj/data/color_fading_pointers.o(.data);
         obj/data/stage_end_pointers.o(.data);

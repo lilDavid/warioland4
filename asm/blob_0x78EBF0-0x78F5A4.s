@@ -9,10 +9,6 @@
 
 @ Sprite AI and sprite sets
 
-.global sUnk_878E800
-sUnk_878E800:
-	baserom_blob 0x78E800, 0x78EBF0
-
 .global sUnk_878EBF0
 sUnk_878EBF0:
 	baserom_blob 0x78EBF0, 0x78EDB4

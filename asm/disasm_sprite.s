@@ -79,7 +79,7 @@ func_801D684:
 .L_1d71c:
 	.4byte	gCurrentSprite
 .L_1d720:
-	.4byte	sUnk_878E800
+	.4byte	sPrimarySpriteAITable
 .L_1d724:
 	mov	r6, #0
 	ldr	r5, .L_1d78c
@@ -137,7 +137,7 @@ func_801D684:
 .L_1d790:
 	.4byte	gSpriteData
 .L_1d794:
-	.4byte	sUnk_878E800
+	.4byte	sPrimarySpriteAITable
 .L_1d798:
 	cmp	r0, #8
 	bne	.L_1d810
@@ -196,7 +196,7 @@ func_801D684:
 .L_1d808:
 	.4byte	gCurrentSprite
 .L_1d80c:
-	.4byte	sUnk_878E800
+	.4byte	sPrimarySpriteAITable
 .L_1d810:
 	mov	r0, #3
 	bl	func_801E258
@@ -260,7 +260,7 @@ func_801D684:
 .L_1d884:
 	.4byte	gCurrentSprite
 .L_1d888:
-	.4byte	sUnk_878E800
+	.4byte	sPrimarySpriteAITable
 
 
 thumb_func_start func_801D88C

@@ -1304,7 +1304,7 @@ void SpriteTreasureGlowHeartRefill(void)
     }
 }
 
-void SpriteTreasure_Unused1(void)
+void SpriteTreasure_Unused(void)
 {
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
@@ -1329,7 +1329,7 @@ void SpriteTreasure_Unused1(void)
     func_8026838();
 }
 
-void SpriteTreasure_Unused2(void)
+void SpriteUnknown10(void)
 {
     gCurrentSprite.disableWarioInteraction = 1;
 
