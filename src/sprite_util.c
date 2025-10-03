@@ -11,12 +11,12 @@
 #include "sprite_wario_interaction.h"
 #include "wario.h"
 
-const s16 sSpriteUtilFallingOffscreenYVelocity[] = {
+const s16 sSpriteFallingOffscreenYVelocity[] = {
     -28, -24, -20, -16, -12, -12, -8, -8, -4, -4, 0,  0,  0,  0,  0,  0,
     0,   4,   0,   4,   8,   8,   12, 8,  12, 12, 16, 16, 20, 24, 28, S16_MAX,
 };
 
-const s16 sSpriteUtilFallingOffscreenYVelocityHeavy[] = {
+const s16 sSpriteFallingOffscreenYVelocityHeavy[] = {
     -16, -12, -12, -12, -8, -8, -4, -4, -4, 0,  0,  4,  0,  4,  0,  4,
     8,   8,   8,   8,   8,  12, 12, 12, 16, 20, 24, 28, 32, 36, 40, S16_MAX,
 };
@@ -153,7 +153,7 @@ const s16 sUnk_8352B40[] = {
     S16_MAX,
 };
 
-const s16 sSpriteUtilThrownForwardSoftYVelocity[] = {
+const s16 sSpriteThrownForwardSoftYVelocity[] = {
     -4,
     0,
     4,
@@ -172,7 +172,7 @@ const s16 sSpriteUtilThrownForwardSoftYVelocity[] = {
     S16_MAX,
 };
 
-const s16 sSpriteUtilThrownForwardSoftYVelocityHeavy[] = {
+const s16 sSpriteThrownForwardSoftYVelocityHeavy[] = {
     -4,
     2,
     3,
@@ -187,29 +187,29 @@ const s16 sSpriteUtilThrownForwardSoftYVelocityHeavy[] = {
     S16_MAX,
 };
 
-const u16 sSpriteUtilThrownForwardHardYVelocity[] = {
+const u16 sSpriteThrownForwardHardYVelocity[] = {
     -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 4, 4, 4, 4, 8, 8, 8, 12, 12, 16, S16_MAX,
 };
 
-const u16 sSpriteUtilThrownForwardHardYVelocityHeavy[] = {
+const u16 sSpriteThrownForwardHardYVelocityHeavy[] = {
     -4, -4, 0, 0, 0, 0, 0, 0, 2, 4, 6, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, S16_MAX,
 };
 
-const u16 sSpriteUtilThrownUpSoftYVelocity[] = {
+const u16 sSpriteThrownUpSoftYVelocity[] = {
     -20, -20, -16, -16, -16, -16, -12, -12, -12, -12, -12, -12, -8, -8, -4, -4,
     0,   0,   0,   4,   4,   4,   8,   8,   8,   12,  12,  12,  16, 16, 20, S16_MAX,
 };
 
-const u16 sSpriteUtilThrownUpSoftYVelocityHeavy[] = {
+const u16 sSpriteThrownUpSoftYVelocityHeavy[] = {
     -16, -16, -12, -12, -10, -10, -8, -8, -4, -4, 0, 0, 0, 4, 4, 4, 8, 8, 12, 12, 12, 16, 16, 16, 20, S16_MAX,
 };
 
-const u16 sSpriteUtilThrownUpHardYVelocity[] = {
+const u16 sSpriteThrownUpHardYVelocity[] = {
     -36, -36, -36, -32, -32, -28, -28, -24, -24, -20, -20, -20, -16, -16, -16, -12,
     -12, -12, -8,  -8,  -4,  0,   0,   0,   0,   4,   4,   8,   12,  16,  20,  S16_MAX,
 };
 
-const u16 sSpriteUtilThrownUpHardYVelocityHeavy[] = {
+const u16 sSpriteThrownUpHardYVelocityHeavy[] = {
     -28, -24, -20, -20, -20, -16, -16, -16, -12, -12, -12, -12, -8, -8, -4,      -4,
     0,   0,   0,   4,   4,   8,   8,   12,  12,  16,  16,  20,  20, 24, S16_MAX,
 };
@@ -598,14 +598,14 @@ void SpriteUtilFallOffscreenRight(void)
 {
     gCurrentSprite.disableWarioInteraction = TRUE;
     gCurrentSprite.xPosition += gCurrentSprite.work2;
-    SpriteUtilLookupGravityByWeight(sSpriteUtilFallingOffscreenYVelocityHeavy, sSpriteUtilFallingOffscreenYVelocity);
+    SpriteUtilLookupGravityByWeight(sSpriteFallingOffscreenYVelocityHeavy, sSpriteFallingOffscreenYVelocity);
 }
 
 void SpriteUtilFallOffscreenLeft(void)
 {
     gCurrentSprite.disableWarioInteraction = TRUE;
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
-    SpriteUtilLookupGravityByWeight(sSpriteUtilFallingOffscreenYVelocityHeavy, sSpriteUtilFallingOffscreenYVelocity);
+    SpriteUtilLookupGravityByWeight(sSpriteFallingOffscreenYVelocityHeavy, sSpriteFallingOffscreenYVelocity);
 }
 
 void func_8024180(void)
@@ -1540,9 +1540,7 @@ void SpriteUtilThrownLeftSoft(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
-        sSpriteUtilThrownForwardSoftYVelocityHeavy, sSpriteUtilThrownForwardSoftYVelocity
-    );
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownForwardSoftYVelocityHeavy, sSpriteThrownForwardSoftYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1558,9 +1556,7 @@ void SpriteUtilThrownLeftHard(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
-        sSpriteUtilThrownForwardHardYVelocityHeavy, sSpriteUtilThrownForwardHardYVelocity
-    );
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownForwardHardYVelocityHeavy, sSpriteThrownForwardHardYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1576,7 +1572,7 @@ void SpriteUtilThrownUpLeftSoft(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpSoftYVelocityHeavy, sSpriteUtilThrownUpSoftYVelocity);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownUpSoftYVelocityHeavy, sSpriteThrownUpSoftYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1592,7 +1588,7 @@ void SpriteUtilThrownUpLeftHard(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpHardYVelocityHeavy, sSpriteUtilThrownUpHardYVelocity);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownUpHardYVelocityHeavy, sSpriteThrownUpHardYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1666,9 +1662,7 @@ void SpriteUtilThrownRightSoft(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
-        sSpriteUtilThrownForwardSoftYVelocityHeavy, sSpriteUtilThrownForwardSoftYVelocity
-    );
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownForwardSoftYVelocityHeavy, sSpriteThrownForwardSoftYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1684,9 +1678,7 @@ void SpriteUtilThrownRightHard(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(
-        sSpriteUtilThrownForwardHardYVelocityHeavy, sSpriteUtilThrownForwardHardYVelocity
-    );
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownForwardHardYVelocityHeavy, sSpriteThrownForwardHardYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1702,7 +1694,7 @@ void SpriteUtilThrownUpRightSoft(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpSoftYVelocityHeavy, sSpriteUtilThrownUpSoftYVelocity);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownUpSoftYVelocityHeavy, sSpriteThrownUpSoftYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {
@@ -1718,7 +1710,7 @@ void SpriteUtilThrownUpRightHard(void)
     s16 yVelocity;
     u32 timer;
 
-    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteUtilThrownUpHardYVelocityHeavy, sSpriteUtilThrownUpHardYVelocity);
+    SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(sSpriteThrownUpHardYVelocityHeavy, sSpriteThrownUpHardYVelocity);
     if (yVelocity == 0) {
         gCurrentSprite.work0 = 1;
     } else if (yVelocity > 0) {

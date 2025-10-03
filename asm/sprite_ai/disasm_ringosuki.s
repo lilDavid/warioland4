@@ -1591,7 +1591,7 @@ func_8047520:
 .L_4754c:
 	.4byte	gCurrentSprite
 .L_47550:
-	.4byte	sSpriteUtilFallingOffscreenYVelocity
+	.4byte	sSpriteFallingOffscreenYVelocity
 .L_47554:
 	.4byte	0x7FFF
 .L_47558:
@@ -1651,7 +1651,7 @@ func_8047584:
 .L_475b0:
 	.4byte	gCurrentSprite
 .L_475b4:
-	.4byte	sSpriteUtilFallingOffscreenYVelocity
+	.4byte	sSpriteFallingOffscreenYVelocity
 .L_475b8:
 	.4byte	0x7FFF
 .L_475bc:

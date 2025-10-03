@@ -61,8 +61,8 @@ enum NearSprite {
 extern u8 gUnk_3000A50;
 extern u8 gUnk_3000A51;
 
-extern const s16 sSpriteUtilFallingOffscreenYVelocity[];
-extern const s16 sSpriteUtilFallingOffscreenYVelocityHeavy[];
+extern const s16 sSpriteFallingOffscreenYVelocity[];
+extern const s16 sSpriteFallingOffscreenYVelocityHeavy[];
 extern const s16 sUnk_8352A28[];
 extern const s16 sUnk_8352A68[];
 extern const s16 sUnk_8352AA2[];
@@ -76,14 +76,14 @@ extern const s16 sUnk_8352AFC[];
 extern const s16 sUnk_8352B18[];
 extern const s16 sUnk_8352B2C[];
 extern const s16 sUnk_8352B40[];
-extern const s16 sSpriteUtilThrownForwardSoftYVelocity[];
-extern const s16 sSpriteUtilThrownForwardSoftYVelocityHeavy[];
-extern const u16 sSpriteUtilThrownForwardHardYVelocity[];
-extern const u16 sSpriteUtilThrownForwardHardYVelocityHeavy[];
-extern const u16 sSpriteUtilThrownUpSoftYVelocity[];
-extern const u16 sSpriteUtilThrownUpSoftYVelocityHeavy[];
-extern const u16 sSpriteUtilThrownUpHardYVelocity[];
-extern const u16 sSpriteUtilThrownUpHardYVelocityHeavy[];
+extern const s16 sSpriteThrownForwardSoftYVelocity[];
+extern const s16 sSpriteThrownForwardSoftYVelocityHeavy[];
+extern const u16 sSpriteThrownForwardHardYVelocity[];
+extern const u16 sSpriteThrownForwardHardYVelocityHeavy[];
+extern const u16 sSpriteThrownUpSoftYVelocity[];
+extern const u16 sSpriteThrownUpSoftYVelocityHeavy[];
+extern const u16 sSpriteThrownUpHardYVelocity[];
+extern const u16 sSpriteThrownUpHardYVelocityHeavy[];
 
 void func_80238A4(void);
 void func_80238E8(void);
