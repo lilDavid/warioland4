@@ -1736,7 +1736,7 @@ func_8070E24:
 .L_70e4c:
 	.4byte	gUnk_3000035
 .L_70e50:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_70e54:
 	cmp	r0, #1
 	bls	.L_70e5c

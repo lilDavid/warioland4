@@ -667,7 +667,7 @@ func_80846F4:
 .L_84ae8:
 	.4byte	sUnk_869F648
 .L_84aec:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_84af0:
 	.4byte	0x20E0
 .L_84af4:

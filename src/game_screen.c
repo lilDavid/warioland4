@@ -60,7 +60,7 @@ u32 GameScreenSubroutine(void)
 
             if (CHECK_KEYS_ALL(gButtonsPressed, START_BUTTON) && (gWarioPauseTimer == 0) && (gWarioData.unk_02 == 0)) {
                 if ((gUnk_300001B != 0) && (gDemoState == 0)) {
-                    if ((gUnk_3000047 == 1) || ((gCurrentRoom | gSwitchStates.red) == 0)) {
+                    if ((gTimerState == 1) || ((gCurrentRoom | gSwitchStates[SWITCH_RED]) == 0)) {
                         gSubGameMode = 7;
                         gUnk_300001A = 1;
                     }
@@ -400,7 +400,7 @@ void GameScreenInitAndLoadGenerics(void)
         gWarioPauseTimer = 0;
         gDisableWario = 0;
         if (!gHasTemporarySave && !gUnk_3000025) {
-            gUnk_3000047 = 0;
+            gTimerState = 0;
             if (!(gCurrentPassage == 0 && gCurrentStageNumber == 2) && gCurrentStageNumber != 4) {
                 gWarioPauseTimer = 0x3E8;
                 gDisableWario = 1;
@@ -420,7 +420,7 @@ void GameScreenInitAndLoadGenerics(void)
     gHasTemporarySave = 0;
     gPauseFlag = 0;
 
-    if (gUnk_3000037 != 0) {
+    if (gEnableHBlank) {
         REG_IE |= INTR_FLAG_HBLANK;
         REG_DISPSTAT |= DISPSTAT_HBLANK_INTR;
     } else {
@@ -446,8 +446,8 @@ void GameScreenInitWario(void)
             gCurrentCarriedSprite = sEmptyCarriedSprite;
         }
     }
-    if (gWarioData.reaction == 0 && gWarioData.unk_01 == 0x31) {
-        gWarioData.unk_01 = 0x32;
+    if (gWarioData.reaction == 0 && gWarioData.pose == 0x31) {
+        gWarioData.pose = 0x32;
         gWarioData.unk_1F = 0;
         gUnk_30031BE = 0;
     }
@@ -458,11 +458,11 @@ void GameScreenInitWario(void)
         if (gWarioData.reaction != 0) {
             return;
         }
-        if (gWarioData.unk_01 == 23) {
+        if (gWarioData.pose == 23) {
             m4aSongNumStart(SOUND_29);
-        } else if (gWarioData.unk_01 == 28) {
+        } else if (gWarioData.pose == 28) {
             m4aSongNumStart(SOUND_23);
-        } else if (gWarioData.unk_01 == 35) {
+        } else if (gWarioData.pose == 35) {
             m4aSongNumStart(SOUND_27);
         }
         return;

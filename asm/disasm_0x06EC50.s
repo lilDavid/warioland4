@@ -2028,7 +2028,7 @@ func_806F9D8:
 	strb	r0, [r1, #3]
 	b	.L_6fb9a
 .L_6fad8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_6fadc:
 	.4byte	gWarioPauseTimer
 .L_6fae0:

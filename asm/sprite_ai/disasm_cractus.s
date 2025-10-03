@@ -1161,7 +1161,7 @@ func_805B4DC:
 .L_5b4fc:
 	.4byte	gWarioPauseTimer
 .L_5b500:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_5b504:
 	.4byte	gCurrentSprite
 
@@ -3670,7 +3670,7 @@ func_805C758:
 .L_5c7f8:
 	.4byte	gCurrentSprite
 .L_5c7fc:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_5c800:
 	.4byte	gUnk_3000A5A
 .L_5c804:

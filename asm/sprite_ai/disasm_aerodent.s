@@ -2576,7 +2576,7 @@ func_8054D80:
 .L_54e2c:
 	.4byte	gSpriteData
 .L_54e30:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 
 
 thumb_func_start func_8054E34

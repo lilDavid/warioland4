@@ -180,7 +180,7 @@ func_8074808:
 .L_74954:
 	.4byte	gHeartMeter
 .L_74958:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_7495c:
 	.4byte	gMainTimer
 .L_74960:
@@ -383,7 +383,7 @@ func_8074988:
 .L_74ad8:
 	.4byte	gCurrentRoom
 .L_74adc:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_74ae0:
 	.4byte	0xfffffe00
 .L_74ae4:
@@ -619,7 +619,7 @@ func_8074988:
 	add	ip, r1
 	b	.L_74d7a
 .L_74cac:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_74cb0:
 	.4byte	0xfffffe00
 .L_74cb4:

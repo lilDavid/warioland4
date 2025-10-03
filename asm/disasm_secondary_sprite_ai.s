@@ -2754,7 +2754,7 @@ func_8077D5C:
 	b	.L_781ee
 	.align	2, 0
 .L_77da8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_77dac:
 	ldr	r0, .L_77dc0
 	ldrb	r0, [r0, #3]
@@ -3615,7 +3615,7 @@ func_80782A4:
 .L_7842c:
 	.4byte	sUnk_840F1C8
 .L_78430:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78434:
 	cmp	r0, #4
 	bne	.L_78442
@@ -3701,7 +3701,7 @@ func_80782A4:
 .L_784d0:
 	.4byte	sUnk_840F200
 .L_784d4:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_784d8:
 	ldr	r3, .L_78520
 	ldrb	r1, [r3, #0]
@@ -3792,7 +3792,7 @@ func_80782A4:
 .L_78580:
 	.4byte	sUnk_840F214
 .L_78584:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78588:
 	.4byte	gStageScore
 .L_7858c:
@@ -3989,7 +3989,7 @@ func_80782A4:
 	b	.L_789ec
 	.align	2, 0
 .L_78704:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78708:
 	.4byte	gCurrentSecondarySprite
 .L_7870c:
@@ -4162,7 +4162,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_78840:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78844:
 	.4byte	gUnk_3000C10
 .L_78848:
@@ -4259,7 +4259,7 @@ func_80782A4:
 .L_788f0:
 	.4byte	gCurrentSecondarySprite
 .L_788f4:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_788f8:
 	ldr	r0, .L_78944
 	ldr	r1, .L_78948
@@ -4307,7 +4307,7 @@ func_80782A4:
 .L_7894c:
 	.4byte	gCurrentSecondarySprite
 .L_78950:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78954:
 	.4byte	gCurrentStageNumber
 .L_78958:
@@ -4822,7 +4822,7 @@ func_8078A80:
 .L_78d38:
 	.4byte	gCurrentSecondarySprite
 .L_78d3c:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78d40:
 	.4byte	gWarioPauseTimer
 .L_78d44:
@@ -5063,7 +5063,7 @@ func_8078E30:
 	b	.L_79064
 	.align	2, 0
 .L_78f10:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_78f14:
 	ldrb	r0, [r2, #4]
 	cmp	r0, #59	@ 0x3b
@@ -5314,7 +5314,7 @@ func_807907C:
 	b	.L_79154
 	.align	2, 0
 .L_790e0:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_790e4:
 	ldrb	r0, [r3, #4]
 	cmp	r0, #59	@ 0x3b
@@ -5560,7 +5560,7 @@ func_807915C:
 .L_792b8:
 	.4byte	gCurrentSecondarySprite
 .L_792bc:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_792c0:
 	.4byte	sUnk_8411FEA
 .L_792c4:
@@ -5591,7 +5591,7 @@ func_807915C:
 	ldr	r1, .L_7931c
 	b	.L_79438
 .L_792f8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_792fc:
 	.4byte	0x040000d4
 .L_79300:

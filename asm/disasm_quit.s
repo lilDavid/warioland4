@@ -30,7 +30,7 @@ QuitSubroutine:
 .L_72c90:
 	.4byte	func_8072C60
 .L_72c94:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_72c98:
 	.4byte	gSwitchPressed
 .L_72c9c:

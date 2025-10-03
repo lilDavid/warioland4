@@ -58,7 +58,7 @@ func_8071598:
 	pop	{r0}
 	bx	r0
 .L_715fc:
-	.4byte	gUnk_3000037
+	.4byte	gEnableHBlank
 
 
 thumb_func_start func_8071600
@@ -86,7 +86,7 @@ func_8071600:
 .L_71628:
 	.4byte	gUnk_3000035
 .L_7162c:
-	.4byte	gUnk_3000037
+	.4byte	gEnableHBlank
 .L_71630:
 	cmp	r1, #7
 	bne	.L_71638
@@ -112,7 +112,7 @@ func_8071600:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_71658:
-	.4byte	gUnk_3000037
+	.4byte	gEnableHBlank
 .L_7165c:
 	.4byte	.L_71660
 .L_71660:
@@ -668,7 +668,7 @@ func_8071A2C:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_71a40:
-	.4byte	gUnk_3000037
+	.4byte	gEnableHBlank
 .L_71a44:
 	.4byte	.L_71a48
 .L_71a48:

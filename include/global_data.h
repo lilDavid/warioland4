@@ -48,19 +48,20 @@ enum SaveFile {
     SAVE_COUNT
 };
 
+enum SwitchID {
+    SWITCH_UNUSED,
+    SWITCH_RED,
+    SWITCH_PURPLE,
+    SWITCH_GREEN,
+    SWITCH_ESCAPE,
+    SWITCH_COUNT
+};
+
 enum SwitchState {
     SWITCH_STATE_OFF,
     SWITCH_STATE_ON,
     SWITCH_STATE_SWITCHING_ON,
     SWITCH_STATE_SWITCHING_OFF,
-};
-
-struct SwitchStates {
-    u8 unknown;
-    u8 red;
-    u8 purple;
-    u8 green;
-    u8 escape;
 };
 
 struct DebugInfo {
@@ -135,8 +136,8 @@ extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
 extern s8 gCurrentStageID;
 extern u16 gRandomSeed;
-// gUnk_3000008
-// gUnk_300000A
+// gMedalCount
+// gMinigameHighScores
 extern u8 gCurrentPassageTemp;
 extern u8 gClearMessage;
 extern u8 gHasTemporarySave;
@@ -146,7 +147,7 @@ extern u8 gTitleScreenStyle;
 extern u8 gLanguage;
 extern u8 gDifficulty;
 extern u8 gResetSaveFile;
-// gUnk_3000019
+// gSelectedSaveFile
 extern s8 gUnk_300001A;
 extern u8 gUnk_300001B;
 // gUnk_300001C
@@ -163,11 +164,11 @@ extern u8 gUnk_3000025;
 extern s8 gUnk_3000028;
 extern u16 gBldAlpha;
 extern u16 gBldCnt;
-extern struct SwitchStates gSwitchStates;
+extern u8 gSwitchStates[SWITCH_COUNT];
 extern u8 gDrawWarioOverBackground;
 // gUnk_3000034
 // gUnk_3000035
-extern u8 gUnk_3000037;
+extern u8 gEnableHBlank;
 // gUnk_300003A
 // gUnk_300003C
 // gUnk_300003E
@@ -175,7 +176,7 @@ extern u8 gUnk_3000037;
 // gUnk_3000044
 // gUnk_3000045
 // gUnk_3000046
-extern u8 gUnk_3000047;
+extern u8 gTimerState;
 extern u8 gStageExitType;
 extern struct DebugInfo gUnk_300004C;
 extern struct BackgroundInfo gBackgroundInfo;

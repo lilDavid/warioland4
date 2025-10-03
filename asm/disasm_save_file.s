@@ -913,7 +913,7 @@ func_8072FB0:
 .L_73330:
 	.4byte	gUnk_300342C
 .L_73334:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_73338:
 	.4byte	gUnk_300003E
 .L_7333c:
@@ -1536,7 +1536,7 @@ func_807345C:
 .L_737c0:
 	.4byte	gUnk_300342C
 .L_737c4:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_737c8:
 	.4byte	gUnk_300003E
 .L_737cc:
@@ -1835,7 +1835,7 @@ func_80738FC:
 .L_739f8:
 	.4byte	gCurrentStageNumber
 .L_739fc:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_73a00:
 	.4byte	gTotalScore
 .L_73a04:
@@ -1847,7 +1847,7 @@ func_80738FC:
 .L_73a10:
 	.4byte	gHighScoreTable
 .L_73a14:
-	.4byte	gUnk_300000A
+	.4byte	gMinigameHighScores
 
 
 thumb_func_start func_8073A18
@@ -1976,7 +1976,7 @@ func_8073A18:
 .L_73af4:
 	.4byte	gCurrentStageNumber
 .L_73af8:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_73afc:
 	.4byte	gTotalScore
 .L_73b00:
@@ -1986,7 +1986,7 @@ func_8073A18:
 .L_73b08:
 	.4byte	gHighScoreTable
 .L_73b0c:
-	.4byte	gUnk_300000A
+	.4byte	gMinigameHighScores
 
 
 thumb_func_start func_8073B10
@@ -2102,7 +2102,7 @@ func_8073BA0:
 .L_73bd0:
 	.4byte	sUnk_84009BC
 .L_73bd4:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_73bd8:
 	.4byte	sUnk_84009C4
 .L_73bdc:
@@ -2153,7 +2153,7 @@ func_8073BE0:
 .L_73c30:
 	.4byte	gUnk_3003BF8
 .L_73c34:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_73c38:
 	.4byte	gSaveFlag
 .L_73c3c:
@@ -2203,7 +2203,7 @@ func_8073BE0:
 	strb	r1, [r0, #0]
 	b	.L_73cc4
 .L_73c94:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_73c98:
 	.4byte	gSaveFlag
 .L_73c9c:
@@ -2281,7 +2281,7 @@ func_8073CDC:
 	b	.L_73d78
 	.align	2, 0
 .L_73d28:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_73d2c:
 	.4byte	0x040000d4
 .L_73d30:
@@ -2615,7 +2615,7 @@ func_8073E9C:
 	b	.L_73fc2
 	.align	2, 0
 .L_73f84:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_73f88:
 	.4byte	sUnk_84009CC
 .L_73f8c:
@@ -2701,7 +2701,7 @@ func_8073FD8:
 	pop	{r0}
 	bx	r0
 .L_74020:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_74024:
 	.4byte	0x040000d4
 .L_74028:
@@ -2745,7 +2745,7 @@ func_807403C:
 	pop	{r0}
 	bx	r0
 .L_74070:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_74074:
 	.4byte	0x040000d4
 .L_74078:
@@ -2847,7 +2847,7 @@ func_8074088:
 .L_7412c:
 	.4byte	0x02038080
 .L_74130:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_74134:
 	.4byte	sUnk_84009DC
 .L_74138:

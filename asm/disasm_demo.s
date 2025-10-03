@@ -186,7 +186,7 @@ func_8072964:
 .L_72acc:
 	.4byte	gPauseFlag
 .L_72ad0:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_72ad4:
 	.4byte	gSwitchPressed
 .L_72ad8:

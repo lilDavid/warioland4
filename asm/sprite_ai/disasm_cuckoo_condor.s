@@ -715,7 +715,7 @@ func_802EDE4:
 .L_2ee0c:
 	.4byte	gWarioPauseTimer
 .L_2ee10:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_2ee14:
 	.4byte	gCurrentSprite
 
@@ -1914,7 +1914,7 @@ func_802F64C:
 .L_2f6e8:
 	.4byte	gCurrentSprite
 .L_2f6ec:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_2f6f0:
 	.4byte	gSpriteData
 .L_2f6f4:
@@ -2674,7 +2674,7 @@ func_802FCD0:
 .L_2fd4c:
 	.4byte	gSpriteData
 .L_2fd50:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_2fd54:
 	.4byte	gUnk_3000A5B
 .L_2fd58:
@@ -2728,7 +2728,7 @@ func_802FCD0:
 .L_2fdb4:
 	.4byte	gSpriteData
 .L_2fdb8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_2fdbc:
 	.4byte	gUnk_3000A5B
 .L_2fdc0:

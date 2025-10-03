@@ -9764,7 +9764,7 @@ func_8053354:
 .L_533d8:
 	.4byte	0x7FFF
 .L_533dc:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_533e0:
 	.4byte	sUnk_83D85FC
 .L_533e4:
@@ -10174,7 +10174,7 @@ SpriteBossTreasureChest:
 .L_536c8:
 	.4byte	gCurrentSprite
 .L_536cc:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_536d0:
 	ldrb	r0, [r1, #28]
 	cmp	r0, #20

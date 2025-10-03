@@ -2286,7 +2286,7 @@ func_801F628:
 	add	r0, r3, r5
 	b	.L_1f700
 .L_1f6e8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_1f6ec:
 	.4byte	gWarioData
 .L_1f6f0:
@@ -4820,7 +4820,7 @@ func_80209E0:
 	b	.L_20afa
 	.align	2, 0
 .L_20ae8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_20aec:
 	.4byte	sUnk_82DECA0
 .L_20af0:
@@ -6231,7 +6231,7 @@ func_8021500:
 .L_2152c:
 	.4byte	gWarioData
 .L_21530:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_21534:
 	.4byte	gUnk_3000A52
 .L_21538:
@@ -9386,7 +9386,7 @@ func_8022C64:
 	b	.L_22ce2
 	.align	2, 0
 .L_22c88:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_22c8c:
 	.4byte	gWarioData
 .L_22c90:

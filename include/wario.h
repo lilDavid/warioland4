@@ -28,7 +28,7 @@ enum WarioReaction {
 
 struct WarioData {
     /* 0x00 */ u8 reaction;
-    /* 0x01 */ u8 unk_01;
+    /* 0x01 */ u8 pose;
     /* 0x02 */ u8 unk_02;
     /* 0x03 */ u8 unk_03;
     /* 0x04 */ u8 damageTimer;

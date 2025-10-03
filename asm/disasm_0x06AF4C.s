@@ -3057,7 +3057,7 @@ BackgroundProcessMain:
 	bx	r0
 	.align	2, 0
 .L_6c67c:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_6c680:
 	.4byte	gUnk_3000044
 .L_6c684:

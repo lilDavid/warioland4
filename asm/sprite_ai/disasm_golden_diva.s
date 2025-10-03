@@ -2505,7 +2505,7 @@ func_8063D58:
 .L_63db0:
 	.4byte	gWarioPauseTimer
 .L_63db4:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 
 
 thumb_func_start func_8063DB8
@@ -4263,7 +4263,7 @@ func_8064AF0:
 .L_64b28:
 	.4byte	gUnk_3000A5B
 .L_64b2c:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_64b30:
 	.4byte	gUnk_3000A64
 .L_64b34:

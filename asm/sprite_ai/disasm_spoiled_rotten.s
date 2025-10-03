@@ -235,7 +235,7 @@ func_803AC38:
 .L_3ad18:
 	.4byte	gWarioPauseTimer
 .L_3ad1c:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_3ad20:
 	.4byte	0xFFFFFEF0
 .L_3ad24:
@@ -1239,7 +1239,7 @@ func_803B454:
 .L_3b488:
 	.4byte	gCurrentSprite
 .L_3b48c:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_3b490:
 	.4byte	gWarioPauseTimer
 .L_3b494:
@@ -1319,7 +1319,7 @@ func_803B49C:
 .L_3b520:
 	.4byte	gCurrentSprite
 .L_3b524:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_3b528:
 	mov	r0, #160	@ 0xa0
 	bl	m4aSongNumStart

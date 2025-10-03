@@ -124,7 +124,7 @@ func_8000D18:
 .L_d8c:
 	.4byte	sUnk_8095404
 .L_d90:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_d94:
 	.4byte	0x02039a80
 
@@ -308,7 +308,7 @@ func_8000EC4:
 .L_ee4:
 	.4byte	sUnk_8095404
 .L_ee8:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 
 
 thumb_func_start func_8000EEC
@@ -331,7 +331,7 @@ func_8000EEC:
 .L_f0c:
 	.4byte	sUnk_80953EC
 .L_f10:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 
 
 thumb_func_start func_8000F14
@@ -354,7 +354,7 @@ func_8000F14:
 .L_f34:
 	.4byte	sUnk_80953F4
 .L_f38:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 
 
 thumb_func_start func_8000F3C
@@ -377,7 +377,7 @@ func_8000F3C:
 .L_f5c:
 	.4byte	sUnk_80953FC
 .L_f60:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 
 
 thumb_func_start func_8000F64
@@ -400,7 +400,7 @@ func_8000F64:
 .L_f84:
 	.4byte	sUnk_84009BC
 .L_f88:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_f8c:
 	.4byte	sUnk_80953EC
 
@@ -425,7 +425,7 @@ func_8000F90:
 .L_fb0:
 	.4byte	sUnk_84009C4
 .L_fb4:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_fb8:
 	.4byte	sUnk_80953F4
 
@@ -450,7 +450,7 @@ func_8000FBC:
 .L_fdc:
 	.4byte	sUnk_84009CC
 .L_fe0:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_fe4:
 	.4byte	sUnk_8095404
 

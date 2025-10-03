@@ -1158,7 +1158,7 @@ SpriteBowler:
 .L_4e2b4:
 	.4byte	gHeartMeter
 .L_4e2b8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 
 
 thumb_func_start SpriteUnknownBA

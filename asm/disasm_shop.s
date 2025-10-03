@@ -485,7 +485,7 @@ func_808FCE0:
 .L_8ff20:
 	.4byte	sUnk_8731858
 .L_8ff24:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_8ff28:
 	.4byte	0x80001400
 .L_8ff2c:
@@ -592,7 +592,7 @@ func_808FCE0:
 .L_8ffec:
 	.4byte	gUnk_3004A58
 .L_8fff0:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_8fff4:
 	.4byte	sUnk_872FF64
 .L_8fff8:
@@ -1172,7 +1172,7 @@ func_8090374:
 .L_9043c:
 	.4byte	gUnk_3004A58
 .L_90440:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_90444:
 	.4byte	sUnk_872FF64
 .L_90448:
@@ -1242,7 +1242,7 @@ func_809047C:
 .L_904c0:
 	.4byte	0x00000222
 .L_904c4:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_904c8:
 	.4byte	sUnk_8733278
 .L_904cc:

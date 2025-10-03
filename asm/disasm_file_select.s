@@ -516,7 +516,7 @@ func_8090A40:
 .L_90dac:
 	.4byte	gPauseFlag
 .L_90db0:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_90db4:
 	.4byte	gSwitchPressed
 .L_90db8:
@@ -546,7 +546,7 @@ func_8090A40:
 .L_90de8:
 	.4byte	gUnk_3004A68
 .L_90dec:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_90df0:
 	.4byte	gUnk_3004A70
 .L_90df4:
@@ -1579,7 +1579,7 @@ func_809151C:
 .L_91568:
 	.4byte	gUnk_3003BF8
 .L_9156c:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91570:
 	.4byte	gHasTemporarySave
 .L_91574:
@@ -1608,7 +1608,7 @@ func_809151C:
 .L_915a0:
 	.4byte	gUnk_3003BF8
 .L_915a4:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 
 
 thumb_func_start func_80915A8
@@ -1765,7 +1765,7 @@ func_80915A8:
 .L_916c8:
 	.4byte	gUnk_300188E
 .L_916cc:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_916d0:
 	.4byte	gUnk_3003BF8
 .L_916d4:
@@ -2034,7 +2034,7 @@ FileSelectSubroutine:
 	mov	r0, #3
 	b	.L_919b0
 .L_918e8:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_918ec:
 	.4byte	0x0000011f
 .L_918f0:
@@ -2070,7 +2070,7 @@ FileSelectSubroutine:
 .L_91928:
 	.4byte	gUnk_3004A70
 .L_9192c:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91930:
 	ldrh	r0, [r3, #0]
 	cmp	r0, #20
@@ -2093,7 +2093,7 @@ FileSelectSubroutine:
 .L_91954:
 	.4byte	gUnk_3003BF8
 .L_91958:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_9195c:
 	.4byte	gSubGameMode
 .L_91960:
@@ -2186,7 +2186,7 @@ func_80919D4:
 .L_91a04:
 	.4byte	gUnk_3003BF8
 .L_91a08:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91a0c:
 	.4byte	gUnk_3004A68
 .L_91a10:
@@ -2227,7 +2227,7 @@ func_80919D4:
 .L_91a50:
 	.4byte	gUnk_3003BF8
 .L_91a54:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91a58:
 	strb	r4, [r0, #1]
 .L_91a5a:
@@ -2397,7 +2397,7 @@ func_8091ACC:
 .L_91ba0:
 	.4byte	gUnk_3003BF8
 .L_91ba4:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91ba8:
 	ldrb	r1, [r2, #2]
 	mov	r3, #2
@@ -2420,7 +2420,7 @@ func_8091ACC:
 .L_91bcc:
 	.4byte	gUnk_3003BF8
 .L_91bd0:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91bd4:
 	mov	r0, #0
 	bl	func_80919D4
@@ -2437,7 +2437,7 @@ func_8091ACC:
 .L_91bf0:
 	.4byte	gUnk_3003BF8
 .L_91bf4:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91bf8:
 	mov	r0, #1
 	strb	r0, [r2, #2]
@@ -2524,7 +2524,7 @@ func_8091ACC:
 .L_91ca4:
 	.4byte	sUnk_84009BC
 .L_91ca8:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_91cac:
 	.4byte	0x81000200
 .L_91cb0:
@@ -3173,7 +3173,7 @@ func_80920F8:
 .L_92140:
 	.4byte	0x00004890
 .L_92144:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_92148:
 	ldr	r1, .L_92160
 	mov	r0, #240	@ 0xf0
@@ -3478,7 +3478,7 @@ func_8092310:
 .L_92360:
 	.4byte	gUnk_3004A68
 .L_92364:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_92368:
 	.4byte	gUnk_3004A70
 
@@ -3656,7 +3656,7 @@ func_8092460:
 	bx	r0
 	.align	2, 0
 .L_924a0:
-	.4byte	gUnk_3000019
+	.4byte	gSelectedSaveFile
 .L_924a4:
 	.4byte	gUnk_3004A70
 .L_924a8:

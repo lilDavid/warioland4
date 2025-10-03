@@ -983,7 +983,7 @@ func_8075988:
 .L_759c4:
 	.4byte	gSubGameMode
 .L_759c8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_759cc:
 	.4byte	gWarioPauseTimer
 .L_759d0:
@@ -1106,7 +1106,7 @@ func_8075988:
 .L_75ab8:
 	.4byte	gSwitchPressed
 .L_75abc:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_75ac0:
 	.4byte	gUnk_3000BF0
 .L_75ac4:

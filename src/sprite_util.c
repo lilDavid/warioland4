@@ -1071,7 +1071,7 @@ void SpriteUtilLiftingSpriteRight(void)
     gCurrentSprite.disableWarioInteraction = 1;
     switch (gCurrentCarriedSprite.state) {
         case 4:
-            if (gWarioData.unk_01 == 4) {
+            if (gWarioData.pose == 4) {
                 gCurrentSprite.pose = POSE_33;
                 gCurrentCarriedSprite.state = 0;
             } else {
@@ -1145,7 +1145,7 @@ void SpriteUtilLiftingSpriteLeft(void)
     gCurrentSprite.disableWarioInteraction = 1;
     switch (gCurrentCarriedSprite.state) {
         case 4:
-            if (gWarioData.unk_01 == 4) {
+            if (gWarioData.pose == 4) {
                 gCurrentSprite.pose = POSE_35;
                 gCurrentCarriedSprite.state = 0;
             } else {
@@ -1309,7 +1309,7 @@ void SpriteUtilCarryingSpriteRight(void)
             gCurrentSprite.work3 = 0;
             if (gCurrentCarriedSprite.unk1 & 0x80) {
                 gCurrentSprite.work2 = 4;
-                if (gWarioData.unk_01 == 0x25) {
+                if (gWarioData.pose == 0x25) {
                     gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_HARD_INIT;
                 } else {
                     gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_SOFT_INIT;
@@ -1317,7 +1317,7 @@ void SpriteUtilCarryingSpriteRight(void)
                 return;
             }
 
-            if (gWarioData.unk_01 == 0x25) {
+            if (gWarioData.pose == 0x25) {
                 gCurrentSprite.pose = POSE_THROWN_RIGHT_HARD_INIT;
                 if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                     gCurrentSprite.work2 = 0x10;
@@ -1332,7 +1332,7 @@ void SpriteUtilCarryingSpriteRight(void)
             return;
 
         default:
-            if (gWarioData.unk_01 == 5) {
+            if (gWarioData.pose == 5) {
                 gCurrentSprite.pose = POSE_49;
             } else {
                 gCurrentSprite.pose = POSE_1D;
@@ -1443,7 +1443,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             gCurrentSprite.work3 = 0;
             if (gCurrentCarriedSprite.unk1 & 0x80) {
                 gCurrentSprite.work2 = 4;
-                if (gWarioData.unk_01 == 0x25) {
+                if (gWarioData.pose == 0x25) {
                     gCurrentSprite.pose = POSE_THROWN_UP_LEFT_HARD_INIT;
                 } else {
                     gCurrentSprite.pose = POSE_THROWN_UP_LEFT_SOFT_INIT;
@@ -1451,7 +1451,7 @@ void SpriteUtilCarryingSpriteLeft(void)
                 return;
             }
 
-            if (gWarioData.unk_01 == 0x25) {
+            if (gWarioData.pose == 0x25) {
                 gCurrentSprite.pose = POSE_THROWN_LEFT_HARD_INIT;
                 if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                     gCurrentSprite.work2 = 0x10;
@@ -1466,7 +1466,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             return;
 
         default:
-            if (gWarioData.unk_01 == 5) {
+            if (gWarioData.pose == 5) {
                 gCurrentSprite.pose = POSE_47;
             } else {
                 gCurrentSprite.pose = POSE_1D;
@@ -2733,7 +2733,7 @@ void SpriteUtilStartBossTimer(void)
 
     sUnk_82DECA0[gWarioData.reaction](2);
     gWarioPauseTimer = CONVERT_SECONDS(3 + 1 / 3.0);
-    gUnk_3000047 = 1;
+    gTimerState = 1;
     gUnk_3000BEC = 0;
     gUnk_3000C01 = 3;
     gUnk_3000C03 = 2;

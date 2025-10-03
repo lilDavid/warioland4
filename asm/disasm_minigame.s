@@ -1287,13 +1287,13 @@ func_8089FFC:
 .L_8a2d4:
 	.4byte	0x000059a0
 .L_8a2d8:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_8a2dc:
 	.4byte	0x000050e0
 .L_8a2e0:
 	.4byte	0x000052a0
 .L_8a2e4:
-	.4byte	gUnk_300000A
+	.4byte	gMinigameHighScores
 .L_8a2e8:
 	.4byte	sUnk_86EA75C
 .L_8a2ec:

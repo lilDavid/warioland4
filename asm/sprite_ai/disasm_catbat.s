@@ -785,7 +785,7 @@ func_8048420:
 .L_48490:
 	.4byte	gWarioPauseTimer
 .L_48494:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_48498:
 	.4byte	gSwitchStates
 
@@ -1499,7 +1499,7 @@ func_8048980:
 .L_489e8:
 	.4byte	gSwitchStates
 .L_489ec:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_489f0:
 	.4byte	gUnk_3000A5A
 .L_489f4:
@@ -3046,7 +3046,7 @@ func_80495A8:
 .L_495f0:
 	.4byte	gWarioPauseTimer
 .L_495f4:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_495f8:
 	.4byte	0xFFFB
 
@@ -3968,7 +3968,7 @@ func_8049C64:
 	b	.L_49d8c
 	.align	2, 0
 .L_49c7c:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_49c80:
 	.4byte	gCurrentSprite
 .L_49c84:
@@ -4635,7 +4635,7 @@ SpriteUnknownE0:
 	bl	SpriteUtilDie
 	b	.L_4a350
 .L_4a254:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_4a258:
 	ldr	r0, .L_4a26c
 	ldrb	r0, [r0, #28]

@@ -15,8 +15,8 @@ SECTIONS {
         . = 0x0003; gCurrentStageNumber = .;
         . = 0x0004; gCurrentStageID = .;
         . = 0x0006; gRandomSeed = .;
-        . = 0x0008; gUnk_3000008 = .;
-        . = 0x000a; gUnk_300000A = .;
+        . = 0x0008; gMedalCount = .;
+        . = 0x000a; gMinigameHighScores = .;
         . = 0x0010; gCurrentPassageTemp = .;
         . = 0x0011; gClearMessage = .;
         . = 0x0012; gHasTemporarySave = .;
@@ -26,7 +26,7 @@ SECTIONS {
         . = 0x0016; gLanguage = .;
         . = 0x0017; gDifficulty = .;
         . = 0x0018; gResetSaveFile = .;
-        . = 0x0019; gUnk_3000019 = .;
+        . = 0x0019; gSelectedSaveFile = .;
         . = 0x001a; gUnk_300001A = .;
         . = 0x001b; gUnk_300001B = .;
         . = 0x001c; gUnk_300001C = .;
@@ -47,7 +47,7 @@ SECTIONS {
         . = 0x0033; gDrawWarioOverBackground = .;
         . = 0x0034; gUnk_3000034 = .;
         . = 0x0035; gUnk_3000035 = .;
-        . = 0x0037; gUnk_3000037 = .;
+        . = 0x0037; gEnableHBlank = .;
         . = 0x0038; gUnk_3000038 = .;
         . = 0x003a; gUnk_300003A = .;
         . = 0x003c; gUnk_300003C = .;
@@ -56,7 +56,7 @@ SECTIONS {
         . = 0x0044; gUnk_3000044 = .;
         . = 0x0045; gUnk_3000045 = .;
         . = 0x0046; gUnk_3000046 = .;
-        . = 0x0047; gUnk_3000047 = .;
+        . = 0x0047; gTimerState = .;
         . = 0x0048; gStageExitType = .;
         . = 0x004c; gUnk_300004C = .;
         . = 0x0054; gBackgroundInfo = .;

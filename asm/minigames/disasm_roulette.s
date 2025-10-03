@@ -2352,7 +2352,7 @@ func_808BDE0:
 .L_8bdf8:
 	.4byte	gUnk_30047E0
 .L_8bdfc:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_8be00:
 	.4byte	sUnk_86F61A8
 .L_8be04:
@@ -2381,7 +2381,7 @@ func_808BDE0:
 	pop	{r0}
 	bx	r0
 .L_8be38:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_8be3c:
 	.4byte	sUnk_86F5848
 .L_8be40:
@@ -2389,7 +2389,7 @@ func_808BDE0:
 .L_8be44:
 	.4byte	sUnk_86F5148
 .L_8be48:
-	.4byte	gUnk_300000A
+	.4byte	gMinigameHighScores
 
 
 thumb_func_start func_808BE4C
@@ -3622,7 +3622,7 @@ func_808C730:
 .L_8c7e0:
 	.4byte	gUnk_30047D6
 .L_8c7e4:
-	.4byte	gUnk_300000A
+	.4byte	gMinigameHighScores
 .L_8c7e8:
 	.4byte	gUnk_30047D4
 .L_8c7ec:
@@ -3665,7 +3665,7 @@ func_808C730:
 .L_8c834:
 	.4byte	gUnk_30047D6
 .L_8c838:
-	.4byte	gUnk_3000008
+	.4byte	gMedalCount
 .L_8c83c:
 	.4byte	0x000003e7
 .L_8c840:

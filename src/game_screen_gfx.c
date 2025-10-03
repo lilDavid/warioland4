@@ -204,7 +204,7 @@ void GameScreenDrawWarioEffects(void)
             effectY = 8;
             if (0x10 & gWarioData.horizontalDirection) {
                 gWarioDustEffect1.unk8 = sUnk_82E1304;
-                if (gWarioData.unk_01 == 0x2C) {
+                if (gWarioData.pose == 0x2C) {
                     effectX = -12;
                     effectY = -0x28;
                 } else {
@@ -216,7 +216,7 @@ void GameScreenDrawWarioEffects(void)
                 }
             } else {
                 gWarioDustEffect1.unk8 = sUnk_82E1334;
-                if (gWarioData.unk_01 == 0x2C) {
+                if (gWarioData.pose == 0x2C) {
                     effectX = 12;
                     effectY = -0x28;
                 }
@@ -308,14 +308,14 @@ void GameScreenDrawWarioEffects(void)
             gWarioDustEffect2.unk2 = 0;
             if (0x10 & gWarioData.horizontalDirection) {
                 gWarioDustEffect2.unk8 = sUnk_82E1294;
-                if (gWarioData.unk_01 == 0xF) {
+                if (gWarioData.pose == 0xF) {
                     effectX = 0x20;
                 } else {
                     effectX = 0;
                 }
             } else {
                 gWarioDustEffect2.unk8 = sUnk_82E126C;
-                if (gWarioData.unk_01 == 0xF) {
+                if (gWarioData.pose == 0xF) {
                     effectX = -0x20;
                 } else {
                     effectX = 0;
@@ -377,26 +377,26 @@ void GameScreenDrawWarioEffects(void)
             gWarioDustEffect2.unk1 = 0;
             gWarioDustEffect2.unk2 = 0;
             if (0x10 & gWarioData.horizontalDirection) {
-                if (gWarioData.unk_01 == 9) {
+                if (gWarioData.pose == 9) {
                     gWarioDustEffect2.unk8 = sUnk_82E143C;
                     effectX += 0x2C;
                     effectY += -0x20;
                 } else {
                     gWarioDustEffect2.unk8 = sUnk_82E149C;
                 }
-                if ((gWarioData.unk_01 == 0xD) || (gWarioData.unk_01 == 8)) {
+                if ((gWarioData.pose == 0xD) || (gWarioData.pose == 8)) {
                     effectX -= 0x10;
                     effectY -= 0x68;
                 }
             } else {
-                if (gWarioData.unk_01 == 9) {
+                if (gWarioData.pose == 9) {
                     gWarioDustEffect2.unk8 = sUnk_82E149C;
                     effectX -= 0x2C;
                     effectY -= 0x20;
                 } else {
                     gWarioDustEffect2.unk8 = sUnk_82E143C;
                 }
-                if ((gWarioData.unk_01 == 0xD) || (gWarioData.unk_01 == 8)) {
+                if ((gWarioData.pose == 0xD) || (gWarioData.pose == 8)) {
                     effectX += 0x10;
                     effectY -= 0x68;
                 }
@@ -446,7 +446,7 @@ void GameScreenDrawWarioEffects(void)
             } else {
                 pAnimation = sUnk_82DDCF0.unk4;
             }
-            if (gWarioData.unk_01 == 4) {
+            if (gWarioData.pose == 4) {
                 effectY -= 0x10;
             } else {
                 effectY -= 8;
@@ -518,7 +518,7 @@ void GameScreenDrawWarioEffects(void)
                     gCurrentWarioEffect.unk_3 = sUnk_82E1598[gCurrentWarioEffect.unk_3].time;
                 }
             }
-            if (gWarioData.unk_01 == 0x3B) {
+            if (gWarioData.pose == 0x3B) {
                 if ((gWarioData.horizontalDirection & DPAD_RIGHT)) {
                     effectX -= 2;
                 } else {

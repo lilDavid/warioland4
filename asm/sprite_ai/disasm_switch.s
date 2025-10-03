@@ -285,7 +285,7 @@ func_802B694:
 .L_2b72c:
 	.4byte	gSwitchStates
 .L_2b730:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_2b734:
 	.4byte	gUnk_3000BEC
 .L_2b738:
@@ -448,7 +448,7 @@ func_802B82C:
 	mov	pc, r0
 	.align	2, 0
 .L_2b850:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState
 .L_2b854:
 	.4byte	gCurrentSprite
 .L_2b858:
@@ -765,4 +765,4 @@ SpriteUnknownAA:
 	bx	r0
 	.align	2, 0
 .L_2bad8:
-	.4byte	gUnk_3000047
+	.4byte	gTimerState

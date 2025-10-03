@@ -349,7 +349,7 @@ BossPause:
 	b	.L_7469c
 	.align	2, 0
 .L_74684:
-	.4byte	gUnk_3000037
+	.4byte	gEnableHBlank
 .L_74688:
 	.4byte	0x04000200
 .L_7468c:
