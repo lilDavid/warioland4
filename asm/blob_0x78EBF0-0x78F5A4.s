@@ -21,8 +21,40 @@ sUnk_878EDB4:
 sUnk_878EF78:
 	baserom_blob 0x78EF78, 0x78F0E4
 
+.global sUnk_878F0E4
+sUnk_878F0E4:
 
-baserom_blob 0x78F0E4, 0x78F21C
+baserom_blob 0x78F0E4, 0x78F0F8
+
+.global sUnk_878F0F8
+sUnk_878F0F8:
+
+baserom_blob 0x78F0F8, 0x78F104
+
+.global sUnk_878F104
+sUnk_878F104:
+
+baserom_blob 0x78F104, 0x78F170
+
+.global sUnk_878F170
+sUnk_878F170:
+
+baserom_blob 0x78F170, 0x78F188
+
+.global sUnk_878F188
+sUnk_878F188:
+
+baserom_blob 0x78F188, 0x78F1BC
+
+.global sUnk_878F1BC
+sUnk_878F1BC:
+
+baserom_blob 0x78F1BC, 0x78F1D4
+
+.global sUnk_878F1D4
+sUnk_878F1D4:
+
+baserom_blob 0x78F1D4, 0x78F21C
 
 .global sUnk_878F21C
 sUnk_878F21C:

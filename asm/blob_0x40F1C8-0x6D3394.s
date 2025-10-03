@@ -436,7 +436,17 @@ baserom_blob 0x41463C, 0x414824
 .global sUnk_8414824
 sUnk_8414824:
 
-baserom_blob 0x414824, 0x41497C
+baserom_blob 0x414824, 0x41488C
+
+.global sUnk_841488C
+sUnk_841488C:
+
+baserom_blob 0x41488C, 0x41489C
+
+.global sUnk_841489C
+sUnk_841489C:
+
+baserom_blob 0x41489C, 0x41497C
 
 .global sUnk_841497C
 sUnk_841497C:

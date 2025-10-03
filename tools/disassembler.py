@@ -176,13 +176,14 @@ def disassemble_function(rom, start_addr, end_addr, symbols=None, quiet=False):
     if not quiet:
         print()
         print()
-        print(f"thumb_func_start func_8{start_addr:06X}")
-        print(f"func_8{start_addr:06X}:")
+        name = get_symbol(str(start_addr | ROM.start), symbols, "call")
+        print(f"thumb_func_start {name}")
+        print(f"{name}:")
     for inst in instructions:
         label, raw, mnemonic, operands, comment = inst
         if label.startswith('.L_'):
             print(f'{label}:')
-        print('', mnemonic, operands, comment and f'@ {comment}', sep='\t')
+        print("\t".join(['', mnemonic, operands, comment and f'@ {comment}']).rstrip())
 
 
 if __name__ == "__main__":
