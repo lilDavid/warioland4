@@ -11,7 +11,7 @@ _start:  @ 0x80000C0
     ldr sp, sp_sys
 
     ldr r1, intr_vector
-    add r0, pc, #irq_handler - . - 8  @ Because of the execution pipeline, the PC is 2 instructions ahead of this line
+    adr r0, irq_handler
     str r0, [r1]
 
     ldr r1, main_loop_ptr
