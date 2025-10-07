@@ -4945,8 +4945,8 @@ sUnk_82DEC58:
 
 baserom_blob 0x2DEC58, 0x2DEC70
 
-.global sUnk_82DEC70
-sUnk_82DEC70:
+.global sWarioPoseHandlerTable
+sWarioPoseHandlerTable:
 
 baserom_blob 0x2DEC70, 0x2DECA0
 
@@ -4980,28 +4980,28 @@ sUnk_82DED90:
 
 baserom_blob 0x2DED90, 0x2DEDC0
 
-.global sUnk_82DEDC0
-sUnk_82DEDC0:
+.global sWarioNormalPoseTable
+sWarioNormalPoseTable:
 
 baserom_blob 0x2DEDC0, 0x2DEEFC
 
-.global sUnk_82DEEFC
-sUnk_82DEEFC:
+.global sWarioWaterPoseTable
+sWarioWaterPoseTable:
 
 baserom_blob 0x2DEEFC, 0x2DEF3C
 
-.global sUnk_82DEF3C
-sUnk_82DEF3C:
+.global sFlamingWarioPoseTable
+sFlamingWarioPoseTable:
 
 baserom_blob 0x2DEF3C, 0x2DEF64
 
-.global sUnk_82DEF64
-sUnk_82DEF64:
+.global sFatWarioPoseTable
+sFatWarioPoseTable:
 
 baserom_blob 0x2DEF64, 0x2DEF90
 
-.global sUnk_82DEF90
-sUnk_82DEF90:
+.global sFrozenWarioPoseTable
+sFrozenWarioPoseTable:
 
 baserom_blob 0x2DEF90, 0x2DEFA0
 
@@ -5010,38 +5010,38 @@ sUnk_82DEFA0:
 
 baserom_blob 0x2DEFA0, 0x2DEFB0
 
-.global sUnk_82DEFB0
-sUnk_82DEFB0:
+.global sZombieWarioPoseTable
+sZombieWarioPoseTable:
 
 baserom_blob 0x2DEFB0, 0x2DEFE4
 
-.global sUnk_82DEFE4
-sUnk_82DEFE4:
+.global sSnowmanWarioPoseTable
+sSnowmanWarioPoseTable:
 
 baserom_blob 0x2DEFE4, 0x2DF024
 
-.global sUnk_82DF024
-sUnk_82DF024:
+.global sBouncyWarioPoseTable
+sBouncyWarioPoseTable:
 
 baserom_blob 0x2DF024, 0x2DF04C
 
-.global sUnk_82DF04C
-sUnk_82DF04C:
+.global sPuffyWarioPoseTable
+sPuffyWarioPoseTable:
 
 baserom_blob 0x2DF04C, 0x2DF05C
 
-.global sUnk_82DF05C
-sUnk_82DF05C:
+.global sBatWarioPoseTable
+sBatWarioPoseTable:
 
 baserom_blob 0x2DF05C, 0x2DF070
 
-.global sUnk_82DF070
-sUnk_82DF070:
+.global sFlatWarioPoseTable
+sFlatWarioPoseTable:
 
 baserom_blob 0x2DF070, 0x2DF08C
 
-.global sUnk_82DF08C
-sUnk_82DF08C:
+.global sWarioMaskPoseTable
+sWarioMaskPoseTable:
 
 baserom_blob 0x2DF08C, 0x2DF094
 

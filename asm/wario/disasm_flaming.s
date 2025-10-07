@@ -17,7 +17,7 @@ func_80176EC:
 	bx	r1
 	.align	2, 0
 .L_17708:
-	.4byte	sUnk_82DEF3C
+	.4byte	sFlamingWarioPoseTable
 .L_1770c:
 	.4byte	gWarioData
 

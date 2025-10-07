@@ -17,7 +17,7 @@ func_8018758:
 	bx	r1
 	.align	2, 0
 .L_18774:
-	.4byte	sUnk_82DEF90
+	.4byte	sFrozenWarioPoseTable
 .L_18778:
 	.4byte	gWarioData
 

@@ -17,7 +17,7 @@ func_801B5D0:
 	bx	r1
 	.align	2, 0
 .L_1b5ec:
-	.4byte	sUnk_82DF08C
+	.4byte	sWarioMaskPoseTable
 .L_1b5f0:
 	.4byte	gWarioData
 

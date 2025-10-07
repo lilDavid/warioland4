@@ -17,7 +17,7 @@ func_80193F4:
 	bx	r1
 	.align	2, 0
 .L_19410:
-	.4byte	sUnk_82DEFE4
+	.4byte	sSnowmanWarioPoseTable
 .L_19414:
 	.4byte	gWarioData
 

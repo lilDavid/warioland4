@@ -17,7 +17,7 @@ func_8018B88:
 	bx	r1
 	.align	2, 0
 .L_18ba4:
-	.4byte	sUnk_82DEFB0
+	.4byte	sZombieWarioPoseTable
 .L_18ba8:
 	.4byte	gWarioData
 

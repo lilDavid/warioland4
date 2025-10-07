@@ -17,7 +17,7 @@ func_8019DDC:
 	bx	r1
 	.align	2, 0
 .L_19df8:
-	.4byte	sUnk_82DF024
+	.4byte	sBouncyWarioPoseTable
 .L_19dfc:
 	.4byte	gWarioData
 

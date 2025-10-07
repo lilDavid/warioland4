@@ -17,7 +17,7 @@ func_8017FB0:
 	bx	r1
 	.align	2, 0
 .L_17fcc:
-	.4byte	sUnk_82DEF64
+	.4byte	sFatWarioPoseTable
 .L_17fd0:
 	.4byte	gWarioData
 

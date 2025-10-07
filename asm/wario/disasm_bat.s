@@ -17,7 +17,7 @@ func_801A940:
 	bx	r1
 	.align	2, 0
 .L_1a95c:
-	.4byte	sUnk_82DF05C
+	.4byte	sBatWarioPoseTable
 .L_1a960:
 	.4byte	gWarioData
 

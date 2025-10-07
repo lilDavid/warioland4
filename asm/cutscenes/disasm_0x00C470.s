@@ -543,7 +543,7 @@ func_800C718:
 .L_c80c:
 	.4byte	gButtonsHeld
 .L_c810:
-	.4byte	sUnk_82DEC70
+	.4byte	sWarioPoseHandlerTable
 .L_c814:
 	.4byte	gWarioData
 .L_c818:

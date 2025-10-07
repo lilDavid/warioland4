@@ -17,7 +17,7 @@ func_801A508:
 	bx	r1
 	.align	2, 0
 .L_1a524:
-	.4byte	sUnk_82DF04C
+	.4byte	sPuffyWarioPoseTable
 .L_1a528:
 	.4byte	gWarioData
 

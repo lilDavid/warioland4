@@ -472,7 +472,7 @@ WarioProcessControls:
 .L_10084:
 	.4byte	gUnk_30019F4
 .L_10088:
-	.4byte	sUnk_82DEC70
+	.4byte	sWarioPoseHandlerTable
 .L_1008c:
 	.4byte	sUnk_82DECA0
 .L_10090:

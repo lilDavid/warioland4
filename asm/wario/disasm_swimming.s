@@ -17,7 +17,7 @@ func_8015CF8:
 	bx	r1
 	.align	2, 0
 .L_15d14:
-	.4byte	sUnk_82DEEFC
+	.4byte	sWarioWaterPoseTable
 .L_15d18:
 	.4byte	gWarioData
 

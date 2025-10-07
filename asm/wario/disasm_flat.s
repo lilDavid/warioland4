@@ -17,7 +17,7 @@ func_801AF4C:
 	bx	r1
 	.align	2, 0
 .L_1af68:
-	.4byte	sUnk_82DF070
+	.4byte	sFlatWarioPoseTable
 .L_1af6c:
 	.4byte	gWarioData
 

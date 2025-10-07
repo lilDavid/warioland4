@@ -75,7 +75,7 @@ func_80104A4:
 	bx	r1
 	.align	2, 0
 .L_1054c:
-	.4byte	sUnk_82DEDC0
+	.4byte	sWarioNormalPoseTable
 .L_10550:
 	.4byte	gWarioData
 
