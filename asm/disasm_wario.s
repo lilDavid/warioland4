@@ -362,9 +362,9 @@ func_800FF64:
 .L_ffb0:
 	.4byte	gUnk_3003138
 .L_ffb4:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_ffb8:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_ffbc:
 	.4byte	gUnk_30031BA
 .L_ffc0:
@@ -468,9 +468,9 @@ WarioProcessControls:
 .L_1007c:
 	.4byte	gUnk_30019F1
 .L_10080:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_10084:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_10088:
 	.4byte	sWarioPoseHandlerTable
 .L_1008c:
@@ -518,7 +518,7 @@ WarioProcessCollision:
 .L_100d8:
 	.4byte	gWarioData
 .L_100dc:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_100e0:
 	.4byte	0xFFFF
 .L_100e4:
@@ -554,7 +554,7 @@ WarioProcessCollision:
 	mov	r0, #128	@ 0x80
 	b	.L_10126
 .L_1011c:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_10120:
 	cmp	r1, r0
 	bcs	.L_10128

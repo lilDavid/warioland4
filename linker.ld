@@ -84,8 +84,8 @@ SECTIONS {
         . = 0x0a4d; gUnk_3000A4D = .;
         . = 0x0a50; gUnk_3000A50 = .;
         . = 0x0a51; gUnk_3000A51 = .;
-        . = 0x0a52; gUnk_3000A52 = .;
-        . = 0x0a53; gUnk_3000A53 = .;
+        . = 0x0a52; gSpriteCollisionFlags = .;
+        . = 0x0a53; gIgnoreSpriteCollision = .;
         . = 0x0a54; gUnk_3000A54 = .;
         . = 0x0a58; gUnk_3000A58 = .;
         . = 0x0a59; gUnk_3000A59 = .;
@@ -197,8 +197,8 @@ SECTIONS {
         . = 0x195C; gWarioDustEffect2 = .;
         . = 0x19f0; gUnk_30019F0 = .;
         . = 0x19f1; gUnk_30019F1 = .;
-        . = 0x19f2; gUnk_30019F2 = .;
-        . = 0x19f4; gUnk_30019F4 = .;
+        . = 0x19f2; gPreviousXPosition = .;
+        . = 0x19f4; gPreviousYPosition = .;
         . = 0x19f6; gWarioPauseTimer = .;
         . = 0x19f8; gDisableWario = .;
 

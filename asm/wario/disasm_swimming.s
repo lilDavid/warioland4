@@ -2172,7 +2172,7 @@ func_8016B58:
 	mov	r0, #1
 	b	.L_16c80
 .L_16c64:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_16c68:
 	.4byte	gButtonsHeld
 .L_16c6c:
@@ -2471,7 +2471,7 @@ func_8016E00:
 	ldrh	r0, [r4, #0]
 	b	.L_16fd2
 .L_16ec4:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_16ec8:
 	ldrh	r0, [r4, #0]
 	add	r0, #63	@ 0x3f
@@ -2579,7 +2579,7 @@ func_8016E00:
 	ldrh	r0, [r4, #0]
 	b	.L_16fd2
 .L_16f94:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_16f98:
 	ldrh	r0, [r4, #0]
 	add	r0, #63	@ 0x3f
@@ -3189,9 +3189,9 @@ func_8017394:
 .L_17410:
 	.4byte	gUnk_3003138
 .L_17414:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_17418:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_1741c:
 	.4byte	gUnk_30031BA
 .L_17420:

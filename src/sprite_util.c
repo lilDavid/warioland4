@@ -2443,7 +2443,7 @@ void func_8026838(void)
         if (gCurrentSprite.work1 != 1) {
             if (gCurrentSprite.work1 == 2) {
                 gCurrentSprite.work1 = 1;
-                if (gUnk_30019F4 <= gWarioData.yPosition) {
+                if (gPreviousYPosition <= gWarioData.yPosition) {
                     gWarioData.yPosition = (gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp) + 1;
                 }
             }
@@ -2785,7 +2785,7 @@ void SpriteUtilFadeBackgroundToBlack(void)
 
 void SpriteUtilSetWarioBossVictoryPose(void)
 {
-    if ((gWarioData.reaction == REACT_NORMAL) && (gWarioData.unk_1A != 3)) {
+    if ((gWarioData.reaction == REACTION_NORMAL) && (gWarioData.unk_1A != 3)) {
         if (gWarioData.unk_1A == 0) {
             sUnk_82DECA0[gWarioData.reaction](0x3E);
         } else {

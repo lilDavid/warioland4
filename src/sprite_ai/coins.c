@@ -831,7 +831,7 @@ void CoinCollect(void)
         case PSPRITE_COIN_50POINTS:
             ScoreGivePoints(CONVERT_SCORE(50));
             SpriteSpawnSecondary(gCurrentSprite.yPosition - 90, gCurrentSprite.xPosition, SSPRITE_SCORE_50);
-            if (gWarioData.reaction == REACT_WATER) {
+            if (gWarioData.reaction == REACTION_WATER) {
                 m4aSongNumStart(SE_GET_COIN_50POINTS_UNDERWATER);
             } else {
                 m4aSongNumStart(SE_GET_COIN_50POINTS);
@@ -841,7 +841,7 @@ void CoinCollect(void)
         case PSPRITE_COIN_100POINTS:
             ScoreGivePoints(CONVERT_SCORE(100));
             SpriteSpawnSecondary(gCurrentSprite.yPosition - 120, gCurrentSprite.xPosition, SSPRITE_SCORE_100);
-            if (gWarioData.reaction == REACT_WATER) {
+            if (gWarioData.reaction == REACTION_WATER) {
                 m4aSongNumStart(SE_GET_COIN_100POINTS_UNDERWATER);
             } else {
                 m4aSongNumStart(SE_GET_COIN_100POINTS);
@@ -851,7 +851,7 @@ void CoinCollect(void)
         case PSPRITE_COIN_500POINTS:
             ScoreGivePoints(CONVERT_SCORE(500));
             SpriteSpawnSecondary(gCurrentSprite.yPosition - 150, gCurrentSprite.xPosition, SSPRITE_SCORE_500);
-            if (gWarioData.reaction == REACT_WATER) {
+            if (gWarioData.reaction == REACTION_WATER) {
                 m4aSongNumStart(SE_GET_COIN_500POINTS_UNDERWATER);
             } else {
                 m4aSongNumStart(SE_GET_COIN_500POINTS);
@@ -863,7 +863,7 @@ void CoinCollect(void)
             SpriteSpawnSecondary(
                 gCurrentSprite.yPosition - 180, gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000
             );
-            if (gWarioData.reaction == REACT_WATER) {
+            if (gWarioData.reaction == REACTION_WATER) {
                 m4aSongNumStart(SE_GET_DIAMOND_UNDERWATER);
             } else {
                 m4aSongNumStart(SE_GET_DIAMOND);
@@ -874,7 +874,7 @@ void CoinCollect(void)
             if (gHeartGauge.current + gHeartGauge.filling < HEART_GAUGE_MAX) {
                 gHeartGauge.filling += 1;
             }
-            if (gWarioData.reaction == REACT_WATER) {
+            if (gWarioData.reaction == REACTION_WATER) {
                 m4aSongNumStart(SE_GET_LITTLE_HEART_UNDERWATER);
             } else {
                 m4aSongNumStart(SE_GET_LITTLE_HEART);
@@ -884,7 +884,7 @@ void CoinCollect(void)
         default:
             ScoreGivePoints(CONVERT_SCORE(10));
             SpriteSpawnSecondary(gCurrentSprite.yPosition - 60, gCurrentSprite.xPosition, SSPRITE_SCORE_10);
-            if (gWarioData.reaction == REACT_WATER) {
+            if (gWarioData.reaction == REACTION_WATER) {
                 m4aSongNumStart(SE_GET_COIN_10POINTS_UNDERWATER);
             } else {
                 m4aSongNumStart(SE_GET_COIN_10POINTS);
@@ -964,7 +964,7 @@ void DiamondCollect(void)
     SpriteSpawnSecondary(
         gCurrentSprite.yPosition - SUBPIXELS_FROM_PIXELS(25), gCurrentSprite.xPosition - BLOCK_SIZE, SSPRITE_SCORE_1000
     );
-    if (gWarioData.reaction == REACT_WATER) {
+    if (gWarioData.reaction == REACTION_WATER) {
         m4aSongNumStart(SE_GET_DIAMOND_UNDERWATER);
     } else {
         m4aSongNumStart(SE_GET_DIAMOND);

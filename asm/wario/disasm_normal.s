@@ -8421,7 +8421,7 @@ func_8014090:
 .L_14258:
 	.4byte	gUnk_3001918
 .L_1425c:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_14260:
 	.4byte	gWarioData
 .L_14264:
@@ -9435,7 +9435,7 @@ func_8014930:
 .L_149e8:
 	.4byte	sUnk_82DEB60
 .L_149ec:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_149f0:
 	.4byte	0xFFC0
 .L_149f4:
@@ -9519,7 +9519,7 @@ func_8014930:
 	ldrh	r0, [r1, #6]
 	b	.L_14af2
 .L_14a90:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_14a94:
 	mov	r2, sp
 	ldrh	r0, [r2, #6]
@@ -9699,7 +9699,7 @@ func_8014930:
 	b	.L_14c2c
 	.align	2, 0
 .L_14be8:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_14bec:
 	ldrh	r0, [r4, #0]
 	add	r0, #63	@ 0x3f
@@ -9739,7 +9739,7 @@ func_8014930:
 .L_14c30:
 	.4byte	sUnk_82DEB60
 .L_14c34:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_14c38:
 	mov	r0, #255	@ 0xff
 .L_14c3a:
@@ -10183,7 +10183,7 @@ func_8014F00:
 .L_14f78:
 	.4byte	0xFFC0
 .L_14f7c:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_14f80:
 	.4byte	gUnk_3001918
 .L_14f84:
@@ -10287,7 +10287,7 @@ func_8014FAC:
 	b	.L_15060
 	.align	2, 0
 .L_15040:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_15044:
 	ldrh	r5, [r7, #20]
 	mov	r3, sp
@@ -10712,7 +10712,7 @@ func_8015216:
 .L_1538c:
 	.4byte	gUnk_3003138
 .L_15390:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_15394:
 	add	r4, r6, r7
 	lsl	r0, r0, #12

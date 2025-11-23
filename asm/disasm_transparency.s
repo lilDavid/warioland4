@@ -27,7 +27,7 @@ func_806ADD4:
 .L_6ae00:
 	.4byte	gWarioData
 .L_6ae04:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_6ae08:
 	ldrh	r1, [r2, #0]
 	ldrh	r0, [r3, #18]

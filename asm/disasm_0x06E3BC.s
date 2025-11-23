@@ -101,7 +101,7 @@ func_806E420:
 .L_6e478:
 	.4byte	gWarioData
 .L_6e47c:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_6e480:
 	mov	r0, #48	@ 0x30
 	neg	r0, r0
@@ -155,7 +155,7 @@ func_806E420:
 .L_6e4d8:
 	.4byte	gWarioData
 .L_6e4dc:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_6e4e0:
 	mov	r0, #48	@ 0x30
 	neg	r0, r0

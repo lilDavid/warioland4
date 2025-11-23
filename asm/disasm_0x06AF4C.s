@@ -806,11 +806,11 @@ func_806B410:
 .L_6b604:
 	.4byte	0x600FFE0
 .L_6b608:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_6b60c:
 	.4byte	gWarioData
 .L_6b610:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_6b614:
 	.4byte	gPauseFlag
 .L_6b618:
@@ -923,7 +923,7 @@ func_806B410:
 	mov	r0, #1
 	b	.L_6b708
 .L_6b6f0:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_6b6f4:
 	.4byte	gWarioData
 .L_6b6f8:

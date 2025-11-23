@@ -351,7 +351,7 @@ void KeyzerCollect()
     gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     gCollectedKeyzer = 1;
-    if (gWarioData.reaction == REACT_WATER) {
+    if (gWarioData.reaction == REACTION_WATER) {
         m4aSongNumStart(SE_GET_KEYZER_UNDERWATER);
     } else {
         m4aSongNumStart(SE_GET_KEYZER);

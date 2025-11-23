@@ -17,8 +17,8 @@ void GameScreenDebugSubroutine(void)
 
     xVelocity = 0;
     yVelocity = 0;
-    gUnk_30019F2 = gWarioData.xPosition;
-    gUnk_30019F4 = gWarioData.yPosition;
+    gPreviousXPosition = gWarioData.xPosition;
+    gPreviousYPosition = gWarioData.yPosition;
 
     if (CHECK_KEYS_ALL(gButtonsPressed, SELECT_BUTTON)) {
         gSubGameMode = 2;

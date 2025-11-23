@@ -1792,9 +1792,9 @@ func_806F838:
 .L_6f924:
 	.4byte	gBackgroundInfo
 .L_6f928:
-	.4byte	gUnk_30019F2
+	.4byte	gPreviousXPosition
 .L_6f92c:
-	.4byte	gUnk_30019F4
+	.4byte	gPreviousYPosition
 .L_6f930:
 	ldr	r5, [sp, #4]
 	cmp	r4, #0

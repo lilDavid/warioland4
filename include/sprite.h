@@ -330,8 +330,8 @@ extern struct PrimarySpriteData gCurrentSprite;
 
 extern u8 gUnk_3000A50;
 extern u8 gUnk_3000A51;
-extern u8 gUnk_3000A52;
-extern u8 gUnk_3000A53;
+extern u8 gSpriteCollisionFlags;
+extern u8 gIgnoreSpriteCollision;
 extern s8 gUnk_3000A58;
 extern s8 gUnk_3000A59;
 extern u8 gUnk_3000A5A;

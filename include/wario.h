@@ -12,19 +12,19 @@ typedef u8 (*WarioPoseFunc)(void);
 typedef void (*WarioInteractionFunc)(u8);
 
 enum WarioReaction {
-    REACT_NORMAL,
-    REACT_WATER,
-    REACT_FIRE,
-    REACT_FAT,
-    REACT_FROZEN,
-    REACT_ZOMBIE,
-    REACT_SNOWMAN,
-    REACT_BOUNCY,
-    REACT_PUFFY,
-    REACT_BAT,
-    REACT_FLAT,
-    REACT_MASK,
-    REACT_COUNT
+    REACTION_NORMAL,
+    REACTION_WATER,
+    REACTION_FLAMING,
+    REACTION_FAT,
+    REACTION_FROZEN,
+    REACTION_ZOMBIE,
+    REACTION_SNOWMAN,
+    REACTION_BOUNCY,
+    REACTION_PUFFY,
+    REACTION_BAT,
+    REACTION_FLAT,
+    REACTION_MASK,
+    REACTION_COUNT
 };
 
 enum WarioPoseNormal {
@@ -277,10 +277,10 @@ struct WarioData {
     /* 0x28 */ u16 objData1Size;
     /* 0x2C */ u8* pObjData2;
     /* 0x30 */ u16 objData2Size;
-    /* 0x32 */ s16 unk_32;
-    /* 0x34 */ s16 unk_34;
-    /* 0x36 */ s16 unk_36;
-    /* 0x38 */ s16 unk_38;
+    /* 0x32 */ s16 hitboxOffsetLeft;
+    /* 0x34 */ s16 hitboxOffsetTop;
+    /* 0x36 */ s16 hitboxOffsetRight;
+    /* 0x38 */ s16 hitboxOffsetBottom;
     /* 0x3A */ u8 unk_3A;
     /* 0x3B */ u8 unk_3B;
 }; /* size: 0x3C */
@@ -344,8 +344,8 @@ extern struct CarriedSprite gCurrentCarriedSprite;
 extern struct WarioDustEffect gWarioDustEffect1;
 extern struct WarioDustEffect gWarioDustEffect2;
 extern u8 gUnk_30019F0;
-extern u16 gUnk_30019F2;
-extern u16 gUnk_30019F4;
+extern u16 gPreviousXPosition;
+extern u16 gPreviousYPosition;
 extern u16 gWarioPauseTimer;
 extern u8 gDisableWario;
 
@@ -366,7 +366,7 @@ extern struct WarioDustEffect sEmptyDustEffect;
 extern struct WarioAnimation sUnk_82DDCD0[];
 extern u16 sUnk_82DDDA0[];
 extern u16 sUnk_82DDDC0[];
-extern WarioPoseFunc sWarioPoseHandlerTable[REACT_COUNT];
+extern WarioPoseFunc sWarioPoseHandlerTable[REACTION_COUNT];
 extern WarioInteractionFunc sUnk_82DECA0[];
 extern WarioPoseFunc sWarioNormalPoseTable[WPOSE_NORMAL_COUNT];
 extern WarioPoseFunc sWarioWaterPoseTable[WPOSE_WATER_COUNT];
