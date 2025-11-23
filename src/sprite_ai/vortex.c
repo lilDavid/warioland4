@@ -41,7 +41,7 @@ const struct AnimationFrame sVortexWarioOam[] = {{sVortexWarioOam_Frame1, 200}, 
 const struct AnimationFrame sVortexKeyzerOam[] = {{sVortexKeyzerOam_Frame1, 200}, ANIMATION_TERMINATOR};
 
 const u16 sVortexPal[] = {
-#include "data/sprites/Vortex.pal.inc"
+#include "data/sprites/vortex.pal.inc"
 };
 
 void VortexSetCommonProperties(void)

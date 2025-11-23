@@ -465,13 +465,13 @@ func_8075388:
 .L_755b0:
 	.4byte	gUnk_3000BF0
 .L_755b4:
-	.4byte	sTimeYellowDigitsUpperGfx
+	.4byte	sTimeDigitsYellowUpperGfx
 .L_755b8:
 	.4byte	0x06011000
 .L_755bc:
 	.4byte	0x80000010
 .L_755c0:
-	.4byte	sTimeYellowDigitsLowerGfx
+	.4byte	sTimeDigitsYellowLowerGfx
 .L_755c4:
 	.4byte	0x06011400
 .L_755c8:
@@ -566,13 +566,13 @@ func_8075388:
 .L_75670:
 	.4byte	gUnk_3000BF0
 .L_75674:
-	.4byte	sTimeRedDigitsUpperGfx
+	.4byte	sTimeDigitsRedUpperGfx
 .L_75678:
 	.4byte	0x06011000
 .L_7567c:
 	.4byte	0x80000010
 .L_75680:
-	.4byte	sTimeRedDigitsLowerGfx
+	.4byte	sTimeDigitsRedLowerGfx
 .L_75684:
 	.4byte	0x06011400
 .L_75688:
@@ -729,13 +729,13 @@ func_807569C:
 .L_757e4:
 	.4byte	0x040000d4
 .L_757e8:
-	.4byte	sTimeYellowColonUpperGfx
+	.4byte	sTimeColonYellowUpperGfx
 .L_757ec:
 	.4byte	0x06011020
 .L_757f0:
 	.4byte	0x80000010
 .L_757f4:
-	.4byte	sTimeYellowColonLowerGfx
+	.4byte	sTimeColonYellowLowerGfx
 .L_757f8:
 	ldr	r0, .L_7580c
 	ldr	r1, .L_75810
@@ -750,13 +750,13 @@ func_807569C:
 .L_7580c:
 	.4byte	0x040000d4
 .L_75810:
-	.4byte	sTimeYellowColonEmptyUpperGfx
+	.4byte	sTimeColonEmptyYellowUpperGfx
 .L_75814:
 	.4byte	0x06011020
 .L_75818:
 	.4byte	0x80000010
 .L_7581c:
-	.4byte	sTimeYellowColonEmptyLowerGfx
+	.4byte	sTimeColonEmptyYellowLowerGfx
 .L_75820:
 	ldr	r0, .L_75834
 	ldr	r1, .L_75838
@@ -771,13 +771,13 @@ func_807569C:
 .L_75834:
 	.4byte	0x040000d4
 .L_75838:
-	.4byte	sTimeRedColonUpperGfx
+	.4byte	sTimeColonRedUpperGfx
 .L_7583c:
 	.4byte	0x06011020
 .L_75840:
 	.4byte	0x80000010
 .L_75844:
-	.4byte	sTimeRedColonLowerGfx
+	.4byte	sTimeColonRedLowerGfx
 .L_75848:
 	ldr	r0, .L_75870
 	ldr	r1, .L_75874
@@ -804,13 +804,13 @@ func_807569C:
 .L_75870:
 	.4byte	0x040000d4
 .L_75874:
-	.4byte	sTimeRedColonEmptyUpperGfx
+	.4byte	sTimeColonEmptyRedUpperGfx
 .L_75878:
 	.4byte	0x06011020
 .L_7587c:
 	.4byte	0x80000010
 .L_75880:
-	.4byte	sTimeRedColonEmptyLowerGfx
+	.4byte	sTimeColonEmptyRedLowerGfx
 .L_75884:
 	.4byte	0x06011420
 
