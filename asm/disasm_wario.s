@@ -474,7 +474,7 @@ WarioProcessControls:
 .L_10088:
 	.4byte	sWarioPoseHandlerTable
 .L_1008c:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_10090:
 	.4byte	sUnk_82DED90
 .L_10094:

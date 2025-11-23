@@ -540,7 +540,7 @@ func_804EDC8:
 .L_4ee2c:
 	.4byte	gCurrentShopItem
 .L_4ee30:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_4ee34:
 	.4byte	gWarioData
 .L_4ee38:
@@ -557,7 +557,7 @@ func_804EDC8:
 	pop	{r0}
 	bx	r0
 .L_4ee50:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_4ee54:
 	.4byte	gWarioData
 

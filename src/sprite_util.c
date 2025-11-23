@@ -1126,7 +1126,7 @@ void SpriteUtilLiftingSpriteRight(void)
             gCurrentSprite.pose = POSE_CARRIED_RIGHT_INIT;
             gCurrentCarriedSprite.unk1 = 1;
             gCurrentCarriedSprite.state = 4;
-            sUnk_82DECA0[gWarioData.reaction](2);
+            WarioRequestPose(WPOSE_NORMAL_STANDING);
             return;
 
         default:
@@ -1200,7 +1200,7 @@ void SpriteUtilLiftingSpriteLeft(void)
             gCurrentSprite.pose = POSE_CARRIED_LEFT_INIT;
             gCurrentCarriedSprite.unk1 = 1;
             gCurrentCarriedSprite.state = 4;
-            sUnk_82DECA0[gWarioData.reaction](2);
+            WarioRequestPose(WPOSE_NORMAL_STANDING);
             return;
 
         default:
@@ -2437,7 +2437,7 @@ void func_8026838(void)
     if (gCurrentSprite.statusBits & SPRITE_STATUS_12) {
         if (gWarioData.unk_1A != 1) {
             gWarioData.unk_1A = 1;
-            sUnk_82DECA0[gWarioData.reaction](0xFD);
+            WarioRequestPose(-3);
         }
     } else {
         if (gCurrentSprite.work1 != 1) {
@@ -2723,7 +2723,7 @@ void SpriteUtilStartBossTimer(void)
     u32 xPosition;
     u32 xOffset;
 
-    sUnk_82DECA0[gWarioData.reaction](2);
+    WarioRequestPose(WPOSE_NORMAL_STANDING);
     gWarioPauseTimer = CONVERT_SECONDS(3 + 1 / 3.0);
     gTimerState = 1;
     gUnk_3000BEC = 0;
@@ -2787,9 +2787,9 @@ void SpriteUtilSetWarioBossVictoryPose(void)
 {
     if ((gWarioData.reaction == REACTION_NORMAL) && (gWarioData.unk_1A != 3)) {
         if (gWarioData.unk_1A == 0) {
-            sUnk_82DECA0[gWarioData.reaction](0x3E);
+            WarioRequestPose(WPOSE_NORMAL_BOSS_DEFEATED);
         } else {
-            sUnk_82DECA0[gWarioData.reaction](0x3D);
+            WarioRequestPose(WPOSE_NORMAL_BOSS_DEFEATED_MIDAIR);
         }
     }
 }

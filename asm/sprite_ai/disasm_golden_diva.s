@@ -4723,7 +4723,7 @@ func_8064BC0:
 .L_64e84:
 	.4byte	gWarioData
 .L_64e88:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_64e8c:
 	add	r3, r2, #0
 	add	r3, #39	@ 0x27
@@ -4843,7 +4843,7 @@ func_8064BC0:
 	b	.L_65282
 	.align	2, 0
 .L_64f68:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_64f6c:
 	.4byte	gWarioData
 .L_64f70:
@@ -4923,7 +4923,7 @@ func_8064BC0:
 .L_65008:
 	.4byte	0x80000010
 .L_6500c:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_65010:
 	.4byte	gWarioData
 .L_65014:

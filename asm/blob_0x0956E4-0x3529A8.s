@@ -4950,8 +4950,8 @@ sWarioPoseHandlerTable:
 
 baserom_blob 0x2DEC70, 0x2DECA0
 
-.global sUnk_82DECA0
-sUnk_82DECA0:
+.global sWarioPoseRequestFuncTable
+sWarioPoseRequestFuncTable:
 
 baserom_blob 0x2DECA0, 0x2DECD0
 

@@ -8,6 +8,8 @@
 #define MAX_HEARTS (8)
 #define HEART_GAUGE_MAX (8)
 
+#define WarioRequestPose(pose) (sWarioPoseRequestFuncTable[gWarioData.reaction](pose))
+
 typedef u8 (*WarioPoseFunc)(void);
 typedef void (*WarioInteractionFunc)(u8);
 
@@ -114,7 +116,7 @@ enum WarioPoseWater {
     WPOSE_WATER_SWIMMING_FREELY,
     WPOSE_WATER_FLOATING,
     WPOSE_WATER_JUMPING_OUT,
-    WPOSE_WATER_UNKNOWN_6,
+    WPOSE_WATER_TAKING_DAMAGE,
     WPOSE_WATER_SUPER_GROUND_POUND,
     WPOSE_WATER_SUPER_GROUND_POUND_LANDING,
     WPOSE_WATER_BONK_HORIZONTAL,
@@ -128,7 +130,7 @@ enum WarioPoseWater {
 };
 
 enum WarioPoseFlaming {
-    WPOSE_FLAMING_UNKNOWN_0,
+    WPOSE_FLAMING_TRANSFORMING,
     WPOSE_FLAMING_BLUE,
     WPOSE_FLAMING_BLUE_MIDAIR,
     WPOSE_FLAMING_GREEN,
@@ -244,7 +246,7 @@ enum WarioPoseFlat {
 };
 
 enum WarioPoseMask {
-    WPOSE_MASK_UNKNOWN_0,
+    WPOSE_MASK_TRANSFORMING,
     WPOSE_MASK_UNKNOWN_1,
     WPOSE_MASK_COUNT
 };
@@ -344,6 +346,7 @@ extern struct CarriedSprite gCurrentCarriedSprite;
 extern struct WarioDustEffect gWarioDustEffect1;
 extern struct WarioDustEffect gWarioDustEffect2;
 extern u8 gUnk_30019F0;
+extern u8 gPreviousReaction;
 extern u16 gPreviousXPosition;
 extern u16 gPreviousYPosition;
 extern u16 gWarioPauseTimer;
@@ -367,7 +370,7 @@ extern struct WarioAnimation sUnk_82DDCD0[];
 extern u16 sUnk_82DDDA0[];
 extern u16 sUnk_82DDDC0[];
 extern WarioPoseFunc sWarioPoseHandlerTable[REACTION_COUNT];
-extern WarioInteractionFunc sUnk_82DECA0[];
+extern WarioInteractionFunc sWarioPoseRequestFuncTable[REACTION_COUNT];
 extern WarioPoseFunc sWarioNormalPoseTable[WPOSE_NORMAL_COUNT];
 extern WarioPoseFunc sWarioWaterPoseTable[WPOSE_WATER_COUNT];
 extern WarioPoseFunc sFlamingWarioPoseTable[WPOSE_FLAMING_COUNT];

@@ -2111,7 +2111,7 @@ func_806F9D8:
 	b	.L_6fb9a
 	.align	2, 0
 .L_6fb78:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_6fb7c:
 	ldrb	r0, [r4, #4]
 	cmp	r0, #0
@@ -2279,7 +2279,7 @@ func_806FBA4:
 .L_6fca4:
 	.4byte	gWarioData
 .L_6fca8:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 
 
 thumb_func_start func_806FCAC
@@ -2578,7 +2578,7 @@ func_806FD74:
 	b	.L_6ff52
 	.align	2, 0
 .L_6fedc:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_6fee0:
 	ldrb	r0, [r1, #1]
 	cmp	r0, #0
@@ -2671,7 +2671,7 @@ func_806FF64:
 	b	.L_6ffaa
 	.align	2, 0
 .L_6ff94:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_6ff98:
 	mov	r1, #0
 .L_6ff9a:

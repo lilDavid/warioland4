@@ -320,7 +320,7 @@ func_803962C:
 .L_39774:
 	.4byte	gUnk_3000044
 .L_39778:
-	.4byte	sUnk_82DECA0
+	.4byte	sWarioPoseRequestFuncTable
 .L_3977c:
 	.4byte	gWarioData
 .L_39780:
