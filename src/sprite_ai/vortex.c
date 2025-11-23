@@ -46,7 +46,7 @@ const u16 sVortexPal[] = {
 
 void VortexSetCommonProperties(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_AFFINE | SPRITE_STATUS_3;
+    gCurrentSprite.status |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_AFFINE | SPRITE_STATUS_BACKGROUND;
     gCurrentSprite.drawPriority |= 0x80;
     gCurrentSprite.hitboxExtentUp = PIXEL_SIZE;
     gCurrentSprite.hitboxExtentDown = 0;
@@ -70,7 +70,7 @@ void VortexInitSmallPart(void)
 
 void VortexInitMediumPart(void)
 {
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
+    gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceLeftRight = 2 * BLOCK_SIZE_PIXELS;
@@ -80,7 +80,7 @@ void VortexInitMediumPart(void)
 
 void VortexInitLargePart(void)
 {
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
+    gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceLeftRight = 2 * BLOCK_SIZE_PIXELS;
@@ -129,8 +129,8 @@ void VortexAnimatePalette(void)
 
 void VortexInitWarioOrKeyzer(void)
 {
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_AFFINE;
+    gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
+    gCurrentSprite.status |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_AFFINE;
     gCurrentSprite.drawPriority |= 0x80;
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
@@ -276,7 +276,7 @@ void SpriteVortexPartMedium(void)
                     gCurrentSprite.pose = POSE_18;
                 }
             } else {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
 
@@ -343,7 +343,7 @@ void SpriteVortexPartLarge(void)
                     gCurrentSprite.pose = POSE_18;
                 }
             } else {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
 
@@ -420,7 +420,7 @@ void SpriteWarioExitingVortex(void)
         default:
             gDisableWario = FALSE;
             gWarioPauseTimer = 0;
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             break;
     }
 
@@ -461,7 +461,7 @@ void SpriteWarioEnteringVortex(void)
             break;
 
         default:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             if (gCollectedKeyzer != 1) {
                 gSubGameMode = 6;
                 gUnk_3000021 = 0;
@@ -507,7 +507,7 @@ void SpriteKeyzerEnteringVortex(void)
             break;
 
         default:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             if (gCollectedKeyzer == 1) {
                 gSubGameMode = 6;
                 gUnk_3000021 = 0;

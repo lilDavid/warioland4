@@ -262,12 +262,12 @@ enum PrimarySpriteID {
     PSPRITE_COUNT
 };
 
-enum SpriteStatusBits {
+enum SpriteStatusFlags {
     SPRITE_STATUS_NONE = 0,
     SPRITE_STATUS_EXISTS = (1 << 0),
     SPRITE_STATUS_ONSCREEN = (1 << 1),
     SPRITE_STATUS_HIDDEN = (1 << 2),
-    SPRITE_STATUS_3 = (1 << 3),
+    SPRITE_STATUS_BACKGROUND = (1 << 3),
     SPRITE_STATUS_4 = (1 << 4),
     SPRITE_STATUS_HEAVY = (1 << 5),
     SPRITE_STATUS_FACING_RIGHT = (1 << 6),
@@ -276,10 +276,10 @@ enum SpriteStatusBits {
     SPRITE_STATUS_MAYBE_DEAD = (1 << 9),
     SPRITE_STATUS_IGNORE_SPRITE_COLLISION = (1 << 10),
     SPRITE_STATUS_UNDERWATER = (1 << 11),
-    SPRITE_STATUS_12 = (1 << 12),
+    SPRITE_STATUS_WARIO_STANDING_ON = (1 << 12),
     SPRITE_STATUS_TRANSPARENT = (1 << 13),
-    SPRITE_STATUS_14 = (1 << 14),
-    SPRITE_STATUS_15 = (1 << 15),
+    SPRITE_STATUS_DOUBLE_SIZE = (1 << 14),
+    SPRITE_STATUS_DISABLE_DRAW_DISTANCE = (1 << 15),
 };
 
 enum PersistentSpriteStatus {
@@ -301,7 +301,7 @@ enum SpriteCollisionFlags {
 };
 
 struct PrimarySpriteData {
-    /* 0x00 */ u16 statusBits;
+    /* 0x00 */ u16 status;
     /* 0x04 */ const struct AnimationFrame* pOamData;
     /* 0x08 */ u16 yPosition;
     /* 0x0A */ u16 xPosition;

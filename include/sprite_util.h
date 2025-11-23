@@ -15,7 +15,7 @@
 
 #define SPRITE_UTIL_LOOKUP_GRAVITY_BY_WEIGHT(tableIfHeavy, tableIfLight)        \
     timer = gCurrentSprite.work3;                                               \
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {                      \
+    if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {                      \
         SPRITE_UTIL_LOOKUP_GRAVITY(tableIfHeavy);                               \
     } else {                                                                    \
         SPRITE_UTIL_LOOKUP_GRAVITY(tableIfLight);                               \
@@ -177,7 +177,7 @@ s32 SpriteUtilFindSprite(u8 id, u8 roomSlot);
 void SpriteUtilFindParentSlotWork3(u8 parentId);
 s32 SpriteUtilFindParentSlotOrU8Max(u8 parentId);
 s32 SpriteUtilFindBossTreasureChest(u8 roomSlot);
-void SpriteUtilClearAllSpritesStatus3(void);
+void SpriteUtilClearAllSpritesBackground(void);
 void SpriteUtilSetAllSpritesHighPriority(void);
 void SpriteUtilUnsetAllSpritesHighPriority(void);
 void SpriteUtilStartBossTimer(void);

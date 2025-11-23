@@ -250,7 +250,7 @@ void func_801EBCC(s32 slot)
         }
 
         gWarioData.unk_03 = gWarioData.damageTimer;
-        if (gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) {
             gWarioData.horizontalDirection = DPAD_LEFT;
         } else {
             gWarioData.horizontalDirection = DPAD_RIGHT;
@@ -724,7 +724,7 @@ u8 func_801F200(s32 slot, u16 direction)
         default:
             if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
                 if (direction & DPAD_RIGHT) {
-                    if (gSpriteData[slot].statusBits & SPRITE_STATUS_HEAVY) {
+                    if (gSpriteData[slot].status & SPRITE_STATUS_HEAVY) {
                         gCurrentCarriedSprite.unk1 = 2;
                     } else {
                         gCurrentCarriedSprite.unk1 = 1;
@@ -740,7 +740,7 @@ u8 func_801F200(s32 slot, u16 direction)
                 }
             } else {
                 if (direction & DPAD_LEFT) {
-                    if (gSpriteData[slot].statusBits & SPRITE_STATUS_HEAVY) {
+                    if (gSpriteData[slot].status & SPRITE_STATUS_HEAVY) {
                         gCurrentCarriedSprite.unk1 = 2;
                     } else {
                         gCurrentCarriedSprite.unk1 = 1;
@@ -802,7 +802,7 @@ u8 func_801F43C(s32 slot, u8 right)
             } else {
                 pose = POSE_CARRIED_LEFT_INIT;
             }
-            if (gSpriteData[slot].statusBits & SPRITE_STATUS_HEAVY) {
+            if (gSpriteData[slot].status & SPRITE_STATUS_HEAVY) {
                 gCurrentCarriedSprite.unk1 = 2;
             } else {
                 gCurrentCarriedSprite.unk1 = 1;
@@ -815,13 +815,13 @@ u8 func_801F43C(s32 slot, u8 right)
 
         case WPOSE_NORMAL_WALKING:
         case WPOSE_NORMAL_STANDING:
-            gSpriteData[slot].statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
+            gSpriteData[slot].status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             if (right) {
                 pose = POSE_BEING_LIFTED_RIGHT_INIT;
             } else {
                 pose = POSE_BEING_LIFTED_LEFT_INIT;
             }
-            if (gSpriteData[slot].statusBits & SPRITE_STATUS_HEAVY) {
+            if (gSpriteData[slot].status & SPRITE_STATUS_HEAVY) {
                 WarioRequestPose(WPOSE_NORMAL_LIFTING_HEAVY_SPRITE);
             } else {
                 WarioRequestPose(WPOSE_NORMAL_LIFTING_SPRITE);
@@ -901,7 +901,7 @@ void SpriteCollisionProcess(void)
 
     statusFlags = SPRITE_STATUS_EXISTS | SPRITE_STATUS_ONSCREEN;
     for (slot = 0; slot < MAX_SPRITE_COUNT; slot++) {
-        status = gSpriteData[slot].statusBits;
+        status = gSpriteData[slot].status;
         if ((status & statusFlags) == statusFlags) {
             if (gSpriteData[slot].disableWarioCollisionTimer > 0) {
                 gSpriteData[slot].disableWarioCollisionTimer -= 1;
@@ -3296,7 +3296,7 @@ void func_80204F4(s32 slot, u16 left, u16 right, u16 xPosition)
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
         pose = POSE_PUSHED_RIGHT_INIT;
-        if (warioCollision != 0x4B || (gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+        if (warioCollision != 0x4B || (gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
             if (warioCollision == 0x4C || warioCollision == 0x4D) {
                 pose = POSE_TACKLED_RIGHT_INIT;
                 gWarioData.horizontalDirection = DPAD_RIGHT;
@@ -3309,7 +3309,7 @@ void func_80204F4(s32 slot, u16 left, u16 right, u16 xPosition)
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_RIGHT) {
         pose = POSE_PUSHED_LEFT_INIT;
-        if (((warioCollision == 0x4B && (gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) ||
+        if (((warioCollision == 0x4B && (gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) ||
              (warioCollision == 0x4C || warioCollision == 0x4D))) {
             WarioRequestPose(WPOSE_WATER_TAKING_DAMAGE);
             SpriteCollisionMakeWarioDropCoins(slot);
@@ -3385,13 +3385,13 @@ void func_80207D8(s32 slot)
     }
 
     if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
-        if (gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) {
             pose = POSE_27;
         } else {
             pose = POSE_29;
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
-        if (gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) {
             pose = POSE_27;
         } else {
             pose = POSE_29;
@@ -3399,7 +3399,7 @@ void func_80207D8(s32 slot)
         gWarioData.verticalDirection = DPAD_UP;
         WarioRequestPose(WPOSE_WATER_BONK_VERTICAL);
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
-        if ((gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) || gSpriteData[slot].warioCollision != 0x4F) {
+        if ((gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) || gSpriteData[slot].warioCollision != 0x4F) {
             pose = POSE_27;
             gWarioData.horizontalDirection = DPAD_RIGHT;
             WarioRequestPose(WPOSE_WATER_BONK_HORIZONTAL);
@@ -3409,7 +3409,7 @@ void func_80207D8(s32 slot)
             return;
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_RIGHT) {
-        if ((gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) && gSpriteData[slot].warioCollision == 0x4F) {
+        if ((gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) && gSpriteData[slot].warioCollision == 0x4F) {
             WarioRequestPose(WPOSE_WATER_TAKING_DAMAGE);
             SpriteCollisionMakeWarioDropCoins(slot);
             return;
@@ -3480,7 +3480,7 @@ void func_80209E0(s32 slot, u16 left, u16 right, u16 xPosition)
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
         if (gSpriteData[slot].warioCollision != 0x54) {
-            if (gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) {
+            if (gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) {
                 pose = POSE_PUSHED_RIGHT_INIT;
             } else {
                 pose = POSE_27;
@@ -3495,7 +3495,7 @@ void func_80209E0(s32 slot, u16 left, u16 right, u16 xPosition)
         if (gSpriteData[slot].warioCollision == 0x54) {
             pose = POSE_PUSHED_LEFT_INIT;
         } else {
-            if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+            if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
                 pose = POSE_PUSHED_LEFT_INIT;
             } else {
                 pose = POSE_29;
@@ -3612,7 +3612,7 @@ void func_8020CEC(s32 slot, u16 direction, u16 left, u16 right, u16 xPosition)
     u16 facingRight;
     u8 pose;
 
-    facingRight = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    facingRight = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (pose == 0) {
         if ((gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) && (left < xPosition) && (xPosition < right)) {
@@ -3666,7 +3666,7 @@ void func_8020E1C(s32 slot, u16 direction)
     u16 facingRight;
     u8 pose;
 
-    facingRight = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    facingRight = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (pose == 0) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
@@ -3722,7 +3722,7 @@ void func_8020F28(s32 slot, u16 direction)
     u16 facingRight;
     u8 pose;
 
-    facingRight = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    facingRight = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (pose == 0) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
@@ -3761,7 +3761,7 @@ void func_8020FF4(s32 slot, u16 direction)
     u16 facingRight;
     u8 pose;
 
-    facingRight = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    facingRight = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (pose == 0) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
@@ -3820,7 +3820,7 @@ void func_80210E8(s32 slot, u16 direction)
     u16 facingRight;
     u8 pose;
 
-    facingRight = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    facingRight = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (pose == 0) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
@@ -3950,7 +3950,7 @@ void func_8021318(s32 slot, u16 direction)
     pose = func_801EFD4();
     if (pose == 0) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
-            if (!(SPRITE_STATUS_FACING_RIGHT & gSpriteData[slot].statusBits)) {
+            if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
                 if (gWarioData.damageTimer) {
                     pose = POSE_PUSHED_RIGHT_INIT;
                 } else {
@@ -4005,7 +4005,7 @@ void func_80213F4(s32 slot, u16 currentX, u16 previousX)
 void func_8021434(s32 slot, u16 left, u16 right)
 {
     if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
-        if ((SPRITE_STATUS_FACING_RIGHT & gSpriteData[slot].statusBits) || (gSpriteData[slot].warioCollision == 0x3A)) {
+        if ((gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) || (gSpriteData[slot].warioCollision == 0x3A)) {
             switch (gWarioData.pose) {
                 case WPOSE_NORMAL_STARTING_ROLL:
                 case WPOSE_NORMAL_JUMPING_OUT_OF_ROLL:
@@ -4023,8 +4023,7 @@ void func_8021434(s32 slot, u16 left, u16 right)
             SpriteCollisionMakeWarioDropCoins(slot);
         }
     } else {
-        if (!(SPRITE_STATUS_FACING_RIGHT & gSpriteData[slot].statusBits) ||
-            (gSpriteData[slot].warioCollision == 0x3A)) {
+        if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) || (gSpriteData[slot].warioCollision == 0x3A)) {
             switch (gWarioData.pose) {
                 case WPOSE_NORMAL_STARTING_ROLL:
                 case WPOSE_NORMAL_JUMPING_OUT_OF_ROLL:
@@ -4217,12 +4216,12 @@ void func_8021784(
                     break;
 
                 default:
-                    gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+                    gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
                     gSpriteData[slot].work1 = 2;
                     break;
             }
         } else {
-            gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+            gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
             gSpriteData[slot].work1 = 2;
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
@@ -4391,13 +4390,14 @@ void func_8021C30(s32 slot, u16 top)
                         gWarioData.yVelocity = 0x20;
                     }
                     break;
+
                 default:
-                    gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+                    gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
                     gSpriteData[slot].work1 = 2;
                     break;
             }
         } else {
-            gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+            gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
             gSpriteData[slot].work1 = 2;
         }
     }
@@ -4421,13 +4421,14 @@ void func_8021CC8(s32 slot, u16 top)
                         gWarioData.yVelocity = 0x20;
                     }
                     break;
+
                 default:
-                    gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+                    gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
                     gSpriteData[slot].work1 = 2;
                     break;
             }
         } else {
-            gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+            gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
             gSpriteData[slot].work1 = 2;
         }
         gSpriteData[slot].pose = POSE_CRUSHED_OR_COLLECTED_INIT;
@@ -4450,12 +4451,12 @@ void func_8021D5C(s32 slot, u16 top)
                     SpriteCollisionLandOnEnemy();
                     break;
                 default:
-                    gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+                    gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
                     gSpriteData[slot].work1 = 2;
                     break;
             }
         } else {
-            gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+            gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
             gSpriteData[slot].work1 = 2;
         }
     }
@@ -4479,12 +4480,12 @@ void func_8021DD0(s32 slot, u16 top)
                     SpriteCollisionLandOnEnemy();
                     break;
                 default:
-                    gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+                    gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
                     gSpriteData[slot].work1 = 2;
                     break;
             }
         } else {
-            gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+            gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
             gSpriteData[slot].work1 = 2;
         }
         gSpriteData[slot].pose = POSE_11;
@@ -4560,7 +4561,7 @@ void func_8021F84(s32 slot, u16 left, u16 right, u16 top)
                     m4aSongNumStart(SOUND_35);
                 } else {
                     gWarioData.yPosition = top + 1;
-                    gSpriteData[slot].statusBits |= SPRITE_STATUS_12;
+                    gSpriteData[slot].status |= SPRITE_STATUS_WARIO_STANDING_ON;
                     gSpriteData[slot].work1 = 2;
                 }
                 break;
@@ -4683,7 +4684,7 @@ void func_80222D8(s32 slot, u16 bottom, u16 left, u16 right)
 {
     s32 facingRight;
 
-    facingRight = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    facingRight = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
             func_801EF50();
@@ -5285,13 +5286,13 @@ void func_8022948(s32 slot, u16 top)
             case WPOSE_NORMAL_SHOULDER_BASH_JUMP:
             case WPOSE_NORMAL_DASH_ATTACK_JUMP:
                 if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
-                    if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) && (gUnk_3000A5A == 0)) {
+                    if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) && (gUnk_3000A5A == 0)) {
                         gSpriteData[slot].pose = POSE_TACKLED_RIGHT_INIT;
                     }
                     WarioRequestPose(WPOSE_NORMAL_SHOULDER_BASH_BONK);
                     gWarioData.xVelocity = -0x30;
                 } else {
-                    if ((gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT) && (gUnk_3000A5A == 0)) {
+                    if ((gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT) && (gUnk_3000A5A == 0)) {
                         gSpriteData[slot].pose = POSE_TACKLED_LEFT_INIT;
                     }
                     WarioRequestPose(WPOSE_NORMAL_SHOULDER_BASH_BONK);
@@ -5637,7 +5638,7 @@ void func_80231F8(s32 slot, u16 direction)
                     break;
             }
         } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
-            if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+            if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
                 pose = POSE_33;
                 if (gWarioData.damageTimer == 0) {
                     SpriteCollisionTransformWarioBouncy();
@@ -5664,7 +5665,7 @@ void func_80232C4(s32 slot, u16 direction)
     u16 status;
     u8 pose;
 
-    status = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    status = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (!pose) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
@@ -5681,7 +5682,7 @@ void func_80232C4(s32 slot, u16 direction)
                     break;
             }
         } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
-            if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+            if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
                 pose = POSE_33;
                 if (gWarioData.damageTimer == 0) {
                     SpriteCollisionTransformWarioBouncy();
@@ -5735,7 +5736,7 @@ void func_80233B8(s32 slot, u16 direction)
                     break;
             }
         } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
-            if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+            if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
                 if (gWarioData.damageTimer) {
                     pose = POSE_PUSHED_RIGHT_INIT;
                 } else {
@@ -5768,7 +5769,7 @@ void func_802349C(s32 slot, u16 direction)
     u16 status;
     u8 pose;
 
-    status = gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT;
+    status = gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT;
     pose = func_801EFD4();
     if (!pose) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_ABOVE) {
@@ -5785,7 +5786,7 @@ void func_802349C(s32 slot, u16 direction)
                     break;
             }
         } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
-            if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+            if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
                 if (gWarioData.damageTimer) {
                     pose = POSE_PUSHED_RIGHT_INIT;
                 } else {
@@ -5867,7 +5868,7 @@ void func_80235A0(s32 slot, u16 direction)
                 break;
         }
     } else if (gSpriteCollisionFlags & SPRITE_COLLISION_BELOW) {
-        if (!(gSpriteData[slot].statusBits & SPRITE_STATUS_FACING_RIGHT)) {
+        if (!(gSpriteData[slot].status & SPRITE_STATUS_FACING_RIGHT)) {
             if ((gWarioData.damageTimer != 0) || (gSpriteData[slot].warioCollision == 0x32)) {
                 pose = POSE_PUSHED_RIGHT_INIT;
             } else {

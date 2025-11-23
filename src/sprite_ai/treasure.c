@@ -340,7 +340,7 @@ const struct AnimationFrame sBoxHeartRefillOpenedOam[] = {
 void BoxSetCommonProperties(void)
 {
     gCurrentSprite.gfxSlot = 7;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
+    gCurrentSprite.status |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_BACKGROUND;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = 0;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -372,7 +372,7 @@ void BoxInit1(void)
 
 void BoxInit2(void)
 {
-    gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+    gCurrentSprite.status = SPRITE_STATUS_NONE;
 }
 
 void BoxStartOpening(void)
@@ -406,7 +406,7 @@ void BoxDisappearing(void)
 
     temp = TIMER_COUNT_DOWN(gCurrentSprite.work0);
     if (temp == 0) {
-        gCurrentSprite.statusBits = 0;
+        gCurrentSprite.status = 0;
         return;
     }
 
@@ -414,15 +414,15 @@ void BoxDisappearing(void)
     if (temp2 < CONVERT_SECONDS(0.8)) {
         gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
         if ((temp2 & 1) == 0) {
-            gCurrentSprite.statusBits ^= SPRITE_STATUS_HIDDEN;
+            gCurrentSprite.status ^= SPRITE_STATUS_HIDDEN;
         }
     }
 }
 
 void Treasure_Init(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
+    gCurrentSprite.status |= SPRITE_STATUS_DISABLE_DRAW_DISTANCE | SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
+    gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -439,8 +439,8 @@ void Treasure_Init(void)
 
 void TreasureGlow_Init(void)
 {
-    gCurrentSprite.statusBits |= SPRITE_STATUS_15 | SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
+    gCurrentSprite.status |= SPRITE_STATUS_DISABLE_DRAW_DISTANCE | SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
+    gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
     gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
     gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;
@@ -905,7 +905,7 @@ void SpriteJewelPieceNE(void)
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedNEJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
@@ -944,7 +944,7 @@ void SpriteJewelPieceSE(void)
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedSEJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
@@ -983,7 +983,7 @@ void SpriteJewelPieceSW(void)
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedSWJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
@@ -1022,7 +1022,7 @@ void SpriteJewelPieceNW(void)
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_JEWEL_PIECE);
             gCollectedNWJewelPiece = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
@@ -1061,7 +1061,7 @@ void SpriteCD(void)
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             m4aSongNumStart(SE_GET_CD);
             gCollectedCD = 1;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
@@ -1100,7 +1100,7 @@ void SpriteHeartRefill(void)
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
-            gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+            gCurrentSprite.status = SPRITE_STATUS_NONE;
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
                 MAKE_PERSISTENT_DATA(POSE_INIT_2, PERSISTENT_STATUS_LOADED);
             gHeartMeter.filling += MAX_HEARTS;
@@ -1143,7 +1143,7 @@ void SpriteTreasureGlowJewelPieceNE(void)
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
     }
@@ -1174,7 +1174,7 @@ void SpriteTreasureGlowJewelPieceSE(void)
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
     }
@@ -1205,7 +1205,7 @@ void SpriteTreasureGlowJewelPieceSW(void)
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
     }
@@ -1236,7 +1236,7 @@ void SpriteTreasureGlowJewelPieceNW(void)
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
     }
@@ -1267,7 +1267,7 @@ void SpriteTreasureGlowCD(void)
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
     }
@@ -1298,7 +1298,7 @@ void SpriteTreasureGlowHeartRefill(void)
         case POSE_12:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+                gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
     }
@@ -1309,7 +1309,7 @@ void SpriteTreasure_Unused(void)
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             gCurrentSprite.gfxSlot = 7;
-            gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
+            gCurrentSprite.status |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_BACKGROUND;
             gCurrentSprite.drawDistanceDown = 2 * BLOCK_SIZE_PIXELS;
             gCurrentSprite.drawDistanceUp = 0;
             gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS;

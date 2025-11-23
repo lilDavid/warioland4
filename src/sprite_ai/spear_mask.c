@@ -699,7 +699,7 @@ const struct AnimationFrame sSpearMaskChasingOam[] = {
 
 void SpearMaskSetWalkingHitbox(void)
 {
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+    if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
         gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE;
         gCurrentSprite.hitboxExtentRight = 3 * QUARTER_BLOCK_SIZE;
     } else {
@@ -753,7 +753,7 @@ void SpearMaskWalkYellow(void)
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
         } else {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
@@ -763,7 +763,7 @@ void SpearMaskWalkYellow(void)
             return;
         }
     } else {
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             if ((gUnk_3000A50 & 0xF0) &&
                 (gCurrentSprite.xPosition % BLOCK_SIZE + gCurrentSprite.hitboxExtentRight >= BLOCK_SIZE)) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
@@ -839,7 +839,7 @@ void SpearMaskTurn(void)
             break;
 
         case POSE_14:
-            gCurrentSprite.statusBits ^= SPRITE_STATUS_FACING_RIGHT;
+            gCurrentSprite.status ^= SPRITE_STATUS_FACING_RIGHT;
             gCurrentSprite.warioCollision = 3;
             SpearMaskSetWalkingHitbox();
             gCurrentSprite.pOamData = sSpearMaskTurning3Oam;
@@ -888,21 +888,21 @@ void SpearMaskGetUp(void)
 
     if (gCurrentSprite.work0 == CONVERT_SECONDS(11.0 / 12.0)) {
         gCurrentSprite.yPosition -= HALF_BLOCK_SIZE;
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             gCurrentSprite.xPosition += 4;
         } else {
             gCurrentSprite.xPosition -= 4;
         }
     } else if (timer == CONVERT_SECONDS(5.0 / 6.0)) {
         gCurrentSprite.yPosition -= HALF_BLOCK_SIZE;
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             gCurrentSprite.xPosition += 4;
         } else {
             gCurrentSprite.xPosition -= 4;
         }
     } else if (timer == CONVERT_SECONDS(0.75)) {
         gCurrentSprite.yPosition += BLOCK_SIZE;
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             gCurrentSprite.xPosition -= 8;
         } else {
             gCurrentSprite.xPosition += 8;
@@ -957,8 +957,8 @@ void SpearMaskTackledInit(void)
     }
     func_807687C(gCurrentSprite.globalID, gCurrentSprite.yPosition, gCurrentSprite.xPosition, value);
     SpriteSpawnSecondary(gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition, SSPRITE_06);
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_DEAD;
+    gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
+    gCurrentSprite.status |= SPRITE_STATUS_MAYBE_DEAD;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
 }
 
@@ -1158,8 +1158,8 @@ void SpearMaskCrushed(void)
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
     gCurrentSprite.work0 = CONVERT_SECONDS(2.0 / 15.0);  // 8?
-    gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
-    gCurrentSprite.statusBits |= SPRITE_STATUS_MAYBE_DEAD;
+    gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
+    gCurrentSprite.status |= SPRITE_STATUS_MAYBE_DEAD;
     switch (gCurrentSprite.globalID) {
         case PSPRITE_SPEAR_MASK_RED:
             value = CONVERT_SCORE(100);
@@ -1301,7 +1301,7 @@ void SpearMaskPose4D(void)
 
     yPosition = func_8023A60(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_30000A0.unk_02 == 1) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_UNDERWATER;
+        gCurrentSprite.status |= SPRITE_STATUS_UNDERWATER;
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = yPosition;
@@ -1405,7 +1405,7 @@ void SpearMaskWalkBlueOrRed(void)
     func_80238A4();
     func_8023B88();
     if (!gUnk_3000A50) {
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
         } else {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
@@ -1415,7 +1415,7 @@ void SpearMaskWalkBlueOrRed(void)
             return;
         }
     } else {
-        if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+        if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             if ((gUnk_3000A50 & 0xF0) &&
                 (gCurrentSprite.xPosition % BLOCK_SIZE + gCurrentSprite.hitboxExtentRight >= BLOCK_SIZE)) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
@@ -1486,7 +1486,7 @@ void SpearMaskWalkBlueOrRed(void)
     if (gCurrentSprite.globalID == PSPRITE_SPEAR_MASK_RED) {
         if (gCurrentSprite.pose == POSE_IDLE) {
             temp = SpriteUtilWaitCheckWarioNearbyLeftRight(2 * BLOCK_SIZE - 1, SUBPIXELS_FROM_PIXELS(100));
-            if (gCurrentSprite.statusBits & SPRITE_STATUS_FACING_RIGHT) {
+            if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
                 if (temp == NS_RIGHT) {
                     SpearMaskStartChasing();
                 } else {
@@ -1509,7 +1509,7 @@ void SpearMaskWalkBlueOrRed(void)
 
 void SpriteSpearMask(void)
 {
-    if (gCurrentSprite.statusBits & SPRITE_STATUS_UNDERWATER) {
+    if (gCurrentSprite.status & SPRITE_STATUS_UNDERWATER) {
         gCurrentSprite.pose = POSE_6B;
     }
 

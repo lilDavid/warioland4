@@ -324,10 +324,10 @@ const s16 sKeyzerFloatYVelocity[] = {0, 0, 0, 0, 0, 0, -1, -1, -1, -2, -2, -3, -
 void KeyzerInit()
 {
     if (gCollectedKeyzer) {
-        gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+        gCurrentSprite.status = SPRITE_STATUS_NONE;
         gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     } else {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
+        gCurrentSprite.status |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_BACKGROUND;
         gCurrentSprite.warioCollision = 6;
         gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
         gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
@@ -348,7 +348,7 @@ void KeyzerInit()
 
 void KeyzerCollect()
 {
-    gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
+    gCurrentSprite.status = SPRITE_STATUS_NONE;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     gCollectedKeyzer = 1;
     if (gWarioData.reaction == REACTION_WATER) {
@@ -374,14 +374,14 @@ void SpriteKeyzer(void)
             break;
     }
 
-    if (gCurrentSprite.statusBits == SPRITE_STATUS_NONE) {
+    if (gCurrentSprite.status == SPRITE_STATUS_NONE) {
         return;
     }
 
     func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition);
     if (gUnk_3000A51 & 15) {
-        gCurrentSprite.statusBits |= SPRITE_STATUS_HIDDEN;
+        gCurrentSprite.status |= SPRITE_STATUS_HIDDEN;
     } else {
-        gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
+        gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
     }
 }
