@@ -113,6 +113,19 @@ enum SpritePose {
     POSE_6B,
     POSE_6C,
     POSE_6D,
+    POSE_6E,
+    POSE_6F,
+    POSE_70,
+    POSE_71,
+    POSE_72,
+    POSE_73,
+    POSE_74,
+    POSE_75,
+    POSE_76,
+    POSE_77,
+    POSE_78,
+    POSE_79,
+    POSE_7A,
 };
 
 void SpriteSpearMask(void);

@@ -446,8 +446,8 @@ void GameScreenInitWario(void)
             gCurrentCarriedSprite = sEmptyCarriedSprite;
         }
     }
-    if (gWarioData.reaction == 0 && gWarioData.pose == 0x31) {
-        gWarioData.pose = 0x32;
+    if (gWarioData.reaction == 0 && gWarioData.pose == WPOSE_NORMAL_ENTERING_DOOR) {
+        gWarioData.pose = WPOSE_NORMAL_EXITING_DOOR;
         gWarioData.unk_1F = 0;
         gUnk_30031BE = 0;
     }

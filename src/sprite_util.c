@@ -2748,32 +2748,32 @@ void func_8026E78(void)
     switch (gCurrentPassage) {
         case PASSAGE_ENTRY:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_SPOILED_ROTTEN);
-            gSpriteData[gCurrentSprite.work3].pose = 0x74;
+            gSpriteData[gCurrentSprite.work3].pose = POSE_74;
             break;
 
         case PASSAGE_EMERALD:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_D8);
-            gSpriteData[gCurrentSprite.work3].pose = 0x7A;
+            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
             break;
 
         case PASSAGE_RUBY:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_CUCKOO_CONDOR);
-            gSpriteData[gCurrentSprite.work3].pose = 0x7A;
+            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
             break;
 
         case PASSAGE_TOPAZ:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_CB);
-            gSpriteData[gCurrentSprite.work3].pose = 0x7A;
+            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
             break;
 
         case PASSAGE_SAPPHIRE:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_CATBAT);
-            gSpriteData[gCurrentSprite.work3].pose = 0x7A;
+            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
             break;
 
         case PASSAGE_GOLDEN:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_EC);
-            gSpriteData[gCurrentSprite.work3].pose = 0x74;
+            gSpriteData[gCurrentSprite.work3].pose = POSE_74;
             break;
     }
 }
