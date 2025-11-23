@@ -4,7 +4,7 @@
 void func_8072CA0(void);
 void func_8072D24(void);
 // func_8072E8C()
-// func_8072F0C()
+void func_8072F0C(void);
 // func_8072FB0()
 void func_8073418(void);
 // func_807345C()

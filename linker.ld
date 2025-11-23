@@ -725,7 +725,7 @@ SECTIONS {
         obj/disasm_hblank.o(.text);
         obj/disasm_stage_end.o(.text);
         obj/disasm_demo.o(.text);
-        obj/disasm_quit.o(.text);
+        obj/quit.o(.text);
         obj/disasm_save_file.o(.text);
         obj/disasm_0x0743BC.o(.text);
         obj/hud.o(.text);
@@ -782,7 +782,7 @@ SECTIONS {
         obj/disasm_stage_end.o(.rodata);
         obj/blob_0x3FA838-0x3FDA2C.o(.rodata);
         obj/disasm_demo.o(.rodata);
-        obj/disasm_quit.o(.rodata);
+        obj/quit.o(.rodata);
         obj/disasm_save_file.o(.rodata);
         obj/hud.o(.rodata);
         obj/blob_0x40F1C8-0x6D3394.o(.rodata);
