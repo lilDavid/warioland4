@@ -9,7 +9,7 @@
 #define HEART_GAUGE_MAX (8)
 
 typedef u8 (*WarioPoseFunc)(void);
-typedef void (*WarioInteractionFunc)(u32);
+typedef void (*WarioInteractionFunc)(u8);
 
 enum WarioReaction {
     REACT_NORMAL,
@@ -388,5 +388,6 @@ void WarioProcessCollision();
 void func_8010154();
 void func_80101D0();
 void func_8010154();
+u32 WarioCheckReaction(u8 reaction);
 
 #endif  // WARIO_H

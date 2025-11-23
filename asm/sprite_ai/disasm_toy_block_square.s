@@ -106,7 +106,7 @@ func_8042D70:
 	ldr	r1, [sp, #20]
 	mov	r2, sl
 	mov	r3, r9
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_42e7a
 	cmp	r5, r7

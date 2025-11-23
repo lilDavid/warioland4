@@ -485,7 +485,7 @@ func_8062D98:
 	mov	r1, sl
 	mov	r2, r9
 	mov	r3, r8
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_62f44
 	ldr	r1, .L_62e98

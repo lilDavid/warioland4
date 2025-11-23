@@ -631,7 +631,7 @@ SECTIONS {
         obj/game_screen_gfx.o(.text);
         obj/game_screen_debug.o(.text);
         obj/disasm_sprite.o(.text);
-        obj/disasm_sprite_wario_interaction.o(.text);
+        obj/sprite_collision.o(.text);
         obj/sprite_util.o(.text);
         obj/sprite_ai/spear_mask.o(.text);
         obj/sprite_ai/disasm_rotating_platform.o(.text);

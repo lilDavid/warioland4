@@ -7,8 +7,8 @@
 #include "sound.h"
 #include "sprite.h"
 #include "sprite_ai.h"
+#include "sprite_collision.h"
 #include "sprite_util.h"
-#include "sprite_wario_interaction.h"
 #include "types.h"
 #include "voice_set.h"
 #include "wario.h"
@@ -54,7 +54,7 @@ void VortexSetCommonProperties(void)
     gCurrentSprite.hitboxExtentRight = PIXEL_SIZE;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
-    gCurrentSprite.warioInteractionFlags = 6;
+    gCurrentSprite.warioCollision = 6;
     gCurrentSprite.work1 = 0;
     gCurrentSprite.work3 = 0;
 }
@@ -141,13 +141,13 @@ void VortexInitWarioOrKeyzer(void)
     gCurrentSprite.hitboxExtentRight = PIXEL_SIZE;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
-    gCurrentSprite.warioInteractionFlags = 0;
+    gCurrentSprite.warioCollision = 0;
     gCurrentSprite.pose = POSE_IDLE;
 }
 
 void SpriteVortex(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
@@ -241,7 +241,7 @@ void SpriteVortex(void)
             break;
 
         case POSE_IDLE:
-            gCurrentSprite.disableWarioInteraction = 0;
+            gCurrentSprite.disableWarioCollisionTimer = 0;
             break;
 
         case POSE_CRUSHED_OR_COLLECTED_INIT:
@@ -259,7 +259,7 @@ void SpriteVortex(void)
 
 void SpriteVortexPartMedium(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             VortexInitMediumPart();
@@ -326,7 +326,7 @@ void SpriteVortexPartMedium(void)
 
 void SpriteVortexPartLarge(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             VortexInitLargePart();
@@ -395,7 +395,7 @@ void SpriteWarioExitingVortex(void)
 {
     s32 scale;
 
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             VortexInitWarioOrKeyzer();
@@ -439,7 +439,7 @@ void SpriteWarioEnteringVortex(void)
 {
     s32 scale;
 
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             VortexInitWarioOrKeyzer();
@@ -485,7 +485,7 @@ void SpriteKeyzerEnteringVortex(void)
 {
     s32 scale;
 
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
         case POSE_INIT:
             VortexInitWarioOrKeyzer();

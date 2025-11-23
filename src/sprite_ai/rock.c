@@ -50,7 +50,7 @@ void RockIdleInit(void)
     gCurrentSprite.animationTimer = gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pOamData = sRockOamData;
     gCurrentSprite.pose = POSE_IDLE;
-    gCurrentSprite.warioInteractionFlags = 5;
+    gCurrentSprite.warioCollision = 5;
     gCurrentSprite.statusBits &= ~(SPRITE_STATUS_CAN_HIT_OTHER_SPRITES | SPRITE_STATUS_MAYBE_DEAD);
 }
 
@@ -140,7 +140,7 @@ void RockLiftedLeftInit(void)
 void RockCarriedRightInit(void)
 {
     gCurrentSprite.pose = POSE_CARRIED_RIGHT;
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     if (gCurrentSprite.statusBits | SPRITE_STATUS_MAYBE_DEAD) {
         gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_DEAD;
     }
@@ -149,7 +149,7 @@ void RockCarriedRightInit(void)
 void RockCarriedLeftInit(void)
 {
     gCurrentSprite.pose = POSE_CARRIED_LEFT;
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     if (gCurrentSprite.statusBits | SPRITE_STATUS_MAYBE_DEAD) {
         gCurrentSprite.statusBits &= ~SPRITE_STATUS_MAYBE_DEAD;
     }

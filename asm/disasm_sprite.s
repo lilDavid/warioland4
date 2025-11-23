@@ -20,7 +20,7 @@ func_801D684:
 	ldrh	r0, [r0, #0]
 	cmp	r0, #0
 	bne	.L_1d724
-	bl	func_801F628
+	bl	SpriteCollisionProcess
 	bl	func_80267C0
 	mov	r6, #0
 	ldr	r2, .L_1d718

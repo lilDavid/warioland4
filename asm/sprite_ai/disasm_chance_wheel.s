@@ -69,16 +69,16 @@ func_8039550:
 	.4byte	.L_39590
 	.4byte	.L_39590
 .L_39590:
-	bl	func_801EA3C
+	bl	SpriteCollisionTransformWarioFlaming
 	b	.L_395a6
 .L_39596:
-	bl	func_801EA64
+	bl	SpriteCollisionTransformWarioFat
 	b	.L_395a6
 .L_3959c:
-	bl	func_801EB7C
+	bl	SpriteCollisionTransformWarioFlat
 	b	.L_395a6
 .L_395a2:
-	bl	func_801EB04
+	bl	SpriteCollisionTransformWarioBouncy
 .L_395a6:
 	pop	{r0}
 	bx	r0

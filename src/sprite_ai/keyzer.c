@@ -328,7 +328,7 @@ void KeyzerInit()
         gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] = PERSISTENT_STATUS_DESPAWNED;
     } else {
         gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION | SPRITE_STATUS_3;
-        gCurrentSprite.warioInteractionFlags = 6;
+        gCurrentSprite.warioCollision = 6;
         gCurrentSprite.drawDistanceDown = BLOCK_SIZE_PIXELS;
         gCurrentSprite.drawDistanceUp = BLOCK_SIZE_PIXELS;
         gCurrentSprite.drawDistanceLeftRight = BLOCK_SIZE_PIXELS * 3 / 2;

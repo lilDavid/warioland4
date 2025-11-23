@@ -3,8 +3,8 @@
 #include "types.h"
 
 #include "autosave.h"
-#include "control.h"
 #include "global_data.h"
+#include "input.h"
 #include "main.h"
 #include "score.h"
 #include "wario.h"

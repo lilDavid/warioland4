@@ -108,7 +108,7 @@ func_80421DC:
 	mov	r1, sl
 	mov	r2, r9
 	mov	r3, r8
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_422f4
 	strb	r7, [r5, #28]

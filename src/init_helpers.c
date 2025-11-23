@@ -1,6 +1,6 @@
 #include "init_helpers.h"
 
-#include "control.h"
+#include "input.h"
 #include "interrupts.h"
 #include "oam.h"
 

@@ -1,5 +1,5 @@
-#ifndef CONTROL_H
-#define CONTROL_H
+#ifndef INPUT_H
+#define INPUT_H
 
 #include "gba.h"
 
@@ -10,4 +10,4 @@ extern u16 gButtonsHeld;
 extern u16 gButtonsHeldCopy;
 extern u16 gButtonsPressed;
 
-#endif  // CONTROL_H
+#endif  // INPUT_H

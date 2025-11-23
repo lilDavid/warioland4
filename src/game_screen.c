@@ -6,12 +6,12 @@
 #include "backgrounds.h"
 #include "boss_pause.h"
 #include "color_effects.h"
-#include "control.h"
 #include "demo_input.h"
 #include "door.h"
 #include "global_data.h"
 #include "hud.h"
 #include "init_helpers.h"
+#include "input.h"
 #include "interrupt_callbacks.h"
 #include "main.h"
 #include "music.h"
@@ -402,7 +402,7 @@ void GameScreenInitAndLoadGenerics(void)
         if (!gHasTemporarySave && !gUnk_3000025) {
             gTimerState = 0;
             if (!(gCurrentPassage == 0 && gCurrentStageNumber == 2) && gCurrentStageNumber != 4) {
-                gWarioPauseTimer = 0x3E8;
+                gWarioPauseTimer = CONVERT_SECONDS(16 + 2 / 3.0);
                 gDisableWario = 1;
             }
         }

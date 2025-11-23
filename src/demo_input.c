@@ -1,6 +1,6 @@
 #include "demo_input.h"
-#include "control.h"
 #include "demo.h"
+#include "input.h"
 #include "types.h"
 
 IWRAM_DATA u8 gDemoState = 0;

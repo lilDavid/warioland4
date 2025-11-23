@@ -58,9 +58,6 @@ enum NearSprite {
     NS_RIGHT = 8,
 };
 
-extern u8 gUnk_3000A50;
-extern u8 gUnk_3000A51;
-
 extern const s16 sSpriteFallingOffscreenYVelocity[];
 extern const s16 sSpriteFallingOffscreenYVelocityHeavy[];
 extern const s16 sUnk_8352A28[];

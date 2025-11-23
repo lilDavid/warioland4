@@ -3,9 +3,9 @@
 #include "gba.h"
 #include "types.h"
 
-#include "control.h"
 #include "global_data.h"
 #include "init_helpers.h"
+#include "input.h"
 #include "interrupt_callbacks.h"
 #include "interrupts.h"
 #include "save_file.h"

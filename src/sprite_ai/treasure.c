@@ -355,7 +355,7 @@ void BoxSetCommonProperties(void)
 void BoxInit(void)
 {
     gCurrentSprite.hitboxExtentUp = 2 * BLOCK_SIZE - EIGHTH_BLOCK_SIZE;
-    gCurrentSprite.warioInteractionFlags = 0x1A;
+    gCurrentSprite.warioCollision = 0x1A;
     gCurrentSprite.pose = POSE_IDLE;
     BoxSetCommonProperties();
 }
@@ -363,7 +363,7 @@ void BoxInit(void)
 void BoxInit1(void)
 {
     gCurrentSprite.hitboxExtentUp = BLOCK_SIZE;
-    gCurrentSprite.warioInteractionFlags = 0x19;
+    gCurrentSprite.warioCollision = 0x19;
     gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
     gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
     gCurrentSprite.work0 = CONVERT_SECONDS(5.0 / 6.0);
@@ -383,7 +383,7 @@ void BoxStartOpening(void)
     gCurrentSprite.pOamData = sBoxJewelPieceOpeningOam;
     gCurrentSprite.work0 = CONVERT_SECONDS(0.2) + DELTA_TIME;
     gCurrentSprite.hitboxExtentUp = BLOCK_SIZE;
-    gCurrentSprite.warioInteractionFlags = 0x19;
+    gCurrentSprite.warioCollision = 0x19;
     gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
         MAKE_PERSISTENT_DATA(POSE_INIT_1, PERSISTENT_STATUS_LOADED);
     m4aSongNumStart(SE_BOX_OPENING);
@@ -412,7 +412,7 @@ void BoxDisappearing(void)
 
     temp2 = gCurrentSprite.work0;
     if (temp2 < CONVERT_SECONDS(0.8)) {
-        gCurrentSprite.disableWarioInteraction = 1;
+        gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
         if ((temp2 & 1) == 0) {
             gCurrentSprite.statusBits ^= SPRITE_STATUS_HIDDEN;
         }
@@ -430,7 +430,7 @@ void Treasure_Init(void)
     gCurrentSprite.hitboxExtentDown = QUARTER_BLOCK_SIZE;
     gCurrentSprite.hitboxExtentLeft = HALF_BLOCK_SIZE + EIGHTH_BLOCK_SIZE;
     gCurrentSprite.hitboxExtentRight = HALF_BLOCK_SIZE + PIXEL_SIZE;
-    gCurrentSprite.warioInteractionFlags = 6;
+    gCurrentSprite.warioCollision = 6;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
@@ -448,7 +448,7 @@ void TreasureGlow_Init(void)
     gCurrentSprite.hitboxExtentDown = PIXEL_SIZE;
     gCurrentSprite.hitboxExtentLeft = PIXEL_SIZE;
     gCurrentSprite.hitboxExtentRight = PIXEL_SIZE;
-    gCurrentSprite.warioInteractionFlags = 6;
+    gCurrentSprite.warioCollision = 6;
     gCurrentSprite.pOamData = sTreasureGlowOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -1120,7 +1120,7 @@ void SpriteHeartRefill(void)
 
 void SpriteTreasureGlowJewelPieceNE(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NE)) {
         return;
@@ -1151,7 +1151,7 @@ void SpriteTreasureGlowJewelPieceNE(void)
 
 void SpriteTreasureGlowJewelPieceSE(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SE)) {
         return;
@@ -1182,7 +1182,7 @@ void SpriteTreasureGlowJewelPieceSE(void)
 
 void SpriteTreasureGlowJewelPieceSW(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_SW)) {
         return;
@@ -1213,7 +1213,7 @@ void SpriteTreasureGlowJewelPieceSW(void)
 
 void SpriteTreasureGlowJewelPieceNW(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_JEWEL_PIECE_NW)) {
         return;
@@ -1244,7 +1244,7 @@ void SpriteTreasureGlowJewelPieceNW(void)
 
 void SpriteTreasureGlowCD(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_CD)) {
         return;
@@ -1275,7 +1275,7 @@ void SpriteTreasureGlowCD(void)
 
 void SpriteTreasureGlowHeartRefill(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     if (SpriteUtilDespawnChildWithParent(PSPRITE_BOX_HEART_REFILL)) {
         return;
@@ -1321,7 +1321,7 @@ void SpriteTreasure_Unused(void)
             gCurrentSprite.animationTimer = 0;
             gCurrentSprite.pOamData = sBoxJewelPieceOpenedOam;
             gCurrentSprite.pose = POSE_IDLE;
-            gCurrentSprite.warioInteractionFlags = 0x19;
+            gCurrentSprite.warioCollision = 0x19;
             gCurrentSprite.work1 = 0;
             break;
     }
@@ -1331,7 +1331,7 @@ void SpriteTreasure_Unused(void)
 
 void SpriteUnknown10(void)
 {
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
 
     switch (gCurrentSprite.pose) {
         case POSE_INIT:

@@ -306,8 +306,8 @@ struct PrimarySpriteData {
     /* 0x1B */ u8 palette;
     /* 0x1C */ u8 pose;
     /* 0x1D */ u8 health;
-    /* 0x1E */ u8 warioInteractionFlags;
-    /* 0x1F */ u8 disableWarioInteraction;
+    /* 0x1E */ u8 warioCollision;
+    /* 0x1F */ u8 disableWarioCollisionTimer;
     /* 0x20 */ u8 drawDistanceDown;
     /* 0x21 */ u8 drawDistanceUp;
     /* 0x22 */ u8 drawDistanceLeftRight;
@@ -327,6 +327,16 @@ extern struct PrimarySpriteData gSpriteData[MAX_SPRITE_COUNT];
 extern u8 gPersistentSpriteData[16][MAX_SPRITE_SLOTS_PER_ROOM];
 #define MAKE_PERSISTENT_DATA(pose, status) (((pose) << 4) | (status))
 extern struct PrimarySpriteData gCurrentSprite;
+
+extern u8 gUnk_3000A50;
+extern u8 gUnk_3000A51;
+extern u8 gUnk_3000A52;
+extern u8 gUnk_3000A53;
+extern s8 gUnk_3000A58;
+extern s8 gUnk_3000A59;
+extern u8 gUnk_3000A5A;
+extern u8 gUnk_3000A5B;
+extern u8 gUnk_3000A60;
 
 extern const u16 sUnk_83B35F8[][2];
 extern const u16 sUnk_83B37FC[][2];

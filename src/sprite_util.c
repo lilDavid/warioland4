@@ -8,7 +8,7 @@
 #include "sound.h"
 #include "sprite.h"
 #include "sprite_ai.h"
-#include "sprite_wario_interaction.h"
+#include "sprite_collision.h"
 #include "wario.h"
 
 const s16 sSpriteFallingOffscreenYVelocity[] = {
@@ -596,14 +596,14 @@ void func_8023FA8(void)
 
 void SpriteUtilFallOffscreenRight(void)
 {
-    gCurrentSprite.disableWarioInteraction = TRUE;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     gCurrentSprite.xPosition += gCurrentSprite.work2;
     SpriteUtilLookupGravityByWeight(sSpriteFallingOffscreenYVelocityHeavy, sSpriteFallingOffscreenYVelocity);
 }
 
 void SpriteUtilFallOffscreenLeft(void)
 {
-    gCurrentSprite.disableWarioInteraction = TRUE;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
     SpriteUtilLookupGravityByWeight(sSpriteFallingOffscreenYVelocityHeavy, sSpriteFallingOffscreenYVelocity);
 }
@@ -800,7 +800,7 @@ void func_80244E0(void)
 
 void SpriteUtilDieAfterDelay(void)
 {
-    gCurrentSprite.disableWarioInteraction = TRUE;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     if (--gCurrentSprite.work0 == 0) {
         gCurrentSprite.statusBits = SPRITE_STATUS_NONE;
         SpriteSpawnSecondary(
@@ -1068,7 +1068,7 @@ void SpriteUtilLiftingSpriteRight(void)
     u16 xPositionBackup;
 
     clipCheck = 0;
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentCarriedSprite.state) {
         case 4:
             if (gWarioData.pose == 4) {
@@ -1108,7 +1108,7 @@ void SpriteUtilLiftingSpriteRight(void)
             if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                 gCurrentSprite.work2 = 6;
                 gCurrentSprite.pose = POSE_47;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
                 return;
@@ -1117,7 +1117,7 @@ void SpriteUtilLiftingSpriteRight(void)
             if (clipCheck == 2) {
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_47;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
                 return;
@@ -1142,7 +1142,7 @@ void SpriteUtilLiftingSpriteLeft(void)
     u16 xPositionBackup;
 
     clipCheck = 0;
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentCarriedSprite.state) {
         case 4:
             if (gWarioData.pose == 4) {
@@ -1182,7 +1182,7 @@ void SpriteUtilLiftingSpriteLeft(void)
             if (gCurrentSprite.statusBits & SPRITE_STATUS_HEAVY) {
                 gCurrentSprite.work2 = 6;
                 gCurrentSprite.pose = POSE_49;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
                 return;
@@ -1191,7 +1191,7 @@ void SpriteUtilLiftingSpriteLeft(void)
             if (clipCheck == 2) {
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_49;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
                 return;
@@ -1215,7 +1215,7 @@ void SpriteUtilCarryingSpriteRight(void)
     u16 xPositionBackup;
     u32 temp;
 
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentCarriedSprite.state - 4) {
         case 0:
         case 4:
@@ -1234,7 +1234,7 @@ void SpriteUtilCarryingSpriteRight(void)
             if (gUnk_3000A51 == 0x11) {
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_47;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
@@ -1248,7 +1248,7 @@ void SpriteUtilCarryingSpriteRight(void)
                 }
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_49;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
@@ -1264,7 +1264,7 @@ void SpriteUtilCarryingSpriteRight(void)
             }
 
             gCurrentSprite.yPosition = temp;
-            gCurrentSprite.disableWarioInteraction = 0xF;
+            gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
             gCurrentSprite.pose = POSE_37;
             gCurrentSprite.work2 = 4;
             gCurrentCarriedSprite.state = 0;
@@ -1295,7 +1295,7 @@ void SpriteUtilCarryingSpriteRight(void)
                 gCurrentSprite.xPosition = xPositionBackup;
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_49;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 func_801E4B0();
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1304,7 +1304,7 @@ void SpriteUtilCarryingSpriteRight(void)
             return;
 
         case 8:
-            gCurrentSprite.disableWarioInteraction = 0x1F;
+            gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
             gCurrentSprite.work0 = 0;
             gCurrentSprite.work3 = 0;
             if (gCurrentCarriedSprite.unk1 & 0x80) {
@@ -1337,7 +1337,7 @@ void SpriteUtilCarryingSpriteRight(void)
             } else {
                 gCurrentSprite.pose = POSE_1D;
             }
-            gCurrentSprite.disableWarioInteraction = 0xF;
+            gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             return;
     }
@@ -1349,7 +1349,7 @@ void SpriteUtilCarryingSpriteLeft(void)
     u16 xPositionBackup;
     u32 temp;
 
-    gCurrentSprite.disableWarioInteraction = 1;
+    gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentCarriedSprite.state - 4) {
         case 0:
         case 4:
@@ -1368,7 +1368,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             if (gUnk_3000A51 == 0x11) {
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_49;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
@@ -1382,7 +1382,7 @@ void SpriteUtilCarryingSpriteLeft(void)
                 }
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_47;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
                 m4aSongNumStart(SOUND_37);
@@ -1398,7 +1398,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             }
 
             gCurrentSprite.yPosition = temp;
-            gCurrentSprite.disableWarioInteraction = 0xF;
+            gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
             gCurrentSprite.pose = POSE_3D;
             gCurrentSprite.work2 = 4;
             gCurrentCarriedSprite.state = 0;
@@ -1429,7 +1429,7 @@ void SpriteUtilCarryingSpriteLeft(void)
                 gCurrentSprite.xPosition = xPositionBackup;
                 gCurrentSprite.work2 = 8;
                 gCurrentSprite.pose = POSE_47;
-                gCurrentSprite.disableWarioInteraction = 0x1F;
+                gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 func_801E4B0();
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1438,7 +1438,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             return;
 
         case 8:
-            gCurrentSprite.disableWarioInteraction = 0x1F;
+            gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
             gCurrentSprite.work0 = 0;
             gCurrentSprite.work3 = 0;
             if (gCurrentCarriedSprite.unk1 & 0x80) {
@@ -1471,7 +1471,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             } else {
                 gCurrentSprite.pose = POSE_1D;
             }
-            gCurrentSprite.disableWarioInteraction = 0xF;
+            gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
             gCurrentSprite.statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
             return;
     }
@@ -2324,61 +2324,61 @@ void func_80265C8(s32 slot)
         otherLeft = otherXPosition - gSpriteData[i].hitboxExtentLeft;
         otherRight = otherXPosition + gSpriteData[i].hitboxExtentRight;
 
-        if (!SpriteUtilCheckObjectsTouching(
+        if (!SpriteCollisionCheckObjectsTouching(
                 thisTop, thisBottom, thisLeft, thisRight, otherTop, otherBottom, otherLeft, otherRight
             )) {
             continue;
         }
 
-        if ((gSpriteData[slot].pose == 0x56) || (gSpriteData[slot].pose == 0x58)) {
+        if ((gSpriteData[slot].pose == POSE_CARRIED_LEFT) || (gSpriteData[slot].pose == POSE_CARRIED_RIGHT)) {
             func_801E4B0();
             gCurrentCarriedSprite.state = 0;
             if (xPosition > otherXPosition) {
-                gSpriteData[slot].pose = 0x33;
-                gSpriteData[i].pose = 0x35;
+                gSpriteData[slot].pose = POSE_33;
+                gSpriteData[i].pose = POSE_35;
             } else {
-                gSpriteData[slot].pose = 0x35;
-                gSpriteData[i].pose = 0x33;
+                gSpriteData[slot].pose = POSE_35;
+                gSpriteData[i].pose = POSE_33;
             }
         } else {
-            if (gSpriteData[i].pose >= 0x51 && gSpriteData[i].pose < 0x59) {
+            if (gSpriteData[i].pose >= POSE_BEING_LIFTED_RIGHT_INIT && gSpriteData[i].pose <= POSE_CARRIED_RIGHT) {
                 func_801E4B0();
                 gCurrentCarriedSprite.state = 0;
             }
-            if (0x20 & gSpriteData[slot].statusBits) {
-                if (0x20 & gSpriteData[i].statusBits) {
+            if (gSpriteData[slot].statusBits & SPRITE_STATUS_HEAVY) {
+                if (gSpriteData[i].statusBits & SPRITE_STATUS_HEAVY) {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = 0x6A;
-                        gSpriteData[i].pose = 0x69;
+                        gSpriteData[slot].pose = POSE_6A;
+                        gSpriteData[i].pose = POSE_69;
                     } else {
-                        gSpriteData[slot].pose = 0x69;
-                        gSpriteData[i].pose = 0x6A;
+                        gSpriteData[slot].pose = POSE_69;
+                        gSpriteData[i].pose = POSE_6A;
                     }
                 } else {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = 0x33;
-                        gSpriteData[i].pose = 0x69;
+                        gSpriteData[slot].pose = POSE_33;
+                        gSpriteData[i].pose = POSE_69;
                     } else {
-                        gSpriteData[slot].pose = 0x35;
-                        gSpriteData[i].pose = 0x6A;
+                        gSpriteData[slot].pose = POSE_35;
+                        gSpriteData[i].pose = POSE_6A;
                     }
                 }
             } else {
-                if (0x20 & gSpriteData[i].statusBits) {
+                if (gSpriteData[i].statusBits & SPRITE_STATUS_HEAVY) {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = 0x6A;
-                        gSpriteData[i].pose = 0x35;
+                        gSpriteData[slot].pose = POSE_6A;
+                        gSpriteData[i].pose = POSE_35;
                     } else {
-                        gSpriteData[slot].pose = 0x69;
-                        gSpriteData[i].pose = 0x33;
+                        gSpriteData[slot].pose = POSE_69;
+                        gSpriteData[i].pose = POSE_33;
                     }
                 } else {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = 0x6A;
-                        gSpriteData[i].pose = 0x69;
+                        gSpriteData[slot].pose = POSE_6A;
+                        gSpriteData[i].pose = POSE_69;
                     } else {
-                        gSpriteData[slot].pose = 0x69;
-                        gSpriteData[i].pose = 0x6A;
+                        gSpriteData[slot].pose = POSE_69;
+                        gSpriteData[i].pose = POSE_6A;
                     }
                 }
             }
@@ -2388,8 +2388,8 @@ void func_80265C8(s32 slot)
         gSpriteData[slot].statusBits |= SPRITE_STATUS_MAYBE_DEAD;
         gSpriteData[i].statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
         gSpriteData[slot].statusBits &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
-        gSpriteData[i].disableWarioInteraction = 0xF;
-        gSpriteData[slot].disableWarioInteraction = 0xF;
+        gSpriteData[i].disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
+        gSpriteData[slot].disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
         m4aSongNumStart(SOUND_3B);
         return;
     }

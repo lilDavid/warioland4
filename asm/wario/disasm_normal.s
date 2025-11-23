@@ -11656,8 +11656,8 @@ func_8015B48:
 	.align	2, 0
 
 
-thumb_func_start func_8015BA8
-func_8015BA8:
+thumb_func_start WarioCheckReaction
+WarioCheckReaction:
 	push	{lr}
 	lsl	r0, r0, #24
 	lsr	r0, r0, #24

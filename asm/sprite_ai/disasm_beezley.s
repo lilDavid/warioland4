@@ -109,7 +109,7 @@ func_804012C:
 	mov	r1, r8
 	add	r2, r7, #0
 	add	r3, r6, #0
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_40220
 	mov	r0, #81	@ 0x51
@@ -247,7 +247,7 @@ func_8040238:
 	mov	r1, r9
 	mov	r2, r8
 	add	r3, r7, #0
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_40320
 	mov	r0, #17

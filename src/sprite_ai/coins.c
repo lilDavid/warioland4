@@ -776,8 +776,8 @@ void CoinInit(void)
     gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
 
-    gCurrentSprite.disableWarioInteraction = 15;
-    gCurrentSprite.warioInteractionFlags = 6;
+    gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
+    gCurrentSprite.warioCollision = 6;
     gCurrentSprite.yPosition -= 3 * EIGHTH_BLOCK_SIZE;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
@@ -946,7 +946,7 @@ void DiamondInit(void)
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
     gCurrentSprite.pose = POSE_IDLE;
-    gCurrentSprite.warioInteractionFlags = 6;
+    gCurrentSprite.warioCollision = 6;
     gCurrentSprite.yPosition -= PIXEL_SIZE;
     gCurrentSprite.xPosition += HALF_BLOCK_SIZE;
 }
@@ -992,8 +992,8 @@ void ChanceWheelDiamondInit(void)
     }
     gCurrentSprite.statusBits |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.statusBits &= ~SPRITE_STATUS_HIDDEN;
-    gCurrentSprite.disableWarioInteraction = 15;
-    gCurrentSprite.warioInteractionFlags = 6;
+    gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
+    gCurrentSprite.warioCollision = 6;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
 }
@@ -1110,7 +1110,7 @@ void SpriteCoin(void)
             break;
 
         default:
-            gCurrentSprite.disableWarioInteraction = 1;
+            gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
             break;
     }
 }

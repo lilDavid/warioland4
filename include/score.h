@@ -172,10 +172,11 @@ extern u8 gHasGoldenDivaChest10;
 extern u8 gHasGoldenDivaChest11;
 extern u8 gHasGoldenDivaChest12;
 
+void ProcessSecondarySprites(void);
+void func_8075F44(void);
 void ScoreGivePoints(s32);
 void SpriteSpawnSecondary(u32 y, u32 x, u8 id);
-void func_8075F44(void);
 void func_807687C(u32 id, u32 y, u32 x, u32 amount);
-void ProcessSecondarySprites();
+void ScoreGiveOrDropCoins(s32);
 
 #endif  // SCORE_H

@@ -400,7 +400,7 @@ func_803F414:
 	mov	r1, sl
 	mov	r2, r9
 	mov	r3, r8
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_3f506
 	mov	r6, #0
@@ -540,7 +540,7 @@ func_803F528:
 	mov	r1, r9
 	mov	r2, r8
 	ldr	r3, [sp, #16]
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_3f654
 	mov	r5, #0

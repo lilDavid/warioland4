@@ -104,7 +104,7 @@ func_8053BBC:
 	mov	r1, sl
 	mov	r2, r9
 	mov	r3, r8
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_53cb4
 	mov	r0, #110	@ 0x6e

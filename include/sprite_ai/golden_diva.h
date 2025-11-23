@@ -1,0 +1,6 @@
+#ifndef SPRITE_AI_GOLDEN_DIVA_H
+#define SPRITE_AI_GOLDEN_DIVA_H
+
+void func_8062C78(void);
+
+#endif  // SPRITE_AI_GOLDEN_DIVA_H

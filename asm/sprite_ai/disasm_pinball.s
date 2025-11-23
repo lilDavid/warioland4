@@ -514,7 +514,7 @@ func_804AF14:
 	mov	r1, r9
 	mov	r2, r8
 	add	r3, r7, #0
-	bl	SpriteUtilCheckObjectsTouching
+	bl	SpriteCollisionCheckObjectsTouching
 	cmp	r0, #0
 	beq	.L_4b034
 	ldr	r0, .L_4b020
