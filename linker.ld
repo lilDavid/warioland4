@@ -592,7 +592,7 @@ SECTIONS {
         obj/rom_header.o(.text);
         obj/crt0.o(.text);
         obj/main.o(.text);
-        obj/disasm_soft_reset.o(.text);
+        obj/soft_reset.o(.text);
         obj/init_helpers.o(.text);
         obj/fixed_point.o(.text);
         obj/disasm_0x000A84.o(.text);
