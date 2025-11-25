@@ -6554,8 +6554,8 @@ SpriteUnknownDE:
 	.4byte	gCurrentSprite
 
 
-thumb_func_start SpriteCactus
-SpriteCactus:
+thumb_func_start SpriteCractus
+SpriteCractus:
 	push	{lr}
 	ldr	r0, .L_5dd00
 	ldrb	r0, [r0, #28]

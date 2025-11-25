@@ -1,15 +1,14 @@
+#include "sprite_ai/vortex.h"
+
 #include "autosave.h"
 #include "fixed_point.h"
 #include "global_data.h"
 #include "main.h"
-#include "oam.h"
 #include "score.h"
 #include "sound.h"
 #include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_collision.h"
 #include "sprite_util.h"
-#include "types.h"
 #include "voice_set.h"
 #include "wario.h"
 

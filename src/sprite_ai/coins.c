@@ -1,11 +1,10 @@
+#include "sprite_ai/coins.h"
+
 #include "global_data.h"
-#include "oam.h"
 #include "score.h"
 #include "sound.h"
 #include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_util.h"
-#include "types.h"
 #include "voice_set.h"
 #include "wario.h"
 

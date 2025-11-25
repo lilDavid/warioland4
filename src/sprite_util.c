@@ -7,7 +7,6 @@
 #include "score.h"
 #include "sound.h"
 #include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_collision.h"
 #include "wario.h"
 

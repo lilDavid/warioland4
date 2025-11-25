@@ -5,7 +5,6 @@
 #include "score.h"
 #include "sound.h"
 #include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_ai/cuckoo_condor.h"
 #include "sprite_ai/golden_diva.h"
 #include "voice_set.h"

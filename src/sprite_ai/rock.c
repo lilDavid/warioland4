@@ -1,9 +1,9 @@
+#include "sprite_ai/rock.h"
+
 #include "global_data.h"
-#include "oam.h"
 #include "score.h"
 #include "sound.h"
 #include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_util.h"
 #include "types.h"
 #include "wario.h"

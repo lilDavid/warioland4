@@ -1,11 +1,10 @@
+#include "sprite_ai/treasure.h"
+
 #include "global_data.h"
-#include "oam.h"
 #include "score.h"
 #include "sound.h"
 #include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_util.h"
-#include "types.h"
 #include "voice_set.h"
 #include "wario.h"
 
@@ -119,7 +118,7 @@ const struct AnimationFrame sTreasureGlowOam[] = {
     {sTreasureGlowOam_Frame2, 1},
     ANIMATION_TERMINATOR
 };
-const struct AnimationFrame sTreasureGlow_DisappearingOam[] = {
+const struct AnimationFrame sTreasureGlowDisappearingOam[] = {
     {sTreasureGlowOam_Frame1, 2},
     {sTreasureGlowOam_Frame2, 1},
     {sTreasureGlowOam_Frame1, 2},
@@ -458,7 +457,7 @@ void TreasureGlow_Init(void)
 
 void TreasureGlow_Collected(void)
 {
-    gCurrentSprite.pOamData = sTreasureGlow_DisappearingOam;
+    gCurrentSprite.pOamData = sTreasureGlowDisappearingOam;
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.pose = SPOSE_12;
@@ -1304,7 +1303,7 @@ void SpriteTreasureGlowHeartRefill(void)
     }
 }
 
-void SpriteTreasure_Unused(void)
+void SpriteTreasureUnused(void)
 {
     switch (gCurrentSprite.pose) {
         case SPOSE_INIT:

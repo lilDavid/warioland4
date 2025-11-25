@@ -1,27 +1,11 @@
+#include "sprite_ai/spear_mask.h"
+
 #include "global_data.h"
-#include "oam.h"
 #include "score.h"
 #include "sound.h"
-#include "sprite.h"
-#include "sprite_ai.h"
 #include "sprite_util.h"
 #include "types.h"
 #include "wario.h"
-
-enum SpearMaskExtraPoses {
-    SPEAR_MASK_POSE_6E = SPOSE_6E,
-    SPEAR_MASK_POSE_6F,
-    SPEAR_MASK_POSE_70,
-    SPEAR_MASK_POSE_71,
-    SPEAR_MASK_POSE_72,
-    SPEAR_MASK_STARTING_CHASE,
-    SPEAR_MASK_POSE_74,
-    SPEAR_MASK_CHASING,
-};
-
-#define SPEAR_MASK_PALETTE_YELLOW 0
-#define SPEAR_MASK_PALETTE_BLUE 1
-#define SPEAR_MASK_PALETTE_RED 2
 
 const u16 sSpearMaskWalkingOam_Frame1[] = {
     3,
