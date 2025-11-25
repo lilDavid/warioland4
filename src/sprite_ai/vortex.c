@@ -90,7 +90,7 @@ void VortexInitLargePart(void)
 
 void VortexFinishStage(void)
 {
-    gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
+    gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED;
     gDisableWario = 1;
     gWarioPauseTimer = CONVERT_SECONDS(16.0 + 2.0 / 3.0);
     gUnk_3000C03 = 2;
@@ -142,17 +142,17 @@ void VortexInitWarioOrKeyzer(void)
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.warioCollision = 0;
-    gCurrentSprite.pose = POSE_IDLE;
+    gCurrentSprite.pose = SPOSE_IDLE;
 }
 
 void SpriteVortex(void)
 {
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             gPersistentSpriteData[gCurrentRoom][gCurrentSprite.roomSlot] =
-                MAKE_PERSISTENT_DATA(POSE_INIT_1, PERSISTENT_STATUS_LOADED);
-            gCurrentSprite.pose = POSE_11;
+                MAKE_PERSISTENT_DATA(SPOSE_INIT_1, PERSISTENT_STATUS_LOADED);
+            gCurrentSprite.pose = SPOSE_11;
             gCurrentSprite.work0 = CONVERT_SECONDS(1.5);
             gCurrentSprite.work2 = U8_MAX;
             VortexInitSmallPart();
@@ -182,16 +182,16 @@ void SpriteVortex(void)
             }
             break;
 
-        case POSE_11:
+        case SPOSE_11:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_12;
+                gCurrentSprite.pose = SPOSE_12;
             }
             break;
 
-        case POSE_12:
+        case SPOSE_12:
             if (gCurrentSprite.work2 <= 0x40) {
-                gCurrentSprite.pose = POSE_18;
+                gCurrentSprite.pose = SPOSE_18;
                 gCurrentSprite.work2 = 0x40;
             } else if (gCurrentSprite.work2 <= 0x80) {
                 gCurrentSprite.work2 -= 4;
@@ -200,13 +200,13 @@ void SpriteVortex(void)
             }
             break;
 
-        case POSE_INIT_1:
+        case SPOSE_INIT_1:
             if (gSwitchPressed) {
                 gCurrentSprite.work2 = U8_MAX;
-                gCurrentSprite.pose = POSE_IDLE;
+                gCurrentSprite.pose = SPOSE_IDLE;
             } else {
                 gCurrentSprite.work2 = 64;
-                gCurrentSprite.pose = POSE_18;
+                gCurrentSprite.pose = SPOSE_18;
             }
             VortexInitSmallPart();
             SpriteSpawnAsChild(
@@ -225,26 +225,26 @@ void SpriteVortex(void)
             );
             break;
 
-        case POSE_18:
+        case SPOSE_18:
             if (gSwitchPressed) {
-                gCurrentSprite.pose = POSE_14;
+                gCurrentSprite.pose = SPOSE_14;
             }
             break;
 
-        case POSE_14:
+        case SPOSE_14:
             if (gCurrentSprite.work2 >= U8_MAX) {
-                gCurrentSprite.pose = POSE_IDLE;
+                gCurrentSprite.pose = SPOSE_IDLE;
                 gCurrentSprite.work2 = U8_MAX;
             } else {
                 gCurrentSprite.work2 += 1;
             }
             break;
 
-        case POSE_IDLE:
+        case SPOSE_IDLE:
             gCurrentSprite.disableWarioCollisionTimer = 0;
             break;
 
-        case POSE_CRUSHED_OR_COLLECTED_INIT:
+        case SPOSE_CRUSHED_OR_COLLECTED_INIT:
             VortexFinishStage();
             break;
     }
@@ -261,35 +261,35 @@ void SpriteVortexPartMedium(void)
 {
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             VortexInitMediumPart();
             if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_MEDIUM) {
-                gCurrentSprite.pose = POSE_11;
+                gCurrentSprite.pose = SPOSE_11;
                 gCurrentSprite.work0 = CONVERT_SECONDS(1.5);
                 gCurrentSprite.work2 = U8_MAX;
             } else if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_MEDIUM_2) {
                 if (gSwitchPressed) {
                     gCurrentSprite.work2 = U8_MAX;
-                    gCurrentSprite.pose = POSE_IDLE;
+                    gCurrentSprite.pose = SPOSE_IDLE;
                 } else {
                     gCurrentSprite.work2 = 64;
-                    gCurrentSprite.pose = POSE_18;
+                    gCurrentSprite.pose = SPOSE_18;
                 }
             } else {
                 gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
 
-        case POSE_11:
+        case SPOSE_11:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_12;
+                gCurrentSprite.pose = SPOSE_12;
             }
             break;
 
-        case POSE_12:
+        case SPOSE_12:
             if (gCurrentSprite.work2 <= 0x40) {
-                gCurrentSprite.pose = POSE_18;
+                gCurrentSprite.pose = SPOSE_18;
                 gCurrentSprite.work2 = 0x40;
             } else if (gCurrentSprite.work2 <= 0x80) {
                 gCurrentSprite.work2 -= 4;
@@ -298,15 +298,15 @@ void SpriteVortexPartMedium(void)
             }
             break;
 
-        case POSE_18:
+        case SPOSE_18:
             if (gSwitchPressed) {
-                gCurrentSprite.pose = POSE_14;
+                gCurrentSprite.pose = SPOSE_14;
             }
             break;
 
-        case POSE_14:
+        case SPOSE_14:
             if (gCurrentSprite.work2 >= U8_MAX) {
-                gCurrentSprite.pose = POSE_IDLE;
+                gCurrentSprite.pose = SPOSE_IDLE;
                 gCurrentSprite.work2 = U8_MAX;
             } else {
                 gCurrentSprite.work2 += 1;
@@ -328,35 +328,35 @@ void SpriteVortexPartLarge(void)
 {
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             VortexInitLargePart();
             if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_LARGE) {
-                gCurrentSprite.pose = POSE_11;
+                gCurrentSprite.pose = SPOSE_11;
                 gCurrentSprite.work0 = CONVERT_SECONDS(1.5);
                 gCurrentSprite.work2 = U8_MAX;
             } else if (gCurrentSprite.globalID == PSPRITE_VORTEX_PART_LARGE_2) {
                 if (gSwitchPressed) {
                     gCurrentSprite.work2 = U8_MAX;
-                    gCurrentSprite.pose = POSE_IDLE;
+                    gCurrentSprite.pose = SPOSE_IDLE;
                 } else {
                     gCurrentSprite.work2 = 64;
-                    gCurrentSprite.pose = POSE_18;
+                    gCurrentSprite.pose = SPOSE_18;
                 }
             } else {
                 gCurrentSprite.status = SPRITE_STATUS_NONE;
             }
             break;
 
-        case POSE_11:
+        case SPOSE_11:
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_12;
+                gCurrentSprite.pose = SPOSE_12;
             }
             break;
 
-        case POSE_12:
+        case SPOSE_12:
             if (gCurrentSprite.work2 <= 0x40) {
-                gCurrentSprite.pose = POSE_18;
+                gCurrentSprite.pose = SPOSE_18;
                 gCurrentSprite.work2 = 0x40;
             } else if (gCurrentSprite.work2 <= 0x80) {
                 gCurrentSprite.work2 -= 4;
@@ -365,15 +365,15 @@ void SpriteVortexPartLarge(void)
             }
             break;
 
-        case POSE_18:
+        case SPOSE_18:
             if (gSwitchPressed) {
-                gCurrentSprite.pose = POSE_14;
+                gCurrentSprite.pose = SPOSE_14;
             }
             break;
 
-        case POSE_14:
+        case SPOSE_14:
             if (gCurrentSprite.work2 >= U8_MAX) {
-                gCurrentSprite.pose = POSE_IDLE;
+                gCurrentSprite.pose = SPOSE_IDLE;
                 gCurrentSprite.work2 = U8_MAX;
             } else {
                 gCurrentSprite.work2 += 1;
@@ -397,7 +397,7 @@ void SpriteWarioExitingVortex(void)
 
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             VortexInitWarioOrKeyzer();
             gCurrentSprite.pOamData = sVortexWarioOam;
             gCurrentSprite.work0 = CONVERT_SECONDS(1.0);
@@ -406,14 +406,14 @@ void SpriteWarioExitingVortex(void)
             m4aSongNumStart(SOUND_1CC);
             break;
 
-        case POSE_IDLE:
+        case SPOSE_IDLE:
             if (gCurrentSprite.work2) {
                 gCurrentSprite.work2 += 4;
             }
             gCurrentSprite.work1 -= ANGLE_PI / 16;
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
+                gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED;
             }
             break;
 
@@ -441,7 +441,7 @@ void SpriteWarioEnteringVortex(void)
 
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             VortexInitWarioOrKeyzer();
             gCurrentSprite.pOamData = sVortexWarioOam;
             gCurrentSprite.work0 = CONVERT_SECONDS(1.0);
@@ -449,14 +449,14 @@ void SpriteWarioEnteringVortex(void)
             gCurrentSprite.work2 = 0;
             break;
 
-        case POSE_IDLE:
+        case SPOSE_IDLE:
             if ((u8)(gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
                 gCurrentSprite.work2 -= 4;
             }
             gCurrentSprite.work1 -= ANGLE_PI / 16;
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
+                gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED;
             }
             break;
 
@@ -487,7 +487,7 @@ void SpriteKeyzerEnteringVortex(void)
 
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             VortexInitWarioOrKeyzer();
             gCurrentSprite.pOamData = sVortexKeyzerOam;
             gCurrentSprite.work0 = CONVERT_SECONDS(1.0);
@@ -495,14 +495,14 @@ void SpriteKeyzerEnteringVortex(void)
             gCurrentSprite.work2 = 0;
             break;
 
-        case POSE_IDLE:
+        case SPOSE_IDLE:
             if ((u8)(gCurrentSprite.work2 - 1) >= (0x100 / 16)) {
                 gCurrentSprite.work2 -= 4;
             }
             gCurrentSprite.work1 -= ANGLE_PI / 16;
             TIMER_COUNT_DOWN(gCurrentSprite.work0);
             if (gCurrentSprite.work0 == 0) {
-                gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED;
+                gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED;
             }
             break;
 

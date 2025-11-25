@@ -49,7 +49,7 @@ void RockIdleInit(void)
 {
     gCurrentSprite.animationTimer = gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.pOamData = sRockOamData;
-    gCurrentSprite.pose = POSE_IDLE;
+    gCurrentSprite.pose = SPOSE_IDLE;
     gCurrentSprite.warioCollision = 5;
     gCurrentSprite.status &= ~(SPRITE_STATUS_CAN_HIT_OTHER_SPRITES | SPRITE_STATUS_MAYBE_DEAD);
 }
@@ -65,46 +65,46 @@ void RockIdle(void)
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
         }
         if (!gUnk_3000A51) {
-            gCurrentSprite.pose = POSE_1B;
+            gCurrentSprite.pose = SPOSE_1B;
         }
     }
 }
 
 void RockPose1B(void)
 {
-    gCurrentSprite.pose = POSE_1E;
+    gCurrentSprite.pose = SPOSE_1E;
     gCurrentSprite.work3 = 0;
 }
 
 void RockPose2B(void)
 {
-    gCurrentSprite.pose = POSE_2C;
+    gCurrentSprite.pose = SPOSE_2C;
     gCurrentSprite.work1 = 0;
 }
 
 void RockPose2D(void)
 {
-    gCurrentSprite.pose = POSE_2E;
+    gCurrentSprite.pose = SPOSE_2E;
     gCurrentSprite.work1 = 0;
 }
 
 void RockPose47(void)
 {
-    gCurrentSprite.pose = POSE_48;
+    gCurrentSprite.pose = SPOSE_48;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
 void RockPose49(void)
 {
-    gCurrentSprite.pose = POSE_4A;
+    gCurrentSprite.pose = SPOSE_4A;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
 }
 
 void RockBumpedRightInit(void)
 {
-    gCurrentSprite.pose = POSE_34;
+    gCurrentSprite.pose = SPOSE_34;
     gCurrentSprite.work0 = 4;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
@@ -112,7 +112,7 @@ void RockBumpedRightInit(void)
 
 void RockBumpedLeftInit(void)
 {
-    gCurrentSprite.pose = POSE_36;
+    gCurrentSprite.pose = SPOSE_36;
     gCurrentSprite.work0 = 4;
     gCurrentSprite.work2 = 8;
     gCurrentSprite.work3 = 0;
@@ -129,17 +129,17 @@ void RockGroundPounded(void)
 
 void RockLiftedRightInit(void)
 {
-    gCurrentSprite.pose = POSE_BEING_LIFTED_RIGHT;
+    gCurrentSprite.pose = SPOSE_BEING_LIFTED_RIGHT;
 }
 
 void RockLiftedLeftInit(void)
 {
-    gCurrentSprite.pose = POSE_BEING_LIFTED_LEFT;
+    gCurrentSprite.pose = SPOSE_BEING_LIFTED_LEFT;
 }
 
 void RockCarriedRightInit(void)
 {
-    gCurrentSprite.pose = POSE_CARRIED_RIGHT;
+    gCurrentSprite.pose = SPOSE_CARRIED_RIGHT;
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     if (gCurrentSprite.status | SPRITE_STATUS_MAYBE_DEAD) {
         gCurrentSprite.status &= ~SPRITE_STATUS_MAYBE_DEAD;
@@ -148,7 +148,7 @@ void RockCarriedRightInit(void)
 
 void RockCarriedLeftInit(void)
 {
-    gCurrentSprite.pose = POSE_CARRIED_LEFT;
+    gCurrentSprite.pose = SPOSE_CARRIED_LEFT;
     gCurrentSprite.disableWarioCollisionTimer = DELTA_TIME;
     if (gCurrentSprite.status | SPRITE_STATUS_MAYBE_DEAD) {
         gCurrentSprite.status &= ~SPRITE_STATUS_MAYBE_DEAD;
@@ -161,221 +161,221 @@ void SpriteRock(void)
         return;
     }
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             RockInit();
 
-        case POSE_IDLE_INIT:
-        case POSE_17:
-        case POSE_2F:
+        case SPOSE_IDLE_INIT:
+        case SPOSE_17:
+        case SPOSE_2F:
             RockIdleInit();
-        case POSE_IDLE:
+        case SPOSE_IDLE:
             RockIdle();
             break;
 
-        case POSE_1B:
-        case POSE_1D:
+        case SPOSE_1B:
+        case SPOSE_1D:
             RockPose1B();
-        case POSE_1E:
+        case SPOSE_1E:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             func_8023EE0();
             break;
 
-        case POSE_2B:
+        case SPOSE_2B:
             RockPose2B();
-        case POSE_2C:
+        case SPOSE_2C:
             func_8024478();
             break;
 
-        case POSE_2D:
+        case SPOSE_2D:
             RockPose2D();
-        case POSE_2E:
+        case SPOSE_2E:
             func_802449C();
             break;
 
-        case POSE_CRUSHED_OR_COLLECTED_INIT:
+        case SPOSE_CRUSHED_OR_COLLECTED_INIT:
             RockGroundPounded();
             break;
 
-        case POSE_TACKLED_RIGHT_INIT:
-        case POSE_PUSHED_RIGHT_INIT:
-        case POSE_33:
-        case POSE_4F:
-        case POSE_6A:
+        case SPOSE_TACKLED_RIGHT_INIT:
+        case SPOSE_PUSHED_RIGHT_INIT:
+        case SPOSE_33:
+        case SPOSE_4F:
+        case SPOSE_6A:
             RockBumpedRightInit();
-        case POSE_34:
+        case SPOSE_34:
             func_8024988();
             break;
 
-        case POSE_TACKLED_LEFT_INIT:
-        case POSE_PUSHED_LEFT_INIT:
-        case POSE_35:
-        case POSE_50:
-        case POSE_69:
+        case SPOSE_TACKLED_LEFT_INIT:
+        case SPOSE_PUSHED_LEFT_INIT:
+        case SPOSE_35:
+        case SPOSE_50:
+        case SPOSE_69:
             RockBumpedLeftInit();
-        case POSE_36:
+        case SPOSE_36:
             func_802476C();
             break;
 
-        case POSE_37:
+        case SPOSE_37:
             func_8024688();
-        case POSE_38:
+        case SPOSE_38:
             func_80246B8();
             break;
 
-        case POSE_39:
+        case SPOSE_39:
             func_802473C();
-        case POSE_3A:
+        case SPOSE_3A:
             func_802476C();
             break;
 
-        case POSE_3B:
+        case SPOSE_3B:
             func_80247F0();
 
-        case POSE_3C:
+        case SPOSE_3C:
             func_8024820();
             break;
 
-        case POSE_3D:
+        case SPOSE_3D:
             func_80248A4();
-        case POSE_3E:
+        case SPOSE_3E:
             func_80248D4();
             break;
 
-        case POSE_3F:
+        case SPOSE_3F:
             func_8024958();
-        case POSE_40:
+        case SPOSE_40:
             func_8024988();
             break;
 
-        case POSE_41:
+        case SPOSE_41:
             func_8024A0C();
-        case POSE_42:
+        case SPOSE_42:
             func_8024A3C();
             break;
 
-        case POSE_43:
+        case SPOSE_43:
             func_8024AC0();
-        case POSE_44:
+        case SPOSE_44:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             func_8024AD4();
             break;
 
-        case POSE_45:
+        case SPOSE_45:
             func_8024BEC();
-        case POSE_46:
+        case SPOSE_46:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             func_8024C00();
             break;
 
-        case POSE_47:
+        case SPOSE_47:
             RockPose47();
-        case POSE_48:
+        case SPOSE_48:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             func_8024AD4();
             break;
 
-        case POSE_49:
+        case SPOSE_49:
             RockPose49();
-        case POSE_4A:
+        case SPOSE_4A:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             func_8024C00();
             break;
 
-        case POSE_BEING_LIFTED_RIGHT_INIT:
+        case SPOSE_BEING_LIFTED_RIGHT_INIT:
             RockLiftedRightInit();
             break;
 
-        case POSE_BEING_LIFTED_RIGHT:
+        case SPOSE_BEING_LIFTED_RIGHT:
             SpriteUtilLiftingSpriteRight();
             break;
 
-        case POSE_BEING_LIFTED_LEFT_INIT:
+        case SPOSE_BEING_LIFTED_LEFT_INIT:
             RockLiftedLeftInit();
             break;
 
-        case POSE_BEING_LIFTED_LEFT:
+        case SPOSE_BEING_LIFTED_LEFT:
             SpriteUtilLiftingSpriteLeft();
             break;
 
-        case POSE_CARRIED_RIGHT_INIT:
+        case SPOSE_CARRIED_RIGHT_INIT:
             RockCarriedRightInit();
             break;
 
-        case POSE_CARRIED_RIGHT:
+        case SPOSE_CARRIED_RIGHT:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilCarryingSpriteRight();
             break;
 
-        case POSE_CARRIED_LEFT_INIT:
+        case SPOSE_CARRIED_LEFT_INIT:
             RockCarriedLeftInit();
             break;
 
-        case POSE_CARRIED_LEFT:
+        case SPOSE_CARRIED_LEFT:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilCarryingSpriteLeft();
             break;
 
-        case POSE_THROWN_LEFT_SOFT_INIT:
-            gCurrentSprite.pose = POSE_THROWN_LEFT_SOFT;
-        case POSE_THROWN_LEFT_SOFT:
+        case SPOSE_THROWN_LEFT_SOFT_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_LEFT_SOFT;
+        case SPOSE_THROWN_LEFT_SOFT:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownLeftSoft();
             break;
 
-        case POSE_THROWN_LEFT_HARD_INIT:
-            gCurrentSprite.pose = POSE_THROWN_LEFT_HARD;
+        case SPOSE_THROWN_LEFT_HARD_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_LEFT_HARD;
             gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x10;
-        case POSE_THROWN_LEFT_HARD:
+        case SPOSE_THROWN_LEFT_HARD:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownLeftHard();
             break;
 
-        case POSE_THROWN_UP_LEFT_SOFT_INIT:
-            gCurrentSprite.pose = POSE_THROWN_UP_LEFT_SOFT;
-        case POSE_THROWN_UP_LEFT_SOFT:
+        case SPOSE_THROWN_UP_LEFT_SOFT_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_UP_LEFT_SOFT;
+        case SPOSE_THROWN_UP_LEFT_SOFT:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownUpLeftSoft();
             break;
 
-        case POSE_THROWN_UP_LEFT_HARD_INIT:
-            gCurrentSprite.pose = POSE_THROWN_UP_LEFT_HARD;
+        case SPOSE_THROWN_UP_LEFT_HARD_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_UP_LEFT_HARD;
             gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x20;
-        case POSE_THROWN_UP_LEFT_HARD:
+        case SPOSE_THROWN_UP_LEFT_HARD:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownUpLeftHard();
             break;
 
-        case POSE_THROWN_RIGHT_SOFT_INIT:
-            gCurrentSprite.pose = POSE_THROWN_RIGHT_SOFT;
-        case POSE_THROWN_RIGHT_SOFT:
+        case SPOSE_THROWN_RIGHT_SOFT_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_RIGHT_SOFT;
+        case SPOSE_THROWN_RIGHT_SOFT:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownRightSoft();
             break;
 
-        case POSE_THROWN_RIGHT_HARD_INIT:
-            gCurrentSprite.pose = POSE_THROWN_RIGHT_HARD;
+        case SPOSE_THROWN_RIGHT_HARD_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_RIGHT_HARD;
             gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x40;
-        case POSE_THROWN_RIGHT_HARD:
+        case SPOSE_THROWN_RIGHT_HARD:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownRightHard();
             break;
 
-        case POSE_THROWN_UP_RIGHT_SOFT_INIT:
-            gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_SOFT;
-        case POSE_THROWN_UP_RIGHT_SOFT:
+        case SPOSE_THROWN_UP_RIGHT_SOFT_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_UP_RIGHT_SOFT;
+        case SPOSE_THROWN_UP_RIGHT_SOFT:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownUpRightSoft();
             break;
 
-        case POSE_THROWN_UP_RIGHT_HARD_INIT:
-            gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_HARD;
+        case SPOSE_THROWN_UP_RIGHT_HARD_INIT:
+            gCurrentSprite.pose = SPOSE_THROWN_UP_RIGHT_HARD;
             gCurrentSprite.health = (gCurrentSprite.health & 0xF) | 0x80;
-        case POSE_THROWN_UP_RIGHT_HARD:
+        case SPOSE_THROWN_UP_RIGHT_HARD:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             SpriteUtilThrownUpRightHard();
             break;
 
-        case POSE_6B:
+        case SPOSE_6B:
             if (gCurrentSprite.health & 0x10) {
                 gCurrentSprite.health &= 0xF;
                 gCurrentSprite.work2 = 8;

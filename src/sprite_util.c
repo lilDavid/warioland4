@@ -218,12 +218,12 @@ void func_80238A4(void)
 {
     if (gUnk_30000C8 > 0x39) {
         if (gUnk_3000BEC & 1) {
-            gCurrentSprite.pose = POSE_33;
+            gCurrentSprite.pose = SPOSE_33;
         } else {
-            gCurrentSprite.pose = POSE_35;
+            gCurrentSprite.pose = SPOSE_35;
         }
     } else if (gUnk_30000C8 > 0x29) {
-        gCurrentSprite.pose = POSE_4B;
+        gCurrentSprite.pose = SPOSE_4B;
     }
 }
 
@@ -231,9 +231,9 @@ void func_80238E8(void)
 {
     if (gUnk_30000C8 > 0x29) {
         if (gUnk_3000BEC & 1) {
-            gCurrentSprite.pose = POSE_33;
+            gCurrentSprite.pose = SPOSE_33;
         } else {
-            gCurrentSprite.pose = POSE_35;
+            gCurrentSprite.pose = SPOSE_35;
         }
     }
 }
@@ -242,9 +242,9 @@ void func_802391C(void)
 {
     if (gUnk_30000C8 > 0x29) {
         if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
-            gCurrentSprite.pose = POSE_35;
+            gCurrentSprite.pose = SPOSE_35;
         } else {
-            gCurrentSprite.pose = POSE_33;
+            gCurrentSprite.pose = SPOSE_33;
         }
     }
 }
@@ -473,13 +473,13 @@ void func_8023C94(void)
     func_80238A4();
     func_8023B88();
     if (gUnk_3000A50 == 0) {
-        gCurrentSprite.pose = POSE_1B;
+        gCurrentSprite.pose = SPOSE_1B;
         return;
     }
 
     TIMER_COUNT_DOWN(gCurrentSprite.work0);
     if (gCurrentSprite.work0 == 0) {
-        gCurrentSprite.pose = POSE_IDLE_INIT;
+        gCurrentSprite.pose = SPOSE_IDLE_INIT;
     }
 }
 
@@ -488,7 +488,7 @@ void func_8023CD8(void)
     func_80238E8();
     func_8023B88();
     if (gUnk_3000A50 == 0) {
-        gCurrentSprite.pose = POSE_1D;
+        gCurrentSprite.pose = SPOSE_1D;
         return;
     }
 
@@ -496,15 +496,15 @@ void func_8023CD8(void)
     if (gCurrentSprite.work0 == 0) {
         if (gCurrentSprite.xPosition > gWarioData.xPosition) {
             if (!(gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT)) {
-                gCurrentSprite.pose = POSE_17;
+                gCurrentSprite.pose = SPOSE_17;
             } else {
-                gCurrentSprite.pose = POSE_11;
+                gCurrentSprite.pose = SPOSE_11;
             }
         } else {
             if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
-                gCurrentSprite.pose = POSE_17;
+                gCurrentSprite.pose = SPOSE_17;
             } else {
-                gCurrentSprite.pose = POSE_11;
+                gCurrentSprite.pose = SPOSE_11;
             }
         }
     }
@@ -520,7 +520,7 @@ void func_8023D48(void)
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
-        gCurrentSprite.pose = POSE_17;
+        gCurrentSprite.pose = SPOSE_17;
         return;
     }
 
@@ -539,15 +539,15 @@ void func_8023E00(void)
         gCurrentSprite.yPosition = temp;
         if (gCurrentSprite.xPosition > gWarioData.xPosition) {
             if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
-                gCurrentSprite.pose = POSE_11;
+                gCurrentSprite.pose = SPOSE_11;
             } else {
-                gCurrentSprite.pose = POSE_17;
+                gCurrentSprite.pose = SPOSE_17;
             }
         } else {
             if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
-                gCurrentSprite.pose = POSE_17;
+                gCurrentSprite.pose = SPOSE_17;
             } else {
-                gCurrentSprite.pose = POSE_11;
+                gCurrentSprite.pose = SPOSE_11;
             }
         }
         return;
@@ -567,9 +567,9 @@ void func_8023EE0(void)
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
         if (gCurrentSprite.xPosition > gWarioData.xPosition) {
-            gCurrentSprite.pose = POSE_33;
+            gCurrentSprite.pose = SPOSE_33;
         } else {
-            gCurrentSprite.pose = POSE_35;
+            gCurrentSprite.pose = SPOSE_35;
         }
         return;
     }
@@ -587,7 +587,7 @@ void func_8023FA8(void)
     }
     if (gUnk_3000A50) {
         gCurrentSprite.yPosition = temp;
-        gCurrentSprite.pose = POSE_6C;
+        gCurrentSprite.pose = SPOSE_6C;
         return;
     }
 
@@ -625,7 +625,7 @@ void func_8024180(void)
         } else {
             gCurrentSprite.work2--;
         }
-        gCurrentSprite.pose = POSE_2D;
+        gCurrentSprite.pose = SPOSE_2D;
         m4aSongNumStart(SOUND_37);
         return;
     }
@@ -633,15 +633,15 @@ void func_8024180(void)
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
     func_8023B88();
     if (!(gUnk_3000A50 & 0xE)) {
-        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2C)) {
-            gCurrentSprite.pose = POSE_43;
+        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2C)) {
+            gCurrentSprite.pose = SPOSE_43;
             return;
         }
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
         if (gUnk_3000A51 == 0) {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
             if (gUnk_3000A51 == 0) {
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 return;
             }
         }
@@ -655,15 +655,15 @@ void func_8024180(void)
             }
         }
     } else if ((gUnk_3000A50 & 0xF1) == 1) {
-        if (gCurrentSprite.pose != POSE_2C) {
-            gCurrentSprite.pose = POSE_47;
+        if (gCurrentSprite.pose != SPOSE_2C) {
+            gCurrentSprite.pose = SPOSE_47;
         }
     } else {
         if (gCurrentSprite.work2 > 4) {
             gCurrentSprite.work2--;
             return;
         }
-        gCurrentSprite.pose = POSE_45;
+        gCurrentSprite.pose = SPOSE_45;
     }
 }
 
@@ -684,7 +684,7 @@ void func_80242C8(void)
         } else {
             gCurrentSprite.work2--;
         }
-        gCurrentSprite.pose = POSE_2B;
+        gCurrentSprite.pose = SPOSE_2B;
         m4aSongNumStart(SOUND_37);
         return;
     }
@@ -692,15 +692,15 @@ void func_80242C8(void)
     gCurrentSprite.xPosition += gCurrentSprite.work2;
     func_8023B88();
     if (!(gUnk_3000A50 & 0xE)) {
-        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2E)) {
-            gCurrentSprite.pose = POSE_45;
+        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2E)) {
+            gCurrentSprite.pose = SPOSE_45;
             return;
         }
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
         if (gUnk_3000A51 == 0) {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
             if (gUnk_3000A51 == 0) {
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 return;
             }
         }
@@ -714,15 +714,15 @@ void func_80242C8(void)
             }
         }
     } else if (!(0xF1 & gUnk_3000A50)) {
-        if (gCurrentSprite.pose != POSE_2E) {
-            gCurrentSprite.pose = POSE_49;
+        if (gCurrentSprite.pose != SPOSE_2E) {
+            gCurrentSprite.pose = SPOSE_49;
         }
     } else {
         if (gCurrentSprite.work2 > 4) {
             gCurrentSprite.work2--;
             return;
         }
-        gCurrentSprite.pose = POSE_43;
+        gCurrentSprite.pose = SPOSE_43;
     }
 }
 
@@ -736,7 +736,7 @@ void SpriteUtilPushedLeft(void)
 
     gCurrentSprite.work0--;
     if (gCurrentSprite.work0 == 0) {
-        gCurrentSprite.pose = POSE_11;
+        gCurrentSprite.pose = SPOSE_11;
     }
 }
 
@@ -750,7 +750,7 @@ void SpriteUtilPushedRight(void)
 
     gCurrentSprite.work0--;
     if (gCurrentSprite.work0 == 0) {
-        gCurrentSprite.pose = POSE_11;
+        gCurrentSprite.pose = SPOSE_11;
     }
 }
 
@@ -762,7 +762,7 @@ void func_8024478(void)
         return;
     }
 
-    gCurrentSprite.pose = POSE_2F;
+    gCurrentSprite.pose = SPOSE_2F;
 }
 
 void func_802449C(void)
@@ -773,12 +773,12 @@ void func_802449C(void)
         return;
     }
 
-    gCurrentSprite.pose = POSE_2F;
+    gCurrentSprite.pose = SPOSE_2F;
 }
 
 void func_80244C0(void)
 {
-    gCurrentSprite.pose = POSE_30;
+    gCurrentSprite.pose = SPOSE_30;
     gCurrentSprite.work0 = 0x50;
     gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
 }
@@ -788,13 +788,13 @@ void func_80244E0(void)
     func_80238E8();
     func_8023B88();
     if (gUnk_3000A50 == 0) {
-        gCurrentSprite.pose = POSE_1D;
+        gCurrentSprite.pose = SPOSE_1D;
         return;
     }
 
     gCurrentSprite.work0--;
     if (gCurrentSprite.work0 == 0) {
-        gCurrentSprite.pose = POSE_19;
+        gCurrentSprite.pose = SPOSE_19;
     }
 }
 
@@ -828,14 +828,14 @@ void func_8024570(void)
     if ((gUnk_3000A51 == 0x11) ||
         (func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition),
          ((0xF & gUnk_3000A51) != 0))) {
-        pose = POSE_45;
+        pose = SPOSE_45;
         m4aSongNumStart(SOUND_37);
     } else {
         gCurrentSprite.work0--;
         if (gCurrentSprite.work0) {
             return;
         }
-        pose = POSE_43;
+        pose = SPOSE_43;
     }
     gCurrentSprite.pose = pose;
     gCurrentSprite.status &= ~SPRITE_STATUS_MAYBE_DEAD;
@@ -852,14 +852,14 @@ void func_80245FC(void)
     if ((gUnk_3000A51 == 0x11) ||
         (func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition),
          ((0xF & gUnk_3000A51) != 0))) {
-        pose = POSE_43;
+        pose = SPOSE_43;
         m4aSongNumStart(SOUND_37);
     } else {
         gCurrentSprite.work0--;
         if (gCurrentSprite.work0) {
             return;
         }
-        pose = POSE_45;
+        pose = SPOSE_45;
     }
     gCurrentSprite.pose = pose;
     gCurrentSprite.status &= ~SPRITE_STATUS_MAYBE_DEAD;
@@ -867,7 +867,7 @@ void func_80245FC(void)
 
 void func_8024688(void)
 {
-    gCurrentSprite.pose = POSE_38;
+    gCurrentSprite.pose = SPOSE_38;
     gCurrentSprite.work3 = 0;
     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 1;
@@ -884,7 +884,7 @@ void func_80246B8(void)
 
 void func_802473C(void)
 {
-    gCurrentSprite.pose = POSE_3A;
+    gCurrentSprite.pose = SPOSE_3A;
     gCurrentSprite.work3 = 0;
     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
@@ -901,7 +901,7 @@ void func_802476C(void)
 
 void func_80247F0(void)
 {
-    gCurrentSprite.pose = POSE_3C;
+    gCurrentSprite.pose = SPOSE_3C;
     gCurrentSprite.work3 = 0;
     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
@@ -918,7 +918,7 @@ void func_8024820(void)
 
 void func_80248A4(void)
 {
-    gCurrentSprite.pose = POSE_3E;
+    gCurrentSprite.pose = SPOSE_3E;
     gCurrentSprite.work3 = 0;
     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 1;
@@ -935,7 +935,7 @@ void func_80248D4(void)
 
 void func_8024958(void)
 {
-    gCurrentSprite.pose = POSE_40;
+    gCurrentSprite.pose = SPOSE_40;
     gCurrentSprite.work3 = 0;
     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
@@ -952,7 +952,7 @@ void func_8024988(void)
 
 void func_8024A0C(void)
 {
-    gCurrentSprite.pose = POSE_42;
+    gCurrentSprite.pose = SPOSE_42;
     gCurrentSprite.work3 = 0;
     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
         gCurrentSprite.work0 = 2;
@@ -969,7 +969,7 @@ void func_8024A3C(void)
 
 void func_8024AC0(void)
 {
-    gCurrentSprite.pose = POSE_44;
+    gCurrentSprite.pose = SPOSE_44;
     gCurrentSprite.work3 = 0;
 }
 
@@ -993,13 +993,13 @@ void func_8024AD4(void)
         }
 
         if (yVelocity < 8) {
-            gCurrentSprite.pose = POSE_2B;
+            gCurrentSprite.pose = SPOSE_2B;
         } else if (yVelocity < 12) {
-            gCurrentSprite.pose = POSE_37;
+            gCurrentSprite.pose = SPOSE_37;
         } else if (yVelocity < 16) {
-            gCurrentSprite.pose = POSE_39;
+            gCurrentSprite.pose = SPOSE_39;
         } else {
-            gCurrentSprite.pose = POSE_3B;
+            gCurrentSprite.pose = SPOSE_3B;
         }
         m4aSongNumStart(SOUND_36);
         return;
@@ -1009,14 +1009,14 @@ void func_8024AD4(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
     );
     if (gUnk_3000A51 == 0x11) {
-        gCurrentSprite.pose = POSE_45;
+        gCurrentSprite.pose = SPOSE_45;
         m4aSongNumStart(SOUND_37);
     }
 }
 
 void func_8024BEC(void)
 {
-    gCurrentSprite.pose = POSE_46;
+    gCurrentSprite.pose = SPOSE_46;
     gCurrentSprite.work3 = 0;
 }
 
@@ -1040,13 +1040,13 @@ void func_8024C00(void)
         }
 
         if (yVelocity < 8) {
-            gCurrentSprite.pose = POSE_2D;
+            gCurrentSprite.pose = SPOSE_2D;
         } else if (yVelocity < 12) {
-            gCurrentSprite.pose = POSE_3D;
+            gCurrentSprite.pose = SPOSE_3D;
         } else if (yVelocity < 16) {
-            gCurrentSprite.pose = POSE_3F;
+            gCurrentSprite.pose = SPOSE_3F;
         } else {
-            gCurrentSprite.pose = POSE_41;
+            gCurrentSprite.pose = SPOSE_41;
         }
         m4aSongNumStart(SOUND_36);
         return;
@@ -1056,7 +1056,7 @@ void func_8024C00(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
     );
     if (gUnk_3000A51 == 0x11) {
-        gCurrentSprite.pose = POSE_43;
+        gCurrentSprite.pose = SPOSE_43;
         m4aSongNumStart(SOUND_37);
     }
 }
@@ -1072,10 +1072,10 @@ void SpriteUtilLiftingSpriteRight(void)
     switch (gCurrentCarriedSprite.state) {
         case 4:
             if (gWarioData.pose == 4) {
-                gCurrentSprite.pose = POSE_33;
+                gCurrentSprite.pose = SPOSE_33;
                 gCurrentCarriedSprite.state = 0;
             } else {
-                gCurrentSprite.pose = POSE_CARRIED_RIGHT;
+                gCurrentSprite.pose = SPOSE_CARRIED_RIGHT;
                 gCurrentSprite.yPosition = gWarioData.yPosition + gCurrentCarriedSprite.yOffset;
                 gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             }
@@ -1107,7 +1107,7 @@ void SpriteUtilLiftingSpriteRight(void)
             gCurrentSprite.xPosition = xPositionBackup;
             if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
                 gCurrentSprite.work2 = 6;
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
@@ -1116,21 +1116,21 @@ void SpriteUtilLiftingSpriteRight(void)
 
             if (clipCheck == 2) {
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
                 return;
             }
 
-            gCurrentSprite.pose = POSE_CARRIED_RIGHT_INIT;
+            gCurrentSprite.pose = SPOSE_CARRIED_RIGHT_INIT;
             gCurrentCarriedSprite.unk1 = 1;
             gCurrentCarriedSprite.state = 4;
             WarioRequestPose(WPOSE_NORMAL_STANDING);
             return;
 
         default:
-            gCurrentSprite.pose = POSE_1D;
+            gCurrentSprite.pose = SPOSE_1D;
             return;
     }
 }
@@ -1146,10 +1146,10 @@ void SpriteUtilLiftingSpriteLeft(void)
     switch (gCurrentCarriedSprite.state) {
         case 4:
             if (gWarioData.pose == 4) {
-                gCurrentSprite.pose = POSE_35;
+                gCurrentSprite.pose = SPOSE_35;
                 gCurrentCarriedSprite.state = 0;
             } else {
-                gCurrentSprite.pose = POSE_CARRIED_LEFT;
+                gCurrentSprite.pose = SPOSE_CARRIED_LEFT;
                 gCurrentSprite.yPosition = gWarioData.yPosition + gCurrentCarriedSprite.yOffset;
                 gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             }
@@ -1181,7 +1181,7 @@ void SpriteUtilLiftingSpriteLeft(void)
             gCurrentSprite.xPosition = xPositionBackup;
             if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
                 gCurrentSprite.work2 = 6;
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
@@ -1190,21 +1190,21 @@ void SpriteUtilLiftingSpriteLeft(void)
 
             if (clipCheck == 2) {
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = 0;
                 m4aSongNumStart(SOUND_37);
                 return;
             }
 
-            gCurrentSprite.pose = POSE_CARRIED_LEFT_INIT;
+            gCurrentSprite.pose = SPOSE_CARRIED_LEFT_INIT;
             gCurrentCarriedSprite.unk1 = 1;
             gCurrentCarriedSprite.state = 4;
             WarioRequestPose(WPOSE_NORMAL_STANDING);
             return;
 
         default:
-            gCurrentSprite.pose = POSE_1D;
+            gCurrentSprite.pose = SPOSE_1D;
             return;
     }
 }
@@ -1224,7 +1224,7 @@ void SpriteUtilCarryingSpriteRight(void)
             gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 gCurrentSprite.status ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_CARRIED_LEFT;
+                gCurrentSprite.pose = SPOSE_CARRIED_LEFT;
                 return;
             }
 
@@ -1233,7 +1233,7 @@ void SpriteUtilCarryingSpriteRight(void)
             );
             if (gUnk_3000A51 == 0x11) {
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1247,7 +1247,7 @@ void SpriteUtilCarryingSpriteRight(void)
                     return;
                 }
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1265,7 +1265,7 @@ void SpriteUtilCarryingSpriteRight(void)
 
             gCurrentSprite.yPosition = temp;
             gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
-            gCurrentSprite.pose = POSE_37;
+            gCurrentSprite.pose = SPOSE_37;
             gCurrentSprite.work2 = 4;
             gCurrentCarriedSprite.state = 0;
             gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1280,7 +1280,7 @@ void SpriteUtilCarryingSpriteRight(void)
         case 7:
             if (gWarioData.horizontalDirection & DPAD_LEFT) {
                 gCurrentSprite.status ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_CARRIED_LEFT;
+                gCurrentSprite.pose = SPOSE_CARRIED_LEFT;
             }
             yPositionBackup = gCurrentSprite.yPosition;
             xPositionBackup = gCurrentSprite.xPosition;
@@ -1294,7 +1294,7 @@ void SpriteUtilCarryingSpriteRight(void)
                 gCurrentSprite.yPosition = yPositionBackup;
                 gCurrentSprite.xPosition = xPositionBackup;
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 func_801E4B0();
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
@@ -1310,15 +1310,15 @@ void SpriteUtilCarryingSpriteRight(void)
             if (gCurrentCarriedSprite.unk1 & 0x80) {
                 gCurrentSprite.work2 = 4;
                 if (gWarioData.pose == 0x25) {
-                    gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_HARD_INIT;
+                    gCurrentSprite.pose = SPOSE_THROWN_UP_RIGHT_HARD_INIT;
                 } else {
-                    gCurrentSprite.pose = POSE_THROWN_UP_RIGHT_SOFT_INIT;
+                    gCurrentSprite.pose = SPOSE_THROWN_UP_RIGHT_SOFT_INIT;
                 }
                 return;
             }
 
             if (gWarioData.pose == 0x25) {
-                gCurrentSprite.pose = POSE_THROWN_RIGHT_HARD_INIT;
+                gCurrentSprite.pose = SPOSE_THROWN_RIGHT_HARD_INIT;
                 if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
                     gCurrentSprite.work2 = 0x10;
                 } else {
@@ -1328,14 +1328,14 @@ void SpriteUtilCarryingSpriteRight(void)
             }
 
             gCurrentSprite.work2 = 0xC;
-            gCurrentSprite.pose = POSE_THROWN_RIGHT_SOFT_INIT;
+            gCurrentSprite.pose = SPOSE_THROWN_RIGHT_SOFT_INIT;
             return;
 
         default:
             if (gWarioData.pose == 5) {
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
             } else {
-                gCurrentSprite.pose = POSE_1D;
+                gCurrentSprite.pose = SPOSE_1D;
             }
             gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
             gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1358,7 +1358,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             gCurrentSprite.xPosition = gWarioData.xPosition + gCurrentCarriedSprite.xOffset;
             if (gWarioData.horizontalDirection & DPAD_RIGHT) {
                 gCurrentSprite.status ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_CARRIED_RIGHT;
+                gCurrentSprite.pose = SPOSE_CARRIED_RIGHT;
                 return;
             }
 
@@ -1367,7 +1367,7 @@ void SpriteUtilCarryingSpriteLeft(void)
             );
             if (gUnk_3000A51 == 0x11) {
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1381,7 +1381,7 @@ void SpriteUtilCarryingSpriteLeft(void)
                     return;
                 }
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
                 gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1399,7 +1399,7 @@ void SpriteUtilCarryingSpriteLeft(void)
 
             gCurrentSprite.yPosition = temp;
             gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
-            gCurrentSprite.pose = POSE_3D;
+            gCurrentSprite.pose = SPOSE_3D;
             gCurrentSprite.work2 = 4;
             gCurrentCarriedSprite.state = 0;
             gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1414,7 +1414,7 @@ void SpriteUtilCarryingSpriteLeft(void)
         case 7:
             if (gWarioData.horizontalDirection & DPAD_RIGHT) {
                 gCurrentSprite.status ^= SPRITE_STATUS_FACING_RIGHT;
-                gCurrentSprite.pose = POSE_CARRIED_RIGHT;
+                gCurrentSprite.pose = SPOSE_CARRIED_RIGHT;
             }
             yPositionBackup = gCurrentSprite.yPosition;
             xPositionBackup = gCurrentSprite.xPosition;
@@ -1428,7 +1428,7 @@ void SpriteUtilCarryingSpriteLeft(void)
                 gCurrentSprite.yPosition = yPositionBackup;
                 gCurrentSprite.xPosition = xPositionBackup;
                 gCurrentSprite.work2 = 8;
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.5) + DELTA_TIME;
                 func_801E4B0();
                 gCurrentCarriedSprite.state = SPRITE_STATUS_NONE;
@@ -1444,15 +1444,15 @@ void SpriteUtilCarryingSpriteLeft(void)
             if (gCurrentCarriedSprite.unk1 & 0x80) {
                 gCurrentSprite.work2 = 4;
                 if (gWarioData.pose == 0x25) {
-                    gCurrentSprite.pose = POSE_THROWN_UP_LEFT_HARD_INIT;
+                    gCurrentSprite.pose = SPOSE_THROWN_UP_LEFT_HARD_INIT;
                 } else {
-                    gCurrentSprite.pose = POSE_THROWN_UP_LEFT_SOFT_INIT;
+                    gCurrentSprite.pose = SPOSE_THROWN_UP_LEFT_SOFT_INIT;
                 }
                 return;
             }
 
             if (gWarioData.pose == 0x25) {
-                gCurrentSprite.pose = POSE_THROWN_LEFT_HARD_INIT;
+                gCurrentSprite.pose = SPOSE_THROWN_LEFT_HARD_INIT;
                 if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
                     gCurrentSprite.work2 = 0x10;
                 } else {
@@ -1462,14 +1462,14 @@ void SpriteUtilCarryingSpriteLeft(void)
             }
 
             gCurrentSprite.work2 = 0xC;
-            gCurrentSprite.pose = POSE_THROWN_LEFT_SOFT_INIT;
+            gCurrentSprite.pose = SPOSE_THROWN_LEFT_SOFT_INIT;
             return;
 
         default:
             if (gWarioData.pose == 5) {
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
             } else {
-                gCurrentSprite.pose = POSE_1D;
+                gCurrentSprite.pose = SPOSE_1D;
             }
             gCurrentSprite.disableWarioCollisionTimer = CONVERT_SECONDS(0.25);
             gCurrentSprite.status &= ~SPRITE_STATUS_CAN_HIT_OTHER_SPRITES;
@@ -1498,7 +1498,7 @@ void func_80254E8(void)
                 } else if (gCurrentSprite.work2 > 7) {
                     gCurrentSprite.work2 = gCurrentSprite.work2 - 4;
                 }
-                gCurrentSprite.pose = POSE_39;
+                gCurrentSprite.pose = SPOSE_39;
                 m4aSongNumStart(SOUND_36);
                 return;
             }
@@ -1510,12 +1510,12 @@ void func_80254E8(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
     );
     if (gUnk_3000A51 == 0x11) {
-        if ((gCurrentSprite.pose == POSE_THROWN_LEFT_SOFT) || (gCurrentSprite.pose == POSE_THROWN_UP_LEFT_SOFT) ||
+        if ((gCurrentSprite.pose == SPOSE_THROWN_LEFT_SOFT) || (gCurrentSprite.pose == SPOSE_THROWN_UP_LEFT_SOFT) ||
             (gCurrentSprite.work0 == 2)) {
-            gCurrentSprite.pose = POSE_49;
+            gCurrentSprite.pose = SPOSE_49;
             m4aSongNumStart(SOUND_37);
         } else {
-            gCurrentSprite.pose = POSE_6B;
+            gCurrentSprite.pose = SPOSE_6B;
         }
         return;
     }
@@ -1523,10 +1523,10 @@ void func_80254E8(void)
     gUnk_3000028 = 1;
     func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition);
     if (0xF & gUnk_3000A51) {
-        if ((gCurrentSprite.pose == POSE_THROWN_LEFT_HARD) || (gCurrentSprite.pose == POSE_THROWN_UP_LEFT_HARD)) {
-            gCurrentSprite.pose = POSE_6B;
+        if ((gCurrentSprite.pose == SPOSE_THROWN_LEFT_HARD) || (gCurrentSprite.pose == SPOSE_THROWN_UP_LEFT_HARD)) {
+            gCurrentSprite.pose = SPOSE_6B;
         } else {
-            gCurrentSprite.pose = POSE_47;
+            gCurrentSprite.pose = SPOSE_47;
             m4aSongNumStart(SOUND_37);
         }
         return;
@@ -1620,7 +1620,7 @@ void func_80258B4(void)
                 } else if (gCurrentSprite.work2 > 7) {
                     gCurrentSprite.work2 = gCurrentSprite.work2 - 4;
                 }
-                gCurrentSprite.pose = POSE_3F;
+                gCurrentSprite.pose = SPOSE_3F;
                 m4aSongNumStart(SOUND_36);
                 return;
             }
@@ -1632,12 +1632,12 @@ void func_80258B4(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
     );
     if (gUnk_3000A51 == 0x11) {
-        if ((gCurrentSprite.pose == POSE_THROWN_RIGHT_SOFT) || (gCurrentSprite.pose == POSE_THROWN_UP_RIGHT_SOFT) ||
+        if ((gCurrentSprite.pose == SPOSE_THROWN_RIGHT_SOFT) || (gCurrentSprite.pose == SPOSE_THROWN_UP_RIGHT_SOFT) ||
             (gCurrentSprite.work0 == 2)) {
-            gCurrentSprite.pose = POSE_47;
+            gCurrentSprite.pose = SPOSE_47;
             m4aSongNumStart(SOUND_37);
         } else {
-            gCurrentSprite.pose = POSE_6B;
+            gCurrentSprite.pose = SPOSE_6B;
         }
         return;
     }
@@ -1645,10 +1645,10 @@ void func_80258B4(void)
     gUnk_3000028 = 1;
     func_8023BFC(gCurrentSprite.yPosition - gCurrentSprite.hitboxExtentUp, gCurrentSprite.xPosition);
     if (0xF & gUnk_3000A51) {
-        if ((gCurrentSprite.pose == POSE_THROWN_RIGHT_HARD) || (gCurrentSprite.pose == POSE_THROWN_UP_RIGHT_HARD)) {
-            gCurrentSprite.pose = POSE_6B;
+        if ((gCurrentSprite.pose == SPOSE_THROWN_RIGHT_HARD) || (gCurrentSprite.pose == SPOSE_THROWN_UP_RIGHT_HARD)) {
+            gCurrentSprite.pose = SPOSE_6B;
         } else {
-            gCurrentSprite.pose = POSE_49;
+            gCurrentSprite.pose = SPOSE_49;
             m4aSongNumStart(SOUND_37);
         }
         return;
@@ -1730,22 +1730,22 @@ void func_8025C80(void)
         gCurrentSprite.xPosition += gCurrentSprite.work2;
         func_8023B88();
         if (!(0xE & gUnk_3000A50)) {
-            if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2E)) {
-                gCurrentSprite.pose = POSE_45;
+            if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2E)) {
+                gCurrentSprite.pose = SPOSE_45;
                 return;
             }
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
             if (gUnk_3000A51 == 0) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
                 if (gUnk_3000A51 == 0) {
-                    gCurrentSprite.pose = POSE_49;
+                    gCurrentSprite.pose = SPOSE_49;
                 }
             }
         } else if (0xF1 & gUnk_3000A50) {
-            gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
+            gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED_INIT;
         }
     } else {
-        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
+        gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED_INIT;
     }
 }
 
@@ -1758,22 +1758,22 @@ void func_8025D34(void)
         gCurrentSprite.xPosition -= gCurrentSprite.work2;
         func_8023B88();
         if (!(0xE & gUnk_3000A50)) {
-            if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2C)) {
-                gCurrentSprite.pose = POSE_43;
+            if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2C)) {
+                gCurrentSprite.pose = SPOSE_43;
                 return;
             }
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
             if (gUnk_3000A51 == 0) {
                 func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
                 if (gUnk_3000A51 == 0) {
-                    gCurrentSprite.pose = POSE_47;
+                    gCurrentSprite.pose = SPOSE_47;
                 }
             }
         } else if ((0xF1 & gUnk_3000A50) != 1) {
-            gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
+            gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED_INIT;
         }
     } else {
-        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
+        gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED_INIT;
     }
 }
 
@@ -1783,15 +1783,15 @@ void func_8025DE8(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
     );
     if (gUnk_3000A51 == 0x11) {
-        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
+        gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED_INIT;
         return;
     }
 
     gCurrentSprite.xPosition += gCurrentSprite.work2;
     func_8023B88();
     if (!(0xE & gUnk_3000A50)) {
-        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2E)) {
-            gCurrentSprite.pose = POSE_45;
+        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2E)) {
+            gCurrentSprite.pose = SPOSE_45;
             return;
         }
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
@@ -1802,7 +1802,7 @@ void func_8025DE8(void)
         if (gUnk_3000A51) {
             return;
         }
-        gCurrentSprite.pose = POSE_49;
+        gCurrentSprite.pose = SPOSE_49;
     }
 }
 
@@ -1812,15 +1812,15 @@ void func_8025E98(void)
         gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
     );
     if (gUnk_3000A51 == 0x11) {
-        gCurrentSprite.pose = POSE_CRUSHED_OR_COLLECTED_INIT;
+        gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED_INIT;
         return;
     }
 
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
     func_8023B88();
     if (!(0xE & gUnk_3000A50)) {
-        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2C)) {
-            gCurrentSprite.pose = POSE_43;
+        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2C)) {
+            gCurrentSprite.pose = SPOSE_43;
             return;
         }
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
@@ -1831,7 +1831,7 @@ void func_8025E98(void)
         if (gUnk_3000A51) {
             return;
         }
-        gCurrentSprite.pose = POSE_47;
+        gCurrentSprite.pose = SPOSE_47;
     }
 }
 
@@ -1850,9 +1850,9 @@ void func_8025F48(void)
         );
         if (gUnk_3000A51 == 0x11) {
             gCurrentSprite.work2 = 0;
-            gCurrentSprite.pose = POSE_2F;
+            gCurrentSprite.pose = SPOSE_2F;
         } else {
-            gCurrentSprite.pose = POSE_2D;
+            gCurrentSprite.pose = SPOSE_2D;
         }
         m4aSongNumStart(SOUND_37);
         return;
@@ -1861,15 +1861,15 @@ void func_8025F48(void)
     gCurrentSprite.xPosition -= gCurrentSprite.work2;
     func_8023B88();
     if (!(0xE & gUnk_3000A50)) {
-        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2C)) {
-            gCurrentSprite.pose = POSE_43;
+        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2C)) {
+            gCurrentSprite.pose = SPOSE_43;
             return;
         }
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
         if (gUnk_3000A51 == 0) {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
             if (gUnk_3000A51 == 0) {
-                gCurrentSprite.pose = POSE_47;
+                gCurrentSprite.pose = SPOSE_47;
                 return;
             }
         }
@@ -1883,15 +1883,15 @@ void func_8025F48(void)
             }
         }
     } else if ((0xF1 & gUnk_3000A50) == 1) {
-        if (gCurrentSprite.pose != POSE_2C) {
-            gCurrentSprite.pose = POSE_47;
+        if (gCurrentSprite.pose != SPOSE_2C) {
+            gCurrentSprite.pose = SPOSE_47;
         }
     } else {
         if (gCurrentSprite.work2 > 4U) {
             gCurrentSprite.work2 -= 1;
             return;
         }
-        gCurrentSprite.pose = POSE_45;
+        gCurrentSprite.pose = SPOSE_45;
     }
 }
 
@@ -1910,9 +1910,9 @@ void func_802608C(void)
         );
         if (gUnk_3000A51 == 0x11) {
             gCurrentSprite.work2 = 0;
-            gCurrentSprite.pose = POSE_2F;
+            gCurrentSprite.pose = SPOSE_2F;
         } else {
-            gCurrentSprite.pose = POSE_2B;
+            gCurrentSprite.pose = SPOSE_2B;
         }
         m4aSongNumStart(SOUND_37);
         return;
@@ -1921,15 +1921,15 @@ void func_802608C(void)
     gCurrentSprite.xPosition += gCurrentSprite.work2;
     func_8023B88();
     if (!(0xE & gUnk_3000A50)) {
-        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == POSE_2E)) {
-            gCurrentSprite.pose = POSE_45;
+        if ((gUnk_3000A50 == 0) && (gCurrentSprite.pose == SPOSE_2E)) {
+            gCurrentSprite.pose = SPOSE_45;
             return;
         }
         func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight);
         if (gUnk_3000A51 == 0) {
             func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft);
             if (gUnk_3000A51 == 0) {
-                gCurrentSprite.pose = POSE_49;
+                gCurrentSprite.pose = SPOSE_49;
                 return;
             }
         }
@@ -1943,15 +1943,15 @@ void func_802608C(void)
             }
         }
     } else if ((0xF1 & gUnk_3000A50) == 0) {
-        if (gCurrentSprite.pose != POSE_2E) {
-            gCurrentSprite.pose = POSE_49;
+        if (gCurrentSprite.pose != SPOSE_2E) {
+            gCurrentSprite.pose = SPOSE_49;
         }
     } else {
         if (gCurrentSprite.work2 > 4U) {
             gCurrentSprite.work2 -= 1;
             return;
         }
-        gCurrentSprite.pose = POSE_43;
+        gCurrentSprite.pose = SPOSE_43;
     }
 }
 
@@ -2330,55 +2330,55 @@ void func_80265C8(s32 slot)
             continue;
         }
 
-        if ((gSpriteData[slot].pose == POSE_CARRIED_LEFT) || (gSpriteData[slot].pose == POSE_CARRIED_RIGHT)) {
+        if ((gSpriteData[slot].pose == SPOSE_CARRIED_LEFT) || (gSpriteData[slot].pose == SPOSE_CARRIED_RIGHT)) {
             func_801E4B0();
             gCurrentCarriedSprite.state = 0;
             if (xPosition > otherXPosition) {
-                gSpriteData[slot].pose = POSE_33;
-                gSpriteData[i].pose = POSE_35;
+                gSpriteData[slot].pose = SPOSE_33;
+                gSpriteData[i].pose = SPOSE_35;
             } else {
-                gSpriteData[slot].pose = POSE_35;
-                gSpriteData[i].pose = POSE_33;
+                gSpriteData[slot].pose = SPOSE_35;
+                gSpriteData[i].pose = SPOSE_33;
             }
         } else {
-            if (gSpriteData[i].pose >= POSE_BEING_LIFTED_RIGHT_INIT && gSpriteData[i].pose <= POSE_CARRIED_RIGHT) {
+            if (gSpriteData[i].pose >= SPOSE_BEING_LIFTED_RIGHT_INIT && gSpriteData[i].pose <= SPOSE_CARRIED_RIGHT) {
                 func_801E4B0();
                 gCurrentCarriedSprite.state = 0;
             }
             if (gSpriteData[slot].status & SPRITE_STATUS_HEAVY) {
                 if (gSpriteData[i].status & SPRITE_STATUS_HEAVY) {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = POSE_6A;
-                        gSpriteData[i].pose = POSE_69;
+                        gSpriteData[slot].pose = SPOSE_6A;
+                        gSpriteData[i].pose = SPOSE_69;
                     } else {
-                        gSpriteData[slot].pose = POSE_69;
-                        gSpriteData[i].pose = POSE_6A;
+                        gSpriteData[slot].pose = SPOSE_69;
+                        gSpriteData[i].pose = SPOSE_6A;
                     }
                 } else {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = POSE_33;
-                        gSpriteData[i].pose = POSE_69;
+                        gSpriteData[slot].pose = SPOSE_33;
+                        gSpriteData[i].pose = SPOSE_69;
                     } else {
-                        gSpriteData[slot].pose = POSE_35;
-                        gSpriteData[i].pose = POSE_6A;
+                        gSpriteData[slot].pose = SPOSE_35;
+                        gSpriteData[i].pose = SPOSE_6A;
                     }
                 }
             } else {
                 if (gSpriteData[i].status & SPRITE_STATUS_HEAVY) {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = POSE_6A;
-                        gSpriteData[i].pose = POSE_35;
+                        gSpriteData[slot].pose = SPOSE_6A;
+                        gSpriteData[i].pose = SPOSE_35;
                     } else {
-                        gSpriteData[slot].pose = POSE_69;
-                        gSpriteData[i].pose = POSE_33;
+                        gSpriteData[slot].pose = SPOSE_69;
+                        gSpriteData[i].pose = SPOSE_33;
                     }
                 } else {
                     if (xPosition > otherXPosition) {
-                        gSpriteData[slot].pose = POSE_6A;
-                        gSpriteData[i].pose = POSE_69;
+                        gSpriteData[slot].pose = SPOSE_6A;
+                        gSpriteData[i].pose = SPOSE_69;
                     } else {
-                        gSpriteData[slot].pose = POSE_69;
-                        gSpriteData[i].pose = POSE_6A;
+                        gSpriteData[slot].pose = SPOSE_69;
+                        gSpriteData[i].pose = SPOSE_6A;
                     }
                 }
             }
@@ -2748,32 +2748,32 @@ void func_8026E78(void)
     switch (gCurrentPassage) {
         case PASSAGE_ENTRY:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_SPOILED_ROTTEN);
-            gSpriteData[gCurrentSprite.work3].pose = POSE_74;
+            gSpriteData[gCurrentSprite.work3].pose = SPOSE_74;
             break;
 
         case PASSAGE_EMERALD:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_D8);
-            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
+            gSpriteData[gCurrentSprite.work3].pose = SPOSE_7A;
             break;
 
         case PASSAGE_RUBY:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_CUCKOO_CONDOR);
-            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
+            gSpriteData[gCurrentSprite.work3].pose = SPOSE_7A;
             break;
 
         case PASSAGE_TOPAZ:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_CB);
-            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
+            gSpriteData[gCurrentSprite.work3].pose = SPOSE_7A;
             break;
 
         case PASSAGE_SAPPHIRE:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_CATBAT);
-            gSpriteData[gCurrentSprite.work3].pose = POSE_7A;
+            gSpriteData[gCurrentSprite.work3].pose = SPOSE_7A;
             break;
 
         case PASSAGE_GOLDEN:
             SpriteUtilFindSpriteSlotWork3(PSPRITE_EC);
-            gSpriteData[gCurrentSprite.work3].pose = POSE_74;
+            gSpriteData[gCurrentSprite.work3].pose = SPOSE_74;
             break;
     }
 }

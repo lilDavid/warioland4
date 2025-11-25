@@ -339,7 +339,7 @@ void KeyzerInit()
         gCurrentSprite.pOamData = sKeyzerIdleOam;
         gCurrentSprite.currentAnimationFrame = 0;
         gCurrentSprite.animationTimer = 0;
-        gCurrentSprite.pose = POSE_IDLE;
+        gCurrentSprite.pose = SPOSE_IDLE;
         gCurrentSprite.work3 = 0;
         gCurrentSprite.yPosition -= BLOCK_SIZE;
         gCurrentSprite.xPosition -= HALF_BLOCK_SIZE;
@@ -363,11 +363,11 @@ void KeyzerCollect()
 void SpriteKeyzer(void)
 {
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             KeyzerInit();
             break;
 
-        case POSE_CRUSHED_OR_COLLECTED_INIT:
+        case SPOSE_CRUSHED_OR_COLLECTED_INIT:
             KeyzerCollect();
         default:
             SpriteUtilLookupFloatingAnimation(sKeyzerFloatYVelocity);

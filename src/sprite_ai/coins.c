@@ -520,13 +520,13 @@ void func_802BADC(void)
                 gCurrentSprite.work2 = 0;
             }
         }
-        gCurrentSprite.pose = POSE_2D;
+        gCurrentSprite.pose = SPOSE_2D;
     } else {
         gCurrentSprite.xPosition -= gCurrentSprite.work2;
         func_8023B88();
         if ((gUnk_3000A50 & 14) == 0) {
-            if (gUnk_3000A50 == 0 && gCurrentSprite.pose == POSE_2C) {
-                gCurrentSprite.pose = POSE_43;
+            if (gUnk_3000A50 == 0 && gCurrentSprite.pose == SPOSE_2C) {
+                gCurrentSprite.pose = SPOSE_43;
             } else {
                 if ((func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft),
                      gUnk_3000A51 == 0) &&
@@ -534,7 +534,7 @@ void func_802BADC(void)
                          gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
                      ),
                      gUnk_3000A51 == 0)) {
-                    gCurrentSprite.pose = POSE_47;
+                    gCurrentSprite.pose = SPOSE_47;
                 } else {
                     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
                         if ((gCurrentSprite.work1 & 1) == 0) {
@@ -548,13 +548,13 @@ void func_802BADC(void)
                 }
             }
         } else if ((gUnk_3000A50 & 0xF1) == 1) {
-            if (gCurrentSprite.pose != POSE_2C) {
-                gCurrentSprite.pose = POSE_47;
+            if (gCurrentSprite.pose != SPOSE_2C) {
+                gCurrentSprite.pose = SPOSE_47;
             }
         } else if (gCurrentSprite.work2 >= 5) {
             gCurrentSprite.work2 -= 1;
         } else {
-            gCurrentSprite.pose = POSE_45;
+            gCurrentSprite.pose = SPOSE_45;
         }
     }
 }
@@ -576,13 +576,13 @@ void func_802BC24(void)
                 gCurrentSprite.work2 = 0;
             }
         }
-        gCurrentSprite.pose = POSE_2B;
+        gCurrentSprite.pose = SPOSE_2B;
     } else {
         gCurrentSprite.xPosition += gCurrentSprite.work2;
         func_8023B88();
         if ((gUnk_3000A50 & 14) == 0) {
-            if (gUnk_3000A50 == 0 && gCurrentSprite.pose == POSE_2E) {
-                gCurrentSprite.pose = POSE_45;
+            if (gUnk_3000A50 == 0 && gCurrentSprite.pose == SPOSE_2E) {
+                gCurrentSprite.pose = SPOSE_45;
             } else {
                 if ((func_8023BFC(
                          gCurrentSprite.yPosition, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
@@ -590,7 +590,7 @@ void func_802BC24(void)
                      gUnk_3000A51 == 0) &&
                     (func_8023BFC(gCurrentSprite.yPosition, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft),
                      gUnk_3000A51 == 0)) {
-                    gCurrentSprite.pose = POSE_49;
+                    gCurrentSprite.pose = SPOSE_49;
                 } else {
                     if (gCurrentSprite.status & SPRITE_STATUS_HEAVY) {
                         if ((gCurrentSprite.work1 & 1) == 0) {
@@ -604,13 +604,13 @@ void func_802BC24(void)
                 }
             }
         } else if ((gUnk_3000A50 & 0xF1) == 0) {
-            if (gCurrentSprite.pose != POSE_2E) {
-                gCurrentSprite.pose = POSE_49;
+            if (gCurrentSprite.pose != SPOSE_2E) {
+                gCurrentSprite.pose = SPOSE_49;
             }
         } else if (gCurrentSprite.work2 >= 5) {
             gCurrentSprite.work2 -= 1;
         } else {
-            gCurrentSprite.pose = POSE_43;
+            gCurrentSprite.pose = SPOSE_43;
         }
     }
 }
@@ -635,13 +635,13 @@ void CoinPose44(void)
             gCurrentSprite.work2 -= 2;
         }
         if (yVelocity < 8) {
-            gCurrentSprite.pose = POSE_2B;
+            gCurrentSprite.pose = SPOSE_2B;
         } else if (yVelocity < 12) {
-            gCurrentSprite.pose = POSE_37;
+            gCurrentSprite.pose = SPOSE_37;
         } else if (yVelocity < 16) {
-            gCurrentSprite.pose = POSE_39;
+            gCurrentSprite.pose = SPOSE_39;
         } else {
-            gCurrentSprite.pose = POSE_3B;
+            gCurrentSprite.pose = SPOSE_3B;
         }
         m4aSongNumStart(SOUND_36);
     } else {
@@ -649,7 +649,7 @@ void CoinPose44(void)
             gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition - gCurrentSprite.hitboxExtentLeft
         );
         if (gUnk_3000A51 == 0x11) {
-            gCurrentSprite.pose = POSE_45;
+            gCurrentSprite.pose = SPOSE_45;
         }
     }
 }
@@ -674,13 +674,13 @@ void CoinPose46(void)
             gCurrentSprite.work2 -= 2;
         }
         if (yVelocity < 8) {
-            gCurrentSprite.pose = POSE_2D;
+            gCurrentSprite.pose = SPOSE_2D;
         } else if (yVelocity < 12) {
-            gCurrentSprite.pose = POSE_3D;
+            gCurrentSprite.pose = SPOSE_3D;
         } else if (yVelocity < 16) {
-            gCurrentSprite.pose = POSE_3F;
+            gCurrentSprite.pose = SPOSE_3F;
         } else {
-            gCurrentSprite.pose = POSE_41;
+            gCurrentSprite.pose = SPOSE_41;
         }
         m4aSongNumStart(SOUND_36);
     } else {
@@ -688,7 +688,7 @@ void CoinPose46(void)
             gCurrentSprite.yPosition - HALF_BLOCK_SIZE, gCurrentSprite.xPosition + gCurrentSprite.hitboxExtentRight
         );
         if (gUnk_3000A51 == 0x11) {
-            gCurrentSprite.pose = POSE_43;
+            gCurrentSprite.pose = SPOSE_43;
         }
     }
 }
@@ -784,25 +784,25 @@ void CoinInit(void)
 
     if (gWarioData.damageTimer) {
         if (gWarioData.horizontalDirection & DPAD_RIGHT) {
-            gCurrentSprite.pose = POSE_3F;
+            gCurrentSprite.pose = SPOSE_3F;
             gCurrentSprite.status |= SPRITE_STATUS_FACING_RIGHT;
         } else {
-            gCurrentSprite.pose = POSE_39;
+            gCurrentSprite.pose = SPOSE_39;
             gCurrentSprite.status &= ~SPRITE_STATUS_FACING_RIGHT;
         }
     } else {
         SpriteUtilTurnTowardWario();
         if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
-            gCurrentSprite.pose = POSE_39;
+            gCurrentSprite.pose = SPOSE_39;
         } else {
-            gCurrentSprite.pose = POSE_3F;
+            gCurrentSprite.pose = SPOSE_3F;
         }
     }
 }
 
 void CoinPose2F(void)
 {
-    gCurrentSprite.pose = POSE_30;
+    gCurrentSprite.pose = SPOSE_30;
     if (gCurrentSprite.status & SPRITE_STATUS_UNDERWATER) {
         gCurrentSprite.work0 = CONVERT_SECONDS(8.0 / 15);
     } else {
@@ -820,7 +820,7 @@ void CoinPose30(void)
     }
     func_8023B88();
     if (gUnk_3000A50 == 0) {
-        gCurrentSprite.pose = POSE_1D;
+        gCurrentSprite.pose = SPOSE_1D;
     }
 }
 
@@ -895,13 +895,13 @@ void CoinCollect(void)
 
 void CoinPose1D(void)
 {
-    gCurrentSprite.pose = POSE_1E;
+    gCurrentSprite.pose = SPOSE_1E;
     gCurrentSprite.work3 = 0;
 }
 
 void CoinPose2B(void)
 {
-    gCurrentSprite.pose = POSE_2C;
+    gCurrentSprite.pose = SPOSE_2C;
     gCurrentSprite.work1 = 0;
 }
 
@@ -911,13 +911,13 @@ void CoinPose2C(void)
     if (gCurrentSprite.work2 >= 2) {
         func_802BADC();
     } else {
-        gCurrentSprite.pose = POSE_2F;
+        gCurrentSprite.pose = SPOSE_2F;
     }
 }
 
 void CoinPose2D(void)
 {
-    gCurrentSprite.pose = POSE_2E;
+    gCurrentSprite.pose = SPOSE_2E;
     gCurrentSprite.work1 = 0;
 }
 
@@ -927,7 +927,7 @@ void CoinPose2E(void)
     if (gCurrentSprite.work2 >= 2) {
         func_802BC24();
     } else {
-        gCurrentSprite.pose = POSE_2F;
+        gCurrentSprite.pose = SPOSE_2F;
     }
 }
 
@@ -945,7 +945,7 @@ void DiamondInit(void)
     gCurrentSprite.currentAnimationFrame = 0;
     gCurrentSprite.animationTimer = 0;
     gCurrentSprite.work3 = 0;
-    gCurrentSprite.pose = POSE_IDLE;
+    gCurrentSprite.pose = SPOSE_IDLE;
     gCurrentSprite.warioCollision = 6;
     gCurrentSprite.yPosition -= PIXEL_SIZE;
     gCurrentSprite.xPosition += HALF_BLOCK_SIZE;
@@ -986,9 +986,9 @@ void ChanceWheelDiamondInit(void)
     gCurrentSprite.work2 = 4;
     SpriteUtilTurnTowardWario();
     if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
-        gCurrentSprite.pose = POSE_3B;
+        gCurrentSprite.pose = SPOSE_3B;
     } else {
-        gCurrentSprite.pose = POSE_41;
+        gCurrentSprite.pose = SPOSE_41;
     }
     gCurrentSprite.status |= SPRITE_STATUS_IGNORE_SPRITE_COLLISION;
     gCurrentSprite.status &= ~SPRITE_STATUS_HIDDEN;
@@ -1017,94 +1017,94 @@ void SpriteCoin(void)
         if (gUnk_3000BEC & 1) {
             TIMER_COUNT_DOWN(gCurrentSprite.currentAnimationFrame);
         }
-        if (gUnk_3000BEC & 3 && gCurrentSprite.pose != POSE_CRUSHED_OR_COLLECTED_INIT) {
+        if (gUnk_3000BEC & 3 && gCurrentSprite.pose != SPOSE_CRUSHED_OR_COLLECTED_INIT) {
             return;
         }
     }
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             CoinInit();
             break;
 
-        case POSE_CRUSHED_OR_COLLECTED_INIT:
+        case SPOSE_CRUSHED_OR_COLLECTED_INIT:
             CoinCollect();
             break;
 
-        case POSE_1D:
+        case SPOSE_1D:
             CoinPose1D();
-        case POSE_1E:
+        case SPOSE_1E:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             func_8023EE0();
             break;
 
-        case POSE_2B:
+        case SPOSE_2B:
             CoinPose2B();
-        case POSE_2C:
+        case SPOSE_2C:
             CoinPose2C();
             break;
 
-        case POSE_2D:
+        case SPOSE_2D:
             CoinPose2D();
-        case POSE_2E:
+        case SPOSE_2E:
             CoinPose2E();
             break;
 
-        case POSE_2F:
+        case SPOSE_2F:
             CoinPose2F();
-        case POSE_30:
+        case SPOSE_30:
             CoinPose30();
             break;
 
-        case POSE_35:
-        case POSE_37:
+        case SPOSE_35:
+        case SPOSE_37:
             func_8024688();
-        case POSE_38:
+        case SPOSE_38:
             func_80246B8();
             break;
 
-        case POSE_39:
+        case SPOSE_39:
             func_802473C();
-        case POSE_3A:
+        case SPOSE_3A:
             func_802476C();
             break;
 
-        case POSE_3B:
+        case SPOSE_3B:
             func_80247F0();
-        case POSE_3C:
+        case SPOSE_3C:
             func_8024820();
             break;
 
-        case POSE_33:
-        case POSE_3D:
+        case SPOSE_33:
+        case SPOSE_3D:
             func_80248A4();
-        case POSE_3E:
+        case SPOSE_3E:
             func_80248D4();
             break;
 
-        case POSE_3F:
+        case SPOSE_3F:
             func_8024958();
-        case POSE_40:
+        case SPOSE_40:
             func_8024988();
             break;
 
-        case POSE_41:
+        case SPOSE_41:
             func_8024A0C();
-        case POSE_42:
+        case SPOSE_42:
             func_8024A3C();
             break;
 
-        case POSE_43:
-        case POSE_47:
+        case SPOSE_43:
+        case SPOSE_47:
             func_8024AC0();
-        case POSE_44:
+        case SPOSE_44:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             CoinPose44();
             break;
 
-        case POSE_45:
-        case POSE_49:
+        case SPOSE_45:
+        case SPOSE_49:
             func_8024BEC();
-        case POSE_46:
+        case SPOSE_46:
             gCurrentSprite.status &= ~SPRITE_STATUS_UNDERWATER;
             CoinPose46();
             break;
@@ -1118,15 +1118,15 @@ void SpriteCoin(void)
 void SpriteDiamond(void)
 {
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             DiamondInit();
             break;
 
-        case POSE_IDLE:
+        case SPOSE_IDLE:
             DiamondFloat();
             break;
 
-        case POSE_CRUSHED_OR_COLLECTED_INIT:
+        case SPOSE_CRUSHED_OR_COLLECTED_INIT:
             DiamondCollect();
             break;
     }
@@ -1135,7 +1135,7 @@ void SpriteDiamond(void)
 void SpriteChanceWheelDiamond(void)
 {
     switch (gCurrentSprite.pose) {
-        case POSE_INIT:
+        case SPOSE_INIT:
             ChanceWheelDiamondInit();
     }
 }
