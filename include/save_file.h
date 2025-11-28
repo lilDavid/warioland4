@@ -1,6 +1,13 @@
 #ifndef SAVE_FILE_H
 #define SAVE_FILE_H
 
+#include "global_data.h"
+
+extern u8* const sUnk_84009BC[SAVE_COUNT];
+extern u8* const sUnk_84009C4[SAVE_COUNT];
+extern u8* const sUnk_84009CC[SAVE_COUNT];
+extern u8* const sUnk_84009D4[SAVE_COUNT];
+
 void func_8072CA0(void);
 void func_8072D24(void);
 // func_8072E8C()

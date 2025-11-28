@@ -147,7 +147,7 @@ extern u8 gTitleScreenStyle;
 extern u8 gLanguage;
 extern u8 gDifficulty;
 extern u8 gResetSaveFile;
-// gSelectedSaveFile
+extern u8 gSelectedSaveFile;
 extern s8 gUnk_300001A;
 extern u8 gUnk_300001B;
 // gUnk_300001C
