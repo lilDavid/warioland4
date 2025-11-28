@@ -597,11 +597,11 @@ SECTIONS {
         obj/fixed_point.o(.text);
         obj/disasm_0x000A84.o(.text);
         obj/interrupt_callbacks.o(.text);
-        obj/disasm_sram.o(.text);
+        obj/disasm_sram_misc.o(.text);
         obj/m4a_asm.o(.text);
         obj/m4a.o(.text);
         obj/syscalls.o(.text);
-        obj/disasm_0x003228.o(.text);
+        obj/disasm_sram.o(.text);
         obj/disasm_title.o(.text);
         obj/disasm_0x003A18.o(.text);
         obj/disasm_cutscenes.o(.text);
@@ -761,7 +761,7 @@ SECTIONS {
     .rodata : ALIGN(2) {
         obj/data/sin_cos_table.o(.rodata);
         obj/crt0.o(.rodata);
-        obj/disasm_sram.o(.rodata);
+        obj/disasm_sram_misc.o(.rodata);
         obj/m4a_tables.o(.rodata);
         obj/blob_0x0956E4-0x3529A8.o(.rodata);
         obj/sprite_util.o(.rodata);

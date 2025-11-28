@@ -9,7 +9,7 @@
 #include "interrupt_callbacks.h"
 #include "interrupts.h"
 #include "save_file.h"
-#include "sram.h"
+#include "sram_misc.h"
 
 #include "credits.h"
 #include "cutscene.h"

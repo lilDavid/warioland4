@@ -1,5 +1,5 @@
-#ifndef SRAM_H
-#define SRAM_H
+#ifndef SRAM_MISC_H
+#define SRAM_MISC_H
 
 // func_8000CA8()
 void func_8000CE0(void);
@@ -21,4 +21,4 @@ void func_8000CE0(void);
 // func_800101C()
 // func_8001038()
 
-#endif  // SRAM_H
+#endif  // SRAM_MISC_H

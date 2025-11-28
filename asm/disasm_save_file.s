@@ -2030,14 +2030,14 @@ func_8073B38:
 	ldr	r4, .L_73b9c
 	add	r1, r4, #0
 	mov	r2, #16
-	bl	func_8003384
+	bl	SramWriteChecked
 	neg	r1, r0
 	orr	r1, r0
 	lsr	r5, r1, #31
 	add	r0, r4, #0
 	mov	r1, sp
 	mov	r2, #16
-	bl	func_800324C
+	bl	SramWriteUnchecked
 	mov	r2, #0
 .L_73b60:
 	mov	r0, sp
@@ -2051,7 +2051,7 @@ func_8073B38:
 	ldr	r1, .L_73b9c
 	mov	r0, sp
 	mov	r2, #16
-	bl	func_8003384
+	bl	SramWriteChecked
 	cmp	r0, #0
 	beq	.L_73b82
 	mov	r0, #2
