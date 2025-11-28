@@ -3,20 +3,6 @@
 .section .rodata
 
 
-baserom_blob 0x0956E4, 0x097FC8
-
-.global gMPlayTable
-gMPlayTable:
-
-baserom_blob 0x097FC8, 0x098028
-
-.global gSongTable
-gSongTable:
-
-baserom_blob 0x098028, 0x283F14
-
-//-----
-
 .global sUnk_8283F14
 sUnk_8283F14:
 

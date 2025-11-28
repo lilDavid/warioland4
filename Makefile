@@ -75,6 +75,7 @@ GAME_REVISION = 00
 ASFLAGS += -I$(ASM) -mcpu=arm7tdmi
 CFLAGS = -O2 -mthumb-interwork -fhex-asm -fprologue-bugfix -Wall
 CPPFLAGS += -I$(INCLUDE) -nostdinc
+LDFLAGS += -n
 
 
 # Quiet/verbose output
@@ -161,7 +162,7 @@ $(TARGET): $(ELF) $(GBAFIX)
 
 $(ELF): $(OBJS) linker.ld
 	$(MSG) LD linker.ld
-	$Q$(LD) $(LDFLAGS) -n -T linker.ld -Map=$(MAP) -L$(BUILD) $(AGBCC_DIR)/libgcc.a $(AGBCC_DIR)/libc.a -o $@
+	$Q$(LD) $(LDFLAGS) -T linker.ld -Map=$(MAP) -L$(BUILD) $(AGBCC_DIR)/libgcc.a $(AGBCC_DIR)/libc.a -o $@
 
 $(OBJ)/%.o: $(ASM)/%.s
 	$(MSG) AS $<
@@ -181,6 +182,8 @@ $(BUILT_ASM)/%.s: $(SRC)/%.c
 
 $(BUILT_ASM)/m4a.s: CC = $(TOOL_DIR)/agbcc/old_agbcc
 $(BUILT_ASM)/m4a.s: CFLAGS = -O2 -mthumb-interwork -fhex-asm -Wall
+
+$(BUILT_ASM)/sram.s: CFLAGS = -O1 -mthumb-interwork -fhex-asm -Wall
 
 $(TOOL_DIR)/%: $(TOOL_DIR)/%.c
 	$(MSG) HOSTCC $<
