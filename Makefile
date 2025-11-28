@@ -2,7 +2,8 @@ VERSION ?= us
 
 
 # Build tools
-HOSTCC=cc
+HOSTCC = cc
+CPP = $(HOSTCC) -E
 PYTHON = python3
 
 TOOLCHAIN ?= arm-none-eabi-
@@ -11,7 +12,6 @@ LD = $(TOOLCHAIN)ld
 OBJCOPY = $(TOOLCHAIN)objcopy
 OBJDUMP = $(TOOLCHAIN)objdump
 
-CPP = cpp
 DIFF = diff -u
 MD5SUM = md5sum
 
