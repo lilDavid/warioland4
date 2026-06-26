@@ -131,6 +131,13 @@ struct Window {
     u8 content;
 };
 
+struct ScreenShakeParameters {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+};
+
 // gUnk_3000000
 extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
@@ -185,5 +192,6 @@ extern struct Unk_30000A0 gUnk_30000A0;
 extern struct BackgroundScroll gBackgroundScroll;
 extern struct Window gWindow;
 extern u8 gUnk_30000C8;
+extern u8 gUnk_30000CC;
 
 #endif  // GLOBAL_DATA_H
