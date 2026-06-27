@@ -215,20 +215,20 @@ const u16 sSpriteThrownUpHardYVelocityHeavy[] = {
 
 void func_80238A4(void)
 {
-    if (gUnk_30000C8 > 0x39) {
+    if (gUnk_30000C8.duration > 0x39) {
         if (gUnk_3000BEC & 1) {
             gCurrentSprite.pose = SPOSE_33;
         } else {
             gCurrentSprite.pose = SPOSE_35;
         }
-    } else if (gUnk_30000C8 > 0x29) {
+    } else if (gUnk_30000C8.duration > 0x29) {
         gCurrentSprite.pose = SPOSE_4B;
     }
 }
 
 void func_80238E8(void)
 {
-    if (gUnk_30000C8 > 0x29) {
+    if (gUnk_30000C8.duration > 0x29) {
         if (gUnk_3000BEC & 1) {
             gCurrentSprite.pose = SPOSE_33;
         } else {
@@ -239,7 +239,7 @@ void func_80238E8(void)
 
 void func_802391C(void)
 {
-    if (gUnk_30000C8 > 0x29) {
+    if (gUnk_30000C8.duration > 0x29) {
         if (gCurrentSprite.status & SPRITE_STATUS_FACING_RIGHT) {
             gCurrentSprite.pose = SPOSE_35;
         } else {
