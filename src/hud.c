@@ -4,6 +4,28 @@
 #include "shop.h"
 #include "sprite.h"
 
+extern const u8 sBossLife20Gfx[];
+extern const u8 sBossLife19Gfx[];
+extern const u8 sBossLife18Gfx[];
+extern const u8 sBossLife17Gfx[];
+extern const u8 sBossLife16Gfx[];
+extern const u8 sBossLife15Gfx[];
+extern const u8 sBossLife14Gfx[];
+extern const u8 sBossLife13Gfx[];
+extern const u8 sBossLife12Gfx[];
+extern const u8 sBossLife11Gfx[];
+extern const u8 sBossLife10Gfx[];
+extern const u8 sBossLife9Gfx[];
+extern const u8 sBossLife8Gfx[];
+extern const u8 sBossLife7Gfx[];
+extern const u8 sBossLife6Gfx[];
+extern const u8 sBossLife5Gfx[];
+extern const u8 sBossLife4Gfx[];
+extern const u8 sBossLife3Gfx[];
+extern const u8 sBossLife2Gfx[];
+extern const u8 sBossLife1Gfx[];
+extern const u8 sBossLife0Gfx[];
+
 const u16 sCommonSpritesPal[] = {
 #include "data/common_sprites.pal.inc"
 };
@@ -274,11 +296,11 @@ const u16 sTimeUpWarioPal[] = {
 #include "data/hud/time_up_wario.pal.inc"
 };
 
-const u8* sBossLifeMeterGfx[] = {(u8*)0x8416424, (u8*)0x84162E4, (u8*)0x84161A4, (u8*)0x8416064, (u8*)0x8415F24,
-                                 (u8*)0x8415DE4, (u8*)0x8415CA4, (u8*)0x8415B64, (u8*)0x8415A24, (u8*)0x84158E4,
-                                 (u8*)0x84157A4, (u8*)0x8415664, (u8*)0x8415524, (u8*)0x84153E4, (u8*)0x84152A4,
-                                 (u8*)0x8415164, (u8*)0x8415024, (u8*)0x8414EE4, (u8*)0x8414DA4, (u8*)0x8414C64,
-                                 (u8*)0x8414B24};
+const u8* sBossLifeMeterGfx[] = {
+    sBossLife0Gfx,  sBossLife1Gfx,  sBossLife2Gfx,  sBossLife3Gfx,  sBossLife4Gfx,  sBossLife5Gfx,  sBossLife6Gfx,
+    sBossLife7Gfx,  sBossLife8Gfx,  sBossLife9Gfx,  sBossLife10Gfx, sBossLife11Gfx, sBossLife12Gfx, sBossLife13Gfx,
+    sBossLife14Gfx, sBossLife15Gfx, sBossLife16Gfx, sBossLife17Gfx, sBossLife18Gfx, sBossLife19Gfx, sBossLife20Gfx,
+};
 const u8* sHeartGaugeGfx[] = {
     sHeartGaugeEmptyGfx,
     sHeartGaugeFill1Gfx,
