@@ -16,7 +16,6 @@
 #include "main.h"
 #include "music.h"
 #include "oam.h"
-#include "pause.h"
 #include "save_file.h"
 #include "score.h"
 #include "scrolling.h"

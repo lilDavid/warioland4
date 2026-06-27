@@ -144,12 +144,7 @@ SECTIONS {
         . = 0x0c31; gHasGoldenDivaChest10 = .;
         . = 0x0c32; gHasGoldenDivaChest11 = .;
         . = 0x0c33; gHasGoldenDivaChest12 = .;
-        . = 0x0c34; gGoldenTreasureCount = .;
-        . = 0x0c35; gPauseFlag = .;
-        . = 0x0c36; gUnk_3000C36 = .;
-        . = 0x0c37; gUnk_3000C37 = .;
-        . = 0x0c38; gCurrentShopItem = .;
-        . = 0x0c3a; obj/main.o(iwram_data);
+        . = 0x0c34; obj/main.o(iwram_data);
         obj/init_helpers.o(iwram_data);
 
         . = 0x1850; gUnk_3001850 = .;

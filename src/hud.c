@@ -1,7 +1,7 @@
 #include "hud.h"
 
 #include "global_data.h"
-#include "shop.h"
+#include "main.h"
 #include "sprite.h"
 
 extern const u8 sBossLife20Gfx[];
