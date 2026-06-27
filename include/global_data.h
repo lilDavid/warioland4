@@ -132,10 +132,10 @@ struct Window {
 };
 
 struct ScreenShakeParameters {
-    u8 unk0;
-    u8 unk1;
-    u8 unk2;
-    u8 unk3;
+    u8 duration;
+    u8 frameTimer;
+    u8 amplitude;
+    u8 direction;
 };
 
 // gUnk_3000000

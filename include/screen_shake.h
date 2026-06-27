@@ -1,10 +1,10 @@
 #ifndef SCREEN_SHAKE_H
 #define SCREEN_SHAKE_H
 
-u8 func_806ACA0(u8 arg0, u8 arg1);
-u8 func_806ACC8(u8 arg0);
-u8 func_806ACEC(u8 arg0, u8 arg1);
-s32 func_806AD14(void);
-s32 func_806AD74(void);
+u8 RequestXShake(u8 duration, u8 amplitude);
+u8 RequestYShake(u8 duration);
+u8 RequestYShakeWithAmplitude(u8 duration, u8 amplitude);
+s32 TickXShake(void);
+s32 TickYShake(void);
 
 #endif  // SCREEN_SHAKE_H
