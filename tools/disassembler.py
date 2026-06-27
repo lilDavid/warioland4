@@ -18,17 +18,17 @@ TEXT = range(0x8000000, 0x80953EC)
 ROM = range(0x8000000, 0x8800000)
 
 
-map_regex = re.compile(r'\s*(0x[0-9a-f]+)\s+(\w+)\s*(?:=\s*\.)?\s*')
-disassembly_regex = re.compile(r'\s*([0-9a-f]+):\s+([0-9a-f ]+)\s+(\S+)(?:\s+([^@]+)\s+)?(?:@ (.*))?\s*')
-ldr_regex = re.compile(r'(r\d), \[(\w+), #?(\w+)\]')
+map_regex = re.compile(r"\s*(0x[0-9a-f]+)\s+(\w+)\s*(?:=\s*\.)?\s*")
+disassembly_regex = re.compile(r"\s*([0-9a-f]+):\s+([0-9a-f ]+)\s+(\S+)(?:\s+([^@]+)\s+)?(?:@ (.*))?\s*")
+ldr_regex = re.compile(r"(r\d), \[(\w+), #?(\w+)\]")
 
 
-Instruction = namedtuple('Instruction', ['label', 'raw', 'mnemonic', 'operands', 'comment'])
+Instruction = namedtuple("Instruction", ["label", "raw", "mnemonic", "operands", "comment"])
 
 
 def parse_map(path):
     symbols = {}
-    with open(path, 'r') as file:
+    with open(path, "r") as file:
         for line in file:
             match = map_regex.match(line)
             if match is None:
@@ -45,34 +45,34 @@ def get_symbol(addr, symbols, ctx=None, strict_addrs=False):
         return symbol
     # Use heuristics to guess certain values are pointers and convert them to undocumented names
     if strict_addrs:
-        return f'0x{addr:X}'
+        return f"0x{addr:X}"
     if addr in IWRAM:
-        return f'gUnk_{addr:X}'
+        return f"gUnk_{addr:X}"
     if addr not in ROM:
-        return f'0x{addr:X}'
-    if ctx == 'call':
+        return f"0x{addr:X}"
+    if ctx == "call":
         addr &= ~1
-        return f'func_{addr:X}'
-    if ctx == 'data':
+        return f"func_{addr:X}"
+    if ctx == "data":
         if addr in TEXT:
             if addr & 1:
-                return f'func_{addr & ~1:X}'
+                return f"func_{addr & ~1:X}"
             else:
-                return f'.L_{addr & ~0x8000000:x}'
+                return f".L_{addr & ~0x8000000:x}"
         else:
-            return f'sUnk_{addr:X}'
-    return f'0x{addr:X}'
+            return f"sUnk_{addr:X}"
+    return f"0x{addr:X}"
 
 
 def make_data(source, iterator, i, inst, symbols, setlabel=True):
-    label = f'.L_{inst.label}' if setlabel else inst.label
-    if len(inst.raw.replace(' ', '')) > 4:
-        value = inst.raw.replace(' ', '')
+    label = f".L_{inst.label}" if setlabel else inst.label
+    if len(inst.raw.replace(" ", "")) > 4:
+        value = inst.raw.replace(" ", "")
         value = value[4:] + value[:4]
     else:
-        value = f'{source[i+1].raw}{inst.raw}'.replace(' ', '')
+        value = f"{source[i + 1].raw}{inst.raw}".replace(" ", "")
         next(iterator)
-    return Instruction(label, value, '.4byte', get_symbol(f'0x{value}', symbols, 'data'), '')
+    return Instruction(label, value, ".4byte", get_symbol(f"0x{value}", symbols, "data"), "")
 
 
 def parse_instructions(file):
@@ -82,7 +82,7 @@ def parse_instructions(file):
             match = disassembly_regex.match(line)
             if match is None:
                 continue
-            instructions.append(Instruction._make(group or '' for group in match.groups()))
+            instructions.append(Instruction._make(group or "" for group in match.groups()))
     return instructions
 
 
@@ -93,14 +93,14 @@ def cleanup_objdump(instructions, symbols: dict = None):
 
     # Remove 's' flag
     for i, inst in enumerate(instructions):
-        if inst.mnemonic[-1] == 's':
+        if inst.mnemonic[-1] == "s":
             instructions[i] = inst._replace(mnemonic=inst.mnemonic[:-1])
 
     # Remove 4-byte instructions other than bl
     _instructions, instructions = instructions, []
     iterator = iter(enumerate(_instructions))
     for i, inst in iterator:
-        if len(inst.raw.replace(' ', '')) > 4 and inst.mnemonic != 'bl':
+        if len(inst.raw.replace(" ", "")) > 4 and inst.mnemonic != "bl":
             addr = int(inst.label, base=16)
             lower, upper = inst.raw.split()
             instructions.append(Instruction(f"{addr:x}", lower, ".2byte", f"0x{lower}", ""))
@@ -113,41 +113,41 @@ def cleanup_objdump(instructions, symbols: dict = None):
     iterator = iter(enumerate(_instructions))
     branch_targets = set()
     pool_addresses = set()
-    state = 'code'
+    state = "code"
     for i, inst in iterator:
         if inst.label in branch_targets:
-            state = 'code'
-        if state == 'code':
-            if inst.mnemonic == 'ldr':
+            state = "code"
+        if state == "code":
+            if inst.mnemonic == "ldr":
                 rd, rs, off = ldr_regex.match(inst.operands).groups()
-                if rs == 'pc' and inst.label not in pool_addresses:
+                if rs == "pc" and inst.label not in pool_addresses:
                     addr = inst.comment[3:-1]
                     pool_addresses.add(addr)
-                    inst = inst._replace(operands=f'{rd}, .L_{addr}', comment='')
-            if inst.mnemonic.endswith('.n'):
+                    inst = inst._replace(operands=f"{rd}, .L_{addr}", comment="")
+            if inst.mnemonic.endswith(".n"):
                 addr = inst.operands[2:]
                 branch_targets.add(addr)
-                inst = inst._replace(mnemonic=inst.mnemonic[:-2], operands=f'.L_{addr}')
-            if inst.mnemonic in ('b', 'bx') or inst.mnemonic == 'mov' and inst.operands.startswith('pc'):
-                state = 'data'
-            if inst.mnemonic == 'bl':
-                addr = f'0x{int(inst.operands, base=0) | 0x8000000:08x}'
-                inst = inst._replace(operands=get_symbol(addr, symbols, 'call'))
-        elif state in ('data', 'jumptable'):
+                inst = inst._replace(mnemonic=inst.mnemonic[:-2], operands=f".L_{addr}")
+            if inst.mnemonic in ("b", "bx") or inst.mnemonic == "mov" and inst.operands.startswith("pc"):
+                state = "data"
+            if inst.mnemonic == "bl":
+                addr = f"0x{int(inst.operands, base=0) | 0x8000000:08x}"
+                inst = inst._replace(operands=get_symbol(addr, symbols, "call"))
+        elif state in ("data", "jumptable"):
             if inst.raw.startswith("0000"):
-                if inst.raw.strip() == '0000' and inst.label.strip()[-1] in '26AaEe':
-                    instructions.append(inst._replace(mnemonic='.align', operands='2, 0'))
+                if inst.raw.strip() == "0000" and inst.label.strip()[-1] in "26AaEe":
+                    instructions.append(inst._replace(mnemonic=".align", operands="2, 0"))
                     continue
             inst = make_data(_instructions, iterator, i, inst, symbols, setlabel=False)
-            addr = int(inst.raw.strip().replace(' ', ''), base=16) & 0x7FFFFFE
-            reference_label = format(addr, '04x')
-            if state == 'jumptable':
+            addr = int(inst.raw.strip().replace(" ", ""), base=16) & 0x7FFFFFE
+            reference_label = format(addr, "04x")
+            if state == "jumptable":
                 branch_targets.add(reference_label)
             else:
                 pool_addresses.add(reference_label)
             # Heuristic: If this points to the very next word, that word's probably a jump table
-            if addr == (int(inst.label.strip().replace(' ', ''), base=16) & 0x7FFFFFE) + 4:
-                state = 'jumptable'
+            if addr == (int(inst.label.strip().replace(" ", ""), base=16) & 0x7FFFFFE) + 4:
+                state = "jumptable"
         else:
             raise ValueError(f"Reached invalid state: {repr(state)}")
         instructions.append(inst)
@@ -155,14 +155,17 @@ def cleanup_objdump(instructions, symbols: dict = None):
     # Add labels to referenced addresses
     for i, inst in enumerate(instructions):
         if inst.label in branch_targets or inst.label in pool_addresses:
-            instructions[i] = inst._replace(label=f'.L_{inst.label}')
+            instructions[i] = inst._replace(label=f".L_{inst.label}")
 
     return instructions
 
 
 def objdump(rom, start_addr, end_addr):
-    return subprocess.Popen(OBJDUMP_ARGS + (rom, f"--start-address={start_addr}", f"--stop-address={end_addr}"),
-                            stdout=subprocess.PIPE, text=True)
+    return subprocess.Popen(
+        OBJDUMP_ARGS + (rom, f"--start-address={start_addr}", f"--stop-address={end_addr}"),
+        stdout=subprocess.PIPE,
+        text=True,
+    )
 
 
 def disassemble_function(rom, start_addr, end_addr, symbols=None, quiet=False):
@@ -181,20 +184,33 @@ def disassemble_function(rom, start_addr, end_addr, symbols=None, quiet=False):
         print(f"{name}:")
     for inst in instructions:
         label, raw, mnemonic, operands, comment = inst
-        if label.startswith('.L_'):
-            print(f'{label}:')
-        print("\t".join(['', mnemonic, operands, comment and f'@ {comment}']).rstrip())
+        if label.startswith(".L_"):
+            print(f"{label}:")
+        print("\t".join(["", mnemonic, operands, comment and f"@ {comment}"]).rstrip())
 
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument("addresses", type=functools.partial(int, base=16), nargs="+",
-                        help="Address range to disassemble. Give more than 2 addresses to disassemble multiple "
-                             "functions.")
-    parser.add_argument("-v", "--version", type=str, choices=["us", "jp"], default="us",
-                        help="The version of the ROM to disassemble from")
-    parser.add_argument("-q", "--quiet", action="store_true",
-                        help="Only output disassembled code without a label. Only valid if disassembling one function.")
+    parser.add_argument(
+        "addresses",
+        type=functools.partial(int, base=16),
+        nargs="+",
+        help="Address range to disassemble. Give more than 2 addresses to disassemble multiple functions.",
+    )
+    parser.add_argument(
+        "-v",
+        "--version",
+        type=str,
+        choices=["us", "jp"],
+        default="us",
+        help="The version of the ROM to disassemble from",
+    )
+    parser.add_argument(
+        "-q",
+        "--quiet",
+        action="store_true",
+        help="Only output disassembled code without a label. Only valid if disassembling one function.",
+    )
 
     args = parser.parse_args()
     if len(args.addresses) < 2:

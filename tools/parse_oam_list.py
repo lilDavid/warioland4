@@ -30,7 +30,9 @@ def enumerate_by_address(data: bytes, size: int = 1, start_address: int = 0):
 def parse_frame_data(rom_file: bytes, start_address: int, stop_address: int) -> list[list[tuple[int, int]]]:
     current = []
     result = []
-    for addr, bytestring in enumerate_by_address(rom_file[start_address:stop_address], struct.calcsize("<II"), start_address):
+    for addr, bytestring in enumerate_by_address(
+        rom_file[start_address:stop_address], struct.calcsize("<II"), start_address
+    ):
         frame_ptr, timer = struct.unpack("<II", bytestring)
         current.append((frame_ptr, timer))
         if frame_ptr == 0:

@@ -18,6 +18,7 @@ def generate_limits(bits: int):
         (1 << bits) - 1: f"U{bits}_MAX",
     }
 
+
 LIMITS = {
     **generate_limits(8),
     **generate_limits(16),
@@ -25,13 +26,20 @@ LIMITS = {
 }
 
 
-def extract_data(version: str, address: int, count: int, unit_size: int = 1, format: OutputFormat = OutputFormat.HEX,
-                 *, suppress_limits: bool = False):
+def extract_data(
+    version: str,
+    address: int,
+    count: int,
+    unit_size: int = 1,
+    format: OutputFormat = OutputFormat.HEX,
+    *,
+    suppress_limits: bool = False,
+):
     with open(f"baserom_{version}.gba", "rb") as stream:
         rom = stream.read()
 
     size = count * unit_size
-    data_bytes = rom[address:address + size]
+    data_bytes = rom[address : address + size]
 
     for batch in itertools.batched(data_bytes, unit_size):
         unit = int.from_bytes(batch, "little", signed=format == OutputFormat.SIGNED)
@@ -56,20 +64,29 @@ def parse_address(s: str) -> int:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     version = parser.add_mutually_exclusive_group()
-    version.add_argument("-v", "--version", type=str, choices=["us", "jp"],
-        default="us", help="The version of the ROM to extract from")
-    # version.add_argument("-d", "--debug", action="store_true",
-    #     help="Extract debug data from the US beta rom")
+    version.add_argument(
+        "-v", "--version", type=str, choices=["us", "jp"], default="us", help="The version of the ROM to extract from"
+    )
+    # version.add_argument("-d", "--debug", action="store_true", help="Extract debug data from the US beta rom")
     parser.add_argument("address", type=parse_address, help="Address to extract from")
     end = parser.add_mutually_exclusive_group(required=True)
     end.add_argument("-e", "--end", type=parse_address, help="End address, exclusive")
     end.add_argument("-c", "--count", type=parse_int, help="Number of units to extract")
     end.add_argument("-l", "--length", type=parse_int, help="Number of bytes to extract")
     parser.add_argument("-s", "--size", type=parse_int, default=1, help="Size of each unit in bytes")
-    parser.add_argument("-f", "--format", type=OutputFormat, choices=OutputFormat, default=OutputFormat.HEX,
-                        help="Format for returned units")
-    parser.add_argument("--suppress-limits", action="store_true",
-                        help="Display values such as U8_MAX as integers, rather than symbolic constants")
+    parser.add_argument(
+        "-f",
+        "--format",
+        type=OutputFormat,
+        choices=OutputFormat,
+        default=OutputFormat.HEX,
+        help="Format for returned units",
+    )
+    parser.add_argument(
+        "--suppress-limits",
+        action="store_true",
+        help="Display values such as U8_MAX as integers, rather than symbolic constants",
+    )
 
     args = parser.parse_args()
     if not args.version and not args.debug:
