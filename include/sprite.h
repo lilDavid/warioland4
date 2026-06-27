@@ -477,7 +477,13 @@ extern s8 gUnk_3000A58;
 extern s8 gUnk_3000A59;
 extern u8 gUnk_3000A5A;
 extern u8 gUnk_3000A5B;
+extern u8 gUnk_3000A5C;
+extern u8 gUnk_3000A5D;
+extern u8 gUnk_3000A5E;
+extern u8 gUnk_3000A5F;
 extern u8 gUnk_3000A60;
+extern u8 gUnk_3000A61;
+extern u8 gUnk_3000A62;
 
 extern const u16 sUnk_83B35F8[][2];
 extern const u16 sUnk_83B37FC[][2];

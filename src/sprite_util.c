@@ -216,7 +216,7 @@ const u16 sSpriteThrownUpHardYVelocityHeavy[] = {
 void func_80238A4(void)
 {
     if (gScreenShakeY.duration >= CONVERT_SECONDS(0.97)) {
-        if (gUnk_3000BEC & 1) {
+        if (gInGameTimerFrames & 1) {
             gCurrentSprite.pose = SPOSE_33;
         } else {
             gCurrentSprite.pose = SPOSE_35;
@@ -229,7 +229,7 @@ void func_80238A4(void)
 void func_80238E8(void)
 {
     if (gScreenShakeY.duration >= CONVERT_SECONDS(0.7)) {
-        if (gUnk_3000BEC & 1) {
+        if (gInGameTimerFrames & 1) {
             gCurrentSprite.pose = SPOSE_33;
         } else {
             gCurrentSprite.pose = SPOSE_35;
@@ -2724,11 +2724,11 @@ void SpriteUtilStartBossTimer(void)
 
     WarioRequestPose(WPOSE_NORMAL_STANDING);
     gWarioPauseTimer = CONVERT_SECONDS(3 + 1 / 3.0);
-    gTimerState = 1;
-    gUnk_3000BEC = 0;
-    gUnk_3000C01 = 3;
-    gUnk_3000C03 = 2;
-    SpriteSpawnSecondary(3 * BLOCK_SIZE + EIGHTH_BLOCK_SIZE, 6 * BLOCK_SIZE, SSPRITE_4E);
+    gTimerState = TIMER_STATE_ACTIVE;
+    gInGameTimerFrames = 0;
+    gLastTimerDigitChanged = TIMER_DIGIT_MINUTES;
+    gTimerSeparatorUpdate = TIMER_SEPARATOR_SHOW;
+    SpriteSpawnSecondary(3 * BLOCK_SIZE + EIGHTH_BLOCK_SIZE, 6 * BLOCK_SIZE, SSPRITE_TIMER);
     yPosition = gWarioData.yPosition - gBg1YPosition;
     xPosition = gWarioData.xPosition;
     xOffset = (gBg1XPosition + BLOCK_SIZE);

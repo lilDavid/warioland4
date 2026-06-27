@@ -339,7 +339,7 @@ func_804DBC4:
 	ldrh	r1, [r4, #8]
 	ldrh	r2, [r4, #10]
 	mov	r3, #10
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldr	r1, .L_4dc20
 	ldr	r0, .L_4dc24
 	ldrb	r0, [r0, #0]

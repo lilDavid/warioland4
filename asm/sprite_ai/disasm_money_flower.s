@@ -684,7 +684,7 @@ func_804135C:
 	ldrh	r0, [r3, #8]
 	sub	r0, #120	@ 0x78
 	ldrh	r1, [r3, #10]
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 	pop	{r4}
 	pop	{r0}
 	bx	r0

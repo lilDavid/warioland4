@@ -291,7 +291,7 @@ func_804671C:
 	ldrh	r1, [r5, #8]
 	ldrh	r2, [r5, #10]
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldrh	r0, [r5, #8]
 	sub	r0, #32
 	ldrh	r1, [r5, #10]

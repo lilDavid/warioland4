@@ -1747,7 +1747,7 @@ SpriteDenden:
 	bl	func_8024988
 	b	.L_5802e
 .L_58010:
-	.4byte	gUnk_3000BEC
+	.4byte	gInGameTimerFrames
 .L_58014:
 	bl	func_80579A0
 .L_58018:

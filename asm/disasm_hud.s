@@ -940,7 +940,7 @@ func_8074D9C:
 .L_74f10:
 	.4byte	gCurrentSecondarySprite
 .L_74f14:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_74f18:
 	.4byte	sUnk_83BF986
 .L_74f1c:
@@ -960,7 +960,7 @@ func_8074D9C:
 	bx	r0
 	.align	2, 0
 .L_74f38:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_74f3c:
 	.4byte	sBigBoardSpaceSpriteTable
 .L_74f40:
@@ -989,7 +989,7 @@ func_8074F44:
 	strb	r4, [r0, #0]
 	b	.L_74fa0
 .L_74f6c:
-	.4byte	gUnk_3000BF0
+	.4byte	gInGameTimer
 .L_74f70:
 	.4byte	gCollectedNEJewelPiece
 .L_74f74:
@@ -1175,7 +1175,7 @@ func_807507C:
 	b	.L_751f4
 	.align	2, 0
 .L_750b0:
-	.4byte	gUnk_3000BF0
+	.4byte	gInGameTimer
 .L_750b4:
 	.4byte	gGoldenTreasureCount
 .L_750b8:

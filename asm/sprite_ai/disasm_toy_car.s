@@ -483,7 +483,7 @@ func_805F268:
 	ldrh	r2, [r5, #10]
 	mov	r0, #120	@ 0x78
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldrh	r0, [r5, #8]
 	sub	r0, #32
 	ldrh	r1, [r5, #10]
@@ -581,7 +581,7 @@ func_805F318:
 	ldrh	r2, [r4, #10]
 	mov	r0, #120	@ 0x78
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldrh	r0, [r4, #8]
 	sub	r0, #32
 	ldrh	r1, [r4, #10]
@@ -843,7 +843,7 @@ func_805F4CC:
 	ldrh	r2, [r4, #10]
 	mov	r0, #120	@ 0x78
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldr	r1, .L_5f538
 	ldr	r0, .L_5f53c
 	ldrb	r0, [r0, #0]
@@ -875,7 +875,7 @@ func_805F540:
 	ldrh	r2, [r4, #10]
 	mov	r0, #120	@ 0x78
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	bl	SpriteUtilDie
 	ldr	r1, .L_5f570
 	ldr	r0, .L_5f574

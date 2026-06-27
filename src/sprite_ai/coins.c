@@ -1013,10 +1013,10 @@ void SpriteCoin(void)
         }
     }
     if (gCurrentSprite.status & SPRITE_STATUS_UNDERWATER) {
-        if (gUnk_3000BEC & 1) {
+        if (gInGameTimerFrames & 1) {
             TIMER_COUNT_DOWN(gCurrentSprite.currentAnimationFrame);
         }
-        if (gUnk_3000BEC & 3 && gCurrentSprite.pose != SPOSE_CRUSHED_OR_COLLECTED_INIT) {
+        if (gInGameTimerFrames & 3 && gCurrentSprite.pose != SPOSE_CRUSHED_OR_COLLECTED_INIT) {
             return;
         }
     }

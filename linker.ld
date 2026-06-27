@@ -96,55 +96,11 @@ SECTIONS {
         . = 0x0a5e; gUnk_3000A5E = .;
         . = 0x0a5f; gUnk_3000A5F = .;
         . = 0x0a60; gUnk_3000A60 = .;
-
         . = 0x0a61; gUnk_3000A61 = .;
         . = 0x0a62; gUnk_3000A62 = .;
-        . = 0x0a64; gUnk_3000A64 = .;
-        . = 0x0a68; gCurrentCollection = .;
-        . = 0x0b10; gHighScoreTable = .;
 
-        . = 0x0b80; gSecondarySpriteData = .;
-        . = 0x0be0; gCurrentSecondarySprite = .;
-        . = 0x0bec; gUnk_3000BEC = .;
-        . = 0x0bf0; gUnk_3000BF0 = .;
-        . = 0x0bf4; gTotalScore = .;
-        . = 0x0bf8; gStageScore = .;
-        . = 0x0bfc; gScoreDigits = .;
-        . = 0x0c01; gUnk_3000C01 = .;
-        . = 0x0c02; gUnk_3000C02 = .;
-        . = 0x0c03; gUnk_3000C03 = .;
-        . = 0x0c04; gUnk_3000C04 = .;
-        . = 0x0c05; gUnk_3000C05 = .;
-        . = 0x0c06; gUnk_3000C06 = .;
-        . = 0x0c07; gCollectedNEJewelPiece = .;
-        . = 0x0c08; gCollectedSEJewelPiece = .;
-        . = 0x0c09; gCollectedSWJewelPiece = .;
-        . = 0x0c0a; gCollectedNWJewelPiece = .;
-        . = 0x0c0b; gCollectedCD = .;
-        . = 0x0c0c; gCollectedKeyzer = .;
-        . = 0x0c0d; gSwitchPressed = .;
-        . = 0x0c0e; gUnk_3000C0E = .;
-        . = 0x0c10; gUnk_3000C10 = .;
-        . = 0x0c14; gUnk_3000C14 = .;
-        . = 0x0c16; gUnk_3000C16 = .;
-        . = 0x0c18; gUnk_3000C18 = .;
-        . = 0x0c1a; gUnk_3000C1A = .;
-        . = 0x0c1c; gCurrentHeartMeterGfx = .;
-        . = 0x0c20; gCurrentHeartGaugeGfx = .;
-        . = 0x0c24; gVortexGfxSlot = .;
-        . = 0x0c26; gVortexYPosition = .;
-        . = 0x0c28; gVortexXPosition = .;
-        . = 0x0c2a; gUnk_3000C2A = .;
-        . = 0x0c2b; gUnk_3000C2B = .;
-        . = 0x0c2c; gHasGoldenDivaChest5 = .;
-        . = 0x0c2d; gHasGoldenDivaChest6 = .;
-        . = 0x0c2e; gHasGoldenDivaChest7 = .;
-        . = 0x0c2f; gHasGoldenDivaChest8 = .;
-        . = 0x0c30; gHasGoldenDivaChest9 = .;
-        . = 0x0c31; gHasGoldenDivaChest10 = .;
-        . = 0x0c32; gHasGoldenDivaChest11 = .;
-        . = 0x0c33; gHasGoldenDivaChest12 = .;
-        . = 0x0c34; obj/main.o(iwram_data);
+        . = 0x0a64; obj/score.o(iwram_data);
+        obj/main.o(iwram_data);
         obj/init_helpers.o(iwram_data);
 
         . = 0x1850; gUnk_3001850 = .;
@@ -725,7 +681,7 @@ SECTIONS {
         obj/disasm_0x0743BC.o(.text);
         obj/hud.o(.text);
         obj/disasm_hud.o(.text);
-        obj/disasm_score.o(.text);
+        obj/score.o(.text);
         obj/disasm_secondary_sprite_ai.o(.text);
         obj/disasm_stage_select.o(.text);
         obj/disasm_map_screen.o(.text);
@@ -796,7 +752,8 @@ SECTIONS {
         obj/data/stage_end_pointers.o(.data);
         obj/data/demo_data_pointers.o(.data);
         obj/hud.o(.data);
-        obj/blob_0x78F714-0x78F970.o(.data);
+        obj/score.o(.data);
+        obj/blob_0x78F87C-0x78F970.o(.data);
     } > ROM
 
     /* Discard everything not specifically mentioned above. */

@@ -3,11 +3,6 @@
 .section .data
 
 
-.global sSecondarySpriteAITable
-sSecondarySpriteAITable:
-
-baserom_blob 0x78F714, 0x78F87C
-
 .global sUnk_878F87C
 sUnk_878F87C:
 

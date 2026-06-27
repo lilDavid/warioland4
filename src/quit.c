@@ -17,7 +17,7 @@ void QuitSubroutine(void)
 {
     InterruptCallbackSetVBlank(QuitVBlankCallback);
     func_8072F0C();
-    gTimerState = 0;
+    gTimerState = TIMER_STATE_NONE;
     gSwitchPressed = 0;
     gUnk_3000C3F = 0;
 }

@@ -629,7 +629,7 @@ func_8034B0C:
 	ldrb	r0, [r4, #23]
 	ldrh	r1, [r4, #8]
 	ldrh	r2, [r4, #10]
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldrh	r0, [r4, #8]
 	sub	r0, #32
 	ldrh	r1, [r4, #10]
@@ -727,7 +727,7 @@ func_8034BBC:
 	ldrb	r0, [r4, #23]
 	ldrh	r1, [r4, #8]
 	ldrh	r2, [r4, #10]
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldrh	r0, [r4, #8]
 	sub	r0, #32
 	ldrh	r1, [r4, #10]
@@ -988,7 +988,7 @@ func_8034D7C:
 .L_34db0:
 	ldrh	r1, [r4, #8]
 	ldrh	r2, [r4, #10]
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldr	r1, .L_34ddc
 	ldr	r0, .L_34de0
 	ldrb	r0, [r0, #0]
@@ -1025,7 +1025,7 @@ func_8034DE4:
 .L_34df2:
 	ldrh	r1, [r4, #8]
 	ldrh	r2, [r4, #10]
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	bl	SpriteUtilDie
 	ldr	r1, .L_34e1c
 	ldr	r0, .L_34e20

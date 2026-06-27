@@ -92,7 +92,7 @@ void VortexFinishStage(void)
     gCurrentSprite.pose = SPOSE_CRUSHED_OR_COLLECTED;
     gDisableWario = 1;
     gWarioPauseTimer = CONVERT_SECONDS(16.0 + 2.0 / 3.0);
-    gUnk_3000C03 = 2;
+    gTimerSeparatorUpdate = TIMER_SEPARATOR_SHOW;
     AutosaveStageClear();
     func_801E430(
         PSPRITE_WARIO_ENTERING_VORTEX,
@@ -105,7 +105,7 @@ void VortexFinishStage(void)
     gVortexYPosition = gCurrentSprite.yPosition;
     gVortexXPosition = gCurrentSprite.xPosition;
     gVortexGfxSlot = gCurrentSprite.gfxSlot;
-    func_801E4D4();
+    SpriteCollisionPlayStageEndSound();
     VoiceSetPlay(VS_WARIO_KEYZER_GET);
 }
 

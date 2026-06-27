@@ -125,8 +125,23 @@ const u8 sCDIconGfx[] = {
 #include "data/hud/cd_icon.4bpp.inc"
 };
 
-const u8 sTimeUpGfx[] = {
-#include "data/hud/time_up.4bpp.inc"
+const u8 sTimeUpRow1Gfx[] = {
+#include "data/hud/time_up_1.4bpp.inc"
+};
+const u8 sTimeUpRow2Gfx[] = {
+#include "data/hud/time_up_2.4bpp.inc"
+};
+const u8 sTimeUpWarioFrame1Gfx[] = {
+#include "data/hud/time_up_wario_1.4bpp.inc"
+};
+const u8 sTimeUpWarioFrame2Gfx[] = {
+#include "data/hud/time_up_wario_2.4bpp.inc"
+};
+const u8 sTimeUpWarioFrame3Gfx[] = {
+#include "data/hud/time_up_wario_3.4bpp.inc"
+};
+const u8 sTimeUpWarioFrame4Gfx[] = {
+#include "data/hud/time_up_wario_4.4bpp.inc"
 };
 
 // clang-format off

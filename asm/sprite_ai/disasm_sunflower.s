@@ -203,7 +203,7 @@ func_804CA28:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #50	@ 0x32
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 	ldrb	r0, [r5, #0]
 	lsl	r0, r0, #6
 	ldrb	r4, [r4, #24]
@@ -218,7 +218,7 @@ func_804CA28:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #50	@ 0x32
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 	ldrb	r0, [r5, #0]
 	lsl	r0, r0, #6
 	ldrb	r4, [r4, #24]
@@ -233,7 +233,7 @@ func_804CA28:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #50	@ 0x32
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 	ldrb	r0, [r5, #0]
 	lsl	r0, r0, #6
 	ldrb	r4, [r4, #24]
@@ -248,7 +248,7 @@ func_804CA28:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #50	@ 0x32
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 	ldrb	r0, [r5, #0]
 	lsl	r0, r0, #6
 	ldrb	r4, [r4, #24]

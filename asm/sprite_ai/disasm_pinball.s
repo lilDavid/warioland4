@@ -961,7 +961,7 @@ func_804B2E4:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #5
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 .L_4b334:
 	add	sp, #4
 	pop	{r4}
@@ -1370,7 +1370,7 @@ func_804B5D8:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #5
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 .L_4b628:
 	add	sp, #4
 	pop	{r4}
@@ -1779,7 +1779,7 @@ func_804B8CC:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #5
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 .L_4b91c:
 	add	sp, #4
 	pop	{r4}
@@ -2184,7 +2184,7 @@ func_804BBB8:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #5
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 .L_4bc08:
 	add	sp, #4
 	pop	{r4}
@@ -2479,7 +2479,7 @@ func_804BDC0:
 	ldrh	r0, [r4, #8]
 	ldrh	r1, [r4, #10]
 	mov	r2, #50	@ 0x32
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 	mov	r0, #1
 	bl	VoiceSetPlay
 .L_4be2c:

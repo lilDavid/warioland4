@@ -1877,7 +1877,7 @@ func_80547E0:
 	bl	func_8054480
 	b	.L_54938
 .L_54930:
-	.4byte	gUnk_3000BEC
+	.4byte	gInGameTimerFrames
 .L_54934:
 	mov	r0, #112	@ 0x70
 	strb	r0, [r5, #28]

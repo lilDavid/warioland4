@@ -32,10 +32,17 @@ typedef void (*ProcedureFunc)(void);
 #define BLOCKS_FROM_SUBPIXELS(subpixels) ((subpixels) / BLOCK_SIZE)
 #define BLOCKS_FROM_PIXELS(pixels) ((pixels) / BLOCK_SIZE_PIXELS)
 
+#define _CONVERT_SECONDS(seconds, frameRate) ((u32)((seconds) * (frameRate)))
+
 // Target FPS
 #define FRAME_RATE 60
 // Convert a floating-point value of seconds into frames
-#define CONVERT_SECONDS(seconds) ((u32)((seconds) * FRAME_RATE))
+#define CONVERT_SECONDS(seconds) _CONVERT_SECONDS(seconds, FRAME_RATE)
+
+// FPS used for things like in-game clocks
+#define SIMULATED_FRAME_RATE 64
+// Convert a floating-point value of seconds into frames at the simulated frame rate.
+#define CONVERT_SECONDS_SIMULATED(seconds) _CONVERT_SECONDS(seconds, SIMULATED_FRAME_RATE)
 
 #define DELTA_TIME 1
 #define TIMER_COUNT_DOWN(timer) (timer) -= DELTA_TIME

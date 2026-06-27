@@ -64,6 +64,21 @@ enum SwitchState {
     SWITCH_STATE_SWITCHING_OFF,
 };
 
+enum TimerState {
+    TIMER_STATE_NONE,
+    TIMER_STATE_ACTIVE,
+    TIMER_STATE_DRAINING_COINS,
+    TIMER_STATE_3,
+    TIMER_STATE_TIME_UP,
+    TIMER_STATE_5,
+    TIMER_STATE_6,
+    TIMER_STATE_7,
+    TIMER_STATE_8,
+    TIMER_STATE_9,
+    TIMER_STATE_10,
+    TIMER_STATE_11,
+};
+
 struct DebugInfo {
     u8 unk0;
     u8 unk1;
@@ -182,7 +197,7 @@ extern u8 gEnableHBlank;
 // gUnk_3000040
 // gUnk_3000044
 // gUnk_3000045
-// gUnk_3000046
+extern s8 gUnk_3000046;
 extern u8 gTimerState;
 extern u8 gStageExitType;
 extern struct DebugInfo gUnk_300004C;

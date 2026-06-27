@@ -2266,7 +2266,7 @@ func_806FBA4:
 	bl	_call_via_r1
 	mov	r0, #10
 	neg	r0, r0
-	bl	ScoreGiveOrDropCoins
+	bl	ScoreDropCoinsFromWario
 .L_6fc94:
 	add	r0, r4, #0
 	pop	{r4}
@@ -2359,7 +2359,7 @@ func_806FD1C:
 	lsl	r5, r5, #6
 	add	r0, r4, #0
 	add	r1, r5, #0
-	bl	func_807690C
+	bl	ScoreCollectBlueCrystal
 	pop	{r4, r5}
 	pop	{r0}
 	bx	r0
@@ -2383,7 +2383,7 @@ func_806FD48:
 	lsl	r5, r5, #6
 	add	r0, r4, #0
 	add	r1, r5, #0
-	bl	func_8076950
+	bl	ScoreCollectRedCrystal
 	pop	{r4, r5}
 	pop	{r0}
 	bx	r0

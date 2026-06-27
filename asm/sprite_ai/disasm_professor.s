@@ -1236,7 +1236,7 @@ SpriteProfessor:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_6a5e0:
-	.4byte	gUnk_3000BEC
+	.4byte	gInGameTimerFrames
 .L_6a5e4:
 	.4byte	.L_6a5e8
 .L_6a5e8:

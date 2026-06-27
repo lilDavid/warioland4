@@ -615,7 +615,7 @@ func_80460B0:
 	ldrh	r1, [r5, #8]
 	ldrh	r2, [r5, #10]
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	ldrh	r0, [r5, #8]
 	sub	r0, #32
 	ldrh	r1, [r5, #10]
@@ -886,7 +886,7 @@ func_80462B0:
 	ldrh	r1, [r4, #8]
 	ldrh	r2, [r4, #10]
 	mov	r3, #1
-	bl	func_807687C
+	bl	ScoreDropCoinsFromEnemy
 	bl	SpriteUtilDie
 	ldr	r1, .L_462e0
 	ldr	r0, .L_462e4

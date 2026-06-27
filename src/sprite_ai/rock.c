@@ -157,7 +157,7 @@ void RockCarriedLeftInit(void)
 
 void SpriteRock(void)
 {
-    if (gCurrentSprite.status & SPRITE_STATUS_UNDERWATER && (gUnk_3000BEC & 3)) {
+    if (gCurrentSprite.status & SPRITE_STATUS_UNDERWATER && (gInGameTimerFrames & 3)) {
         return;
     }
     switch (gCurrentSprite.pose) {

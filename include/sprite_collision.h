@@ -4,7 +4,7 @@
 #include "types.h"
 
 void func_801E4B0(void);
-void func_801E4D4(void);
+void SpriteCollisionPlayStageEndSound(void);
 void func_801E518(void);
 void SpriteCollisionMakeWarioDropCoins(s32 slot);
 void func_801E884(s32 slot);

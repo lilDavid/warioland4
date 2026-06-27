@@ -1739,7 +1739,7 @@ func_803C6BC:
 	ldrh	r1, [r2, #10]
 	add	r1, #96	@ 0x60
 	mov	r2, #10
-	bl	func_80767DC
+	bl	ScoreSpawnCoins
 .L_3c6ec:
 	pop	{r0}
 	bx	r0

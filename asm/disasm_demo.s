@@ -180,7 +180,7 @@ func_8072964:
 .L_72ac0:
 	.4byte	gUnk_3003200
 .L_72ac4:
-	.4byte	gUnk_3000BF0
+	.4byte	gInGameTimer
 .L_72ac8:
 	.4byte	0x000001ed
 .L_72acc:

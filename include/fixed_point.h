@@ -22,6 +22,9 @@ extern const s16 sSinCosTable[5 * ANGLE_HALF_PI];
 #define SIN(angle) (sSinCosTable[angle])
 #define COS(angle) (sSinCosTable[(angle) + ANGLE_HALF_PI])
 
+#define MOD_AND(value, mod) ((value) & ((mod) - 1))
+#define MOD_BLOCK_AND(value, mod) ((value) & (mod))
+
 s32 FixedMul(s32, s32);
 s32 FixedDiv(s32, s32);
 s32 FixedInverse(s32);

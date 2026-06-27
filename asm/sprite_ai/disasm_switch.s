@@ -287,11 +287,11 @@ func_802B694:
 .L_2b730:
 	.4byte	gTimerState
 .L_2b734:
-	.4byte	gUnk_3000BEC
+	.4byte	gInGameTimerFrames
 .L_2b738:
-	.4byte	gUnk_3000C01
+	.4byte	gLastTimerDigitChanged
 .L_2b73c:
-	.4byte	gUnk_3000C03
+	.4byte	gTimerSeparatorUpdate
 .L_2b740:
 	.4byte	gWarioData
 .L_2b744:

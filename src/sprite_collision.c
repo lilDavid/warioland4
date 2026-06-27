@@ -1,5 +1,6 @@
 #include "sprite_collision.h"
 
+#define SCORE_IMPLICIT_SPRITE_SPAWN_SECONDARY
 #include "block.h"
 #include "input.h"
 #include "score.h"
@@ -28,7 +29,7 @@ void func_801E4B0(void)
     m4aSongNumStart(SOUND_28);
 }
 
-void func_801E4D4(void)
+void SpriteCollisionPlayStageEndSound(void)
 {
     m4aSongNumStart(SOUND_1CD);
     MPlayStop(gMPlayTable[3].info);
@@ -100,7 +101,7 @@ void SpriteCollisionMakeWarioDropCoins(s32 slot)
             amount = 0;
             break;
     }
-    ScoreGiveOrDropCoins(amount);
+    ScoreDropCoinsFromWario(amount);
 }
 
 void func_801E884(s32 slot)
@@ -885,7 +886,7 @@ void SpriteCollisionProcess(void)
     u16 statusFlags;
     u16 warioDirection;
 
-    if (gTimerState > 3 || gWarioData.unk_02) {
+    if (gTimerState > TIMER_STATE_3 || gWarioData.unk_02) {
         return;
     }
 
@@ -3483,8 +3484,8 @@ void func_80209E0(s32 slot, u16 left, u16 right, u16 xPosition)
                 pose = SPOSE_PUSHED_RIGHT_INIT;
             } else {
                 pose = SPOSE_27;
-                if (gTimerState != 0xB) {
-                    WarioRequestPose(6);  // TODO: Unknown reaction
+                if (gTimerState != TIMER_STATE_11) {
+                    WarioRequestPose(6);  // FIXME: Unknown reaction
                 }
             }
         } else {
@@ -3498,8 +3499,8 @@ void func_80209E0(s32 slot, u16 left, u16 right, u16 xPosition)
                 pose = SPOSE_PUSHED_LEFT_INIT;
             } else {
                 pose = SPOSE_29;
-                if (gTimerState != 0xB) {
-                    WarioRequestPose(6);  // TODO: Unknown reaction
+                if (gTimerState != TIMER_STATE_11) {
+                    WarioRequestPose(6);  // FIXME: Unknown reaction
                 }
             }
         }
@@ -4044,7 +4045,7 @@ void func_8021434(s32 slot, u16 left, u16 right)
 
 void func_8021500(s32 slot)
 {
-    if ((gWarioData.reaction == REACTION_NORMAL) && (gTimerState != 0xB)) {
+    if ((gWarioData.reaction == REACTION_NORMAL) && (gTimerState != TIMER_STATE_11)) {
         if (gSpriteCollisionFlags & SPRITE_COLLISION_LEFT) {
             if (gWarioData.damageTimer == 0) {
                 SpriteCollisionTakeDamageRight();
@@ -5376,7 +5377,7 @@ void func_8022AE8(s32 slot, u16 left, u16 right)
 
 void func_8022C64(s32 slot)
 {
-    if (gTimerState == 0xB) {
+    if (gTimerState == TIMER_STATE_11) {
         return;
     }
 

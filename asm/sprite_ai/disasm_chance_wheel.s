@@ -315,7 +315,7 @@ func_803962C:
 	bl	_call_via_r1
 	mov	r0, #40	@ 0x28
 	neg	r0, r0
-	bl	ScoreGiveOrDropCoins
+	bl	ScoreDropCoinsFromWario
 	b	.L_397ae
 .L_39774:
 	.4byte	gUnk_3000044

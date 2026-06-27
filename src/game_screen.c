@@ -59,7 +59,7 @@ u32 GameScreenSubroutine(void)
 
             if (CHECK_KEYS_ALL(gButtonsPressed, START_BUTTON) && (gWarioPauseTimer == 0) && (gWarioData.unk_02 == 0)) {
                 if ((gUnk_300001B != 0) && (gDemoState == 0)) {
-                    if ((gTimerState == 1) || ((gCurrentRoom | gSwitchStates[SWITCH_RED]) == 0)) {
+                    if ((gTimerState == TIMER_STATE_ACTIVE) || ((gCurrentRoom | gSwitchStates[SWITCH_RED]) == 0)) {
                         gSubGameMode = 7;
                         gUnk_300001A = 1;
                     }
@@ -79,7 +79,7 @@ u32 GameScreenSubroutine(void)
                     gUnk_30031BE = 1;
                 }
                 if (gWarioPauseTimer != 0) {
-                    gWarioPauseTimer -= 1;
+                    TIMER_COUNT_DOWN(gWarioPauseTimer);
                 } else {
                     WarioProcessControls();
                     WarioProcessCollision();
@@ -388,7 +388,7 @@ void GameScreenInitAndLoadGenerics(void)
     do {
     } while ((u16)(REG_VCOUNT - 0x15) < 0x8C);
 
-    func_8075F44();
+    ScoreInit();
     func_801DE7C();
     func_80711E8();
     func_806BF88();
@@ -399,8 +399,8 @@ void GameScreenInitAndLoadGenerics(void)
         gWarioPauseTimer = 0;
         gDisableWario = 0;
         if (!gHasTemporarySave && !gUnk_3000025) {
-            gTimerState = 0;
-            if (!(gCurrentPassage == 0 && gCurrentStageNumber == 2) && gCurrentStageNumber != 4) {
+            gTimerState = TIMER_STATE_NONE;
+            if (!(gCurrentPassage == PASSAGE_ENTRY && gCurrentStageNumber == 2) && gCurrentStageNumber != 4) {
                 gWarioPauseTimer = CONVERT_SECONDS(16 + 2 / 3.0);
                 gDisableWario = 1;
             }

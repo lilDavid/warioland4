@@ -228,7 +228,7 @@ func_8076C00:
 	orr	r0, r1
 	strb	r0, [r4, #0]
 	ldr	r0, .L_76c3c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrb	r3, [r4, #4]
 	ldr	r2, .L_76c40
 	lsl	r0, r3, #1
@@ -349,7 +349,7 @@ func_8076CD8:
 .L_76d04:
 	.4byte	gCurrentSecondarySprite
 .L_76d08:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_76d0c:
 	.4byte	sUnk_8414A5C
 .L_76d10:
@@ -447,7 +447,7 @@ func_8076DA0:
 .L_76dcc:
 	.4byte	gCurrentSecondarySprite
 .L_76dd0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_76dd4:
 	.4byte	sLittleHeartOam_Frame1
 .L_76dd8:
@@ -522,7 +522,7 @@ thumb_func_start func_8076E68
 func_8076E68:
 	push	{lr}
 	ldr	r0, .L_76e78
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	bl	func_8076A54
 	pop	{r0}
 	bx	r0
@@ -534,7 +534,7 @@ thumb_func_start func_8076E7C
 func_8076E7C:
 	push	{lr}
 	ldr	r0, .L_76e8c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	bl	func_8076B48
 	pop	{r0}
 	bx	r0
@@ -546,7 +546,7 @@ thumb_func_start func_8076E90
 func_8076E90:
 	push	{lr}
 	ldr	r0, .L_76ea0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	bl	func_8076A90
 	pop	{r0}
 	bx	r0
@@ -558,7 +558,7 @@ thumb_func_start func_8076EA4
 func_8076EA4:
 	push	{lr}
 	ldr	r0, .L_76eb4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	bl	func_8076A90
 	pop	{r0}
 	bx	r0
@@ -570,7 +570,7 @@ thumb_func_start func_8076EB8
 func_8076EB8:
 	push	{lr}
 	ldr	r0, .L_76ec8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	bl	func_8076A90
 	pop	{r0}
 	bx	r0
@@ -586,7 +586,7 @@ func_8076ECC:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_76ef4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_76eea
@@ -612,7 +612,7 @@ func_8076EF8:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_76f34
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_76f16
@@ -644,7 +644,7 @@ thumb_func_start func_8076F38
 func_8076F38:
 	push	{lr}
 	ldr	r0, .L_76f60
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldr	r1, .L_76f64
 	ldrh	r0, [r1, #6]
 	cmp	r0, #0
@@ -677,7 +677,7 @@ func_8076F68:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_76f90
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_76f86
@@ -703,7 +703,7 @@ func_8076F94:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_76fbc
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_76fb2
@@ -729,7 +729,7 @@ func_8076FC0:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_76fe8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_76fde
@@ -755,7 +755,7 @@ func_8076FEC:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77014
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7700a
@@ -781,7 +781,7 @@ func_8077018:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77040
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77036
@@ -807,7 +807,7 @@ func_8077044:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_7706c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77062
@@ -833,7 +833,7 @@ func_8077070:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77098
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7708e
@@ -859,7 +859,7 @@ func_807709C:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_770c4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_770ba
@@ -885,7 +885,7 @@ func_80770C8:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_770f0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_770e6
@@ -911,7 +911,7 @@ func_80770F4:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_7711c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77112
@@ -937,7 +937,7 @@ func_8077120:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77148
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7713e
@@ -990,31 +990,31 @@ func_807714C:
 	.4byte	.L_771c8
 .L_77198:
 	ldr	r0, .L_771a0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	b	.L_771da
 .L_771a0:
 	.4byte	sUnk_83D8B40
 .L_771a4:
 	ldr	r0, .L_771ac
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	b	.L_771da
 .L_771ac:
 	.4byte	sUnk_83D8E3C
 .L_771b0:
 	ldr	r0, .L_771b8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	b	.L_771da
 .L_771b8:
 	.4byte	sUnk_83D9994
 .L_771bc:
 	ldr	r0, .L_771c4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	b	.L_771da
 .L_771c4:
 	.4byte	sUnk_83D9BC0
 .L_771c8:
 	ldr	r0, .L_771d0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	b	.L_771da
 .L_771d0:
 	.4byte	sUnk_83D9DB4
@@ -1340,7 +1340,7 @@ func_80773F8:
 	bx	r0
 	.align	2, 0
 .L_77438:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7743c:
 	.4byte	sUnk_83D97BA
 
@@ -1381,7 +1381,7 @@ func_8077440:
 	bx	r0
 	.align	2, 0
 .L_77480:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_77484:
 	.4byte	sUnk_83D9792
 
@@ -1422,7 +1422,7 @@ func_8077488:
 	bx	r0
 	.align	2, 0
 .L_774c8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_774cc:
 	.4byte	sUnk_83D97DA
 
@@ -1463,7 +1463,7 @@ func_80774D0:
 	bx	r0
 	.align	2, 0
 .L_77510:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_77514:
 	.4byte	sUnk_83D979A
 
@@ -1504,7 +1504,7 @@ func_8077518:
 	bx	r0
 	.align	2, 0
 .L_77558:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7755c:
 	.4byte	sUnk_83D97D2
 
@@ -1545,7 +1545,7 @@ func_8077560:
 	bx	r0
 	.align	2, 0
 .L_775a0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_775a4:
 	.4byte	sUnk_83D97A2
 
@@ -1586,7 +1586,7 @@ func_80775A8:
 	bx	r0
 	.align	2, 0
 .L_775e8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_775ec:
 	.4byte	sUnk_83D97CA
 
@@ -1627,7 +1627,7 @@ func_80775F0:
 	bx	r0
 	.align	2, 0
 .L_77630:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_77634:
 	.4byte	sUnk_83D97AA
 
@@ -1668,7 +1668,7 @@ func_8077638:
 	bx	r0
 	.align	2, 0
 .L_77678:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7767c:
 	.4byte	sUnk_83D97C2
 
@@ -1709,7 +1709,7 @@ func_8077680:
 	bx	r0
 	.align	2, 0
 .L_776c0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_776c4:
 	.4byte	sUnk_83D97B2
 
@@ -1722,7 +1722,7 @@ func_80776C8:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_776f0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_776e6
@@ -1748,7 +1748,7 @@ func_80776F4:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_7771c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77712
@@ -1774,7 +1774,7 @@ func_8077720:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77748
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7773e
@@ -1800,7 +1800,7 @@ func_807774C:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77774
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7776a
@@ -1826,7 +1826,7 @@ func_8077778:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_777a0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77796
@@ -1852,7 +1852,7 @@ func_80777A4:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_777cc
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_777c2
@@ -1878,7 +1878,7 @@ func_80777D0:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_777f8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_777ee
@@ -1904,7 +1904,7 @@ func_80777FC:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77824
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7781a
@@ -1930,7 +1930,7 @@ func_8077828:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77850
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77846
@@ -1956,7 +1956,7 @@ func_8077854:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_7787c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77872
@@ -1982,7 +1982,7 @@ func_8077880:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_778a8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7789e
@@ -2008,7 +2008,7 @@ func_80778AC:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_778d4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_778ca
@@ -2034,7 +2034,7 @@ func_80778D8:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77900
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_778f6
@@ -2060,7 +2060,7 @@ func_8077904:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_7792c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77922
@@ -2086,7 +2086,7 @@ func_8077930:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77958
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7794e
@@ -2112,7 +2112,7 @@ func_807795C:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77984
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_7797a
@@ -2138,7 +2138,7 @@ func_8077988:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_779b0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_779a6
@@ -2164,7 +2164,7 @@ func_80779B4:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_779dc
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_779d2
@@ -2190,7 +2190,7 @@ func_80779E0:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77a08
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_779fe
@@ -2216,7 +2216,7 @@ func_8077A0C:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77a34
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77a2a
@@ -2242,7 +2242,7 @@ func_8077A38:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77a60
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77a56
@@ -2268,7 +2268,7 @@ func_8077A64:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77a8c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77a82
@@ -2294,7 +2294,7 @@ func_8077A90:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77ab8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77aae
@@ -2320,7 +2320,7 @@ func_8077ABC:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77ae4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77ada
@@ -2346,7 +2346,7 @@ func_8077AE8:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77b10
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77b06
@@ -2372,7 +2372,7 @@ func_8077B14:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77b3c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77b32
@@ -2398,7 +2398,7 @@ func_8077B40:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77b68
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77b5e
@@ -2424,7 +2424,7 @@ func_8077B6C:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77b94
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77b8a
@@ -2450,7 +2450,7 @@ func_8077B98:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77bc0
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77bb6
@@ -2476,7 +2476,7 @@ func_8077BC4:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77bec
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77be2
@@ -2502,7 +2502,7 @@ func_8077BF0:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77c18
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77c0e
@@ -2528,7 +2528,7 @@ func_8077C1C:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77c44
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77c3a
@@ -2554,7 +2554,7 @@ func_8077C48:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77c70
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77c66
@@ -2580,7 +2580,7 @@ func_8077C74:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77c9c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77c92
@@ -2606,7 +2606,7 @@ func_8077CA0:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77cc8
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77cbe
@@ -2632,7 +2632,7 @@ func_8077CCC:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77cf4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77cea
@@ -2658,7 +2658,7 @@ func_8077CF8:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77d20
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77d16
@@ -2684,7 +2684,7 @@ func_8077D24:
 	add	r0, #1
 	strb	r0, [r4, #4]
 	ldr	r0, .L_77d4c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrh	r0, [r4, #6]
 	cmp	r0, #0
 	bne	.L_77d42
@@ -2793,7 +2793,7 @@ func_8077D5C:
 	.4byte	.L_77ff2
 .L_77e14:
 	ldr	r0, .L_77e30
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldr	r1, .L_77e34
 	ldrb	r0, [r1, #4]
 	add	r0, #1
@@ -2820,7 +2820,7 @@ func_8077D5C:
 	strb	r0, [r1, #1]
 .L_77e46:
 	ldr	r0, .L_77e60
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, r8
 	cmp	r0, #0
 	beq	.L_77e64
@@ -2861,7 +2861,7 @@ func_8077D5C:
 	strb	r0, [r1, #1]
 .L_77e92:
 	ldr	r0, .L_77eac
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r1, r8
 	cmp	r1, #0
 	beq	.L_77eb0
@@ -2959,7 +2959,7 @@ func_8077D5C:
 .L_77f42:
 	ldr	r0, .L_77f60
 .L_77f44:
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldr	r1, .L_77f5c
 	ldrb	r0, [r1, #4]
 	sub	r0, #1
@@ -2984,7 +2984,7 @@ func_8077D5C:
 	strb	r0, [r1, #1]
 .L_77f72:
 	ldr	r0, .L_77f98
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r3, r8
 	cmp	r3, #0
 	bne	.L_7801a
@@ -3025,7 +3025,7 @@ func_8077D5C:
 .L_77fbe:
 	ldr	r0, .L_77fdc
 .L_77fc0:
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldr	r1, .L_77fd8
 	ldrb	r0, [r1, #4]
 	sub	r0, #1
@@ -3054,7 +3054,7 @@ func_8077D5C:
 .L_77ff2:
 	ldr	r0, .L_78010
 .L_77ff4:
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldr	r1, .L_7800c
 	ldrb	r0, [r1, #4]
 	sub	r0, #1
@@ -3071,7 +3071,7 @@ func_8077D5C:
 	.4byte	sKeyzerOam_83B48B4
 .L_78014:
 	ldr	r0, .L_78048
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 .L_7801a:
 	ldr	r0, .L_7804c
 	ldrb	r0, [r0, #0]
@@ -3354,12 +3354,11 @@ func_8077D5C:
 	bx	r0
 
 
-thumb_func_start func_80781FA
-func_80781FA:
-	.align	2, 0
+thumb_func_start func_80781FC
+func_80781FC:
 	push	{lr}
 	ldr	r0, .L_78218
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldr	r3, .L_7821c
 	ldrb	r0, [r3, #3]
 	cmp	r0, #1
@@ -3549,7 +3548,7 @@ func_80782A4:
 .L_783b0:
 	.4byte	gCurrentSecondarySprite
 .L_783b4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_783b8:
 	.4byte	sUnk_840F1C8
 .L_783bc:
@@ -3581,7 +3580,7 @@ func_80782A4:
 .L_783ec:
 	.4byte	gCurrentSecondarySprite
 .L_783f0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_783f4:
 	.4byte	sUnk_840F1C8
 .L_783f8:
@@ -3611,7 +3610,7 @@ func_80782A4:
 .L_78424:
 	.4byte	gCurrentSecondarySprite
 .L_78428:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7842c:
 	.4byte	sUnk_840F1C8
 .L_78430:
@@ -3636,7 +3635,7 @@ func_80782A4:
 	ldr	r1, .L_78468
 	mov	r0, #1
 	strb	r0, [r1, #0]
-	bl	func_801E4D4
+	bl	SpriteCollisionPlayStageEndSound
 	ldr	r0, .L_7846c
 	ldrb	r0, [r0, #0]
 	cmp	r0, #5
@@ -3693,7 +3692,7 @@ func_80782A4:
 .L_784c0:
 	.4byte	gCurrentSecondarySprite
 .L_784c4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_784c8:
 	.4byte	sUnk_840F1C8
 .L_784cc:
@@ -3742,7 +3741,7 @@ func_80782A4:
 .L_78520:
 	.4byte	gCurrentSecondarySprite
 .L_78524:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78528:
 	.4byte	sUnk_840F200
 .L_7852c:
@@ -3778,7 +3777,7 @@ func_80782A4:
 	ldr	r1, .L_78590
 	mov	r0, #1
 	strb	r0, [r1, #0]
-	bl	func_8075974
+	bl	ScorePlayTimeUpSound
 .L_7856e:
 	mov	r0, #7
 	strb	r0, [r4, #3]
@@ -3788,7 +3787,7 @@ func_80782A4:
 .L_78578:
 	.4byte	gCurrentSecondarySprite
 .L_7857c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78580:
 	.4byte	sUnk_840F214
 .L_78584:
@@ -3811,7 +3810,7 @@ func_80782A4:
 .L_785a4:
 	.4byte	gCurrentSecondarySprite
 .L_785a8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_785ac:
 	.4byte	sUnk_840F1C8
 .L_785b0:
@@ -3845,7 +3844,7 @@ func_80782A4:
 .L_785e0:
 	.4byte	gCurrentSecondarySprite
 .L_785e4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_785e8:
 	.4byte	sUnk_840F214
 .L_785ec:
@@ -3937,13 +3936,13 @@ func_80782A4:
 .L_78698:
 	.4byte	0x80000010
 .L_7869c:
-	.4byte	sTimeUpGfx + 0x300
+	.4byte	sTimeUpRow1Gfx + 0x300
 .L_786a0:
 	.4byte	0x06010380
 .L_786a4:
 	.4byte	0x80000080
 .L_786a8:
-	.4byte	sTimeUpGfx + 0x700
+	.4byte	sTimeUpRow2Gfx + 0x300
 .L_786ac:
 	.4byte	0x06010780
 .L_786b0:
@@ -3955,7 +3954,7 @@ func_80782A4:
 .L_786bc:
 	.4byte	0x06010c00
 .L_786c0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_786c4:
 	.4byte	sUnk_8411AFC
 .L_786c8:
@@ -3993,7 +3992,7 @@ func_80782A4:
 .L_78708:
 	.4byte	gCurrentSecondarySprite
 .L_7870c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78710:
 	.4byte	sUnk_8411B48
 .L_78714:
@@ -4004,7 +4003,7 @@ func_80782A4:
 	b	.L_789ec
 	.align	2, 0
 .L_78720:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78724:
 	.4byte	sUnk_8411AFC
 .L_78728:
@@ -4015,7 +4014,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_78734:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78738:
 	.4byte	sUnk_8411B94
 .L_7873c:
@@ -4026,7 +4025,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_78748:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7874c:
 	.4byte	sUnk_8411BE0
 .L_78750:
@@ -4037,7 +4036,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_7875c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78760:
 	.4byte	sUnk_8411C2C
 .L_78764:
@@ -4048,7 +4047,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_78770:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78774:
 	.4byte	sUnk_8411C78
 .L_78778:
@@ -4059,7 +4058,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_78784:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78788:
 	.4byte	sUnk_8411CC4
 .L_7878c:
@@ -4070,7 +4069,7 @@ func_80782A4:
 	b	.L_788b2
 	.align	2, 0
 .L_78798:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7879c:
 	.4byte	sUnk_8411D10
 .L_787a0:
@@ -4081,7 +4080,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_787ac:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_787b0:
 	.4byte	sUnk_8411D5C
 .L_787b4:
@@ -4092,7 +4091,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_787c0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_787c4:
 	.4byte	sUnk_8411DA8
 .L_787c8:
@@ -4103,7 +4102,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_787d4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_787d8:
 	.4byte	sUnk_8411DF4
 .L_787dc:
@@ -4114,7 +4113,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_787e8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_787ec:
 	.4byte	sUnk_8411E40
 .L_787f0:
@@ -4125,7 +4124,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_787fc:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78800:
 	.4byte	sUnk_8411E8C
 .L_78804:
@@ -4136,7 +4135,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_78810:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78814:
 	.4byte	sUnk_8411ED8
 .L_78818:
@@ -4147,7 +4146,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_78824:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78828:
 	.4byte	sUnk_8411F70
 .L_7882c:
@@ -4164,7 +4163,7 @@ func_80782A4:
 .L_78840:
 	.4byte	gTimerState
 .L_78844:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78848:
 	.4byte	sUnk_8411FBC
 .L_7884c:
@@ -4175,7 +4174,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_78858:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7885c:
 	.4byte	sUnk_8411F70
 .L_78860:
@@ -4186,7 +4185,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_7886c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78870:
 	.4byte	sUnk_8411ED8
 .L_78874:
@@ -4201,7 +4200,7 @@ func_80782A4:
 	b	.L_789ec
 	.align	2, 0
 .L_78888:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7888c:
 	.4byte	sUnk_8411E8C
 .L_78890:
@@ -4214,7 +4213,7 @@ func_80782A4:
 	lsl	r7, r7, #1
 	b	.L_788b2
 .L_788a0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_788a4:
 	.4byte	sUnk_8411ED8
 .L_788a8:
@@ -4230,7 +4229,7 @@ func_80782A4:
 	strb	r0, [r1, #3]
 	b	.L_789ec
 .L_788bc:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_788c0:
 	.4byte	sUnk_8411F24
 .L_788c4:
@@ -4253,7 +4252,7 @@ func_80782A4:
 	b	.L_789ec
 	.align	2, 0
 .L_788e8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_788ec:
 	.4byte	sUnk_8411F70
 .L_788f0:
@@ -4301,7 +4300,7 @@ func_80782A4:
 	b	.L_789ec
 	.align	2, 0
 .L_78944:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78948:
 	.4byte	sUnk_8411FBC
 .L_7894c:
@@ -4341,7 +4340,7 @@ func_80782A4:
 	lsl	r7, r7, #2
 	b	.L_789ec
 .L_78990:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78994:
 	.4byte	sUnk_8411FBC
 .L_78998:
@@ -4363,7 +4362,7 @@ func_80782A4:
 .L_789b4:
 	.4byte	gCurrentSecondarySprite
 .L_789b8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_789bc:
 	.4byte	sUnk_840F1C8
 .L_789c0:
@@ -4445,7 +4444,7 @@ func_80782A4:
 .L_78a60:
 	.4byte	gCurrentSecondarySprite
 .L_78a64:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78a68:
 	.4byte	sUnk_840F1C8
 .L_78a6c:
@@ -4593,7 +4592,7 @@ func_8078A80:
 .L_78b74:
 	.4byte	gCurrentSecondarySprite
 .L_78b78:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78b7c:
 	.4byte	sUnk_8411994
 .L_78b80:
@@ -4623,7 +4622,7 @@ func_8078A80:
 .L_78bac:
 	.4byte	gCurrentSecondarySprite
 .L_78bb0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78bb4:
 	.4byte	sUnk_8411994
 .L_78bb8:
@@ -4656,7 +4655,7 @@ func_8078A80:
 	b	.L_78cc0
 	.align	2, 0
 .L_78bf0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78bf4:
 	.4byte	sUnk_8411994
 .L_78bf8:
@@ -4694,7 +4693,7 @@ func_8078A80:
 .L_78c34:
 	.4byte	gCurrentSecondarySprite
 .L_78c38:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78c3c:
 	.4byte	sUnk_84118EC
 .L_78c40:
@@ -4709,7 +4708,7 @@ func_8078A80:
 	sub	r0, #1
 	strb	r0, [r4, #1]
 	ldr	r0, .L_78c6c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	ldrb	r0, [r4, #4]
 	cmp	r0, #0
 	beq	.L_78c70
@@ -4764,7 +4763,7 @@ func_8078A80:
 	strb	r0, [r2, #1]
 .L_78cba:
 	ldr	r0, .L_78d48
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 .L_78cc0:
 	ldr	r0, .L_78d38
 	ldrb	r1, [r0, #0]
@@ -4971,7 +4970,7 @@ func_8078E30:
 .L_78e58:
 	.4byte	gCurrentSecondarySprite
 .L_78e5c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_78e60:
 	.4byte	sUnk_8414A54
 .L_78e64:
@@ -5280,7 +5279,7 @@ func_807907C:
 .L_790a0:
 	.4byte	gCurrentSecondarySprite
 .L_790a4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_790a8:
 	.4byte	sUnk_8414A4C
 .L_790ac:
@@ -5460,7 +5459,7 @@ func_807915C:
 	sub	r0, #8
 	b	.L_7922c
 .L_79204:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79208:
 	.4byte	sUnk_8411FE2
 .L_7920c:
@@ -5595,17 +5594,17 @@ func_807915C:
 .L_792fc:
 	.4byte	0x040000d4
 .L_79300:
-	.4byte	sTimeUpGfx + 0x800
+	.4byte	sTimeUpWarioFrame1Gfx
 .L_79304:
 	.4byte	0x06010b00
 .L_79308:
 	.4byte	0x80000080
 .L_7930c:
-	.4byte	sTimeUpGfx + 0x900
+	.4byte	sTimeUpWarioFrame2Gfx
 .L_79310:
 	.4byte	0x06010f00
 .L_79314:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79318:
 	.4byte	sUnk_8411FF8
 .L_7931c:
@@ -5616,7 +5615,7 @@ func_807915C:
 	b	.L_794d2
 	.align	2, 0
 .L_79328:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7932c:
 	.4byte	sUnk_8411FEA
 .L_79330:
@@ -5629,7 +5628,7 @@ func_807915C:
 	b	.L_79438
 	.align	2, 0
 .L_79340:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79344:
 	.4byte	sUnk_8412006
 .L_79348:
@@ -5644,7 +5643,7 @@ func_807915C:
 	b	.L_79438
 	.align	2, 0
 .L_7935c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79360:
 	.4byte	sUnk_8412014
 .L_79364:
@@ -5659,7 +5658,7 @@ func_807915C:
 	b	.L_79438
 	.align	2, 0
 .L_79378:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7937c:
 	.4byte	sUnk_8412022
 .L_79380:
@@ -5674,7 +5673,7 @@ func_807915C:
 	b	.L_79438
 	.align	2, 0
 .L_79394:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79398:
 	.4byte	sUnk_8412030
 .L_7939c:
@@ -5689,7 +5688,7 @@ func_807915C:
 	b	.L_79438
 	.align	2, 0
 .L_793b0:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_793b4:
 	.4byte	sUnk_841203E
 .L_793b8:
@@ -5725,19 +5724,19 @@ func_807915C:
 	bl	m4aSongNumStart
 	b	.L_794d4
 .L_793f8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_793fc:
 	.4byte	sUnk_841204C
 .L_79400:
 	.4byte	0x040000d4
 .L_79404:
-	.4byte	sTimeUpGfx + 0xA00
+	.4byte	sTimeUpWarioFrame3Gfx
 .L_79408:
 	.4byte	0x06010b00
 .L_7940c:
 	.4byte	0x80000080
 .L_79410:
-	.4byte	sTimeUpGfx + 0xB00
+	.4byte	sTimeUpWarioFrame4Gfx
 .L_79414:
 	.4byte	0x06010f00
 .L_79418:
@@ -5763,7 +5762,7 @@ func_807915C:
 	strb	r0, [r1, #3]
 	b	.L_794d4
 .L_79440:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79444:
 	.4byte	sUnk_841205A
 .L_79448:
@@ -5792,7 +5791,7 @@ func_807915C:
 	strh	r0, [r2, #8]
 	b	.L_794d4
 .L_79478:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7947c:
 	.4byte	sUnk_841205A
 .L_79480:
@@ -5824,7 +5823,7 @@ func_807915C:
 	strb	r0, [r2, #3]
 	b	.L_794d4
 .L_794b4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_794b8:
 	.4byte	sUnk_841205A
 .L_794bc:
@@ -5900,7 +5899,7 @@ func_807915C:
 	bx	r0
 	.align	2, 0
 .L_79554:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79558:
 	.4byte	sUnk_841205A
 .L_7955c:
@@ -5991,7 +5990,7 @@ func_8079574:
 	sub	r0, #8
 	b	.L_79620
 .L_795f8:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_795fc:
 	.4byte	sUnk_8411FE2
 .L_79600:
@@ -6109,7 +6108,7 @@ func_8079574:
 	bl	VoiceSetPlay
 	b	.L_7979a
 .L_796d4:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_796d8:
 	.4byte	sUnk_8411FEA
 .L_796dc:
@@ -6132,7 +6131,7 @@ func_8079574:
 	b	.L_7979a
 	.align	2, 0
 .L_79700:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79704:
 	.4byte	sUnk_8411FEA
 .L_79708:
@@ -6178,7 +6177,7 @@ func_8079574:
 	b	.L_7979a
 	.align	2, 0
 .L_79758:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_7975c:
 	.4byte	sUnk_8411FEA
 .L_79760:
@@ -6272,7 +6271,7 @@ func_8079574:
 	bx	r0
 	.align	2, 0
 .L_7981c:
-	.4byte	gUnk_3000C10
+	.4byte	gCurrentSecondarySpriteOamData
 .L_79820:
 	.4byte	sUnk_8411FEA
 .L_79824:
@@ -6327,7 +6326,7 @@ func_8079868:
 	add	r0, #10
 	strh	r0, [r1, #8]
 	ldr	r0, .L_7988c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #80	@ 0x50
 	bl	func_807983C
 	pop	{r0}
@@ -6349,7 +6348,7 @@ func_8079890:
 	add	r0, #12
 	strh	r0, [r1, #8]
 	ldr	r0, .L_798b4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #160	@ 0xa0
 	bl	func_807983C
 	pop	{r0}
@@ -6371,7 +6370,7 @@ func_80798B8:
 	add	r0, #14
 	strh	r0, [r1, #8]
 	ldr	r0, .L_798dc
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #96	@ 0x60
 	bl	func_807983C
 	pop	{r0}
@@ -6393,7 +6392,7 @@ func_80798E0:
 	add	r0, #11
 	strh	r0, [r1, #8]
 	ldr	r0, .L_79904
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #16
 	bl	func_807983C
 	pop	{r0}
@@ -6415,7 +6414,7 @@ func_8079908:
 	add	r0, #12
 	strh	r0, [r1, #8]
 	ldr	r0, .L_7992c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #200	@ 0xc8
 	bl	func_807983C
 	pop	{r0}
@@ -6437,7 +6436,7 @@ func_8079930:
 	add	r0, #10
 	strh	r0, [r1, #8]
 	ldr	r0, .L_79954
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #120	@ 0x78
 	bl	func_807983C
 	pop	{r0}
@@ -6459,7 +6458,7 @@ func_8079958:
 	add	r0, #14
 	strh	r0, [r1, #8]
 	ldr	r0, .L_7997c
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #100	@ 0x64
 	bl	func_807983C
 	pop	{r0}
@@ -6481,7 +6480,7 @@ func_8079980:
 	add	r0, #16
 	strh	r0, [r1, #8]
 	ldr	r0, .L_799a4
-	bl	func_8076A0C
+	bl	ScoreSpriteAnimate
 	mov	r0, #160	@ 0xa0
 	bl	func_807983C
 	pop	{r0}
