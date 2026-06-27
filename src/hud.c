@@ -313,7 +313,7 @@ void func_80746C0(void)
 
     DmaCopy16(3, sBossStageSpritesGfx, 0x6012400, sizeof(sBossStageSpritesGfx));
 
-    switch (gCurrentShopItem - 1) {
+    switch (gCurrentShopItem) {
         case SHOP_ITEM_APPLE_BOMB:
             DmaCopy16(3, sAppleBombGfx, 0x6013000, sizeof(sAppleBombGfx));
             break;
