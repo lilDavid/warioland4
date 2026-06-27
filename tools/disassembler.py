@@ -7,61 +7,21 @@ import shutil
 import subprocess
 import sys
 
+import decomp
+
 
 STRICT_ADDRESSES = False
 
 OBJDUMP = shutil.which("arm-none-eabi-objdump")
+if OBJDUMP is None:
+    raise Exception("Could not find arm-none-eabi-objdump on your PATH")
 OBJDUMP_ARGS = (OBJDUMP, "-bbinary", "-marm7tdmi", "-Dz", "-Mforce-thumb")
 
-IWRAM = range(0x3000000, 0x3008000)
-TEXT = range(0x8000000, 0x80953EC)
-ROM = range(0x8000000, 0x8800000)
-
-
-map_regex = re.compile(r"\s*(0x[0-9a-f]+)\s+(\w+)\s*(?:=\s*\.)?\s*")
 disassembly_regex = re.compile(r"\s*([0-9a-f]+):\s+([0-9a-f ]+)\s+(\S+)(?:\s+([^@]+)\s+)?(?:@ (.*))?\s*")
 ldr_regex = re.compile(r"(r\d), \[(\w+), #?(\w+)\]")
 
 
 Instruction = namedtuple("Instruction", ["label", "raw", "mnemonic", "operands", "comment"])
-
-
-def parse_map(path):
-    symbols = {}
-    with open(path, "r") as file:
-        for line in file:
-            match = map_regex.match(line)
-            if match is None:
-                continue
-            addr, sym = match.groups()
-            symbols[int(addr, base=0)] = sym
-    return symbols
-
-
-def get_symbol(addr, symbols, ctx=None, strict_addrs=False):
-    addr = int(addr, base=0)
-    symbol = symbols.get(addr)
-    if symbol is not None:
-        return symbol
-    # Use heuristics to guess certain values are pointers and convert them to undocumented names
-    if strict_addrs:
-        return f"0x{addr:X}"
-    if addr in IWRAM:
-        return f"gUnk_{addr:X}"
-    if addr not in ROM:
-        return f"0x{addr:X}"
-    if ctx == "call":
-        addr &= ~1
-        return f"func_{addr:X}"
-    if ctx == "data":
-        if addr in TEXT:
-            if addr & 1:
-                return f"func_{addr & ~1:X}"
-            else:
-                return f".L_{addr & ~0x8000000:x}"
-        else:
-            return f"sUnk_{addr:X}"
-    return f"0x{addr:X}"
 
 
 def make_data(source, iterator, i, inst, symbols, setlabel=True):
@@ -72,7 +32,7 @@ def make_data(source, iterator, i, inst, symbols, setlabel=True):
     else:
         value = f"{source[i + 1].raw}{inst.raw}".replace(" ", "")
         next(iterator)
-    return Instruction(label, value, ".4byte", get_symbol(f"0x{value}", symbols, "data"), "")
+    return Instruction(label, value, ".4byte", decomp.get_symbol(int(value, base=16), symbols, "data"), "")
 
 
 def parse_instructions(file):
@@ -87,7 +47,7 @@ def parse_instructions(file):
 
 
 # Only works for THUMB
-def cleanup_objdump(instructions, symbols: dict = None):
+def cleanup_objdump(instructions: list[Instruction], symbols: dict[int, str] | None = None):
     if symbols is None:
         symbols = {}
 
@@ -119,7 +79,9 @@ def cleanup_objdump(instructions, symbols: dict = None):
             state = "code"
         if state == "code":
             if inst.mnemonic == "ldr":
-                rd, rs, off = ldr_regex.match(inst.operands).groups()
+                match = ldr_regex.match(inst.operands)
+                assert match is not None
+                rd, rs, off = match.groups()
                 if rs == "pc" and inst.label not in pool_addresses:
                     addr = inst.comment[3:-1]
                     pool_addresses.add(addr)
@@ -131,22 +93,22 @@ def cleanup_objdump(instructions, symbols: dict = None):
             if inst.mnemonic in ("b", "bx") or inst.mnemonic == "mov" and inst.operands.startswith("pc"):
                 state = "data"
             if inst.mnemonic == "bl":
-                addr = f"0x{int(inst.operands, base=0) | 0x8000000:08x}"
-                inst = inst._replace(operands=get_symbol(addr, symbols, "call"))
+                addr = int(inst.operands, base=0) | decomp.ROM.start
+                inst = inst._replace(operands=decomp.get_symbol(addr, symbols, "call"))
         elif state in ("data", "jumptable"):
             if inst.raw.startswith("0000"):
                 if inst.raw.strip() == "0000" and inst.label.strip()[-1] in "26AaEe":
                     instructions.append(inst._replace(mnemonic=".align", operands="2, 0"))
                     continue
             inst = make_data(_instructions, iterator, i, inst, symbols, setlabel=False)
-            addr = int(inst.raw.strip().replace(" ", ""), base=16) & 0x7FFFFFE
+            addr = int(inst.raw.strip().replace(" ", ""), base=16) & (decomp.ROM.start - 1)
             reference_label = format(addr, "04x")
             if state == "jumptable":
                 branch_targets.add(reference_label)
             else:
                 pool_addresses.add(reference_label)
             # Heuristic: If this points to the very next word, that word's probably a jump table
-            if addr == (int(inst.label.strip().replace(" ", ""), base=16) & 0x7FFFFFE) + 4:
+            if addr == (int(inst.label.strip().replace(" ", ""), base=16) & (decomp.ROM.start - 1)) + 4:
                 state = "jumptable"
         else:
             raise ValueError(f"Reached invalid state: {repr(state)}")
@@ -168,7 +130,9 @@ def objdump(rom, start_addr, end_addr):
     )
 
 
-def disassemble_function(rom, start_addr, end_addr, symbols=None, quiet=False):
+def disassemble_function(rom, start_addr, end_addr, symbols: dict[int, str] | None = None, quiet: bool = False):
+    if symbols is None:
+        symbols = {}
     objdump_process = objdump(rom, start_addr, end_addr)
     instructions = parse_instructions(objdump_process.stdout)
     if objdump_process.wait() != 0:
@@ -179,7 +143,7 @@ def disassemble_function(rom, start_addr, end_addr, symbols=None, quiet=False):
     if not quiet:
         print()
         print()
-        name = get_symbol(str(start_addr | ROM.start), symbols, "call")
+        name = decomp.get_symbol(start_addr | decomp.ROM.start, symbols, "call")
         print(f"thumb_func_start {name}")
         print(f"{name}:")
     for inst in instructions:
@@ -221,11 +185,11 @@ if __name__ == "__main__":
         exit(1)
 
     try:
-        symbols = parse_map(f"build/{args.version}/warioland4_{args.version}.map")
+        symbols = decomp.parse_map(f"build/{args.version}/warioland4_{args.version}.map")
     except FileNotFoundError:
         symbols = None
 
     if not args.quiet:
         print('.include "macros.s.inc"')
-    for start, end in itertools.pairwise(addr & 0x7FFFFFE for addr in args.addresses):
+    for start, end in itertools.pairwise(addr & (decomp.ROM.start - 1) for addr in args.addresses):
         disassemble_function(f"baserom_{args.version}.gba", start, end, symbols=symbols, quiet=args.quiet)

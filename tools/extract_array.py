@@ -4,11 +4,14 @@ import argparse
 from enum import StrEnum
 import itertools
 
+import decomp
+
 
 class OutputFormat(StrEnum):
     DECIMAL = "decimal"
     SIGNED = "signed"
     HEX = "hex"
+    SYMBOlS = "symbols"
 
 
 def generate_limits(bits: int):
@@ -34,7 +37,11 @@ def extract_data(
     format: OutputFormat = OutputFormat.HEX,
     *,
     suppress_limits: bool = False,
+    symbols: dict[int, str] | None = None,
 ):
+    if symbols is None:
+        symbols = {}
+
     with open(f"baserom_{version}.gba", "rb") as stream:
         rom = stream.read()
 
@@ -44,7 +51,9 @@ def extract_data(
     for batch in itertools.batched(data_bytes, unit_size):
         unit = int.from_bytes(batch, "little", signed=format == OutputFormat.SIGNED)
         formatted: str
-        if not suppress_limits and unit in LIMITS:
+        if format == OutputFormat.SYMBOlS:
+            formatted = decomp.get_symbol(unit, symbols, ctx="data")
+        elif not suppress_limits and unit in LIMITS:
             formatted = LIMITS[unit]
         elif format == OutputFormat.HEX:
             formatted = f"0x{unit:x}"
@@ -92,14 +101,31 @@ if __name__ == "__main__":
     if not args.version and not args.debug:
         args.version = "us"
 
+    if args.format == OutputFormat.SYMBOlS:
+        args.size = 4
+
     length: int | None
     length = args.length
     if args.end is not None:
         length = args.end - args.address
     count: int
     if args.count is None:
+        assert length is not None
         count = length // args.size
     else:
         count = args.count
 
-    extract_data(args.version, args.address, count, args.size, args.format)
+    try:
+        symbols = decomp.parse_map(f"build/{args.version}/warioland4_{args.version}.map")
+    except FileNotFoundError:
+        symbols = None
+
+    extract_data(
+        args.version,
+        args.address,
+        count,
+        args.size,
+        args.format,
+        suppress_limits=args.suppress_limits,
+        symbols=symbols,
+    )

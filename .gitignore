@@ -63,8 +63,9 @@ dkms.conf
 data/**
 include/data/**
 
-# Python virtual environment
+# Python
 .venv
+__pycache__
 
 # m2ctx
 /ctx.c
