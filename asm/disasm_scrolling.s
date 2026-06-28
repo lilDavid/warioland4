@@ -4,9 +4,9 @@
 thumb_func_start func_806C828
 func_806C828:
 	push	{r4, r5, r6, lr}
-	bl	TickXShake
+	bl	ScreenShakeUpdateY
 	add	r6, r0, #0
-	bl	TickYShake
+	bl	ScreenShakeUpdateX
 	ldr	r1, .L_6c8b4
 	ldrh	r2, [r1, #0]
 	lsr	r2, r2, #2

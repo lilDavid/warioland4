@@ -8074,7 +8074,7 @@ func_8052590:
 	bl	func_8026E78
 	mov	r0, #96	@ 0x60
 	mov	r1, #129	@ 0x81
-	bl	RequestYShakeWithAmplitude
+	bl	ScreenShakeRequestXWithAmplitude
 	ldr	r1, .L_52710
 	mov	r0, #5
 	strb	r0, [r1, #0]

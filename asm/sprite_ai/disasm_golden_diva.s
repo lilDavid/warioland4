@@ -3278,7 +3278,7 @@ func_80642CC:
 	strb	r0, [r1, #0]
 	mov	r0, #48	@ 0x30
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	mov	r0, #62	@ 0x3e
 	bl	m4aSongNumStart
 	b	.L_643b0
@@ -4865,7 +4865,7 @@ func_8064BC0:
 .L_64f8e:
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	b	.L_65284
 .L_64f98:
 	ldr	r1, .L_64ff0
@@ -4900,7 +4900,7 @@ func_8064BC0:
 	strb	r0, [r1, #0]
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	mov	r0, #200	@ 0xc8
 	lsl	r0, r0, #2
 	bl	m4aSongNumStart
@@ -4947,7 +4947,7 @@ func_8064BC0:
 	bne	.L_6503e
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 .L_6503e:
 	ldrb	r0, [r5, #0]
 	sub	r0, #160	@ 0xa0
@@ -5141,7 +5141,7 @@ func_8064BC0:
 	bne	.L_65256
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 .L_65256:
 	ldrb	r0, [r4, #0]
 	sub	r0, #1
@@ -9631,7 +9631,7 @@ func_806708C:
 	strh	r1, [r4, #8]
 	mov	r0, #48	@ 0x30
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	mov	r0, #62	@ 0x3e
 	bl	m4aSongNumStart
 	ldrh	r1, [r4, #0]

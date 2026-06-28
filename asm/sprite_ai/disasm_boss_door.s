@@ -277,7 +277,7 @@ func_804E9C4:
 	bl	m4aSongNumStart
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 .L_4e9f2:
 	pop	{r0}
 	bx	r0
@@ -308,7 +308,7 @@ func_804EA04:
 	bne	.L_4ea28
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 .L_4ea28:
 	ldrh	r0, [r4, #8]
 	sub	r0, #1
@@ -325,7 +325,7 @@ func_804EA04:
 	strb	r0, [r4, #28]
 	mov	r0, #32
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 .L_4ea48:
 	pop	{r4}
 	pop	{r0}

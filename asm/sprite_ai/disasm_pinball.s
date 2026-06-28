@@ -24,7 +24,7 @@ func_804AC88:
 .L_4acac:
 	.4byte	gCurrentSprite
 .L_4acb0:
-	.4byte	gUnk_30000C8
+	.4byte	gScreenShakeY
 .L_4acb4:
 	.4byte	gWarioData
 .L_4acb8:

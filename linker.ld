@@ -65,8 +65,8 @@ SECTIONS {
         . = 0x00a8; gBackgroundScroll = .;
 
         . = 0x00c0; gWindow = .;
-        . = 0x00c8; gUnk_30000C8 = .;
-        . = 0x00cc; gUnk_30000CC = .;
+        . = 0x00c8; gScreenShakeY = .;
+        . = 0x00cc; gScreenShakeX = .;
 
         . = 0x00d0; gColorFading = .;
         . = 0x00d8; gUnk_30000D8 = .;

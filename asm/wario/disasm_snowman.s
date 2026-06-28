@@ -935,7 +935,7 @@ func_801996C:
 	strb	r0, [r1, #0]
 	mov	r0, #64	@ 0x40
 	mov	r1, #0
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	mov	r0, #24
 	bl	m4aSongNumStart
 	b	.L_19aae

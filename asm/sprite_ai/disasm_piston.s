@@ -278,7 +278,7 @@ func_8047CA8:
 	strb	r0, [r1, #30]
 	mov	r0, #48	@ 0x30
 	mov	r1, #129	@ 0x81
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	pop	{r0}
 	bx	r0
 	.align	2, 0

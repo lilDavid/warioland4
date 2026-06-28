@@ -1068,7 +1068,7 @@ func_8075988:
 	cmp	r0, #0
 	beq	.L_75a74
 	mov	r0, #64	@ 0x40
-	bl	RequestYShake
+	bl	ScreenShakeRequestX
 .L_75a74:
 	ldr	r4, .L_75abc
 	ldrb	r0, [r4, #0]

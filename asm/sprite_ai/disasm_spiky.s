@@ -79,7 +79,7 @@ func_8034760:
 .L_3477c:
 	.4byte	gCurrentSprite
 .L_34780:
-	.4byte	gUnk_30000C8
+	.4byte	gScreenShakeY
 .L_34784:
 	ldr	r0, .L_34794
 	ldrb	r0, [r0, #0]
@@ -93,7 +93,7 @@ func_8034760:
 	bx	lr
 	.align	2, 0
 .L_34794:
-	.4byte	gUnk_30000C8
+	.4byte	gScreenShakeY
 
 
 thumb_func_start func_8034798

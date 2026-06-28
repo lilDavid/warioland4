@@ -1430,9 +1430,9 @@ func_806B864:
 .L_6baac:
 	.4byte	gMainTimer
 .L_6bab0:
-	.4byte	gUnk_30000C8
+	.4byte	gScreenShakeY
 .L_6bab4:
-	.4byte	gUnk_30000CC
+	.4byte	gScreenShakeX
 .L_6bab8:
 	.4byte	gBg1YPosition
 .L_6babc:

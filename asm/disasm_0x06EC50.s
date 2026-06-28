@@ -1140,7 +1140,7 @@ func_806F424:
 	bl	m4aSongNumStart
 	mov	r0, #20
 	mov	r1, #0
-	bl	RequestXShake
+	bl	ScreenShakeRequestY
 	ldr	r0, .L_6f4b4
 	ldrb	r0, [r0, #12]
 	cmp	r0, #0
