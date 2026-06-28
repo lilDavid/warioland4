@@ -339,7 +339,7 @@ func_806AF4C:
 	cmp	r0, #0
 	beq	.L_6b286
 	mov	r0, #0
-	bl	func_806ADD4
+	bl	UpdateTileTransparency
 	ldrb	r0, [r4, #0]
 	strb	r0, [r4, #1]
 .L_6b286:
@@ -3002,7 +3002,7 @@ BackgroundProcessMain:
 	bhi	.L_6c620
 	cmp	r0, #17
 	bne	.L_6c614
-	bl	func_806AED4
+	bl	UpdateWaterTransparency
 	b	.L_6c620
 .L_6c610:
 	.4byte	gCurrentRoomHeader
@@ -3011,7 +3011,7 @@ BackgroundProcessMain:
 	cmp	r0, #23
 	bls	.L_6c620
 	mov	r0, #1
-	bl	func_806ADD4
+	bl	UpdateTileTransparency
 .L_6c620:
 	ldr	r0, .L_6c67c
 	ldrb	r0, [r0, #0]

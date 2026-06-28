@@ -131,6 +131,13 @@ struct Window {
     u8 content;
 };
 
+struct TransparencyState {
+    u8 targetAlpha;
+    u8 currentAlpha;
+    u8 defaultAlpha;
+    u8 blendTimer;
+};
+
 // gUnk_3000000
 extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
@@ -185,5 +192,9 @@ extern struct Unk_30000A0 gUnk_30000A0;
 extern struct BackgroundScroll gBackgroundScroll;
 extern struct Window gWindow;
 extern u8 gUnk_30000C8;
+extern const u8 sUnk_83F7820[];
+extern struct TransparencyState gUnk_30000D8[];
+extern u8 *gUnk_30031F4[];
+extern u8 gUnk_3000038;
 
 #endif  // GLOBAL_DATA_H
