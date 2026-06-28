@@ -131,6 +131,13 @@ struct Window {
     u8 content;
 };
 
+struct ScreenShakeParameters {
+    u8 duration;
+    u8 frameTimer;
+    u8 amplitude;
+    u8 direction;
+};
+
 // gUnk_3000000
 extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
@@ -185,6 +192,8 @@ extern struct Unk_30000A0 gUnk_30000A0;
 extern struct BackgroundScroll gBackgroundScroll;
 extern struct Window gWindow;
 extern u8 gUnk_30000C8;
+extern struct ScreenShakeParameters gScreenShakeY;
+extern struct ScreenShakeParameters gScreenShakeX;
 extern u8 gVideoMode;
 extern u8 gVideoPage;
 

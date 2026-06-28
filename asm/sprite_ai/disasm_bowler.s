@@ -613,7 +613,7 @@ func_804DDAC:
 	bne	.L_4dddc
 	mov	r0, #48	@ 0x30
 	mov	r1, #129	@ 0x81
-	bl	func_806ACA0
+	bl	ScreenShakeRequestY
 	mov	r0, #62	@ 0x3e
 	bl	m4aSongNumStart
 	b	.L_4ddf0

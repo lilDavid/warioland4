@@ -4,6 +4,7 @@ import itertools
 import struct
 import warnings
 
+import decomp
 
 SIZE_TABLE = {
     ("ATTR0_SQUARE", 0): "SPRITE_SIZE_8x8",
@@ -20,8 +21,6 @@ SIZE_TABLE = {
     ("ATTR0_TALL", 3): "SPRITE_SIZE_32x64",
 }
 
-GBA_ROM_START = 0x8000000
-
 
 def enumerate_by_address(data: bytes, size: int = 1, start_address: int = 0):
     return zip(itertools.count(start_address, size), map(bytes, itertools.batched(data, size)))
@@ -30,7 +29,9 @@ def enumerate_by_address(data: bytes, size: int = 1, start_address: int = 0):
 def parse_frame_data(rom_file: bytes, start_address: int, stop_address: int) -> list[list[tuple[int, int]]]:
     current = []
     result = []
-    for addr, bytestring in enumerate_by_address(rom_file[start_address:stop_address], struct.calcsize("<II"), start_address):
+    for addr, bytestring in enumerate_by_address(
+        rom_file[start_address:stop_address], struct.calcsize("<II"), start_address
+    ):
         frame_ptr, timer = struct.unpack("<II", bytestring)
         current.append((frame_ptr, timer))
         if frame_ptr == 0:
@@ -48,7 +49,7 @@ def parse_and_print_frames(rom_file: bytes, start_address: int, stop_address: in
         short = int.from_bytes(bytepair, "little")
         if remaining == 0:
             remaining = 3 * short
-            print(f"const u16 sOamFrame_{addr | GBA_ROM_START:X}[] = {{")
+            print(f"const u16 sOamFrame_{addr | decomp.ROM.start:X}[] = {{")
             print(f"    {short},")
             # print(format(addr | GBA_ROM_START, "X"), file=sys.stderr)
         else:
@@ -71,7 +72,7 @@ def parse_and_print_frames(rom_file: bytes, start_address: int, stop_address: in
                 if short & 0x1000:
                     raise NotImplementedError("Mosaic")
                 if short & 0x300:
-                    raise NotImplementedError(f"Non-regular sprite")
+                    raise NotImplementedError("Non-regular sprite")
             elif remaining % 3 == 2:
                 x = short & 0x1FF
                 if x & 0x100:
@@ -96,13 +97,13 @@ def parse_and_print_frames(rom_file: bytes, start_address: int, stop_address: in
 def print_frame_data(frame_data: list[list[tuple[int, int]]], start_address: int):
     address = start_address
     for frame_list in frame_data:
-        print(f"const AnimationFrame sOam_{address | GBA_ROM_START:X}[] = {{")
+        print(f"const AnimationFrame sOam_{address | decomp.ROM.start:X}[] = {{")
         for frame in frame_list:
             address += struct.calcsize("<II")
             if frame[0] == 0:
                 print("    ANIMATION_TERMINATOR")
             else:
-                print(f"    {{ sOamFrame_{frame[0] | GBA_ROM_START:X}, {frame[1]} }},")
+                print(f"    {{ sOamFrame_{frame[0] | decomp.ROM.start:X}, {frame[1]} }},")
         print("};")
 
 
@@ -117,6 +118,6 @@ if __name__ == "__main__":
         rom_bytes = stream.read()
     frame_data = parse_frame_data(rom_bytes, args.start, args.stop)
     min_address = min(fd[0] for fd in itertools.chain.from_iterable(frame_data) if fd[0] != 0)
-    parse_and_print_frames(rom_bytes, min_address & (GBA_ROM_START - 1), args.start)
+    parse_and_print_frames(rom_bytes, min_address & (decomp.ROM.start - 1), args.start)
     print()
     print_frame_data(frame_data, args.start)

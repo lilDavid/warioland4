@@ -3,6 +3,18 @@
 
 #include "types.h"
 
+enum ShopItem {
+    SHOP_ITEM_NONE,
+    SHOP_ITEM_APPLE_BOMB,
+    SHOP_ITEM_BLAST_CANNON,
+    SHOP_ITEM_VIZORMAN,
+    SHOP_ITEM_BUGLE,
+    SHOP_ITEM_BLACK_DOG,
+    SHOP_ITEM_LARGE_LIPS,
+    SHOP_ITEM_BIG_FIST,
+    SHOP_ITEM_BLACK_DRAGON,
+};
+
 enum GameMode {
     GM_CUTSCENE = 0,
     GM_STAGE_SELECT = 1,
@@ -20,6 +32,11 @@ enum GameMode {
     GM_MAX = 13
 };
 
+extern u8 gGoldenTreasureCount;
+extern s8 gPauseFlag;
+extern u8 gUnk_3000C36;
+extern s8 gUnk_3000C37;
+extern u8 gCurrentShopItem;
 extern s16 gMainGameMode;
 extern s16 gSubGameMode;
 extern s8 gUnk_3000C3E;
