@@ -6249,7 +6249,7 @@ func_8012E5C:
 	strb	r0, [r1, #0]
 	mov	r0, #48	@ 0x30
 	mov	r1, #0
-	bl	func_806ACA0
+	bl	RequestXShake
 	mov	r0, #34	@ 0x22
 	bl	m4aSongNumStart
 	b	.L_13134
@@ -6266,7 +6266,7 @@ func_8012E5C:
 	strb	r0, [r1, #0]
 	mov	r0, #64	@ 0x40
 	mov	r1, #1
-	bl	func_806ACA0
+	bl	RequestXShake
 	mov	r0, #36	@ 0x24
 	bl	m4aSongNumStart
 	mov	r0, #0
