@@ -490,33 +490,111 @@ baserom_blob 0x414A5C, 0x414A64
 
 .global sStageEntryPassagePal
 sStageEntryPassagePal:
-
-baserom_blob 0x414A64, 0x414A84
+    baserom_blob 0x414A64, 0x414A84
 
 .global sStageEmeraldPassagePal
 sStageEmeraldPassagePal:
-
-baserom_blob 0x414A84, 0x414AA4
+    baserom_blob 0x414A84, 0x414AA4
 
 .global sStageRubyPassagePal
 sStageRubyPassagePal:
-
-baserom_blob 0x414AA4, 0x414AC4
+    baserom_blob 0x414AA4, 0x414AC4
 
 .global sStageTopazPassagePal
 sStageTopazPassagePal:
-
-baserom_blob 0x414AC4, 0x414AE4
+    baserom_blob 0x414AC4, 0x414AE4
 
 .global sStageSapphirePassagePal
 sStageSapphirePassagePal:
-
-baserom_blob 0x414AE4, 0x414B04
+    baserom_blob 0x414AE4, 0x414B04
 
 .global sStageGoldenPyramidPal
 sStageGoldenPyramidPal:
+    baserom_blob 0x414B04, 0x414B24
 
-baserom_blob 0x414B04, 0x416564
+.global sBossLife20Gfx
+sBossLife20Gfx:
+    baserom_blob 0x414B24, 0x414C64
+
+.global sBossLife19Gfx
+sBossLife19Gfx:
+    baserom_blob 0x414C64, 0x414DA4
+
+.global sBossLife18Gfx
+sBossLife18Gfx:
+    baserom_blob 0x414DA4, 0x414EE4
+
+.global sBossLife17Gfx
+sBossLife17Gfx:
+    baserom_blob 0x414EE4, 0x415024
+
+.global sBossLife16Gfx
+sBossLife16Gfx:
+    baserom_blob 0x415024, 0x415164
+
+.global sBossLife15Gfx
+sBossLife15Gfx:
+    baserom_blob 0x415164, 0x4152A4
+
+.global sBossLife14Gfx
+sBossLife14Gfx:
+    baserom_blob 0x4152A4, 0x4153E4
+
+.global sBossLife13Gfx
+sBossLife13Gfx:
+    baserom_blob 0x4153E4, 0x415524
+
+.global sBossLife12Gfx
+sBossLife12Gfx:
+    baserom_blob 0x415524, 0x415664
+
+.global sBossLife11Gfx
+sBossLife11Gfx:
+    baserom_blob 0x415664, 0x4157A4
+
+.global sBossLife10Gfx
+sBossLife10Gfx:
+    baserom_blob 0x4157A4, 0x4158E4
+
+.global sBossLife9Gfx
+sBossLife9Gfx:
+    baserom_blob 0x4158E4, 0x415A24
+
+.global sBossLife8Gfx
+sBossLife8Gfx:
+    baserom_blob 0x415A24, 0x415B64
+
+.global sBossLife7Gfx
+sBossLife7Gfx:
+    baserom_blob 0x415B64, 0x415CA4
+
+.global sBossLife6Gfx
+sBossLife6Gfx:
+    baserom_blob 0x415CA4, 0x415DE4
+
+.global sBossLife5Gfx
+sBossLife5Gfx:
+    baserom_blob 0x415DE4, 0x415F24
+
+.global sBossLife4Gfx
+sBossLife4Gfx:
+    baserom_blob 0x415F24, 0x416064
+
+.global sBossLife3Gfx
+sBossLife3Gfx:
+    baserom_blob 0x416064, 0x4161A4
+
+.global sBossLife2Gfx
+sBossLife2Gfx:
+    baserom_blob 0x4161A4, 0x4162E4
+
+.global sBossLife1Gfx
+sBossLife1Gfx:
+    baserom_blob 0x4162E4, 0x416424
+
+.global sBossLife0Gfx
+sBossLife0Gfx:
+    baserom_blob 0x416424, 0x416564
 
 .global sBigBoardSpaceSpriteTable
 sBigBoardSpaceSpriteTable:

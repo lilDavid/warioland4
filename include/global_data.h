@@ -131,6 +131,13 @@ struct Window {
     u8 content;
 };
 
+struct ScreenShakeParameters {
+    u8 duration;
+    u8 frameTimer;
+    u8 amplitude;
+    u8 direction;
+};
+
 struct TransparencyState {
     u8 targetAlpha;
     u8 currentAlpha;
@@ -191,9 +198,10 @@ extern struct RoomHeader gCurrentRoomHeader;
 extern struct Unk_30000A0 gUnk_30000A0;
 extern struct BackgroundScroll gBackgroundScroll;
 extern struct Window gWindow;
-extern u8 gUnk_30000C8;
-extern const u8 sUnk_83F7820[];
+extern struct ScreenShakeParameters gScreenShakeY;
+extern struct ScreenShakeParameters gScreenShakeX;
 extern struct TransparencyState gUnk_30000D8[];
+extern const u8 sUnk_83F7820[];
 extern u8 *gUnk_30031F4[];
 extern u8 gUnk_3000038;
 

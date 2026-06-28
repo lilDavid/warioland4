@@ -65,8 +65,8 @@ SECTIONS {
         . = 0x00a8; gBackgroundScroll = .;
 
         . = 0x00c0; gWindow = .;
-        . = 0x00c8; gUnk_30000C8 = .;
-        . = 0x00cc; gUnk_30000CC = .;
+        . = 0x00c8; gScreenShakeY = .;
+        . = 0x00cc; gScreenShakeX = .;
 
         . = 0x00d0; gColorFading = .;
         . = 0x00d8; gUnk_30000D8 = .;
@@ -144,12 +144,7 @@ SECTIONS {
         . = 0x0c31; gHasGoldenDivaChest10 = .;
         . = 0x0c32; gHasGoldenDivaChest11 = .;
         . = 0x0c33; gHasGoldenDivaChest12 = .;
-        . = 0x0c34; gGoldenTreasureCount = .;
-        . = 0x0c35; gPauseFlag = .;
-        . = 0x0c36; gUnk_3000C36 = .;
-        . = 0x0c37; gUnk_3000C37 = .;
-        . = 0x0c38; gCurrentShopItem = .;
-        . = 0x0c3a; obj/main.o(iwram_data);
+        . = 0x0c34; obj/main.o(iwram_data);
         obj/init_helpers.o(iwram_data);
 
         . = 0x1850; gUnk_3001850 = .;
@@ -712,7 +707,7 @@ SECTIONS {
         obj/sprite_ai/disasm_chandelier.o(.text);
         obj/sprite_ai/disasm_crumbling_block.o(.text);
         obj/sprite_ai/disasm_professor.o(.text);
-        obj/disasm_screen_shake.o(.text);
+        obj/screen_shake.o(.text);
         obj/transparency.o(.text);
         obj/disasm_0x06AF4C.o(.text);
         obj/disasm_scrolling.o(.text);

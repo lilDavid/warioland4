@@ -1560,7 +1560,7 @@ func_8016614:
 	strb	r0, [r1, #0]
 	mov	r0, #64	@ 0x40
 	mov	r1, #0
-	bl	func_806ACA0
+	bl	ScreenShakeRequestY
 	b	.L_16880
 	.align	2, 0
 .L_167ec:
@@ -1630,7 +1630,7 @@ func_8016614:
 	strb	r0, [r1, #0]
 	mov	r0, #64	@ 0x40
 	mov	r1, #0
-	bl	func_806ACA0
+	bl	ScreenShakeRequestY
 	mov	r0, #24
 	bl	m4aSongNumStart
 	b	.L_16880

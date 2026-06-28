@@ -26,6 +26,11 @@
 
 void irq_handler(void);  // test
 
+IWRAM_DATA u8 gGoldenTreasureCount = 0;
+IWRAM_DATA s8 gPauseFlag = 0;
+IWRAM_DATA u8 gUnk_3000C36 = 0;
+IWRAM_DATA s8 gUnk_3000C37 = 0;
+IWRAM_DATA u8 gCurrentShopItem = 0;
 IWRAM_DATA s16 gMainGameMode = 0;
 IWRAM_DATA s16 gSubGameMode = 0;
 IWRAM_DATA s8 gUnk_3000C3E = 0;

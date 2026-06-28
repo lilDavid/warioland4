@@ -26,7 +26,7 @@ func_80104A4:
 	ldr	r0, [r0, #0]
 	mov	pc, r0
 .L_104d0:
-	.4byte	gUnk_30000C8
+	.4byte	gScreenShakeY
 .L_104d4:
 	.4byte	gWarioData
 .L_104d8:
@@ -6249,7 +6249,7 @@ func_8012E5C:
 	strb	r0, [r1, #0]
 	mov	r0, #48	@ 0x30
 	mov	r1, #0
-	bl	func_806ACA0
+	bl	ScreenShakeRequestY
 	mov	r0, #34	@ 0x22
 	bl	m4aSongNumStart
 	b	.L_13134
@@ -6266,7 +6266,7 @@ func_8012E5C:
 	strb	r0, [r1, #0]
 	mov	r0, #64	@ 0x40
 	mov	r1, #1
-	bl	func_806ACA0
+	bl	ScreenShakeRequestY
 	mov	r0, #36	@ 0x24
 	bl	m4aSongNumStart
 	mov	r0, #0

@@ -38,7 +38,7 @@ def extract_data(version: str, quiet: bool):
         size: int = count * unit_size
 
         # Dump binary file
-        data_bytes = rom[addr:addr + size]
+        data_bytes = rom[addr : addr + size]
         with open(bin_path, "wb") as stream:
             stream.write(data_bytes)
 
@@ -52,10 +52,10 @@ def extract_data(version: str, quiet: bool):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("-v", "--version", type=str, choices=["us", "jp"],
-        default="us", help="The version of the ROM to extract from")
-    # group.add_argument("-d", "--debug", action="store_true",
-    #     help="Extract debug data from the US beta rom")
+    group.add_argument(
+        "-v", "--version", type=str, choices=["us", "jp"], default="us", help="The version of the ROM to extract from"
+    )
+    # group.add_argument("-d", "--debug", action="store_true", help="Extract debug data from the US beta rom")
     parser.add_argument("-q", "--quiet", action="store_true", help="Suppress output")
 
     args = parser.parse_args()

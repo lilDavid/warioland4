@@ -675,7 +675,7 @@ func_8018370:
 	strb	r0, [r1, #0]
 	mov	r0, #64	@ 0x40
 	mov	r1, #0
-	bl	func_806ACA0
+	bl	ScreenShakeRequestY
 	mov	r0, #177	@ 0xb1
 	lsl	r0, r0, #1
 	bl	m4aSongNumStart
