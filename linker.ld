@@ -176,8 +176,8 @@ SECTIONS {
         . = 0x1880; gUnk_3001880 = .;
         . = 0x1882; gUnk_3001882 = .;
         . = 0x1884; gUnk_3001884 = .;
-        . = 0x188b; gUnk_300188B = .;
-        . = 0x188c; gUnk_300188C = .;
+        . = 0x188b; gVideoMode = .;
+        . = 0x188c; gVideoPage = .;
         . = 0x188e; gUnk_300188E = .;
         . = 0x1890; gUnk_3001890 = .;
         . = 0x1892; gUnk_3001892 = .;
@@ -595,7 +595,7 @@ SECTIONS {
         obj/soft_reset.o(.text);
         obj/init_helpers.o(.text);
         obj/fixed_point.o(.text);
-        obj/disasm_0x000A84.o(.text);
+        obj/bitmap_draw.o(.text);
         obj/interrupt_callbacks.o(.text);
         obj/sram_misc.o(.text);
         obj/m4a_asm.o(.text);
