@@ -601,7 +601,7 @@ SECTIONS {
         obj/disasm_0x003A18.o(.text);
         obj/disasm_cutscenes.o(.text);
         obj/cutscenes/disasm_0x00BE64.o(.text);
-        obj/cutscenes/disasm_0x00C264.o(.text);
+        obj/cutscenes/c_0x00C264.o(.text);
         obj/cutscenes/disasm_0x00C470.o(.text);
         obj/cutscenes/disasm_0x00C8A0.o(.text);
         obj/cutscenes/disasm_0x00CFC0.o(.text);
