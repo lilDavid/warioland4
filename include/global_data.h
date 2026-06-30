@@ -71,16 +71,16 @@ struct DebugInfo {
 };
 
 struct BackgroundInfo {
-    u8* pBg0Data;
+    u16* pBg0Data;
     u16 bg0Width;
     u16 bg0Height;
-    u8* pBg1Data;
+    u16* pBg1Data;
     u16 bg1Width;
     u16 bg1Height;
-    u8* pBg2Data;
+    u16* pBg2Data;
     u16 bg2Width;
     u16 bg2Height;
-    u8* pBg3Data;
+    u16* pBg3Data;
     u16 bg3Width;
     u16 bg3Height;
 };
@@ -138,6 +138,13 @@ struct ScreenShakeParameters {
     u8 direction;
 };
 
+struct TransparencyState {
+    u8 targetAlpha;
+    u8 currentAlpha;
+    u8 defaultAlpha;
+    u8 blendTimer;
+};
+
 // gUnk_3000000
 extern u8 gCurrentPassage;
 extern u8 gCurrentStageNumber;
@@ -176,6 +183,7 @@ extern u8 gDrawWarioOverBackground;
 // gUnk_3000034
 // gUnk_3000035
 extern u8 gEnableHBlank;
+extern u8 gUnk_3000038;
 // gUnk_300003A
 // gUnk_300003C
 // gUnk_300003E
