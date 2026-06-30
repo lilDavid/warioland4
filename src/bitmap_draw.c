@@ -1,4 +1,5 @@
 #include "bitmap_draw.h"
+#include "global_data.h"
 
 void SetBgTileColor(s32 x, s32 y, s32 color)
 {
@@ -46,102 +47,103 @@ modeDefault:
 
 void DrawBgLine(s32 x0, s32 y0, s32 x1, s32 y1, s32 color)
 {
-    volatile s32 sp0;
-    volatile s32 sp4;
-    register s32 r0v asm("r0");
-    register s32 r1v asm("r1");
-    register s32 r4v asm("r4");
-    s32 r5v;
-    s32 r6v;
-    s32 r7v;
-    register s32 r8v asm("r8");
-    register s32 r9v asm("r9");
-    register s32 temp_r2;
-    register s32 slv asm("sl");
+    // Used specific register binding to match
+    volatile s32 lineColor;
+    volatile s32 endMajorCoord;
+    register s32 r0 asm("r0");
+    register s32 r1 asm("r1");
+    register s32 startMajorCoord asm("r4");
+    s32 deltaMajor;
+    s32 currentStep;
+    s32 startMinorCoord;
+    register s32 maxStep asm("r8");
+    register s32 endMinorCoord asm("r9");
+    register s32 temp;
+    register s32 startCoord asm("sl");
 
-    r4v = x0;
-    r6v = y0;
-    r1v = y1;
-    r0v = color;
-    r0v = (u16)r0v;
-    sp0 = r0v;
+    startMajorCoord = x0;
+    currentStep = y0;
+    r1 = y1;
+    r0 = color;
+    r0 = (u16)r0;
+    lineColor = r0;
 
-    r5v = x1 - r4v;
-    if (r5v < 0) {
-        r5v = -r5v;
+    deltaMajor = x1 - startMajorCoord;
+    if (deltaMajor < 0) {
+        deltaMajor = -deltaMajor;
     }
 
-    r0v = r1v - r6v;
-    if (r0v < 0) {
-        r0v = -r0v;
+    r0 = r1 - currentStep;
+    if (r0 < 0) {
+        r0 = -r0;
     }
 
-    if (r5v >= r0v) {
-        if (r4v <= x1) {
-            slv = r4v;
-            sp4 = x1;
-            r7v = r6v;
-            r9v = r1v;
+    if (deltaMajor >= r0) {
+        if (startMajorCoord <= x1) {
+            startCoord = startMajorCoord;
+            endMajorCoord = x1;
+            startMinorCoord = currentStep;
+            endMinorCoord = r1;
         } else {
-            slv = x1;
-            sp4 = r4v;
-            r7v = r1v;
-            r9v = r6v;
+            startCoord = x1;
+            endMajorCoord = startMajorCoord;
+            startMinorCoord = r1;
+            endMinorCoord = currentStep;
         }
 
-        r6v = 0;
-        r0v = sp4;
-        r1v = slv;
-        r4v = r0v - r1v;
-        if (r6v <= r4v) {
+        currentStep = 0;
+        r0 = endMajorCoord;
+        r1 = startCoord;
+        startMajorCoord = r0 - r1;
+        if (currentStep <= startMajorCoord) {
             do {
-                temp_r2 = r9v;
-                r0v = temp_r2 - r7v;
-                r0v = r0v * r6v;
-                r8v = r4v;
-                r1v = r4v;
-                r5v = r0v / r1v;
-                r1v = slv;
-                r0v = r6v + r1v;
-                r1v = r5v + r7v;
-                temp_r2 = sp0;
-                SetBgTileColor(r0v, r1v, temp_r2);
-                r6v += 1;
-            } while (r6v <= r8v);
+                temp = endMinorCoord;
+                r0 = temp - startMinorCoord;
+                r0 = r0 * currentStep;
+                maxStep = startMajorCoord;
+                r1 = startMajorCoord;
+                deltaMajor = r0 / r1;
+                r1 = startCoord;
+                r0 = currentStep + r1;
+                r1 = deltaMajor + startMinorCoord;
+                temp = lineColor;
+                SetBgTileColor(r0, r1, temp);
+                currentStep += 1;
+            } while (currentStep <= maxStep);
         }
     } else {
-        if (r6v <= r1v) {
-            slv = r4v;
-            sp4 = x1;
-            r7v = r6v;
-            r9v = r1v;
+        if (currentStep <= r1) {
+            startCoord = startMajorCoord;
+            endMajorCoord = x1;
+            startMinorCoord = currentStep;
+            endMinorCoord = r1;
         } else {
-            slv = x1;
-            sp4 = r4v;
-            r7v = r1v;
-            r9v = r6v;
+            startCoord = x1;
+            endMajorCoord = startMajorCoord;
+            startMinorCoord = r1;
+            endMinorCoord = currentStep;
         }
 
-        r5v = 0;
-        temp_r2 = r9v;
-        temp_r2 = temp_r2 - r7v;
-        r8v = temp_r2;
-        if (r5v <= r8v) {
+        deltaMajor = 0;
+        temp = endMinorCoord;
+        temp = temp - startMinorCoord;
+        maxStep = temp;
+        if (deltaMajor <= maxStep) {
             do {
-                r1v = sp4;
-                temp_r2 = slv;
-                r0v = r1v - temp_r2;
-                r0v = r0v * r5v;
-                r9v = r8v;
-                r1v = r8v;
-                r6v = r0v / r1v;
-                r1v = slv;
-                r0v = r6v + r1v;
-                r1v = r5v + r7v;
-                temp_r2 = sp0;
-                SetBgTileColor(r0v, r1v, temp_r2);
-                r5v += 1;
-            } while (r5v <= r9v);
+                r1 = endMajorCoord;
+                temp = startCoord;
+                r0 = r1 - temp;
+                r0 = r0 * deltaMajor;
+                endMinorCoord = maxStep;
+                r1 = maxStep;
+                currentStep = r0 / r1;
+                r1 = startCoord;
+                r0 = currentStep + r1;
+                r1 = deltaMajor + startMinorCoord;
+                temp = lineColor;
+                SetBgTileColor(r0, r1, temp);
+                deltaMajor += 1;
+            } while (deltaMajor <= endMinorCoord);
         }
     }
 }
