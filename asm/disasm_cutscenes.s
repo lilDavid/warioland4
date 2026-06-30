@@ -9438,7 +9438,7 @@ func_8007C30:
 	beq	.L_8562
 	add	r1, sp, #20
 	mov	r0, r8
-	bl	func_800D134
+	bl	SelectCutsceneGfx5
 .L_8562:
 	mov	r4, sl
 	cmp	r4, #0
