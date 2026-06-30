@@ -1,211 +1,149 @@
 #include "cutscenes/cutscene_gfx.h"
+#include "global_data.h"
 
-s32 SelectCutsceneGfx1(s32 timer, u8 **gfxData)
+s32 SelectCutsceneGfx1(s32 timer, u8 **outGfx)
 {
-    s32 frame;
-    s32 done;
+    s32 frameTimer;
+    s32 animationFinished;
 
-    frame = timer % 24;
-    if (frame > 5) goto gt5;
-    *gfxData = &sCutsceneGfx1_Frame0;
-    goto done_store;
+    frameTimer = timer % 24;
 
-gt5:
-    if (frame > 11) goto gt11;
-    *gfxData = &sCutsceneGfx1_Frame1;
-    goto done_store;
-
-gt11:
-    if (frame > 17) goto gt17;
-    *gfxData = &sCutsceneGfx1_Frame2;
-    goto done_store;
-
-gt17:
-    *gfxData = &sCutsceneGfx1_Frame3;
-
-done_store:
-    done = 0;
-    if (frame == 23) {
-        done = 1;
+    if (frameTimer <= 5) {
+        *outGfx = &sCutsceneGfx1_Frame0;
+    } else if (frameTimer <= 11) {
+        *outGfx = &sCutsceneGfx1_Frame1;
+    } else if (frameTimer <= 17) {
+        *outGfx = &sCutsceneGfx1_Frame2;
+    } else {
+        *outGfx = &sCutsceneGfx1_Frame3;
     }
-    return done;
+
+    animationFinished = 0;
+    if (frameTimer == 23) {
+        animationFinished = 1;
+    }
+
+    return animationFinished;
 }
 
-s32 SelectCutsceneGfx2(s32 timer, u8 **gfxData)
+s32 SelectCutsceneGfx2(s32 timer, u8 **outGfx)
 {
-    s32 frame;
-    s32 done;
+    s32 frameTimer;
+    s32 animationFinished;
 
-    frame = timer % 42;
-    if (frame > 5) goto gt5;
-    *gfxData = &sCutsceneGfx2_Frame0;
-    goto done_store;
+    frameTimer = timer % 42;
 
-gt5:
-    if (frame > 11) goto gt11;
-    *gfxData = &sCutsceneGfx2_Frame1;
-    goto done_store;
-
-gt11:
-    if (frame > 17) goto gt17;
-    *gfxData = &sCutsceneGfx2_Frame2;
-    goto done_store;
-
-gt17:
-    if (frame > 23) goto gt23;
-    *gfxData = &sCutsceneGfx2_Frame3;
-    goto done_store;
-
-gt23:
-    if (frame > 29) goto gt29;
-    *gfxData = &sCutsceneGfx2_Frame4;
-    goto done_store;
-
-gt29:
-    if (frame > 35) goto gt35;
-    *gfxData = &sCutsceneGfx2_Frame5;
-    goto done_store;
-
-gt35:
-    *gfxData = &sCutsceneGfx2_Frame6;
-
-done_store:
-    done = 0;
-    if (frame == 41) {
-        done = 1;
+    if (frameTimer <= 5) {
+        *outGfx = &sCutsceneGfx2_Frame0;
+    } else if (frameTimer <= 11) {
+        *outGfx = &sCutsceneGfx2_Frame1;
+    } else if (frameTimer <= 17) {
+        *outGfx = &sCutsceneGfx2_Frame2;
+    } else if (frameTimer <= 23) {
+        *outGfx = &sCutsceneGfx2_Frame3;
+    } else if (frameTimer <= 29) {
+        *outGfx = &sCutsceneGfx2_Frame4;
+    } else if (frameTimer <= 35) {
+        *outGfx = &sCutsceneGfx2_Frame5;
+    } else {
+        *outGfx = &sCutsceneGfx2_Frame6;
     }
-    return done;
+
+    animationFinished = 0;
+    if (frameTimer == 41) {
+        animationFinished = 1;
+    }
+
+    return animationFinished;
 }
 
-s32 SelectCutsceneGfx3(s32 timer, u8 **gfxData)
+s32 SelectCutsceneGfx3(s32 timer, u8 **outGfx)
 {
-    s32 frame;
-    s32 done;
+    s32 frameTimer;
+    s32 animationFinished;
 
-    frame = timer % 24;
-    if (frame > 5) goto gt5;
-    *gfxData = &sCutsceneGfx3_Frame0;
-    goto done_store;
+    frameTimer = timer % 24;
 
-gt5:
-    if (frame > 11) goto gt11;
-    *gfxData = &sCutsceneGfx3_Frame1;
-    goto done_store;
-
-gt11:
-    if (frame > 17) goto gt17;
-    *gfxData = &sCutsceneGfx3_Frame2;
-    goto done_store;
-
-gt17:
-    *gfxData = &sCutsceneGfx3_Frame3;
-
-done_store:
-    done = 0;
-    if (frame == 23) {
-        done = 1;
+    if (frameTimer <= 5) {
+        *outGfx = &sCutsceneGfx3_Frame0;
+    } else if (frameTimer <= 11) {
+        *outGfx = &sCutsceneGfx3_Frame1;
+    } else if (frameTimer <= 17) {
+        *outGfx = &sCutsceneGfx3_Frame2;
+    } else {
+        *outGfx = &sCutsceneGfx3_Frame3;
     }
-    return done;
+
+    animationFinished = 0;
+    if (frameTimer == 23) {
+        animationFinished = 1;
+    }
+
+    return animationFinished;
 }
 
-s32 SelectCutsceneGfx4(s32 timer, u8 **gfxData)
+s32 SelectCutsceneGfx4(s32 timer, u8 **outGfx)
 {
-    s32 frame;
-    s32 done;
+    s32 frameTimer;
+    s32 animationFinished;
 
-    frame = timer % 48;
-    if (frame > 5) goto gt5;
-    *gfxData = &sCutsceneGfx4_Frame0;
-    goto done_store;
+    frameTimer = timer % 48;
 
-gt5:
-    if (frame > 11) goto gt11;
-    *gfxData = &sCutsceneGfx4_Frame1;
-    goto done_store;
-
-gt11:
-    if (frame > 17) goto gt17;
-    *gfxData = &sCutsceneGfx4_Frame2;
-    goto done_store;
-
-gt17:
-    if (frame > 23) goto gt23;
-    *gfxData = &sCutsceneGfx4_Frame3;
-    goto done_store;
-
-gt23:
-    if (frame > 29) goto gt29;
-    *gfxData = &sCutsceneGfx4_Frame4;
-    goto done_store;
-
-gt29:
-    if (frame > 35) goto gt35;
-    *gfxData = &sCutsceneGfx4_Frame5;
-    goto done_store;
-
-gt35:
-    if (frame > 41) goto gt41;
-    *gfxData = &sCutsceneGfx4_Frame6;
-    goto done_store;
-
-gt41:
-    *gfxData = &sCutsceneGfx4_Frame7;
-
-done_store:
-    done = 0;
-    if (frame == 47) {
-        done = 1;
+    if (frameTimer <= 5) {
+        *outGfx = &sCutsceneGfx4_Frame0;
+    } else if (frameTimer <= 11) {
+        *outGfx = &sCutsceneGfx4_Frame1;
+    } else if (frameTimer <= 17) {
+        *outGfx = &sCutsceneGfx4_Frame2;
+    } else if (frameTimer <= 23) {
+        *outGfx = &sCutsceneGfx4_Frame3;
+    } else if (frameTimer <= 29) {
+        *outGfx = &sCutsceneGfx4_Frame4;
+    } else if (frameTimer <= 35) {
+        *outGfx = &sCutsceneGfx4_Frame5;
+    } else if (frameTimer <= 41) {
+        *outGfx = &sCutsceneGfx4_Frame6;
+    } else {
+        *outGfx = &sCutsceneGfx4_Frame7;
     }
-    return done;
+
+    animationFinished = 0;
+    if (frameTimer == 47) {
+        animationFinished = 1;
+    }
+
+    return animationFinished;
 }
 
-s32 SelectCutsceneGfx5(s32 timer, u8 **gfxData)
+s32 SelectCutsceneGfx5(s32 timer, u8 **outGfx)
 {
-    s32 frame;
-    s32 done;
+    s32 frameTimer;
+    s32 animationFinished;
 
-    frame = timer % 48;
-    if (frame > 5) goto gt5;
-    *gfxData = &sCutsceneGfx5_Frame0;
-    goto done_store;
+    frameTimer = timer % 48;
 
-gt5:
-    if (frame > 11) goto gt11;
-    *gfxData = &sCutsceneGfx5_Frame1;
-    goto done_store;
-
-gt11:
-    if (frame > 17) goto gt17;
-    *gfxData = &sCutsceneGfx5_Frame2;
-    goto done_store;
-
-gt17:
-    if (frame > 23) goto gt23;
-    *gfxData = &sCutsceneGfx5_Frame3;
-    goto done_store;
-
-gt23:
-    if (frame > 29) goto gt29;
-    *gfxData = &sCutsceneGfx5_Frame4;
-    goto done_store;
-
-gt29:
-    if (frame > 35) goto gt35;
-    *gfxData = &sCutsceneGfx5_Frame5;
-    goto done_store;
-
-gt35:
-    if (frame > 41) goto gt41;
-    *gfxData = &sCutsceneGfx5_Frame6;
-    goto done_store;
-
-gt41:
-    *gfxData = &sCutsceneGfx5_Frame7;
-
-done_store:
-    done = 0;
-    if (frame == 47) {
-        done = 1;
+    if (frameTimer <= 5) {
+        *outGfx = &sCutsceneGfx5_Frame0;
+    } else if (frameTimer <= 11) {
+        *outGfx = &sCutsceneGfx5_Frame1;
+    } else if (frameTimer <= 17) {
+        *outGfx = &sCutsceneGfx5_Frame2;
+    } else if (frameTimer <= 23) {
+        *outGfx = &sCutsceneGfx5_Frame3;
+    } else if (frameTimer <= 29) {
+        *outGfx = &sCutsceneGfx5_Frame4;
+    } else if (frameTimer <= 35) {
+        *outGfx = &sCutsceneGfx5_Frame5;
+    } else if (frameTimer <= 41) {
+        *outGfx = &sCutsceneGfx5_Frame6;
+    } else {
+        *outGfx = &sCutsceneGfx5_Frame7;
     }
-    return done;
+
+    animationFinished = 0;
+    if (frameTimer == 47) {
+        animationFinished = 1;
+    }
+
+    return animationFinished;
 }
