@@ -18,7 +18,9 @@ import argparse
 import html
 import json
 import math
+import os
 import re
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -1571,13 +1573,43 @@ init();
     return html_path
 
 
+def infer_pages_url(root: Path, html_rel_path: str) -> str:
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if not repo:
+        try:
+            remote = subprocess.check_output(
+                ["git", "config", "--get", "remote.origin.url"],
+                cwd=root,
+                text=True,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+        except Exception:
+            return html_rel_path
+
+        remote = remote.removesuffix(".git")
+        if remote.startswith("git@github.com:"):
+            repo = remote.removeprefix("git@github.com:")
+        elif "github.com/" in remote:
+            repo = remote.split("github.com/", 1)[1]
+
+    if "/" not in repo:
+        return html_rel_path
+
+    owner, name = repo.split("/", 1)
+    html_name = Path(html_rel_path).name
+    if name.lower() == f"{owner.lower()}.github.io":
+        return f"https://{owner}.github.io/{html_name}"
+    return f"https://{owner}.github.io/{name}/{html_name}"
+
+
 def update_readme(readme_path: Path, svg_rel_path: str, html_rel_path: str) -> Path:
+    html_url = infer_pages_url(readme_path.parent, html_rel_path)
     block = f"""{README_START}
 ## Decompilation Progress
 
 ![Decompilation progress]({svg_rel_path})
 
-[Open the interactive progress treemap]({html_rel_path}).
+[Open the interactive progress treemap]({html_url}).
 {README_END}"""
 
     if readme_path.exists():
