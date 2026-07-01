@@ -5859,7 +5859,7 @@ func_80067BC:
 	lsr	r0, r1, #3
 	add	r1, #1
 	str	r1, [r2, #0]
-	bl	func_800C400
+	bl	CutsceneLoadBgObjPalette
 .L_699c:
 	ldr	r1, .L_6aa4
 	ldrh	r2, [r1, #0]
