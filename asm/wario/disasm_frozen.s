@@ -465,7 +465,7 @@ func_8018A28:
 .L_18a94:
 	.4byte	gWarioPaletteSize
 .L_18a98:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_18a9c:
 	.4byte	sUnk_82DE818
 

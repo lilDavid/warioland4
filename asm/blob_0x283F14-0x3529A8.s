@@ -1159,133 +1159,133 @@ baserom_blob 0x2A2F74, 0x2A34A4
 
 //-----
 
-.global sUnk_82A34A4
-sUnk_82A34A4:
+.global sCutsceneWarioEffectAFrame0Oam
+sCutsceneWarioEffectAFrame0Oam:
 
 baserom_blob 0x2A34A4, 0x2A34B2
 
-.global sUnk_82A34B2
-sUnk_82A34B2:
+.global sCutsceneWarioEffectAFrame1Oam
+sCutsceneWarioEffectAFrame1Oam:
 
 baserom_blob 0x2A34B2, 0x2A34C0
 
-.global sUnk_82A34C0
-sUnk_82A34C0:
+.global sCutsceneWarioEffectAFrame2Oam
+sCutsceneWarioEffectAFrame2Oam:
 
 baserom_blob 0x2A34C0, 0x2A34CE
 
-.global sUnk_82A34CE
-sUnk_82A34CE:
+.global sCutsceneWarioEffectAFrame3Oam
+sCutsceneWarioEffectAFrame3Oam:
 
 baserom_blob 0x2A34CE, 0x2A34DC
 
-.global sUnk_82A34DC
-sUnk_82A34DC:
+.global sCutsceneWarioEffectAFrame4Oam
+sCutsceneWarioEffectAFrame4Oam:
 
 baserom_blob 0x2A34DC, 0x2A34F6
 
-.global sUnk_82A34F6
-sUnk_82A34F6:
+.global sCutsceneWarioEffectAFrame5Oam
+sCutsceneWarioEffectAFrame5Oam:
 
 baserom_blob 0x2A34F6, 0x2A3510
 
-.global sUnk_82A3510
-sUnk_82A3510:
+.global sCutsceneWarioEffectAFrame6Oam
+sCutsceneWarioEffectAFrame6Oam:
 
 baserom_blob 0x2A3510, 0x2A352A
 
-.global sUnk_82A352A
-sUnk_82A352A:
+.global sCutsceneWarioEffectAFrame7Oam
+sCutsceneWarioEffectAFrame7Oam:
 
 baserom_blob 0x2A352A, 0x2A3544
 
-.global sUnk_82A3544
-sUnk_82A3544:
+.global sCutsceneWarioEffectAFrame8Oam
+sCutsceneWarioEffectAFrame8Oam:
 
 baserom_blob 0x2A3544, 0x2A355E
 
-.global sUnk_82A355E
-sUnk_82A355E:
+.global sCutsceneWarioEffectAFrame9Oam
+sCutsceneWarioEffectAFrame9Oam:
 
 baserom_blob 0x2A355E, 0x2A3578
 
-.global sUnk_82A3578
-sUnk_82A3578:
+.global sCutsceneWarioEffectAFrame10Oam
+sCutsceneWarioEffectAFrame10Oam:
 
 baserom_blob 0x2A3578, 0x2A3592
 
-.global sUnk_82A3592
-sUnk_82A3592:
+.global sCutsceneWarioEffectAFrame11Oam
+sCutsceneWarioEffectAFrame11Oam:
 
 baserom_blob 0x2A3592, 0x2A35AC
 
-.global sUnk_82A35AC
-sUnk_82A35AC:
+.global sCutsceneWarioEffectBFrame0Oam
+sCutsceneWarioEffectBFrame0Oam:
 
 baserom_blob 0x2A35AC, 0x2A35C6
 
-.global sUnk_82A35C6
-sUnk_82A35C6:
+.global sCutsceneWarioEffectBFrame1Oam
+sCutsceneWarioEffectBFrame1Oam:
 
 baserom_blob 0x2A35C6, 0x2A35E0
 
-.global sUnk_82A35E0
-sUnk_82A35E0:
+.global sCutsceneWarioEffectBFrame2Oam
+sCutsceneWarioEffectBFrame2Oam:
 
 baserom_blob 0x2A35E0, 0x2A35FA
 
-.global sUnk_82A35FA
-sUnk_82A35FA:
+.global sCutsceneWarioEffectBFrame3Oam
+sCutsceneWarioEffectBFrame3Oam:
 
 baserom_blob 0x2A35FA, 0x2A3614
 
-.global sUnk_82A3614
-sUnk_82A3614:
+.global sCutsceneWarioEffectCFrame0Oam
+sCutsceneWarioEffectCFrame0Oam:
 
 baserom_blob 0x2A3614, 0x2A3622
 
-.global sUnk_82A3622
-sUnk_82A3622:
+.global sCutsceneWarioEffectCFrame1Oam
+sCutsceneWarioEffectCFrame1Oam:
 
 baserom_blob 0x2A3622, 0x2A3636
 
-.global sUnk_82A3636
-sUnk_82A3636:
+.global sCutsceneWarioEffectCFrame2Oam
+sCutsceneWarioEffectCFrame2Oam:
 
 baserom_blob 0x2A3636, 0x2A3650
 
-.global sUnk_82A3650
-sUnk_82A3650:
+.global sCutsceneWarioEffectCFrame3Oam
+sCutsceneWarioEffectCFrame3Oam:
 
 baserom_blob 0x2A3650, 0x2A366A
 
-.global sUnk_82A366A
-sUnk_82A366A:
+.global sCutsceneWarioEffectCFrame4Oam
+sCutsceneWarioEffectCFrame4Oam:
 
 baserom_blob 0x2A366A, 0x2A3684
 
-.global sUnk_82A3684
-sUnk_82A3684:
+.global sCutsceneWarioEffectDFrame0Oam
+sCutsceneWarioEffectDFrame0Oam:
 
 baserom_blob 0x2A3684, 0x2A368C
 
-.global sUnk_82A368C
-sUnk_82A368C:
+.global sCutsceneWarioEffectDFrame1Oam
+sCutsceneWarioEffectDFrame1Oam:
 
 baserom_blob 0x2A368C, 0x2A3694
 
-.global sUnk_82A3694
-sUnk_82A3694:
+.global sCutsceneWarioEffectDFrame2Oam
+sCutsceneWarioEffectDFrame2Oam:
 
 baserom_blob 0x2A3694, 0x2A369C
 
-.global sUnk_82A369C
-sUnk_82A369C:
+.global sCutsceneWarioEffectDFrame3Oam
+sCutsceneWarioEffectDFrame3Oam:
 
 baserom_blob 0x2A369C, 0x2A36A4
 
-.global sUnk_82A36A4
-sUnk_82A36A4:
+.global sCutsceneWarioEffectDFrame4Oam
+sCutsceneWarioEffectDFrame4Oam:
 
 baserom_blob 0x2A36A4, 0x2A36AC
 
@@ -1304,43 +1304,43 @@ sUnk_82A3710:
 
 baserom_blob 0x2A3710, 0x2A3760
 
-.global sUnk_82A3760
-sUnk_82A3760:
+.global sCutsceneWarioEffectEFrame0Oam
+sCutsceneWarioEffectEFrame0Oam:
 
 baserom_blob 0x2A3760, 0x2A3768
 
-.global sUnk_82A3768
-sUnk_82A3768:
+.global sCutsceneWarioEffectEFrame1Oam
+sCutsceneWarioEffectEFrame1Oam:
 
 baserom_blob 0x2A3768, 0x2A3770
 
-.global sUnk_82A3770
-sUnk_82A3770:
+.global sCutsceneWarioEffectEFrame2Oam
+sCutsceneWarioEffectEFrame2Oam:
 
 baserom_blob 0x2A3770, 0x2A3778
 
-.global sUnk_82A3778
-sUnk_82A3778:
+.global sCutsceneWarioEffectEFrame3Oam
+sCutsceneWarioEffectEFrame3Oam:
 
 baserom_blob 0x2A3778, 0x2A3780
 
-.global sUnk_82A3780
-sUnk_82A3780:
+.global sCutsceneWarioEffectFFrame0Oam
+sCutsceneWarioEffectFFrame0Oam:
 
 baserom_blob 0x2A3780, 0x2A3788
 
-.global sUnk_82A3788
-sUnk_82A3788:
+.global sCutsceneWarioEffectFFrame1Oam
+sCutsceneWarioEffectFFrame1Oam:
 
 baserom_blob 0x2A3788, 0x2A3790
 
-.global sUnk_82A3790
-sUnk_82A3790:
+.global sCutsceneWarioEffectFFrame2Oam
+sCutsceneWarioEffectFFrame2Oam:
 
 baserom_blob 0x2A3790, 0x2A3798
 
-.global sUnk_82A3798
-sUnk_82A3798:
+.global sCutsceneWarioEffectFFrame3Oam
+sCutsceneWarioEffectFFrame3Oam:
 
 baserom_blob 0x2A3798, 0x2A37A0
 
@@ -1379,8 +1379,8 @@ sUnk_82A4E3C:
 
 baserom_blob 0x2A4E3C, 0x2A5310
 
-.global sUnk_82A5310
-sUnk_82A5310:
+.global sCutsceneWarioStaticOam
+sCutsceneWarioStaticOam:
 
 baserom_blob 0x2A5310, 0x2A5318
 
@@ -4706,8 +4706,8 @@ sWarioEffectsGfx:
 
 baserom_blob 0x2DDD20, 0x2DDDA0
 
-.global sUnk_82DDDA0
-sUnk_82DDDA0:
+.global sWarioDefaultObjPalette
+sWarioDefaultObjPalette:
 
 baserom_blob 0x2DDDA0, 0x2DDDC0
 

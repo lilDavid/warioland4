@@ -367,7 +367,7 @@ extern struct WarioEffect sStartingWarioEffect;
 extern struct CarriedSprite sEmptyCarriedSprite;
 extern struct WarioDustEffect sEmptyDustEffect;
 extern struct WarioAnimation sUnk_82DDCD0[];
-extern u16 sUnk_82DDDA0[];
+extern u16 sWarioDefaultObjPalette[];
 extern u16 sUnk_82DDDC0[];
 extern WarioPoseFunc sWarioPoseHandlerTable[REACTION_COUNT];
 extern WarioInteractionFunc sWarioPoseRequestFuncTable[REACTION_COUNT];

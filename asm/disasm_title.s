@@ -760,7 +760,7 @@ func_8003980:
 	ldrsh	r0, [r0, r1]
 	cmp	r0, #22
 	bne	.L_39f2
-	bl	func_800C82C
+	bl	CutsceneWarioLoadObjTiles
 .L_39f2:
 	bl	m4aSoundMain
 	pop	{r0}

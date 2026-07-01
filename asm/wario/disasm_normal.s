@@ -11250,7 +11250,7 @@ func_8015216:
 .L_15818:
 	.4byte	gWarioPaletteSize
 .L_1581c:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_15820:
 	.4byte	sUnk_82DE558
 .L_15824:
@@ -11268,7 +11268,7 @@ func_8015216:
 .L_1583c:
 	.4byte	gWarioPaletteSize
 .L_15840:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_15844:
 	.4byte	sUnk_82DE578
 .L_15848:
@@ -11312,7 +11312,7 @@ func_8015216:
 .L_15894:
 	.4byte	gWarioPaletteSize
 .L_15898:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_1589c:
 	.4byte	gMainTimer
 .L_158a0:
@@ -11335,7 +11335,7 @@ func_8015216:
 .L_158c0:
 	.4byte	gWarioPaletteSize
 .L_158c4:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 
 
 thumb_func_start func_80158C8

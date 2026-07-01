@@ -893,7 +893,7 @@ func_801A360:
 	bx	r0
 	.align	2, 0
 .L_1a41c:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_1a420:
 	.4byte	sUnk_82DE8B8
 
