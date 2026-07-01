@@ -4,8 +4,10 @@
 
 s32 CutsceneWarioSelectEffectAAnimOam(s32 timer, u16 **outOam)
 {
-    s32 frame = timer % 329;
+    s32 frame;
     s32 finished;
+
+    frame = timer % 329;
 
     if (frame <= 49) {
         *outOam = sCutsceneWarioEffectAFrame0Oam;
@@ -55,8 +57,10 @@ s32 CutsceneWarioSelectEffectAAnimOam(s32 timer, u16 **outOam)
 
 s32 CutsceneWarioSelectEffectBAnimOam(s32 timer, u16 **outOam)
 {
-    s32 frame = timer % 24;
+    s32 frame;
     s32 finished;
+
+    frame = timer % 24;
 
     if (frame <= 5) {
         *outOam = sCutsceneWarioEffectBFrame0Oam;
@@ -78,8 +82,10 @@ s32 CutsceneWarioSelectEffectBAnimOam(s32 timer, u16 **outOam)
 
 s32 CutsceneWarioSelectEffectCAnimOam(s32 timer, u16 **outOam)
 {
-    s32 frame = timer % 74;
+    s32 frame;
     s32 finished;
+
+    frame = timer % 74;
 
     if (frame <= 49) {
         *outOam = sCutsceneWarioEffectCFrame0Oam;
@@ -103,8 +109,10 @@ s32 CutsceneWarioSelectEffectCAnimOam(s32 timer, u16 **outOam)
 
 s32 CutsceneWarioSelectEffectDAnimOam(s32 timer, u16 **outOam)
 {
-    s32 frame = timer % 30;
+    s32 frame;
     s32 finished;
+
+    frame = timer % 30;
 
     if (frame <= 5) {
         *outOam = sCutsceneWarioEffectDFrame0Oam;
@@ -128,8 +136,10 @@ s32 CutsceneWarioSelectEffectDAnimOam(s32 timer, u16 **outOam)
 
 s32 CutsceneWarioSelectEffectEAnimOam(s32 timer, u16 **outOam)
 {
-    s32 frame = timer % 22;
+    s32 frame;
     s32 finished;
+
+    frame = timer % 22;
 
     if (frame <= 3) {
         *outOam = sCutsceneWarioEffectEFrame0Oam;
@@ -153,8 +163,10 @@ s32 CutsceneWarioSelectEffectEAnimOam(s32 timer, u16 **outOam)
 
 s32 CutsceneWarioSelectEffectFAnimOam(s32 timer, u16 **outOam)
 {
-    s32 frame = timer % 22;
+    s32 frame;
     s32 finished;
+
+    frame = timer % 22;
 
     if (frame <= 3) {
         *outOam = sCutsceneWarioEffectFFrame0Oam;
@@ -293,7 +305,9 @@ void CutsceneWarioLoadObjTiles(void)
 
 void CutsceneWarioLoadObjPalette(void)
 {
-    vu32 *dma = (vu32 *)0x040000D4;
+    vu32 *dma;
+
+    dma = (vu32 *)0x040000D4;
 
     dma[0] = (u32)sWarioDefaultObjPalette;
     dma[1] = 0x05000200;
