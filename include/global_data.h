@@ -230,13 +230,10 @@ extern u16 sUnk_82A3790[];
 extern u16 sUnk_82A3798[];
 extern u16 sUnk_82A5310[];
 extern u16 sUnk_82DDDA0[];
-// extern WarioPoseFunc sWarioPoseHandlerTable[];
 extern struct WarioData gWarioData;
 extern OamData gOamBuffer[];
 extern u16 gButtonsPressed;
 extern u16 gButtonsHeld;
 extern u8 gOamSlotsUsed;
-
-extern u16 sUnk_82DED30[];
 
 #endif  // GLOBAL_DATA_H

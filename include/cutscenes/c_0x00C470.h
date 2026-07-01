@@ -2,8 +2,6 @@
 #define C_0x00C470_H
 
 #include "types.h"
-#include "global_data.h"
-#include "wario.h"
 
 s32 func_800C470(s32 arg0, u16 **arg1);
 s32 func_800C568(s32 arg0, u16 **arg1);

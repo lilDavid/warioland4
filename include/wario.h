@@ -371,6 +371,7 @@ extern u16 sUnk_82DDDA0[];
 extern u16 sUnk_82DDDC0[];
 extern WarioPoseFunc sWarioPoseHandlerTable[REACTION_COUNT];
 extern WarioInteractionFunc sWarioPoseRequestFuncTable[REACTION_COUNT];
+extern WarioInteractionFunc sUnk_82DED30[];
 extern WarioPoseFunc sWarioNormalPoseTable[WPOSE_NORMAL_COUNT];
 extern WarioPoseFunc sWarioWaterPoseTable[WPOSE_WATER_COUNT];
 extern WarioPoseFunc sFlamingWarioPoseTable[WPOSE_FLAMING_COUNT];

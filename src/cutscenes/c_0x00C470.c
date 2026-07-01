@@ -1,4 +1,6 @@
 #include "cutscenes/c_0x00C470.h"
+#include "global_data.h"
+#include "wario.h"
 
 s32 func_800C470(s32 arg0, u16 **arg1)
 {
@@ -228,78 +230,80 @@ void func_800C704(u8 arg0, u8 arg1, u16 arg2)
     gWarioData.unk_1E = 0;
 }
 
-/* Not score 0: pure C behavioral reconstruction, but local code generation still differs from target. */
-
 u16 *func_800C718(s32 xOffset, s32 yOffset, u16 priority, u16 held, u16 pressed)
 {
-    u16 oldPressed;
-    u16 oldHeld;
-    u16 count;
-    u16 *src;
-    u16 *dst;
-    OamData *slot;
-    s32 remaining;
-    u16 attr0;
-    u16 attr1;
-    u16 attr2;
-    s32 direction;
-    s32 xMask;
-    s32 xKeepMask;
-    s32 priorityBits;
-    s32 priorityMask;
-
-    oldPressed = gButtonsPressed;
-    oldHeld = gButtonsHeld;
-    gButtonsPressed = pressed;
-    gButtonsHeld = held;
-
-    sWarioPoseHandlerTable[gWarioData.reaction]();
-
-    gButtonsPressed = oldPressed;
-    gButtonsHeld = oldHeld;
-
-    direction = 1;
-    if (gWarioData.horizontalDirection & 0x10) {
-        direction = 0;
+  u16 oldPressed;
+  u16 oldHeld;
+  u16 count;
+  u16 *src;
+  u16 *dst;
+  u16 attr1;
+  OamData *slot;
+  s32 remaining;
+  u16 attr0;
+  int new_var;
+  u16 attr2;
+  s32 direction;
+  s32 xMask;
+  s32 xKeepMask;
+  unsigned char priorityBits;
+  unsigned int new_var2;
+  s32 priorityMask;
+  u16 priorityCopy;
+  priorityCopy = priority;
+  oldPressed = gButtonsPressed;
+  oldHeld = gButtonsHeld;
+  gButtonsPressed = pressed;
+  gButtonsHeld = held;
+  sWarioPoseHandlerTable[gWarioData.reaction]();
+  gButtonsPressed = oldPressed;
+  gButtonsHeld = oldHeld;
+  new_var = gWarioData.horizontalDirection & 0x10;
+  direction = 1;
+  if (new_var)
+  {
+    direction = 0;
+  }
+  sUnk_82DED30[gWarioData.reaction](direction);
+  gOamSlotsUsed = 0;
+  dst = (u16 *) gOamBuffer;
+  src = (u16 *) gWarioData.pOamData;
+  count = (oldHeld = *(src++));
+  new_var = 0;
+  if (oldHeld != new_var)
+  {
+    xMask = 0x1FF;
+    xKeepMask = 0xFFFFFE00;
+    priorityBits = ((priorityCopy & 3) << 1) << 1;
+    slot = (OamData *) dst;
+    priorityMask = -13;
+    remaining = count;
+    do
+    {
+      attr0 = *(src++);
+      *(dst++) = attr0;
+      ((u8 *) slot)[0] = attr0 + yOffset;
+      attr1 = *(src++);
+      *(dst++) = attr1;
+      {
+        s32 newAttr;
+        newAttr = (attr1 + xOffset) & xMask;
+        slot->all.attr1 = (xKeepMask & slot->all.attr1) | newAttr;
+      }
+      *dst = *src;
+      src++;
+      ((u8 *) slot)[5] = (((u8 *) slot)[5] & priorityMask) | priorityBits;
+      dst += 2;
+      slot++;
+      remaining--;
     }
-
-    sUnk_82DED30[gWarioData.reaction](direction);
-
-    gOamSlotsUsed = 0;
-    dst = (u16 *)gOamBuffer;
-    src = (u16 *)gWarioData.pOamData;
-    count = *src++;
-
-    if (count != 0) {
-        xMask = 0x1FF;
-        xKeepMask = 0xFFFFFE00;
-        priorityBits = (priority & 3) << 2;
-        slot = (OamData *)dst;
-        priorityMask = -13;
-        remaining = count;
-        do {
-            attr0 = *src++;
-            *dst++ = attr0;
-            ((u8 *)slot)[0] = attr0 + yOffset;
-
-            attr1 = *src++;
-            *dst++ = attr1;
-            slot->all.attr1 = (xKeepMask & slot->all.attr1) | ((attr1 + xOffset) & xMask);
-
-            attr2 = *src++;
-            *dst = attr2;
-            ((u8 *)slot)[5] = (((u8 *)slot)[5] & priorityMask) | priorityBits;
-
-            dst += 2;
-            slot++;
-            remaining--;
-        } while (remaining != 0);
-    }
-
-    gOamSlotsUsed = count;
-    gWarioData.unk_1E++;
-    return dst;
+    while (remaining != 0);
+  }
+  gOamSlotsUsed = oldHeld;
+  gWarioData.unk_1E++;
+  return dst;
 }
+
 
 void func_800C82C(void)
 {
