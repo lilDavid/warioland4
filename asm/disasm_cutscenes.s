@@ -4291,7 +4291,7 @@ func_8005CC0:
 	add	r0, r2, #0
 	bl	func_800B734
 	mov	r0, #15
-	bl	func_800C224
+	bl	CutsceneLoadObjPalette
 	b	.L_5dbe
 	.align	2, 0
 .L_5d5c:
@@ -4724,7 +4724,7 @@ func_8005F1C:
 	orr	r0, r1
 	strh	r0, [r2, #0]
 	ldrh	r0, [r4, #0]
-	bl	func_800C224
+	bl	CutsceneLoadObjPalette
 	ldrh	r0, [r4, #0]
 	cmp	r0, #16
 	beq	.L_60c4
