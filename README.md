@@ -6,6 +6,14 @@ This repository can build the following versions:
 - US/EU `md5: 5fe47355a33e3fabec2a1607af88a404` (default)
 - JP `md5: 99c8ad779a16be513a9fdff502b6f5c2`
 
+<!-- DECOMP_PROGRESS:START -->
+## Decompilation Progress
+
+![Decompilation progress](docs/progress-treemap.svg)
+
+[Open the interactive progress treemap](docs/progress.html).
+<!-- DECOMP_PROGRESS:END -->
+
 ## Dependencies
 
 - `binutils-arm-none-eabi`
