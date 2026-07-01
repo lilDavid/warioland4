@@ -2,7 +2,6 @@
 #define CUTSCENE_OAM_ANIM_H
 
 #include "types.h"
-#include "global_data.h"
 
 s32 func_800BE64(s32 timer, u16 **ppOamData);
 s32 func_800BE94(s32 timer, u16 **ppOamData);

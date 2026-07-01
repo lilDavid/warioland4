@@ -1,4 +1,5 @@
 #include "cutscenes/cutscene_oam_anim.h"
+#include "global_data.h"
 
 s32 func_800BE64(s32 timer, u16 **ppOamData)
 {
