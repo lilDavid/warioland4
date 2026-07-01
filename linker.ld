@@ -606,7 +606,7 @@ SECTIONS {
         obj/cutscenes/disasm_0x00C8A0.o(.text);
         obj/cutscenes/disasm_0x00CFC0.o(.text);
         obj/cutscenes/disasm_0x00D1AC.o(.text);
-        obj/cutscenes/c_0x00F7BC.o(.text);
+        obj/cutscenes/cutscene_scroll_anim.o(.text);
         obj/cutscenes/disasm_0x00F9E0.o(.text);
         obj/disasm_wario.o(.text);
         obj/demo_input.o(.text);
