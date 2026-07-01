@@ -6498,11 +6498,11 @@ func_8006E00:
 	ldr	r0, .L_6f70
 	ldr	r1, .L_6f74
 	bl	func_800B734
-	bl	func_800C87C
+	bl	CutsceneWarioLoadObjPalette
 	mov	r0, #0
 	mov	r1, #0
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	ldr	r0, .L_6f78
 	mov	r3, #32
 	neg	r3, r3
@@ -6767,7 +6767,7 @@ func_8006FA0:
 	mov	r0, #0
 	mov	r1, #51	@ 0x33
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	mov	r0, #3
 	bl	VoiceSetPlay
 .L_70d0:
@@ -6798,7 +6798,7 @@ func_8006FA0:
 	mov	r0, #0
 	mov	r1, #0
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	b	.L_7506
 .L_7108:
 	.4byte	gUnk_3002C64
@@ -7021,7 +7021,7 @@ func_8006FA0:
 	mov	r0, #0
 	mov	r1, #2
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	ldr	r1, .L_72e4
 	mov	r0, #0
 	str	r0, [r1, #0]
@@ -7032,7 +7032,7 @@ func_8006FA0:
 .L_72ce:
 	mov	r0, #0
 	add	r1, sp, #4
-	bl	func_800C5B0
+	bl	CutsceneWarioSelectEffectCAnimOam
 	b	.L_7506
 .L_72d8:
 	.4byte	gUnk_3002C46
@@ -7051,7 +7051,7 @@ func_8006FA0:
 	add	r1, #1
 	str	r1, [r4, #0]
 	add	r1, sp, #4
-	bl	func_800C5B0
+	bl	CutsceneWarioSelectEffectCAnimOam
 	cmp	r0, #0
 	bne	.L_7302
 	b	.L_7506
@@ -7080,7 +7080,7 @@ func_8006FA0:
 	add	r1, #1
 	str	r1, [r2, #0]
 	add	r1, sp, #4
-	bl	func_800C568
+	bl	CutsceneWarioSelectEffectBAnimOam
 	ldr	r1, .L_7360
 	ldrh	r0, [r1, #0]
 	add	r0, #2
@@ -7095,7 +7095,7 @@ func_8006FA0:
 	mov	r0, #0
 	mov	r1, #0
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	ldr	r1, .L_7364
 	b	.L_7500
 	.align	2, 0
@@ -7205,7 +7205,7 @@ func_8006FA0:
 	mov	r0, #0
 	mov	r1, #2
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 .L_7430:
 	ldr	r4, .L_746c
 	ldr	r1, [r4, #0]
@@ -7213,13 +7213,13 @@ func_8006FA0:
 	add	r1, #1
 	str	r1, [r4, #0]
 	add	r1, sp, #4
-	bl	func_800C470
+	bl	CutsceneWarioSelectEffectAAnimOam
 	cmp	r0, #0
 	beq	.L_7456
 	mov	r0, #0
 	mov	r1, #0
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	ldr	r1, .L_7470
 	ldrh	r0, [r1, #0]
 	add	r0, #1
@@ -7256,7 +7256,7 @@ func_8006FA0:
 	mov	r0, #0
 	mov	r1, #27
 	mov	r2, #16
-	bl	func_800C704
+	bl	CutsceneWarioSetPose
 	ldr	r0, .L_74a0
 	bl	m4aSongNumStartOrChange
 	ldr	r1, .L_74a4
@@ -7328,7 +7328,7 @@ func_8006FA0:
 	str	r2, [sp, #0]
 	mov	r2, #1
 	mov	r3, r9
-	bl	func_800C718
+	bl	CutsceneWarioDrawPoseOam
 	add	r7, r0, #0
 	ldr	r1, .L_75a8
 	ldr	r0, [r1, #0]
@@ -7376,7 +7376,7 @@ func_8006FA0:
 	lsl	r4, r5, #1
 	add	r0, r6, #0
 	mov	r1, r8
-	bl	func_800C604
+	bl	CutsceneWarioSelectEffectDAnimOam
 	ldr	r0, [sp, #8]
 	ldr	r1, .L_75b8
 	add	r1, r4, r1
@@ -7420,7 +7420,7 @@ func_8006FA0:
 	lsl	r4, r5, #1
 	add	r0, r6, #0
 	mov	r1, r8
-	bl	func_800C604
+	bl	CutsceneWarioSelectEffectDAnimOam
 	ldr	r0, [sp, #8]
 	ldr	r1, .L_7604
 	add	r1, r4, r1
@@ -7460,7 +7460,7 @@ func_8006FA0:
 	lsl	r4, r5, #1
 	add	r0, r6, #0
 	mov	r1, r8
-	bl	func_800C604
+	bl	CutsceneWarioSelectEffectDAnimOam
 	ldr	r0, [sp, #8]
 	ldr	r1, .L_7698
 	add	r1, r4, r1
@@ -7494,7 +7494,7 @@ func_8006FA0:
 	lsl	r0, r0, #16
 	asr	r0, r0, #16
 	mov	r1, r8
-	bl	func_800C658
+	bl	CutsceneWarioSelectEffectEAnimOam
 	cmp	r0, #0
 	beq	.L_767e
 	ldr	r1, .L_76ac
@@ -7844,7 +7844,7 @@ func_8007890:
 	cmp	r0, #1
 	bhi	.L_7942
 	mov	r0, sp
-	bl	func_800C6F8
+	bl	CutsceneWarioGetStaticOam
 	ldr	r0, [sp, #0]
 	ldr	r1, .L_795c
 	mov	r3, #0

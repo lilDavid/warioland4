@@ -3370,7 +3370,7 @@ func_8017394:
 .L_17564:
 	.4byte	sUnk_82DE5D8
 .L_17568:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_1756c:
 	.4byte	sUnk_82DE5F8
 .L_17570:
@@ -3394,7 +3394,7 @@ func_8017394:
 .L_17594:
 	.4byte	gWarioPaletteSize
 .L_17598:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_1759c:
 	.4byte	sUnk_82DE5F8
 

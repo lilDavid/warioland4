@@ -193,5 +193,9 @@ extern struct BackgroundScroll gBackgroundScroll;
 extern struct Window gWindow;
 extern struct ScreenShakeParameters gScreenShakeY;
 extern struct ScreenShakeParameters gScreenShakeX;
+extern struct WarioData gWarioData;
+extern u16 gButtonsPressed;
+extern u16 gButtonsHeld;
+extern u8 gOamSlotsUsed;
 
 #endif  // GLOBAL_DATA_H

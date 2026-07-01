@@ -1294,7 +1294,7 @@ func_8019C7C:
 .L_19ce8:
 	.4byte	gWarioPaletteSize
 .L_19cec:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 .L_19cf0:
 	.4byte	sUnk_82DE878
 

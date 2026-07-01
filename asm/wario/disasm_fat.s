@@ -969,7 +969,7 @@ func_8018604:
 .L_18668:
 	.4byte	gWarioPaletteSize
 .L_1866c:
-	.4byte	sUnk_82DDDA0
+	.4byte	sWarioDefaultObjPalette
 
 
 thumb_func_start func_8018670

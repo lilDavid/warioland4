@@ -602,7 +602,7 @@ SECTIONS {
         obj/disasm_cutscenes.o(.text);
         obj/cutscenes/disasm_0x00BE64.o(.text);
         obj/cutscenes/disasm_0x00C264.o(.text);
-        obj/cutscenes/disasm_0x00C470.o(.text);
+        obj/cutscenes/cutscene_wario_sprite.o(.text);
         obj/cutscenes/disasm_0x00C8A0.o(.text);
         obj/cutscenes/disasm_0x00CFC0.o(.text);
         obj/cutscenes/disasm_0x00D1AC.o(.text);
