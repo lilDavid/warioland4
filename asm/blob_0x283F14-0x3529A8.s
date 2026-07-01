@@ -4154,293 +4154,293 @@ baserom_blob 0x2D8390, 0x2D9028
 
 //-----
 
-.global sUnk_82D9028
-sUnk_82D9028:
+.global sTitleScreenSHardLogoFrame0Oam
+sTitleScreenSHardLogoFrame0Oam:
 
 baserom_blob 0x2D9028, 0x2D9042
 
-.global sUnk_82D9042
-sUnk_82D9042:
+.global sTitleScreenSHardLogoFrame1Oam
+sTitleScreenSHardLogoFrame1Oam:
 
 baserom_blob 0x2D9042, 0x2D905C
 
-.global sUnk_82D905C
-sUnk_82D905C:
+.global sTitleScreenNormalLogoFrame0Oam
+sTitleScreenNormalLogoFrame0Oam:
 
 baserom_blob 0x2D905C, 0x2D9076
 
-.global sUnk_82D9076
-sUnk_82D9076:
+.global sTitleScreenNormalLogoFrame1Oam
+sTitleScreenNormalLogoFrame1Oam:
 
 baserom_blob 0x2D9076, 0x2D9090
 
-.global sUnk_82D9090
-sUnk_82D9090:
+.global sTitleScreenNormalLogoFrame2Oam
+sTitleScreenNormalLogoFrame2Oam:
 
 baserom_blob 0x2D9090, 0x2D90AA
 
-.global sUnk_82D90AA
-sUnk_82D90AA:
+.global sTitleScreenNormalLogoIdleOam
+sTitleScreenNormalLogoIdleOam:
 
 baserom_blob 0x2D90AA, 0x2D90C4
 
-.global sUnk_82D90C4
-sUnk_82D90C4:
+.global sTitleScreenOverlayFrame00Oam
+sTitleScreenOverlayFrame00Oam:
 
 baserom_blob 0x2D90C4, 0x2D90EA
 
-.global sUnk_82D90EA
-sUnk_82D90EA:
+.global sTitleScreenOverlayFrame01Oam
+sTitleScreenOverlayFrame01Oam:
 
 baserom_blob 0x2D90EA, 0x2D9116
 
-.global sUnk_82D9116
-sUnk_82D9116:
+.global sTitleScreenOverlayFrame02Oam
+sTitleScreenOverlayFrame02Oam:
 
 baserom_blob 0x2D9116, 0x2D9142
 
-.global sUnk_82D9142
-sUnk_82D9142:
+.global sTitleScreenOverlayFrame03Oam
+sTitleScreenOverlayFrame03Oam:
 
 baserom_blob 0x2D9142, 0x2D917A
 
-.global sUnk_82D917A
-sUnk_82D917A:
+.global sTitleScreenOverlayFrame04Oam
+sTitleScreenOverlayFrame04Oam:
 
 baserom_blob 0x2D917A, 0x2D91B8
 
-.global sUnk_82D91B8
-sUnk_82D91B8:
+.global sTitleScreenOverlayFrame05Oam
+sTitleScreenOverlayFrame05Oam:
 
 baserom_blob 0x2D91B8, 0x2D9202
 
-.global sUnk_82D9202
-sUnk_82D9202:
+.global sTitleScreenOverlayFrame06Oam
+sTitleScreenOverlayFrame06Oam:
 
 baserom_blob 0x2D9202, 0x2D9258
 
-.global sUnk_82D9258
-sUnk_82D9258:
+.global sTitleScreenOverlayFrame07Oam
+sTitleScreenOverlayFrame07Oam:
 
 baserom_blob 0x2D9258, 0x2D92AE
 
-.global sUnk_82D92AE
-sUnk_82D92AE:
+.global sTitleScreenOverlayFrame08Oam
+sTitleScreenOverlayFrame08Oam:
 
 baserom_blob 0x2D92AE, 0x2D9304
 
-.global sUnk_82D9304
-sUnk_82D9304:
+.global sTitleScreenOverlayFrame09Oam
+sTitleScreenOverlayFrame09Oam:
 
 baserom_blob 0x2D9304, 0x2D9354
 
-.global sUnk_82D9354
-sUnk_82D9354:
+.global sTitleScreenOverlayFrame10Oam
+sTitleScreenOverlayFrame10Oam:
 
 baserom_blob 0x2D9354, 0x2D93BC
 
-.global sUnk_82D93BC
-sUnk_82D93BC:
+.global sTitleScreenOverlayFrame11Oam
+sTitleScreenOverlayFrame11Oam:
 
 baserom_blob 0x2D93BC, 0x2D9430
 
-.global sUnk_82D9430
-sUnk_82D9430:
+.global sTitleScreenOverlayFrame12Oam
+sTitleScreenOverlayFrame12Oam:
 
 baserom_blob 0x2D9430, 0x2D94A4
 
-.global sUnk_82D94A4
-sUnk_82D94A4:
+.global sTitleScreenOverlayFrame13Oam
+sTitleScreenOverlayFrame13Oam:
 
 baserom_blob 0x2D94A4, 0x2D9512
 
-.global sUnk_82D9512
-sUnk_82D9512:
+.global sTitleScreenOverlayFrame14Oam
+sTitleScreenOverlayFrame14Oam:
 
 baserom_blob 0x2D9512, 0x2D9580
 
-.global sUnk_82D9580
-sUnk_82D9580:
+.global sTitleScreenOverlayFrame15Oam
+sTitleScreenOverlayFrame15Oam:
 
 baserom_blob 0x2D9580, 0x2D95D6
 
-.global sUnk_82D95D6
-sUnk_82D95D6:
+.global sTitleScreenOverlayFrame16Oam
+sTitleScreenOverlayFrame16Oam:
 
 baserom_blob 0x2D95D6, 0x2D9620
 
-.global sUnk_82D9620
-sUnk_82D9620:
+.global sTitleScreenOverlayFrame17Oam
+sTitleScreenOverlayFrame17Oam:
 
 baserom_blob 0x2D9620, 0x2D965E
 
-.global sUnk_82D965E
-sUnk_82D965E:
+.global sTitleScreenOverlayFrame18Oam
+sTitleScreenOverlayFrame18Oam:
 
 baserom_blob 0x2D965E, 0x2D96A8
 
-.global sUnk_82D96A8
-sUnk_82D96A8:
+.global sTitleScreenOverlayFrame19Oam
+sTitleScreenOverlayFrame19Oam:
 
 baserom_blob 0x2D96A8, 0x2D96EC
 
-.global sUnk_82D96EC
-sUnk_82D96EC:
+.global sTitleScreenOverlayFrame20Oam
+sTitleScreenOverlayFrame20Oam:
 
 baserom_blob 0x2D96EC, 0x2D9730
 
-.global sUnk_82D9730
-sUnk_82D9730:
+.global sTitleScreenOverlayFrame21Oam
+sTitleScreenOverlayFrame21Oam:
 
 baserom_blob 0x2D9730, 0x2D9774
 
-.global sUnk_82D9774
-sUnk_82D9774:
+.global sTitleScreenOverlayFrame22Oam
+sTitleScreenOverlayFrame22Oam:
 
 baserom_blob 0x2D9774, 0x2D97B8
 
-.global sUnk_82D97B8
-sUnk_82D97B8:
+.global sTitleScreenOverlayFrame23Oam
+sTitleScreenOverlayFrame23Oam:
 
 baserom_blob 0x2D97B8, 0x2D97F6
 
-.global sUnk_82D97F6
-sUnk_82D97F6:
+.global sTitleScreenOverlayFrame24Oam
+sTitleScreenOverlayFrame24Oam:
 
 baserom_blob 0x2D97F6, 0x2D983A
 
-.global sUnk_82D983A
-sUnk_82D983A:
+.global sTitleScreenOverlayFrame25Oam
+sTitleScreenOverlayFrame25Oam:
 
 baserom_blob 0x2D983A, 0x2D9878
 
-.global sUnk_82D9878
-sUnk_82D9878:
+.global sTitleScreenOverlayFrame26Oam
+sTitleScreenOverlayFrame26Oam:
 
 baserom_blob 0x2D9878, 0x2D98BC
 
-.global sUnk_82D98BC
-sUnk_82D98BC:
+.global sTitleScreenOverlayFrame27Oam
+sTitleScreenOverlayFrame27Oam:
 
 baserom_blob 0x2D98BC, 0x2D98FA
 
-.global sUnk_82D98FA
-sUnk_82D98FA:
+.global sTitleScreenOverlayFrame28Oam
+sTitleScreenOverlayFrame28Oam:
 
 baserom_blob 0x2D98FA, 0x2D9932
 
-.global sUnk_82D9932
-sUnk_82D9932:
+.global sTitleScreenOverlayFrame29Oam
+sTitleScreenOverlayFrame29Oam:
 
 baserom_blob 0x2D9932, 0x2D9964
 
-.global sUnk_82D9964
-sUnk_82D9964:
+.global sTitleScreenOverlayFrame30Oam
+sTitleScreenOverlayFrame30Oam:
 
 baserom_blob 0x2D9964, 0x2D9990
 
-.global sUnk_82D9990
-sUnk_82D9990:
+.global sTitleScreenOverlayFrame31Oam
+sTitleScreenOverlayFrame31Oam:
 
 baserom_blob 0x2D9990, 0x2D99BC
 
-.global sUnk_82D99BC
-sUnk_82D99BC:
+.global sTitleScreenOverlayFrame32Oam
+sTitleScreenOverlayFrame32Oam:
 
 baserom_blob 0x2D99BC, 0x2D99E2
 
-.global sUnk_82D99E2
-sUnk_82D99E2:
+.global sTitleScreenOverlayFrame33Oam
+sTitleScreenOverlayFrame33Oam:
 
 baserom_blob 0x2D99E2, 0x2D9A08
 
-.global sUnk_82D9A08
-sUnk_82D9A08:
+.global sTitleScreenOverlayFrame34Oam
+sTitleScreenOverlayFrame34Oam:
 
 baserom_blob 0x2D9A08, 0x2D9A28
 
-.global sUnk_82D9A28
-sUnk_82D9A28:
+.global sTitleScreenOverlayFrame35Oam
+sTitleScreenOverlayFrame35Oam:
 
 baserom_blob 0x2D9A28, 0x2D9A48
 
-.global sUnk_82D9A48
-sUnk_82D9A48:
+.global sTitleScreenOverlayFrame36Oam
+sTitleScreenOverlayFrame36Oam:
 
 baserom_blob 0x2D9A48, 0x2D9A68
 
-.global sUnk_82D9A68
-sUnk_82D9A68:
+.global sTitleScreenOverlayFrame37Oam
+sTitleScreenOverlayFrame37Oam:
 
 baserom_blob 0x2D9A68, 0x2D9A8E
 
-.global sUnk_82D9A8E
-sUnk_82D9A8E:
+.global sTitleScreenOverlayFrame38Oam
+sTitleScreenOverlayFrame38Oam:
 
 baserom_blob 0x2D9A8E, 0x2D9AB4
 
-.global sUnk_82D9AB4
-sUnk_82D9AB4:
+.global sTitleScreenOverlayFrame39Oam
+sTitleScreenOverlayFrame39Oam:
 
 baserom_blob 0x2D9AB4, 0x2D9ADA
 
-.global sUnk_82D9ADA
-sUnk_82D9ADA:
+.global sTitleScreenOverlayFrame40Oam
+sTitleScreenOverlayFrame40Oam:
 
 baserom_blob 0x2D9ADA, 0x2D9B00
 
-.global sUnk_82D9B00
-sUnk_82D9B00:
+.global sTitleScreenOverlayFrame41Oam
+sTitleScreenOverlayFrame41Oam:
 
 baserom_blob 0x2D9B00, 0x2D9B26
 
-.global sUnk_82D9B26
-sUnk_82D9B26:
+.global sTitleScreenOverlayFrame42Oam
+sTitleScreenOverlayFrame42Oam:
 
 baserom_blob 0x2D9B26, 0x2D9B4C
 
-.global sUnk_82D9B4C
-sUnk_82D9B4C:
+.global sTitleScreenOverlayFrame43Oam
+sTitleScreenOverlayFrame43Oam:
 
 baserom_blob 0x2D9B4C, 0x2D9B72
 
-.global sUnk_82D9B72
-sUnk_82D9B72:
+.global sTitleScreenOverlayFrame44Oam
+sTitleScreenOverlayFrame44Oam:
 
 baserom_blob 0x2D9B72, 0x2D9B98
 
-.global sUnk_82D9B98
-sUnk_82D9B98:
+.global sTitleScreenOverlayFrame45Oam
+sTitleScreenOverlayFrame45Oam:
 
 baserom_blob 0x2D9B98, 0x2D9BBE
 
-.global sUnk_82D9BBE
-sUnk_82D9BBE:
+.global sTitleScreenOverlayFrame46Oam
+sTitleScreenOverlayFrame46Oam:
 
 baserom_blob 0x2D9BBE, 0x2D9BDE
 
-.global sUnk_82D9BDE
-sUnk_82D9BDE:
+.global sTitleScreenOverlayFrame47Oam
+sTitleScreenOverlayFrame47Oam:
 
 baserom_blob 0x2D9BDE, 0x2D9BFE
 
-.global sUnk_82D9BFE
-sUnk_82D9BFE:
+.global sTitleScreenOverlayFrame48Oam
+sTitleScreenOverlayFrame48Oam:
 
 baserom_blob 0x2D9BFE, 0x2D9C1E
 
-.global sUnk_82D9C1E
-sUnk_82D9C1E:
+.global sTitleScreenOverlayFrame49Oam
+sTitleScreenOverlayFrame49Oam:
 
 baserom_blob 0x2D9C1E, 0x2D9C3E
 
-.global sUnk_82D9C3E
-sUnk_82D9C3E:
+.global sTitleScreenOverlayFrame50Oam
+sTitleScreenOverlayFrame50Oam:
 
 baserom_blob 0x2D9C3E, 0x2D9C5E
 
-.global sUnk_82D9C5E
-sUnk_82D9C5E:
+.global sTitleScreenOverlayFrame51Oam
+sTitleScreenOverlayFrame51Oam:
 
 baserom_blob 0x2D9C5E, 0x2D9C78
 

@@ -4083,7 +4083,7 @@ func_80058AC:
 	ldr	r0, .L_5bc8
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800FA3C
+	bl	SelectTitleScreenSHardLogoIntroOamFrame
 	b	.L_5bd6
 .L_5bc4:
 	.4byte	gTitleScreenStyle
@@ -4093,7 +4093,7 @@ func_80058AC:
 	ldr	r0, .L_5bf8
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800F9E0
+	bl	SelectTitleScreenNormalLogoIntroOamFrame
 .L_5bd6:
 	ldr	r4, .L_5bf8
 	ldr	r0, [r4, #0]
@@ -4127,7 +4127,7 @@ func_80058AC:
 	ldr	r0, .L_5c20
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800FA8C
+	bl	SelectTitleScreenSHardLogoIdleOamFrame
 	b	.L_5c2e
 .L_5c1c:
 	.4byte	gTitleScreenStyle
@@ -4137,7 +4137,7 @@ func_80058AC:
 	ldr	r0, .L_5c8c
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800FA28
+	bl	SelectTitleScreenNormalLogoIdleOamFrame
 .L_5c2e:
 	add	r2, r0, #0
 	ldr	r1, .L_5c8c
@@ -4165,7 +4165,7 @@ func_80058AC:
 	ldr	r0, .L_5c8c
 	ldr	r0, [r0, #0]
 	add	r1, sp, #4
-	bl	func_800FAA0
+	bl	SelectTitleScreenOverlayOamFrame
 	ldr	r0, [sp, #4]
 	add	r1, r4, #0
 	mov	r2, #120	@ 0x78
@@ -14976,7 +14976,7 @@ func_800B15C:
 	ldr	r0, .L_b20c
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800FA3C
+	bl	SelectTitleScreenSHardLogoIntroOamFrame
 	b	.L_b252
 .L_b1f8:
 	.4byte	gMPlayInfo_2
@@ -14994,7 +14994,7 @@ func_800B15C:
 	ldr	r0, .L_b21c
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800F9E0
+	bl	SelectTitleScreenNormalLogoIntroOamFrame
 	b	.L_b252
 .L_b21c:
 	.4byte	gUnk_3002C64
@@ -15007,7 +15007,7 @@ func_800B15C:
 	ldr	r0, .L_b240
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800FA8C
+	bl	SelectTitleScreenSHardLogoIdleOamFrame
 	b	.L_b250
 	.align	2, 0
 .L_b238:
@@ -15021,7 +15021,7 @@ func_800B15C:
 	ldr	r0, .L_b278
 	ldr	r0, [r0, #0]
 	mov	r1, sp
-	bl	func_800FA28
+	bl	SelectTitleScreenNormalLogoIdleOamFrame
 .L_b250:
 	strh	r0, [r4, #0]
 .L_b252:
