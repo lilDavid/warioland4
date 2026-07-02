@@ -2070,1778 +2070,1778 @@ baserom_blob 0x2AA7B4, 0x2AE088
 
 //-----
 
-.global sUnk_82AE088
-sUnk_82AE088:
+.global sEndingCutsceneOamFrame000
+sEndingCutsceneOamFrame000:
 
 baserom_blob 0x2AE088, 0x2AE0CC
 
-.global sUnk_82AE0CC
-sUnk_82AE0CC:
+.global sEndingCutsceneOamFrame001
+sEndingCutsceneOamFrame001:
 
 baserom_blob 0x2AE0CC, 0x2AE10A
 
-.global sUnk_82AE10A
-sUnk_82AE10A:
+.global sEndingCutsceneOamFrame002
+sEndingCutsceneOamFrame002:
 
 baserom_blob 0x2AE10A, 0x2AE148
 
-.global sUnk_82AE148
-sUnk_82AE148:
+.global sEndingCutsceneOamFrame003
+sEndingCutsceneOamFrame003:
 
 baserom_blob 0x2AE148, 0x2AE18C
 
-.global sUnk_82AE18C
-sUnk_82AE18C:
+.global sEndingCutsceneOamFrame004
+sEndingCutsceneOamFrame004:
 
 baserom_blob 0x2AE18C, 0x2AE1D0
 
-.global sUnk_82AE1D0
-sUnk_82AE1D0:
+.global sEndingCutsceneOamFrame005
+sEndingCutsceneOamFrame005:
 
 baserom_blob 0x2AE1D0, 0x2AE214
 
-.global sUnk_82AE214
-sUnk_82AE214:
+.global sEndingCutsceneOamFrame006
+sEndingCutsceneOamFrame006:
 
 baserom_blob 0x2AE214, 0x2AE258
 
-.global sUnk_82AE258
-sUnk_82AE258:
+.global sEndingCutsceneOamFrame007
+sEndingCutsceneOamFrame007:
 
 baserom_blob 0x2AE258, 0x2AE29C
 
-.global sUnk_82AE29C
-sUnk_82AE29C:
+.global sEndingCutsceneOamFrame008
+sEndingCutsceneOamFrame008:
 
 baserom_blob 0x2AE29C, 0x2AE2E0
 
-.global sUnk_82AE2E0
-sUnk_82AE2E0:
+.global sEndingCutsceneOamFrame009
+sEndingCutsceneOamFrame009:
 
 baserom_blob 0x2AE2E0, 0x2AE324
 
-.global sUnk_82AE324
-sUnk_82AE324:
+.global sEndingCutsceneOamFrame010
+sEndingCutsceneOamFrame010:
 
 baserom_blob 0x2AE324, 0x2AE362
 
-.global sUnk_82AE362
-sUnk_82AE362:
+.global sEndingCutsceneOamFrame011
+sEndingCutsceneOamFrame011:
 
 baserom_blob 0x2AE362, 0x2AE370
 
-.global sUnk_82AE370
-sUnk_82AE370:
+.global sEndingCutsceneOamFrame012
+sEndingCutsceneOamFrame012:
 
 baserom_blob 0x2AE370, 0x2AE384
 
-.global sUnk_82AE384
-sUnk_82AE384:
+.global sEndingCutsceneOamFrame013
+sEndingCutsceneOamFrame013:
 
 baserom_blob 0x2AE384, 0x2AE392
 
-.global sUnk_82AE392
-sUnk_82AE392:
+.global sEndingCutsceneOamFrame014
+sEndingCutsceneOamFrame014:
 
 baserom_blob 0x2AE392, 0x2AE3A0
 
-.global sUnk_82AE3A0
-sUnk_82AE3A0:
+.global sEndingCutsceneOamFrame015
+sEndingCutsceneOamFrame015:
 
 baserom_blob 0x2AE3A0, 0x2AE3AE
 
-.global sUnk_82AE3AE
-sUnk_82AE3AE:
+.global sEndingCutsceneOamFrame016
+sEndingCutsceneOamFrame016:
 
 baserom_blob 0x2AE3AE, 0x2AE3CE
 
-.global sUnk_82AE3CE
-sUnk_82AE3CE:
+.global sEndingCutsceneOamFrame017
+sEndingCutsceneOamFrame017:
 
 baserom_blob 0x2AE3CE, 0x2AE3F4
 
-.global sUnk_82AE3F4
-sUnk_82AE3F4:
+.global sEndingCutsceneOamFrame018
+sEndingCutsceneOamFrame018:
 
 baserom_blob 0x2AE3F4, 0x2AE41A
 
-.global sUnk_82AE41A
-sUnk_82AE41A:
+.global sEndingCutsceneOamFrame019
+sEndingCutsceneOamFrame019:
 
 baserom_blob 0x2AE41A, 0x2AE44C
 
-.global sUnk_82AE44C
-sUnk_82AE44C:
+.global sEndingCutsceneOamFrame020
+sEndingCutsceneOamFrame020:
 
 baserom_blob 0x2AE44C, 0x2AE47E
 
-.global sUnk_82AE47E
-sUnk_82AE47E:
+.global sEndingCutsceneOamFrame021
+sEndingCutsceneOamFrame021:
 
 baserom_blob 0x2AE47E, 0x2AE4B0
 
-.global sUnk_82AE4B0
-sUnk_82AE4B0:
+.global sEndingCutsceneOamFrame022
+sEndingCutsceneOamFrame022:
 
 baserom_blob 0x2AE4B0, 0x2AE4E2
 
-.global sUnk_82AE4E2
-sUnk_82AE4E2:
+.global sEndingCutsceneOamFrame023
+sEndingCutsceneOamFrame023:
 
 baserom_blob 0x2AE4E2, 0x2AE514
 
-.global sUnk_82AE514
-sUnk_82AE514:
+.global sEndingCutsceneOamFrame024
+sEndingCutsceneOamFrame024:
 
 baserom_blob 0x2AE514, 0x2AE534
 
-.global sUnk_82AE534
-sUnk_82AE534:
+.global sEndingCutsceneOamFrame025
+sEndingCutsceneOamFrame025:
 
 baserom_blob 0x2AE534, 0x2AE566
 
-.global sUnk_82AE566
-sUnk_82AE566:
+.global sEndingCutsceneOamFrame026
+sEndingCutsceneOamFrame026:
 
 baserom_blob 0x2AE566, 0x2AE592
 
-.global sUnk_82AE592
-sUnk_82AE592:
+.global sEndingCutsceneOamFrame027
+sEndingCutsceneOamFrame027:
 
 baserom_blob 0x2AE592, 0x2AE5CA
 
-.global sUnk_82AE5CA
-sUnk_82AE5CA:
+.global sEndingCutsceneOamFrame028
+sEndingCutsceneOamFrame028:
 
 baserom_blob 0x2AE5CA, 0x2AE602
 
-.global sUnk_82AE602
-sUnk_82AE602:
+.global sEndingCutsceneOamFrame029
+sEndingCutsceneOamFrame029:
 
 baserom_blob 0x2AE602, 0x2AE63A
 
-.global sUnk_82AE63A
-sUnk_82AE63A:
+.global sEndingCutsceneOamFrame030
+sEndingCutsceneOamFrame030:
 
 baserom_blob 0x2AE63A, 0x2AE672
 
-.global sUnk_82AE672
-sUnk_82AE672:
+.global sEndingCutsceneOamFrame031
+sEndingCutsceneOamFrame031:
 
 baserom_blob 0x2AE672, 0x2AE6AA
 
-.global sUnk_82AE6AA
-sUnk_82AE6AA:
+.global sEndingCutsceneOamFrame032
+sEndingCutsceneOamFrame032:
 
 baserom_blob 0x2AE6AA, 0x2AE6E2
 
-.global sUnk_82AE6E2
-sUnk_82AE6E2:
+.global sEndingCutsceneOamFrame033
+sEndingCutsceneOamFrame033:
 
 baserom_blob 0x2AE6E2, 0x2AE71A
 
-.global sUnk_82AE71A
-sUnk_82AE71A:
+.global sEndingCutsceneOamFrame034
+sEndingCutsceneOamFrame034:
 
 baserom_blob 0x2AE71A, 0x2AE73A
 
-.global sUnk_82AE73A
-sUnk_82AE73A:
+.global sEndingCutsceneOamFrame035
+sEndingCutsceneOamFrame035:
 
 baserom_blob 0x2AE73A, 0x2AE75A
 
-.global sUnk_82AE75A
-sUnk_82AE75A:
+.global sEndingCutsceneOamFrame036
+sEndingCutsceneOamFrame036:
 
 baserom_blob 0x2AE75A, 0x2AE762
 
-.global sUnk_82AE762
-sUnk_82AE762:
+.global sEndingCutsceneOamFrame037
+sEndingCutsceneOamFrame037:
 
 baserom_blob 0x2AE762, 0x2AE76A
 
-.global sUnk_82AE76A
-sUnk_82AE76A:
+.global sEndingCutsceneOamFrame038
+sEndingCutsceneOamFrame038:
 
 baserom_blob 0x2AE76A, 0x2AE772
 
-.global sUnk_82AE772
-sUnk_82AE772:
+.global sEndingCutsceneOamFrame039
+sEndingCutsceneOamFrame039:
 
 baserom_blob 0x2AE772, 0x2AE77A
 
-.global sUnk_82AE77A
-sUnk_82AE77A:
+.global sEndingCutsceneOamFrame040
+sEndingCutsceneOamFrame040:
 
 baserom_blob 0x2AE77A, 0x2AE782
 
-.global sUnk_82AE782
-sUnk_82AE782:
+.global sEndingCutsceneOamFrame041
+sEndingCutsceneOamFrame041:
 
 baserom_blob 0x2AE782, 0x2AE78A
 
-.global sUnk_82AE78A
-sUnk_82AE78A:
+.global sEndingCutsceneOamFrame042
+sEndingCutsceneOamFrame042:
 
 baserom_blob 0x2AE78A, 0x2AE792
 
-.global sUnk_82AE792
-sUnk_82AE792:
+.global sEndingCutsceneOamFrame043
+sEndingCutsceneOamFrame043:
 
 baserom_blob 0x2AE792, 0x2AE79A
 
-.global sUnk_82AE79A
-sUnk_82AE79A:
+.global sEndingCutsceneOamFrame044
+sEndingCutsceneOamFrame044:
 
 baserom_blob 0x2AE79A, 0x2AE7A2
 
-.global sUnk_82AE7A2
-sUnk_82AE7A2:
+.global sEndingCutsceneOamFrame045
+sEndingCutsceneOamFrame045:
 
 baserom_blob 0x2AE7A2, 0x2AE7AA
 
-.global sUnk_82AE7AA
-sUnk_82AE7AA:
+.global sEndingCutsceneOamFrame046
+sEndingCutsceneOamFrame046:
 
 baserom_blob 0x2AE7AA, 0x2AE7B2
 
-.global sUnk_82AE7B2
-sUnk_82AE7B2:
+.global sEndingCutsceneOamFrame047
+sEndingCutsceneOamFrame047:
 
 baserom_blob 0x2AE7B2, 0x2AE7BA
 
-.global sUnk_82AE7BA
-sUnk_82AE7BA:
+.global sEndingCutsceneOamFrame048
+sEndingCutsceneOamFrame048:
 
 baserom_blob 0x2AE7BA, 0x2AE7C2
 
-.global sUnk_82AE7C2
-sUnk_82AE7C2:
+.global sEndingCutsceneOamFrame049
+sEndingCutsceneOamFrame049:
 
 baserom_blob 0x2AE7C2, 0x2AE7CA
 
-.global sUnk_82AE7CA
-sUnk_82AE7CA:
+.global sEndingCutsceneOamFrame050
+sEndingCutsceneOamFrame050:
 
 baserom_blob 0x2AE7CA, 0x2AE7D2
 
-.global sUnk_82AE7D2
-sUnk_82AE7D2:
+.global sEndingCutsceneOamFrame051
+sEndingCutsceneOamFrame051:
 
 baserom_blob 0x2AE7D2, 0x2AE7DA
 
-.global sUnk_82AE7DA
-sUnk_82AE7DA:
+.global sEndingCutsceneOamFrame052
+sEndingCutsceneOamFrame052:
 
 baserom_blob 0x2AE7DA, 0x2AE7E2
 
-.global sUnk_82AE7E2
-sUnk_82AE7E2:
+.global sEndingCutsceneOamFrame053
+sEndingCutsceneOamFrame053:
 
 baserom_blob 0x2AE7E2, 0x2AE7EA
 
-.global sUnk_82AE7EA
-sUnk_82AE7EA:
+.global sEndingCutsceneOamFrame054
+sEndingCutsceneOamFrame054:
 
 baserom_blob 0x2AE7EA, 0x2AE7F2
 
-.global sUnk_82AE7F2
-sUnk_82AE7F2:
+.global sEndingCutsceneOamFrame055
+sEndingCutsceneOamFrame055:
 
 baserom_blob 0x2AE7F2, 0x2AE7FA
 
-.global sUnk_82AE7FA
-sUnk_82AE7FA:
+.global sEndingCutsceneOamFrame056
+sEndingCutsceneOamFrame056:
 
 baserom_blob 0x2AE7FA, 0x2AE802
 
-.global sUnk_82AE802
-sUnk_82AE802:
+.global sEndingCutsceneOamFrame057
+sEndingCutsceneOamFrame057:
 
 baserom_blob 0x2AE802, 0x2AE80A
 
-.global sUnk_82AE80A
-sUnk_82AE80A:
+.global sEndingCutsceneOamFrame058
+sEndingCutsceneOamFrame058:
 
 baserom_blob 0x2AE80A, 0x2AE812
 
-.global sUnk_82AE812
-sUnk_82AE812:
+.global sEndingCutsceneOamFrame059
+sEndingCutsceneOamFrame059:
 
 baserom_blob 0x2AE812, 0x2AE81A
 
-.global sUnk_82AE81A
-sUnk_82AE81A:
+.global sEndingCutsceneOamFrame060
+sEndingCutsceneOamFrame060:
 
 baserom_blob 0x2AE81A, 0x2AE822
 
-.global sUnk_82AE822
-sUnk_82AE822:
+.global sEndingCutsceneOamFrame061
+sEndingCutsceneOamFrame061:
 
 baserom_blob 0x2AE822, 0x2AE82A
 
-.global sUnk_82AE82A
-sUnk_82AE82A:
+.global sEndingCutsceneOamFrame062
+sEndingCutsceneOamFrame062:
 
 baserom_blob 0x2AE82A, 0x2AE832
 
-.global sUnk_82AE832
-sUnk_82AE832:
+.global sEndingCutsceneOamFrame063
+sEndingCutsceneOamFrame063:
 
 baserom_blob 0x2AE832, 0x2AE83A
 
-.global sUnk_82AE83A
-sUnk_82AE83A:
+.global sEndingCutsceneOamFrame064
+sEndingCutsceneOamFrame064:
 
 baserom_blob 0x2AE83A, 0x2AE842
 
-.global sUnk_82AE842
-sUnk_82AE842:
+.global sEndingCutsceneOamFrame065
+sEndingCutsceneOamFrame065:
 
 baserom_blob 0x2AE842, 0x2AE84A
 
-.global sUnk_82AE84A
-sUnk_82AE84A:
+.global sEndingCutsceneOamFrame066
+sEndingCutsceneOamFrame066:
 
 baserom_blob 0x2AE84A, 0x2AE852
 
-.global sUnk_82AE852
-sUnk_82AE852:
+.global sEndingCutsceneOamFrame067
+sEndingCutsceneOamFrame067:
 
 baserom_blob 0x2AE852, 0x2AE85A
 
-.global sUnk_82AE85A
-sUnk_82AE85A:
+.global sEndingCutsceneOamFrame068
+sEndingCutsceneOamFrame068:
 
 baserom_blob 0x2AE85A, 0x2AE88C
 
-.global sUnk_82AE88C
-sUnk_82AE88C:
+.global sEndingCutsceneOamFrame069
+sEndingCutsceneOamFrame069:
 
 baserom_blob 0x2AE88C, 0x2AE8BE
 
-.global sUnk_82AE8BE
-sUnk_82AE8BE:
+.global sEndingCutsceneOamFrame070
+sEndingCutsceneOamFrame070:
 
 baserom_blob 0x2AE8BE, 0x2AE8F0
 
-.global sUnk_82AE8F0
-sUnk_82AE8F0:
+.global sEndingCutsceneOamFrame071
+sEndingCutsceneOamFrame071:
 
 baserom_blob 0x2AE8F0, 0x2AE922
 
-.global sUnk_82AE922
-sUnk_82AE922:
+.global sEndingCutsceneOamFrame072
+sEndingCutsceneOamFrame072:
 
 baserom_blob 0x2AE922, 0x2AE954
 
-.global sUnk_82AE954
-sUnk_82AE954:
+.global sEndingCutsceneOamFrame073
+sEndingCutsceneOamFrame073:
 
 baserom_blob 0x2AE954, 0x2AE986
 
-.global sUnk_82AE986
-sUnk_82AE986:
+.global sEndingCutsceneOamFrame074
+sEndingCutsceneOamFrame074:
 
 baserom_blob 0x2AE986, 0x2AE9B8
 
-.global sUnk_82AE9B8
-sUnk_82AE9B8:
+.global sEndingCutsceneOamFrame075
+sEndingCutsceneOamFrame075:
 
 baserom_blob 0x2AE9B8, 0x2AE9EA
 
-.global sUnk_82AE9EA
-sUnk_82AE9EA:
+.global sEndingCutsceneOamFrame076
+sEndingCutsceneOamFrame076:
 
 baserom_blob 0x2AE9EA, 0x2AE9F8
 
-.global sUnk_82AE9F8
-sUnk_82AE9F8:
+.global sEndingCutsceneOamFrame077
+sEndingCutsceneOamFrame077:
 
 baserom_blob 0x2AE9F8, 0x2AEA06
 
-.global sUnk_82AEA06
-sUnk_82AEA06:
+.global sEndingCutsceneOamFrame078
+sEndingCutsceneOamFrame078:
 
 baserom_blob 0x2AEA06, 0x2AEA0E
 
-.global sUnk_82AEA0E
-sUnk_82AEA0E:
+.global sEndingCutsceneOamFrame079
+sEndingCutsceneOamFrame079:
 
 baserom_blob 0x2AEA0E, 0x2AEA16
 
-.global sUnk_82AEA16
-sUnk_82AEA16:
+.global sEndingCutsceneOamFrame080
+sEndingCutsceneOamFrame080:
 
 baserom_blob 0x2AEA16, 0x2AEA24
 
-.global sUnk_82AEA24
-sUnk_82AEA24:
+.global sEndingCutsceneOamFrame081
+sEndingCutsceneOamFrame081:
 
 baserom_blob 0x2AEA24, 0x2AEA32
 
-.global sUnk_82AEA32
-sUnk_82AEA32:
+.global sEndingCutsceneOamFrame082
+sEndingCutsceneOamFrame082:
 
 baserom_blob 0x2AEA32, 0x2AEA40
 
-.global sUnk_82AEA40
-sUnk_82AEA40:
+.global sEndingCutsceneOamFrame083
+sEndingCutsceneOamFrame083:
 
 baserom_blob 0x2AEA40, 0x2AEA5A
 
-.global sUnk_82AEA5A
-sUnk_82AEA5A:
+.global sEndingCutsceneOamFrame084
+sEndingCutsceneOamFrame084:
 
 baserom_blob 0x2AEA5A, 0x2AEA74
 
-.global sUnk_82AEA74
-sUnk_82AEA74:
+.global sEndingCutsceneOamFrame085
+sEndingCutsceneOamFrame085:
 
 baserom_blob 0x2AEA74, 0x2AEA94
 
-.global sUnk_82AEA94
-sUnk_82AEA94:
+.global sEndingCutsceneOamFrame086
+sEndingCutsceneOamFrame086:
 
 baserom_blob 0x2AEA94, 0x2AEAB4
 
-.global sUnk_82AEAB4
-sUnk_82AEAB4:
+.global sEndingCutsceneOamFrame087
+sEndingCutsceneOamFrame087:
 
 baserom_blob 0x2AEAB4, 0x2AEACE
 
-.global sUnk_82AEACE
-sUnk_82AEACE:
+.global sEndingCutsceneOamFrame088
+sEndingCutsceneOamFrame088:
 
 baserom_blob 0x2AEACE, 0x2AEAE8
 
-.global sUnk_82AEAE8
-sUnk_82AEAE8:
+.global sEndingCutsceneOamFrame089
+sEndingCutsceneOamFrame089:
 
 baserom_blob 0x2AEAE8, 0x2AEB08
 
-.global sUnk_82AEB08
-sUnk_82AEB08:
+.global sEndingCutsceneOamFrame090
+sEndingCutsceneOamFrame090:
 
 baserom_blob 0x2AEB08, 0x2AEB28
 
-.global sUnk_82AEB28
-sUnk_82AEB28:
+.global sEndingCutsceneOamFrame091
+sEndingCutsceneOamFrame091:
 
 baserom_blob 0x2AEB28, 0x2AEB42
 
-.global sUnk_82AEB42
-sUnk_82AEB42:
+.global sEndingCutsceneOamFrame092
+sEndingCutsceneOamFrame092:
 
 baserom_blob 0x2AEB42, 0x2AEB62
 
-.global sUnk_82AEB62
-sUnk_82AEB62:
+.global sEndingCutsceneOamFrame093
+sEndingCutsceneOamFrame093:
 
 baserom_blob 0x2AEB62, 0x2AEB88
 
-.global sUnk_82AEB88
-sUnk_82AEB88:
+.global sEndingCutsceneOamFrame094
+sEndingCutsceneOamFrame094:
 
 baserom_blob 0x2AEB88, 0x2AEBAE
 
-.global sUnk_82AEBAE
-sUnk_82AEBAE:
+.global sEndingCutsceneOamFrame095
+sEndingCutsceneOamFrame095:
 
 baserom_blob 0x2AEBAE, 0x2AEBC8
 
-.global sUnk_82AEBC8
-sUnk_82AEBC8:
+.global sEndingCutsceneOamFrame096
+sEndingCutsceneOamFrame096:
 
 baserom_blob 0x2AEBC8, 0x2AEBE2
 
-.global sUnk_82AEBE2
-sUnk_82AEBE2:
+.global sEndingCutsceneOamFrame097
+sEndingCutsceneOamFrame097:
 
 baserom_blob 0x2AEBE2, 0x2AEC08
 
-.global sUnk_82AEC08
-sUnk_82AEC08:
+.global sEndingCutsceneOamFrame098
+sEndingCutsceneOamFrame098:
 
 baserom_blob 0x2AEC08, 0x2AEC22
 
-.global sUnk_82AEC22
-sUnk_82AEC22:
+.global sEndingCutsceneOamFrame099
+sEndingCutsceneOamFrame099:
 
 baserom_blob 0x2AEC22, 0x2AEC3C
 
-.global sUnk_82AEC3C
-sUnk_82AEC3C:
+.global sEndingCutsceneOamFrame100
+sEndingCutsceneOamFrame100:
 
 baserom_blob 0x2AEC3C, 0x2AEC4A
 
-.global sUnk_82AEC4A
-sUnk_82AEC4A:
+.global sEndingCutsceneOamFrame101
+sEndingCutsceneOamFrame101:
 
 baserom_blob 0x2AEC4A, 0x2AEC58
 
-.global sUnk_82AEC58
-sUnk_82AEC58:
+.global sEndingCutsceneOamFrame102
+sEndingCutsceneOamFrame102:
 
 baserom_blob 0x2AEC58, 0x2AEC72
 
-.global sUnk_82AEC72
-sUnk_82AEC72:
+.global sEndingCutsceneOamFrame103
+sEndingCutsceneOamFrame103:
 
 baserom_blob 0x2AEC72, 0x2AEC8C
 
-.global sUnk_82AEC8C
-sUnk_82AEC8C:
+.global sEndingCutsceneOamFrame104
+sEndingCutsceneOamFrame104:
 
 baserom_blob 0x2AEC8C, 0x2AECA6
 
-.global sUnk_82AECA6
-sUnk_82AECA6:
+.global sEndingCutsceneOamFrame105
+sEndingCutsceneOamFrame105:
 
 baserom_blob 0x2AECA6, 0x2AECC0
 
-.global sUnk_82AECC0
-sUnk_82AECC0:
+.global sEndingCutsceneOamFrame106
+sEndingCutsceneOamFrame106:
 
 baserom_blob 0x2AECC0, 0x2AECEC
 
-.global sUnk_82AECEC
-sUnk_82AECEC:
+.global sEndingCutsceneOamFrame107
+sEndingCutsceneOamFrame107:
 
 baserom_blob 0x2AECEC, 0x2AED1E
 
-.global sUnk_82AED1E
-sUnk_82AED1E:
+.global sEndingCutsceneOamFrame108
+sEndingCutsceneOamFrame108:
 
 baserom_blob 0x2AED1E, 0x2AED3E
 
-.global sUnk_82AED3E
-sUnk_82AED3E:
+.global sEndingCutsceneOamFrame109
+sEndingCutsceneOamFrame109:
 
 baserom_blob 0x2AED3E, 0x2AED5E
 
-.global sUnk_82AED5E
-sUnk_82AED5E:
+.global sEndingCutsceneOamFrame110
+sEndingCutsceneOamFrame110:
 
 baserom_blob 0x2AED5E, 0x2AED96
 
-.global sUnk_82AED96
-sUnk_82AED96:
+.global sEndingCutsceneOamFrame111
+sEndingCutsceneOamFrame111:
 
 baserom_blob 0x2AED96, 0x2AEDDA
 
-.global sUnk_82AEDDA
-sUnk_82AEDDA:
+.global sEndingCutsceneOamFrame112
+sEndingCutsceneOamFrame112:
 
 baserom_blob 0x2AEDDA, 0x2AEE1E
 
-.global sUnk_82AEE1E
-sUnk_82AEE1E:
+.global sEndingCutsceneOamFrame113
+sEndingCutsceneOamFrame113:
 
 baserom_blob 0x2AEE1E, 0x2AEE62
 
-.global sUnk_82AEE62
-sUnk_82AEE62:
+.global sEndingCutsceneOamFrame114
+sEndingCutsceneOamFrame114:
 
 baserom_blob 0x2AEE62, 0x2AEEA0
 
-.global sUnk_82AEEA0
-sUnk_82AEEA0:
+.global sEndingCutsceneOamFrame115
+sEndingCutsceneOamFrame115:
 
 baserom_blob 0x2AEEA0, 0x2AEED2
 
-.global sUnk_82AEED2
-sUnk_82AEED2:
+.global sEndingCutsceneOamFrame116
+sEndingCutsceneOamFrame116:
 
 baserom_blob 0x2AEED2, 0x2AEF04
 
-.global sUnk_82AEF04
-sUnk_82AEF04:
+.global sEndingCutsceneOamFrame117
+sEndingCutsceneOamFrame117:
 
 baserom_blob 0x2AEF04, 0x2AEF3C
 
-.global sUnk_82AEF3C
-sUnk_82AEF3C:
+.global sEndingCutsceneOamFrame118
+sEndingCutsceneOamFrame118:
 
 baserom_blob 0x2AEF3C, 0x2AEF74
 
-.global sUnk_82AEF74
-sUnk_82AEF74:
+.global sEndingCutsceneOamFrame119
+sEndingCutsceneOamFrame119:
 
 baserom_blob 0x2AEF74, 0x2AEF82
 
-.global sUnk_82AEF82
-sUnk_82AEF82:
+.global sEndingCutsceneOamFrame120
+sEndingCutsceneOamFrame120:
 
 baserom_blob 0x2AEF82, 0x2AEF90
 
-.global sUnk_82AEF90
-sUnk_82AEF90:
+.global sEndingCutsceneOamFrame121
+sEndingCutsceneOamFrame121:
 
 baserom_blob 0x2AEF90, 0x2AEF9E
 
-.global sUnk_82AEF9E
-sUnk_82AEF9E:
+.global sEndingCutsceneOamFrame122
+sEndingCutsceneOamFrame122:
 
 baserom_blob 0x2AEF9E, 0x2AEFAC
 
-.global sUnk_82AEFAC
-sUnk_82AEFAC:
+.global sEndingCutsceneOamFrame123
+sEndingCutsceneOamFrame123:
 
 baserom_blob 0x2AEFAC, 0x2AEFBA
 
-.global sUnk_82AEFBA
-sUnk_82AEFBA:
+.global sEndingCutsceneOamFrame124
+sEndingCutsceneOamFrame124:
 
 baserom_blob 0x2AEFBA, 0x2AEFC8
 
-.global sUnk_82AEFC8
-sUnk_82AEFC8:
+.global sEndingCutsceneOamFrame125
+sEndingCutsceneOamFrame125:
 
 baserom_blob 0x2AEFC8, 0x2AEFDC
 
-.global sUnk_82AEFDC
-sUnk_82AEFDC:
+.global sEndingCutsceneOamFrame126
+sEndingCutsceneOamFrame126:
 
 baserom_blob 0x2AEFDC, 0x2AEFF0
 
-.global sUnk_82AEFF0
-sUnk_82AEFF0:
+.global sEndingCutsceneOamFrame127
+sEndingCutsceneOamFrame127:
 
 baserom_blob 0x2AEFF0, 0x2AF004
 
-.global sUnk_82AF004
-sUnk_82AF004:
+.global sEndingCutsceneOamFrame128
+sEndingCutsceneOamFrame128:
 
 baserom_blob 0x2AF004, 0x2AF018
 
-.global sUnk_82AF018
-sUnk_82AF018:
+.global sEndingCutsceneOamFrame129
+sEndingCutsceneOamFrame129:
 
 baserom_blob 0x2AF018, 0x2AF02C
 
-.global sUnk_82AF02C
-sUnk_82AF02C:
+.global sEndingCutsceneOamFrame130
+sEndingCutsceneOamFrame130:
 
 baserom_blob 0x2AF02C, 0x2AF040
 
-.global sUnk_82AF040
-sUnk_82AF040:
+.global sEndingCutsceneOamFrame131
+sEndingCutsceneOamFrame131:
 
 baserom_blob 0x2AF040, 0x2AF04E
 
-.global sUnk_82AF04E
-sUnk_82AF04E:
+.global sEndingCutsceneOamFrame132
+sEndingCutsceneOamFrame132:
 
 baserom_blob 0x2AF04E, 0x2AF062
 
-.global sUnk_82AF062
-sUnk_82AF062:
+.global sEndingCutsceneOamFrame133
+sEndingCutsceneOamFrame133:
 
 baserom_blob 0x2AF062, 0x2AF07C
 
-.global sUnk_82AF07C
-sUnk_82AF07C:
+.global sEndingCutsceneOamFrame134
+sEndingCutsceneOamFrame134:
 
 baserom_blob 0x2AF07C, 0x2AF08A
 
-.global sUnk_82AF08A
-sUnk_82AF08A:
+.global sEndingCutsceneOamFrame135
+sEndingCutsceneOamFrame135:
 
 baserom_blob 0x2AF08A, 0x2AF09E
 
-.global sUnk_82AF09E
-sUnk_82AF09E:
+.global sEndingCutsceneOamFrame136
+sEndingCutsceneOamFrame136:
 
 baserom_blob 0x2AF09E, 0x2AF0B2
 
-.global sUnk_82AF0B2
-sUnk_82AF0B2:
+.global sEndingCutsceneOamFrame137
+sEndingCutsceneOamFrame137:
 
 baserom_blob 0x2AF0B2, 0x2AF0C0
 
-.global sUnk_82AF0C0
-sUnk_82AF0C0:
+.global sEndingCutsceneOamFrame138
+sEndingCutsceneOamFrame138:
 
 baserom_blob 0x2AF0C0, 0x2AF0CE
 
-.global sUnk_82AF0CE
-sUnk_82AF0CE:
+.global sEndingCutsceneOamFrame139
+sEndingCutsceneOamFrame139:
 
 baserom_blob 0x2AF0CE, 0x2AF0DC
 
-.global sUnk_82AF0DC
-sUnk_82AF0DC:
+.global sEndingCutsceneOamFrame140
+sEndingCutsceneOamFrame140:
 
 baserom_blob 0x2AF0DC, 0x2AF0EA
 
-.global sUnk_82AF0EA
-sUnk_82AF0EA:
+.global sEndingCutsceneOamFrame141
+sEndingCutsceneOamFrame141:
 
 baserom_blob 0x2AF0EA, 0x2AF0FE
 
-.global sUnk_82AF0FE
-sUnk_82AF0FE:
+.global sEndingCutsceneOamFrame142
+sEndingCutsceneOamFrame142:
 
 baserom_blob 0x2AF0FE, 0x2AF118
 
-.global sUnk_82AF118
-sUnk_82AF118:
+.global sEndingCutsceneOamFrame143
+sEndingCutsceneOamFrame143:
 
 baserom_blob 0x2AF118, 0x2AF14A
 
-.global sUnk_82AF14A
-sUnk_82AF14A:
+.global sEndingCutsceneOamFrame144
+sEndingCutsceneOamFrame144:
 
 baserom_blob 0x2AF14A, 0x2AF176
 
-.global sUnk_82AF176
-sUnk_82AF176:
+.global sEndingCutsceneOamFrame145
+sEndingCutsceneOamFrame145:
 
 baserom_blob 0x2AF176, 0x2AF1A8
 
-.global sUnk_82AF1A8
-sUnk_82AF1A8:
+.global sEndingCutsceneOamFrame146
+sEndingCutsceneOamFrame146:
 
 baserom_blob 0x2AF1A8, 0x2AF1DA
 
-.global sUnk_82AF1DA
-sUnk_82AF1DA:
+.global sEndingCutsceneOamFrame147
+sEndingCutsceneOamFrame147:
 
 baserom_blob 0x2AF1DA, 0x2AF20C
 
-.global sUnk_82AF20C
-sUnk_82AF20C:
+.global sEndingCutsceneOamFrame148
+sEndingCutsceneOamFrame148:
 
 baserom_blob 0x2AF20C, 0x2AF238
 
-.global sUnk_82AF238
-sUnk_82AF238:
+.global sEndingCutsceneOamFrame149
+sEndingCutsceneOamFrame149:
 
 baserom_blob 0x2AF238, 0x2AF26A
 
-.global sUnk_82AF26A
-sUnk_82AF26A:
+.global sEndingCutsceneOamFrame150
+sEndingCutsceneOamFrame150:
 
 baserom_blob 0x2AF26A, 0x2AF29C
 
-.global sUnk_82AF29C
-sUnk_82AF29C:
+.global sEndingCutsceneOamFrame151
+sEndingCutsceneOamFrame151:
 
 baserom_blob 0x2AF29C, 0x2AF2D4
 
-.global sUnk_82AF2D4
-sUnk_82AF2D4:
+.global sEndingCutsceneOamFrame152
+sEndingCutsceneOamFrame152:
 
 baserom_blob 0x2AF2D4, 0x2AF30C
 
-.global sUnk_82AF30C
-sUnk_82AF30C:
+.global sEndingCutsceneOamFrame153
+sEndingCutsceneOamFrame153:
 
 baserom_blob 0x2AF30C, 0x2AF344
 
-.global sUnk_82AF344
-sUnk_82AF344:
+.global sEndingCutsceneOamFrame154
+sEndingCutsceneOamFrame154:
 
 baserom_blob 0x2AF344, 0x2AF370
 
-.global sUnk_82AF370
-sUnk_82AF370:
+.global sEndingCutsceneOamFrame155
+sEndingCutsceneOamFrame155:
 
 baserom_blob 0x2AF370, 0x2AF3A2
 
-.global sUnk_82AF3A2
-sUnk_82AF3A2:
+.global sEndingCutsceneOamFrame156
+sEndingCutsceneOamFrame156:
 
 baserom_blob 0x2AF3A2, 0x2AF3D4
 
-.global sUnk_82AF3D4
-sUnk_82AF3D4:
+.global sEndingCutsceneOamFrame157
+sEndingCutsceneOamFrame157:
 
 baserom_blob 0x2AF3D4, 0x2AF406
 
-.global sUnk_82AF406
-sUnk_82AF406:
+.global sEndingCutsceneOamFrame158
+sEndingCutsceneOamFrame158:
 
 baserom_blob 0x2AF406, 0x2AF432
 
-.global sUnk_82AF432
-sUnk_82AF432:
+.global sEndingCutsceneOamFrame159
+sEndingCutsceneOamFrame159:
 
 baserom_blob 0x2AF432, 0x2AF464
 
-.global sUnk_82AF464
-sUnk_82AF464:
+.global sEndingCutsceneOamFrame160
+sEndingCutsceneOamFrame160:
 
 baserom_blob 0x2AF464, 0x2AF496
 
-.global sUnk_82AF496
-sUnk_82AF496:
+.global sEndingCutsceneOamFrame161
+sEndingCutsceneOamFrame161:
 
 baserom_blob 0x2AF496, 0x2AF4C8
 
-.global sUnk_82AF4C8
-sUnk_82AF4C8:
+.global sEndingCutsceneOamFrame162
+sEndingCutsceneOamFrame162:
 
 baserom_blob 0x2AF4C8, 0x2AF500
 
-.global sUnk_82AF500
-sUnk_82AF500:
+.global sEndingCutsceneOamFrame163
+sEndingCutsceneOamFrame163:
 
 baserom_blob 0x2AF500, 0x2AF538
 
-.global sUnk_82AF538
-sUnk_82AF538:
+.global sEndingCutsceneOamFrame164
+sEndingCutsceneOamFrame164:
 
 baserom_blob 0x2AF538, 0x2AF570
 
-.global sUnk_82AF570
-sUnk_82AF570:
+.global sEndingCutsceneOamFrame165
+sEndingCutsceneOamFrame165:
 
 baserom_blob 0x2AF570, 0x2AF5A8
 
-.global sUnk_82AF5A8
-sUnk_82AF5A8:
+.global sEndingCutsceneOamFrame166
+sEndingCutsceneOamFrame166:
 
 baserom_blob 0x2AF5A8, 0x2AF5DA
 
-.global sUnk_82AF5DA
-sUnk_82AF5DA:
+.global sEndingCutsceneOamFrame167
+sEndingCutsceneOamFrame167:
 
 baserom_blob 0x2AF5DA, 0x2AF612
 
-.global sUnk_82AF612
-sUnk_82AF612:
+.global sEndingCutsceneOamFrame168
+sEndingCutsceneOamFrame168:
 
 baserom_blob 0x2AF612, 0x2AF64A
 
-.global sUnk_82AF64A
-sUnk_82AF64A:
+.global sEndingCutsceneOamFrame169
+sEndingCutsceneOamFrame169:
 
 baserom_blob 0x2AF64A, 0x2AF682
 
-.global sUnk_82AF682
-sUnk_82AF682:
+.global sEndingCutsceneOamFrame170
+sEndingCutsceneOamFrame170:
 
 baserom_blob 0x2AF682, 0x2AF6B4
 
-.global sUnk_82AF6B4
-sUnk_82AF6B4:
+.global sEndingCutsceneOamFrame171
+sEndingCutsceneOamFrame171:
 
 baserom_blob 0x2AF6B4, 0x2AF6EC
 
-.global sUnk_82AF6EC
-sUnk_82AF6EC:
+.global sEndingCutsceneOamFrame172
+sEndingCutsceneOamFrame172:
 
 baserom_blob 0x2AF6EC, 0x2AF724
 
-.global sUnk_82AF724
-sUnk_82AF724:
+.global sEndingCutsceneOamFrame173
+sEndingCutsceneOamFrame173:
 
 baserom_blob 0x2AF724, 0x2AF72C
 
-.global sUnk_82AF72C
-sUnk_82AF72C:
+.global sEndingCutsceneOamFrame174
+sEndingCutsceneOamFrame174:
 
 baserom_blob 0x2AF72C, 0x2AF734
 
-.global sUnk_82AF734
-sUnk_82AF734:
+.global sEndingCutsceneOamFrame175
+sEndingCutsceneOamFrame175:
 
 baserom_blob 0x2AF734, 0x2AF73C
 
-.global sUnk_82AF73C
-sUnk_82AF73C:
+.global sEndingCutsceneOamFrame176
+sEndingCutsceneOamFrame176:
 
 baserom_blob 0x2AF73C, 0x2AF744
 
-.global sUnk_82AF744
-sUnk_82AF744:
+.global sEndingCutsceneOamFrame177
+sEndingCutsceneOamFrame177:
 
 baserom_blob 0x2AF744, 0x2AF74C
 
-.global sUnk_82AF74C
-sUnk_82AF74C:
+.global sEndingCutsceneOamFrame178
+sEndingCutsceneOamFrame178:
 
 baserom_blob 0x2AF74C, 0x2AF754
 
-.global sUnk_82AF754
-sUnk_82AF754:
+.global sEndingCutsceneOamFrame179
+sEndingCutsceneOamFrame179:
 
 baserom_blob 0x2AF754, 0x2AF75C
 
-.global sUnk_82AF75C
-sUnk_82AF75C:
+.global sEndingCutsceneOamFrame180
+sEndingCutsceneOamFrame180:
 
 baserom_blob 0x2AF75C, 0x2AF77C
 
-.global sUnk_82AF77C
-sUnk_82AF77C:
+.global sEndingCutsceneOamFrame181
+sEndingCutsceneOamFrame181:
 
 baserom_blob 0x2AF77C, 0x2AF7B4
 
-.global sUnk_82AF7B4
-sUnk_82AF7B4:
+.global sEndingCutsceneOamFrame182
+sEndingCutsceneOamFrame182:
 
 baserom_blob 0x2AF7B4, 0x2AF7EC
 
-.global sUnk_82AF7EC
-sUnk_82AF7EC:
+.global sEndingCutsceneOamFrame183
+sEndingCutsceneOamFrame183:
 
 baserom_blob 0x2AF7EC, 0x2AF824
 
-.global sUnk_82AF824
-sUnk_82AF824:
+.global sEndingCutsceneOamFrame184
+sEndingCutsceneOamFrame184:
 
 baserom_blob 0x2AF824, 0x2AF82C
 
-.global sUnk_82AF82C
-sUnk_82AF82C:
+.global sEndingCutsceneOamFrame185
+sEndingCutsceneOamFrame185:
 
 baserom_blob 0x2AF82C, 0x2AF834
 
-.global sUnk_82AF834
-sUnk_82AF834:
+.global sEndingCutsceneOamFrame186
+sEndingCutsceneOamFrame186:
 
 baserom_blob 0x2AF834, 0x2AF83C
 
-.global sUnk_82AF83C
-sUnk_82AF83C:
+.global sEndingCutscenePathData000
+sEndingCutscenePathData000:
 
 baserom_blob 0x2AF83C, 0x2AFA58
 
-.global sUnk_82AFA58
-sUnk_82AFA58:
+.global sEndingCutscenePathData001
+sEndingCutscenePathData001:
 
 baserom_blob 0x2AFA58, 0x2AFC74
 
-.global sUnk_82AFC74
-sUnk_82AFC74:
+.global sEndingCutscenePathData002
+sEndingCutscenePathData002:
 
 baserom_blob 0x2AFC74, 0x2AFE90
 
-.global sUnk_82AFE90
-sUnk_82AFE90:
+.global sEndingCutscenePathData003
+sEndingCutscenePathData003:
 
 baserom_blob 0x2AFE90, 0x2B00AC
 
-.global sUnk_82B00AC
-sUnk_82B00AC:
+.global sEndingCutscenePathData004
+sEndingCutscenePathData004:
 
 baserom_blob 0x2B00AC, 0x2B02C8
 
-.global sUnk_82B02C8
-sUnk_82B02C8:
+.global sEndingCutscenePathData005
+sEndingCutscenePathData005:
 
 baserom_blob 0x2B02C8, 0x2B04E4
 
-.global sUnk_82B04E4
-sUnk_82B04E4:
+.global sEndingCutscenePathData006
+sEndingCutscenePathData006:
 
 baserom_blob 0x2B04E4, 0x2B0700
 
-.global sUnk_82B0700
-sUnk_82B0700:
+.global sEndingCutscenePathData007
+sEndingCutscenePathData007:
 
 baserom_blob 0x2B0700, 0x2B091C
 
-.global sUnk_82B091C
-sUnk_82B091C:
+.global sEndingCutscenePathData008
+sEndingCutscenePathData008:
 
 baserom_blob 0x2B091C, 0x2B0B38
 
-.global sUnk_82B0B38
-sUnk_82B0B38:
+.global sEndingCutscenePathData009
+sEndingCutscenePathData009:
 
 baserom_blob 0x2B0B38, 0x2B0D54
 
-.global sUnk_82B0D54
-sUnk_82B0D54:
+.global sEndingCutscenePathData010
+sEndingCutscenePathData010:
 
 baserom_blob 0x2B0D54, 0x2B0F70
 
-.global sUnk_82B0F70
-sUnk_82B0F70:
+.global sEndingCutscenePathData011
+sEndingCutscenePathData011:
 
 baserom_blob 0x2B0F70, 0x2B118C
 
-.global sUnk_82B118C
-sUnk_82B118C:
+.global sEndingCutscenePathData012
+sEndingCutscenePathData012:
 
 baserom_blob 0x2B118C, 0x2B13A8
 
-.global sUnk_82B13A8
-sUnk_82B13A8:
+.global sEndingCutscenePathData013
+sEndingCutscenePathData013:
 
 baserom_blob 0x2B13A8, 0x2B15C4
 
-.global sUnk_82B15C4
-sUnk_82B15C4:
+.global sEndingCutscenePathData014
+sEndingCutscenePathData014:
 
 baserom_blob 0x2B15C4, 0x2B17E0
 
-.global sUnk_82B17E0
-sUnk_82B17E0:
+.global sEndingCutscenePathData015
+sEndingCutscenePathData015:
 
 baserom_blob 0x2B17E0, 0x2B19FC
 
-.global sUnk_82B19FC
-sUnk_82B19FC:
+.global sEndingCutscenePathData016
+sEndingCutscenePathData016:
 
 baserom_blob 0x2B19FC, 0x2B1C2C
 
-.global sUnk_82B1C2C
-sUnk_82B1C2C:
+.global sEndingCutscenePathData017
+sEndingCutscenePathData017:
 
 baserom_blob 0x2B1C2C, 0x2B1E5C
 
-.global sUnk_82B1E5C
-sUnk_82B1E5C:
+.global sEndingCutscenePathData018
+sEndingCutscenePathData018:
 
 baserom_blob 0x2B1E5C, 0x2B208C
 
-.global sUnk_82B208C
-sUnk_82B208C:
+.global sEndingCutscenePathData019
+sEndingCutscenePathData019:
 
 baserom_blob 0x2B208C, 0x2B22BC
 
-.global sUnk_82B22BC
-sUnk_82B22BC:
+.global sEndingCutscenePathData020
+sEndingCutscenePathData020:
 
 baserom_blob 0x2B22BC, 0x2B24EC
 
-.global sUnk_82B24EC
-sUnk_82B24EC:
+.global sEndingCutscenePathData021
+sEndingCutscenePathData021:
 
 baserom_blob 0x2B24EC, 0x2B271C
 
-.global sUnk_82B271C
-sUnk_82B271C:
+.global sEndingCutscenePathData022
+sEndingCutscenePathData022:
 
 baserom_blob 0x2B271C, 0x2B294C
 
-.global sUnk_82B294C
-sUnk_82B294C:
+.global sEndingCutscenePathData023
+sEndingCutscenePathData023:
 
 baserom_blob 0x2B294C, 0x2B2B7C
 
-.global sUnk_82B2B7C
-sUnk_82B2B7C:
+.global sEndingCutscenePathData024
+sEndingCutscenePathData024:
 
 baserom_blob 0x2B2B7C, 0x2B2DAC
 
-.global sUnk_82B2DAC
-sUnk_82B2DAC:
+.global sEndingCutscenePathData025
+sEndingCutscenePathData025:
 
 baserom_blob 0x2B2DAC, 0x2B2FDC
 
-.global sUnk_82B2FDC
-sUnk_82B2FDC:
+.global sEndingCutscenePathData026
+sEndingCutscenePathData026:
 
 baserom_blob 0x2B2FDC, 0x2B320C
 
-.global sUnk_82B320C
-sUnk_82B320C:
+.global sEndingCutscenePathData027
+sEndingCutscenePathData027:
 
 baserom_blob 0x2B320C, 0x2B343C
 
-.global sUnk_82B343C
-sUnk_82B343C:
+.global sEndingCutscenePathData028
+sEndingCutscenePathData028:
 
 baserom_blob 0x2B343C, 0x2B366C
 
-.global sUnk_82B366C
-sUnk_82B366C:
+.global sEndingCutscenePathData029
+sEndingCutscenePathData029:
 
 baserom_blob 0x2B366C, 0x2B389C
 
-.global sUnk_82B389C
-sUnk_82B389C:
+.global sEndingCutscenePathData030
+sEndingCutscenePathData030:
 
 baserom_blob 0x2B389C, 0x2B3ACC
 
-.global sUnk_82B3ACC
-sUnk_82B3ACC:
+.global sEndingCutscenePathData031
+sEndingCutscenePathData031:
 
 baserom_blob 0x2B3ACC, 0x2B3CFC
 
-.global sUnk_82B3CFC
-sUnk_82B3CFC:
+.global sEndingCutscenePathData032
+sEndingCutscenePathData032:
 
 baserom_blob 0x2B3CFC, 0x2B3F2C
 
-.global sUnk_82B3F2C
-sUnk_82B3F2C:
+.global sEndingCutscenePathData033
+sEndingCutscenePathData033:
 
 baserom_blob 0x2B3F2C, 0x2B415C
 
-.global sUnk_82B415C
-sUnk_82B415C:
+.global sEndingCutscenePathData034
+sEndingCutscenePathData034:
 
 baserom_blob 0x2B415C, 0x2B438C
 
-.global sUnk_82B438C
-sUnk_82B438C:
+.global sEndingCutscenePathData035
+sEndingCutscenePathData035:
 
 baserom_blob 0x2B438C, 0x2B45BC
 
-.global sUnk_82B45BC
-sUnk_82B45BC:
+.global sEndingCutscenePathData036
+sEndingCutscenePathData036:
 
 baserom_blob 0x2B45BC, 0x2B47EC
 
-.global sUnk_82B47EC
-sUnk_82B47EC:
+.global sEndingCutscenePathData037
+sEndingCutscenePathData037:
 
 baserom_blob 0x2B47EC, 0x2B4A1C
 
-.global sUnk_82B4A1C
-sUnk_82B4A1C:
+.global sEndingCutscenePathData038
+sEndingCutscenePathData038:
 
 baserom_blob 0x2B4A1C, 0x2B4C4C
 
-.global sUnk_82B4C4C
-sUnk_82B4C4C:
+.global sEndingCutscenePathData039
+sEndingCutscenePathData039:
 
 baserom_blob 0x2B4C4C, 0x2B4E7C
 
-.global sUnk_82B4E7C
-sUnk_82B4E7C:
+.global sEndingCutscenePathData040
+sEndingCutscenePathData040:
 
 baserom_blob 0x2B4E7C, 0x2B50AC
 
-.global sUnk_82B50AC
-sUnk_82B50AC:
+.global sEndingCutscenePathData041
+sEndingCutscenePathData041:
 
 baserom_blob 0x2B50AC, 0x2B52DC
 
-.global sUnk_82B52DC
-sUnk_82B52DC:
+.global sEndingCutscenePathData042
+sEndingCutscenePathData042:
 
 baserom_blob 0x2B52DC, 0x2B550C
 
-.global sUnk_82B550C
-sUnk_82B550C:
+.global sEndingCutscenePathData043
+sEndingCutscenePathData043:
 
 baserom_blob 0x2B550C, 0x2B573C
 
-.global sUnk_82B573C
-sUnk_82B573C:
+.global sEndingCutscenePathData044
+sEndingCutscenePathData044:
 
 baserom_blob 0x2B573C, 0x2B596C
 
-.global sUnk_82B596C
-sUnk_82B596C:
+.global sEndingCutscenePathData045
+sEndingCutscenePathData045:
 
 baserom_blob 0x2B596C, 0x2B5B9C
 
-.global sUnk_82B5B9C
-sUnk_82B5B9C:
+.global sEndingCutscenePathData046
+sEndingCutscenePathData046:
 
 baserom_blob 0x2B5B9C, 0x2B5DCC
 
-.global sUnk_82B5DCC
-sUnk_82B5DCC:
+.global sEndingCutscenePathData047
+sEndingCutscenePathData047:
 
 baserom_blob 0x2B5DCC, 0x2B5FFC
 
-.global sUnk_82B5FFC
-sUnk_82B5FFC:
+.global sEndingCutscenePathData048
+sEndingCutscenePathData048:
 
 baserom_blob 0x2B5FFC, 0x2B622E
 
-.global sUnk_82B622E
-sUnk_82B622E:
+.global sEndingCutscenePathData049
+sEndingCutscenePathData049:
 
 baserom_blob 0x2B622E, 0x2B6460
 
-.global sUnk_82B6460
-sUnk_82B6460:
+.global sEndingCutscenePathData050
+sEndingCutscenePathData050:
 
 baserom_blob 0x2B6460, 0x2B6692
 
-.global sUnk_82B6692
-sUnk_82B6692:
+.global sEndingCutscenePathData051
+sEndingCutscenePathData051:
 
 baserom_blob 0x2B6692, 0x2B68C4
 
-.global sUnk_82B68C4
-sUnk_82B68C4:
+.global sEndingCutscenePathData052
+sEndingCutscenePathData052:
 
 baserom_blob 0x2B68C4, 0x2B6AF6
 
-.global sUnk_82B6AF6
-sUnk_82B6AF6:
+.global sEndingCutscenePathData053
+sEndingCutscenePathData053:
 
 baserom_blob 0x2B6AF6, 0x2B6D28
 
-.global sUnk_82B6D28
-sUnk_82B6D28:
+.global sEndingCutscenePathData054
+sEndingCutscenePathData054:
 
 baserom_blob 0x2B6D28, 0x2B6F5A
 
-.global sUnk_82B6F5A
-sUnk_82B6F5A:
+.global sEndingCutscenePathData055
+sEndingCutscenePathData055:
 
 baserom_blob 0x2B6F5A, 0x2B718C
 
-.global sUnk_82B718C
-sUnk_82B718C:
+.global sEndingCutscenePathData056
+sEndingCutscenePathData056:
 
 baserom_blob 0x2B718C, 0x2B73BE
 
-.global sUnk_82B73BE
-sUnk_82B73BE:
+.global sEndingCutscenePathData057
+sEndingCutscenePathData057:
 
 baserom_blob 0x2B73BE, 0x2B75F0
 
-.global sUnk_82B75F0
-sUnk_82B75F0:
+.global sEndingCutscenePathData058
+sEndingCutscenePathData058:
 
 baserom_blob 0x2B75F0, 0x2B7822
 
-.global sUnk_82B7822
-sUnk_82B7822:
+.global sEndingCutscenePathData059
+sEndingCutscenePathData059:
 
 baserom_blob 0x2B7822, 0x2B7A54
 
-.global sUnk_82B7A54
-sUnk_82B7A54:
+.global sEndingCutscenePathData060
+sEndingCutscenePathData060:
 
 baserom_blob 0x2B7A54, 0x2B7C86
 
-.global sUnk_82B7C86
-sUnk_82B7C86:
+.global sEndingCutscenePathData061
+sEndingCutscenePathData061:
 
 baserom_blob 0x2B7C86, 0x2B7EB8
 
-.global sUnk_82B7EB8
-sUnk_82B7EB8:
+.global sEndingCutscenePathData062
+sEndingCutscenePathData062:
 
 baserom_blob 0x2B7EB8, 0x2B80EA
 
-.global sUnk_82B80EA
-sUnk_82B80EA:
+.global sEndingCutscenePathData063
+sEndingCutscenePathData063:
 
 baserom_blob 0x2B80EA, 0x2B831C
 
-.global sUnk_82B831C
-sUnk_82B831C:
+.global sEndingCutscenePathData064
+sEndingCutscenePathData064:
 
 baserom_blob 0x2B831C, 0x2B854E
 
-.global sUnk_82B854E
-sUnk_82B854E:
+.global sEndingCutscenePathData065
+sEndingCutscenePathData065:
 
 baserom_blob 0x2B854E, 0x2B8780
 
-.global sUnk_82B8780
-sUnk_82B8780:
+.global sEndingCutscenePathData066
+sEndingCutscenePathData066:
 
 baserom_blob 0x2B8780, 0x2B89B2
 
-.global sUnk_82B89B2
-sUnk_82B89B2:
+.global sEndingCutscenePathData067
+sEndingCutscenePathData067:
 
 baserom_blob 0x2B89B2, 0x2B8BE4
 
-.global sUnk_82B8BE4
-sUnk_82B8BE4:
+.global sEndingCutscenePathData068
+sEndingCutscenePathData068:
 
 baserom_blob 0x2B8BE4, 0x2B8E16
 
-.global sUnk_82B8E16
-sUnk_82B8E16:
+.global sEndingCutscenePathData069
+sEndingCutscenePathData069:
 
 baserom_blob 0x2B8E16, 0x2B9048
 
-.global sUnk_82B9048
-sUnk_82B9048:
+.global sEndingCutscenePathData070
+sEndingCutscenePathData070:
 
 baserom_blob 0x2B9048, 0x2B927A
 
-.global sUnk_82B927A
-sUnk_82B927A:
+.global sEndingCutscenePathData071
+sEndingCutscenePathData071:
 
 baserom_blob 0x2B927A, 0x2B94AC
 
-.global sUnk_82B94AC
-sUnk_82B94AC:
+.global sEndingCutscenePathData072
+sEndingCutscenePathData072:
 
 baserom_blob 0x2B94AC, 0x2B96DE
 
-.global sUnk_82B96DE
-sUnk_82B96DE:
+.global sEndingCutscenePathData073
+sEndingCutscenePathData073:
 
 baserom_blob 0x2B96DE, 0x2B9910
 
-.global sUnk_82B9910
-sUnk_82B9910:
+.global sEndingCutscenePathData074
+sEndingCutscenePathData074:
 
 baserom_blob 0x2B9910, 0x2B9B42
 
-.global sUnk_82B9B42
-sUnk_82B9B42:
+.global sEndingCutscenePathData075
+sEndingCutscenePathData075:
 
 baserom_blob 0x2B9B42, 0x2B9D74
 
-.global sUnk_82B9D74
-sUnk_82B9D74:
+.global sEndingCutscenePathData076
+sEndingCutscenePathData076:
 
 baserom_blob 0x2B9D74, 0x2B9FA6
 
-.global sUnk_82B9FA6
-sUnk_82B9FA6:
+.global sEndingCutscenePathData077
+sEndingCutscenePathData077:
 
 baserom_blob 0x2B9FA6, 0x2BA1D8
 
-.global sUnk_82BA1D8
-sUnk_82BA1D8:
+.global sEndingCutscenePathData078
+sEndingCutscenePathData078:
 
 baserom_blob 0x2BA1D8, 0x2BA40A
 
-.global sUnk_82BA40A
-sUnk_82BA40A:
+.global sEndingCutscenePathData079
+sEndingCutscenePathData079:
 
 baserom_blob 0x2BA40A, 0x2BA63C
 
-.global sUnk_82BA63C
-sUnk_82BA63C:
+.global sEndingCutscenePathData080
+sEndingCutscenePathData080:
 
 baserom_blob 0x2BA63C, 0x2BA86E
 
-.global sUnk_82BA86E
-sUnk_82BA86E:
+.global sEndingCutscenePathData081
+sEndingCutscenePathData081:
 
 baserom_blob 0x2BA86E, 0x2BAAA0
 
-.global sUnk_82BAAA0
-sUnk_82BAAA0:
+.global sEndingCutscenePathData082
+sEndingCutscenePathData082:
 
 baserom_blob 0x2BAAA0, 0x2BACD2
 
-.global sUnk_82BACD2
-sUnk_82BACD2:
+.global sEndingCutscenePathData083
+sEndingCutscenePathData083:
 
 baserom_blob 0x2BACD2, 0x2BAF04
 
-.global sUnk_82BAF04
-sUnk_82BAF04:
+.global sEndingCutscenePathData084
+sEndingCutscenePathData084:
 
 baserom_blob 0x2BAF04, 0x2BB136
 
-.global sUnk_82BB136
-sUnk_82BB136:
+.global sEndingCutscenePathData085
+sEndingCutscenePathData085:
 
 baserom_blob 0x2BB136, 0x2BB368
 
-.global sUnk_82BB368
-sUnk_82BB368:
+.global sEndingCutscenePathData086
+sEndingCutscenePathData086:
 
 baserom_blob 0x2BB368, 0x2BB59A
 
-.global sUnk_82BB59A
-sUnk_82BB59A:
+.global sEndingCutscenePathData087
+sEndingCutscenePathData087:
 
 baserom_blob 0x2BB59A, 0x2BB7CC
 
-.global sUnk_82BB7CC
-sUnk_82BB7CC:
+.global sEndingCutscenePathData088
+sEndingCutscenePathData088:
 
 baserom_blob 0x2BB7CC, 0x2BB9FE
 
-.global sUnk_82BB9FE
-sUnk_82BB9FE:
+.global sEndingCutscenePathData089
+sEndingCutscenePathData089:
 
 baserom_blob 0x2BB9FE, 0x2BBC30
 
-.global sUnk_82BBC30
-sUnk_82BBC30:
+.global sEndingCutscenePathData090
+sEndingCutscenePathData090:
 
 baserom_blob 0x2BBC30, 0x2BBE62
 
-.global sUnk_82BBE62
-sUnk_82BBE62:
+.global sEndingCutscenePathData091
+sEndingCutscenePathData091:
 
 baserom_blob 0x2BBE62, 0x2BC094
 
-.global sUnk_82BC094
-sUnk_82BC094:
+.global sEndingCutscenePathData092
+sEndingCutscenePathData092:
 
 baserom_blob 0x2BC094, 0x2BC2C6
 
-.global sUnk_82BC2C6
-sUnk_82BC2C6:
+.global sEndingCutscenePathData093
+sEndingCutscenePathData093:
 
 baserom_blob 0x2BC2C6, 0x2BC4F8
 
-.global sUnk_82BC4F8
-sUnk_82BC4F8:
+.global sEndingCutscenePathData094
+sEndingCutscenePathData094:
 
 baserom_blob 0x2BC4F8, 0x2BC72A
 
-.global sUnk_82BC72A
-sUnk_82BC72A:
+.global sEndingCutscenePathData095
+sEndingCutscenePathData095:
 
 baserom_blob 0x2BC72A, 0x2BC95C
 
-.global sUnk_82BC95C
-sUnk_82BC95C:
+.global sEndingCutscenePathData096
+sEndingCutscenePathData096:
 
 baserom_blob 0x2BC95C, 0x2BCB8E
 
-.global sUnk_82BCB8E
-sUnk_82BCB8E:
+.global sEndingCutscenePathData097
+sEndingCutscenePathData097:
 
 baserom_blob 0x2BCB8E, 0x2BCDC0
 
-.global sUnk_82BCDC0
-sUnk_82BCDC0:
+.global sEndingCutscenePathData098
+sEndingCutscenePathData098:
 
 baserom_blob 0x2BCDC0, 0x2BCFF2
 
-.global sUnk_82BCFF2
-sUnk_82BCFF2:
+.global sEndingCutscenePathData099
+sEndingCutscenePathData099:
 
 baserom_blob 0x2BCFF2, 0x2BD224
 
-.global sUnk_82BD224
-sUnk_82BD224:
+.global sEndingCutscenePathData100
+sEndingCutscenePathData100:
 
 baserom_blob 0x2BD224, 0x2BD456
 
-.global sUnk_82BD456
-sUnk_82BD456:
+.global sEndingCutscenePathData101
+sEndingCutscenePathData101:
 
 baserom_blob 0x2BD456, 0x2BD688
 
-.global sUnk_82BD688
-sUnk_82BD688:
+.global sEndingCutscenePathData102
+sEndingCutscenePathData102:
 
 baserom_blob 0x2BD688, 0x2BD8BA
 
-.global sUnk_82BD8BA
-sUnk_82BD8BA:
+.global sEndingCutscenePathData103
+sEndingCutscenePathData103:
 
 baserom_blob 0x2BD8BA, 0x2BDAEC
 
-.global sUnk_82BDAEC
-sUnk_82BDAEC:
+.global sEndingCutscenePathData104
+sEndingCutscenePathData104:
 
 baserom_blob 0x2BDAEC, 0x2BDD1E
 
-.global sUnk_82BDD1E
-sUnk_82BDD1E:
+.global sEndingCutscenePathData105
+sEndingCutscenePathData105:
 
 baserom_blob 0x2BDD1E, 0x2BDF50
 
-.global sUnk_82BDF50
-sUnk_82BDF50:
+.global sEndingCutscenePathData106
+sEndingCutscenePathData106:
 
 baserom_blob 0x2BDF50, 0x2BE182
 
-.global sUnk_82BE182
-sUnk_82BE182:
+.global sEndingCutscenePathData107
+sEndingCutscenePathData107:
 
 baserom_blob 0x2BE182, 0x2BE3B4
 
-.global sUnk_82BE3B4
-sUnk_82BE3B4:
+.global sEndingCutscenePathData108
+sEndingCutscenePathData108:
 
 baserom_blob 0x2BE3B4, 0x2BE5E6
 
-.global sUnk_82BE5E6
-sUnk_82BE5E6:
+.global sEndingCutscenePathData109
+sEndingCutscenePathData109:
 
 baserom_blob 0x2BE5E6, 0x2BE818
 
-.global sUnk_82BE818
-sUnk_82BE818:
+.global sEndingCutscenePathData110
+sEndingCutscenePathData110:
 
 baserom_blob 0x2BE818, 0x2BEA4A
 
-.global sUnk_82BEA4A
-sUnk_82BEA4A:
+.global sEndingCutscenePathData111
+sEndingCutscenePathData111:
 
 baserom_blob 0x2BEA4A, 0x2BEC7C
 
-.global sUnk_82BEC7C
-sUnk_82BEC7C:
+.global sEndingCutscenePathData112
+sEndingCutscenePathData112:
 
 baserom_blob 0x2BEC7C, 0x2BEEAE
 
-.global sUnk_82BEEAE
-sUnk_82BEEAE:
+.global sEndingCutscenePathData113
+sEndingCutscenePathData113:
 
 baserom_blob 0x2BEEAE, 0x2BF0E0
 
-.global sUnk_82BF0E0
-sUnk_82BF0E0:
+.global sEndingCutscenePathData114
+sEndingCutscenePathData114:
 
 baserom_blob 0x2BF0E0, 0x2BF312
 
-.global sUnk_82BF312
-sUnk_82BF312:
+.global sEndingCutscenePathData115
+sEndingCutscenePathData115:
 
 baserom_blob 0x2BF312, 0x2BF544
 
-.global sUnk_82BF544
-sUnk_82BF544:
+.global sEndingCutscenePathData116
+sEndingCutscenePathData116:
 
 baserom_blob 0x2BF544, 0x2BF776
 
-.global sUnk_82BF776
-sUnk_82BF776:
+.global sEndingCutscenePathData117
+sEndingCutscenePathData117:
 
 baserom_blob 0x2BF776, 0x2BF9A8
 
-.global sUnk_82BF9A8
-sUnk_82BF9A8:
+.global sEndingCutscenePathData118
+sEndingCutscenePathData118:
 
 baserom_blob 0x2BF9A8, 0x2BFBDA
 
-.global sUnk_82BFBDA
-sUnk_82BFBDA:
+.global sEndingCutscenePathData119
+sEndingCutscenePathData119:
 
 baserom_blob 0x2BFBDA, 0x2BFE0C
 
-.global sUnk_82BFE0C
-sUnk_82BFE0C:
+.global sEndingCutscenePathData120
+sEndingCutscenePathData120:
 
 baserom_blob 0x2BFE0C, 0x2C003E
 
-.global sUnk_82C003E
-sUnk_82C003E:
+.global sEndingCutscenePathData121
+sEndingCutscenePathData121:
 
 baserom_blob 0x2C003E, 0x2C0270
 
-.global sUnk_82C0270
-sUnk_82C0270:
+.global sEndingCutscenePathData122
+sEndingCutscenePathData122:
 
 baserom_blob 0x2C0270, 0x2C04A2
 
-.global sUnk_82C04A2
-sUnk_82C04A2:
+.global sEndingCutscenePathData123
+sEndingCutscenePathData123:
 
 baserom_blob 0x2C04A2, 0x2C06D4
 
-.global sUnk_82C06D4
-sUnk_82C06D4:
+.global sEndingCutscenePathData124
+sEndingCutscenePathData124:
 
 baserom_blob 0x2C06D4, 0x2C0906
 
-.global sUnk_82C0906
-sUnk_82C0906:
+.global sEndingCutscenePathData125
+sEndingCutscenePathData125:
 
 baserom_blob 0x2C0906, 0x2C0B38
 
-.global sUnk_82C0B38
-sUnk_82C0B38:
+.global sEndingCutscenePathData126
+sEndingCutscenePathData126:
 
 baserom_blob 0x2C0B38, 0x2C0D6A
 
-.global sUnk_82C0D6A
-sUnk_82C0D6A:
+.global sEndingCutscenePathData127
+sEndingCutscenePathData127:
 
 baserom_blob 0x2C0D6A, 0x2C0F9C
 
-.global sUnk_82C0F9C
-sUnk_82C0F9C:
+.global sEndingCutscenePathData128
+sEndingCutscenePathData128:
 
 baserom_blob 0x2C0F9C, 0x2C11CE
 
-.global sUnk_82C11CE
-sUnk_82C11CE:
+.global sEndingCutscenePathData129
+sEndingCutscenePathData129:
 
 baserom_blob 0x2C11CE, 0x2C1400
 
-.global sUnk_82C1400
-sUnk_82C1400:
+.global sEndingCutscenePathData130
+sEndingCutscenePathData130:
 
 baserom_blob 0x2C1400, 0x2C1632
 
-.global sUnk_82C1632
-sUnk_82C1632:
+.global sEndingCutscenePathData131
+sEndingCutscenePathData131:
 
 baserom_blob 0x2C1632, 0x2C1864
 
-.global sUnk_82C1864
-sUnk_82C1864:
+.global sEndingCutscenePathData132
+sEndingCutscenePathData132:
 
 baserom_blob 0x2C1864, 0x2C1A96
 
-.global sUnk_82C1A96
-sUnk_82C1A96:
+.global sEndingCutscenePathData133
+sEndingCutscenePathData133:
 
 baserom_blob 0x2C1A96, 0x2C1CC8
 
-.global sUnk_82C1CC8
-sUnk_82C1CC8:
+.global sEndingCutscenePathData134
+sEndingCutscenePathData134:
 
 baserom_blob 0x2C1CC8, 0x2C1EFA
 
-.global sUnk_82C1EFA
-sUnk_82C1EFA:
+.global sEndingCutscenePathData135
+sEndingCutscenePathData135:
 
 baserom_blob 0x2C1EFA, 0x2C212C
 
-.global sUnk_82C212C
-sUnk_82C212C:
+.global sEndingCutscenePathData136
+sEndingCutscenePathData136:
 
 baserom_blob 0x2C212C, 0x2C235E
 
-.global sUnk_82C235E
-sUnk_82C235E:
+.global sEndingCutscenePathData137
+sEndingCutscenePathData137:
 
 baserom_blob 0x2C235E, 0x2C2590
 
-.global sUnk_82C2590
-sUnk_82C2590:
+.global sEndingCutscenePathData138
+sEndingCutscenePathData138:
 
 baserom_blob 0x2C2590, 0x2C27C2
 
-.global sUnk_82C27C2
-sUnk_82C27C2:
+.global sEndingCutscenePathData139
+sEndingCutscenePathData139:
 
 baserom_blob 0x2C27C2, 0x2C29F4
 
-.global sUnk_82C29F4
-sUnk_82C29F4:
+.global sEndingCutscenePathData140
+sEndingCutscenePathData140:
 
 baserom_blob 0x2C29F4, 0x2C2C26
 
-.global sUnk_82C2C26
-sUnk_82C2C26:
+.global sEndingCutscenePathData141
+sEndingCutscenePathData141:
 
 baserom_blob 0x2C2C26, 0x2C2E58
 
-.global sUnk_82C2E58
-sUnk_82C2E58:
+.global sEndingCutscenePathData142
+sEndingCutscenePathData142:
 
 baserom_blob 0x2C2E58, 0x2C308A
 
-.global sUnk_82C308A
-sUnk_82C308A:
+.global sEndingCutscenePathData143
+sEndingCutscenePathData143:
 
 baserom_blob 0x2C308A, 0x2C6128
 
-.global sUnk_82C6128
-sUnk_82C6128:
+.global sEndingCutscenePathData144
+sEndingCutscenePathData144:
 
 baserom_blob 0x2C6128, 0x2C64D0
 
-.global sUnk_82C64D0
-sUnk_82C64D0:
+.global sEndingCutscenePathData145
+sEndingCutscenePathData145:
 
 baserom_blob 0x2C64D0, 0x2C6878
 
-.global sUnk_82C6878
-sUnk_82C6878:
+.global sEndingCutscenePathData146
+sEndingCutscenePathData146:
 
 baserom_blob 0x2C6878, 0x2C6C20
 
-.global sUnk_82C6C20
-sUnk_82C6C20:
+.global sEndingCutscenePathData147
+sEndingCutscenePathData147:
 
 baserom_blob 0x2C6C20, 0x2C6FC8
 
-.global sUnk_82C6FC8
-sUnk_82C6FC8:
+.global sEndingCutscenePathData148
+sEndingCutscenePathData148:
 
 baserom_blob 0x2C6FC8, 0x2C7370
 
-.global sUnk_82C7370
-sUnk_82C7370:
+.global sEndingCutscenePathData149
+sEndingCutscenePathData149:
 
 baserom_blob 0x2C7370, 0x2C7718
 
-.global sUnk_82C7718
-sUnk_82C7718:
+.global sEndingCutscenePathData150
+sEndingCutscenePathData150:
 
 baserom_blob 0x2C7718, 0x2C7AC0
 
-.global sUnk_82C7AC0
-sUnk_82C7AC0:
+.global sEndingCutscenePathData151
+sEndingCutscenePathData151:
 
 baserom_blob 0x2C7AC0, 0x2C7E68
 
-.global sUnk_82C7E68
-sUnk_82C7E68:
+.global sEndingCutscenePathData152
+sEndingCutscenePathData152:
 
 baserom_blob 0x2C7E68, 0x2C8062
 
-.global sUnk_82C8062
-sUnk_82C8062:
+.global sEndingCutscenePathData153
+sEndingCutscenePathData153:
 
 baserom_blob 0x2C8062, 0x2C825C
 
-.global sUnk_82C825C
-sUnk_82C825C:
+.global sEndingCutscenePathData154
+sEndingCutscenePathData154:
 
 baserom_blob 0x2C825C, 0x2C8476
 
-.global sUnk_82C8476
-sUnk_82C8476:
+.global sEndingCutscenePathData155
+sEndingCutscenePathData155:
 
 baserom_blob 0x2C8476, 0x2C8690
 
-.global sUnk_82C8690
-sUnk_82C8690:
+.global sEndingCutscenePathData156
+sEndingCutscenePathData156:
 
 baserom_blob 0x2C8690, 0x2C889A
 
-.global sUnk_82C889A
-sUnk_82C889A:
+.global sEndingCutscenePathData157
+sEndingCutscenePathData157:
 
 baserom_blob 0x2C889A, 0x2C8AA4
 
-.global sUnk_82C8AA4
-sUnk_82C8AA4:
+.global sEndingCutscenePathData158
+sEndingCutscenePathData158:
 
 baserom_blob 0x2C8AA4, 0x2C8CD0
 
-.global sUnk_82C8CD0
-sUnk_82C8CD0:
+.global sEndingCutscenePathData159
+sEndingCutscenePathData159:
 
 baserom_blob 0x2C8CD0, 0x2C8EFC
 
-.global sUnk_82C8EFC
-sUnk_82C8EFC:
+.global sEndingCutscenePathData160
+sEndingCutscenePathData160:
 
 baserom_blob 0x2C8EFC, 0x2C90FE
 
-.global sUnk_82C90FE
-sUnk_82C90FE:
+.global sEndingCutscenePathData161
+sEndingCutscenePathData161:
 
 baserom_blob 0x2C90FE, 0x2C9300
 
-.global sUnk_82C9300
-sUnk_82C9300:
+.global sEndingCutscenePathData162
+sEndingCutscenePathData162:
 
 baserom_blob 0x2C9300, 0x2C9522
 
-.global sUnk_82C9522
-sUnk_82C9522:
+.global sEndingCutscenePathData163
+sEndingCutscenePathData163:
 
 baserom_blob 0x2C9522, 0x2C9744
 
-.global sUnk_82C9744
-sUnk_82C9744:
+.global sEndingCutscenePathData164
+sEndingCutscenePathData164:
 
 baserom_blob 0x2C9744, 0x2C9956
 
-.global sUnk_82C9956
-sUnk_82C9956:
+.global sEndingCutscenePathData165
+sEndingCutscenePathData165:
 
 baserom_blob 0x2C9956, 0x2C9B68
 
-.global sUnk_82C9B68
-sUnk_82C9B68:
+.global sEndingCutscenePathData166
+sEndingCutscenePathData166:
 
 baserom_blob 0x2C9B68, 0x2C9D9A
 
-.global sUnk_82C9D9A
-sUnk_82C9D9A:
+.global sEndingCutscenePathData167
+sEndingCutscenePathData167:
 
 baserom_blob 0x2C9D9A, 0x2C9FCC
 
